@@ -25,4 +25,7 @@ public class InventoryTableColumnFilter {
         return false;
     }
 
+    public String[] getColumns() {
+        return columns;
+    }
 }

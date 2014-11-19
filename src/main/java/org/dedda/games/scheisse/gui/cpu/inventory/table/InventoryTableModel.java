@@ -3,6 +3,8 @@ package org.dedda.games.scheisse.gui.cpu.inventory.table;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 
 import javax.swing.table.AbstractTableModel;
+import java.sql.DatabaseMetaData;
+
 import static org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableColumnFilter.*;
 
 /**
@@ -19,11 +21,11 @@ public class InventoryTableModel extends AbstractTableModel{
     }
 
     public int getRowCount() {
-        return 0;
+        return inventory.getSize();
     }
 
     public int getColumnCount() {
-        return 0;
+        return columnFilter.getColumns().length;
     }
 
     public Object getValueAt(int i, int i1) {
