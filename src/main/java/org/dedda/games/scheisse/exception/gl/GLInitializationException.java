@@ -27,8 +27,8 @@ public class GLInitializationException extends Exception {
     }
 
     /**
-     * Constructor with {@link Throwable} that caused this exception.
-     * @param cause {@link Throwable} that caused this exception
+     * Constructor with {@link java.lang.Throwable} that caused this exception.
+     * @param cause {@link java.lang.Throwable} that caused this exception
      */
     public GLInitializationException(final Throwable cause) {
         super("GL Initialization failed! (code: "
@@ -37,9 +37,9 @@ public class GLInitializationException extends Exception {
 
     /**
      * Constructor with specific message and
-     * {@link Throwable} that caused this exception.
+     * {@link java.lang.Throwable} that caused this exception.
      * @param message Message to display in system output
-     * @param cause {@link Throwable} that caused this exception
+     * @param cause {@link java.lang.Throwable} that caused this exception
      */
     public GLInitializationException(
             final String message,
