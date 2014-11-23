@@ -134,7 +134,7 @@ public class Main {
         /*
         Player player = new Player(true);
         player.setExperience(12);
-        Map map = new MapLoader("src/test/test_files/data/map/map.0_0.dgm").load();
+        Map map = new MapLoader("src/test/test_files/data/map/map.0_0.dm").load();
         Game game = new Game();
         game.setPlayer(player);
         game.setMap(map);

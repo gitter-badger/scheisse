@@ -43,7 +43,7 @@ public class ItemLoader extends FileInput{
         ArrayList<Item> items = new ArrayList<Item>();
         File files[] = folder.listFiles(new FileFilter() {
             public boolean accept(File file) {
-                return file.getName().endsWith(".dgm");
+                return file.getName().endsWith(".di");
             }
         });
         for (File file : files) {
