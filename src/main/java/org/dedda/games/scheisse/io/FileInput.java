@@ -101,4 +101,18 @@ public class FileInput {
         return map;
     }
 
+    public HashMap<String, String> getMap(final File file, final boolean escape) {
+        if (!escape) {
+            return getMap(file);
+        }
+        String lines[] = getLines(file);
+        HashMap<String, String> map = new HashMap<String, String>();
+        for (String line : lines) {
+            if (!line.startsWith("#")) {
+                map.put(line.substring(0, line.indexOf(':')), line.substring(line.indexOf(':')+1));
+            }
+        }
+        return map;
+    }
+
 }
