@@ -5,6 +5,7 @@ import org.dedda.games.scheisse.gui.cpu.Gui;
 import org.dedda.games.scheisse.io.FileInput;
 import org.dedda.games.scheisse.io.NetworkConfigWords;
 import org.dedda.games.scheisse.io.net.HttpDownloader;
+import org.dedda.games.scheisse.io.resource.SaveGameLoader;
 import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.State;
 import org.dedda.games.scheisse.state.game.Game;
@@ -72,18 +73,9 @@ public class Main {
      */
     public static void main(final String args[]) {
 
-        /*
+        new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
         Game game = new Game();
-        Player player = new Player(true);
-        player.setName("Dedda");
-        player.getInventory().getSlots().get(0).setDummy(
-                new Weapon("kaka", "Waffe", 1000, 10)
-        );
-        player.getInventory().getSlots().get(0).setNumberOfItems(2);
-        player.getInventory().getSlots().get(1).setDummy(
-                new Weapon("kaka", "noch eine", 1000, 10)
-        );
-        player.getInventory().getSlots().get(1).setNumberOfItems(123);
+        Player player = new SaveGameLoader(new File("src/test/test_files/savegame/savegame.dsg")).load();
         game.setPlayer(player);
         Gui gui = new Gui(new Dimension(800, 600));
         gui.start(game);

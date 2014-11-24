@@ -1,5 +1,6 @@
 package org.dedda.games.scheisse.state.game.item;
 
+import org.dedda.games.scheisse.debug.SystemPrinter;
 import org.dedda.games.scheisse.state.game.level.Level;
 
 import java.awt.*;
@@ -35,7 +36,10 @@ public abstract class Item implements Stackable{
         this.value = value;
         this.category = category;
         this.type = type;
-        itemMap.put(id, this);
+        if(!itemMap.containsKey(id)){
+            itemMap.put(id, this);
+            SystemPrinter.debugln("registered item '" + name + "' with id: " + id);
+        }
     }
 
     /**

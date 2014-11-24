@@ -1,6 +1,7 @@
 package org.dedda.games.scheisse.io.resource.item;
 
 import org.dedda.games.scheisse.io.FileInput;
+import org.dedda.games.scheisse.main.FileTypes;
 import org.dedda.games.scheisse.main.Main;
 import org.dedda.games.scheisse.state.game.item.*;
 import org.dedda.games.scheisse.tool.Parse;
@@ -10,6 +11,8 @@ import java.io.File;
 import java.io.FileFilter;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import static org.dedda.games.scheisse.main.FileTypes.ITEM;
 
 /**
  * Created by dedda on 5/24/14.
@@ -43,7 +46,7 @@ public class ItemLoader extends FileInput{
         ArrayList<Item> items = new ArrayList<Item>();
         File files[] = folder.listFiles(new FileFilter() {
             public boolean accept(File file) {
-                return file.getName().endsWith(".di");
+                return file.getName().endsWith(FileTypes.getExtension(ITEM));
             }
         });
         for (File file : files) {

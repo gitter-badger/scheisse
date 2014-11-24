@@ -34,7 +34,7 @@ public class Weapon extends Item implements Wearable, Holdeable{
     public boolean equals(Object object){
         if(object instanceof Weapon){
             Weapon weapon = (Weapon)object;
-            return weapon.name.equals(this.name)
+            return weapon.getName().equals(this.getName())
                     && weapon.value == this.value
                     && weapon.attack == this.attack;
         }
