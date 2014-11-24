@@ -14,11 +14,11 @@ public class TestItem extends Item {
     public static final int MAX_STACK = 123;
 
     public TestItem() {
-        super("-1", NAME, VALUE, ItemCategory.OTHER, ItemType.OTHER);
+        super(-1, NAME, VALUE, ItemCategory.OTHER, ItemType.OTHER);
     }
 
     static {
-        itemMap.put("-1", new TestItem());
+        itemMap.put(-1L, new TestItem());
     }
 
     public int maxStackNumber() {

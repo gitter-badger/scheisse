@@ -10,6 +10,7 @@ import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.State;
 import org.dedda.games.scheisse.state.game.Game;
 import org.dedda.games.scheisse.state.game.Player;
+import org.dedda.games.scheisse.state.game.item.Item;
 import org.dedda.games.scheisse.state.game.item.Weapon;
 import org.dedda.games.scheisse.state.game.map.soil.Soil;
 
@@ -74,9 +75,11 @@ public class Main {
     public static void main(final String args[]) {
 
         new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
+        Item.printMap();
         Game game = new Game();
         Player player = new SaveGameLoader(new File("src/test/test_files/savegame/savegame.dsg")).load();
         game.setPlayer(player);
+        player.getInventory().print();
         Gui gui = new Gui(new Dimension(800, 600));
         gui.start(game);
 

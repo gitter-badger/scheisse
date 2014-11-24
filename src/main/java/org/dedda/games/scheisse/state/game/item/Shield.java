@@ -13,7 +13,7 @@ public class Shield extends Armor implements Wearable, Holdeable{
      * @param value long - item value
      * @param armor long
      */
-    public Shield(String id, String name, long value, long armor) {
+    public Shield(long id, String name, long value, long armor) {
         super(id, name, value, armor, SHIELD);
     }
 

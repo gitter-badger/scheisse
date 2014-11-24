@@ -11,18 +11,19 @@ import java.util.HashMap;
  */
 public abstract class Item implements Stackable{
 
-    protected static HashMap<String, Item> itemMap;
+    protected static HashMap<Long, Item> itemMap;
 
     protected final ItemCategory category;
     protected final ItemType type;
     protected final long value;
     protected final String name;
-    protected final String id;
+    protected final long id;
     protected Image sprite;
     protected long minXp = 0;
 
     static {
-        itemMap = new HashMap<String, Item>();
+        itemMap = new HashMap<Long, Item>();
+        itemMap.put(0L, new NullItem());
     }
 
     /**
@@ -30,7 +31,7 @@ public abstract class Item implements Stackable{
      * @param name String - item name
      * @param value long - item value
      */
-    public Item(String id, String name, long value, ItemCategory category, ItemType type){
+    public Item(long id, String name, long value, ItemCategory category, ItemType type){
         this.id = id;
         this.name = name;
         this.value = value;
@@ -68,6 +69,13 @@ public abstract class Item implements Stackable{
         return false;
     }
 
+    public static void printMap() {
+        SystemPrinter.debugln("All items:");
+        for(long key : itemMap.keySet()){
+            SystemPrinter.debugln("ID: " + key + " NAME: " + itemMap.get(key).getName());
+        }
+    }
+
     public Image getSprite() {
         return sprite;
     }
@@ -80,15 +88,15 @@ public abstract class Item implements Stackable{
         return itemMap.get(id);
     }
 
-    public String getId(){
+    public long getId(){
         return id;
     }
 
-    public static HashMap<String, Item> getItemMap() {
+    public static HashMap<Long, Item> getItemMap() {
         return itemMap;
     }
 
-    public static void setItemMap(HashMap<String, Item> itemMap) {
+    public static void setItemMap(HashMap<Long, Item> itemMap) {
         Item.itemMap = itemMap;
     }
 

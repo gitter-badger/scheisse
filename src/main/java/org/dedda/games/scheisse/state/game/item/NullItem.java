@@ -8,7 +8,7 @@ import static org.dedda.games.scheisse.state.game.item.ItemType.NULL;
 public class NullItem extends Item{
 
     public NullItem() {
-        super("Null", "", 0, ItemCategory.OTHER, NULL);
+        super(0, "NULL", 0, ItemCategory.OTHER, NULL);
     }
 
     public int maxStackNumber() {

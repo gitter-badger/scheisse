@@ -17,7 +17,7 @@ public class Weapon extends Item implements Wearable, Holdeable{
      * @param value long - item value
      * @param attack long
      */
-    public Weapon(String id, String name, long value, long attack){
+    public Weapon(long id, String name, long value, long attack){
         super(id, name, value, ItemCategory.WEAPPON, WEAPPON);
         this.attack = attack;
     }

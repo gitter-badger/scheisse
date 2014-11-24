@@ -13,14 +13,15 @@ public class Slot {
 
     public Slot(Inventory inventory){
         this.inventory = inventory;
+        dummy = null;
     }
 
     /**
      *
-     * @param dummy Item - dummy file to get class information for item type
+     * @param itemId Id of the item
      */
-    public Slot(Item dummy, Inventory inventory){
-        this.dummy = dummy;
+    public Slot(long itemId, Inventory inventory){
+        this.dummy = Item.itemForId(itemId);
         this.inventory = inventory;
     }
 
@@ -86,29 +87,6 @@ public class Slot {
      */
     public void setNumberOfItems(int numberOfItems) {
         this.numberOfItems = numberOfItems;
-        inventory.triggerChangeEvent();
-    }
-
-    /**
-     *
-     * @return Class - class of suitable items
-     */
-    public Class getDummyClass(){
-        return dummy.getClass();
-    }
-
-    /**
-     *
-     * @param dummyClass Class - class for suitable items
-     */
-    public void setDummyClass(Class dummyClass){
-        try {
-            this.dummy = (Item) dummyClass.cast(dummyClass.newInstance());
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
         inventory.triggerChangeEvent();
     }
 

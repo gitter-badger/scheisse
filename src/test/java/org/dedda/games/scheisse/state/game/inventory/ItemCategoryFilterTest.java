@@ -15,8 +15,8 @@ public class ItemCategoryFilterTest {
     @Test
     public void testAccept() throws Exception {
         itemTypeFilter = new ItemTypeFilter(new Class[]{Weapon.class, Armor.class});
-        assertTrue(itemTypeFilter.accept(new Weapon("", "", 0, 0)));
-        assertTrue(itemTypeFilter.accept(new Armor("", "", 0, 0, ItemType.CLOTHING)));
+        assertTrue(itemTypeFilter.accept(new Weapon(0, "", 0, 0)));
+        assertTrue(itemTypeFilter.accept(new Armor(0, "", 0, 0, ItemType.CLOTHING)));
         assertFalse(itemTypeFilter.accept(new NullItem()));
     }
 
@@ -24,9 +24,9 @@ public class ItemCategoryFilterTest {
     public void testFilter() throws Exception {
         itemTypeFilter = new ItemTypeFilter(new Class[]{Weapon.class, NullItem.class});
         ArrayList<Item> items = new ArrayList<Item>();
-        Weapon weapon1 = new Weapon("1", "1", 0, 0);
-        Armor armor1 = new Armor("2", "2", 0, 0, ItemType.CLOTHING);
-        Weapon weapon2 = new Weapon("3", "3", 0, 0);
+        Weapon weapon1 = new Weapon(1, "1", 0, 0);
+        Armor armor1 = new Armor(2, "2", 0, 0, ItemType.CLOTHING);
+        Weapon weapon2 = new Weapon(3, "3", 0, 0);
         NullItem nullItem1 = new NullItem();
         items.add(weapon1);
         items.add(armor1);

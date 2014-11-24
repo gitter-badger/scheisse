@@ -19,37 +19,11 @@ public class SlotTest {
     }
 
     @Test
-    public void testSetAndGetDummyClass() throws Exception {
-        slot.setDummyClass(TestItem.class);
-        assertEquals(TestItem.class, slot.getDummyClass());
-    }
-
-    @Test
     public void testSetAndGetDummy() throws Exception {
         TestItem dummy = new TestItem();
         slot.setDummy(dummy);
         assertEquals(dummy, slot.getDummy());
     }
-
-    @Test
-    public void testAdd() throws Exception {
-        slot.setDummyClass(TestItem.class);
-        int slotHeight = slot.getNumberOfItems();
-        slot.add(new TestItem());
-        assertEquals(slotHeight+1, slot.getNumberOfItems());
-    }
-
-    @Test
-    public void testCanAdd() throws Exception {
-        slot.setDummyClass(TestItem.class);
-        while(slot.getNumberOfItems() < TestItem.MAX_STACK-1){
-            slot.add(new TestItem());
-        }
-        assertTrue(slot.canAdd());
-        slot.add(new TestItem());
-        assertFalse(slot.canAdd());
-    }
-
 
     @Test
     public void testRemove() throws Exception {

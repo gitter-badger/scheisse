@@ -22,7 +22,7 @@ public class ItemLoader extends FileInput{
     public Item loadItem(final File file) {
         Item item = null;
         HashMap<String, String> dataMap = getMap(file);
-        String id = dataMap.get(ItemWords.ID);
+        long id = Long.parseLong(dataMap.get(ItemWords.ID));
         String type = dataMap.get(ItemWords.TYPE);
         String name = dataMap.get(ItemWords.NAME);
         long value = Parse.toLong(dataMap.get(ItemWords.VALUE));

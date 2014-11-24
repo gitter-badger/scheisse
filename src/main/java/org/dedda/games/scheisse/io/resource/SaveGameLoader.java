@@ -72,13 +72,11 @@ public class SaveGameLoader extends FileInput {
             String slotString = line.substring(0, line.indexOf(';'));
             Slot slot = null;
             if (slotString.equals("0")) {
-                slot = new Slot(new NullItem(), inventory);
+                slot = new Slot(0, inventory);
                 slot.setNumberOfItems(1);
             } else {
                 Point currentSlot = Parse.toPoint(slotString);
-                Item dummy = null;
-                dummy = Item.itemForId(currentSlot.x);
-                slot = new Slot(dummy, inventory);
+                slot = new Slot(currentSlot.x, inventory);
                 slot.setNumberOfItems(currentSlot.y);
             }
             line = line.substring(line.indexOf(';')+1);

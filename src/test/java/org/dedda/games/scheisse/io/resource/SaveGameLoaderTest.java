@@ -24,7 +24,7 @@ public class SaveGameLoaderTest {
         instance.setExperience(789L);
         Inventory inventory = new Inventory();
         ArrayList<Slot> slots = new ArrayList<Slot>();
-        Slot slot = new Slot(new NullItem(), inventory);
+        Slot slot = new Slot(0, inventory);
         slot.setNumberOfItems(1);
         slots.add(slot);
         slots.add(slot);

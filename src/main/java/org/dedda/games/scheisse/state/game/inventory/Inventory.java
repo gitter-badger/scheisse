@@ -77,7 +77,7 @@ public class Inventory {
         SystemPrinter.debugln("Inventory:");
         SystemPrinter.debugln("size: " + slots.size());
         for(Slot slot : slots){
-            SystemPrinter.debugln(slot.getDummyClass().getName() + ": " + slot.getNumberOfItems());
+            SystemPrinter.debugln(slot.getDummy().getName() + ": " + slot.getNumberOfItems());
         }
     }
 
