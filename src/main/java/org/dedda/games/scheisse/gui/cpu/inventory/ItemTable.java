@@ -1,6 +1,8 @@
 package org.dedda.games.scheisse.gui.cpu.inventory;
 
+import org.dedda.games.scheisse.state.game.item.Armor;
 import org.dedda.games.scheisse.state.game.item.Item;
+import org.dedda.games.scheisse.state.game.item.Weapon;
 import org.dedda.games.scheisse.state.game.item.filter.ItemFilter;
 
 import javax.swing.JTable;
@@ -24,8 +26,8 @@ public class ItemTable extends JTable {
     private HashMap<Item, Integer> itemMap;
     private TableModel tableModel;
     private int visibleColumns[];
-    private Vector dataVector = new Vector();
-    private Vector headerVector = new Vector();
+    private Vector<Vector<String>> dataVector = new Vector<Vector<String>>();
+    private Vector<String> headerVector = new Vector<String>();
     private ItemFilter itemFilter = null;
 
     public ItemTable(final HashMap<Item, Integer> itemMap, final int columns[]) {
@@ -59,6 +61,33 @@ public class ItemTable extends JTable {
                 headerVector.addElement("Damage");
             } else if (visibleColumns[i] == ARMOR) {
                 headerVector.addElement("Armor");
+            }
+        }
+        for (Item item : itemMap.keySet()) {
+            dataVector.addElement(new Vector<String>());
+            for (int i = 0; i < visibleColumns.length; i++) {
+                if (visibleColumns[i] == ITEM_ID) {
+                    dataVector.lastElement().addElement(item.getId() + "");
+                } else if (visibleColumns[i] == ITEM_NAME) {
+                    dataVector.lastElement().addElement(item.getName());
+                } else if (visibleColumns[i] == ITEM_VALUE) {
+                    dataVector.lastElement().addElement(item.getValue() + "");
+                } else if (visibleColumns[i] == ITEM_NUMBER) {
+                    dataVector.lastElement().addElement(itemMap.get(item) + "");
+                } else if (visibleColumns[i] == WEAPON_DAMAGE) {
+                    if (item instanceof Weapon) {
+                         Weapon weapon = (Weapon) item;
+                        dataVector.lastElement().addElement(weapon.getAttack() + "");
+                    } else {
+                        dataVector.lastElement().addElement("");
+                    }
+                } else if (visibleColumns[i] == ARMOR) {
+                    if (item instanceof Armor) {
+                        Armor armor = (Armor) item;
+                        dataVector.lastElement().addElement(armor.getArmor() + "");
+                    }
+                    dataVector.lastElement().addElement("");
+                }
             }
         }
     }
