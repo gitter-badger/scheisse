@@ -75,11 +75,9 @@ public class Main {
     public static void main(final String args[]) {
 
         new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
-        Item.printMap();
         Game game = new Game();
         Player player = new SaveGameLoader(new File("src/test/test_files/savegame/savegame.dsg")).load();
         game.setPlayer(player);
-        player.getInventory().print();
         Gui gui = new Gui(new Dimension(800, 600));
         gui.start(game);
 
