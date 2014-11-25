@@ -27,7 +27,7 @@ public class Slot {
 
     /**
      *
-     * @return boolean - is there any space left in here?
+     * @return is there any space left in here?
      */
     public boolean canAdd(){
         return numberOfItems < dummy.maxStackNumber();
