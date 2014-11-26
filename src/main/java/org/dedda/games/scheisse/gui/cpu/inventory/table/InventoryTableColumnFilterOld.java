@@ -3,7 +3,7 @@ package org.dedda.games.scheisse.gui.cpu.inventory.table;
 /**
  * Created by dedda on 11/18/14.
  */
-public class InventoryTableColumnFilter {
+public class InventoryTableColumnFilterOld {
 
     public static final String[] COLUMNS = new String[]{
             "ITEM_NAME",
@@ -12,7 +12,7 @@ public class InventoryTableColumnFilter {
 
     private String[] columns;
 
-    public InventoryTableColumnFilter(String[] columns) {
+    public InventoryTableColumnFilterOld(String[] columns) {
         this.columns = columns;
     }
 
