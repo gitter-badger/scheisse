@@ -30,7 +30,7 @@ public class ItemLoaderTest {
         Shield testShield = new Shield(3, "Wooden Shield", 246L, 135L);
         ItemLoader itemLoader = new ItemLoader();
         ArrayList<Item> items = itemLoader.loadAll(new File("src/test/test_files/data/item/"));
-        Assert.assertTrue(items.size() == 3);
+        Assert.assertTrue(items.size() == 9);
         Assert.assertTrue(items.contains(testWeapon));
         Assert.assertTrue(items.contains(testArmor));
         Assert.assertTrue(items.contains(testShield));

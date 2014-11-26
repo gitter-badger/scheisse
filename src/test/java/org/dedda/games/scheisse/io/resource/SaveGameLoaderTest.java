@@ -1,6 +1,7 @@
 package org.dedda.games.scheisse.io.resource;
 
 import junit.framework.Assert;
+import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.game.Player;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.inventory.Slot;
@@ -16,6 +17,7 @@ public class SaveGameLoaderTest {
 
     @Test
     public void testLoad() throws Exception {
+        new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
         SaveGameLoader sgl = new SaveGameLoader(new File("src/test/test_files/savegame/savegame.dsg"));
         Player instance = new Player(false);
         instance.setName("Test user");
@@ -24,10 +26,14 @@ public class SaveGameLoaderTest {
         instance.setExperience(789L);
         Inventory inventory = new Inventory();
         ArrayList<Slot> slots = new ArrayList<Slot>();
-        Slot slot = new Slot(0, inventory);
+        Slot slot = new Slot(1, inventory);
         slot.setNumberOfItems(1);
         slots.add(slot);
+        slot = new Slot(2, inventory);
+        slot.setNumberOfItems(3);
         slots.add(slot);
+        slot = new Slot(3, inventory);
+        slot.setNumberOfItems(10);
         slots.add(slot);
         inventory.setSlots(slots);
         instance.setInventory(inventory);
