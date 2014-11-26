@@ -1,24 +1,54 @@
+
 package org.dedda.games.scheisse.state.game.shop;
 
+import org.dedda.games.scheisse.state.game.item.Item;
 import org.dedda.games.scheisse.state.game.item.ItemType;
+import org.dedda.games.scheisseServiceClient.service.ShopServiceClient;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by dedda on 25.11.14.
  */
 public class ShopConnector {
 
-    public Offer[] getOffers() {
-        throw new UnsupportedOperationException();
+    public List<Offer> getOffers() {
+        List<Long> availableIDs = ShopServiceClient.getAvailableItems();
+        LinkedList<Offer> offers = new LinkedList<Offer>();
+        for (long currentId : availableIDs) {
+            long availableAmount = ShopServiceClient.getAvailableQuantity(currentId);
+            long price = ShopServiceClient.getBuyingPrice(currentId);
+            offers.add(new Offer(currentId, availableAmount, price));
+        }
+        return offers;
     }
 
-    public Offer[] getOffers(ItemType itemType) {
-        throw new UnsupportedOperationException();
+    public List<Offer> getOffers(ItemType itemType) {
+        ArrayList<Long> allIDs = new ArrayList<Long>();
+        for (long currentId : Item.getItemMap().keySet()) {
+            if (Item.itemForId(currentId).getType() == itemType) {
+                allIDs.add(currentId);
+            }
+        }
+        LinkedList<Offer> offers = new LinkedList<Offer>();
+        for (long currentId : allIDs) {
+            long price = getBuyingPrice(currentId);
+            if (price >= 0) {
+                long amountAvailable = ShopServiceClient.getAvailableQuantity(currentId);
+                Offer offer = new Offer(currentId, amountAvailable, price);
+            }
+        }
+        return offers;
     }
 
-    public long getSellingPrice(long itemId) {
-        throw new UnsupportedOperationException();
+    public long getSellingPrice(final long itemId) {
+        return ShopServiceClient.getSellingPrice(itemId);
+    }
+
+    public long getBuyingPrice(final long itemId) {
+        return ShopServiceClient.getBuyingPrice(itemId);
     }
 
     /**
