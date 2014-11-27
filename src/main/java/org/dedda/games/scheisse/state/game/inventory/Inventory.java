@@ -28,7 +28,7 @@ public class Inventory {
         }
     }
 
-    protected void triggerChangeEvent() {
+    public void triggerChangeEvent() {
         for(InventoryChangeListener inventoryChangeListener : inventoryChangeListeners){
             inventoryChangeListener.inventoryChangeAction();
         }

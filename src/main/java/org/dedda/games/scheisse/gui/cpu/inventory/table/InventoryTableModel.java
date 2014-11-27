@@ -72,6 +72,10 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
         return this.shownCategories;
     }
 
+    public void setShownCategories(List<Integer> shownCategories) {
+        this.shownCategories = shownCategories;
+    }
+
     public void enableCategory(final int category) {
         if (!shownCategories.contains(category)) {
             shownCategories.add(category);
