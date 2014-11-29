@@ -5,6 +5,6 @@ package org.dedda.games.scheisse.state.game.item;
  */
 public enum ItemType {
 
-    TOOL, SHIELD, WEAPPON, CLOTHING, NULL, OTHER;
+    TOOL, SHIELD, WEAPON, CLOTHING, NULL, OTHER;
 
 }
