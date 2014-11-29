@@ -18,7 +18,7 @@ import java.awt.event.ActionListener;
  */
 public class InventoryActionPanel extends JPanel {
 
-    private InventoryPanel inventoryPanel;
+    private InventoryPanelOld inventoryPanelOld;
     private InventoryTable inventoryTable;
     private InventoryActionTable inventoryActionTable;
     private JButton addButton;
@@ -27,10 +27,10 @@ public class InventoryActionPanel extends JPanel {
     private JSpinner numberSpinner;
     private InventoryActionComboBox inventoryActionComboBox;
 
-    public InventoryActionPanel(final InventoryPanel inventoryPanel) {
-        this.inventoryPanel = inventoryPanel;
-        this.inventoryTable = inventoryPanel.getInventoryTable();
-        this.inventoryActionTable = inventoryPanel.getInventoryActionTable();
+    public InventoryActionPanel(final InventoryPanelOld inventoryPanelOld) {
+        this.inventoryPanelOld = inventoryPanelOld;
+        this.inventoryTable = inventoryPanelOld.getInventoryTable();
+        this.inventoryActionTable = inventoryPanelOld.getInventoryActionTable();
         BoxLayout boxLayout = new BoxLayout(this, BoxLayout.PAGE_AXIS);
 
         setLayout(boxLayout);

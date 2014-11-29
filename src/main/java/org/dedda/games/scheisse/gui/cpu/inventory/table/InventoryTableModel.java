@@ -6,10 +6,12 @@ import org.dedda.games.scheisse.state.game.inventory.Slot;
 import org.dedda.games.scheisse.state.game.item.Armor;
 import org.dedda.games.scheisse.state.game.item.Item;
 import org.dedda.games.scheisse.state.game.item.Weapon;
-import org.omg.CORBA.PUBLIC_MEMBER;
 
+import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableCellRenderer;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -24,6 +26,13 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
     public static final int VALUE = 4;
     public static final int ATTACK = 5;
     public static final int ARMOR = 6;
+    public static final String HEADER_ID = "ID";
+    public static final String HEADER_SYMBOL = "Icon";
+    public static final String HEADER_NAME = "Name";
+    public static final String HEADER_NUMBER = "Amount";
+    public static final String HEADER_VALUE = "Value";
+    public static final String HEADER_ATTACK = "Attack";
+    public static final String HEADER_ARMOR = "Armor";
     public static final int[] CATEGORIES = new int[]{
             ID,
             SYMBOL,
@@ -32,6 +41,15 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
             VALUE,
             ATTACK,
             ARMOR
+    };
+    public static final String[] HEADERS = new String[]{
+            HEADER_ID,
+            HEADER_SYMBOL,
+            HEADER_NAME,
+            HEADER_NUMBER,
+            HEADER_VALUE,
+            HEADER_ATTACK,
+            HEADER_ARMOR
     };
 
     private Inventory inventory;
@@ -55,7 +73,7 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
         Slot slot = inventory.getSlots().get(row);
         Item item = inventory.getSlots().get(row).getDummy();
         long number = inventory.getSlots().get(row).getNumberOfItems();
-        int category = CATEGORIES[col];
+        int category = getShownCategories().get(col);
         switch (category) {
             case ID: return item.getId();
             case SYMBOL: return item.getId();
@@ -69,8 +87,13 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
     }
 
     @Override
+    public boolean isCellEditable(final int row, final int col) {
+        return false;
+    }
+
+    @Override
     public Class getColumnClass(final int columnIndex) {
-        int category = CATEGORIES[columnIndex];
+        int category = getShownCategories().get(columnIndex);
         switch (category) {
             case ID: return Long.class;
             case SYMBOL: return Long.class;
@@ -81,6 +104,12 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
             case ARMOR: return Long.class;
         }
         return String.class;
+    }
+
+    @Override
+    public String getColumnName(int columnIndex) {
+        int category = getShownCategories().get(columnIndex);
+        return HEADERS[category];
     }
 
     public List<Integer> getShownCategories() {
@@ -94,12 +123,18 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
     public void enableCategory(final int category) {
         if (!shownCategories.contains(category)) {
             shownCategories.add(category);
+            Collections.sort(shownCategories);
+            fireTableDataChanged();
+            fireTableStructureChanged();
         }
     }
 
     public void disableCategory(final int category) {
         if (shownCategories.contains(new Integer(category))) {
             shownCategories.remove(new Integer(category));
+            Collections.sort(shownCategories);
+            fireTableDataChanged();
+            fireTableStructureChanged();
         }
     }
 

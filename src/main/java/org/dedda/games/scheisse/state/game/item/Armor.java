@@ -2,6 +2,8 @@ package org.dedda.games.scheisse.state.game.item;
 
 import org.dedda.games.scheisse.state.game.object.Person;
 
+import java.awt.*;
+
 import static org.dedda.games.scheisse.state.game.item.ItemCategory.ARMOR;
 
 /**
@@ -17,8 +19,8 @@ public class Armor extends Item implements Wearable{
      * @param value long - item value
      * @param armor long
      */
-    public Armor(long id, String name, long value, long armor, ItemType type){
-        super(id, name, value, ARMOR, type);
+    public Armor(long id, String name, long value, long armor, ItemType type, Image sprite){
+        super(id, name, value, ARMOR, type, sprite);
         this.armor = armor;
     }
 

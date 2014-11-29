@@ -73,6 +73,11 @@ public class Inventory {
         triggerChangeEvent();
     }
 
+    public void addSlot(Slot slot){
+        this.slots.add(slot);
+        triggerChangeEvent();
+    }
+
     public void print(){
         SystemPrinter.debugln("Inventory:");
         SystemPrinter.debugln("size: " + slots.size());

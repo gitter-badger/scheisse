@@ -1,7 +1,8 @@
 package org.dedda.games.scheisse.main;
 
 import org.dedda.games.scheisse.debug.SystemPrinter;
-import org.dedda.games.scheisse.gui.cpu.Gui;
+import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable;
+import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
 import org.dedda.games.scheisse.io.FileInput;
 import org.dedda.games.scheisse.io.NetworkConfigWords;
 import org.dedda.games.scheisse.io.net.HttpDownloader;
@@ -10,10 +11,11 @@ import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.State;
 import org.dedda.games.scheisse.state.game.Game;
 import org.dedda.games.scheisse.state.game.Player;
-import org.dedda.games.scheisse.state.game.item.Item;
-import org.dedda.games.scheisse.state.game.item.Weapon;
+import org.dedda.games.scheisse.state.game.inventory.Inventory;
+import org.dedda.games.scheisse.state.game.inventory.Slot;
 import org.dedda.games.scheisse.state.game.map.soil.Soil;
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -21,12 +23,6 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.Socket;
 import java.net.URL;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 import static org.dedda.games.scheisse.exception.ExceptionCode.EXIT_INSTALLATION_FAULT;
 import static org.dedda.games.scheisse.exception.ExceptionCode.EXIT_OK;
@@ -77,7 +73,25 @@ public class Main {
         new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
         Game game = new Game();
         Player player = new SaveGameLoader(new File("src/test/test_files/savegame/savegame.dsg")).load();
+        Inventory inventory = player.getInventory();
+        for (int i = 4; i < 10; i++) {
+            Slot slot = new Slot(i, inventory);
+            slot.setNumberOfItems(i*2);
+            inventory.addSlot(slot);
+        }
         game.setPlayer(player);
+        JFrame frame = new JFrame();
+        frame.setSize(300, 300);
+        InventoryTable table = new InventoryTable(player.getInventory());
+        frame.getContentPane().add(table);
+        frame.setVisible(true);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        table.getModel().enableCategory(InventoryTableModel.SYMBOL);
+        /*
         Gui gui = new Gui(new Dimension(800, 600));
         gui.start(game);
 

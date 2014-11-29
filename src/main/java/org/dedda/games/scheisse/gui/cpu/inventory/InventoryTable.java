@@ -16,16 +16,16 @@ import java.util.Vector;
  */
 public class InventoryTable extends JScrollPane implements InventoryChangeListener {
 
-    private InventoryPanel inventoryPanel;
+    private InventoryPanelOld inventoryPanelOld;
     private Inventory inventory;
     private Vector dataVector = new Vector();
     private Vector headerVector = new Vector(2);
     private DefaultTableModel tableModel;
     private JTable table;
 
-    public InventoryTable(final InventoryPanel inventoryPanel) {
-        this.inventoryPanel = inventoryPanel;
-        this.inventory = inventoryPanel.getTabbedGamePane().getGui().getGame().getPlayer().getInventory();
+    public InventoryTable(final InventoryPanelOld inventoryPanelOld) {
+        this.inventoryPanelOld = inventoryPanelOld;
+        this.inventory = inventoryPanelOld.getTabbedGamePane().getGui().getGame().getPlayer().getInventory();
         inventory.addInventoryChangeListener(this);
         headerVector.addElement("Item");
         headerVector.addElement("Number");
@@ -95,8 +95,8 @@ public class InventoryTable extends JScrollPane implements InventoryChangeListen
         return table;
     }
 
-    public InventoryPanel getInventoryPanel() {
-        return inventoryPanel;
+    public InventoryPanelOld getInventoryPanelOld() {
+        return inventoryPanelOld;
     }
 
     public Inventory getInventory() {

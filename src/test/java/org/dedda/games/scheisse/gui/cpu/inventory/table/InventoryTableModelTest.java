@@ -9,6 +9,7 @@ import org.dedda.games.scheisse.state.game.item.Weapon;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.swing.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedList;
