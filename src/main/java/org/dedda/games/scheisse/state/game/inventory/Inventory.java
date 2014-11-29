@@ -12,8 +12,8 @@ public class Inventory {
     private ArrayList<Slot> slots = new ArrayList<Slot>();
     private ArrayList<InventoryChangeListener> inventoryChangeListeners = new ArrayList<InventoryChangeListener>();
 
-    public Inventory(){
-        for(int i = 0; i < 20; i++){
+    public Inventory() {
+        for (int i = 0; i < 20; i++) {
             slots.add(new Slot(this));
         }
     }
@@ -22,8 +22,8 @@ public class Inventory {
      *
      * @param size int
      */
-    public Inventory(int size){
-        for(int i = 0; i < size; i++){
+    public Inventory(int size) {
+        for (int i = 0; i < size; i++) {
             slots.add(new Slot(this));
         }
     }
@@ -46,13 +46,13 @@ public class Inventory {
      *
      * @param size int
      */
-    public void setSize(int size){
-        if(size > slots.size()){
-            for(int i = slots.size(); i < size; i++){
+    public void setSize(int size) {
+        if (size > slots.size()) {
+            for (int i = slots.size(); i < size; i++) {
                 slots.add(new Slot(this));
             }
-        }else if(size < slots.size()){
-            for(int i = slots.size(); i >= size; i--){
+        } else if (size < slots.size()) {
+            for (int i = slots.size(); i >= size; i--) {
                 slots.remove(i-1);
             }
         }
@@ -68,20 +68,20 @@ public class Inventory {
         triggerChangeEvent();
     }
 
-    public void setSlot(int index, Slot slot){
+    public void setSlot(int index, Slot slot) {
         this.slots.set(index, slot);
         triggerChangeEvent();
     }
 
-    public void addSlot(Slot slot){
+    public void addSlot(Slot slot) {
         this.slots.add(slot);
         triggerChangeEvent();
     }
 
-    public void print(){
+    public void print() {
         SystemPrinter.debugln("Inventory:");
         SystemPrinter.debugln("size: " + slots.size());
-        for(Slot slot : slots){
+        for (Slot slot : slots) {
             SystemPrinter.debugln(slot.getDummy().getName() + ": " + slot.getNumberOfItems());
         }
     }
@@ -101,8 +101,8 @@ public class Inventory {
     }
 
     @Override
-    public boolean equals(Object object){
-        if(object instanceof Inventory){
+    public boolean equals(Object object) {
+        if (object instanceof Inventory) {
             Inventory inventory = (Inventory)object;
             return inventory.slots.equals(this.slots);
         }
