@@ -14,7 +14,7 @@ public class InventoryPanelOld extends JPanel {
     private TabbedGamePane tabbedGamePane;
     private Player player;
     private InventoryTable inventoryTable;
-    private InventoryActionPanel inventoryActionPanel;
+    private InventoryActionPanelOld inventoryActionPanelOld;
     private InventoryActionTable inventoryActionTable;
 
     public InventoryPanelOld(final TabbedGamePane tabbedGamePane) {
@@ -22,15 +22,15 @@ public class InventoryPanelOld extends JPanel {
         this.player = tabbedGamePane.getGui().getGame().getPlayer();
         inventoryTable = new InventoryTable(this);
         inventoryActionTable = new InventoryActionTable(this);
-        inventoryActionPanel = new InventoryActionPanel(this);
-        inventoryTable.addListSelectionListener(inventoryActionPanel.getInventoryListSelectionListener());
-        inventoryActionTable.addListSelectionListener(inventoryActionPanel.getInventoryActionListSelectionListener());
+        inventoryActionPanelOld = new InventoryActionPanelOld(this);
+        inventoryTable.addListSelectionListener(inventoryActionPanelOld.getInventoryListSelectionListener());
+        inventoryActionTable.addListSelectionListener(inventoryActionPanelOld.getInventoryActionListSelectionListener());
         BoxLayout layout = new BoxLayout(this, BoxLayout.LINE_AXIS);
 
         setLayout(layout);
         //add(inventoryTable, BorderLayout.LINE_START);
         add(inventoryTable);
-        add(inventoryActionPanel);
+        add(inventoryActionPanelOld);
         //add(inventoryActionPanel, BorderLayout.CENTER);
         add(inventoryActionTable);
         //add(inventoryActionTable, BorderLayout.LINE_END);

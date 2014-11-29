@@ -3,6 +3,7 @@ package org.dedda.games.scheisse.gui.cpu.inventory.table;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
@@ -50,5 +51,9 @@ public class InventoryTable extends JScrollPane{
 
     public InventoryTableModel getModel() {
         return model;
+    }
+
+    public void addListSelectionListener(ListSelectionListener inventorySelectionListener) {
+        table.getSelectionModel().addListSelectionListener(inventorySelectionListener);
     }
 }
