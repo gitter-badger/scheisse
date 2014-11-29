@@ -1,2 +1,6 @@
-gui:
-  
+gui: inventory  --> move objects between tables
+                --> destroy
+                --> sort items in different categories
+     shop       --> get price list
+                --> sell button in inventory
+                --> get offers
