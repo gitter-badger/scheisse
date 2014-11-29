@@ -68,6 +68,21 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
         return null;
     }
 
+    @Override
+    public Class getColumnClass(final int columnIndex) {
+        int category = CATEGORIES[columnIndex];
+        switch (category) {
+            case ID: return Long.class;
+            case SYMBOL: return Long.class;
+            case NAME: return String.class;
+            case NUMBER: return Long.class;
+            case VALUE: return Long.class;
+            case ATTACK: return Long.class;
+            case ARMOR: return Long.class;
+        }
+        return String.class;
+    }
+
     public List<Integer> getShownCategories() {
         return this.shownCategories;
     }
