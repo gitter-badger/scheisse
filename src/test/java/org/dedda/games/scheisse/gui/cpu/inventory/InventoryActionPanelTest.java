@@ -115,6 +115,15 @@ public class InventoryActionPanelTest {
 
     @Test
     public void testOk() {
-
+        testAdd();
+        long money = player.getMoney();
+        long newMoney = money + Item.itemForId(1).getValue() + Item.itemForId(3).getValue();
+        InventoryActionComboBox comboBox = panel.getActionComboBox();
+        comboBox.setSelectedItem(InventoryActionComboBox.SELL);
+        for (ActionListener actionListener : panel.getOkButton().getActionListeners()) {
+            actionListener.actionPerformed(null);
+        }
+        assertEquals(newMoney, player.getMoney());
+        assertEquals(inventoryPanel.getActionTable().getInventory().getSize(), 0);
     }
 }
