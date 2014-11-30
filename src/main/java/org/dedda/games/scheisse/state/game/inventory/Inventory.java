@@ -1,6 +1,7 @@
 package org.dedda.games.scheisse.state.game.inventory;
 
 import org.dedda.games.scheisse.debug.SystemPrinter;
+import org.dedda.games.scheisse.state.game.item.Item;
 
 import java.util.ArrayList;
 
@@ -32,6 +33,35 @@ public class Inventory {
         for(InventoryChangeListener inventoryChangeListener : inventoryChangeListeners){
             inventoryChangeListener.inventoryChangeAction();
         }
+    }
+
+    public void addItems(final Item item, final long amount) {
+        Slot slot = getSlotWithItemId(item.getId());
+        if (slot == null) {
+            slot = new Slot(item.getId(), this);
+            addSlot(slot);
+        }
+        slot.setNumberOfItems(slot.getNumberOfItems() + amount);
+        triggerChangeEvent();
+    }
+
+    public void removeItems(final Item item, final long amount) {
+        Slot slot = getSlotWithItemId(item.getId());
+        if (slot != null) {
+            slot.setNumberOfItems(slot.getNumberOfItems() - amount);
+            if (slot.getNumberOfItems() <= 0) {
+                slots.remove(slot);
+            }
+        }
+        triggerChangeEvent();
+    }
+
+    public void removeItems(final long id, final long amount) {
+        removeItems(Item.itemForId(id), amount);
+    }
+
+    public void addItems (final long id, final long amount) {
+        addItems(Item.itemForId(id), amount);
     }
 
     /**
@@ -97,7 +127,8 @@ public class Inventory {
 
     public Slot getSlotWithItemId(final long id) {
         for (Slot slot : slots) {
-            if (slot.getDummy().getId() == id) {
+            Item dummy = slot.getDummy();
+            if (dummy.getId() == id) {
                 return slot;
             }
         }

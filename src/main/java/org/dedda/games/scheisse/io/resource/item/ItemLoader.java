@@ -27,7 +27,6 @@ public class ItemLoader extends FileInput{
         String name = dataMap.get(ItemWords.NAME);
         long value = Parse.toLong(dataMap.get(ItemWords.VALUE));
         String imgSrc = dataMap.get(ItemWords.SPRITE);
-        System.out.println("imgae source: " + Main.INSTALLATION_FOLDER + "data/image/" + imgSrc);
         Image image = Toolkit.getDefaultToolkit().getImage(Main.INSTALLATION_FOLDER + "data/image/" + imgSrc);
         if (type.equals(ItemWords.WEAPON)) {
             long attack = Parse.toLong(dataMap.get(ItemWords.ATTACK));

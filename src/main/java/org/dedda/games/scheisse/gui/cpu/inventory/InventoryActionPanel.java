@@ -1,6 +1,5 @@
 package org.dedda.games.scheisse.gui.cpu.inventory;
 
-import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable;
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
 import org.dedda.games.scheisse.state.game.Player;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
@@ -84,16 +83,8 @@ public class InventoryActionPanel extends JPanel {
         Inventory actionInventory = inventoryPanel.getActionTable().getInventory();
         for (int row : rows) {
             long id = inventoryPanel.getInventoryTable().getModel().getSlotInRow(row).getDummy().getId();
-            Slot actionSlot = actionInventory.getSlotWithItemId(id);
-            if (actionSlot == null) {
-                actionSlot = new Slot(id, actionInventory);
-            }
-            actionSlot.setNumberOfItems(actionSlot.getNumberOfItems() + amount);
-            Slot inventorySlot = inventory.getSlotWithItemId(id);
-            inventorySlot.setNumberOfItems(inventorySlot.getNumberOfItems() - amount);
-            if (inventorySlot.getNumberOfItems() == 0) {
-                inventory.getSlots().remove(inventorySlot);
-            }
+            actionInventory.addItems(id, amount);
+            inventory.removeItems(id, amount);
             inventory.triggerChangeEvent();
             actionInventory.triggerChangeEvent();
         }
@@ -106,16 +97,8 @@ public class InventoryActionPanel extends JPanel {
         Inventory actionInventory = inventoryPanel.getActionTable().getInventory();
         for (int row : rows) {
             long id = inventoryPanel.getActionTable().getModel().getSlotInRow(row).getDummy().getId();
-            Slot inventorySlot = inventory.getSlotWithItemId(id);
-            if (inventorySlot == null) {
-                inventorySlot = new Slot(id, inventory);
-            }
-            inventorySlot.setNumberOfItems(inventorySlot.getNumberOfItems() + amount);
-            Slot actionSlot = actionInventory.getSlotWithItemId(id);
-            actionSlot.setNumberOfItems(actionSlot.getNumberOfItems() - amount);
-            if (actionSlot.getNumberOfItems() == 0) {
-                actionInventory.getSlots().remove(actionSlot);
-            }
+            inventory.addItems(id, amount);
+            actionInventory.removeItems(id, amount);
             inventory.triggerChangeEvent();
             actionInventory.triggerChangeEvent();
         }
@@ -134,12 +117,12 @@ public class InventoryActionPanel extends JPanel {
 
     public void inventorySelectionChanged(ListSelectionEvent listSelectionEvent) {
         int selectedRows[] = inventoryPanel.getInventoryTable().getTable().getSelectedRows();
-        long minAmount = -1;
+        long minAmount = 1;
         for (int row : selectedRows) {
             InventoryTableModel model;
             model = inventoryPanel.getInventoryTable().getModel();
             long amount = model.getSlotInRow(row).getNumberOfItems();
-            if (minAmount == -1 || minAmount > amount) {
+            if (minAmount == 1 || minAmount > amount) {
                 minAmount = amount;
             }
         }
@@ -150,12 +133,12 @@ public class InventoryActionPanel extends JPanel {
 
     public void actionInventorySelectionChanged(ListSelectionEvent listSelectionEvent) {
         int selectedRows[] = inventoryPanel.getInventoryTable().getTable().getSelectedRows();
-        long minAmount = -1;
+        long minAmount = 1;
         for (int row : selectedRows) {
             InventoryTableModel model;
             model = inventoryPanel.getActionTable().getModel();
             long amount = model.getSlotInRow(row).getNumberOfItems();
-            if (minAmount == -1 || minAmount > amount) {
+            if (minAmount == 1 || minAmount > amount) {
                 minAmount = amount;
             }
         }
@@ -164,4 +147,27 @@ public class InventoryActionPanel extends JPanel {
         numberSpinner.setModel(spinnerNumberModel);
     }
 
+    public JButton getAddButton() {
+        return addButton;
+    }
+
+    public JButton getRemoveButton() {
+        return removeButton;
+    }
+
+    public JButton getOkButton() {
+        return okButton;
+    }
+
+    public JSpinner getNumberSpinner() {
+        return numberSpinner;
+    }
+
+    public InventoryActionComboBox getActionComboBox() {
+        return actionComboBox;
+    }
+
+    public InventoryPanel getInventoryPanel() {
+        return inventoryPanel;
+    }
 }

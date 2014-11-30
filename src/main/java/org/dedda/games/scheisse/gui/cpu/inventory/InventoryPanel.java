@@ -28,6 +28,7 @@ public class InventoryPanel extends JPanel{
         inventoryTable = new InventoryTable(inventory);
         inventoryTable.addListSelectionListener(getInventorySelectionListener());
         actionInventory = new Inventory();
+        actionInventory.getSlots().clear();
         actionTable = new InventoryTable(actionInventory);
         actionTable.addListSelectionListener(getActionInventorySelectionListener());
         actionPanel = new InventoryActionPanel(this);
