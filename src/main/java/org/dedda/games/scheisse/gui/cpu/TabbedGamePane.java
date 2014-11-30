@@ -19,10 +19,10 @@ public class TabbedGamePane extends JTabbedPane implements ChangeListener{
     private GamePanel gamePanel;
     private InventoryPanel inventoryPanel;
     private ShopPanel shopPanel;
-    private boolean inventoryOpen;
+    private int lastTab;
 
     public TabbedGamePane(final ContentContainer contentContainer) {
-        inventoryOpen = false;
+        lastTab = 0;
         this.contentContainer = contentContainer;
         this.gui = contentContainer.getGui();
         this.game = this.gui.getGame();
@@ -42,14 +42,11 @@ public class TabbedGamePane extends JTabbedPane implements ChangeListener{
 
     public void stateChanged(ChangeEvent changeEvent) {
         int index = getSelectedIndex();
-        if (inventoryOpen) {
-            if (index != 1) {
-                inventoryPanel.cancelTransaction();
-                inventoryOpen = false;
-            }
+        if (lastTab == 1 && index != 1) {
+            inventoryPanel.cancelTransaction();
+        } else if (lastTab == 2 && index != 2) {
+            shopPanel.cancelTransaction();
         }
-        if (index == 1) {
-            inventoryOpen = true;
-        }
+        lastTab = index;
     }
 }
