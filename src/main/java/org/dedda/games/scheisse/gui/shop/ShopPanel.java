@@ -1,4 +1,4 @@
-package org.dedda.games.scheisse.gui.cpu.shop;
+package org.dedda.games.scheisse.gui.shop;
 
 import org.dedda.games.scheisse.gui.cpu.TabbedGamePane;
 

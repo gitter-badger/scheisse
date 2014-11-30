@@ -1,6 +1,7 @@
 package org.dedda.games.scheisse.gui.cpu;
 
 import org.dedda.games.scheisse.gui.cpu.inventory.InventoryPanel;
+import org.dedda.games.scheisse.gui.cpu.shop.ShopPanel;
 import org.dedda.games.scheisse.state.game.Game;
 
 import javax.swing.JTabbedPane;

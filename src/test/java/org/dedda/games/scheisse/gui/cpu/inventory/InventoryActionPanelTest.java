@@ -74,7 +74,7 @@ public class InventoryActionPanelTest {
         selectionModel.addSelectionInterval(2, 2);
         SpinnerNumberModel spinnerModel = (SpinnerNumberModel) panel.getNumberSpinner().getModel();
         assertEquals(spinnerModel.getMaximum(), 2.0);
-        spinnerModel.setValue(1);
+        spinnerModel.setValue(1.0);
         for (ActionListener actionListener : panel.getAddButton().getActionListeners()) {
             actionListener.actionPerformed(null);
         }
@@ -95,7 +95,7 @@ public class InventoryActionPanelTest {
         selectionModel.addSelectionInterval(0, 0);
         SpinnerNumberModel spinnerModel = (SpinnerNumberModel) panel.getNumberSpinner().getModel();
         assertEquals(spinnerModel.getMaximum(), 1.0);
-        spinnerModel.setValue(1);
+        spinnerModel.setValue(1.0);
         for (ActionListener actionListener : panel.getRemoveButton().getActionListeners()) {
             actionListener.actionPerformed(null);
         }
