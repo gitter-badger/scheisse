@@ -2,6 +2,8 @@ package org.dedda.games.scheisse.state.game.item;
 
 import org.dedda.games.scheisse.state.game.object.Person;
 
+import java.awt.*;
+
 import static org.dedda.games.scheisse.state.game.item.ItemType.WEAPON;
 
 /**
@@ -17,8 +19,8 @@ public class Weapon extends Item implements Wearable, Holdeable{
      * @param value long - item value
      * @param attack long
      */
-    public Weapon(long id, String name, long value, long attack){
-        super(id, name, value, ItemCategory.WEAPPON, WEAPON);
+    public Weapon(long id, String name, long value, long attack, Image sprite){
+        super(id, name, value, ItemCategory.WEAPPON, WEAPON, sprite);
         this.attack = attack;
     }
 

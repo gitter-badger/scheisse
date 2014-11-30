@@ -14,7 +14,7 @@ public class TestItem extends Item {
     public static final int MAX_STACK = 123;
 
     public TestItem() {
-        super(-1, NAME, VALUE, ItemCategory.OTHER, ItemType.OTHER);
+        super(-1, NAME, VALUE, ItemCategory.OTHER, ItemType.OTHER, null);
     }
 
     static {

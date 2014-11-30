@@ -1,9 +1,11 @@
 package org.dedda.games.scheisse.state.game.item;
 
 import org.dedda.games.scheisse.debug.SystemPrinter;
+import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.game.level.Level;
 
 import java.awt.*;
+import java.io.File;
 import java.util.HashMap;
 
 /**
@@ -18,12 +20,13 @@ public abstract class Item implements Stackable{
     protected final long value;
     protected final String name;
     protected final long id;
-    protected Image sprite;
+    protected final Image sprite;
     protected long minXp = 0;
 
     static {
         itemMap = new HashMap<Long, Item>();
         itemMap.put(0L, new NullItem());
+        new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
     }
 
     /**
@@ -31,12 +34,13 @@ public abstract class Item implements Stackable{
      * @param name String - item name
      * @param value long - item value
      */
-    public Item(long id, String name, long value, ItemCategory category, ItemType type){
+    public Item(long id, String name, long value, ItemCategory category, ItemType type, Image sprite){
         this.id = id;
         this.name = name;
         this.value = value;
         this.category = category;
         this.type = type;
+        this.sprite = sprite;
         if(!itemMap.containsKey(id)){
             itemMap.put(id, this);
             SystemPrinter.debugln("registered item '" + name + "' with id: " + id);
@@ -78,10 +82,6 @@ public abstract class Item implements Stackable{
 
     public Image getSprite() {
         return sprite;
-    }
-
-    public void setSprite(Image sprite) {
-        this.sprite = sprite;
     }
 
     public static Item itemForId(long id){

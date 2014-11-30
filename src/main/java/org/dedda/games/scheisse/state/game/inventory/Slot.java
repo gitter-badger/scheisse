@@ -1,6 +1,7 @@
 package org.dedda.games.scheisse.state.game.inventory;
 
 import org.dedda.games.scheisse.state.game.item.Item;
+import org.dedda.games.scheisse.state.game.item.NullItem;
 
 /**
  * Created by dedda on 4/18/14.
@@ -8,12 +9,12 @@ import org.dedda.games.scheisse.state.game.item.Item;
 public class Slot {
 
     private Inventory inventory;
-    private int numberOfItems = 0;
+    private long numberOfItems = 0;
     private Item dummy;
 
     public Slot(Inventory inventory){
         this.inventory = inventory;
-        dummy = null;
+        dummy = new NullItem();
     }
 
     /**
@@ -77,7 +78,7 @@ public class Slot {
      *
      * @return int
      */
-    public int getNumberOfItems() {
+    public long getNumberOfItems() {
         return numberOfItems;
     }
 
@@ -85,7 +86,7 @@ public class Slot {
      *
      * @param numberOfItems int
      */
-    public void setNumberOfItems(int numberOfItems) {
+    public void setNumberOfItems(long numberOfItems) {
         this.numberOfItems = numberOfItems;
         inventory.triggerChangeEvent();
     }

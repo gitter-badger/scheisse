@@ -27,18 +27,17 @@ public class ItemLoader extends FileInput{
         String name = dataMap.get(ItemWords.NAME);
         long value = Parse.toLong(dataMap.get(ItemWords.VALUE));
         String imgSrc = dataMap.get(ItemWords.SPRITE);
-        Image image = Toolkit.getDefaultToolkit().getImage(Main.INSTALLATION_FOLDER + "image/" + imgSrc);
+        Image image = Toolkit.getDefaultToolkit().getImage(Main.INSTALLATION_FOLDER + "data/image/" + imgSrc);
         if (type.equals(ItemWords.WEAPON)) {
             long attack = Parse.toLong(dataMap.get(ItemWords.ATTACK));
-            item = new Weapon(id, name, value, attack);
+            item = new Weapon(id, name, value, attack, image);
         } else if (type.equals(ItemWords.ARMOR)) {
             long armor = Parse.toLong(dataMap.get(ItemWords.ARMOR));
-            item = new Armor(id, name, value, armor, ItemType.CLOTHING);
+            item = new Armor(id, name, value, armor, ItemType.CLOTHING, image);
         } else if (type.equals(ItemWords.SHIELD)) {
             long armor = Parse.toLong(dataMap.get(ItemWords.ARMOR));
-            item = new Shield(id, name, value, armor);
+            item = new Shield(id, name, value, armor, image);
         }
-        item.setSprite(image);
         return item;
     }
 

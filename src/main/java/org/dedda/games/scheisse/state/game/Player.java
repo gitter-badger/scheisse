@@ -12,10 +12,12 @@ public class Player extends Person {
 
     private PlayerObject playerObject;
     private Inventory inventory;
+    private long money;
 
     public Player(final boolean newInstance) {
         playerObject = new PlayerObject();
         this.inventory = new Inventory();
+        money = 0;
         if (newInstance) {
             initNew();
         }
@@ -47,6 +49,14 @@ public class Player extends Person {
 
     public void setInventory(final Inventory inventory) {
         this.inventory = inventory;
+    }
+
+    public long getMoney() {
+        return money;
+    }
+
+    public void setMoney(long money) {
+        this.money = money;
     }
 
     public void print() {

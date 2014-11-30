@@ -1,5 +1,7 @@
 package org.dedda.games.scheisse.state.game.item;
 
+import java.awt.*;
+
 import static org.dedda.games.scheisse.state.game.item.ItemType.SHIELD;
 
 /**
@@ -13,8 +15,8 @@ public class Shield extends Armor implements Wearable, Holdeable{
      * @param value long - item value
      * @param armor long
      */
-    public Shield(long id, String name, long value, long armor) {
-        super(id, name, value, armor, SHIELD);
+    public Shield(long id, String name, long value, long armor, Image sprite) {
+        super(id, name, value, armor, SHIELD, sprite);
     }
 
     @Override
