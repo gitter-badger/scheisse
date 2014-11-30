@@ -14,7 +14,7 @@ public class TabbedGamePane extends JTabbedPane {
     private Gui gui;
     private Game game;
     private GamePanel gamePanel;
-    private InventoryPanel inventoryPanelOld;
+    private InventoryPanel inventoryPanel;
     private ShopPanel shopPanel;
 
     public TabbedGamePane(final ContentContainer contentContainer) {
@@ -22,10 +22,10 @@ public class TabbedGamePane extends JTabbedPane {
         this.gui = contentContainer.getGui();
         this.game = this.gui.getGame();
         this.gamePanel = new GamePanel(this);
-        this.inventoryPanelOld = new InventoryPanel(this);
+        this.inventoryPanel = new InventoryPanel(this);
         this.shopPanel = new ShopPanel(this);
         addTab("Game", this.gamePanel);
-        addTab("Inventory", this.inventoryPanelOld);
+        addTab("Inventory", this.inventoryPanel);
         addTab("Shop", this.shopPanel);
         setSelectedIndex(1);
     }

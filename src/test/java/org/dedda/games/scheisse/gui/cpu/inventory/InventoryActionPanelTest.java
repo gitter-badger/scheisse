@@ -4,7 +4,6 @@ import org.dedda.games.scheisse.gui.cpu.ContentContainer;
 import org.dedda.games.scheisse.gui.cpu.Gui;
 import org.dedda.games.scheisse.gui.cpu.TabbedGamePane;
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
-import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.game.Game;
 import org.dedda.games.scheisse.state.game.Player;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
@@ -12,13 +11,9 @@ import org.dedda.games.scheisse.state.game.inventory.Slot;
 import org.dedda.games.scheisse.state.game.item.Item;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
@@ -28,7 +23,7 @@ public class InventoryActionPanelTest {
 
     private InventoryActionPanel panel;
     private Inventory inventory;
-    private InventoryPanel inventoryPanel;
+    private InventoryTablePanel inventoryTablePanel;
     private Player player;
 
     @Before
@@ -54,15 +49,15 @@ public class InventoryActionPanelTest {
         when(contentContainer.getGui()).thenReturn(gui);
         TabbedGamePane tabbedGamePane = mock(TabbedGamePane.class);
         when(tabbedGamePane.getGui()).thenReturn(gui);
-        inventoryPanel = new InventoryPanel(tabbedGamePane);
-        panel = inventoryPanel.getActionPanel();
-        inventoryPanel.getInventoryTable().getModel().enableCategory(InventoryTableModel.ID);
+        inventoryTablePanel = new InventoryTablePanel(tabbedGamePane);
+        panel = inventoryTablePanel.getActionPanel();
+        inventoryTablePanel.getInventoryTable().getModel().enableCategory(InventoryTableModel.ID);
     }
 
     @Test
     public void testInitialization() {
-        assertEquals(inventory, inventoryPanel.getInventoryTable().getInventory());
-        assertEquals(inventory, panel.getInventoryPanel().getInventoryTable().getInventory());
+        assertEquals(inventory, inventoryTablePanel.getInventoryTable().getInventory());
+        assertEquals(inventory, panel.getInventoryTablePanel().getInventoryTable().getInventory());
         assertEquals(inventory.getSlots().get(0).getDummy(), Item.itemForId(1));
         assertEquals(inventory.getSlots().get(1).getDummy(), Item.itemForId(2));
         assertEquals(inventory.getSlots().get(2).getDummy(), Item.itemForId(3));
@@ -73,7 +68,7 @@ public class InventoryActionPanelTest {
 
     @Test
     public void testAdd() {
-        ListSelectionModel selectionModel = inventoryPanel.getInventoryTable().getTable().getSelectionModel();
+        ListSelectionModel selectionModel = inventoryTablePanel.getInventoryTable().getTable().getSelectionModel();
         selectionModel.clearSelection();
         selectionModel.addSelectionInterval(0, 0);
         selectionModel.addSelectionInterval(2, 2);
@@ -85,7 +80,7 @@ public class InventoryActionPanelTest {
         }
         assertEquals(inventory.getSlotWithItemId(1).getNumberOfItems(), 9);
         assertEquals(inventory.getSlotWithItemId(3).getNumberOfItems(), 1);
-        Inventory actionInventory = inventoryPanel.getActionTable().getInventory();
+        Inventory actionInventory = inventoryTablePanel.getActionTable().getInventory();
         actionInventory.print();
         assertEquals(actionInventory.getSlotWithItemId(1).getNumberOfItems(), 1);
         assertEquals(actionInventory.getSlotWithItemId(3).getNumberOfItems(), 1);
@@ -95,7 +90,7 @@ public class InventoryActionPanelTest {
     @Test
     public void testRemove() {
         testAdd();
-        ListSelectionModel selectionModel = inventoryPanel.getActionTable().getTable().getSelectionModel();
+        ListSelectionModel selectionModel = inventoryTablePanel.getActionTable().getTable().getSelectionModel();
         selectionModel.clearSelection();
         selectionModel.addSelectionInterval(0, 0);
         SpinnerNumberModel spinnerModel = (SpinnerNumberModel) panel.getNumberSpinner().getModel();
@@ -106,7 +101,7 @@ public class InventoryActionPanelTest {
         }
         assertEquals(inventory.getSlotWithItemId(1).getNumberOfItems(), 10);
         assertEquals(inventory.getSlotWithItemId(3).getNumberOfItems(), 1);
-        Inventory actionInventory = inventoryPanel.getActionTable().getInventory();
+        Inventory actionInventory = inventoryTablePanel.getActionTable().getInventory();
         actionInventory.print();
         assertNull(actionInventory.getSlotWithItemId(1));
         assertEquals(actionInventory.getSlotWithItemId(3).getNumberOfItems(), 1);
@@ -123,6 +118,6 @@ public class InventoryActionPanelTest {
             actionListener.actionPerformed(null);
         }
         assertEquals(newMoney, player.getMoney());
-        assertEquals(inventoryPanel.getActionTable().getInventory().getSize(), 0);
+        assertEquals(inventoryTablePanel.getActionTable().getInventory().getSize(), 0);
     }
 }
