@@ -3,6 +3,7 @@ package org.dedda.games.scheisse.gui.cpu.shop.table;
 import org.dedda.games.scheisse.gui.cpu.TabbedGamePane;
 import org.dedda.games.scheisse.state.game.Player;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
+import org.dedda.games.scheisse.state.game.shop.Shop;
 import org.dedda.games.scheisse.state.game.shop.ShopConnector;
 
 import javax.swing.*;
@@ -12,14 +13,14 @@ import javax.swing.*;
  */
 public class ShopTablePanel extends JPanel {
 
-    private ShopConnector shop;
+    private Shop shop;
     private Inventory inventory;
     private Player player;
 
     public ShopTablePanel(final TabbedGamePane tabbedGamePane) {
         player = tabbedGamePane.getGui().getGame().getPlayer();
         inventory = player.getInventory();
-        shop = new ShopConnector();
+        shop = new Shop();
     }
 
     public void refresh() {
@@ -34,11 +35,11 @@ public class ShopTablePanel extends JPanel {
         return player;
     }
 
-    public ShopConnector getShop() {
+    public Shop getShop() {
         return shop;
     }
 
-    public void setShop(ShopConnector shop) {
+    public void setShop(Shop shop) {
         this.shop = shop;
     }
 }
