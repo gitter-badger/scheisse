@@ -70,6 +70,10 @@ public class InventoryTablePanel extends JPanel{
         };
     }
 
+    public void cancelTransaction(){
+        actionPanel.cancelTransaction();
+    }
+
     public InventoryTable getInventoryTable() {
         return inventoryTable;
     }

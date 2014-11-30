@@ -43,4 +43,9 @@ public class InventoryPanel extends JPanel implements InventoryTransactionListen
     public void transactionPerformed(InventoryTransactionEvent event) {
         headerBar.setText("Money: " + player.getMoney());
     }
+
+    public void cancelTransaction() {
+        tablePanel.cancelTransaction();
+    }
+
 }

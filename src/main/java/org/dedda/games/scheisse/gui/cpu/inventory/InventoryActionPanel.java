@@ -139,7 +139,7 @@ public class InventoryActionPanel extends JPanel {
     }
 
     public void actionInventorySelectionChanged(final ListSelectionEvent listSelectionEvent) {
-        int selectedRows[] = inventoryTablePanel.getInventoryTable().getTable().getSelectedRows();
+        int selectedRows[] = inventoryTablePanel.getActionTable().getTable().getSelectedRows();
         long minAmount = 1;
         for (int row : selectedRows) {
             InventoryTableModel model;
@@ -167,6 +167,16 @@ public class InventoryActionPanel extends JPanel {
     public void transactionPerformed(final InventoryTransactionEvent event) {
         for (InventoryTransactionListener listener : listeners) {
             listener.transactionPerformed(event);
+        }
+    }
+
+    public void cancelTransaction() {
+        Inventory actionInventory = inventoryTablePanel.getActionTable().getInventory();
+        Inventory inventory = inventoryTablePanel.getInventoryTable().getInventory();
+        while (actionInventory.getSize() > 0) {
+            Slot slot = actionInventory.getSlots().get(0);
+            inventory.addItems(slot.getDummy().getId(), slot.getNumberOfItems());
+            actionInventory.getSlots().remove(slot);
         }
     }
 
