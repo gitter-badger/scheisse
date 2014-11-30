@@ -3,7 +3,7 @@ package org.dedda.games.scheisse.state.game.shop;
 
 import org.dedda.games.scheisse.state.game.item.Item;
 import org.dedda.games.scheisse.state.game.item.ItemType;
-import org.dedda.games.scheisseServiceClient.service.ShopServiceClient;
+import org.dedda.games.scheisse.webService.client.ShopService;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -15,11 +15,11 @@ import java.util.List;
 public class ShopConnector {
 
     public List<Offer> getOffers() {
-        List<Long> availableIDs = ShopServiceClient.getAvailableItems();
+        List<Long> availableIDs = ShopService.getAvailableItems();
         LinkedList<Offer> offers = new LinkedList<Offer>();
         for (long currentId : availableIDs) {
-            long availableAmount = ShopServiceClient.getAvailableQuantity(currentId);
-            long price = ShopServiceClient.getBuyingPrice(currentId);
+            long availableAmount = ShopService.getAvailableQuantity(currentId);
+            long price = ShopService.getBuyingPrice(currentId);
             offers.add(new Offer(currentId, availableAmount, price));
         }
         return offers;
@@ -36,7 +36,7 @@ public class ShopConnector {
         for (long currentId : allIDs) {
             long price = getBuyingPrice(currentId);
             if (price >= 0) {
-                long amountAvailable = ShopServiceClient.getAvailableQuantity(currentId);
+                long amountAvailable = ShopService.getAvailableQuantity(currentId);
                 Offer offer = new Offer(currentId, amountAvailable, price);
             }
         }
@@ -44,11 +44,11 @@ public class ShopConnector {
     }
 
     public long getSellingPrice(final long itemId) {
-        return ShopServiceClient.getSellingPrice(itemId);
+        return ShopService.getSellingPrice(itemId);
     }
 
     public long getBuyingPrice(final long itemId) {
-        return ShopServiceClient.getBuyingPrice(itemId);
+        return ShopService.getBuyingPrice(itemId);
     }
 
     /**

@@ -80,7 +80,7 @@ public class InventoryActionPanel extends JPanel {
     }
 
     private void add() {
-        double amountDouble = (Double)numberSpinner.getModel().getValue();
+        double amountDouble = (Integer)numberSpinner.getModel().getValue();
         int amount = (int)amountDouble;
         int rows[] = inventoryTablePanel.getInventoryTable().getTable().getSelectedRows();
         Inventory inventory = inventoryTablePanel.getInventoryTable().getInventory();
@@ -95,7 +95,7 @@ public class InventoryActionPanel extends JPanel {
     }
 
     private void remove() {
-        double amountDouble = (Double)numberSpinner.getModel().getValue();
+        double amountDouble = (Integer)numberSpinner.getModel().getValue();
         int amount = (int)amountDouble;
         int rows[] = inventoryTablePanel.getActionTable().getTable().getSelectedRows();
         Inventory inventory = inventoryTablePanel.getInventoryTable().getInventory();
