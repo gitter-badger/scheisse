@@ -77,7 +77,8 @@ public class InventoryActionPanel extends JPanel {
     }
 
     private void add() {
-        int amount = (Integer)numberSpinner.getModel().getValue();
+        double amountDouble = (Double)numberSpinner.getModel().getValue();
+        int amount = (int)amountDouble;
         int rows[] = inventoryPanel.getInventoryTable().getTable().getSelectedRows();
         Inventory inventory = inventoryPanel.getInventoryTable().getInventory();
         Inventory actionInventory = inventoryPanel.getActionTable().getInventory();
@@ -91,7 +92,8 @@ public class InventoryActionPanel extends JPanel {
     }
 
     private void remove() {
-        int amount = (Integer)numberSpinner.getModel().getValue();
+        double amountDouble = (Double)numberSpinner.getModel().getValue();
+        int amount = (int)amountDouble;
         int rows[] = inventoryPanel.getActionTable().getTable().getSelectedRows();
         Inventory inventory = inventoryPanel.getInventoryTable().getInventory();
         Inventory actionInventory = inventoryPanel.getActionTable().getInventory();
@@ -113,6 +115,7 @@ public class InventoryActionPanel extends JPanel {
             }
         }
         actionInventory.getSlots().clear();
+        actionInventory.triggerChangeEvent();
     }
 
     public void inventorySelectionChanged(ListSelectionEvent listSelectionEvent) {

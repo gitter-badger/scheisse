@@ -1,6 +1,7 @@
 package org.dedda.games.scheisse.main;
 
 import org.dedda.games.scheisse.debug.SystemPrinter;
+import org.dedda.games.scheisse.gui.cpu.Gui;
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable;
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
 import org.dedda.games.scheisse.io.FileInput;
@@ -80,6 +81,7 @@ public class Main {
             inventory.addSlot(slot);
         }
         game.setPlayer(player);
+        /*
         JFrame frame = new JFrame();
         frame.setSize(300, 300);
         InventoryTable table = new InventoryTable(player.getInventory());
@@ -91,7 +93,7 @@ public class Main {
             e.printStackTrace();
         }
         table.getModel().enableCategory(InventoryTableModel.SYMBOL);
-        /*
+        */
         Gui gui = new Gui(new Dimension(800, 600));
         gui.start(game);
 

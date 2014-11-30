@@ -34,7 +34,9 @@ public class InventoryTable extends JScrollPane{
             }
         };
         model.enableCategory(InventoryTableModel.ID);
+        model.enableCategory(InventoryTableModel.SYMBOL);
         model.enableCategory(InventoryTableModel.NAME);
+        model.enableCategory(InventoryTableModel.NUMBER);
         table.setModel(model);
         viewport.setLayout(new BorderLayout());
         viewport.add(table, BorderLayout.CENTER);
