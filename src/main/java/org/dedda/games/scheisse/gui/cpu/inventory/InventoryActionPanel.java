@@ -1,8 +1,13 @@
 package org.dedda.games.scheisse.gui.cpu.inventory;
 
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable;
+import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
+import org.dedda.games.scheisse.state.game.Player;
+import org.dedda.games.scheisse.state.game.inventory.Inventory;
+import org.dedda.games.scheisse.state.game.inventory.Slot;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -73,23 +78,90 @@ public class InventoryActionPanel extends JPanel {
     }
 
     private void add() {
-
+        int amount = (Integer)numberSpinner.getModel().getValue();
+        int rows[] = inventoryPanel.getInventoryTable().getTable().getSelectedRows();
+        Inventory inventory = inventoryPanel.getInventoryTable().getInventory();
+        Inventory actionInventory = inventoryPanel.getActionTable().getInventory();
+        for (int row : rows) {
+            long id = inventoryPanel.getInventoryTable().getModel().getSlotInRow(row).getDummy().getId();
+            Slot actionSlot = actionInventory.getSlotWithItemId(id);
+            if (actionSlot == null) {
+                actionSlot = new Slot(id, actionInventory);
+            }
+            actionSlot.setNumberOfItems(actionSlot.getNumberOfItems() + amount);
+            Slot inventorySlot = inventory.getSlotWithItemId(id);
+            inventorySlot.setNumberOfItems(inventorySlot.getNumberOfItems() - amount);
+            if (inventorySlot.getNumberOfItems() == 0) {
+                inventory.getSlots().remove(inventorySlot);
+            }
+            inventory.triggerChangeEvent();
+            actionInventory.triggerChangeEvent();
+        }
     }
 
     private void remove() {
-
+        int amount = (Integer)numberSpinner.getModel().getValue();
+        int rows[] = inventoryPanel.getActionTable().getTable().getSelectedRows();
+        Inventory inventory = inventoryPanel.getInventoryTable().getInventory();
+        Inventory actionInventory = inventoryPanel.getActionTable().getInventory();
+        for (int row : rows) {
+            long id = inventoryPanel.getActionTable().getModel().getSlotInRow(row).getDummy().getId();
+            Slot inventorySlot = inventory.getSlotWithItemId(id);
+            if (inventorySlot == null) {
+                inventorySlot = new Slot(id, inventory);
+            }
+            inventorySlot.setNumberOfItems(inventorySlot.getNumberOfItems() + amount);
+            Slot actionSlot = actionInventory.getSlotWithItemId(id);
+            actionSlot.setNumberOfItems(actionSlot.getNumberOfItems() - amount);
+            if (actionSlot.getNumberOfItems() == 0) {
+                actionInventory.getSlots().remove(actionSlot);
+            }
+            inventory.triggerChangeEvent();
+            actionInventory.triggerChangeEvent();
+        }
     }
 
     private void ok() {
-
+        Inventory actionInventory = inventoryPanel.getActionTable().getInventory();
+        if (actionComboBox.getModel().getSelectedItem().equals(InventoryActionComboBox.SELL)) {
+            Player player = inventoryPanel.getTabbedGamePane().getGui().getGame().getPlayer();
+            for (Slot slot : actionInventory.getSlots()) {
+                player.setMoney(player.getMoney() + slot.getNumberOfItems() * slot.getDummy().getValue());
+            }
+        }
+        actionInventory.getSlots().clear();
     }
 
-    public void inventorySelectionChanged() {
-
+    public void inventorySelectionChanged(ListSelectionEvent listSelectionEvent) {
+        int selectedRows[] = inventoryPanel.getInventoryTable().getTable().getSelectedRows();
+        long minAmount = -1;
+        for (int row : selectedRows) {
+            InventoryTableModel model;
+            model = inventoryPanel.getInventoryTable().getModel();
+            long amount = model.getSlotInRow(row).getNumberOfItems();
+            if (minAmount == -1 || minAmount > amount) {
+                minAmount = amount;
+            }
+        }
+        SpinnerNumberModel spinnerNumberModel =
+                new SpinnerNumberModel(1, 1, minAmount, 1);
+        numberSpinner.setModel(spinnerNumberModel);
     }
 
-    public void actionInventorySelectionChanged() {
-
+    public void actionInventorySelectionChanged(ListSelectionEvent listSelectionEvent) {
+        int selectedRows[] = inventoryPanel.getInventoryTable().getTable().getSelectedRows();
+        long minAmount = -1;
+        for (int row : selectedRows) {
+            InventoryTableModel model;
+            model = inventoryPanel.getActionTable().getModel();
+            long amount = model.getSlotInRow(row).getNumberOfItems();
+            if (minAmount == -1 || minAmount > amount) {
+                minAmount = amount;
+            }
+        }
+        SpinnerNumberModel spinnerNumberModel =
+                new SpinnerNumberModel(1, 1, minAmount, 1);
+        numberSpinner.setModel(spinnerNumberModel);
     }
 
 }

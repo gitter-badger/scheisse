@@ -48,7 +48,7 @@ public class InventoryPanel extends JPanel{
     private ListSelectionListener getInventorySelectionListener() {
         return new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent listSelectionEvent) {
-                actionPanel.inventorySelectionChanged();
+                actionPanel.inventorySelectionChanged(listSelectionEvent);
             }
         };
     }
@@ -56,7 +56,7 @@ public class InventoryPanel extends JPanel{
     private ListSelectionListener getActionInventorySelectionListener() {
         return new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent listSelectionEvent) {
-                actionPanel.actionInventorySelectionChanged();
+                actionPanel.actionInventorySelectionChanged(listSelectionEvent);
             }
         };
     }

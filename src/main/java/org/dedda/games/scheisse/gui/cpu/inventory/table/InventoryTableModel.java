@@ -71,7 +71,7 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
 
     public Object getValueAt(final int row, final int col) {
         Slot slot = inventory.getSlots().get(row);
-        Item item = inventory.getSlots().get(row).getDummy();
+        Item item = slot.getDummy();
         long number = inventory.getSlots().get(row).getNumberOfItems();
         int category = getShownCategories().get(col);
         switch (category) {
@@ -84,6 +84,10 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
             case ARMOR: return item instanceof Armor ? ((Armor)item).getArmor() : 0;
         }
         return null;
+    }
+
+    public Slot getSlotInRow(final int row) {
+        return inventory.getSlots().get(row);
     }
 
     @Override

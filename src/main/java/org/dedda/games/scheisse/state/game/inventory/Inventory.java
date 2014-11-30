@@ -86,6 +86,24 @@ public class Inventory {
         }
     }
 
+    public boolean containsSlotWithItemId(final long id) {
+        for (Slot slot : slots) {
+            if (slot.getDummy().getId() == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Slot getSlotWithItemId(final long id) {
+        for (Slot slot : slots) {
+            if (slot.getDummy().getId() == id) {
+                return slot;
+            }
+        }
+        return null;
+    }
+
     public void addInventoryChangeListener(InventoryChangeListener inventoryChangeListener) {
         inventoryChangeListeners.add(inventoryChangeListener);
     }
