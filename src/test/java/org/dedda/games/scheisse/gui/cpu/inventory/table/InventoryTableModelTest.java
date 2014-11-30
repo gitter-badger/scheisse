@@ -25,7 +25,6 @@ public class InventoryTableModelTest {
 
     @Before
     public void setUp() throws Exception {
-        new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
         inventory = new Inventory(3);
         slots = new ArrayList<Slot>();
         slots.add(new Slot(1, inventory));

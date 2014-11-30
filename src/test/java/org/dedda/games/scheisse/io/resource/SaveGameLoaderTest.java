@@ -17,7 +17,6 @@ public class SaveGameLoaderTest {
 
     @Test
     public void testLoad() throws Exception {
-        new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
         SaveGameLoader sgl = new SaveGameLoader(new File("src/test/test_files/savegame/savegame.dsg"));
         Player instance = new Player(false);
         instance.setName("Test user");

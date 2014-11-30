@@ -33,7 +33,6 @@ public class InventoryActionPanelTest {
 
     @Before
     public void setUp() throws Exception {
-        new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
         inventory = new Inventory();
         inventory.getSlots().clear();
         Slot slot = new Slot(1L, inventory);

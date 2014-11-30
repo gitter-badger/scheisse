@@ -31,23 +31,18 @@ public class TestArrowSelectableComponent extends GameGuiComponent implements Ar
 
     }
 
-
-    @Override
     public void up() {
         up++;
     }
 
-    @Override
     public void left() {
         left++;
     }
 
-    @Override
     public void down() {
         down++;
     }
 
-    @Override
     public void right() {
         right++;
     }

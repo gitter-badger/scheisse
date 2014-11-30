@@ -2,10 +2,15 @@ package org.dedda.games.scheisse.io.resource.item;
 
 import junit.framework.Assert;
 import org.dedda.games.scheisse.state.game.item.*;
+import org.dedda.games.scheisse.state.game.item.Item;
+import org.dedda.games.scheisse.state.game.item.ItemType;
+import org.dedda.games.scheisse.webService.client.itemService.*;
 import org.junit.Test;
 
 import java.io.File;
 import java.util.ArrayList;
+
+import static junit.framework.Assert.*;
 
 public class ItemLoaderTest {
 
@@ -18,9 +23,9 @@ public class ItemLoaderTest {
         Weapon weapon = (Weapon) itemLoader.loadItem(new File("src/test/test_files/data/item/wood_sword.di"));
         Armor armor = (Armor) itemLoader.loadItem(new File("src/test/test_files/data/item/wood_armor.di"));
         Shield shield = (Shield) itemLoader.loadItem(new File("src/test/test_files/data/item/wood_shield.di"));
-        Assert.assertTrue(testWeapon.equals(weapon));
-        Assert.assertTrue(testArmor.equals(armor));
-        Assert.assertTrue(testShield.equals(shield));
+        assertTrue(testWeapon.equals(weapon));
+        assertTrue(testArmor.equals(armor));
+        assertTrue(testShield.equals(shield));
     }
 
     @Test
@@ -28,11 +33,9 @@ public class ItemLoaderTest {
         Weapon testWeapon = new Weapon(1, "Wooden Sword", 123L, 456L, null);
         Armor testArmor = new Armor(2, "Wooden Armor", 654L, 321L, ItemType.CLOTHING, null);
         Shield testShield = new Shield(3, "Wooden Shield", 246L, 135L, null);
-        ItemLoader itemLoader = new ItemLoader();
-        ArrayList<Item> items = itemLoader.loadAll(new File("src/test/test_files/data/item/"));
-        Assert.assertTrue(items.size() == 9);
-        Assert.assertTrue(items.contains(testWeapon));
-        Assert.assertTrue(items.contains(testArmor));
-        Assert.assertTrue(items.contains(testShield));
+        assertEquals(Item.getItemMap().size(), 10);
+        assertTrue(Item.getItemMap().containsValue(testWeapon));
+        assertTrue(Item.getItemMap().containsValue(testArmor));
+        assertTrue(Item.getItemMap().containsValue(testShield));
     }
 }
