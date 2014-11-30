@@ -75,6 +75,7 @@ public class InventoryActionPanelTest {
     @Test
     public void testAdd() {
         ListSelectionModel selectionModel = inventoryPanel.getInventoryTable().getTable().getSelectionModel();
+        selectionModel.clearSelection();
         selectionModel.addSelectionInterval(0, 0);
         selectionModel.addSelectionInterval(2, 2);
         SpinnerNumberModel spinnerModel = (SpinnerNumberModel) panel.getNumberSpinner().getModel();
@@ -94,7 +95,22 @@ public class InventoryActionPanelTest {
 
     @Test
     public void testRemove() {
-
+        testAdd();
+        ListSelectionModel selectionModel = inventoryPanel.getActionTable().getTable().getSelectionModel();
+        selectionModel.clearSelection();
+        selectionModel.addSelectionInterval(0, 0);
+        SpinnerNumberModel spinnerModel = (SpinnerNumberModel) panel.getNumberSpinner().getModel();
+        assertEquals(spinnerModel.getMaximum(), 1.0);
+        spinnerModel.setValue(1);
+        for (ActionListener actionListener : panel.getRemoveButton().getActionListeners()) {
+            actionListener.actionPerformed(null);
+        }
+        assertEquals(inventory.getSlotWithItemId(1).getNumberOfItems(), 10);
+        assertEquals(inventory.getSlotWithItemId(3).getNumberOfItems(), 1);
+        Inventory actionInventory = inventoryPanel.getActionTable().getInventory();
+        actionInventory.print();
+        assertNull(actionInventory.getSlotWithItemId(1));
+        assertEquals(actionInventory.getSlotWithItemId(3).getNumberOfItems(), 1);
     }
 
     @Test
