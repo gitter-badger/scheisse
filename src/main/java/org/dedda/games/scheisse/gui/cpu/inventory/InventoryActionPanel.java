@@ -84,8 +84,8 @@ public class InventoryActionPanel extends JPanel {
         int amount = (int)amountDouble;
         int rows[] = inventoryTablePanel.getInventoryTable().getTable().getSelectedRows();
         long ids[] = new long[rows.length];
-        for (int row : rows) {
-            ids[row] = inventoryTablePanel.getInventoryTable().getModel().getSlotInRow(row).getDummy().getId();
+        for (int i = 0; i < ids.length; i ++) {
+            ids[i] = inventoryTablePanel.getInventoryTable().getModel().getSlotInRow(rows[i]).getDummy().getId();
         }
         Inventory inventory = inventoryTablePanel.getInventoryTable().getInventory();
         Inventory actionInventory = inventoryTablePanel.getActionTable().getInventory();
@@ -102,8 +102,8 @@ public class InventoryActionPanel extends JPanel {
         int amount = (int)amountDouble;
         int rows[] = inventoryTablePanel.getActionTable().getTable().getSelectedRows();
         long ids[] = new long[rows.length];
-        for (int row : rows) {
-            ids[row] = inventoryTablePanel.getActionTable().getModel().getSlotInRow(row).getDummy().getId();
+        for (int i = 0; i < ids.length; i ++) {
+            ids[i] = inventoryTablePanel.getActionTable().getModel().getSlotInRow(rows[i]).getDummy().getId();
         }
         Inventory inventory = inventoryTablePanel.getInventoryTable().getInventory();
         Inventory actionInventory = inventoryTablePanel.getActionTable().getInventory();
