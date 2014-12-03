@@ -10,20 +10,22 @@ import java.awt.*;
 /**
  * Created by dedda on 11/30/14.
  */
-public class InventoryPanel extends JPanel implements InventoryTransactionListener{
+public class InventoryPanel extends JPanel {
 
     private TabbedGamePane tabbedGamePane;
     private InventoryTablePanel tablePanel;
-    private JLabel headerBar;
+    private HeaderBar headerBar;
     private Player player;
 
     public InventoryPanel(TabbedGamePane tabbedGamePane) {
         this.tabbedGamePane = tabbedGamePane;
         player = tabbedGamePane.getGui().getGame().getPlayer();
-        headerBar = new JLabel("Money: " + player.getMoney());
+        headerBar = new HeaderBar(player);
         tablePanel = new InventoryTablePanel(tabbedGamePane);
-        tablePanel.addTransactionListener(this);
         intiLayout();
+        tablePanel.addTransactionListener(headerBar);
+        headerBar.addCategoriesChangeListener(tablePanel.getInventoryTable().getModel());
+        headerBar.addCategoriesChangeListener(tablePanel.getActionTable().getModel());
     }
 
     private void intiLayout() {
@@ -32,16 +34,13 @@ public class InventoryPanel extends JPanel implements InventoryTransactionListen
         headerBar.setAlignmentX(CENTER_ALIGNMENT);
         headerBar.setAlignmentY(TOP_ALIGNMENT);
         Dimension preferredHeaderSize = headerBar.getPreferredSize();
-        preferredHeaderSize.width += 100;
+        preferredHeaderSize.width = getWidth();
+        preferredHeaderSize.height = 20;
         headerBar.setMaximumSize(preferredHeaderSize);
         headerBar.setPreferredSize(preferredHeaderSize);
         add(headerBar);
         add(tablePanel);
         setBackground(Color.LIGHT_GRAY);
-    }
-
-    public void transactionPerformed(InventoryTransactionEvent event) {
-        headerBar.setText("Money: " + player.getMoney());
     }
 
     public void cancelTransaction() {

@@ -1,5 +1,7 @@
 package org.dedda.games.scheisse.gui.cpu.inventory.table;
 
+import org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangeListener;
+import org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangedEvent;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener;
 import org.dedda.games.scheisse.state.game.inventory.Slot;
@@ -17,7 +19,7 @@ import java.util.List;
 /**
  * Created by dedda on 11/26/14.
  */
-public class InventoryTableModel extends AbstractTableModel implements InventoryChangeListener{
+public class InventoryTableModel extends AbstractTableModel implements InventoryChangeListener, CategoriesChangeListener {
 
     public static final int ID = 0;
     public static final int SYMBOL = 1;
@@ -144,5 +146,14 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
 
     public void inventoryChangeAction() {
         fireTableDataChanged();
+    }
+
+    public void categoriesChanged(CategoriesChangedEvent event) {
+        if (event.ADDED != -1) {
+            enableCategory(event.ADDED);
+        }
+        if (event.REMOVED != -1) {
+            disableCategory(event.REMOVED);
+        }
     }
 }
