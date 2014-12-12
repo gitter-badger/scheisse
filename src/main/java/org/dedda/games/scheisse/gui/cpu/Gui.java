@@ -13,13 +13,35 @@ import java.awt.Container;
  */
 public class Gui extends JFrame implements Runnable {
 
+    /**
+     * {@link java.awt.Graphics2D} instance to draw with.
+     */
     private Graphics2D g2d;
+    /**
+     * {@link MenuBar} of the game for controls and settings.
+     */
     private MenuBar menuBar;
+    /**
+     * {@link Game} to be rendered.
+     */
     private Game game;
+    /**
+     * {@link java.lang.Thread} to run in for updating / redrawing.
+     */
     private Thread thread;
+    /**
+     * Indicates whether the instance is currently running or not.
+     */
     private boolean running = false;
+    /**
+     * Container to put the contents in.
+     */
     private Container content;
 
+    /**
+     *
+     * @param size initial size of the window
+     */
     public Gui(final Dimension size) {
         setSize(size);
         setLayout(new BorderLayout());
@@ -27,12 +49,19 @@ public class Gui extends JFrame implements Runnable {
         g2d = (Graphics2D)getContentPane().getGraphics();
     }
 
-    public void shutDown(final int exitCode) {
+    /**
+     * Closes the window and exits hard with the given code.
+     * @param exitCode exit code to return
+     */
+    public final void shutDown(final int exitCode) {
         setVisible(false);
         System.exit(exitCode);
     }
 
-    public void run() {
+    /**
+     * Main cycle of the gui.
+     */
+    public final void run() {
         menuBar = new MenuBar(this);
         add(menuBar, BorderLayout.NORTH);
         content = new ContentContainer(this);
@@ -48,7 +77,11 @@ public class Gui extends JFrame implements Runnable {
         shutDown(0);
     }
 
-    public void start(final Game game) {
+    /**
+     *
+     * @param game {@link Game} to start the gui with
+     */
+    public final void start(final Game game) {
         if (!running) {
             this.game = game;
             this.thread = new Thread(this);
@@ -57,10 +90,13 @@ public class Gui extends JFrame implements Runnable {
         }
     }
 
+    /**
+     * stops the gui after the next cycle.
+     */
     public void stop() {
         running = false;
     }
-
+    
     public MenuBar getGuiMenuBar() {
         return menuBar;
     }
