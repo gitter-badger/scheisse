@@ -39,7 +39,7 @@ public class ContentContainer extends Container {
      *
      * @return {@link Gui} this container belongs to
      */
-    public final Gui getGui() {
+    public Gui getGui() {
         return gui;
     }
 }

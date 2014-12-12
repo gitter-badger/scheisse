@@ -53,7 +53,7 @@ public class Gui extends JFrame implements Runnable {
      * Closes the window and exits hard with the given code.
      * @param exitCode exit code to return
      */
-    public final void shutDown(final int exitCode) {
+    public void shutDown(final int exitCode) {
         setVisible(false);
         System.exit(exitCode);
     }
@@ -61,7 +61,7 @@ public class Gui extends JFrame implements Runnable {
     /**
      * Main cycle of the gui.
      */
-    public final void run() {
+    public void run() {
         menuBar = new MenuBar(this);
         add(menuBar, BorderLayout.NORTH);
         content = new ContentContainer(this);
@@ -81,7 +81,7 @@ public class Gui extends JFrame implements Runnable {
      *
      * @param game {@link Game} to start the gui with
      */
-    public final void start(final Game game) {
+    public void start(final Game game) {
         if (!running) {
             this.game = game;
             this.thread = new Thread(this);
