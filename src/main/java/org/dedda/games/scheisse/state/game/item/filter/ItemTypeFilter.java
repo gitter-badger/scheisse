@@ -9,12 +9,12 @@ public class ItemTypeFilter extends ItemFilter {
 
     private Class itemClasses[];
 
-    public ItemTypeFilter(Class itemClasses[]) {
+    public ItemTypeFilter(final Class itemClasses[]) {
         this.itemClasses = itemClasses;
     }
 
     @Override
-    public boolean accept(Item item) {
+    public boolean accept(final Item item) {
         for(Class current : itemClasses){
             if(item.getClass().equals(current)){
                 return true;

@@ -7,11 +7,9 @@ import java.awt.*;
 /**
  * Created by dedda on 9/15/14.
  */
-public class Building extends MapObject{
+public class Building extends MapObject {
 
-
-
-    public Building(Point location, Dimension size) {
+    public Building(final Point location, final Dimension size) {
         super(location, size);
     }
 

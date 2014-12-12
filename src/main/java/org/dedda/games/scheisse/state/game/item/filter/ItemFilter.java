@@ -9,9 +9,9 @@ import java.util.ArrayList;
  */
 public abstract class ItemFilter {
 
-    public abstract boolean accept(Item item);
+    public abstract boolean accept(final Item item);
 
-    public ArrayList<Item> filter(ArrayList<Item> items) {
+    public ArrayList<Item> filter(final ArrayList<Item> items) {
         ArrayList<Item> filtered = new ArrayList<Item>();
         for(Item item : items){
             if(accept(item)){

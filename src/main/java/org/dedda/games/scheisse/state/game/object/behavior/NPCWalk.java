@@ -10,7 +10,7 @@ public class NPCWalk extends NPCScriptAction {
     protected double restAmount;
     protected double maxSpeed;
 
-    public NPCWalk(NPCScript skript) {
+    public NPCWalk(final NPCScript skript) {
         super(skript);
         maxSpeed = skript.getNpc().getMaxSpeed();
     }
@@ -50,25 +50,25 @@ public class NPCWalk extends NPCScriptAction {
         return restAmount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(final double amount) {
         this.amount = amount;
         this.restAmount = amount;
     }
 
-    public void setDirection(double direction) {
+    public void setDirection(final double direction) {
         this.direction = direction;
     }
 
     @Override
-    public boolean equals(Object object){
-        if(!object.getClass().equals(this.getClass())){
+    public boolean equals(final Object object) {
+        if (!object.getClass().equals(this.getClass())) {
             return false;
         }
         NPCWalk npcWalk = (NPCWalk)object;
-        if(npcWalk.direction != direction){
+        if (npcWalk.direction != direction) {
             return false;
         }
-        if(npcWalk.amount != amount){
+        if (npcWalk.amount != amount) {
             return false;
         }
         return true;

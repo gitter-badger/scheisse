@@ -13,7 +13,7 @@ public abstract class NPCScriptAction {
     protected ScriptEngineManager scriptEngineManager;
     protected ScriptEngine scriptEngine;
 
-    public NPCScriptAction(NPCScript script) {
+    public NPCScriptAction(final NPCScript script) {
         this.script = script;
         scriptEngineManager = new ScriptEngineManager();
         scriptEngine = scriptEngineManager.getEngineByName("JavaScript");
@@ -25,7 +25,7 @@ public abstract class NPCScriptAction {
     public double evalDouble(String expression) throws ScriptException {
         expression = script.replaceKeysInExpression(expression);
         Object value = scriptEngine.eval(expression);
-        if(value instanceof Integer){
+        if (value instanceof Integer) {
             return (Integer)value;
         }
         return (Double)value;

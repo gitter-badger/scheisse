@@ -9,7 +9,7 @@ public class Level {
 
     private Map map;
 
-    public Level(){
+    public Level() {
 
     }
 
