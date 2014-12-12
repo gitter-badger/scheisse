@@ -11,7 +11,7 @@ public class NPCWalkToDestination extends NPCWalk{
 
     protected Point2D.Double destination;
 
-    public NPCWalkToDestination(NPCScript skript) {
+    public NPCWalkToDestination(final NPCScript skript) {
         super(skript);
     }
 
@@ -25,19 +25,19 @@ public class NPCWalkToDestination extends NPCWalk{
         if(hasNextStep()){
             double npcX = script.getNpc().getLocation().getX();
             double npcY = script.getNpc().getLocation().getY();
-            if(npcX < destination.getX() + 0.1 && npcX > destination.getX() - 0.1){
+            if (npcX < destination.getX() + 0.1 && npcX > destination.getX() - 0.1) {
                 npcX = destination.getX();
             }
-            if(npcY < destination.getY() + 0.1 && npcY > destination.getY() - 0.1){
+            if (npcY < destination.getY() + 0.1 && npcY > destination.getY() - 0.1) {
                 npcY = destination.getY();
             }
             script.getNpc().setLocation(new Point2D.Double(npcX, npcY));
             calcRestAmount();
-            if(npcX != destination.getX() || npcY != destination.getY()){
+            if (npcX != destination.getX() || npcY != destination.getY()) {
                 script.getNpc().setDirection(direction);
-                if(maxSpeed >= restAmount){
+                if (maxSpeed >= restAmount) {
                     script.getNpc().move(restAmount);
-                }else{
+                } else {
                     script.getNpc().move(maxSpeed);
                 }
             }
@@ -53,18 +53,18 @@ public class NPCWalkToDestination extends NPCWalk{
         return destination;
     }
 
-    public void setDestination(Point2D.Double destination) {
+    public void setDestination(final Point2D.Double destination) {
         this.destination = destination;
         direction = Distances.getDirectionTo(script.getNpc().getLocation(), destination);
     }
 
     @Override
-    public boolean equals(Object object){
-        if(!object.getClass().equals(this.getClass())){
+    public boolean equals(final Object object){
+        if (!object.getClass().equals(this.getClass())) {
             return false;
         }
         NPCWalkToDestination npcWalkToDestination = (NPCWalkToDestination)object;
-        if(npcWalkToDestination.destination.x != destination.x || npcWalkToDestination.destination.y != destination.y){
+        if (npcWalkToDestination.destination.x != destination.x || npcWalkToDestination.destination.y != destination.y) {
             return false;
         }
         return true;

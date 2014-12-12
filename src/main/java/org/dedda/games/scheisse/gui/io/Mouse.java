@@ -83,7 +83,7 @@ public class Mouse implements MouseListener, MouseMotionListener, MouseWheelList
         }
     }
 
-    public void mouseReleased(MouseEvent mouseEvent) {
+    public void mouseReleased(final MouseEvent mouseEvent) {
         for (MouseAction mouseAction : releaseAction) {
             mouseAction.perform(
                     new MouseActionInfo(mouseEvent.getButton(), 0, 0, 0)

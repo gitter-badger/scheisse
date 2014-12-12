@@ -12,7 +12,7 @@ public class Slot {
     private long numberOfItems = 0;
     private Item dummy;
 
-    public Slot(Inventory inventory){
+    public Slot(final Inventory inventory){
         this.inventory = inventory;
         dummy = new NullItem();
     }
@@ -21,7 +21,7 @@ public class Slot {
      *
      * @param itemId Id of the item
      */
-    public Slot(long itemId, Inventory inventory){
+    public Slot(final long itemId, final Inventory inventory){
         this.dummy = Item.itemForId(itemId);
         this.inventory = inventory;
     }
@@ -38,7 +38,7 @@ public class Slot {
      *
      * @param item Item
      */
-    public void add(Item item){
+    public void add(final Item item){
         if(item.getClass().equals(dummy.getClass())){
             if(canAdd()){
                 numberOfItems++;
@@ -61,7 +61,7 @@ public class Slot {
      *
      * @param dummy Item
      */
-    public void setDummy(Item dummy){
+    public void setDummy(final Item dummy){
         this.dummy = dummy;
         inventory.triggerChangeEvent();
     }
@@ -86,13 +86,13 @@ public class Slot {
      *
      * @param numberOfItems int
      */
-    public void setNumberOfItems(long numberOfItems) {
+    public void setNumberOfItems(final long numberOfItems) {
         this.numberOfItems = numberOfItems;
         inventory.triggerChangeEvent();
     }
 
     @Override
-    public boolean equals(Object object){
+    public boolean equals(final Object object){
         if(object instanceof Slot){
             Slot slot = (Slot)object;
             return slot.dummy.equals(this.dummy)

@@ -11,7 +11,7 @@ import java.util.HashMap;
 /**
  * Created by dedda on 4/18/14.
  */
-public abstract class Item implements Stackable{
+public abstract class Item implements Stackable {
 
     protected static HashMap<Long, Item> itemMap;
 
@@ -34,7 +34,7 @@ public abstract class Item implements Stackable{
      * @param name String - item name
      * @param value long - item value
      */
-    public Item(long id, String name, long value, ItemCategory category, ItemType type, Image sprite){
+    public Item(final long id, final String name, final long value, final ItemCategory category, final ItemType type, final Image sprite){
         this.id = id;
         this.name = name;
         this.value = value;
@@ -64,7 +64,7 @@ public abstract class Item implements Stackable{
     }
 
     @Override
-    public boolean equals(Object object){
+    public boolean equals(final Object object){
         if(object instanceof Item){
             Item item = (Item)object;
             return item.name.equals(this.name)
@@ -84,7 +84,7 @@ public abstract class Item implements Stackable{
         return sprite;
     }
 
-    public static Item itemForId(long id){
+    public static Item itemForId(final long id){
         return itemMap.get(id);
     }
 
@@ -96,7 +96,7 @@ public abstract class Item implements Stackable{
         return itemMap;
     }
 
-    public static void setItemMap(HashMap<Long, Item> itemMap) {
+    public static void setItemMap(final HashMap<Long, Item> itemMap) {
         Item.itemMap = itemMap;
     }
 
@@ -104,7 +104,7 @@ public abstract class Item implements Stackable{
         return minXp;
     }
 
-    public void setMinXp(long minXp) {
+    public void setMinXp(final long minXp) {
         this.minXp = minXp;
     }
 

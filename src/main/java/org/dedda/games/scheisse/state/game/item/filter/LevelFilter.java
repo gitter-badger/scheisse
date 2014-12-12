@@ -9,12 +9,12 @@ public class LevelFilter extends ItemFilter{
 
     private long level;
 
-    public LevelFilter(long level) {
+    public LevelFilter(final long level) {
         this.level = level;
     }
 
     @Override
-    public boolean accept(Item item) {
+    public boolean accept(final Item item) {
         return item.getMinLevel() <= level;
     }
 

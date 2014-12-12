@@ -3,11 +3,11 @@ package org.dedda.games.scheisse.state.game.object.behavior;
 /**
  * Created by dedda on 10/5/14.
  */
-public class NPCRotate extends NPCScriptAction{
+public class NPCRotate extends NPCScriptAction {
 
     private double amount;
 
-    public NPCRotate(NPCScript script) {
+    public NPCRotate(final NPCScript script) {
         super(script);
     }
 
@@ -25,11 +25,11 @@ public class NPCRotate extends NPCScriptAction{
         return amount;
     }
 
-    public void setAmount(String expression){
+    public void setAmount(final String expression) {
 
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(final double amount) {
         this.amount = amount;
     }
 }

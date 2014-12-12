@@ -22,7 +22,7 @@ public class Chunk {
      * @param minLocation Point - x and y from left upper corner
      * @param maxLocation Point - x and y from right bottom corner
      */
-    public Chunk(Point minLocation, Point maxLocation){
+    public Chunk(final Point minLocation, final Point maxLocation) {
         this.minLocation = minLocation;
         this.maxLocation = maxLocation;
         soil = new Soil.Type[CHUNK_SIZE][CHUNK_SIZE];
@@ -40,7 +40,7 @@ public class Chunk {
      *
      * @param objects ArrayList<MapObject> - objects in this chunk
      */
-    public void setObjects(ArrayList<MapObject> objects) {
+    public void setObjects(final ArrayList<MapObject> objects) {
         this.objects = objects;
     }
 
@@ -48,7 +48,7 @@ public class Chunk {
      *
      * @param object MapObject
      */
-    public void addObject(MapObject object){
+    public void addObject(final MapObject object){
         this.objects.add(object);
     }
 
@@ -64,7 +64,7 @@ public class Chunk {
      *
      * @param soil int[][] - soil in this chunk
      */
-    public void setSoil(Soil.Type[][] soil) {
+    public void setSoil(final Soil.Type[][] soil) {
         this.soil = soil;
     }
 
@@ -73,7 +73,7 @@ public class Chunk {
      * @param location Point - location on map
      * @param soil int
      */
-    public void setSoilAbsolute(Point location, Soil.Type soil){
+    public void setSoilAbsolute(final Point location, final Soil.Type soil) {
         this.soil[location.x - minLocation.x][location.y - minLocation.y] = soil;
     }
 
@@ -82,7 +82,7 @@ public class Chunk {
      * @param location Point - location on chunk
      * @param soil int
      */
-    public void setSoilRelative(Point location, Soil.Type soil){
+    public void setSoilRelative(final Point location, final Soil.Type soil) {
         this.soil[location.x][location.y] = soil;
     }
 
@@ -103,21 +103,21 @@ public class Chunk {
     }
 
     @Override
-    public boolean equals(Object object){
+    public boolean equals(final Object object) {
         if(!(object instanceof Chunk)){
             return false;
         }
         Chunk chunk = (Chunk)object;
-        if(!chunk.maxLocation.equals(this.maxLocation)){
+        if (!chunk.maxLocation.equals(this.maxLocation)) {
             return false;
         }
-        if(!chunk.minLocation.equals(this.minLocation)){
+        if (!chunk.minLocation.equals(this.minLocation)) {
             return false;
         }
-        if(!chunk.objects.equals(this.objects)){
+        if (!chunk.objects.equals(this.objects)) {
             return false;
         }
-        if(!chunk.soil.equals(this.soil)){
+        if (!chunk.soil.equals(this.soil)) {
             return false;
         }
         return true;

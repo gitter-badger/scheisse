@@ -11,7 +11,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
     private String actual;
     private int jumpPoint;
 
-    public NPCJumpIfEqual(NPCScript skript) {
+    public NPCJumpIfEqual(final NPCScript skript) {
         super(skript);
     }
 
@@ -30,7 +30,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
         } catch (ScriptException e) {
             e.printStackTrace();
         }
-        if(expected == actual){
+        if (expected == actual) {
             script.jump(jumpPoint);
         }
     }
@@ -39,7 +39,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
         return expected;
     }
 
-    public void setExpected(String expected) {
+    public void setExpected(final String expected) {
         this.expected = expected;
     }
 
@@ -47,7 +47,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
         return actual;
     }
 
-    public void setActual(String actual) {
+    public void setActual(final String actual) {
         this.actual = actual;
     }
 
@@ -55,20 +55,20 @@ public class NPCJumpIfEqual extends NPCScriptAction {
         return jumpPoint;
     }
 
-    public void setJumpPoint(int jumpPoint) {
+    public void setJumpPoint(final int jumpPoint) {
         this.jumpPoint = jumpPoint;
     }
 
     @Override
-    public boolean equals(Object object){
-        if(!object.getClass().equals(this.getClass())){
+    public boolean equals(final Object object) {
+        if (!object.getClass().equals(this.getClass())) {
             return false;
         }
         NPCJumpIfEqual npcJumpIfEqual = (NPCJumpIfEqual)object;
-        if(!npcJumpIfEqual.getActual().equals(actual) || !npcJumpIfEqual.getExpected().equals(expected)){
+        if (!npcJumpIfEqual.getActual().equals(actual) || !npcJumpIfEqual.getExpected().equals(expected)) {
             return false;
         }
-        if(npcJumpIfEqual.getJumpPoint() != jumpPoint){
+        if (npcJumpIfEqual.getJumpPoint() != jumpPoint) {
             return false;
         }
         return true;

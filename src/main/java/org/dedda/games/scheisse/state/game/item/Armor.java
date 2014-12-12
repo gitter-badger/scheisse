@@ -19,7 +19,7 @@ public class Armor extends Item implements Wearable{
      * @param value long - item value
      * @param armor long
      */
-    public Armor(long id, String name, long value, long armor, ItemType type, Image sprite){
+    public Armor(final long id, final String name, final long value, final long armor, final ItemType type, final Image sprite){
         super(id, name, value, ARMOR, type, sprite);
         this.armor = armor;
     }
@@ -33,7 +33,7 @@ public class Armor extends Item implements Wearable{
     }
 
     @Override
-    public boolean equals(Object object){
+    public boolean equals(final Object object){
         if(object instanceof Armor){
             Armor armor = (Armor)object;
             return armor.name.equals(this.name)
@@ -47,7 +47,7 @@ public class Armor extends Item implements Wearable{
         return 1;
     }
 
-    public void render(Person person) {
+    public void render(final Person person) {
 
     }
 }

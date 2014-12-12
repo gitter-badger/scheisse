@@ -15,14 +15,14 @@ public class Door {
     private Direction passingDirection[];
     private boolean locked;
 
-    public Door(Point location, Dimension size, Direction[] passingDirection, boolean locked) {
+    public Door(final Point location, final Dimension size, final Direction[] passingDirection, final boolean locked) {
         this.location = location;
         this.size = size;
         this.passingDirection = passingDirection;
         this.locked = locked;
     }
 
-    public boolean canPass(Direction direction, Player player){
+    public boolean canPass(final Direction direction, final Player player){
         for(Direction dir : passingDirection){
             if(dir.equals(direction)){
                 return !locked;

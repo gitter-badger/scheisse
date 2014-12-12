@@ -30,7 +30,7 @@ public abstract class FileTypes {
         }
     }
 
-    public static String getExtension(String file_type) {
+    public static String getExtension(final String file_type) {
         return extension_map.get(file_type);
     }
 

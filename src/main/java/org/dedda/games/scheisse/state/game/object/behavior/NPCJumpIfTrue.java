@@ -12,7 +12,7 @@ public class NPCJumpIfTrue extends NPCScriptAction {
     private String expression;
     private int jumpPoint;
 
-    public NPCJumpIfTrue(NPCScript skript) {
+    public NPCJumpIfTrue(final NPCScript skript) {
         super(skript);
     }
 
@@ -29,7 +29,7 @@ public class NPCJumpIfTrue extends NPCScriptAction {
         } catch (ScriptException e) {
             e.printStackTrace();
         }
-        if(evaluation){
+        if (evaluation) {
             script.jump(jumpPoint);
         }
     }
@@ -38,7 +38,7 @@ public class NPCJumpIfTrue extends NPCScriptAction {
         return expression;
     }
 
-    public void setExpression(String expression) {
+    public void setExpression(final String expression) {
         this.expression = expression;
     }
 
@@ -46,7 +46,7 @@ public class NPCJumpIfTrue extends NPCScriptAction {
         return jumpPoint;
     }
 
-    public void setJumpPoint(int jumpPoint) {
+    public void setJumpPoint(final int jumpPoint) {
         this.jumpPoint = jumpPoint;
     }
 
@@ -54,7 +54,7 @@ public class NPCJumpIfTrue extends NPCScriptAction {
         return scriptEngineManager;
     }
 
-    public void setScriptEngineManager(ScriptEngineManager scriptEngineManager) {
+    public void setScriptEngineManager(final ScriptEngineManager scriptEngineManager) {
         this.scriptEngineManager = scriptEngineManager;
     }
 
@@ -62,20 +62,20 @@ public class NPCJumpIfTrue extends NPCScriptAction {
         return scriptEngine;
     }
 
-    public void setScriptEngine(ScriptEngine scriptEngine) {
+    public void setScriptEngine(final ScriptEngine scriptEngine) {
         this.scriptEngine = scriptEngine;
     }
 
     @Override
-    public boolean equals(Object object){
-        if(!object.getClass().equals(this.getClass())){
+    public boolean equals(final Object object){
+        if (!object.getClass().equals(this.getClass())) {
             return false;
         }
         NPCJumpIfTrue npcJumpIfTrue = (NPCJumpIfTrue)object;
-        if(!npcJumpIfTrue.getExpression().equals(expression)){
+        if (!npcJumpIfTrue.getExpression().equals(expression)) {
             return false;
         }
-        if(npcJumpIfTrue.getJumpPoint() != jumpPoint){
+        if (npcJumpIfTrue.getJumpPoint() != jumpPoint) {
             return false;
         }
         return true;

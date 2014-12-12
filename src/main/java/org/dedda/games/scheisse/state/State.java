@@ -22,6 +22,6 @@ public interface State {
      *
      * @param g2d {@link Graphics2D} object to draw on
      */
-    void render(Graphics2D g2d);
+    void render(final Graphics2D g2d);
 
 }

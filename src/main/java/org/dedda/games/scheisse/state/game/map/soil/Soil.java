@@ -15,14 +15,14 @@ import java.util.HashMap;
  */
 public class  Soil {
 
-    public enum Type{
+    public enum Type {
         GRASS, DIRT, ROCK, WATER;
     }
 
     private static HashMap<Type, Image> imageMap;
     private static HashMap<Type, Texture> textureMap;
 
-    private synchronized static HashMap<Type, Image> initImageMap(){
+    private synchronized static HashMap<Type, Image> initImageMap() {
         HashMap<Type, Image> imageMap = new HashMap<Type, Image>();
         for(Type soilType : Type.values()){
             Image image = null;
@@ -34,7 +34,7 @@ public class  Soil {
         return imageMap;
     }
 
-    private synchronized static HashMap<Type, Texture> initTextureMap(){
+    private synchronized static HashMap<Type, Texture> initTextureMap() {
         HashMap<Type, Texture> textureMap = new HashMap<Type, Texture>();
         for(Type type : Type.values()){
             String fileName = Main.INSTALLATION_FOLDER + "data/image/map_" + String.valueOf(type).toLowerCase() + ".png";
@@ -65,7 +65,7 @@ public class  Soil {
         return imageMap;
     }
 
-    public static Image getImage(Type soilType){
+    public static Image getImage(final Type soilType){
         return imageMap.get(soilType);
     }
 
@@ -73,7 +73,7 @@ public class  Soil {
         return textureMap;
     }
 
-    public static Texture getTexture(Type type){
+    public static Texture getTexture(final Type type){
         return textureMap.get(type);
     }
 }

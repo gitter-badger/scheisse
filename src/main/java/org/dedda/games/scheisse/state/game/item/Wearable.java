@@ -11,6 +11,6 @@ public interface Wearable {
      *
      * @param person Person - person to draw on
      */
-    public abstract void render(Person person);
+    public void render(final Person person);
 
 }

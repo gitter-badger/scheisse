@@ -11,6 +11,6 @@ public interface Drawable {
      *
      * @param g2d Graphics2D - graphics guiElement for drawing
      */
-    abstract void render(Graphics2D g2d);
+    void render(final Graphics2D g2d);
 
 }

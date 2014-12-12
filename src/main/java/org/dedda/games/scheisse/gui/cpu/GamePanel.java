@@ -10,9 +10,19 @@ import java.awt.Color;
  */
 public class GamePanel extends JPanel {
 
+    /**
+     * {@link TabbedGamePane} this panel is contained by.
+     */
     private TabbedGamePane tabbedGamePane;
+    /**
+     * {@link Game} for the panel to render.
+     */
     private Game game;
 
+    /**
+     *
+     * @param tabbedGamePane {@link TabbedGamePane} this panel is contained by.
+     */
     public GamePanel(final TabbedGamePane tabbedGamePane) {
         this.tabbedGamePane = tabbedGamePane;
         this.game = tabbedGamePane.getGui().getGame();

@@ -23,7 +23,7 @@ public class Inventory {
      *
      * @param size int
      */
-    public Inventory(int size) {
+    public Inventory(final int size) {
         for (int i = 0; i < size; i++) {
             slots.add(new Slot(this));
         }
@@ -76,7 +76,7 @@ public class Inventory {
      *
      * @param size int
      */
-    public void setSize(int size) {
+    public void setSize(final int size) {
         if (size > slots.size()) {
             for (int i = slots.size(); i < size; i++) {
                 slots.add(new Slot(this));
@@ -93,17 +93,17 @@ public class Inventory {
         return slots;
     }
 
-    public void setSlots(ArrayList<Slot> slots) {
+    public void setSlots(final ArrayList<Slot> slots) {
         this.slots = slots;
         triggerChangeEvent();
     }
 
-    public void setSlot(int index, Slot slot) {
+    public void setSlot(final int index, final Slot slot) {
         this.slots.set(index, slot);
         triggerChangeEvent();
     }
 
-    public void addSlot(Slot slot) {
+    public void addSlot(final Slot slot) {
         this.slots.add(slot);
         triggerChangeEvent();
     }
@@ -135,11 +135,11 @@ public class Inventory {
         return null;
     }
 
-    public void addInventoryChangeListener(InventoryChangeListener inventoryChangeListener) {
+    public void addInventoryChangeListener(final InventoryChangeListener inventoryChangeListener) {
         inventoryChangeListeners.add(inventoryChangeListener);
     }
 
-    public void removeInventoryChangeListener(InventoryChangeListener inventoryChangeListener) {
+    public void removeInventoryChangeListener(final InventoryChangeListener inventoryChangeListener) {
         if(inventoryChangeListeners.contains(inventoryChangeListener)){
             inventoryChangeListeners.remove(inventoryChangeListener);
         }
@@ -150,7 +150,7 @@ public class Inventory {
     }
 
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(final Object object) {
         if (object instanceof Inventory) {
             Inventory inventory = (Inventory)object;
             return inventory.slots.equals(this.slots);

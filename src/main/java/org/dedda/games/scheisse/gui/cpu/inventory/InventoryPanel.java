@@ -17,7 +17,7 @@ public class InventoryPanel extends JPanel {
     private HeaderBar headerBar;
     private Player player;
 
-    public InventoryPanel(TabbedGamePane tabbedGamePane) {
+    public InventoryPanel(final TabbedGamePane tabbedGamePane) {
         this.tabbedGamePane = tabbedGamePane;
         player = tabbedGamePane.getGui().getGame().getPlayer();
         headerBar = new HeaderBar(player);

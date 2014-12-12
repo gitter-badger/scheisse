@@ -55,7 +55,7 @@ public class InventoryTable extends JScrollPane{
         return model;
     }
 
-    public void addListSelectionListener(ListSelectionListener inventorySelectionListener) {
+    public void addListSelectionListener(final ListSelectionListener inventorySelectionListener) {
         table.getSelectionModel().addListSelectionListener(inventorySelectionListener);
     }
 }

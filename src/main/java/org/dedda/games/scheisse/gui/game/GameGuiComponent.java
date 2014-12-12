@@ -32,7 +32,7 @@ public abstract class GameGuiComponent extends GLCanvas{
 
     public abstract void resize();
 
-    public abstract void paintComponent(Graphics g);
+    public abstract void paintComponent(final Graphics g);
 
     public Game getGame() {
         return game;

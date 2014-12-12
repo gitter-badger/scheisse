@@ -20,14 +20,14 @@ public class Quest {
     protected int progress = UNTOUCHED;
     protected HashMap<String, String> progressData;
 
-    public Quest(String name, int experience, int minLevel){
+    public Quest(final String name, final int experience, final int minLevel){
         this.name = name;
         this.experience = experience;
         this.minLevel = minLevel;
         progressData = new HashMap<String, String>();
     }
 
-    public boolean isAvailable(Player player){
+    public boolean isAvailable(final Player player) {
         return Level.getLevel(player.getExperience()) >= minLevel && progress != FINISHED;
     }
 
@@ -47,7 +47,7 @@ public class Quest {
         return progress;
     }
 
-    public void setProgress(int progress) {
+    public void setProgress(final int progress) {
         this.progress = progress;
     }
 

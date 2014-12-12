@@ -8,7 +8,7 @@ public class CategoriesChangedEvent {
     public final int ADDED;
     public final int REMOVED;
 
-    public CategoriesChangedEvent(int ADDED, int REMOVED) {
+    public CategoriesChangedEvent(final int ADDED, final int REMOVED) {
         this.ADDED = ADDED;
         this.REMOVED = REMOVED;
     }

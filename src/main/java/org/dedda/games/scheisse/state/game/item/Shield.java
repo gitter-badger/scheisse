@@ -7,7 +7,7 @@ import static org.dedda.games.scheisse.state.game.item.ItemType.SHIELD;
 /**
  * Created by dedda on 4/18/14.
  */
-public class Shield extends Armor implements Wearable, Holdeable{
+public class Shield extends Armor implements Wearable, Holdeable {
 
     /**
      *
@@ -15,12 +15,12 @@ public class Shield extends Armor implements Wearable, Holdeable{
      * @param value long - item value
      * @param armor long
      */
-    public Shield(long id, String name, long value, long armor, Image sprite) {
+    public Shield(final long id, final String name, final long value, final long armor, final Image sprite) {
         super(id, name, value, armor, SHIELD, sprite);
     }
 
     @Override
-    public boolean equals(Object object){
+    public boolean equals(final Object object){
         if(object instanceof Shield){
             Shield shield = (Shield)object;
             return shield.armor == this.armor

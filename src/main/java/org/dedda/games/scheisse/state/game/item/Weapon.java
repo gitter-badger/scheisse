@@ -9,7 +9,7 @@ import static org.dedda.games.scheisse.state.game.item.ItemType.WEAPON;
 /**
  * Created by dedda on 4/18/14.
  */
-public class Weapon extends Item implements Wearable, Holdeable{
+public class Weapon extends Item implements Wearable, Holdeable {
 
     protected final long attack;
 
@@ -19,7 +19,7 @@ public class Weapon extends Item implements Wearable, Holdeable{
      * @param value long - item value
      * @param attack long
      */
-    public Weapon(long id, String name, long value, long attack, Image sprite){
+    public Weapon(final long id, final String name, final long value, final long attack, final Image sprite){
         super(id, name, value, ItemCategory.WEAPPON, WEAPON, sprite);
         this.attack = attack;
     }
@@ -33,7 +33,7 @@ public class Weapon extends Item implements Wearable, Holdeable{
     }
 
     @Override
-    public boolean equals(Object object){
+    public boolean equals(final Object object){
         if(object instanceof Weapon){
             Weapon weapon = (Weapon)object;
             return weapon.getName().equals(this.getName())
@@ -47,7 +47,7 @@ public class Weapon extends Item implements Wearable, Holdeable{
         return 1;
     }
 
-    public void render(Person person) {
+    public void render(final Person person) {
 
     }
 }

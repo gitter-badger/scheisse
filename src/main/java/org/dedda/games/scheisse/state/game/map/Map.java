@@ -24,7 +24,7 @@ public class Map {
      *
      * @param size Dimension
      */
-    public Map(Dimension size){
+    public Map(final Dimension size){
         init(size, new ArrayList<MapObject>());
     }
 
@@ -33,7 +33,7 @@ public class Map {
      * @param size Dimension
      * @param objects ArrayList<MapObject> - inital objects on the map
      */
-    private void init(Dimension size, ArrayList<MapObject> objects){
+    private void init(final Dimension size, final ArrayList<MapObject> objects) {
         this.size = size;
 
         //init chunks:
@@ -69,7 +69,7 @@ public class Map {
      *
      * @param object MapObject
      */
-    public void addObject(MapObject object){
+    public void addObject(final MapObject object) {
         this.objects.add(object);
         addObjectToChunks(object);
     }
@@ -78,7 +78,7 @@ public class Map {
      * adds the guiElement to all corresponding chunks
      * @param object MapObject
      */
-    private void addObjectToChunks(MapObject object){
+    private void addObjectToChunks(final MapObject object) {
         Point objectMin = object.getLocation();
         Point objectMax = new Point(objectMin.x + object.getSize().width, objectMin.y + object.getSize().height);
         int chunkMinX = objectMin.x / CHUNK_SIZE;
@@ -96,7 +96,7 @@ public class Map {
      *
      * @param objects ArrayList<MapObject> - objects on the map
      */
-    public void setObjects(ArrayList<MapObject> objects){
+    public void setObjects(final ArrayList<MapObject> objects) {
         this.objects = objects;
         for(MapObject object : objects){
             addObjectToChunks(object);
@@ -107,7 +107,7 @@ public class Map {
      *
      * @param objects MapObject[] - objects on the map
      */
-    public void setObjects(MapObject[] objects){
+    public void setObjects(final MapObject[] objects) {
         for(MapObject object : objects){
             addObject(object);
             addObjectToChunks(object);
@@ -119,7 +119,7 @@ public class Map {
      * @param location Point
      * @param soil int
      */
-    public void setSoil(Point location, Soil.Type soil){
+    public void setSoil(final Point location, final Soil.Type soil) {
         int chunkX = location.x / CHUNK_SIZE;
         int chunkY = location.y / CHUNK_SIZE;
         this.chunk[chunkX][chunkY].setSoilAbsolute(location, soil);
@@ -129,9 +129,9 @@ public class Map {
      *
      * @param soil int[][]
      */
-    public void setSoil(Soil.Type soil[][]){
-        for(int x = 0; x < size.width; x++){
-            for(int y = 0; y < size.height; y++){
+    public void setSoil(final Soil.Type soil[][]) {
+        for (int x = 0; x < size.width; x++) {
+            for (int y = 0; y < size.height; y++) {
                 setSoil(new Point(x, y), soil[x][y]);
             }
         }
@@ -141,10 +141,10 @@ public class Map {
      *
      * @return int[][]
      */
-    public Soil.Type[][] getSoil(){
+    public Soil.Type[][] getSoil() {
         Soil.Type soil[][] = new Soil.Type[size.width][size.height];
-        for(int x = 0; x < size.width; x ++){
-            for(int y = 0; y < size.height; y++){
+        for (int x = 0; x < size.width; x ++) {
+            for (int y = 0; y < size.height; y++) {
                 soil[x][y] = chunk[x/CHUNK_SIZE][y/CHUNK_SIZE].getSoil()[x-x/CHUNK_SIZE][y-y/CHUNK_SIZE];
             }
         }
@@ -187,16 +187,16 @@ public class Map {
         return quest;
     }
 
-    public void setQuest(Quest[] quest) {
+    public void setQuest(final Quest[] quest) {
         this.quest = quest;
     }
 
-    public void print(){
+    public void print() {
         SystemPrinter.debugln("Map:");
         SystemPrinter.debugln("size: " + size);
         SystemPrinter.debugln("chunk grid size: " + chunkGridSize);
-        for(int i = 0; i < size.height; i++){
-            for(int k = 0; k < size.width; k++){
+        for (int i = 0; i < size.height; i++) {
+            for (int k = 0; k < size.width; k++) {
                 SystemPrinter.debug(String.valueOf(getSoil()[k][i]).charAt(0) + "");
             }
             SystemPrinter.debugln("");
@@ -204,27 +204,27 @@ public class Map {
     }
 
     @Override
-    public boolean equals(Object object){
-        if(!(object instanceof Map)){
+    public boolean equals(final Object object) {
+        if (!(object instanceof Map)) {
             return false;
         }
         Map map = (Map)object;
-        if(map.chunkGridSize.width != this.chunkGridSize.width
-                || map.chunkGridSize.height != this.chunkGridSize.height){
+        if (map.chunkGridSize.width != this.chunkGridSize.width
+                || map.chunkGridSize.height != this.chunkGridSize.height) {
             return false;
         }
-        for(int x = 0; x < chunkGridSize.width; x++){
-            for(int y = 0; y < chunkGridSize.height; y++){
-                if(!this.chunk[x][y].equals(map.chunk[x][y])){
+        for (int x = 0; x < chunkGridSize.width; x++) {
+            for (int y = 0; y < chunkGridSize.height; y++) {
+                if (!this.chunk[x][y].equals(map.chunk[x][y])) {
                     return false;
                 }
             }
         }
-        if(this.objects.size() != map.objects.size()){
+        if (this.objects.size() != map.objects.size()) {
             return false;
         }
 
-        if(this.quest.length != map.quest.length){
+        if (this.quest.length != map.quest.length) {
             return false;
         }
         return true;

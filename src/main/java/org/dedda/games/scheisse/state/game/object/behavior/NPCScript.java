@@ -11,11 +11,11 @@ public class NPCScript {
     private NPCScriptAction action[];
     private int currentAction = 0;
 
-    public NPCScript(NPC npc) {
+    public NPCScript(final NPC npc) {
         this.npc = npc;
     }
 
-    public NPCScript(NPC npc, NPCScriptAction[] action) {
+    public NPCScript(final NPC npc, final NPCScriptAction[] action) {
         this.npc = npc;
         this.action = action;
     }
@@ -24,21 +24,21 @@ public class NPCScript {
         return currentAction < action.length - 1;
     }
 
-    public void nextAction(){
-        if(hasNextAction()){
+    public void nextAction() {
+        if (hasNextAction()) {
             currentAction++;
         }
     }
 
-    public void nextStep(){
-        if(action[currentAction].hasNextStep()){
+    public void nextStep() {
+        if (action[currentAction].hasNextStep()) {
             action[currentAction].nextStep();
-        }else{
+        } else {
             nextAction();
         }
     }
 
-    public void jump(int index){
+    public void jump(final int index){
         currentAction = index;
     }
 
@@ -50,7 +50,7 @@ public class NPCScript {
         return action;
     }
 
-    public void setAction(NPCScriptAction[] action) {
+    public void setAction(final NPCScriptAction[] action) {
         this.action = action;
     }
 
@@ -58,7 +58,7 @@ public class NPCScript {
         return currentAction;
     }
 
-    public String replaceKeysInExpression(String expression){
+    public String replaceKeysInExpression(String expression) {
         expression = expression.replace("npc.location.x", npc.getLocation().getX() + "");
         expression = expression.replace("npc.location.y", npc.getLocation().getY() + "");
         expression = expression.replace("npc.maxSpeed", npc.getMaxSpeed() + "");
@@ -69,19 +69,19 @@ public class NPCScript {
     }
 
     @Override
-    public boolean equals(Object object){
-        if(!object.getClass().equals(this.getClass())){
+    public boolean equals(final Object object) {
+        if (!object.getClass().equals(this.getClass())) {
            return false;
         }
         NPCScript npcSkript = (NPCScript)object;
-        if(npcSkript.getNpc() != npc){
+        if (npcSkript.getNpc() != npc) {
             return false;
         }
-        if(npcSkript.action.length != action.length){
+        if (npcSkript.action.length != action.length) {
             return false;
         }
-        for(int i = 0; i < action.length; i++){
-            if(!action[i].equals(npcSkript.action[i])){
+        for (int i = 0; i < action.length; i++) {
+            if (!action[i].equals(npcSkript.action[i])) {
                 return false;
             }
         }

@@ -22,14 +22,14 @@ public class CompareFilter extends ItemFilter {
     private Item target;
     private int direction;
 
-    public CompareFilter(int category, Item target, int direction) {
+    public CompareFilter(final int category, final Item target, final int direction) {
         this.category = category;
         this.target = target;
         this.direction = direction;
     }
 
     @Override
-    public boolean accept(Item item){
+    public boolean accept(final Item item){
 
         return false;
     }

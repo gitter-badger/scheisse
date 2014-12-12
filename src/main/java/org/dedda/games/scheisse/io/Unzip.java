@@ -76,7 +76,7 @@ public class Unzip {
      * {@inheritDoc}
      */
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(final Object object) {
         if (object instanceof Unzip) {
             Unzip unzip = (Unzip)object;
             return unzip.source.equals(this.source)

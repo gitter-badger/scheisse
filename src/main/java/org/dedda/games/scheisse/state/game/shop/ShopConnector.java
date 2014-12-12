@@ -25,7 +25,7 @@ public class ShopConnector {
         return offers;
     }
 
-    public List<Offer> getOffers(ItemType itemType) {
+    public List<Offer> getOffers(final ItemType itemType) {
         ArrayList<Long> allIDs = new ArrayList<Long>();
         for (long currentId : Item.getItemMap().keySet()) {
             if (Item.itemForId(currentId).getType() == itemType) {
@@ -57,7 +57,7 @@ public class ShopConnector {
      * @param number number of items to sell
      * @return amount of money you get
      */
-    public long sell(long itemId, long number) {
+    public long sell(final long itemId, final long number) {
         throw new UnsupportedOperationException();
     }
 
@@ -67,7 +67,7 @@ public class ShopConnector {
      * @param number number of items you bought
      * @return price to pay
      */
-    public long buy(long itemId, long number) {
+    public long buy(final long itemId, final long number) {
         throw new UnsupportedOperationException();
     }
 
