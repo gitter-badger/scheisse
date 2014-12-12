@@ -7,8 +7,14 @@ import java.awt.Point;
  */
 public class GuiElement {
 
-    public Point getLocationOnImage() {
-        throw new UnsupportedOperationException("gui element class not implemented yet!");
+    /**
+     *
+     * @return The location this element should be rendered to the image.
+     */
+    public final Point getLocationOnImage() {
+        throw new UnsupportedOperationException(
+                "gui element class not implemented yet!"
+        );
     }
 
 }

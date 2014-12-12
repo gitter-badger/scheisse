@@ -27,7 +27,7 @@ public class ItemLoaderTest {
     }
 
     @Test
-    public void testLoadAll() throws Exception{
+    public void testLoadAll() throws Exception {
         Weapon testWeapon = new Weapon(1, "Wooden Sword", 123L, 456L, null);
         Armor testArmor = new Armor(2, "Wooden Armor", 654L, 321L, ItemType.CLOTHING, null);
         Shield testShield = new Shield(3, "Wooden Shield", 246L, 135L, null);

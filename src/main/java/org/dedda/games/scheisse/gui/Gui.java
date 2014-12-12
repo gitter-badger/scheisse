@@ -9,42 +9,71 @@ import org.dedda.games.scheisse.state.game.Game;
  */
 public class Gui implements Runnable {
 
-    private static final long THREAD_SLEEP = 100;
+    /**
+     * Time in ms the {@link java.lang.Thread} shall sleep between
+     * each update / redraw cycle.
+     */
+    private static final long THREAD_SLEEP = 5;
+    /**
+     * Flag to determine if the gui is currently running.
+     */
     private boolean running = false;
+    /**
+     * Window to draw on.
+     */
     private GameWindow gameWindow;
+    /**
+     * Game to be rendered.
+     */
     private Game game;
 
-
-    public Gui(Game game) {
+    /**
+     *
+     * @param game {@link Game} to be rendered in this {@link Gui}
+     */
+    public Gui(final Game game) {
         this.game = game;
     }
 
-    public void start() {
+    /**
+     * starts the gui.
+     */
+    public final void start() {
         if (!running) {
             //Soil.init();
             new Thread(this).start();
         }
     }
 
-    public void stop() {
+    /**
+     * stops the gui and waits for the game to stop.
+     */
+    public final void stop() {
         if (running) {
             running = false;
         }
         while (game.isRunning()) {
             try {
-                Thread.sleep(5);
+                Thread.sleep(THREAD_SLEEP);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public void stop(boolean save) {
+    /**
+     * stops the gui and waits for the game to stop.
+     * @param save Whether the game should be saved or not
+     */
+    public final void stop(final boolean save) {
         game.stop(save);
         stop();
     }
 
-    public void run() {
+    /**
+     * the run cycle for updating and rendering.
+     */
+    public final void run() {
         running = true;
         try {
             gameWindow = new GameWindow(game);
