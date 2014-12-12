@@ -55,7 +55,7 @@ public class Player extends Person {
         return money;
     }
 
-    public void setMoney(long money) {
+    public void setMoney(final long money) {
         this.money = money;
     }
 
@@ -69,7 +69,7 @@ public class Player extends Person {
     }
 
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(final Object object) {
         if (object instanceof Player) {
             Player player = (Player)object;
             return player.experience == this.experience

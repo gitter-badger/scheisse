@@ -17,7 +17,7 @@ public class MainMenu extends Menu {
     //private boolean running = false;
     private int selection = 0;
 
-    public MainMenu(Graphics2D g2d) {
+    public MainMenu(final Graphics2D g2d) {
         this.g2d = g2d;
     }
 
@@ -42,7 +42,7 @@ public class MainMenu extends Menu {
 
     }
 
-    public void render(Graphics2D g2d) {
+    public void render(final Graphics2D g2d) {
         g2d.setBackground(Color.BLACK);
         g2d.setColor(Color.GREEN);
         g2d.fillRect(0, 0, Options.getResolution().width, Options.getResolution().height/3);

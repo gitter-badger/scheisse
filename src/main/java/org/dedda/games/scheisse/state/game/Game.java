@@ -117,7 +117,7 @@ public class Game implements State, Runnable {
         return save;
     }
 
-    public void setSave(boolean save) {
+    public void setSave(final boolean save) {
         this.save = save;
     }
 }
