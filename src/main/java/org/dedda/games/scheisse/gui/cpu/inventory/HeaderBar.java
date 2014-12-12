@@ -22,7 +22,7 @@ public class HeaderBar extends JPanel implements InventoryTransactionListener, C
     private List<CategoriesChangeListener> changeListeners;
     private List<JCheckBox> checkBoxes;
 
-    public HeaderBar(Player player) {
+    public HeaderBar(final Player player) {
         this.player = player;
         this.inventory = player.getInventory();
         this.changeListeners = new ArrayList<CategoriesChangeListener>();
@@ -34,21 +34,21 @@ public class HeaderBar extends JPanel implements InventoryTransactionListener, C
         }
     }
 
-    public void addCategoriesChangeListener(CategoriesChangeListener listener) {
+    public void addCategoriesChangeListener(final CategoriesChangeListener listener) {
         this.changeListeners.add(listener);
     }
 
-    public void removeCategoriesChangeListener(CategoriesChangeListener listener) {
+    public void removeCategoriesChangeListener(final CategoriesChangeListener listener) {
         if (this.changeListeners.contains(listener)) {
             this.changeListeners.remove(listener);
         }
     }
 
-    private void categoryAdded(int category) {
+    private void categoryAdded(final int category) {
         categoriesChanged(new CategoriesChangedEvent(category, -1));
     }
 
-    private void categoryRemoved(int category) {
+    private void categoryRemoved(final int category) {
         categoriesChanged(new CategoriesChangedEvent(-1, category));
     }
 
@@ -58,11 +58,11 @@ public class HeaderBar extends JPanel implements InventoryTransactionListener, C
         }
     }
 
-    public void transactionPerformed(InventoryTransactionEvent event) {
+    public void transactionPerformed(final InventoryTransactionEvent event) {
 
     }
 
-    public void stateChanged(ChangeEvent changeEvent) {
+    public void stateChanged(final ChangeEvent changeEvent) {
         if (changeEvent.getSource() instanceof JCheckBox) {
             JCheckBox source = (JCheckBox)changeEvent.getSource();
 

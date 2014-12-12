@@ -40,7 +40,7 @@ public class TabbedGamePane extends JTabbedPane implements ChangeListener{
         return gui;
     }
 
-    public void stateChanged(ChangeEvent changeEvent) {
+    public void stateChanged(final ChangeEvent changeEvent) {
         int index = getSelectedIndex();
         if (inventoryOpen) {
             if (index != 1) {

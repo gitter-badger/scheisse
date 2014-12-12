@@ -11,7 +11,7 @@ import java.awt.*;
  */
 public class ItemIconCellRenderer implements TableCellRenderer {
 
-    public Component getTableCellRendererComponent(JTable jTable, Object o, boolean b, boolean b1, int i, int i1) {
+    public Component getTableCellRendererComponent(final JTable jTable, final Object o, final boolean b, final boolean b1, final int i, final int i1) {
         long id = (Long)o;
         Item item = Item.itemForId(id);
         JLabel iconLabel = new JLabel(new ImageIcon(item.getSprite().getScaledInstance(15, 15, Image.SCALE_SMOOTH)));

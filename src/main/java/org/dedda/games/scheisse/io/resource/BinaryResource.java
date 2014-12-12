@@ -22,7 +22,7 @@ public class BinaryResource {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(final Object obj) {
         if (obj.getClass().equals(getClass())) {
             BinaryResource resource = (BinaryResource)obj;
             if (resource.type == this.type) {

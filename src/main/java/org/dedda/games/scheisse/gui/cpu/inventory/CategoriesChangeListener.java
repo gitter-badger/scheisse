@@ -5,6 +5,6 @@ package org.dedda.games.scheisse.gui.cpu.inventory;
  */
 public interface CategoriesChangeListener {
 
-    public void categoriesChanged(CategoriesChangedEvent event);
+    public void categoriesChanged(final CategoriesChangedEvent event);
 
 }

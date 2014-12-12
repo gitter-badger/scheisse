@@ -15,7 +15,7 @@ public class WorldLoader extends FileInput {
 
     private File directory;
 
-    public WorldLoader(File directory) throws NoWorldDirectoryException {
+    public WorldLoader(final File directory) throws NoWorldDirectoryException {
         if (!WorldDirectoryFilter.isWorldDirectory(directory)) {
             throw new NoWorldDirectoryException();
         }

@@ -46,11 +46,11 @@ public class InventoryTablePanel extends JPanel{
         setBackground(Color.LIGHT_GRAY);
     }
 
-    public void addTransactionListener(InventoryTransactionListener listener) {
+    public void addTransactionListener(final InventoryTransactionListener listener) {
         actionPanel.addInventoryTransactionListener(listener);
     }
 
-    public void removeTransactionListener(InventoryTransactionListener listener) {
+    public void removeTransactionListener(final InventoryTransactionListener listener) {
         actionPanel.removeInventoryTransactionListener(listener);
     }
 

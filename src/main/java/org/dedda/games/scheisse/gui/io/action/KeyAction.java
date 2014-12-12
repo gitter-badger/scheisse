@@ -5,6 +5,6 @@ package org.dedda.games.scheisse.gui.io.action;
  */
 public interface KeyAction {
 
-    public abstract void perform(KeyActionInfo info);
+    public abstract void perform(final KeyActionInfo info);
 
 }

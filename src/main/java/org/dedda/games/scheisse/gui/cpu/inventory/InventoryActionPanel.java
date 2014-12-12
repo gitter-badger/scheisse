@@ -25,7 +25,7 @@ public class InventoryActionPanel extends JPanel {
     private InventoryActionComboBox actionComboBox;
     private ArrayList<InventoryTransactionListener> listeners;
 
-    public InventoryActionPanel(InventoryTablePanel inventoryTablePanel) {
+    public InventoryActionPanel(final InventoryTablePanel inventoryTablePanel) {
         this.inventoryTablePanel = inventoryTablePanel;
         numberSpinner = new JSpinner();
         SpinnerNumberModel spinnerNumberModel = new SpinnerNumberModel(1, 1, 100, 1);

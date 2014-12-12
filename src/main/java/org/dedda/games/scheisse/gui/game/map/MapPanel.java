@@ -63,7 +63,7 @@ public class MapPanel extends GameGuiComponent {
         return map;
     }
 
-    public void setMap(Map map) {
+    public void setMap(final Map map) {
         this.map = map;
     }
 

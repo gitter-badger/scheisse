@@ -113,7 +113,7 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
     }
 
     @Override
-    public String getColumnName(int columnIndex) {
+    public String getColumnName(final int columnIndex) {
         int category = getShownCategories().get(columnIndex);
         return HEADERS[category];
     }
@@ -122,7 +122,7 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
         return this.shownCategories;
     }
 
-    public void setShownCategories(List<Integer> shownCategories) {
+    public void setShownCategories(final List<Integer> shownCategories) {
         this.shownCategories = shownCategories;
     }
 
@@ -148,7 +148,7 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
         fireTableDataChanged();
     }
 
-    public void categoriesChanged(CategoriesChangedEvent event) {
+    public void categoriesChanged(final CategoriesChangedEvent event) {
         if (event.ADDED != -1) {
             enableCategory(event.ADDED);
         }
