@@ -17,7 +17,7 @@ import static org.dedda.games.scheisse.main.FileTypes.ITEM;
 /**
  * Created by dedda on 5/24/14.
  */
-public class ItemLoader extends FileInput{
+public class ItemLoader extends FileInput {
 
     public Item loadItem(final File file) {
         Item item = null;

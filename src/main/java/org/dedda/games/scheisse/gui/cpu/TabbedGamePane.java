@@ -11,7 +11,7 @@ import javax.swing.event.ChangeListener;
 /**
  * Created by dedda on 10/5/14.
  */
-public class TabbedGamePane extends JTabbedPane implements ChangeListener{
+public class TabbedGamePane extends JTabbedPane implements ChangeListener {
 
     private ContentContainer contentContainer;
     private Gui gui;

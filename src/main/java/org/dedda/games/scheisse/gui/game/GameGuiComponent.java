@@ -8,7 +8,7 @@ import java.awt.*;
 /**
  * Created by dedda on 7/16/14.
  */
-public abstract class GameGuiComponent extends GLCanvas{
+public abstract class GameGuiComponent extends GLCanvas {
 
     protected boolean focused;
     protected Game game;

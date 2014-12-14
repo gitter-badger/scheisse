@@ -170,27 +170,27 @@ public class GameWindow extends JFrame {
         return gameMenuOpened;
     }
 
-    public Dimension getMapSize(){
+    public Dimension getMapSize() {
         return new Dimension(getWidth(), getHeight()-20);
     }
 
-    public Point getMapLocation(){
+    public Point getMapLocation() {
         return new Point(0, 20);
     }
 
-    public Dimension getHeaderToolbarSize(){
+    public Dimension getHeaderToolbarSize() {
         return new Dimension(getWidth(), 20);
     }
 
-    public Point getHeaderToolbarLocation(){
+    public Point getHeaderToolbarLocation() {
         return new Point(0, 0);
     }
 
-    public Dimension getBottomToolbarSize(){
+    public Dimension getBottomToolbarSize() {
         return new Dimension(0, 0);
     }
 
-    public Point getBottomToolbarLocation(){
+    public Point getBottomToolbarLocation() {
         return new Point(0, 0);
     }
 

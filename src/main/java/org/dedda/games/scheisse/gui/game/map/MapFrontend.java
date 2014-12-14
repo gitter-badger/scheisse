@@ -30,7 +30,10 @@ public class MapFrontend implements Drawable {
         this.size = mapPanel.getMapFrontendSize();
     }
 
-    public MapFrontend(final Point upperLeftLocation, final Map map, final MapPanel mapPanel) {
+    public MapFrontend(
+            final Point upperLeftLocation,
+            final Map map,
+            final MapPanel mapPanel) {
         this.upperLeftLocation = upperLeftLocation;
         this.map = map;
         this.mapPanel = mapPanel;

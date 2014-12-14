@@ -35,7 +35,7 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
     public static final String HEADER_VALUE = "Value";
     public static final String HEADER_ATTACK = "Attack";
     public static final String HEADER_ARMOR = "Armor";
-    public static final int[] CATEGORIES = new int[]{
+    public static final int[] CATEGORIES = new int[] {
             ID,
             SYMBOL,
             NAME,
@@ -44,7 +44,7 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
             ATTACK,
             ARMOR
     };
-    public static final String[] HEADERS = new String[]{
+    public static final String[] HEADERS = new String[] {
             HEADER_ID,
             HEADER_SYMBOL,
             HEADER_NAME,

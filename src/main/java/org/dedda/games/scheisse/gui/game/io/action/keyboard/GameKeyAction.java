@@ -6,7 +6,7 @@ import org.dedda.games.scheisse.gui.io.action.KeyAction;
 /**
  * Created by dedda on 7/3/14.
  */
-public abstract class GameKeyAction implements KeyAction{
+public abstract class GameKeyAction implements KeyAction {
 
     protected GameWindow gameWindow;
 

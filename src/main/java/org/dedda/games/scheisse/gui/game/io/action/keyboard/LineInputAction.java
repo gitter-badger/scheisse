@@ -8,7 +8,7 @@ import java.awt.event.KeyEvent;
 /**
  * Created by dedda on 7/3/14.
  */
-public class LineInputAction extends GameKeyAction{
+public class LineInputAction extends GameKeyAction {
 
     private String text = "";
 
@@ -17,9 +17,9 @@ public class LineInputAction extends GameKeyAction{
     }
 
     public void perform(final KeyActionInfo info) {
-        if(info.getKeyCode() != KeyEvent.VK_ENTER){
+        if (info.getKeyCode() != KeyEvent.VK_ENTER) {
             text += (char)info.getKeyCode();
-        }else{
+        } else {
             gameWindow.inputText(text);
             text = "";
         }

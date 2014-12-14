@@ -12,7 +12,7 @@ import java.awt.*;
 /**
  * Created by dedda on 11/29/14.
  */
-public class InventoryTable extends JScrollPane{
+public class InventoryTable extends JScrollPane {
 
     private Inventory inventory;
     private JTable table;
@@ -21,7 +21,7 @@ public class InventoryTable extends JScrollPane{
     public InventoryTable(final Inventory inventory) {
         this.inventory = inventory;
         model = new InventoryTableModel(inventory);
-        table = new JTable(){
+        table = new JTable() {
             @Override
             public void tableChanged(TableModelEvent event) {
                 super.tableChanged(event);

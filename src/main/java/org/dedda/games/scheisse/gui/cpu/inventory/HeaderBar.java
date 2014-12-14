@@ -34,11 +34,15 @@ public class HeaderBar extends JPanel implements InventoryTransactionListener, C
         }
     }
 
-    public void addCategoriesChangeListener(final CategoriesChangeListener listener) {
+    public void addCategoriesChangeListener(
+            final CategoriesChangeListener listener
+    ) {
         this.changeListeners.add(listener);
     }
 
-    public void removeCategoriesChangeListener(final CategoriesChangeListener listener) {
+    public void removeCategoriesChangeListener(
+            final CategoriesChangeListener listener
+    ) {
         if (this.changeListeners.contains(listener)) {
             this.changeListeners.remove(listener);
         }

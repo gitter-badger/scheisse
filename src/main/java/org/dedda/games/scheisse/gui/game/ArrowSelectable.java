@@ -5,12 +5,12 @@ package org.dedda.games.scheisse.gui.game;
  */
 public interface ArrowSelectable {
 
-    public abstract void up();
+    public void up();
 
-    public abstract void left();
+    public void left();
 
-    public abstract void down();
+    public void down();
 
-    public abstract void right();
+    public void right();
 
 }
