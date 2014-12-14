@@ -13,8 +13,8 @@ public abstract class ItemFilter {
 
     public ArrayList<Item> filter(final ArrayList<Item> items) {
         ArrayList<Item> filtered = new ArrayList<Item>();
-        for(Item item : items){
-            if(accept(item)){
+        for (Item item : items) {
+            if (accept(item)) {
                 filtered.add(item);
             }
         }

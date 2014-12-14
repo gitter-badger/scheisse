@@ -20,8 +20,8 @@ public class PackageReaderTest {
         };
         BinaryResource actualResources[] = packageReader.readPackage(packageFile);
         assertTrue(resources.length == actualResources.length);
-        if(resources.length == actualResources.length){
-            for(int i = 0; i < resources.length; i++){
+        if (resources.length == actualResources.length) {
+            for (int i = 0; i < resources.length; i++) {
                 assertEquals(resources[i], actualResources[i]);
             }
         }

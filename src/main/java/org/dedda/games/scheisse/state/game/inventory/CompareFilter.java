@@ -29,7 +29,7 @@ public class CompareFilter extends ItemFilter {
     }
 
     @Override
-    public boolean accept(final Item item){
+    public boolean accept(final Item item) {
 
         return false;
     }

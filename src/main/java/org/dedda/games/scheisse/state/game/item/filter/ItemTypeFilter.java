@@ -15,8 +15,8 @@ public class ItemTypeFilter extends ItemFilter {
 
     @Override
     public boolean accept(final Item item) {
-        for(Class current : itemClasses){
-            if(item.getClass().equals(current)){
+        for (Class current : itemClasses) {
+            if (item.getClass().equals(current)) {
                 return true;
             }
         }

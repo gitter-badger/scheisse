@@ -34,7 +34,7 @@ public class NPCWalkToDestinationTest {
 
     @Test
     public void testHasNextStep() throws Exception {
-        while(npcWalkToDestination.hasNextStep()){
+        while (npcWalkToDestination.hasNextStep()) {
             npcWalkToDestination.nextStep();
         }
         assertFalse(npcWalkToDestination.hasNextStep());

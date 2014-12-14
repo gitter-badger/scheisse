@@ -239,7 +239,7 @@ public class Main {
      * ({@value org.dedda.games.scheisse.exception.ExceptionCode#EXIT_OK} if
      * no errors occurred)
      */
-    private static int startUp(){
+    private static int startUp() {
         if (online) {
             SystemPrinter.debugln("trying to get new version...");
             readConfig();

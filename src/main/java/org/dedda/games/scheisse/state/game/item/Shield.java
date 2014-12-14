@@ -20,8 +20,8 @@ public class Shield extends Armor implements Wearable, Holdeable {
     }
 
     @Override
-    public boolean equals(final Object object){
-        if(object instanceof Shield){
+    public boolean equals(final Object object) {
+        if (object instanceof Shield) {
             Shield shield = (Shield)object;
             return shield.armor == this.armor
                     && shield.value == this.value

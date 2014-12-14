@@ -19,7 +19,7 @@ public class Weapon extends Item implements Wearable, Holdeable {
      * @param value long - item value
      * @param attack long
      */
-    public Weapon(final long id, final String name, final long value, final long attack, final Image sprite){
+    public Weapon(final long id, final String name, final long value, final long attack, final Image sprite) {
         super(id, name, value, ItemCategory.WEAPPON, WEAPON, sprite);
         this.attack = attack;
     }
@@ -33,8 +33,8 @@ public class Weapon extends Item implements Wearable, Holdeable {
     }
 
     @Override
-    public boolean equals(final Object object){
-        if(object instanceof Weapon){
+    public boolean equals(final Object object) {
+        if (object instanceof Weapon) {
             Weapon weapon = (Weapon)object;
             return weapon.getName().equals(this.getName())
                     && weapon.value == this.value

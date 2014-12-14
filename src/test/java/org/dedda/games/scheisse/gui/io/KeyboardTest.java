@@ -6,7 +6,7 @@ public class KeyboardTest {
 
     private Keyboard keyboard;
 
-    public KeyboardTest(){
+    public KeyboardTest() {
 
     }
 

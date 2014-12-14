@@ -55,7 +55,7 @@ public class GameWindowTest {
     }
 
     @Test
-    public void testRemoveComponent() throws Exception{
+    public void testRemoveComponent() throws Exception {
         testAddComponent();
         GameGuiComponent component1 = gameWindow.getFocusedComponent();
         gameWindow.removeComponent(component1);

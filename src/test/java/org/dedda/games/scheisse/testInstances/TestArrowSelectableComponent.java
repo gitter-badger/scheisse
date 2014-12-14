@@ -10,7 +10,7 @@ import java.awt.*;
 /**
  * Created by dedda on 7/16/14.
  */
-public class TestArrowSelectableComponent extends GameGuiComponent implements ArrowSelectable{
+public class TestArrowSelectableComponent extends GameGuiComponent implements ArrowSelectable {
 
     private int up = 0;
     private int down = 0;

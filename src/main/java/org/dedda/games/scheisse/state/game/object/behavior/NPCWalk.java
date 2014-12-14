@@ -17,21 +17,21 @@ public class NPCWalk extends NPCScriptAction {
 
     @Override
     public boolean hasNextStep() {
-        if(maxSpeed < restAmount){
+        if (maxSpeed < restAmount) {
             return script.getNpc().canMove(direction, maxSpeed) && restAmount > 0;
-        }else{
+        } else {
             return script.getNpc().canMove(direction, restAmount) && restAmount > 0;
         }
     }
 
     @Override
     public void nextStep() {
-        if(hasNextStep()){
+        if (hasNextStep()) {
             script.getNpc().setDirection(direction);
-            if(maxSpeed < restAmount){
+            if (maxSpeed < restAmount) {
                 script.getNpc().move(maxSpeed);
                 restAmount -= maxSpeed;
-            }else{
+            } else {
                 script.getNpc().move(restAmount);
                 restAmount = 0;
             }

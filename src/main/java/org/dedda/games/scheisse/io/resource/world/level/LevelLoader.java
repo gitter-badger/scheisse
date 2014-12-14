@@ -7,6 +7,4 @@ import org.dedda.games.scheisse.io.FileInput;
  */
 public class LevelLoader extends FileInput {
 
-
-
 }

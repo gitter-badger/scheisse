@@ -62,10 +62,10 @@ public class Options {
     }
 
     public static void set(final HashMap<String, String> map) {
-        if(map.containsKey("res")){
+        if (map.containsKey("res")) {
             resolution = Parse.toDimension(map.get("res"));
         }
-        if(map.containsKey("check net")){
+        if (map.containsKey("check net")) {
             checkInternetConnection = Parse.toBoolean(map.get("check net"));
         }
     }

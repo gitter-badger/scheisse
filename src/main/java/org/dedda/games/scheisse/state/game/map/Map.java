@@ -24,7 +24,7 @@ public class Map {
      *
      * @param size Dimension
      */
-    public Map(final Dimension size){
+    public Map(final Dimension size) {
         init(size, new ArrayList<MapObject>());
     }
 
@@ -41,18 +41,18 @@ public class Map {
         float chunksYf = (float)size.height/CHUNK_SIZE;
         int chunksXi = (int)chunksXf;
         int chunksYi = (int)chunksYf;
-        if((float)chunksXi < chunksXf){
+        if ((float)chunksXi < chunksXf) {
             chunksXi++;
         }
-        if((float)chunksYi < chunksYf){
+        if ((float)chunksYi < chunksYf) {
             chunksYi++;
         }
         chunkGridSize = new Dimension(chunksXi, chunksYi);
         this.chunk = new Chunk[chunksXi][chunksYi];
-        for(int x = 0; x < chunksXi; x++){
+        for (int x = 0; x < chunksXi; x++) {
             int minX = x * CHUNK_SIZE;
             int maxX = ((x + 1) * CHUNK_SIZE < size.width) ? ((x + 1) * CHUNK_SIZE) : size.width;
-            for(int y = 0; y < chunksYi; y++){
+            for (int y = 0; y < chunksYi; y++) {
                 int minY = y * CHUNK_SIZE;
                 int maxY = ((y + 1) * CHUNK_SIZE < size.height) ? ((y + 1) * CHUNK_SIZE) : size.height;
                 this.chunk[x][y] = new Chunk(new Point(minX, minY), new Point(maxX, maxY));
@@ -85,8 +85,8 @@ public class Map {
         int chunkMinY = objectMin.y / CHUNK_SIZE;
         int chunkMaxX = objectMax.x / CHUNK_SIZE + (((float)objectMax.x / CHUNK_SIZE > objectMax.x / CHUNK_SIZE) ? (0) : (1));
         int chunkMaxY = objectMax.y / CHUNK_SIZE + (((float)objectMax.y / CHUNK_SIZE > objectMax.y / CHUNK_SIZE) ? (0) : (1));
-        for(int x = chunkMinX; x <= chunkMaxX; x++){
-            for(int y = chunkMinY; y <= chunkMaxY; y++){
+        for (int x = chunkMinX; x <= chunkMaxX; x++) {
+            for (int y = chunkMinY; y <= chunkMaxY; y++) {
                 chunk[x][y].addObject(object);
             }
         }
@@ -98,7 +98,7 @@ public class Map {
      */
     public void setObjects(final ArrayList<MapObject> objects) {
         this.objects = objects;
-        for(MapObject object : objects){
+        for (MapObject object : objects) {
             addObjectToChunks(object);
         }
     }
@@ -108,7 +108,7 @@ public class Map {
      * @param objects MapObject[] - objects on the map
      */
     public void setObjects(final MapObject[] objects) {
-        for(MapObject object : objects){
+        for (MapObject object : objects) {
             addObject(object);
             addObjectToChunks(object);
         }

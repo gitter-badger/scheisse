@@ -35,7 +35,7 @@ public class NPCWalkTest {
 
     @Test
     public void testHasNextStep() throws Exception {
-        while(npcWalk.getRestAmount() > 0){
+        while (npcWalk.getRestAmount() > 0) {
             npcWalk.nextStep();
         }
         assertFalse(npcWalk.hasNextStep());

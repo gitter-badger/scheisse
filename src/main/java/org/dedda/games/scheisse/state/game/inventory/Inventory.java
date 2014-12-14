@@ -68,7 +68,7 @@ public class Inventory {
      *
      * @return int
      */
-    public int getSize(){
+    public int getSize() {
         return slots.size();
     }
 
@@ -135,13 +135,13 @@ public class Inventory {
         return null;
     }
 
-    public void addInventoryChangeListener(final InventoryChangeListener inventoryChangeListener) {
-        inventoryChangeListeners.add(inventoryChangeListener);
+    public void addInventoryChangeListener(final InventoryChangeListener listener) {
+        inventoryChangeListeners.add(listener);
     }
 
-    public void removeInventoryChangeListener(final InventoryChangeListener inventoryChangeListener) {
-        if(inventoryChangeListeners.contains(inventoryChangeListener)){
-            inventoryChangeListeners.remove(inventoryChangeListener);
+    public void removeInventoryChangeListener(final InventoryChangeListener listener) {
+        if (inventoryChangeListeners.contains(listener)) {
+            inventoryChangeListeners.remove(listener);
         }
     }
 

@@ -22,9 +22,9 @@ public class Door {
         this.locked = locked;
     }
 
-    public boolean canPass(final Direction direction, final Player player){
-        for(Direction dir : passingDirection){
-            if(dir.equals(direction)){
+    public boolean canPass(final Direction direction, final Player player) {
+        for (Direction dir : passingDirection) {
+            if (dir.equals(direction)) {
                 return !locked;
             }
         }

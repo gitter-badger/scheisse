@@ -24,7 +24,7 @@ public class  Soil {
 
     private synchronized static HashMap<Type, Image> initImageMap() {
         HashMap<Type, Image> imageMap = new HashMap<Type, Image>();
-        for(Type soilType : Type.values()){
+        for (Type soilType : Type.values()) {
             Image image = null;
             String fileName = Main.INSTALLATION_FOLDER + "data/image/map_" + String.valueOf(soilType).toLowerCase() + ".png";
             SystemPrinter.debugln("loaded image: " + fileName);
@@ -36,7 +36,7 @@ public class  Soil {
 
     private synchronized static HashMap<Type, Texture> initTextureMap() {
         HashMap<Type, Texture> textureMap = new HashMap<Type, Texture>();
-        for(Type type : Type.values()){
+        for (Type type : Type.values()) {
             String fileName = Main.INSTALLATION_FOLDER + "data/image/map_" + String.valueOf(type).toLowerCase() + ".png";
             Texture texture = null;
             try {
@@ -48,15 +48,15 @@ public class  Soil {
         return textureMap;
     }
 
-    public static void loadImages(){
+    public static void loadImages() {
         imageMap = initImageMap();
     }
 
-    public static void loadTextures(){
+    public static void loadTextures() {
         textureMap = initTextureMap();
     }
 
-    public static void init(){
+    public static void init() {
         loadImages();
         loadTextures();
     }
@@ -65,7 +65,7 @@ public class  Soil {
         return imageMap;
     }
 
-    public static Image getImage(final Type soilType){
+    public static Image getImage(final Type soilType) {
         return imageMap.get(soilType);
     }
 
@@ -73,7 +73,7 @@ public class  Soil {
         return textureMap;
     }
 
-    public static Texture getTexture(final Type type){
+    public static Texture getTexture(final Type type) {
         return textureMap.get(type);
     }
 }

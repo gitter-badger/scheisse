@@ -20,7 +20,7 @@ public class Quest {
     protected int progress = UNTOUCHED;
     protected HashMap<String, String> progressData;
 
-    public Quest(final String name, final int experience, final int minLevel){
+    public Quest(final String name, final int experience, final int minLevel) {
         this.name = name;
         this.experience = experience;
         this.minLevel = minLevel;

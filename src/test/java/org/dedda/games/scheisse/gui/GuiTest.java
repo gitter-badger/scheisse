@@ -28,7 +28,7 @@ public class GuiTest {
     }
 
     @Test
-    public void testStop(){
+    public void testStop() {
         gui.start();
         game.start();
         assertTrue(game.isRunning());
