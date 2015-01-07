@@ -16,7 +16,7 @@ public class NPCJumpIfEqualTest {
 
     @Before
     public void setUp() throws Exception {
-        npc = new NPC(new Point2D.Double(3d, 4d), null);
+        npc = new NPC(new Point2D.Double(3d, 4d));
         npcScript = new NPCScript(npc);
         npcJumpIfEqual = new NPCJumpIfEqual(npcScript);
         NPCScriptAction npcScriptAction[] = new NPCScriptAction[4];

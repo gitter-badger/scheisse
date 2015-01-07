@@ -2,8 +2,6 @@ package org.dedda.games.scheisse.main;
 
 import org.dedda.games.scheisse.debug.SystemPrinter;
 import org.dedda.games.scheisse.gui.cpu.Gui;
-import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable;
-import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
 import org.dedda.games.scheisse.io.FileInput;
 import org.dedda.games.scheisse.io.NetworkConfigWords;
 import org.dedda.games.scheisse.io.net.HttpDownloader;
@@ -16,11 +14,8 @@ import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.inventory.Slot;
 import org.dedda.games.scheisse.state.game.map.soil.Soil;
 
-import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.Socket;
 import java.net.URL;

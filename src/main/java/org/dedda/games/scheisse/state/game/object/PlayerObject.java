@@ -1,5 +1,6 @@
 package org.dedda.games.scheisse.state.game.object;
 
+import java.awt.*;
 import java.awt.geom.Point2D;
 
 /**
@@ -8,7 +9,7 @@ import java.awt.geom.Point2D;
 public class PlayerObject extends GameObject {
 
     public PlayerObject() {
-        super(new Point2D.Double(0, 0), null);
+        super(new Point2D.Double(0, 0));
 
         //GuiPlayer guiPlayer = new GuiPlayer();
     }
@@ -16,5 +17,9 @@ public class PlayerObject extends GameObject {
     @Override
     public boolean equals(final Object object) {
         throw new UnsupportedOperationException("equals method in player guiElement class not implemented yet.");
+    }
+
+    public void render(Graphics2D g2d) {
+
     }
 }

@@ -17,7 +17,7 @@ public class NPCWalkTest {
 
     @Before
     public void setUp() throws Exception {
-        npc = new NPC(new Point2D.Double(0d, 0d), null);
+        npc = new NPC(new Point2D.Double(0d, 0d));
         npc.setMaxSpeed(3d);
         npcScript = new NPCScript(npc);
         npcWalk = new NPCWalk(npcScript);
