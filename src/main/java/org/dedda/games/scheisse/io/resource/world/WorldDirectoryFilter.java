@@ -16,8 +16,6 @@ public class WorldDirectoryFilter implements FileFilter {
         if (!directory.isDirectory()) {
             return false;
         }
-        String directoryName = directory.getAbsolutePath();
-        directoryName += directoryName.endsWith("/") ? "" : "/";
         File contents[] = directory.listFiles(new FileFilter() {
             public boolean accept(File file) {
                 return file.isDirectory();

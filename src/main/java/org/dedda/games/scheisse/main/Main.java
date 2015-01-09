@@ -2,8 +2,6 @@ package org.dedda.games.scheisse.main;
 
 import org.dedda.games.scheisse.debug.SystemPrinter;
 import org.dedda.games.scheisse.gui.cpu.Gui;
-import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable;
-import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
 import org.dedda.games.scheisse.io.FileInput;
 import org.dedda.games.scheisse.io.NetworkConfigWords;
 import org.dedda.games.scheisse.io.net.HttpDownloader;
@@ -16,11 +14,8 @@ import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.inventory.Slot;
 import org.dedda.games.scheisse.state.game.map.soil.Soil;
 
-import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.Socket;
 import java.net.URL;
@@ -73,7 +68,7 @@ public class Main {
 
         new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
         Game game = new Game();
-        Player player = new SaveGameLoader(new File("src/test/test_files/savegame/savegame.dsg")).load();
+        Player player = new SaveGameLoader(new File("src/test/test_files/savegame/SaveGameLoader")).load();
         Inventory inventory = player.getInventory();
         for (int i = 4; i < 10; i++) {
             Slot slot = new Slot(i, inventory);
@@ -143,7 +138,7 @@ public class Main {
         /*
         Player player = new Player(true);
         player.setExperience(12);
-        Map map = new MapLoader("src/test/test_files/data/map/map.0_0.dm").load();
+        Map map = new MapLoader("src/test/test_files/classes/org/dedda/games/scheisse/io/MapLoader").load();
         Game game = new Game();
         game.setPlayer(player);
         game.setMap(map);
@@ -239,7 +234,7 @@ public class Main {
      * ({@value org.dedda.games.scheisse.exception.ExceptionCode#EXIT_OK} if
      * no errors occurred)
      */
-    private static int startUp(){
+    private static int startUp() {
         if (online) {
             SystemPrinter.debugln("trying to get new version...");
             readConfig();

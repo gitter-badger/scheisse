@@ -67,7 +67,7 @@ public class NPCJumpIfTrue extends NPCScriptAction {
     }
 
     @Override
-    public boolean equals(final Object object){
+    public boolean equals(final Object object) {
         if (!object.getClass().equals(this.getClass())) {
             return false;
         }

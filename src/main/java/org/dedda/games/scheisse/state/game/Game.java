@@ -42,7 +42,7 @@ public class Game implements State, Runnable {
                 e.printStackTrace();
             }
         }
-        if(save){
+        if (save) {
             save();
         }
     }

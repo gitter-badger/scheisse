@@ -27,7 +27,7 @@ public class SlotTest {
 
     @Test
     public void testRemove() throws Exception {
-        while(slot.getNumberOfItems() > 1){
+        while (slot.getNumberOfItems() > 1) {
             slot.remove();
         }
         assertEquals(1, slot.getNumberOfItems());

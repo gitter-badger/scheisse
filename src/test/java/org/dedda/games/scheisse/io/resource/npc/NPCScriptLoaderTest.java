@@ -19,9 +19,9 @@ public class NPCScriptLoaderTest {
 
     @Before
     public void setUp() throws Exception {
-        scriptFile = new File("src/test/test_files/data/npc/test.ds");
+        scriptFile = new File("src/test/test_files/classes/org/dedda/games/scheisse/io/resource/npc/NPCScriptLoader");
         npcScriptLoader = new NPCScriptLoader();
-        npc = new NPC(new Point2D.Double(0d, 0d), null);
+        npc = new NPC(new Point2D.Double(0d, 0d));
         npc.setMaxSpeed(3d);
     }
 

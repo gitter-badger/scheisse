@@ -14,9 +14,9 @@ import static org.junit.Assert.assertTrue;
 public class OptionsTest {
 
     @Test
-    public void testInitialization(){
+    public void testInitialization() {
         File optionsFile = new File(System.getProperty("user.home") + "/.scheisse.conf");
-        if(optionsFile.exists()){
+        if (optionsFile.exists()) {
             optionsFile.delete();
         }
         Options.initDefault();
@@ -33,7 +33,7 @@ public class OptionsTest {
     }
 
     @Test
-    public void testSet(){
+    public void testSet() {
         HashMap<String, String> settingsMap = new HashMap<String, String>();
         settingsMap.put("res", "800,600");
         settingsMap.put("check net", "0");

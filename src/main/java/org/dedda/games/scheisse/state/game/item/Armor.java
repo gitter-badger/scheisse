@@ -9,7 +9,7 @@ import static org.dedda.games.scheisse.state.game.item.ItemCategory.ARMOR;
 /**
  * Created by dedda on 4/18/14.
  */
-public class Armor extends Item implements Wearable{
+public class Armor extends Item implements Wearable {
 
     protected final long armor;
 
@@ -19,7 +19,7 @@ public class Armor extends Item implements Wearable{
      * @param value long - item value
      * @param armor long
      */
-    public Armor(final long id, final String name, final long value, final long armor, final ItemType type, final Image sprite){
+    public Armor(final long id, final String name, final long value, final long armor, final ItemType type, final Image sprite) {
         super(id, name, value, ARMOR, type, sprite);
         this.armor = armor;
     }
@@ -33,7 +33,7 @@ public class Armor extends Item implements Wearable{
     }
 
     @Override
-    public boolean equals(final Object object){
+    public boolean equals(final Object object) {
         if(object instanceof Armor){
             Armor armor = (Armor)object;
             return armor.name.equals(this.name)

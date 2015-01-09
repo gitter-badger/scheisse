@@ -28,7 +28,7 @@ public class ShopConnector {
     public List<Offer> getOffers(final ItemType itemType) {
         ArrayList<Long> allIDs = new ArrayList<Long>();
         for (long currentId : Item.getItemMap().keySet()) {
-            if (Item.itemForId(currentId).getType() == itemType) {
+            if (Item.forId(currentId).getType() == itemType) {
                 allIDs.add(currentId);
             }
         }

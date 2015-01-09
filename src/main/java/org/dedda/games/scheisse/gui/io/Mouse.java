@@ -108,25 +108,32 @@ public class Mouse implements MouseListener, MouseMotionListener, MouseWheelList
     }
 
     public void mouseDragged(final MouseEvent mouseEvent) {
+        int x = mouseEvent.getX();
+        int y = mouseEvent.getY();
         for (MouseAction mouseAction : dragAction) {
             mouseAction.perform(
-                    new MouseActionInfo(mouseEvent.getButton(), 0, mouseEvent.getX(), mouseEvent.getY())
+                    new MouseActionInfo(mouseEvent.getButton(), 0, x, y)
             );
         }
     }
 
     public void mouseMoved(final MouseEvent mouseEvent) {
+        int x = mouseEvent.getX();
+        int y = mouseEvent.getY();
         for (MouseAction mouseAction : moveAction) {
             mouseAction.perform(
-                    new MouseActionInfo(0, 0, mouseEvent.getX(), mouseEvent.getY())
+                    new MouseActionInfo(0, 0, x, y)
             );
         }
     }
 
     public void mouseWheelMoved(final MouseWheelEvent mouseWheelEvent) {
+        int x = mouseWheelEvent.getX();
+        int y = mouseWheelEvent.getY();
+        int scrollAmount = mouseWheelEvent.getScrollAmount();
         for (MouseAction mouseAction : wheelAction) {
             mouseAction.perform(
-                    new MouseActionInfo(0, mouseWheelEvent.getScrollAmount(), mouseWheelEvent.getX(), mouseWheelEvent.getY())
+                    new MouseActionInfo(0, scrollAmount, x, y)
             );
         }
     }

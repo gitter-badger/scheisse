@@ -10,7 +10,7 @@ public class Offer {
      * This id can be used to get the item from the
      * {@link org.dedda.games.scheisse.state.game.item.Item} class.
      *
-     * @see org.dedda.games.scheisse.state.game.item.Item#itemForId(long)
+     * @see org.dedda.games.scheisse.state.game.item.Item#forId(long)
      */
     public final long itemId;
 

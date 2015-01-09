@@ -17,7 +17,7 @@ public class NPCWalkToDestinationTest {
 
     @Before
     public void setUp() throws Exception {
-        npc = new NPC(new Point2D.Double(0d, 0d), null);
+        npc = new NPC(new Point2D.Double(0d, 0d));
         npc.setMaxSpeed(3d);
         npcScript = new NPCScript(npc);
         npcWalkToDestination = new NPCWalkToDestination(npcScript);
@@ -34,7 +34,7 @@ public class NPCWalkToDestinationTest {
 
     @Test
     public void testHasNextStep() throws Exception {
-        while(npcWalkToDestination.hasNextStep()){
+        while (npcWalkToDestination.hasNextStep()) {
             npcWalkToDestination.nextStep();
         }
         assertFalse(npcWalkToDestination.hasNextStep());

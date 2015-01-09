@@ -7,7 +7,7 @@ import java.awt.geom.Point2D;
 /**
  * Created by dedda on 10/3/14.
  */
-public class NPCWalkToDestination extends NPCWalk{
+public class NPCWalkToDestination extends NPCWalk {
 
     protected Point2D.Double destination;
 
@@ -21,8 +21,8 @@ public class NPCWalkToDestination extends NPCWalk{
     }
 
     @Override
-    public void nextStep(){
-        if(hasNextStep()){
+    public void nextStep() {
+        if (hasNextStep()) {
             double npcX = script.getNpc().getLocation().getX();
             double npcY = script.getNpc().getLocation().getY();
             if (npcX < destination.getX() + 0.1 && npcX > destination.getX() - 0.1) {
@@ -45,7 +45,7 @@ public class NPCWalkToDestination extends NPCWalk{
         }
     }
 
-    private void calcRestAmount(){
+    private void calcRestAmount() {
         restAmount = Distances.getDistanceTo(script.getNpc().getLocation(), destination);
     }
 
@@ -59,7 +59,7 @@ public class NPCWalkToDestination extends NPCWalk{
     }
 
     @Override
-    public boolean equals(final Object object){
+    public boolean equals(final Object object) {
         if (!object.getClass().equals(this.getClass())) {
             return false;
         }

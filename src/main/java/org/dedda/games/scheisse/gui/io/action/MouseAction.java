@@ -5,6 +5,6 @@ package org.dedda.games.scheisse.gui.io.action;
  */
 public interface MouseAction {
 
-    public abstract void perform(final MouseActionInfo info);
+    public void perform(final MouseActionInfo info);
 
 }

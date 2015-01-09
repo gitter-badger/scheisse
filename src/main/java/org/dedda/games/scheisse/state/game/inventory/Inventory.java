@@ -57,18 +57,18 @@ public class Inventory {
     }
 
     public void removeItems(final long id, final long amount) {
-        removeItems(Item.itemForId(id), amount);
+        removeItems(Item.forId(id), amount);
     }
 
     public void addItems (final long id, final long amount) {
-        addItems(Item.itemForId(id), amount);
+        addItems(Item.forId(id), amount);
     }
 
     /**
      *
      * @return int
      */
-    public int getSize(){
+    public int getSize() {
         return slots.size();
     }
 
@@ -135,13 +135,13 @@ public class Inventory {
         return null;
     }
 
-    public void addInventoryChangeListener(final InventoryChangeListener inventoryChangeListener) {
-        inventoryChangeListeners.add(inventoryChangeListener);
+    public void addInventoryChangeListener(final InventoryChangeListener listener) {
+        inventoryChangeListeners.add(listener);
     }
 
-    public void removeInventoryChangeListener(final InventoryChangeListener inventoryChangeListener) {
-        if(inventoryChangeListeners.contains(inventoryChangeListener)){
-            inventoryChangeListeners.remove(inventoryChangeListener);
+    public void removeInventoryChangeListener(final InventoryChangeListener listener) {
+        if (inventoryChangeListeners.contains(listener)) {
+            inventoryChangeListeners.remove(listener);
         }
     }
 

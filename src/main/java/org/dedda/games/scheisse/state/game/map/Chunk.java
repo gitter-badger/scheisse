@@ -48,7 +48,7 @@ public class Chunk {
      *
      * @param object MapObject
      */
-    public void addObject(final MapObject object){
+    public void addObject(final MapObject object) {
         this.objects.add(object);
     }
 

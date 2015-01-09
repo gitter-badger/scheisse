@@ -2,8 +2,10 @@ package org.dedda.games.scheisse.gui.cpu.inventory;
 
 import org.dedda.games.scheisse.gui.cpu.TabbedGamePane;
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable;
+import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
 import org.dedda.games.scheisse.state.game.Game;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
+import org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -13,7 +15,7 @@ import java.awt.*;
 /**
  * Created by dedda on 11/29/14.
  */
-public class InventoryTablePanel extends JPanel{
+public class InventoryTablePanel extends JPanel {
 
     private TabbedGamePane tabbedGamePane;
     private InventoryTable inventoryTable;
@@ -26,11 +28,15 @@ public class InventoryTablePanel extends JPanel{
         Game game = tabbedGamePane.getGui().getGame();
         Inventory inventory = game.getPlayer().getInventory();
         inventoryTable = new InventoryTable(inventory);
-        inventoryTable.addListSelectionListener(getInventorySelectionListener());
+        inventoryTable.addListSelectionListener(
+                getInventorySelectionListener()
+        );
         actionInventory = new Inventory();
         actionInventory.getSlots().clear();
         actionTable = new InventoryTable(actionInventory);
-        actionTable.addListSelectionListener(getActionInventorySelectionListener());
+        actionTable.addListSelectionListener(
+                getActionInventorySelectionListener()
+        );
         actionPanel = new InventoryActionPanel(this);
         initLayout();
     }
@@ -46,31 +52,35 @@ public class InventoryTablePanel extends JPanel{
         setBackground(Color.LIGHT_GRAY);
     }
 
-    public void addTransactionListener(final InventoryTransactionListener listener) {
+    public void addTransactionListener(
+            final InventoryTransactionListener listener
+    ) {
         actionPanel.addInventoryTransactionListener(listener);
     }
 
-    public void removeTransactionListener(final InventoryTransactionListener listener) {
+    public void removeTransactionListener(
+            final InventoryTransactionListener listener
+    ) {
         actionPanel.removeInventoryTransactionListener(listener);
     }
 
     private ListSelectionListener getInventorySelectionListener() {
         return new ListSelectionListener() {
-            public void valueChanged(ListSelectionEvent listSelectionEvent) {
-                actionPanel.inventorySelectionChanged(listSelectionEvent);
+            public void valueChanged(ListSelectionEvent event) {
+                actionPanel.inventorySelectionChanged(event);
             }
         };
     }
 
     private ListSelectionListener getActionInventorySelectionListener() {
         return new ListSelectionListener() {
-            public void valueChanged(ListSelectionEvent listSelectionEvent) {
-                actionPanel.actionInventorySelectionChanged(listSelectionEvent);
+            public void valueChanged(ListSelectionEvent event) {
+                actionPanel.actionInventorySelectionChanged(event);
             }
         };
     }
 
-    public void cancelTransaction(){
+    public void cancelTransaction() {
         actionPanel.cancelTransaction();
     }
 

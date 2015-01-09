@@ -20,7 +20,7 @@ public class NPCScript {
         this.action = action;
     }
 
-    public boolean hasNextAction(){
+    public boolean hasNextAction() {
         return currentAction < action.length - 1;
     }
 
@@ -38,7 +38,7 @@ public class NPCScript {
         }
     }
 
-    public void jump(final int index){
+    public void jump(final int index) {
         currentAction = index;
     }
 

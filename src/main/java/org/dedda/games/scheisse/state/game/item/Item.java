@@ -26,7 +26,11 @@ public abstract class Item implements Stackable {
     static {
         itemMap = new HashMap<Long, Item>();
         itemMap.put(0L, new NullItem());
-        new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
+        new ItemLoader().loadAll(
+                new File(
+                        "src/test/test_files/classes/org/dedda/games/scheisse/io/resource/item/ItemLoader"
+                )
+        );
     }
 
     /**
@@ -34,14 +38,14 @@ public abstract class Item implements Stackable {
      * @param name String - item name
      * @param value long - item value
      */
-    public Item(final long id, final String name, final long value, final ItemCategory category, final ItemType type, final Image sprite){
+    public Item(final long id, final String name, final long value, final ItemCategory category, final ItemType type, final Image sprite) {
         this.id = id;
         this.name = name;
         this.value = value;
         this.category = category;
         this.type = type;
         this.sprite = sprite;
-        if(!itemMap.containsKey(id)){
+        if (!itemMap.containsKey(id)) {
             itemMap.put(id, this);
             SystemPrinter.debugln("registered item '" + name + "' with id: " + id);
         }
@@ -64,8 +68,8 @@ public abstract class Item implements Stackable {
     }
 
     @Override
-    public boolean equals(final Object object){
-        if(object instanceof Item){
+    public boolean equals(final Object object) {
+        if (object instanceof Item) {
             Item item = (Item)object;
             return item.name.equals(this.name)
                     && item.value == this.value;
@@ -75,7 +79,7 @@ public abstract class Item implements Stackable {
 
     public static void printMap() {
         SystemPrinter.debugln("All items:");
-        for(long key : itemMap.keySet()){
+        for (long key : itemMap.keySet()) {
             SystemPrinter.debugln("ID: " + key + " NAME: " + itemMap.get(key).getName());
         }
     }
@@ -84,11 +88,11 @@ public abstract class Item implements Stackable {
         return sprite;
     }
 
-    public static Item itemForId(final long id){
+    public static Item forId(final long id) {
         return itemMap.get(id);
     }
 
-    public long getId(){
+    public long getId() {
         return id;
     }
 
@@ -108,7 +112,7 @@ public abstract class Item implements Stackable {
         this.minXp = minXp;
     }
 
-    public long getMinLevel(){
+    public long getMinLevel() {
         return Level.getLevel(minXp);
     }
 

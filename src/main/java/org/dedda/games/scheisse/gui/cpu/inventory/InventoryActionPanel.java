@@ -1,5 +1,7 @@
 package org.dedda.games.scheisse.gui.cpu.inventory;
 
+import org.dedda.games.scheisse.gui.cpu.Gui;
+import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable;
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
 import org.dedda.games.scheisse.state.game.Player;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
@@ -80,15 +82,19 @@ public class InventoryActionPanel extends JPanel {
     }
 
     private void add() {
+        InventoryTable inventoryTable =
+                inventoryTablePanel.getInventoryTable();
+        InventoryTable actionTable = inventoryTablePanel.getActionTable();
         double amountDouble = (Double)numberSpinner.getModel().getValue();
         int amount = (int)amountDouble;
-        int rows[] = inventoryTablePanel.getInventoryTable().getTable().getSelectedRows();
+        int rows[] = inventoryTable.getTable().getSelectedRows();
         long ids[] = new long[rows.length];
+        InventoryTableModel model = inventoryTable.getModel();
         for (int i = 0; i < ids.length; i ++) {
-            ids[i] = inventoryTablePanel.getInventoryTable().getModel().getSlotInRow(rows[i]).getDummy().getId();
+            ids[i] = model.getSlotInRow(rows[i]).getDummy().getId();
         }
-        Inventory inventory = inventoryTablePanel.getInventoryTable().getInventory();
-        Inventory actionInventory = inventoryTablePanel.getActionTable().getInventory();
+        Inventory inventory = inventoryTable.getInventory();
+        Inventory actionInventory = actionTable.getInventory();
         for (long id : ids) {
             actionInventory.addItems(id, amount);
             inventory.removeItems(id, amount);
@@ -98,15 +104,19 @@ public class InventoryActionPanel extends JPanel {
     }
 
     private void remove() {
+        InventoryTable inventoryTable =
+                inventoryTablePanel.getInventoryTable();
+        InventoryTable actionTable = inventoryTablePanel.getActionTable();
         double amountDouble = (Double)numberSpinner.getModel().getValue();
         int amount = (int)amountDouble;
-        int rows[] = inventoryTablePanel.getActionTable().getTable().getSelectedRows();
+        int rows[] = actionTable.getTable().getSelectedRows();
         long ids[] = new long[rows.length];
+        InventoryTableModel model = actionTable.getModel();
         for (int i = 0; i < ids.length; i ++) {
-            ids[i] = inventoryTablePanel.getActionTable().getModel().getSlotInRow(rows[i]).getDummy().getId();
+            ids[i] = model.getSlotInRow(rows[i]).getDummy().getId();
         }
-        Inventory inventory = inventoryTablePanel.getInventoryTable().getInventory();
-        Inventory actionInventory = inventoryTablePanel.getActionTable().getInventory();
+        Inventory inventory = inventoryTable.getInventory();
+        Inventory actionInventory = actionTable.getInventory();
         for (long id : ids) {
             inventory.addItems(id, amount);
             actionInventory.removeItems(id, amount);
@@ -116,9 +126,11 @@ public class InventoryActionPanel extends JPanel {
     }
 
     private void ok() {
-        Inventory actionInventory = inventoryTablePanel.getActionTable().getInventory();
+        InventoryTable actionTable = inventoryTablePanel.getActionTable();
+        Gui gui = inventoryTablePanel.getTabbedGamePane().getGui();
+        Inventory actionInventory = actionTable.getInventory();
         if (actionComboBox.getModel().getSelectedItem().equals(InventoryActionComboBox.SELL)) {
-            Player player = inventoryTablePanel.getTabbedGamePane().getGui().getGame().getPlayer();
+            Player player = gui.getGame().getPlayer();
             for (Slot slot : actionInventory.getSlots()) {
                 player.setMoney(player.getMoney() + slot.getNumberOfItems() * slot.getDummy().getValue());
             }
@@ -128,7 +140,9 @@ public class InventoryActionPanel extends JPanel {
         transactionPerformed(InventoryTransactionEvent.GENERAL);
     }
 
-    public void inventorySelectionChanged(final ListSelectionEvent listSelectionEvent) {
+    public void inventorySelectionChanged(
+            final ListSelectionEvent listSelectionEvent
+    ) {
         int selectedRows[] = inventoryTablePanel.getInventoryTable().getTable().getSelectedRows();
         long minAmount = 1;
         for (int row : selectedRows) {
@@ -144,8 +158,11 @@ public class InventoryActionPanel extends JPanel {
         numberSpinner.setModel(spinnerNumberModel);
     }
 
-    public void actionInventorySelectionChanged(final ListSelectionEvent listSelectionEvent) {
-        int selectedRows[] = inventoryTablePanel.getActionTable().getTable().getSelectedRows();
+    public void actionInventorySelectionChanged(
+            final ListSelectionEvent listSelectionEvent
+    ) {
+        InventoryTable actionTable = inventoryTablePanel.getActionTable();
+        int selectedRows[] = actionTable.getTable().getSelectedRows();
         long minAmount = 1;
         for (int row : selectedRows) {
             InventoryTableModel model;
@@ -186,13 +203,17 @@ public class InventoryActionPanel extends JPanel {
         }
     }
 
-    public void removeInventoryTransactionListener(final InventoryTransactionListener listener) {
+    public void removeInventoryTransactionListener(
+            final InventoryTransactionListener listener
+    ) {
         if (listeners.contains(listener)) {
             listeners.remove(listener);
         }
     }
 
-    public void addInventoryTransactionListener(final InventoryTransactionListener listener) {
+    public void addInventoryTransactionListener(
+            final InventoryTransactionListener listener
+    ) {
         listeners.add(listener);
     }
 

@@ -12,7 +12,7 @@ public class Slot {
     private long numberOfItems = 0;
     private Item dummy;
 
-    public Slot(final Inventory inventory){
+    public Slot(final Inventory inventory) {
         this.inventory = inventory;
         dummy = new NullItem();
     }
@@ -21,8 +21,8 @@ public class Slot {
      *
      * @param itemId Id of the item
      */
-    public Slot(final long itemId, final Inventory inventory){
-        this.dummy = Item.itemForId(itemId);
+    public Slot(final long itemId, final Inventory inventory) {
+        this.dummy = Item.forId(itemId);
         this.inventory = inventory;
     }
 
@@ -30,7 +30,7 @@ public class Slot {
      *
      * @return is there any space left in here?
      */
-    public boolean canAdd(){
+    public boolean canAdd() {
         return numberOfItems < dummy.maxStackNumber();
     }
 
@@ -38,9 +38,9 @@ public class Slot {
      *
      * @param item Item
      */
-    public void add(final Item item){
-        if(item.getClass().equals(dummy.getClass())){
-            if(canAdd()){
+    public void add (final Item item) {
+        if (item.getClass().equals(dummy.getClass())) {
+            if (canAdd()) {
                 numberOfItems++;
             }
         }
@@ -50,8 +50,8 @@ public class Slot {
     /**
      * removes one from the item counter
      */
-    public void remove(){
-        if(numberOfItems > 0){
+    public void remove() {
+        if (numberOfItems > 0) {
             numberOfItems--;
         }
         inventory.triggerChangeEvent();
@@ -61,7 +61,7 @@ public class Slot {
      *
      * @param dummy Item
      */
-    public void setDummy(final Item dummy){
+    public void setDummy(final Item dummy) {
         this.dummy = dummy;
         inventory.triggerChangeEvent();
     }
@@ -92,8 +92,8 @@ public class Slot {
     }
 
     @Override
-    public boolean equals(final Object object){
-        if(object instanceof Slot){
+    public boolean equals(final Object object) {
+        if (object instanceof Slot) {
             Slot slot = (Slot)object;
             return slot.dummy.equals(this.dummy)
                     && slot.numberOfItems == this.numberOfItems;
