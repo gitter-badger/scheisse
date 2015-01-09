@@ -26,7 +26,11 @@ public abstract class Item implements Stackable {
     static {
         itemMap = new HashMap<Long, Item>();
         itemMap.put(0L, new NullItem());
-        new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
+        new ItemLoader().loadAll(
+                new File(
+                        "src/test/test_files/classes/org/dedda/games/scheisse/io/resource/item/ItemLoader"
+                )
+        );
     }
 
     /**

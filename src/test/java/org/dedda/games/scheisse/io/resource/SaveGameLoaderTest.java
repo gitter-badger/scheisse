@@ -17,8 +17,16 @@ public class SaveGameLoaderTest {
 
     @Test
     public void testLoad() throws Exception {
-        new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
-        SaveGameLoader sgl = new SaveGameLoader(new File("src/test/test_files/savegame/savegame.dsg"));
+        new ItemLoader().loadAll(
+                new File(
+                        "src/test/test_files/classes/org/dedda/games/scheisse/io/resource/item/ItemLoader"
+                )
+        );
+        SaveGameLoader sgl = new SaveGameLoader(
+                new File(
+                        "src/test/test_files/classes/org/dedda/games/scheisse/io/resource/SaveGameLoader"
+                )
+        );
         Player instance = new Player(false);
         instance.setName("Test user");
         instance.setMap(new Point(1, 2));

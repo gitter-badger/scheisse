@@ -68,7 +68,7 @@ public class Main {
 
         new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
         Game game = new Game();
-        Player player = new SaveGameLoader(new File("src/test/test_files/savegame/savegame.dsg")).load();
+        Player player = new SaveGameLoader(new File("src/test/test_files/savegame/SaveGameLoader")).load();
         Inventory inventory = player.getInventory();
         for (int i = 4; i < 10; i++) {
             Slot slot = new Slot(i, inventory);
