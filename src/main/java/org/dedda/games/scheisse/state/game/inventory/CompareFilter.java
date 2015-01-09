@@ -8,24 +8,24 @@ import org.dedda.games.scheisse.state.game.item.filter.ItemFilter;
  */
 public class CompareFilter extends ItemFilter {
 
-    public static final int MORE = 0;
-    public static final int EQUAL = 1;
-    public static final int LESS = 2;
+    public static final int MODE_BELOW = 0;
+    public static final int MODE_EXACT = 1;
+    public static final int MODE_ABOVE = 2;
 
-    public static final int ITEM_NAME = 0;
-    public static final int ITEM_VALUE = 1;
-    public static final int ITEM_MIN_XP = 2;
-    public static final int ITEM_DAMAGE = 3;
-    public static final int ITEM_ARMOR = 4;
+    public static final int CATEGORY_NAME = 0;
+    public static final int CATEGORY_VALUE = 1;
+    public static final int CATEGORY_MIN_XP = 2;
+    public static final int CATEGORY_DAMAGE = 3;
+    public static final int CATEGORY_ARMOR = 4;
 
-    private int category;
-    private Item target;
-    private int direction;
+    public final int category;
+    public final Item target;
+    public final int mode;
 
-    public CompareFilter(final int category, final Item target, final int direction) {
+    public CompareFilter(final int category, final Item target, final int mode) {
         this.category = category;
         this.target = target;
-        this.direction = direction;
+        this.mode = mode;
     }
 
     @Override

@@ -57,11 +57,11 @@ public class Inventory {
     }
 
     public void removeItems(final long id, final long amount) {
-        removeItems(Item.itemForId(id), amount);
+        removeItems(Item.forId(id), amount);
     }
 
     public void addItems (final long id, final long amount) {
-        addItems(Item.itemForId(id), amount);
+        addItems(Item.forId(id), amount);
     }
 
     /**

@@ -11,8 +11,8 @@ public class ItemLevelFilter extends ItemFilter{
     public static final int MODE_EXACT = 1;
     public static final int MODE_ABOVE = 2;
 
-    private final long level;
-    private final int mode;
+    public final long level;
+    public final int mode;
 
     public ItemLevelFilter(final long level, final int mode) {
         this.level = level;

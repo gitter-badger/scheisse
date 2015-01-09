@@ -58,9 +58,9 @@ public class InventoryActionPanelTest {
     public void testInitialization() {
         assertEquals(inventory, inventoryTablePanel.getInventoryTable().getInventory());
         assertEquals(inventory, panel.getInventoryTablePanel().getInventoryTable().getInventory());
-        assertEquals(inventory.getSlots().get(0).getDummy(), Item.itemForId(1));
-        assertEquals(inventory.getSlots().get(1).getDummy(), Item.itemForId(2));
-        assertEquals(inventory.getSlots().get(2).getDummy(), Item.itemForId(3));
+        assertEquals(inventory.getSlots().get(0).getDummy(), Item.forId(1));
+        assertEquals(inventory.getSlots().get(1).getDummy(), Item.forId(2));
+        assertEquals(inventory.getSlots().get(2).getDummy(), Item.forId(3));
         assertEquals(inventory.getSlots().get(0).getNumberOfItems(), 10);
         assertEquals(inventory.getSlots().get(1).getNumberOfItems(), 12);
         assertEquals(inventory.getSlots().get(2).getNumberOfItems(), 2);
@@ -111,7 +111,7 @@ public class InventoryActionPanelTest {
     public void testOk() {
         testAdd();
         long money = player.getMoney();
-        long newMoney = money + Item.itemForId(1).getValue() + Item.itemForId(3).getValue();
+        long newMoney = money + Item.forId(1).getValue() + Item.forId(3).getValue();
         InventoryActionComboBox comboBox = panel.getActionComboBox();
         comboBox.setSelectedItem(InventoryActionComboBox.SELL);
         for (ActionListener actionListener : panel.getOkButton().getActionListeners()) {

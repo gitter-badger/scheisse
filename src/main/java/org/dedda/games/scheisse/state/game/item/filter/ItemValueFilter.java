@@ -11,16 +11,16 @@ public class ItemValueFilter extends ItemFilter {
     public static final int MODE_EXACT = 1;
     public static final int MODE_ABOVE = 2;
 
-    private final long value;
-    private final int mode;
+    public final long value;
+    public final int mode;
 
-    public ItemValueFilter(long value, int mode) {
+    public ItemValueFilter(final long value, final int mode) {
         this.value = value;
         this.mode = mode;
     }
 
     @Override
-    public boolean accept(Item item) {
+    public boolean accept(final Item item) {
         switch (mode) {
             case MODE_BELOW:    return value >= item.getValue();
             case MODE_EXACT:    return value == item.getValue();

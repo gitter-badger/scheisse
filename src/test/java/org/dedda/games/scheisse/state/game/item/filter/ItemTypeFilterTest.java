@@ -1,4 +1,4 @@
-package org.dedda.games.scheisse.state.game.inventory;
+package org.dedda.games.scheisse.state.game.item.filter;
 
 import org.dedda.games.scheisse.state.game.item.*;
 import org.dedda.games.scheisse.state.game.item.filter.ItemTypeFilter;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class ItemCategoryFilterTest {
+public class ItemTypeFilterTest {
 
     private ItemTypeFilter itemTypeFilter;
 

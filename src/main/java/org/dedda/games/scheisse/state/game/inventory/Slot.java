@@ -22,7 +22,7 @@ public class Slot {
      * @param itemId Id of the item
      */
     public Slot(final long itemId, final Inventory inventory) {
-        this.dummy = Item.itemForId(itemId);
+        this.dummy = Item.forId(itemId);
         this.inventory = inventory;
     }
 

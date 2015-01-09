@@ -13,9 +13,9 @@ public class ItemArmorFilter extends ItemFilter {
     public static final int MODE_EXACT = 1;
     public static final int MODE_ABOVE = 2;
 
-    private final long armor;
-    private final int mode;
-    private final ItemTypeFilter itemTypeFilter;
+    public final long armor;
+    public final int mode;
+    public final ItemTypeFilter itemTypeFilter;
 
     public ItemArmorFilter(final long armor, final int mode) {
         this.armor = armor;

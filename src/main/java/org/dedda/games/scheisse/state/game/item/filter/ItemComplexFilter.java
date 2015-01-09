@@ -12,15 +12,15 @@ public class ItemComplexFilter extends ItemFilter {
     public static final int MODE_ONE_OR_MORE = 2;
     public static final int MODE_ALL = 3;
 
-    private final ItemFilter[] itemFilters;
-    private final int mode;
+    public final ItemFilter[] itemFilters;
+    public final int mode;
 
-    public ItemComplexFilter(ItemFilter[] itemFilters, int mode) {
+    public ItemComplexFilter(final ItemFilter[] itemFilters, final int mode) {
         this.itemFilters = itemFilters;
         this.mode = mode;
     }
 
-    private boolean acceptModeNone(Item item) {
+    private boolean acceptModeNone(final Item item) {
         for (ItemFilter filter : itemFilters) {
             if (filter.accept(item)) {
                 return false;
@@ -29,7 +29,7 @@ public class ItemComplexFilter extends ItemFilter {
         return true;
     }
 
-    private boolean acceptModeOne(Item item) {
+    private boolean acceptModeOne(final Item item) {
         boolean accepted = false;
         for (ItemFilter filter : itemFilters) {
             if (filter.accept(item)) {
@@ -42,7 +42,7 @@ public class ItemComplexFilter extends ItemFilter {
         return accepted;
     }
 
-    private boolean acceptModeOneOrMore(Item item) {
+    private boolean acceptModeOneOrMore(final Item item) {
         for (ItemFilter filter : itemFilters) {
             if (filter.accept(item)) {
                 return true;
@@ -51,7 +51,7 @@ public class ItemComplexFilter extends ItemFilter {
         return false;
     }
 
-    private boolean acceptModeAll(Item item) {
+    private boolean acceptModeAll(final Item item) {
         for (ItemFilter filter : itemFilters) {
             if (!filter.accept(item)) {
                 return false;
@@ -61,7 +61,7 @@ public class ItemComplexFilter extends ItemFilter {
     }
 
     @Override
-    public boolean accept(Item item) {
+    public boolean accept(final Item item) {
         if (itemFilters.length == 0) {
             return true;
         }

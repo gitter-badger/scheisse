@@ -84,7 +84,7 @@ public abstract class Item implements Stackable {
         return sprite;
     }
 
-    public static Item itemForId(final long id) {
+    public static Item forId(final long id) {
         return itemMap.get(id);
     }
 

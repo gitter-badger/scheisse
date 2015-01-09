@@ -12,18 +12,18 @@ public class ItemNameFilter extends ItemFilter {
     public static final boolean CASE_INSENSITIVE = false;
     public static final boolean CASE_SENSITIVE = true;
 
-    private final String name;
-    private final int mode;
-    private final boolean caseSensitive;
+    public final String name;
+    public final int mode;
+    public final boolean caseSensitive;
 
-    public ItemNameFilter(String name, int mode, boolean caseSensitive) {
+    public ItemNameFilter(final String name, final int mode, final boolean caseSensitive) {
         this.name = name;
         this.mode = mode;
         this.caseSensitive = caseSensitive;
     }
 
     @Override
-    public boolean accept(Item item) {
+    public boolean accept(final Item item) {
         String expected = name;
         String actual = item.getName();
         if (caseSensitive == CASE_INSENSITIVE) {
