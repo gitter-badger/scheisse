@@ -3,23 +3,25 @@ package org.dedda.games.scheisse.io;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.HashMap;
-import java.util.Objects;
 
 import static org.junit.Assert.*;
 
 public class FileInputTest {
 
     private FileInput fileInput;
-    private File[] textFiles;
+    private File[] files;
     private String folder;
 
     @Before
     public void setUp() {
         folder = "src/test/test_files/classes/org/dedda/games/scheisse/io/FileInput/";
-        textFiles = new File[]{
+        files = new File[]{
                 new File(folder + "read"),
+                new File(folder + "readImage.png"),
                 new File(folder + "readArray"),
                 new File(folder + "getLines"),
                 new File(folder + "getMap"),
@@ -30,7 +32,7 @@ public class FileInputTest {
 
     @Test
     public void testRead() throws Exception {
-        File file = textFiles[0];
+        File file = files[0];
         String expected = "simple test for reading\nfiles";
         String actual = fileInput.read(file);
         assertEquals(expected, actual);
@@ -38,12 +40,14 @@ public class FileInputTest {
 
     @Test
     public void testReadImage() throws Exception {
-
+        Image expected = Toolkit.getDefaultToolkit().getImage(files[1].getAbsolutePath());
+        Image actual = fileInput.readImage(files[1]);
+        assertEquals(expected, actual);
     }
 
     @Test
     public void testReadArray() throws Exception {
-        File file = textFiles[1];
+        File file = files[2];
         int expected[] = new int[]{(int)'A', (int)'b', (int)'C'};
         int actual[] = fileInput.readArray(file);
         assertArrayEquals(expected, actual);
@@ -51,7 +55,7 @@ public class FileInputTest {
 
     @Test
     public void testGetLines() throws Exception {
-        File file = textFiles[2];
+        File file = files[3];
         String expected[] = new String[]{
                 "line0",
                 "line1",
@@ -63,7 +67,7 @@ public class FileInputTest {
 
     @Test
     public void testGetMap() throws Exception {
-        File file = textFiles[3];
+        File file = files[4];
         HashMap<String, String> expected = new HashMap<String, String>();
         expected.put("line0", "value0");
         expected.put("line1", "value1");
@@ -74,7 +78,7 @@ public class FileInputTest {
 
     @Test
     public void testGetMapEscaped() throws Exception {
-        File file = textFiles[4];
+        File file = files[5];
         HashMap<String, String> expected = new HashMap<String, String>();
         expected.put("line0", "value0");
         expected.put("line1", "value1");

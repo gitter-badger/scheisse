@@ -1,8 +1,8 @@
 package org.dedda.games.scheisse.gui.cpu.inventory;
 
 import org.dedda.games.scheisse.gui.cpu.TabbedGamePane;
+import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
 import org.dedda.games.scheisse.state.game.Player;
-import sun.org.mozilla.javascript.tools.debugger.Dim;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,8 +24,12 @@ public class InventoryPanel extends JPanel {
         tablePanel = new InventoryTablePanel(tabbedGamePane);
         intiLayout();
         tablePanel.addTransactionListener(headerBar);
-        headerBar.addCategoriesChangeListener(tablePanel.getInventoryTable().getModel());
-        headerBar.addCategoriesChangeListener(tablePanel.getActionTable().getModel());
+        InventoryTableModel inventoryModel =
+                tablePanel.getInventoryTable().getModel();
+        headerBar.addCategoriesChangeListener(inventoryModel);
+        InventoryTableModel actionModel =
+                tablePanel.getActionTable().getModel();
+        headerBar.addCategoriesChangeListener(actionModel);
     }
 
     private void intiLayout() {

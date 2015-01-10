@@ -52,8 +52,6 @@ public class NPCScriptLoaderTest {
         assertTrue(action0.equals(loadedSkript.getAction()[0]));
         assertTrue(action1.equals(loadedSkript.getAction()[1]));
         assertTrue(action2.equals(loadedSkript.getAction()[2]));
-        System.out.println(action3.getJumpPoint());
-        System.out.println(((NPCJumpIfTrue)loadedSkript.getAction()[3]).getJumpPoint());
         assertTrue(action3.equals(loadedSkript.getAction()[3]));
         assertTrue(action4.equals(loadedSkript.getAction()[4]));
         assertTrue(npcScript.equals(loadedSkript));

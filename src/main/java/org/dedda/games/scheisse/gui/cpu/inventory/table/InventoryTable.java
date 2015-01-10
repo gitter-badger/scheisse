@@ -9,6 +9,8 @@ import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
 import java.awt.*;
 
+import static org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel.*;
+
 /**
  * Created by dedda on 11/29/14.
  */
@@ -25,18 +27,18 @@ public class InventoryTable extends JScrollPane {
             @Override
             public void tableChanged(TableModelEvent event) {
                 super.tableChanged(event);
-                if (model.getShownCategories().contains(InventoryTableModel.SYMBOL)) {
+                if (model.getShownCategories().contains(SYMBOL)) {
                     TableColumnModel columnModel = getColumnModel();
-                    int columnIndex = model.findColumn(InventoryTableModel.HEADER_SYMBOL);
+                    int columnIndex = model.findColumn(HEADER_SYMBOL);
                     TableColumn column = columnModel.getColumn(columnIndex);
                     column.setCellRenderer(new ItemIconCellRenderer());
                 }
             }
         };
-        model.enableCategory(InventoryTableModel.ID);
-        model.enableCategory(InventoryTableModel.SYMBOL);
-        model.enableCategory(InventoryTableModel.NAME);
-        model.enableCategory(InventoryTableModel.NUMBER);
+        model.enableCategory(ID);
+        model.enableCategory(SYMBOL);
+        model.enableCategory(NAME);
+        model.enableCategory(NUMBER);
         table.setModel(model);
         viewport.setLayout(new BorderLayout());
         viewport.add(table, BorderLayout.CENTER);

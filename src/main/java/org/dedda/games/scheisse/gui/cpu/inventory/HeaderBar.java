@@ -15,7 +15,10 @@ import java.util.List;
 /**
  * Created by dedda on 02.12.14.
  */
-public class HeaderBar extends JPanel implements InventoryTransactionListener, ChangeListener {
+public class HeaderBar
+        extends JPanel
+        implements  InventoryTransactionListener,
+                    ChangeListener {
 
     private Player player;
     private Inventory inventory;
