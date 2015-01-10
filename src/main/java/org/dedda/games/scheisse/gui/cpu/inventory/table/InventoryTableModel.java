@@ -9,9 +9,7 @@ import org.dedda.games.scheisse.state.game.item.Armor;
 import org.dedda.games.scheisse.state.game.item.Item;
 import org.dedda.games.scheisse.state.game.item.Weapon;
 
-import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableCellRenderer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -19,7 +17,10 @@ import java.util.List;
 /**
  * Created by dedda on 11/26/14.
  */
-public class InventoryTableModel extends AbstractTableModel implements InventoryChangeListener, CategoriesChangeListener {
+public class InventoryTableModel
+        extends AbstractTableModel
+        implements  InventoryChangeListener,
+                    CategoriesChangeListener {
 
     public static final int ID = 0;
     public static final int SYMBOL = 1;
@@ -82,8 +83,10 @@ public class InventoryTableModel extends AbstractTableModel implements Inventory
             case NAME: return item.getName();
             case NUMBER: return number;
             case VALUE: return item.getValue();
-            case ATTACK: return item instanceof Weapon ? ((Weapon)item).getAttack() : 0;
-            case ARMOR: return item instanceof Armor ? ((Armor)item).getArmor() : 0;
+            case ATTACK:
+                return item instanceof Weapon ? ((Weapon)item).getAttack() : 0;
+            case ARMOR:
+                return item instanceof Armor ? ((Armor)item).getArmor() : 0;
         }
         return null;
     }

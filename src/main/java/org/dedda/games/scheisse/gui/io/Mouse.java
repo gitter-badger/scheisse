@@ -15,7 +15,10 @@ import java.util.ArrayList;
 /**
  * Created by dedda on 4/18/14.
  */
-public class Mouse implements MouseListener, MouseMotionListener, MouseWheelListener {
+public class Mouse
+        implements  MouseListener,
+                    MouseMotionListener,
+                    MouseWheelListener {
 
     public static final int CLICKED = 1;
     public static final int PRESSED = 2;
@@ -69,8 +72,11 @@ public class Mouse implements MouseListener, MouseMotionListener, MouseWheelList
 
     public void mouseClicked(final MouseEvent mouseEvent) {
         for (MouseAction mouseAction : clickAction) {
+            int button = mouseEvent.getButton();
+            int x = mouseEvent.getX();
+            int y = mouseEvent.getY();
             mouseAction.perform(
-                    new MouseActionInfo(mouseEvent.getButton(), 0, mouseEvent.getX(), mouseEvent.getY())
+                    new MouseActionInfo(button, 0, x, y)
             );
         }
     }
@@ -93,16 +99,20 @@ public class Mouse implements MouseListener, MouseMotionListener, MouseWheelList
 
     public void mouseEntered(final MouseEvent mouseEvent) {
         for (MouseAction mouseAction : enterAction) {
+            int x = mouseEvent.getX();
+            int y = mouseEvent.getY();
             mouseAction.perform(
-                    new MouseActionInfo(0, 0, mouseEvent.getX(), mouseEvent.getY())
+                    new MouseActionInfo(0, 0, x, y)
             );
         }
     }
 
     public void mouseExited(final MouseEvent mouseEvent) {
         for (MouseAction mouseAction : exitAction) {
+            int x = mouseEvent.getX();
+            int y = mouseEvent.getY();
             mouseAction.perform(
-                    new MouseActionInfo(0, 0, mouseEvent.getX(), mouseEvent.getY())
+                    new MouseActionInfo(0, 0, x, y)
             );
         }
     }
