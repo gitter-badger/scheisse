@@ -28,7 +28,8 @@ public abstract class Item implements Stackable {
         itemMap.put(0L, new NullItem());
         new ItemLoader().loadAll(
                 new File(
-                        "src/test/test_files/classes/org/dedda/games/scheisse/io/resource/item/ItemLoader"
+                        "src/test/test_files/classes/" +
+                        "org/dedda/games/scheisse/io/resource/item/ItemLoader"
                 )
         );
     }
@@ -38,7 +39,14 @@ public abstract class Item implements Stackable {
      * @param name String - item name
      * @param value long - item value
      */
-    public Item(final long id, final String name, final long value, final ItemCategory category, final ItemType type, final Image sprite) {
+    public Item(
+            final long id,
+            final String name,
+            final long value,
+            final ItemCategory category,
+            final ItemType type,
+            final Image sprite
+    ) {
         this.id = id;
         this.name = name;
         this.value = value;
@@ -47,7 +55,9 @@ public abstract class Item implements Stackable {
         this.sprite = sprite;
         if (!itemMap.containsKey(id)) {
             itemMap.put(id, this);
-            SystemPrinter.debugln("registered item '" + name + "' with id: " + id);
+            SystemPrinter.debugln(
+                    "registered item '" + name + "' with id: " + id
+            );
         }
     }
 
@@ -80,7 +90,9 @@ public abstract class Item implements Stackable {
     public static void printMap() {
         SystemPrinter.debugln("All items:");
         for (long key : itemMap.keySet()) {
-            SystemPrinter.debugln("ID: " + key + " NAME: " + itemMap.get(key).getName());
+            SystemPrinter.debugln(
+                    "ID: " + key + " NAME: " + itemMap.get(key).getName()
+            );
         }
     }
 

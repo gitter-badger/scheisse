@@ -9,14 +9,32 @@ import static org.dedda.games.scheisse.io.resource.Resource.IMAGE_FOLDER;
  */
 public abstract class Images {
 
-    public static final Image MAIN_MENU_START = Toolkit.getDefaultToolkit().getImage(IMAGE_FOLDER + "main_menu_start.png");
-    public static final Image MAIN_MENU_OPTIONS = Toolkit.getDefaultToolkit().getImage(IMAGE_FOLDER + "main_menu_options.png");
-    public static final Image MAIN_MENU_EXIT = Toolkit.getDefaultToolkit().getImage(IMAGE_FOLDER + "main_menu_exit.png");
-    public static final Image MAIN_MENU_CLOSE = Toolkit.getDefaultToolkit().getImage(IMAGE_FOLDER + "main_menu_close.png");
-    public static final Image MAIN_MENU_MINIMIZE = Toolkit.getDefaultToolkit().getImage(IMAGE_FOLDER + "main_menu_minimize.png");
+    private static Toolkit tk = Toolkit.getDefaultToolkit();
 
-    public static final Image GAME_CLOSE = Toolkit.getDefaultToolkit().getImage(IMAGE_FOLDER + "game_close.png");
-    public static final Image GAME_MINIMIZE = Toolkit.getDefaultToolkit().getImage(IMAGE_FOLDER + "game_minimize.png");
-    public static final Image GAME_MAXIMIZE = Toolkit.getDefaultToolkit().getImage(IMAGE_FOLDER + "game_maximize.png");
+    public static final int MAIN_MENU_START = 0;
+    public static final int MAIN_MENU_OPTIONS = 1;
+    public static final int MAIN_MENU_EXIT = 2;
+    public static final int MAIN_MENU_CLOSE = 3;
+    public static final int MAIN_MENU_MINIMIZE = 4;
+
+    public static final int GAME_CLOSE = 5;
+    public static final int GAME_MINIMIZE = 6;
+    public static final int GAME_MAXIMIZE = 7;
+
+    private static final Image[] images = new Image[]{
+            tk.getImage(IMAGE_FOLDER + "main_menu_start.png"),
+            tk.getImage(IMAGE_FOLDER + "main_menu_options.png"),
+            tk.getImage(IMAGE_FOLDER + "main_menu_exit.png"),
+            tk.getImage(IMAGE_FOLDER + "main_menu_close.png"),
+            tk.getImage(IMAGE_FOLDER + "main_menu_minimize.png"),
+
+            tk.getImage(IMAGE_FOLDER + "game_close.png"),
+            tk.getImage(IMAGE_FOLDER + "game_minimize.png"),
+            tk.getImage(IMAGE_FOLDER + "game_maximize.png")
+    };
+
+    public static Image get(int key) {
+        return images[key];
+    }
 
 }

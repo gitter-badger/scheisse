@@ -11,8 +11,10 @@ import java.util.HashMap;
  */
 public abstract class Resource {
 
-    public static final String INSTALLATION_FOLDER = System.getProperty("user.home") + "/.scheisse/";
-    public static final String SAVEGAME_FOLDER = INSTALLATION_FOLDER + "savegame/";
+    public static final String INSTALLATION_FOLDER =
+            System.getProperty("user.home") + "/.scheisse/";
+    public static final String SAVEGAME_FOLDER =
+            INSTALLATION_FOLDER + "savegame/";
     public static final String DATA_FOLDER = INSTALLATION_FOLDER + "data/";
     public static final String ITEM_FOLDER = DATA_FOLDER + "item/";
     public static final String IMAGE_FOLDER = DATA_FOLDER + "image/";

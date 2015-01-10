@@ -43,19 +43,20 @@ public class SaveGameLoader extends FileInput {
      */
     public Player load() {
         Player player = null;
-        Inventory inventory = null;
         Point map;
-        Point2D.Double location;
         int inventorySize;
         ArrayList<Slot> inventorySlots = new ArrayList<Slot>();
         HashMap<String, String> dataMap = getMap(file);
         //build player:
         player = new Player(false);
         player.setName(dataMap.get(SaveGameWords.NAME));
-        player.setExperience(Parse.toLong(dataMap.get(SaveGameWords.EXPERIENCE)));
+        String experience = dataMap.get(SaveGameWords.EXPERIENCE);
+        player.setExperience(Parse.toLong(experience));
         player.setMap(Parse.toPoint(dataMap.get(SaveGameWords.MAP)));
-        player.setLocation(Parse.toPoint2DDouble(dataMap.get(SaveGameWords.LOCATION)));
-        player.setInventory(readInventory(dataMap.get(SaveGameWords.INVENTORY)));
+        String location = dataMap.get(SaveGameWords.LOCATION);
+        player.setLocation(Parse.toPoint2DDouble(location));
+        String inventory = dataMap.get(SaveGameWords.INVENTORY);
+        player.setInventory(readInventory(inventory));
         return player;
     }
 

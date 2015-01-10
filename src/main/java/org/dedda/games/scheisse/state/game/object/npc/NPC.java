@@ -19,7 +19,11 @@ public class NPC extends GameObject {
         super(location);
     }
 
-    public NPC(final Point2D.Double location, final double maxSpeed, final boolean evil) {
+    public NPC(
+            final Point2D.Double location,
+            final double maxSpeed,
+            final boolean evil
+    ) {
         super(location);
         this.maxSpeed = maxSpeed;
     }

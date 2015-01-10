@@ -36,7 +36,8 @@ public class ShopConnector {
         for (long currentId : allIDs) {
             long price = getBuyingPrice(currentId);
             if (price >= 0) {
-                long amountAvailable = ShopService.getAvailableQuantity(currentId);
+                long amountAvailable =
+                        ShopService.getAvailableQuantity(currentId);
                 Offer offer = new Offer(currentId, amountAvailable, price);
             }
         }

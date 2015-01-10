@@ -26,7 +26,11 @@ public class Offer {
      */
     public final long priceSingle;
 
-    public Offer(final long itemId, final long amountAvailable, final long priceSingle) {
+    public Offer(
+            final long itemId,
+            final long amountAvailable,
+            final long priceSingle
+    ) {
         this.itemId = itemId;
         this.amountAvailable = amountAvailable;
         this.priceSingle = priceSingle;

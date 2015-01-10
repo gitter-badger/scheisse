@@ -16,7 +16,11 @@ public class ItemNameFilter extends ItemFilter {
     public final int mode;
     public final boolean caseSensitive;
 
-    public ItemNameFilter(final String name, final int mode, final boolean caseSensitive) {
+    public ItemNameFilter(
+            final String name,
+            final int mode,
+            final boolean caseSensitive
+    ) {
         this.name = name;
         this.mode = mode;
         this.caseSensitive = caseSensitive;

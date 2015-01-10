@@ -59,10 +59,22 @@ public class NPCScript {
     }
 
     public String replaceKeysInExpression(String expression) {
-        expression = expression.replace("npc.location.x", npc.getLocation().getX() + "");
-        expression = expression.replace("npc.location.y", npc.getLocation().getY() + "");
-        expression = expression.replace("npc.maxSpeed", npc.getMaxSpeed() + "");
-        expression = expression.replace("npc.direction", npc.getDirection() + "");
+        expression = expression.replace(
+                "npc.location.x",
+                npc.getLocation().getX() + ""
+        );
+        expression = expression.replace(
+                "npc.location.y",
+                npc.getLocation().getY() + ""
+        );
+        expression = expression.replace(
+                "npc.maxSpeed",
+                npc.getMaxSpeed() + ""
+        );
+        expression = expression.replace(
+                "npc.direction",
+                npc.getDirection() + ""
+        );
         expression = expression.replace("npc.evil", npc.isEvil() + "");
         expression = expression.replace("npc.name", npc.getName());
         return expression;

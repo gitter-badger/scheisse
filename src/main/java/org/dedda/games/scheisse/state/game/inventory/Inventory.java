@@ -11,7 +11,8 @@ import java.util.ArrayList;
 public class Inventory {
 
     private ArrayList<Slot> slots = new ArrayList<Slot>();
-    private ArrayList<InventoryChangeListener> inventoryChangeListeners = new ArrayList<InventoryChangeListener>();
+    private ArrayList<InventoryChangeListener> inventoryChangeListeners =
+            new ArrayList<InventoryChangeListener>();
 
     public Inventory() {
         for (int i = 0; i < 20; i++) {
@@ -30,7 +31,10 @@ public class Inventory {
     }
 
     public void triggerChangeEvent() {
-        for(InventoryChangeListener inventoryChangeListener : inventoryChangeListeners){
+        for(
+                InventoryChangeListener inventoryChangeListener :
+                inventoryChangeListeners
+                ){
             inventoryChangeListener.inventoryChangeAction();
         }
     }
@@ -112,7 +116,9 @@ public class Inventory {
         SystemPrinter.debugln("Inventory:");
         SystemPrinter.debugln("size: " + slots.size());
         for (Slot slot : slots) {
-            SystemPrinter.debugln(slot.getDummy().getName() + ": " + slot.getNumberOfItems());
+            SystemPrinter.debugln(
+                    slot.getDummy().getName() + ": " + slot.getNumberOfItems()
+            );
         }
     }
 
@@ -135,11 +141,15 @@ public class Inventory {
         return null;
     }
 
-    public void addInventoryChangeListener(final InventoryChangeListener listener) {
+    public void addInventoryChangeListener(
+            final InventoryChangeListener listener
+    ) {
         inventoryChangeListeners.add(listener);
     }
 
-    public void removeInventoryChangeListener(final InventoryChangeListener listener) {
+    public void removeInventoryChangeListener(
+            final InventoryChangeListener listener
+    ) {
         if (inventoryChangeListeners.contains(listener)) {
             inventoryChangeListeners.remove(listener);
         }

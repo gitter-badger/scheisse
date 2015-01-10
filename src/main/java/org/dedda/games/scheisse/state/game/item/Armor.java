@@ -19,7 +19,14 @@ public class Armor extends Item implements Wearable {
      * @param value long - item value
      * @param armor long
      */
-    public Armor(final long id, final String name, final long value, final long armor, final ItemType type, final Image sprite) {
+    public Armor(
+            final long id,
+            final String name,
+            final long value,
+            final long armor,
+            final ItemType type,
+            final Image sprite
+    ) {
         super(id, name, value, ARMOR, type, sprite);
         this.armor = armor;
     }

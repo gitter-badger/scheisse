@@ -39,7 +39,6 @@ public class MapLoader extends FileInput {
     public Map load() {
         Map map = null;
 
-        //String fileData = read(new File(folder + (folder.endsWith("/") ? "": "/") + "map"));
         String fileData = read(new File(folder));
         //mapData = mapData.replace("\n" + (char)10, "" + (char)13);
         ArrayList<String> mapProperties = new ArrayList<String>();
@@ -50,8 +49,12 @@ public class MapLoader extends FileInput {
             char currentChar = fileData.charAt(i);
             if (currentChar == '\n') {
                 if (line != "") {
-                    mapProperties.add(line.substring(0, line.indexOf((int) ':')));
-                    propertyValues.add(line.substring(line.indexOf((int)':')+1));
+                    mapProperties.add(
+                            line.substring(0, line.indexOf((int) ':'))
+                    );
+                    propertyValues.add(
+                            line.substring(line.indexOf((int)':')+1)
+                    );
                 }
                 line = "";
             } else {
@@ -87,7 +90,10 @@ public class MapLoader extends FileInput {
      * @param size Dimension - size of the map
      * @return int[][] - soil data
      */
-    public Soil.Type[][] parseMapSoil(final ArrayList<String> soilData, final Dimension size) {
+    public Soil.Type[][] parseMapSoil(
+            final ArrayList<String> soilData,
+            final Dimension size
+    ) {
         Soil.Type soil[][] = new Soil.Type[size.width][size.height];
         String number = "";
         for (int y = 0; y < soilData.size(); y++) {

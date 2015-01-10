@@ -26,7 +26,9 @@ public class Installer {
         }
         HashMap<URL, String> downloadMap = Resource.getDownloadList();
         for (URL url : downloadMap.keySet()) {
-            SystemPrinter.debugln("installing from URL: " + url.toString() + " ... ");
+            SystemPrinter.debugln(
+                    "installing from URL: " + url.toString() + " ... "
+            );
             if (!installSingle(url, downloadMap.get(url))) {
                 return false;
             }
