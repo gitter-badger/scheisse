@@ -1,0 +1,6 @@
+walkTo 3.0,4.0
+loop1:
+walk 20.0 0.0
+walk 15.0 1.570796327
+jumpIf npc.location.x<50 loop1
+walkTo -100.0,10

@@ -1,5 +1,5 @@
 target/
 scheisse.iml
-classes/
+./classes/
 .idea/
 doc/javadoc/
