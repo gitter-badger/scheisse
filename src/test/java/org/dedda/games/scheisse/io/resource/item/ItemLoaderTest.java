@@ -44,7 +44,6 @@ public class ItemLoaderTest {
         Armor testArmor = new Armor(2, "Wooden Armor", 654L, 321L, ItemType.CLOTHING, null);
         Shield testShield = new Shield(3, "Wooden Shield", 246L, 135L, null);
         new TestItem();
-        Item.printMap();
         assertEquals(Item.getItemMap().size(), 11);
         assertTrue(Item.getItemMap().containsValue(testWeapon));
         assertTrue(Item.getItemMap().containsValue(testArmor));

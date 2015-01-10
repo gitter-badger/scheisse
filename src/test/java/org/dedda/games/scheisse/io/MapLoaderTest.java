@@ -38,8 +38,6 @@ public class MapLoaderTest {
     @Test
     public void testLoad() throws Exception {
         Map map = mapLoader.load();
-        this.map.print();
-        map.print();
         assertEquals(this.map.getSoil(), map.getSoil());
     }
 
