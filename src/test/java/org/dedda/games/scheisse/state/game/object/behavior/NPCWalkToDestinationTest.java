@@ -29,7 +29,9 @@ public class NPCWalkToDestinationTest {
         npcWalkToDestination.nextStep();
         assertTrue(npc.getLocation().getX() > 0);
         assertTrue(npc.getLocation().getY() > 0);
-        assertTrue(npc.getDirection() == Distances.getDirectionTo(new Point2D.Double(0d, 0d), new Point2D.Double(3d, 4d)));
+        assertTrue(npc.getDirection() == Distances.getDirectionTo(
+                new Point2D.Double(0d, 0d), new Point2D.Double(3d, 4d))
+        );
     }
 
     @Test

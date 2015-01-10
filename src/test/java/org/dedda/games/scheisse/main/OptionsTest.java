@@ -15,7 +15,9 @@ public class OptionsTest {
 
     @Test
     public void testInitialization() {
-        File optionsFile = new File(System.getProperty("user.home") + "/.scheisse.conf");
+        File optionsFile = new File(
+                System.getProperty("user.home") + "/.scheisse.conf"
+        );
         if (optionsFile.exists()) {
             optionsFile.delete();
         }
@@ -23,7 +25,8 @@ public class OptionsTest {
         assertEquals(new Dimension(600, 400), Options.getResolution());
         assertTrue(Options.isCheckInternetConnection());
         assertTrue(optionsFile.exists());
-        HashMap<String, String> expectedFileMap = new HashMap<String, String>();
+        HashMap<String, String> expectedFileMap =
+                new HashMap<String, String>();
         expectedFileMap.put("res", "600,400");
         expectedFileMap.put("check net", "1");
         HashMap<String, String> actualFileMap;
@@ -38,8 +41,14 @@ public class OptionsTest {
         settingsMap.put("res", "800,600");
         settingsMap.put("check net", "0");
         Options.set(settingsMap);
-        assertEquals(Parse.toDimension(settingsMap.get("res")), Options.getResolution());
-        assertEquals(Parse.toBoolean(settingsMap.get("check net")), Options.isCheckInternetConnection());
+        assertEquals(
+                Parse.toDimension(settingsMap.get("res")),
+                Options.getResolution()
+        );
+        assertEquals(
+                Parse.toBoolean(settingsMap.get("check net")),
+                Options.isCheckInternetConnection()
+        );
         Options.save();
         FileInput input = new FileInput();
         HashMap<String, String> savedMap = input.getMap(Options.OPTIONS_FILE);

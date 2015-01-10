@@ -14,15 +14,21 @@ public class ItemTypeFilterTest {
 
     @Test
     public void testAccept() throws Exception {
-        itemTypeFilter = new ItemTypeFilter(new ItemType[]{ItemType.WEAPON, ItemType.CLOTHING});
+        itemTypeFilter = new ItemTypeFilter(
+                new ItemType[]{ItemType.WEAPON, ItemType.CLOTHING}
+        );
         assertTrue(itemTypeFilter.accept(new Weapon(0, "", 0, 0, null)));
-        assertTrue(itemTypeFilter.accept(new Armor(0, "", 0, 0, ItemType.CLOTHING, null)));
+        assertTrue(itemTypeFilter.accept(
+                new Armor(0, "", 0, 0, ItemType.CLOTHING, null))
+        );
         assertFalse(itemTypeFilter.accept(new NullItem()));
     }
 
     @Test
     public void testFilter() throws Exception {
-        itemTypeFilter = new ItemTypeFilter(new ItemType[]{ItemType.WEAPON, ItemType.NULL});
+        itemTypeFilter = new ItemTypeFilter(
+                new ItemType[]{ItemType.WEAPON, ItemType.NULL}
+        );
         ArrayList<Item> items = new ArrayList<Item>();
         Weapon weapon1 = new Weapon(1, "1", 0, 0, null);
         Armor armor1 = new Armor(2, "2", 0, 0, ItemType.CLOTHING, null);

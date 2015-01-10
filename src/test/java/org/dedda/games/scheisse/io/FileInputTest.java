@@ -18,7 +18,8 @@ public class FileInputTest {
 
     @Before
     public void setUp() {
-        folder = "src/test/test_files/classes/org/dedda/games/scheisse/io/FileInput/";
+        folder = "src/test/test_files/classes/" +
+                "org/dedda/games/scheisse/io/FileInput/";
         files = new File[]{
                 new File(folder + "read"),
                 new File(folder + "readImage.png"),
@@ -40,7 +41,10 @@ public class FileInputTest {
 
     @Test
     public void testReadImage() throws Exception {
-        Image expected = Toolkit.getDefaultToolkit().getImage(files[1].getAbsolutePath());
+        Image expected =
+                Toolkit.
+                getDefaultToolkit().
+                getImage(files[1].getAbsolutePath());
         Image actual = fileInput.readImage(files[1]);
         assertEquals(expected, actual);
     }
