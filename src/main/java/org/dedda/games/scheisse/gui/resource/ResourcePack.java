@@ -24,6 +24,8 @@ public class ResourcePack {
 
     private static final int NPC_OFFSET = PLAYER_OFFSET + PlayerPack.LENGTH;
 
+    private static final int ITEM_OFFSET = NPC_OFFSET + NPCPack.LENGTH;
+
     private static HashMap<String, ResourcePack> installedPacks =
             new HashMap<String, ResourcePack>();
 
@@ -39,7 +41,8 @@ public class ResourcePack {
                 new MenuPack(this),
                 new SoilPack(this),
                 new PlayerPack(this),
-                new NPCPack(this)
+                new NPCPack(this),
+                new ItemPack(this)
         };
     }
 
@@ -64,8 +67,10 @@ public class ResourcePack {
             return spritePacks[2].get(key - SOIL_OFFSET);
         } else if (key < NPC_OFFSET) {
             return spritePacks[3].get(key - PLAYER_OFFSET);
-        } else if (key < NPC_OFFSET - NPCPack.LENGTH) {
+        } else if (key < ITEM_OFFSET) {
             return spritePacks[4].get(key - NPC_OFFSET);
+        } else if (key < ITEM_OFFSET + ItemPack.LENGTH) {
+            return spritePacks[5].get(key - ITEM_OFFSET);
         }
         throw new ResourcePackException(NO_SUCH_SPRITE);
     }

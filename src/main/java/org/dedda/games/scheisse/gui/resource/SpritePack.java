@@ -1,5 +1,8 @@
 package org.dedda.games.scheisse.gui.resource;
 
+import com.badlogic.gdx.assets.loaders.TextureLoader;
+import com.badlogic.gdx.graphics.Texture;
+
 import java.awt.*;
 import java.io.File;
 
@@ -13,6 +16,7 @@ public abstract class SpritePack {
     public static final int SOIL = 2;
     public static final int PLAYER = 3;
     public static final int NPC = 4;
+    public static final int ITEM = 5;
 
     public final ResourcePack pack;
     public final int packType;
@@ -51,8 +55,11 @@ public abstract class SpritePack {
             length += sprites[i].length;
         }
         Sprite[] ret = new Sprite[length];
-        for (int i = 0; i < length; i++) {
-            //TODO: rearrange sprites to new array for return
+        int i = 0;
+        for (int x = 0; x < sprites.length; x++) {
+            for (int y = 0; y < sprites[x].length; y++, i++) {
+                ret[i] = sprites[x][y];
+            }
         }
         return ret;
     }
