@@ -5,6 +5,8 @@ package org.dedda.games.scheisse.gui.resource;
  */
 public class SoilPack extends SpritePack {
 
+    public static final int LENGTH = 0;
+
     public SoilPack(ResourcePack pack) {
         super(pack, SOIL);
     }

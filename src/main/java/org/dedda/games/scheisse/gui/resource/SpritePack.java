@@ -1,5 +1,8 @@
 package org.dedda.games.scheisse.gui.resource;
 
+import java.awt.*;
+import java.io.File;
+
 /**
  * Created by dedda on 11.01.15.
  */
@@ -38,6 +41,28 @@ public abstract class SpritePack {
             return animations[key - sprites.length];
         }
         throw new NullPointerException("No sprite for key " + key);
+    }
+
+    protected Sprite[] loadSprites(File[] files, Dimension[] sizes) {
+        Sprite[][] sprites = new Sprite[files.length][];
+        int length = 0;
+        for (int i = 0; i < files.length; i++) {
+            sprites[i] = loadSprites(files[i], sizes[i]);
+            length += sprites[i].length;
+        }
+        Sprite[] ret = new Sprite[length];
+        for (int i = 0; i < length; i++) {
+            //TODO: rearrange sprites to new array for return
+        }
+        return ret;
+    }
+
+    protected Sprite[] loadSprites(File file, Dimension size) {
+        return null;
+    }
+
+    protected Animation loadAnimation(File file, Dimension size) {
+        return null;
     }
 
     protected abstract Sprite[] loadSprites(ResourcePack pack);

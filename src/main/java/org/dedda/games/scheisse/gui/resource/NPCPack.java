@@ -5,6 +5,8 @@ package org.dedda.games.scheisse.gui.resource;
  */
 public class NPCPack extends SpritePack {
 
+    public static final int LENGTH = 0;
+
     public NPCPack(ResourcePack pack) {
         super(pack, NPC);
     }

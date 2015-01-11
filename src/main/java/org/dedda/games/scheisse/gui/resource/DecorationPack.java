@@ -5,6 +5,8 @@ package org.dedda.games.scheisse.gui.resource;
  */
 public class DecorationPack extends SpritePack {
 
+    public static final int LENGTH = 0;
+
     public DecorationPack(ResourcePack pack) {
         super(pack, DECORATION);
     }

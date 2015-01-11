@@ -5,6 +5,8 @@ package org.dedda.games.scheisse.gui.resource;
  */
 public class MenuPack extends SpritePack {
 
+    public static final int LENGTH = 0;
+
     public MenuPack(ResourcePack pack) {
         super(pack, MENU);
     }

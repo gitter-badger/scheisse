@@ -9,6 +9,7 @@ public class ResourcePackException extends Exception {
 
     public static final int UNDEFINED = 0;
     public static final int ALREADY_REGISTERED = 1;
+    public static final int NO_SUCH_SPRITE = 2;
 
     public final int code;
 
