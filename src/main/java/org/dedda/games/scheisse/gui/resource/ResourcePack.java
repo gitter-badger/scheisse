@@ -33,7 +33,7 @@ public class ResourcePack {
     public final File baseDirectory;
     public final SpritePack[] spritePacks;
 
-    public ResourcePack(String name) {
+    public ResourcePack(final String name) {
         this.name = name;
         baseDirectory = new File(Resource.IMAGE_FOLDER + name + "/");
         spritePacks = new SpritePack[]{
@@ -46,7 +46,7 @@ public class ResourcePack {
         };
     }
 
-    public static void registerPack(ResourcePack pack)
+    public static void registerPack(final ResourcePack pack)
             throws ResourcePackException
     {
         String name = pack.name;
@@ -56,7 +56,7 @@ public class ResourcePack {
         installedPacks.put(name, pack);
     }
 
-    public Sprite get(int key) throws ResourcePackException {
+    public Sprite get(final int key) throws ResourcePackException {
         if (key < DECORATION_OFFSET) {
             throw new ResourcePackException(NO_SUCH_SPRITE);
         } else if (key < MENU_OFFSET) {

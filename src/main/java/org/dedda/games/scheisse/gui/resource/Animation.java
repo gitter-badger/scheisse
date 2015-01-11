@@ -15,7 +15,11 @@ public class Animation extends Sprite {
     private long updated = 0;
     private long cycles = 0;
 
-    public Animation(Texture[] textures, float updateTime, ResourcePack pack) {
+    public Animation(
+            final Texture[] textures,
+            final float updateTime,
+            final ResourcePack pack
+    ) {
         super(textures[0], pack);
         this.textures = textures;
         this.defaultUpdateTime = updateTime;
@@ -36,4 +40,11 @@ public class Animation extends Sprite {
         }
     }
 
+    public long getUpdated() {
+        return updated;
+    }
+
+    public long getCycles() {
+        return cycles;
+    }
 }

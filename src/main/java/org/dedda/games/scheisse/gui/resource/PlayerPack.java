@@ -7,17 +7,17 @@ public class PlayerPack extends SpritePack {
 
     public static final int LENGTH = 0;
 
-    public PlayerPack(ResourcePack pack) {
+    public PlayerPack(final ResourcePack pack) {
         super(pack, PLAYER);
     }
 
     @Override
-    protected Sprite[] loadSprites(ResourcePack pack) {
+    protected Sprite[] loadSprites(final ResourcePack pack) {
         return new Sprite[0];
     }
 
     @Override
-    protected Animation[] loadAnimations(ResourcePack pack) {
+    protected Animation[] loadAnimations(final ResourcePack pack) {
         return new Animation[0];
     }
 }

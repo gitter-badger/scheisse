@@ -7,17 +7,17 @@ public class NPCPack extends SpritePack {
 
     public static final int LENGTH = 0;
 
-    public NPCPack(ResourcePack pack) {
+    public NPCPack(final ResourcePack pack) {
         super(pack, NPC);
     }
 
     @Override
-    protected Sprite[] loadSprites(ResourcePack pack) {
+    protected Sprite[] loadSprites(final ResourcePack pack) {
         return new Sprite[0];
     }
 
     @Override
-    protected Animation[] loadAnimations(ResourcePack pack) {
+    protected Animation[] loadAnimations(final ResourcePack pack) {
         return new Animation[0];
     }
 }

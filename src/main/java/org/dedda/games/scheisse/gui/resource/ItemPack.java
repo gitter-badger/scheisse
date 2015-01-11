@@ -14,7 +14,7 @@ public class ItemPack extends SpritePack {
 
     private HashMap<Long, Integer> idMap;
 
-    public ItemPack(ResourcePack pack) {
+    public ItemPack(final ResourcePack pack) {
         super(pack, ITEM);
         idMap = new HashMap<Long, Integer>();
         Iterator<Long> itemIdIterator = Item.getItemMap().keySet().iterator();
@@ -25,18 +25,18 @@ public class ItemPack extends SpritePack {
         }
     }
 
-    public Sprite getForItemId(long id) {
+    public Sprite getForItemId(final long id) {
         int index = idMap.get(id);
         return get(index);
     }
 
     @Override
-    protected Sprite[] loadSprites(ResourcePack pack) {
+    protected Sprite[] loadSprites(final ResourcePack pack) {
         return new Sprite[0];
     }
 
     @Override
-    protected Animation[] loadAnimations(ResourcePack pack) {
+    protected Animation[] loadAnimations(final ResourcePack pack) {
         return new Animation[0];
     }
 }

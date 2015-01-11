@@ -1,7 +1,5 @@
 package org.dedda.games.scheisse.exception.gui;
 
-import org.dedda.games.scheisse.exception.ExceptionCode;
-
 /**
  * Created by dedda on 11.01.15.
  */
@@ -17,36 +15,40 @@ public class ResourcePackException extends Exception {
         code = UNDEFINED;
     }
 
-    public ResourcePackException(int code) {
+    public ResourcePackException(final int code) {
         this.code = code;
     }
 
-    public ResourcePackException(String message) {
+    public ResourcePackException(final String message) {
         super(message);
         code = UNDEFINED;
     }
 
-    public ResourcePackException(String message, int code) {
+    public ResourcePackException(final String message, final int code) {
         super(message);
         this.code = code;
     }
 
-    public ResourcePackException(Throwable cause) {
+    public ResourcePackException(final Throwable cause) {
         super(cause);
         code = UNDEFINED;
     }
 
-    public ResourcePackException(Throwable cause, int code) {
+    public ResourcePackException(final Throwable cause, final int code) {
         super(cause);
         this.code = code;
     }
 
-    public ResourcePackException(String message, Throwable cause) {
+    public ResourcePackException(final String message, final Throwable cause) {
         super(message, cause);
         code = UNDEFINED;
     }
 
-    public ResourcePackException(String message, Throwable cause, int code) {
+    public ResourcePackException(
+            final String message,
+            final Throwable cause,
+            final int code
+    ) {
         super(message, cause);
         this.code = code;
     }

@@ -7,17 +7,17 @@ public class SoilPack extends SpritePack {
 
     public static final int LENGTH = 0;
 
-    public SoilPack(ResourcePack pack) {
+    public SoilPack(final ResourcePack pack) {
         super(pack, SOIL);
     }
 
     @Override
-    protected Sprite[] loadSprites(ResourcePack pack) {
+    protected Sprite[] loadSprites(final ResourcePack pack) {
         return new Sprite[0];
     }
 
     @Override
-    protected Animation[] loadAnimations(ResourcePack pack) {
+    protected Animation[] loadAnimations(final ResourcePack pack) {
         return new Animation[0];
     }
 }

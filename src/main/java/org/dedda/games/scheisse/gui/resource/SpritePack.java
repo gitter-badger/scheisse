@@ -38,7 +38,7 @@ public abstract class SpritePack {
         }
     }
 
-    public Sprite get(int key) {
+    public Sprite get(final int key) {
         if (key < sprites.length) {
             return sprites[key];
         } else if (key < sprites.length + animations.length) {
@@ -47,7 +47,10 @@ public abstract class SpritePack {
         throw new NullPointerException("No sprite for key " + key);
     }
 
-    protected Sprite[] loadSprites(File[] files, Dimension[] sizes) {
+    protected Sprite[] loadSprites(
+            final File[] files,
+            final Dimension[] sizes
+    ) {
         Sprite[][] sprites = new Sprite[files.length][];
         int length = 0;
         for (int i = 0; i < files.length; i++) {
@@ -64,16 +67,16 @@ public abstract class SpritePack {
         return ret;
     }
 
-    protected Sprite[] loadSprites(File file, Dimension size) {
+    protected Sprite[] loadSprites(final File file, final Dimension size) {
         return null;
     }
 
-    protected Animation loadAnimation(File file, Dimension size) {
+    protected Animation loadAnimation(final File file, final Dimension size) {
         return null;
     }
 
-    protected abstract Sprite[] loadSprites(ResourcePack pack);
+    protected abstract Sprite[] loadSprites(final ResourcePack pack);
 
-    protected abstract Animation[] loadAnimations(ResourcePack pack);
+    protected abstract Animation[] loadAnimations(final ResourcePack pack);
 
 }

@@ -7,17 +7,17 @@ public class MenuPack extends SpritePack {
 
     public static final int LENGTH = 0;
 
-    public MenuPack(ResourcePack pack) {
+    public MenuPack(final ResourcePack pack) {
         super(pack, MENU);
     }
 
     @Override
-    protected Sprite[] loadSprites(ResourcePack pack) {
+    protected Sprite[] loadSprites(final ResourcePack pack) {
         return new Sprite[0];
     }
 
     @Override
-    protected Animation[] loadAnimations(ResourcePack pack) {
+    protected Animation[] loadAnimations(final ResourcePack pack) {
         return new Animation[0];
     }
 }

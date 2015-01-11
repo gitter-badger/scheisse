@@ -13,12 +13,12 @@ public class DecorationPack extends SpritePack {
     public static final int WINDOW_ICON = 0;
     public static final int TRAY_ICON = 1;
 
-    public DecorationPack(ResourcePack pack) {
+    public DecorationPack(final ResourcePack pack) {
         super(pack, DECORATION);
     }
 
     @Override
-    protected Sprite[] loadSprites(ResourcePack pack) {
+    protected Sprite[] loadSprites(final ResourcePack pack) {
         String folder = pack.baseDirectory.getAbsolutePath();
         folder += folder.endsWith("/") ? "" : "/";
         Sprite[] sprites = loadSprites(
@@ -36,7 +36,7 @@ public class DecorationPack extends SpritePack {
     }
 
     @Override
-    protected Animation[] loadAnimations(ResourcePack pack) {
+    protected Animation[] loadAnimations(final ResourcePack pack) {
         String folder = pack.baseDirectory.getAbsolutePath();
         folder += folder.endsWith("/") ? "" : "/";
         Animation[] animations = new Animation[]{};
