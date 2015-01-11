@@ -23,7 +23,9 @@ public class ResourcePack {
     public ResourcePack(String name) {
         this.name = name;
         baseDirectory = new File(Resource.IMAGE_FOLDER + name + "/");
-        spritePacks = new SpritePack[]{};
+        spritePacks = new SpritePack[]{
+                new DecorationPack(this)
+        };
     }
 
     public static void registerPack(ResourcePack pack)
