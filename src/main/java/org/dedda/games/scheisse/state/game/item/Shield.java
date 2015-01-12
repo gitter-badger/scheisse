@@ -15,7 +15,7 @@ public class Shield extends Armor implements Wearable, Holdeable {
      * @param value long - item value
      * @param armor long
      */
-    public Shield(
+    protected Shield(
             final long id,
             final String name,
             final long value,
@@ -34,5 +34,15 @@ public class Shield extends Armor implements Wearable, Holdeable {
                     && shield.name.equals(this.name);
         }
         return false;
+    }
+
+    public static Shield create(
+            final long id,
+            final String name,
+            final long value,
+            final long armor,
+            final Image sprite
+    ) {
+        return new Shield(id, name, value, armor, sprite);
     }
 }

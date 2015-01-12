@@ -14,8 +14,8 @@ public class ItemLoaderTest {
 
     @Test
     public void testLoadItem() throws Exception {
-        Weapon testWeapon = new Weapon(1, "Wooden Sword", 123L, 456L, null);
-        Armor testArmor = new Armor(
+        Weapon testWeapon = Weapon.create(1, "Wooden Sword", 123L, 456L, null);
+        Armor testArmor = Armor.create(
                 2,
                 "Wooden Armor",
                 654L,
@@ -23,7 +23,7 @@ public class ItemLoaderTest {
                 ItemType.CLOTHING,
                 null
         );
-        Shield testShield = new Shield(3, "Wooden Shield", 246L, 135L, null);
+        Shield testShield = Shield.create(3, "Wooden Shield", 246L, 135L, null);
         ItemLoader itemLoader = new ItemLoader();
         Weapon weapon = (Weapon) itemLoader.loadItem(
                 new File(
@@ -53,8 +53,8 @@ public class ItemLoaderTest {
 
     @Test
     public void testLoadAll() throws Exception {
-        Weapon testWeapon = new Weapon(1, "Wooden Sword", 123L, 456L, null);
-        Armor testArmor = new Armor(
+        Weapon testWeapon = Weapon.create(1, "Wooden Sword", 123L, 456L, null);
+        Armor testArmor = Armor.create(
                 2,
                 "Wooden Armor",
                 654L,
@@ -62,7 +62,7 @@ public class ItemLoaderTest {
                 ItemType.CLOTHING,
                 null
         );
-        Shield testShield = new Shield(3, "Wooden Shield", 246L, 135L, null);
+        Shield testShield = Shield.create(3, "Wooden Shield", 246L, 135L, null);
         new TestItem();
         assertEquals(Item.getItemMap().size(), 11);
         assertTrue(Item.getItemMap().containsValue(testWeapon));

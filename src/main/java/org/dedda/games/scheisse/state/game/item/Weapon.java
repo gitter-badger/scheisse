@@ -19,7 +19,7 @@ public class Weapon extends Item implements Wearable, Holdeable {
      * @param value long - item value
      * @param attack long
      */
-    public Weapon(
+    protected Weapon(
             final long id,
             final String name,
             final long value,
@@ -56,4 +56,15 @@ public class Weapon extends Item implements Wearable, Holdeable {
     public void render(final Person person) {
 
     }
+
+    public static Weapon create(
+            final long id,
+            final String name,
+            final long value,
+            final long attack,
+            final Image sprite
+    ) {
+        return new Weapon(id, name, value, attack, sprite);
+    }
+
 }

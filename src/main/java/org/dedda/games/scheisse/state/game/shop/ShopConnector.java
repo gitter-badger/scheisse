@@ -14,6 +14,8 @@ import java.util.List;
  */
 public class ShopConnector {
 
+    public static final long NOT_AVAILABLE = -1;
+
     public List<Offer> getOffers() {
         List<Long> availableIDs = ShopService.getAvailableItems();
         LinkedList<Offer> offers = new LinkedList<Offer>();

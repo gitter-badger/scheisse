@@ -19,7 +19,7 @@ public class Armor extends Item implements Wearable {
      * @param value long - item value
      * @param armor long
      */
-    public Armor(
+    protected Armor(
             final long id,
             final String name,
             final long value,
@@ -56,5 +56,16 @@ public class Armor extends Item implements Wearable {
 
     public void render(final Person person) {
 
+    }
+
+    public static Armor create(
+            final long id,
+            final String name,
+            final long value,
+            final long armor,
+            final ItemType type,
+            final Image sprite
+    ) {
+        return new Armor(id, name, value, armor, type, sprite);
     }
 }

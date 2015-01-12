@@ -39,7 +39,7 @@ public abstract class Item implements Stackable {
      * @param name String - item name
      * @param value long - item value
      */
-    public Item(
+    protected Item(
             final long id,
             final String name,
             final long value,
