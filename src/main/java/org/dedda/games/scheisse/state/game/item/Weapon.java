@@ -57,7 +57,16 @@ public class Weapon extends Item implements Wearable, Holdeable {
 
     }
 
-    public static Weapon create(
+    /**
+     * Creates a new {@link Weapon} item and takes care of possible errors.
+     * @param id
+     * @param name
+     * @param value
+     * @param attack
+     * @param sprite
+     * @return
+     */
+    public static Weapon register(
             final long id,
             final String name,
             final long value,

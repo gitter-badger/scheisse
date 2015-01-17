@@ -36,7 +36,7 @@ public class Shield extends Armor implements Wearable, Holdeable {
         return false;
     }
 
-    public static Shield create(
+    public static Shield register(
             final long id,
             final String name,
             final long value,

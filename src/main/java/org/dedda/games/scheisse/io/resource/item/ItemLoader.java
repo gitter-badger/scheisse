@@ -31,13 +31,13 @@ public class ItemLoader extends FileInput {
         Image image = Toolkit.getDefaultToolkit().getImage(imageFile);
         if (type.equals(ItemWords.WEAPON)) {
             long attack = Parse.toLong(dataMap.get(ItemWords.ATTACK));
-            item = Weapon.create(id, name, value, attack, image);
+            item = Weapon.register(id, name, value, attack, image);
         } else if (type.equals(ItemWords.ARMOR)) {
             long armor = Parse.toLong(dataMap.get(ItemWords.ARMOR));
-            item = Armor.create(id, name, value, armor, ItemType.CLOTHING, image);
+            item = Armor.register(id, name, value, armor, ItemType.CLOTHING, image);
         } else if (type.equals(ItemWords.SHIELD)) {
             long armor = Parse.toLong(dataMap.get(ItemWords.ARMOR));
-            item = Shield.create(id, name, value, armor, image);
+            item = Shield.register(id, name, value, armor, image);
         }
         return item;
     }

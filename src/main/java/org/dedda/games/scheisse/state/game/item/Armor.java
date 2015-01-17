@@ -58,7 +58,7 @@ public class Armor extends Item implements Wearable {
 
     }
 
-    public static Armor create(
+    public static Armor register(
             final long id,
             final String name,
             final long value,
