@@ -11,7 +11,7 @@ import static org.dedda.games.scheisse.state.game.item.ItemCategory.ARMOR;
  */
 public class Armor extends Item implements Wearable {
 
-    protected final long armor;
+    private final long armor;
 
     /**
      *
@@ -35,13 +35,13 @@ public class Armor extends Item implements Wearable {
      *
      * @return long
      */
-    public long getArmor() {
+    public final long getArmor() {
         return armor;
     }
 
     @Override
-    public boolean equals(final Object object) {
-        if(object instanceof Armor){
+    public final boolean equals(final Object object) {
+        if(object.getClass().equals(this.getClass())){
             Armor armor = (Armor)object;
             return armor.name.equals(this.name)
                     && armor.value == this.value
@@ -50,7 +50,7 @@ public class Armor extends Item implements Wearable {
         return false;
     }
 
-    public int maxStackNumber() {
+    public final int maxStackNumber() {
         return 1;
     }
 

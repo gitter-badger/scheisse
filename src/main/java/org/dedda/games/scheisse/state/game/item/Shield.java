@@ -25,17 +25,6 @@ public class Shield extends Armor implements Wearable, Holdeable {
         super(id, name, value, armor, SHIELD, sprite);
     }
 
-    @Override
-    public boolean equals(final Object object) {
-        if (object instanceof Shield) {
-            Shield shield = (Shield)object;
-            return shield.armor == this.armor
-                    && shield.value == this.value
-                    && shield.name.equals(this.name);
-        }
-        return false;
-    }
-
     public static Shield register(
             final long id,
             final String name,

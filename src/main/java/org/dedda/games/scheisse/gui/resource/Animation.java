@@ -26,7 +26,7 @@ public class Animation extends Sprite {
         this.updateTime = updateTime;
     }
 
-    public void update(final float dt) {
+    public final void update(final float dt) {
         updateTimeCounter += dt;
         if (updateTimeCounter > updateTime) {
             updateTimeCounter -= updateTime;
@@ -40,11 +40,11 @@ public class Animation extends Sprite {
         }
     }
 
-    public long getUpdated() {
+    public final long getUpdated() {
         return updated;
     }
 
-    public long getCycles() {
+    public final long getCycles() {
         return cycles;
     }
 }
