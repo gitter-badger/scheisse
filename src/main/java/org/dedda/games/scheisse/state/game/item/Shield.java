@@ -15,18 +15,23 @@ public class Shield extends Armor implements Wearable, Holdeable {
      * @param value long - item value
      * @param armor long
      */
-    public Shield(final long id, final String name, final long value, final long armor, final Image sprite) {
+    protected Shield(
+            final long id,
+            final String name,
+            final long value,
+            final long armor,
+            final Image sprite
+    ) {
         super(id, name, value, armor, SHIELD, sprite);
     }
 
-    @Override
-    public boolean equals(final Object object) {
-        if (object instanceof Shield) {
-            Shield shield = (Shield)object;
-            return shield.armor == this.armor
-                    && shield.value == this.value
-                    && shield.name.equals(this.name);
-        }
-        return false;
+    public static Shield register(
+            final long id,
+            final String name,
+            final long value,
+            final long armor,
+            final Image sprite
+    ) {
+        return new Shield(id, name, value, armor, sprite);
     }
 }

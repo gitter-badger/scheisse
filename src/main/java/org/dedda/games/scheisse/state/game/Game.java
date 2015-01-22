@@ -24,7 +24,9 @@ public class Game implements State, Runnable {
     }
 
     public Game(final File saveGame) {
-        throw new UnsupportedOperationException("opening games from savegame not supported yet!");
+        throw new UnsupportedOperationException(
+                "opening games from savegame not supported yet!"
+        );
     }
 
     public void render(final Graphics2D g2d) {
@@ -78,7 +80,9 @@ public class Game implements State, Runnable {
     }
 
     public void movePlayer(Point2D.Double location) {
-        throw new UnsupportedOperationException("moving player not implemented yet");
+        throw new UnsupportedOperationException(
+                "moving player not implemented yet"
+        );
     }
 
     public boolean isPaused() {

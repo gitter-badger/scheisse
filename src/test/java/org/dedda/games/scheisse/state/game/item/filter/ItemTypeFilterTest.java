@@ -1,7 +1,6 @@
 package org.dedda.games.scheisse.state.game.item.filter;
 
 import org.dedda.games.scheisse.state.game.item.*;
-import org.dedda.games.scheisse.state.game.item.filter.ItemTypeFilter;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,19 +13,25 @@ public class ItemTypeFilterTest {
 
     @Test
     public void testAccept() throws Exception {
-        itemTypeFilter = new ItemTypeFilter(new ItemType[]{ItemType.WEAPON, ItemType.CLOTHING});
-        assertTrue(itemTypeFilter.accept(new Weapon(0, "", 0, 0, null)));
-        assertTrue(itemTypeFilter.accept(new Armor(0, "", 0, 0, ItemType.CLOTHING, null)));
+        itemTypeFilter = new ItemTypeFilter(
+                new ItemType[]{ItemType.WEAPON, ItemType.CLOTHING}
+        );
+        assertTrue(itemTypeFilter.accept(Weapon.register(0, "", 0, 0, null)));
+        assertTrue(itemTypeFilter.accept(
+                Armor.register(0, "", 0, 0, ItemType.CLOTHING, null))
+        );
         assertFalse(itemTypeFilter.accept(new NullItem()));
     }
 
     @Test
     public void testFilter() throws Exception {
-        itemTypeFilter = new ItemTypeFilter(new ItemType[]{ItemType.WEAPON, ItemType.NULL});
+        itemTypeFilter = new ItemTypeFilter(
+                new ItemType[]{ItemType.WEAPON, ItemType.NULL}
+        );
         ArrayList<Item> items = new ArrayList<Item>();
-        Weapon weapon1 = new Weapon(1, "1", 0, 0, null);
-        Armor armor1 = new Armor(2, "2", 0, 0, ItemType.CLOTHING, null);
-        Weapon weapon2 = new Weapon(3, "3", 0, 0, null);
+        Weapon weapon1 = Weapon.register(1, "1", 0, 0, null);
+        Armor armor1 = Armor.register(2, "2", 0, 0, ItemType.CLOTHING, null);
+        Weapon weapon2 = Weapon.register(3, "3", 0, 0, null);
         NullItem nullItem1 = new NullItem();
         items.add(weapon1);
         items.add(armor1);

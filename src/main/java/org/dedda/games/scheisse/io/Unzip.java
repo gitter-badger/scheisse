@@ -52,7 +52,14 @@ public class Unzip {
             ZipEntry entry = zipInputStream.getNextEntry();
             while (entry != null) {
                 String fileName = entry.getName();
-                File file = new File(destination.getAbsolutePath() + (destination.getAbsolutePath().endsWith("/") ? "" : "/") + fileName);
+                File file =
+                        new File(
+                                destination.getAbsolutePath() + (
+                                destination.getAbsolutePath().endsWith("/") ?
+                                        "" : "/"
+                                ) +
+                                fileName
+                        );
                 files.add(file);
                 System.out.println("Unzipping file: " + file.getAbsoluteFile());
                 new File(file.getParent()).mkdirs();

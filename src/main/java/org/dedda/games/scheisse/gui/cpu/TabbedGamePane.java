@@ -33,7 +33,7 @@ public class TabbedGamePane extends JTabbedPane implements ChangeListener {
         addTab("Inventory", this.inventoryPanel);
         addTab("Shop", this.shopPanel);
         addChangeListener(this);
-        setSelectedIndex(1);
+        setSelectedIndex(2);
     }
 
     public Gui getGui() {

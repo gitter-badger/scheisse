@@ -45,10 +45,25 @@ public class MainMenu extends Menu {
     public void render(final Graphics2D g2d) {
         g2d.setBackground(Color.BLACK);
         g2d.setColor(Color.GREEN);
-        g2d.fillRect(0, 0, Options.getResolution().width, Options.getResolution().height/3);
+        g2d.fillRect(
+                0,
+                0,
+                Options.getResolution().width,
+                Options.getResolution().height/3
+        );
         g2d.setColor(Color.YELLOW);
-        g2d.fillRect(0, Options.getResolution().height/3, Options.getResolution().width, Options.getResolution().height/3);
+        g2d.fillRect(
+                0,
+                Options.getResolution().height/3,
+                Options.getResolution().width,
+                Options.getResolution().height/3
+        );
         g2d.setColor(Color.RED);
-        g2d.fillRect(0, 2*Options.getResolution().height/3, Options.getResolution().width, Options.getResolution().height/3);
+        g2d.fillRect(
+                0,
+                2*Options.getResolution().height/3,
+                Options.getResolution().width,
+                Options.getResolution().height/3
+        );
     }
 }

@@ -5,7 +5,6 @@ import org.dedda.games.scheisse.io.FileInput;
 import org.dedda.games.scheisse.state.game.object.npc.NPC;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.util.ArrayList;
 
 /**

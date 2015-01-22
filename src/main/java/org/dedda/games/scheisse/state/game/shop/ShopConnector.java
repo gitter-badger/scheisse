@@ -14,6 +14,8 @@ import java.util.List;
  */
 public class ShopConnector {
 
+    public static final long NOT_AVAILABLE = -1;
+
     public List<Offer> getOffers() {
         List<Long> availableIDs = ShopService.getAvailableItems();
         LinkedList<Offer> offers = new LinkedList<Offer>();
@@ -36,7 +38,8 @@ public class ShopConnector {
         for (long currentId : allIDs) {
             long price = getBuyingPrice(currentId);
             if (price >= 0) {
-                long amountAvailable = ShopService.getAvailableQuantity(currentId);
+                long amountAvailable =
+                        ShopService.getAvailableQuantity(currentId);
                 Offer offer = new Offer(currentId, amountAvailable, price);
             }
         }

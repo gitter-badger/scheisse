@@ -19,12 +19,14 @@ public class SaveGameLoaderTest {
     public void testLoad() throws Exception {
         new ItemLoader().loadAll(
                 new File(
-                        "src/test/test_files/classes/org/dedda/games/scheisse/io/resource/item/ItemLoader"
+                    "src/test/test_files/classes/" +
+                    "org/dedda/games/scheisse/io/resource/item/ItemLoader"
                 )
         );
         SaveGameLoader sgl = new SaveGameLoader(
                 new File(
-                        "src/test/test_files/classes/org/dedda/games/scheisse/io/resource/SaveGameLoader"
+                    "src/test/test_files/classes/" +
+                    "org/dedda/games/scheisse/io/resource/SaveGameLoader"
                 )
         );
         Player instance = new Player(false);

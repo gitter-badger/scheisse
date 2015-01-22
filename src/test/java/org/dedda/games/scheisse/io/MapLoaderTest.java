@@ -20,7 +20,10 @@ public class MapLoaderTest {
 
     @Before
     public void setUp() throws Exception {
-        mapLoader = new MapLoader(new File("src/test/test_files/classes/org/dedda/games/scheisse/io/MapLoader"));
+        mapLoader = new MapLoader(
+                new File("src/test/test_files/classes/" +
+                         "org/dedda/games/scheisse/io/MapLoader")
+        );
         map = new Map(new Dimension(5, 4));
         soil = new Type[5][4]/*{
                 {DIRT,  DIRT,   DIRT,   DIRT,   GRASS},
@@ -28,10 +31,29 @@ public class MapLoaderTest {
                 {ROCK,  ROCK,   ROCK,   ROCK,   WATER},
                 {WATER, WATER,  WATER,  WATER,  DIRT}
         }*/;
-        soil[0][0] = DIRT;  soil[1][0] = DIRT;  soil[2][0] = DIRT;  soil[3][0] = DIRT;  soil[4][0] = GRASS;
-        soil[0][1] = GRASS; soil[1][1] = GRASS; soil[2][1] = GRASS; soil[3][1] = GRASS; soil[4][1] = ROCK;
-        soil[0][2] = ROCK;  soil[1][2] = ROCK;  soil[2][2] = ROCK;  soil[3][2] = ROCK;  soil[4][2] = WATER;
-        soil[0][3] = WATER; soil[1][3] = WATER; soil[2][3] = WATER; soil[3][3] = WATER; soil[4][3] = DIRT;
+        soil[0][0] = DIRT;
+        soil[1][0] = DIRT;
+        soil[2][0] = DIRT;
+        soil[3][0] = DIRT;
+        soil[4][0] = GRASS;
+
+        soil[0][1] = GRASS;
+        soil[1][1] = GRASS;
+        soil[2][1] = GRASS;
+        soil[3][1] = GRASS;
+        soil[4][1] = ROCK;
+
+        soil[0][2] = ROCK;
+        soil[1][2] = ROCK;
+        soil[2][2] = ROCK;
+        soil[3][2] = ROCK;
+        soil[4][2] = WATER;
+
+        soil[0][3] = WATER;
+        soil[1][3] = WATER;
+        soil[2][3] = WATER;
+        soil[3][3] = WATER;
+        soil[4][3] = DIRT;
         map.setSoil(soil);
     }
 

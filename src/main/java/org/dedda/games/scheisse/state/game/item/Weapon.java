@@ -19,7 +19,13 @@ public class Weapon extends Item implements Wearable, Holdeable {
      * @param value long - item value
      * @param attack long
      */
-    public Weapon(final long id, final String name, final long value, final long attack, final Image sprite) {
+    protected Weapon(
+            final long id,
+            final String name,
+            final long value,
+            final long attack,
+            final Image sprite
+    ) {
         super(id, name, value, ItemCategory.WEAPPON, WEAPON, sprite);
         this.attack = attack;
     }
@@ -50,4 +56,24 @@ public class Weapon extends Item implements Wearable, Holdeable {
     public void render(final Person person) {
 
     }
+
+    /**
+     * Creates a new {@link Weapon} item and takes care of possible errors.
+     * @param id
+     * @param name
+     * @param value
+     * @param attack
+     * @param sprite
+     * @return
+     */
+    public static Weapon register(
+            final long id,
+            final String name,
+            final long value,
+            final long attack,
+            final Image sprite
+    ) {
+        return new Weapon(id, name, value, attack, sprite);
+    }
+
 }

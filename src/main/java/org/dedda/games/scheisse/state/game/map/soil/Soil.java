@@ -26,7 +26,9 @@ public class  Soil {
         HashMap<Type, Image> imageMap = new HashMap<Type, Image>();
         for (Type soilType : Type.values()) {
             Image image = null;
-            String fileName = Main.INSTALLATION_FOLDER + "data/image/map_" + String.valueOf(soilType).toLowerCase() + ".png";
+            String fileName = Main.INSTALLATION_FOLDER +
+                    "data/image/map_" +
+                    String.valueOf(soilType).toLowerCase() + ".png";
             SystemPrinter.debugln("loaded image: " + fileName);
             image = Toolkit.getDefaultToolkit().getImage(fileName);
             imageMap.put(soilType, image);
@@ -37,7 +39,9 @@ public class  Soil {
     private synchronized static HashMap<Type, Texture> initTextureMap() {
         HashMap<Type, Texture> textureMap = new HashMap<Type, Texture>();
         for (Type type : Type.values()) {
-            String fileName = Main.INSTALLATION_FOLDER + "data/image/map_" + String.valueOf(type).toLowerCase() + ".png";
+            String fileName = Main.INSTALLATION_FOLDER +
+                    "data/image/map_" +
+                    String.valueOf(type).toLowerCase() + ".png";
             Texture texture = null;
             try {
                 texture = TextureIO.newTexture(new File(fileName), true);

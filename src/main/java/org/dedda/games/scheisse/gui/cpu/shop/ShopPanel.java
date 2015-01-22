@@ -17,6 +17,8 @@ public class ShopPanel extends JPanel implements InventoryTransactionListener{
     private TabbedGamePane tabbedGamePane;
     private JLabel headerBar;
     private Player player;
+
+    private JProgressBar progressBar;
     private ShopTablePanel tablePanel;
 
     public ShopPanel(final TabbedGamePane tabbedGamePane) {
@@ -25,6 +27,7 @@ public class ShopPanel extends JPanel implements InventoryTransactionListener{
         headerBar = new JLabel("Money: " + player.getMoney());
         tablePanel = new ShopTablePanel(tabbedGamePane);
         setBackground(Color.LIGHT_GRAY);
+        progressBar = new JProgressBar();
         intiLayout();
     }
 
@@ -47,7 +50,25 @@ public class ShopPanel extends JPanel implements InventoryTransactionListener{
     }
 
     public void cancelTransaction() {
+        progressBar.setAlignmentX(CENTER_ALIGNMENT);
+        progressBar.setAlignmentY(TOP_ALIGNMENT);
+        Dimension preferredHeaderSize = progressBar.getPreferredSize();
+        preferredHeaderSize.width = getWidth();
+        preferredHeaderSize.height = 20;
+        progressBar.setMaximumSize(preferredHeaderSize);
+        progressBar.setPreferredSize(preferredHeaderSize);
+        add(progressBar);
+        add(tablePanel);
+        setBackground(Color.LIGHT_GRAY);
+    }
 
+    public void setProgress(final int done, final int of) {
+        progressBar.setMinimum(0);
+        progressBar.setMaximum(of);
+        progressBar.setValue(done);
+        progressBar.setString(done + " / " + of);
+        progressBar.setStringPainted(done < of);
+        progressBar.repaint();
     }
 
 }

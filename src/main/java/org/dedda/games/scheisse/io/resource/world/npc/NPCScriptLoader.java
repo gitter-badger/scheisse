@@ -38,7 +38,8 @@ public class NPCScriptLoader extends FileInput {
     public NPCScript loadNPCScript(final File file, final NPC npc) {
         npcScript = new NPCScript(npc);
         String lines[] = getLines(file);
-        ArrayList<NPCScriptAction> npcScriptAction = new ArrayList<NPCScriptAction>();
+        ArrayList<NPCScriptAction> npcScriptAction =
+                new ArrayList<NPCScriptAction>();
         jumpPoints = new HashMap<String, Integer>();
         for (int i = 0; i < lines.length; i++) {
             if (!lines[i].contains(" ") && lines[i].endsWith(":")) {
@@ -121,7 +122,9 @@ public class NPCScriptLoader extends FileInput {
      * @param words Array of words from the code line
      * @return Parsed {@link NPCWalkToDestination} action
      */
-    private NPCWalkToDestination getNPCWaltToDestination(final String words[]) {
+    private NPCWalkToDestination getNPCWaltToDestination(
+            final String words[]
+    ) {
         NPCWalkToDestination npcWalkToDestination
                 = new NPCWalkToDestination(npcScript);
         npcWalkToDestination.setDestination(Parse.toPoint2DDouble(words[1]));

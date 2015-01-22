@@ -74,7 +74,11 @@ public class Chunk {
      * @param soil int
      */
     public void setSoilAbsolute(final Point location, final Soil.Type soil) {
-        this.soil[location.x - minLocation.x][location.y - minLocation.y] = soil;
+        this.soil[
+                location.x - minLocation.x
+                ][
+                location.y - minLocation.y
+                ] = soil;
     }
 
     /**

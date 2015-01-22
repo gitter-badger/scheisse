@@ -28,7 +28,8 @@ public class Quest {
     }
 
     public boolean isAvailable(final Player player) {
-        return Level.getLevel(player.getExperience()) >= minLevel && progress != FINISHED;
+        return Level.getLevel(player.getExperience()) >=
+                minLevel && progress != FINISHED;
     }
 
     public String getName() {

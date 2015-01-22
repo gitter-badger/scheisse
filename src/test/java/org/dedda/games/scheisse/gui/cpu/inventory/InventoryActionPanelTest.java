@@ -51,13 +51,24 @@ public class InventoryActionPanelTest {
         when(tabbedGamePane.getGui()).thenReturn(gui);
         inventoryTablePanel = new InventoryTablePanel(tabbedGamePane);
         panel = inventoryTablePanel.getActionPanel();
-        inventoryTablePanel.getInventoryTable().getModel().enableCategory(InventoryTableModel.ID);
+        inventoryTablePanel.getInventoryTable().getModel().enableCategory(
+                InventoryTableModel.ID
+        );
     }
 
     @Test
     public void testInitialization() {
-        assertEquals(inventory, inventoryTablePanel.getInventoryTable().getInventory());
-        assertEquals(inventory, panel.getInventoryTablePanel().getInventoryTable().getInventory());
+        assertEquals(
+                inventory,
+                inventoryTablePanel.getInventoryTable().getInventory()
+        );
+        assertEquals(
+                inventory,
+                panel.
+                        getInventoryTablePanel().
+                        getInventoryTable().
+                        getInventory()
+        );
         assertEquals(inventory.getSlots().get(0).getDummy(), Item.forId(1));
         assertEquals(inventory.getSlots().get(1).getDummy(), Item.forId(2));
         assertEquals(inventory.getSlots().get(2).getDummy(), Item.forId(3));
@@ -68,56 +79,94 @@ public class InventoryActionPanelTest {
 
     @Test
     public void testAdd() {
-        ListSelectionModel selectionModel = inventoryTablePanel.getInventoryTable().getTable().getSelectionModel();
+        ListSelectionModel selectionModel =
+                inventoryTablePanel.
+                        getInventoryTable().
+                        getTable().
+                        getSelectionModel();
         selectionModel.clearSelection();
         selectionModel.addSelectionInterval(0, 0);
         selectionModel.addSelectionInterval(2, 2);
-        SpinnerNumberModel spinnerModel = (SpinnerNumberModel) panel.getNumberSpinner().getModel();
+        SpinnerNumberModel spinnerModel =
+                (SpinnerNumberModel) panel.
+                        getNumberSpinner().
+                        getModel();
         assertEquals(spinnerModel.getMaximum(), 2.0);
         spinnerModel.setValue(1.0);
-        for (ActionListener actionListener : panel.getAddButton().getActionListeners()) {
+        for (ActionListener actionListener :
+                panel.
+                    getAddButton().
+                    getActionListeners()) {
             actionListener.actionPerformed(null);
         }
         assertEquals(inventory.getSlotWithItemId(1).getNumberOfItems(), 9);
         assertEquals(inventory.getSlotWithItemId(3).getNumberOfItems(), 1);
-        Inventory actionInventory = inventoryTablePanel.getActionTable().getInventory();
+        Inventory actionInventory =
+                inventoryTablePanel.getActionTable().getInventory();
         actionInventory.print();
-        assertEquals(actionInventory.getSlotWithItemId(1).getNumberOfItems(), 1);
-        assertEquals(actionInventory.getSlotWithItemId(3).getNumberOfItems(), 1);
+        assertEquals(
+                actionInventory.getSlotWithItemId(1).getNumberOfItems(), 1
+        );
+        assertEquals(
+                actionInventory.getSlotWithItemId(3).getNumberOfItems(), 1
+        );
 
     }
 
     @Test
     public void testRemove() {
         testAdd();
-        ListSelectionModel selectionModel = inventoryTablePanel.getActionTable().getTable().getSelectionModel();
+        ListSelectionModel selectionModel =
+                inventoryTablePanel.
+                    getActionTable().
+                    getTable().
+                    getSelectionModel();
         selectionModel.clearSelection();
         selectionModel.addSelectionInterval(0, 0);
-        SpinnerNumberModel spinnerModel = (SpinnerNumberModel) panel.getNumberSpinner().getModel();
+        SpinnerNumberModel spinnerModel =
+                (SpinnerNumberModel) panel.getNumberSpinner().getModel();
         assertEquals(spinnerModel.getMaximum(), 1.0);
         spinnerModel.setValue(1.0);
-        for (ActionListener actionListener : panel.getRemoveButton().getActionListeners()) {
+        for (ActionListener actionListener :
+                panel.
+                    getRemoveButton().
+                    getActionListeners()
+                ) {
             actionListener.actionPerformed(null);
         }
         assertEquals(inventory.getSlotWithItemId(1).getNumberOfItems(), 10);
         assertEquals(inventory.getSlotWithItemId(3).getNumberOfItems(), 1);
-        Inventory actionInventory = inventoryTablePanel.getActionTable().getInventory();
+        Inventory actionInventory =
+                inventoryTablePanel.getActionTable().getInventory();
         actionInventory.print();
         assertNull(actionInventory.getSlotWithItemId(1));
-        assertEquals(actionInventory.getSlotWithItemId(3).getNumberOfItems(), 1);
+        assertEquals(
+                actionInventory.getSlotWithItemId(3).getNumberOfItems(), 1
+        );
     }
 
     @Test
     public void testOk() {
         testAdd();
         long money = player.getMoney();
-        long newMoney = money + Item.forId(1).getValue() + Item.forId(3).getValue();
+        long newMoney = money +
+                Item.forId(1).getValue() +
+                Item.forId(3).getValue();
         InventoryActionComboBox comboBox = panel.getActionComboBox();
         comboBox.setSelectedItem(InventoryActionComboBox.SELL);
-        for (ActionListener actionListener : panel.getOkButton().getActionListeners()) {
+        for (ActionListener actionListener :
+                panel.
+                    getOkButton().
+                    getActionListeners()
+                ) {
             actionListener.actionPerformed(null);
         }
         assertEquals(newMoney, player.getMoney());
-        assertEquals(inventoryTablePanel.getActionTable().getInventory().getSize(), 0);
+        assertEquals(
+                inventoryTablePanel.
+                    getActionTable().
+                    getInventory().
+                    getSize(), 0
+        );
     }
 }

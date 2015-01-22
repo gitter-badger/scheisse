@@ -5,6 +5,7 @@ import org.dedda.games.scheisse.gui.cpu.Gui;
 import org.dedda.games.scheisse.io.FileInput;
 import org.dedda.games.scheisse.io.NetworkConfigWords;
 import org.dedda.games.scheisse.io.net.HttpDownloader;
+import org.dedda.games.scheisse.io.resource.Resource;
 import org.dedda.games.scheisse.io.resource.SaveGameLoader;
 import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.State;
@@ -43,7 +44,6 @@ public class Main {
      * Folder where all {@link #INSTALLATION_FILES} can be found if
      * everything is installed properly.
      */
-    //public static final String INSTALLATION_FOLDER = System.getProperty("user.home") + "/.scheisse/";
     public static final String INSTALLATION_FOLDER = "game_files/";
     public static final String INSTALLATION_FILES[] = { "version.dgm",
                                                         "conf.dgm"};
@@ -66,9 +66,11 @@ public class Main {
      */
     public static void main(final String args[]) {
 
-        new ItemLoader().loadAll(new File("src/test/test_files/data/item"));
+        new ItemLoader().loadAll(new File(Resource.ITEM_FOLDER));
         Game game = new Game();
-        Player player = new SaveGameLoader(new File("src/test/test_files/savegame/SaveGameLoader")).load();
+        Player player = new SaveGameLoader(
+                new File("src/test/test_files/classes/org/dedda/games/scheisse/io/resource/SaveGameLoader")
+        ).load();
         Inventory inventory = player.getInventory();
         for (int i = 4; i < 10; i++) {
             Slot slot = new Slot(i, inventory);
@@ -211,8 +213,12 @@ public class Main {
                 online = false;
             }
         }
-        SystemPrinter.writeln("starting in " + (debug ? "debug" : "normal") + " mode");
-        SystemPrinter.debugln("online status: " + (online ? "online" : "offline"));
+        SystemPrinter.writeln("starting in " + (
+                debug ? "debug" : "normal"
+        ) + " mode");
+        SystemPrinter.debugln("online status: " + (
+                online ? "online" : "offline"
+        ));
     }
 
     /**
@@ -223,7 +229,9 @@ public class Main {
     private static boolean checkVersion() {
         String newestVersion = getNewestVersion();
         boolean newestInstalled = compareVersions(VERSION, newestVersion);
-        SystemPrinter.debugln(newestInstalled ? "newest version is installed!" : "newer version " + newestVersion + " available");
+        SystemPrinter.debugln(newestInstalled ?
+                "newest version is installed!" :
+                "newer version " + newestVersion + " available");
         return newestInstalled;
     }
 
@@ -240,7 +248,9 @@ public class Main {
             readConfig();
             String newestVersion = getNewestVersion();
             if (newestVersion.equals("-1")) {
-                SystemPrinter.debugln("couldn't reach file with newest version");
+                SystemPrinter.debugln(
+                        "couldn't reach file with newest version"
+                );
                 online = false;
                 newestInstalled = true;
             } else {
@@ -269,7 +279,11 @@ public class Main {
     private static void loadResources() {
         SystemPrinter.debugln("loading resources...");
         SystemPrinter.debug("loading items... ");
-        SystemPrinter.debugln(new ItemLoader().loadAll(new File(INSTALLATION_FOLDER + "data/item/")).size() + " OK!");
+        SystemPrinter.debugln(
+                new ItemLoader().loadAll(
+                        new File(INSTALLATION_FOLDER + "data/item/")
+                ).size() + " OK!"
+        );
         SystemPrinter.debugln("initializing soil resources");
         Soil.init();
     }
@@ -325,7 +339,8 @@ public class Main {
 
     /**
      *
-     * @return String - newest version directly from server in string representation
+     * @return String - newest version directly from server in string
+     * representation
      */
     public static String getNewestVersion() {
         String version = "-1";
@@ -338,13 +353,19 @@ public class Main {
         HttpDownloader downloader = new HttpDownloader(versionUrl);
         SystemPrinter.debugln("trying to get file \"" + versionUrl + "\"...");
         try {
-            downloader.download(new File(INSTALLATION_FOLDER + INSTALLATION_FILES[0]));
+            downloader.download(
+                    new File(INSTALLATION_FOLDER + INSTALLATION_FILES[0])
+            );
         } catch (IOException e) {
-            SystemPrinter.debugln("could not download file \"" + versionUrl + "\"!");
+            SystemPrinter.debugln(
+                    "could not download file \"" + versionUrl + "\"!"
+            );
             return version;
         }
         FileInput fileInput = new FileInput();
-        version = fileInput.read(new File(INSTALLATION_FOLDER + INSTALLATION_FILES[0]));
+        version = fileInput.read(
+                new File(INSTALLATION_FOLDER + INSTALLATION_FILES[0])
+        );
         return version;
     }
 
@@ -352,9 +373,13 @@ public class Main {
      *
      * @param older String
      * @param newer String
-     * @return boolean - false ==> older version is obsolete, true ==> version is up to date
+     * @return boolean - false ==> older version is obsolete, true
+     * ==> version is up to date
      */
-    public static boolean compareVersions(final String older, final String newer) {
+    public static boolean compareVersions(
+            final String older,
+            final String newer)
+    {
         if (older.charAt(0) < newer.charAt(0)) {
             return false;
         } else if (older.charAt(1) < newer.charAt(1)) {

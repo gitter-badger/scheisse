@@ -5,7 +5,7 @@ import org.dedda.games.scheisse.state.game.item.Item;
 /**
  * Created by dedda on 10/11/14.
  */
-public class ItemLevelFilter extends ItemFilter{
+public class ItemLevelFilter extends ItemFilter {
 
     public static final int MODE_BELOW = 0;
     public static final int MODE_EXACT = 1;

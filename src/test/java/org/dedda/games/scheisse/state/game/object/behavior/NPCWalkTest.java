@@ -28,8 +28,10 @@ public class NPCWalkTest {
     @Test
     public void testNextStep() throws Exception {
         npcWalk.nextStep();
-        assertTrue(npc.getLocation().getX() < 0.1d && npc.getLocation().getX() > -0.1d);
-        assertTrue(npc.getLocation().getY() < 3.1d && npc.getLocation().getY() > 2.9d);
+        assertTrue(npc.getLocation().getX() <
+                0.1d && npc.getLocation().getX() > -0.1d);
+        assertTrue(npc.getLocation().getY() <
+                3.1d && npc.getLocation().getY() > 2.9d);
         assertTrue(npc.getDirection() == npcWalk.getDirection());
     }
 

@@ -15,7 +15,12 @@ public class Door {
     private Direction passingDirection[];
     private boolean locked;
 
-    public Door(final Point location, final Dimension size, final Direction[] passingDirection, final boolean locked) {
+    public Door(
+            final Point location,
+            final Dimension size,
+            final Direction[] passingDirection,
+            final boolean locked
+    ) {
         this.location = location;
         this.size = size;
         this.passingDirection = passingDirection;

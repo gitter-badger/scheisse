@@ -11,7 +11,7 @@ import static org.dedda.games.scheisse.state.game.item.ItemCategory.ARMOR;
  */
 public class Armor extends Item implements Wearable {
 
-    protected final long armor;
+    private final long armor;
 
     /**
      *
@@ -19,7 +19,14 @@ public class Armor extends Item implements Wearable {
      * @param value long - item value
      * @param armor long
      */
-    public Armor(final long id, final String name, final long value, final long armor, final ItemType type, final Image sprite) {
+    protected Armor(
+            final long id,
+            final String name,
+            final long value,
+            final long armor,
+            final ItemType type,
+            final Image sprite
+    ) {
         super(id, name, value, ARMOR, type, sprite);
         this.armor = armor;
     }
@@ -28,13 +35,13 @@ public class Armor extends Item implements Wearable {
      *
      * @return long
      */
-    public long getArmor() {
+    public final long getArmor() {
         return armor;
     }
 
     @Override
-    public boolean equals(final Object object) {
-        if(object instanceof Armor){
+    public final boolean equals(final Object object) {
+        if(object.getClass().equals(this.getClass())){
             Armor armor = (Armor)object;
             return armor.name.equals(this.name)
                     && armor.value == this.value
@@ -43,11 +50,22 @@ public class Armor extends Item implements Wearable {
         return false;
     }
 
-    public int maxStackNumber() {
+    public final int maxStackNumber() {
         return 1;
     }
 
     public void render(final Person person) {
 
+    }
+
+    public static Armor register(
+            final long id,
+            final String name,
+            final long value,
+            final long armor,
+            final ItemType type,
+            final Image sprite
+    ) {
+        return new Armor(id, name, value, armor, type, sprite);
     }
 }

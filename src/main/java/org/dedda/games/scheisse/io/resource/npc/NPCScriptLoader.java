@@ -37,7 +37,8 @@ public class NPCScriptLoader extends FileInput {
     public NPCScript loadNPCScript(final File file, final NPC npc) {
         npcScript = new NPCScript(npc);
         String lines[] = getLines(file);
-        ArrayList<NPCScriptAction> npcScriptAction = new ArrayList<NPCScriptAction>();
+        ArrayList<NPCScriptAction> npcScriptAction =
+                new ArrayList<NPCScriptAction>();
         jumpPoints = new HashMap<String, Integer>();
         for (int i = 0; i < lines.length; i++) {
             if (!lines[i].contains(" ") && lines[i].endsWith(":")) {
