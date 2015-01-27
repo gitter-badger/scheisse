@@ -1,6 +1,7 @@
 package org.dedda.games.scheisse.state.game;
 
 import org.dedda.games.scheisse.debug.SystemPrinter;
+import org.dedda.games.scheisse.state.game.fight.Attack;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.object.Person;
 import org.dedda.games.scheisse.state.game.object.PlayerObject;
@@ -79,5 +80,15 @@ public class Player extends Person {
                     ;
         }
         return false;
+    }
+
+    @Override
+    public void attack(Person person) {
+
+    }
+
+    @Override
+    public void getAttacked(Attack attack) {
+
     }
 }

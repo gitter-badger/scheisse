@@ -1,6 +1,8 @@
 package org.dedda.games.scheisse.state.game.object.npc;
 
+import org.dedda.games.scheisse.state.game.fight.Attack;
 import org.dedda.games.scheisse.state.game.object.GameObject;
+import org.dedda.games.scheisse.state.game.object.Person;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
@@ -8,15 +10,16 @@ import java.awt.geom.Point2D;
 /**
  * Created by dedda on 7/20/14.
  */
-public class NPC extends GameObject {
+public class NPC extends Person {
 
     protected double maxSpeed;
     protected boolean evil;
     protected double direction = 0;
     protected String name = "unnamed";
+    protected boolean
 
     public NPC(final Point2D.Double location) {
-        super(location);
+        setLocation(location);
     }
 
     public NPC(
@@ -24,7 +27,7 @@ public class NPC extends GameObject {
             final double maxSpeed,
             final boolean evil
     ) {
-        super(location);
+        setLocation(location);
         this.maxSpeed = maxSpeed;
     }
 
@@ -65,6 +68,16 @@ public class NPC extends GameObject {
 
     public void setEvil(final boolean evil) {
         this.evil = evil;
+    }
+
+    @Override
+    public void attack(Person person) {
+
+    }
+
+    @Override
+    public void getAttacked(Attack attack) {
+
     }
 
     public String getName() {

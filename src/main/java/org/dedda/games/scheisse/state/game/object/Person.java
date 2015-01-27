@@ -1,17 +1,22 @@
 package org.dedda.games.scheisse.state.game.object;
 
+import org.dedda.games.scheisse.state.game.fight.Attack;
+
 import java.awt.Point;
 import java.awt.geom.Point2D;
 
 /**
  * Created by dedda on 4/18/14.
  */
-public class Person {
+public abstract class Person {
 
     protected long experience;
     protected String name;
     protected Point map;
     protected Point2D.Double location;
+
+    public abstract void attack(Person person);
+    public abstract void getAttacked(Attack attack);
 
     public Point2D.Double getLocation() {
         return location;
