@@ -1,0 +1,8 @@
+@startuml
+class org.dedda.games.scheisse.exception.gl.GLInitalizationException{
+    + GLInitializationException()
+    + GLInitializationException(String)
+    + GLInitializationException(Throwable)
+    + GLInitializationException(String, Throwable)
+}
+@enduml

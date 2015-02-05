@@ -1,0 +1,12 @@
+@startuml
+class org.dedda.games.scheisse.main.FileTypes{
+    + {static} String PACKAGE
+    + {static} String SCRIPT
+    + {static} String ITEM
+    + {static} String MAP
+    + {static} String SAVEGAME
+    - {static} HashMap<String, String> extension_map
+    + {static} void init()
+    + {static} String getExtension(String)
+}
+@enduml

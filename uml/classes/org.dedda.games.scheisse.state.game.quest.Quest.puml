@@ -1,0 +1,21 @@
+@startuml
+class org.dedda.games.scheisse.state.game.quest.Quest{
+    + {static} int UNTOUCHED
+    + {static} int STARTED
+    + {static} int FINISHED
+    # String name
+    # int experience
+    # int minLevel
+    # int progress
+    # HashMap<String, String> progressData
+    --
+    + Quest(String, int, int)
+    + boolean isAvailable
+    .. Getter & Setter ..
+    + String getName()
+    + int getExperience()
+    + int getMinLevel()
+    + int getProgress()
+    + void setProgress(int)
+}
+@enduml

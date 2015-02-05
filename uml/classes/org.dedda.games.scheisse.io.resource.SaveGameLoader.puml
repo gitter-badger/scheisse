@@ -1,0 +1,9 @@
+@startuml
+class org.dedda.games.scheisse.io.resource.SaveGameLoader{
+    - File file
+    + SaveGameLoader(File)
+    + SaveGameLoader(String)
+    + Player load()
+    - Inventory readInventory(String)
+}
+@enduml

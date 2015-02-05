@@ -1,0 +1,16 @@
+@startuml
+class org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar{
+    - Player player
+    - Inventory inventory
+    - List<CategoriesChangeListener> changeListeners
+    - List<JCheckBox> checkBoxes
+    + HeaderBar(Player)
+    + void addCategoriesChangeListener(CategoriesChangeListener)
+    + void removeCategoriesChangeListener(CategoriesChangeListener)
+    - void categoryAdded(int)
+    - void categoryRemoved(int)
+    - void categoriesChanged(CategoriesChangedEvent)
+    + void transactionPerformed(InventoryTransactionEvent)
+    + void stateChanged(ChangeEvent)
+}
+@enduml

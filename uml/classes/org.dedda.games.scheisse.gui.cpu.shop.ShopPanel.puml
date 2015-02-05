@@ -1,0 +1,11 @@
+@startuml
+class org.dedda.games.scheisse.gui.cpu.shop.ShopPanel{
+    - TabbedGamePane tabbedGamePane
+    - Player player
+    - JProgressBar progressBar
+    - ShopTablePanel tablePanel
+    + ShopPanel(TabbedGamePane)
+    - void initLayout()
+    + void setProgress(int, int)
+}
+@enduml

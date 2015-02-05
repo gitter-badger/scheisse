@@ -1,0 +1,8 @@
+@startuml
+class org.dedda.games.scheisse.debug.SystemPrinter{
+    + {static} void write(String)
+    + {static} void writeln(String)
+    + {static} void debug(String)
+    + {static} void debugln(String)
+}
+@enduml

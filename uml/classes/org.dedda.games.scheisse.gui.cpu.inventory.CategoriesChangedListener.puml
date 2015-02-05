@@ -1,0 +1,5 @@
+@startuml
+interface org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangedListener{
+    + void categoriesChanged(CategoriesChangedEvent)
+}
+@enduml

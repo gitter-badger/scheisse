@@ -1,0 +1,8 @@
+@startuml
+abstract class org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionEvent{
+    + {static} int GENERAL
+    + {static} int FINANCIAL
+    + {static} int ITEM_ONLY
+    + {abstract} int getEventType()
+}
+@enduml

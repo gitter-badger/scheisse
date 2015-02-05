@@ -1,0 +1,7 @@
+@startuml
+class org.dedda.games.scheisse.io.PackageReader{
+    + {static} int TYPE_LENGTH
+    + {static} int SIZE_LENGTH
+    + BinaryResource[] readPackage(File)
+}
+@enduml

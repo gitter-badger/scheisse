@@ -1,0 +1,5 @@
+@startuml
+interface org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionListener{
+    + {abstract} void transactionPerformed(InventoryTransactionEvent)
+}
+@enduml

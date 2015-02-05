@@ -1,0 +1,10 @@
+@startuml
+class org.dedda.games.scheisse.tool.Binary{
+    + {static} boolean getBitOnPositionLTR(byte, int)
+    + {static} boolean getBitOnPositionRTL(byte, int)
+    + {static} boolean getBitOnPositionLTR(short, int)
+    + {static} boolean getBitOnPositionRTL(short, int)
+    + {static} boolean getBitOnPositionLTR(int, int)
+    + {static} boolean getBitOnPositionRTL(int, int)
+}
+@enduml

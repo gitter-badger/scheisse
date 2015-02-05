@@ -1,0 +1,7 @@
+@startuml
+class org.dedda.games.scheisse.gui.cpu.shop.ShopSortingWindow{
+    - ShopPanel shopPanel
+    - ShopSortingPanel sortingPanel
+    + ShopSortingWindow(ShopPanel)
+}
+@enduml

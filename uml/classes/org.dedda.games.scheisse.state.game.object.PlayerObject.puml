@@ -1,0 +1,5 @@
+@startuml
+class org.dedda.games.scheisse.state.game.object.PlayerObject{
+    + PlayerObject()
+}
+@enduml

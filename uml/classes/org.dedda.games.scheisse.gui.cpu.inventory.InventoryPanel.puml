@@ -1,0 +1,11 @@
+@startuml
+class org.dedda.games.scheisse.gui.cpu.inventory.InventoryPanel{
+    - TabbedGamePane tabbedGamePane
+    - InventoryTablePanel tablePanel
+    - HeaderBar headerBar
+    - Player player
+    + InventoryPanel(TabbedGamePane)
+    + void cancelTransaction()
+    - void initLayout()
+}
+@enduml

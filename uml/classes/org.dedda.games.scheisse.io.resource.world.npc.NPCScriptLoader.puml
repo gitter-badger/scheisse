@@ -1,0 +1,14 @@
+@startuml
+class org.dedda.games.scheisse.io.resource.world.npc.NPCScriptLoader{
+    - NPCScript npcScript
+    - HashMap<String, Integer> jumpPoints
+    + {static} FileFilter getNPCScriptFileFilter()
+    + NPCScript loadNPCScript(File, NPC)
+    + NPCScriptAction parseAction(String)
+    - NPCJumpIfTrue getNPCJumpIfTrue(String[])
+    - void parseJumpPoint(String, int)
+    - NPCWalk getNPCWalk(String[])
+    - NPCWalkToDestination getNPCWalkToDestination(String[])
+    - NPCJumpIfEqual getNPCJumpIfEqual(String[])
+}
+@enduml

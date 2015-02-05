@@ -1,0 +1,32 @@
+@startuml
+class org.dedda.games.scheisse.gui.cpu.inventory.ActionPanel{
+    - InventoryTablePanel inventoryTablePanel
+    - JButton addButton
+    - JButton removeButton
+    - JButton okButton
+    - JSpinner numberSpinner
+    - InventoryActionComboBox actionComboBox
+    - ArrayList<InventoryTransactionListener> listeners
+    --
+    + InventoryActionPanel(InventoryTablePanel)
+    - void initLayout()
+    - void initListeners()
+    - void add()
+    - void remove()
+    - void ok()
+    + void inventorySelectionChanged(ListSelectionEvent)
+    + void actionInventorySelectionChanged(ListSelectionEvent)
+    + void transactionPerformed(int)
+    + void transactionPerformed(InventoryTransactionEvent)
+    + void cancelTransaction()
+    + void addInventoryTransactionListener(InventoryTransactionListener)
+    + void removeInventoryTransactionListener(InventoryTransactionListener)
+    .. Getter & Setter ..
+    + JButton getAddButton()
+    + JButton getRemoveButton()
+    + JButton getOkButton()
+    + JSpinner getNumberSpinner()
+    + InventoryActionComboBox getActionCombobox()
+    + InventoryTablePanel getInventoryTablePanel()
+}
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable{
+    - Inventory inventory
+    - JTable table
+    - InventoryTableModel model
+    --
+    + InventoryTable(Inventory)
+    + void addListSelectionListener(ListSelectionListener)
+    .. Getter & Setter ..
+    + Inventory getInventory()
+    + JTable getTable()
+    + InventoryTableModel getModel()
+}
+@enduml

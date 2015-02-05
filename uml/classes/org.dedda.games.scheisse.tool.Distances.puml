@@ -1,0 +1,6 @@
+@startuml
+class org.dedda.games.scheisse.tool.Distances{
+    + {static} double getDirectionTo(Point2D.Double, Point2D.Double)
+    + {static} double getDistanceTo(Point2D.Double, Point2D.Double)
+}
+@enduml

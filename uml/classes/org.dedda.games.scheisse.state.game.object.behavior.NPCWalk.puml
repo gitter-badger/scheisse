@@ -1,0 +1,18 @@
+@startuml
+class org.dedda.games.scheisse.state.game.object.behavior.NPCWalk{
+    # double amount
+    # double direction
+    # double restAmount
+    # double maxSpeed
+    --
+    + NPCWalk(NPCScript)
+    + boolean hasNextStep()
+    + void nextStep()
+    .. Getter & Setter ..
+    + double getAmount()
+    + void setAmount(double)
+    + double getDirection()
+    + void setDirection(double)
+    + double getRestAmount()
+}
+@enduml

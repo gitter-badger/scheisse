@@ -1,0 +1,8 @@
+@startuml
+class org.dedda.games.scheisse.io.Unzip{
+    - File source
+    - File destination
+    + Unzip(File, File)
+    + ArrayList<File> unzip()
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class org.dedda.games.scheisse.gui.cpu.inventory.table.ItemIconCellRenderer{
+    + Component getTableCellRendererComponent(JTable, Object, boolean, boolean, int, int)
+}
+@enduml

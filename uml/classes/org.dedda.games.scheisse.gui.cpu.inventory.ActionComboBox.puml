@@ -1,0 +1,8 @@
+@startuml
+class org.dedda.games.scheisse.gui.cpu.inventory.ActionComboBox{
+    + {static} String SELL
+    + {static} String DESTROY
+    - ArrayList<Strin> actions
+    + InventoryActionComboBox()
+}
+@enduml

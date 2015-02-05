@@ -1,0 +1,7 @@
+@startuml
+class org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangedEvent{
+    + int ADDED
+    + int REMOVED
+    + CategoriesChangedEvent(int, int)
+}
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class org.dedda.games.scheisse.state.game.object.behavior.NPCRotate{
+    - double amount
+    --
+    + NPCRotate(NPCScript)
+    + boolean hasNextStep()
+    + void nextStep()
+    .. Getter & Setter ..
+    + double getAmount()
+    + void setAmount(String)
+    + void setAmount(double)
+}
+@enduml

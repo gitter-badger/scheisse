@@ -1,0 +1,13 @@
+@startuml
+class org.dedda.games.scheisse.io.GameDataWords{
+    + {static} String MAP_WIDTH
+    + {static} String MAP_HEIGHT
+    + {static} String MAP_X
+    + {static} String MAP_Y
+    + {static} String MAP_LINE
+    + {static} char MAP_GRASS
+    + {static} char MAP_ROCK
+    + {static} char MAP_DIRT
+    + {static} char MAP_WATER
+}
+@enduml

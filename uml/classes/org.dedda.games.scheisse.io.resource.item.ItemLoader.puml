@@ -1,0 +1,6 @@
+@startuml
+class org.dedda.games.scheisse.io.resource.item.ItemLoader{
+    + Item loadItem(File)
+    + ArrayList<Item> loadAll(File)
+}
+@enduml

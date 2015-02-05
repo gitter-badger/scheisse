@@ -1,0 +1,7 @@
+@startuml
+abstract class org.dedda.games.scheisse.state.menu.Menu{
+    # boolean running
+    + {abstract} int getSelection()
+    + boolean isRunning()
+}
+@enduml

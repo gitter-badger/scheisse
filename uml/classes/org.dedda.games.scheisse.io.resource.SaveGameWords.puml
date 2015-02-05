@@ -1,0 +1,9 @@
+@startuml
+abstract class org.dedda.games.scheisse.io.resource.SaveGameWords{
+    + {static} String NAME
+    + {static} String EXPERIENCE
+    + {static} String MAP
+    + {static} String LOCATION
+    + {static} String INVENTORY
+}
+@enduml

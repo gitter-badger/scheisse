@@ -1,0 +1,20 @@
+@startuml
+class org.dedda.games.scheisse.state.game.object.behavior.NPCScript{
+    - NPC npc
+    - NPCScriptAction[] action
+    - int currentAction
+    --
+    + NPCScript(NPC)
+    + NPCScript(NPC, NPCScriptAction[])
+    + boolean hasNextAction()
+    + void nextAction()
+    + void nextStep()
+    + void jump(int)
+    + String replaceKeysInExpression(String)
+    .. Getter & Setter ..
+    + NPC geetNPC()
+    + NPCScriptAction[] getAction()
+    + void setAction(NPCScriptAction[])
+    + int getCurrentIndex()
+}
+@enduml

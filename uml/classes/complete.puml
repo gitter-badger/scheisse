@@ -1,0 +1,113 @@
+@startuml
+class java.io.FileFilter
+class java.lang.Exception
+interface java.lang.Runnable
+class javax.swing.JComboBox
+class javax.swing.JFrame
+class javax.swing.JPanel
+class javax.swing.JScrollPane
+abstract class javax.swing.table.AbstractTableModel
+interface javax.swing.table.TableCellRenderer
+
+!include org.dedda.games.scheisse.debug.SystemPrinter.puml
+!include org.dedda.games.scheisse.exception.gl.GLInitalizationException.puml
+!include org.dedda.games.scheisse.exception.gui.ResourcePackException.puml
+!include org.dedda.games.scheisse.exception.ExceptionCode.puml
+!include org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable.puml
+!include org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel.puml
+!include org.dedda.games.scheisse.gui.cpu.inventory.table.ItemIconCellRenderer.puml
+!include org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangedEvent.puml
+!include org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangedListener.puml
+!include org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar.puml
+!include org.dedda.games.scheisse.gui.cpu.inventory.ActionComboBox.puml
+!include org.dedda.games.scheisse.gui.cpu.inventory.ActionPanel.puml
+!include org.dedda.games.scheisse.gui.cpu.inventory.InventoryPanel.puml
+!include org.dedda.games.scheisse.gui.cpu.inventory.InventoryTablePanel.puml
+!include org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionEvent.puml
+!include org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionListener.puml
+!include org.dedda.games.scheisse.gui.cpu.shop.ShopPanel.puml
+!include org.dedda.games.scheisse.gui.cpu.shop.ShopSortingFilter.puml
+!include org.dedda.games.scheisse.gui.cpu.shop.ShopSortingPanel.puml
+!include org.dedda.games.scheisse.gui.cpu.shop.ShopSortingWindow.puml
+!include org.dedda.games.scheisse.gui.cpu.shop.ShopTablePanel.puml
+!include org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener.puml
+!include org.dedda.games.scheisse.io.net.HttpDownloader.puml
+!include org.dedda.games.scheisse.io.resource.item.ItemLoader.puml
+!include org.dedda.games.scheisse.io.resource.item.ItemWords.puml
+!include org.dedda.games.scheisse.io.resource.world.npc.NPCScriptLoader.puml
+!include org.dedda.games.scheisse.io.resource.world.WorldDirectoryFilter.puml
+!include org.dedda.games.scheisse.io.resource.world.WorldLoader.puml
+!include org.dedda.games.scheisse.io.resource.BinaryResource.puml
+!include org.dedda.games.scheisse.io.resource.Images.puml
+!include org.dedda.games.scheisse.io.resource.Resource.puml
+!include org.dedda.games.scheisse.io.resource.SaveGameLoader.puml
+!include org.dedda.games.scheisse.io.resource.SaveGameWords.puml
+!include org.dedda.games.scheisse.io.FileInput.puml
+!include org.dedda.games.scheisse.io.FileOutput.puml
+!include org.dedda.games.scheisse.io.GameDataWords.puml
+!include org.dedda.games.scheisse.io.Installer.puml
+!include org.dedda.games.scheisse.io.MapLoader.puml
+!include org.dedda.games.scheisse.io.PackageReader.puml
+!include org.dedda.games.scheisse.io.Unzip.puml
+!include org.dedda.games.scheisse.main.FileTypes.puml
+!include org.dedda.games.scheisse.main.Options.puml
+!include org.dedda.games.scheisse.main.Main.puml
+!include org.dedda.games.scheisse.state.game.map.soil.Soil.puml
+!include org.dedda.games.scheisse.state.game.map.soil.Soil.Type.puml
+!include org.dedda.games.scheisse.state.game.object.behavior.NPCJumpIfEqual.puml
+!include org.dedda.games.scheisse.state.game.object.behavior.NPCJumpIfTrue.puml
+!include org.dedda.games.scheisse.state.game.object.behavior.NPCRotate.puml
+!include org.dedda.games.scheisse.state.game.object.behavior.NPCScript.puml
+!include org.dedda.games.scheisse.state.game.object.behavior.NPCScriptAction.puml
+!include org.dedda.games.scheisse.state.game.object.behavior.NPCWalk.puml
+!include org.dedda.games.scheisse.state.game.object.behavior.NPCWalkToDestination.puml
+!include org.dedda.games.scheisse.state.game.object.npc.NPC.puml
+!include org.dedda.games.scheisse.state.game.object.GameObject.puml
+!include org.dedda.games.scheisse.state.game.object.Person.puml
+!include org.dedda.games.scheisse.state.game.object.PlayerObject.puml
+!include org.dedda.games.scheisse.state.game.quest.Quest.puml
+!include org.dedda.games.scheisse.state.game.shop.Offer.puml
+!include org.dedda.games.scheisse.state.game.shop.ShopConnector.puml
+!include org.dedda.games.scheisse.state.menu.Menu.puml
+!include org.dedda.games.scheisse.state.menu.MainMenu.puml
+!include org.dedda.games.scheisse.tool.Binary.puml
+!include org.dedda.games.scheisse.tool.Distances.puml
+!include org.dedda.games.scheisse.tool.Parse.puml
+
+java.lang.Exception <|-- org.dedda.games.scheisse.exception.gl.GLInitalizationException
+java.lang.Exception <|-- org.dedda.games.scheisse.exception.gui.ResourcePackException
+javax.swing.JScrollPane <|-- org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable
+javax.swing.table.AbstractTableModel <|-- org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel
+org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangeListener <|.. org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel
+org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener <|.. org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel
+javax.swing.table.TableCellRenderer <|.. org.dedda.games.scheisse.gui.cpu.inventory.table.ItemIconCellRenderer
+javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar
+org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionListener <|.. org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar
+javax.swing.event.ChangeListener <|.. org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar
+javax.swing.JComboBox <|-- org.dedda.games.scheisse.gui.cpu.inventory.ActionComboBox
+javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.ActionPanel
+javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.InventoryPanel
+javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.InventoryTablePanel
+javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopPanel
+org.dedda.games.scheisse.state.game.item.filter.ItemComplexFilter <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopSortingFilter
+javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopSortingPanel
+javax.swing.JFrame <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopSortingWindow
+javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopTablePanel
+org.dedda.games.scheisse.io.FileInput <|-- org.dedda.games.scheisse.io.resource.item.ItemLoader
+org.dedda.games.scheisse.io.FileInput <|-- org.dedda.games.scheisse.io.resource.world.npc.NPCScriptLoader
+org.dedda.games.scheisse.io.FileInput <|-- org.dedda.games.scheisse.io.MapLoader
+org.dedda.games.scheisse.io.FileInput <|-- org.dedda.games.scheisse.io.PackageReader
+java.io.FileFilter <|-- org.dedda.games.scheisse.io.resource.world.WorldDirectoryFilter
+org.dedda.games.scheisse.io.FileInput <|-- org.dedda.games.scheisse.io.resource.world.WorldLoader
+org.dedda.games.scheisse.io.FileInput <|-- org.dedda.games.scheisse.io.resource.SaveGameLoader
+org.dedda.games.scheisse.state.game.object.behavior.NPCScriptAction <|-- org.dedda.games.scheisse.state.game.object.behavior.NPCJumpIfEqual
+org.dedda.games.scheisse.state.game.object.behavior.NPCScriptAction <|-- org.dedda.games.scheisse.state.game.object.behavior.NPCJumpIfTrue
+org.dedda.games.scheisse.state.game.object.behavior.NPCScriptAction <|-- org.dedda.games.scheisse.state.game.object.behavior.NPCRotate
+org.dedda.games.scheisse.state.game.object.behavior.NPCScriptAction <|-- org.dedda.games.scheisse.state.game.object.behavior.NPCWalk
+org.dedda.games.scheisse.state.game.object.behavior.NPCWalk <|-- org.dedda.games.scheisse.state.game.object.behavior.NPCWalkToDestination
+org.dedda.games.scheisse.state.game.object.Person <|-- org.dedda.games.scheisse.state.game.object.npc.NPC
+org.dedda.games.scheisse.state.game.object.GameObject <|-- org.dedda.games.scheisse.state.game.object.PlayerObject
+java.lang.Runnable <|.. org.dedda.games.scheisse.state.menu.Menu
+org.dedda.games.scheisse.state.State <|.. org.dedda.games.scheisse.state.menu.Menu
+org.dedda.games.scheisse.state.menu.Menu <|-- org.dedda.games.scheisse.state.menu.MainMenu
+@enduml
