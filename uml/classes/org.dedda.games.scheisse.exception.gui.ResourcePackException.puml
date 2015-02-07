@@ -1,4 +1,6 @@
 @startuml
+class java.lang.Exception
+
 class org.dedda.games.scheisse.exception.gui.ResourcePackException{
     + {static} int UNDEFINED
     + {static} int ALREADY_REGISTERED
@@ -13,4 +15,6 @@ class org.dedda.games.scheisse.exception.gui.ResourcePackException{
     + ResourcePackException(String, Throwable)
     + ResourcePackException(String, Throwable, int)
 }
+
+java.lang.Exception <|-- org.dedda.games.scheisse.exception.gui.ResourcePackException
 @enduml

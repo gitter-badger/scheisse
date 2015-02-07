@@ -1,7 +1,13 @@
 @startuml
+interface java.lang.Runnable
+interface org.dedda.games.scheisse.state.State
+
 abstract class org.dedda.games.scheisse.state.menu.Menu{
     # boolean running
     + {abstract} int getSelection()
     + boolean isRunning()
 }
+
+java.lang.Runnable <|.. org.dedda.games.scheisse.state.menu.Menu
+org.dedda.games.scheisse.state.State <|.. org.dedda.games.scheisse.state.menu.Menu
 @enduml

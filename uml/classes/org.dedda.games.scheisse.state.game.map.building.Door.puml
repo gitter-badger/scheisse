@@ -1,0 +1,16 @@
+@startuml
+class org.dedda.games.scheisse.state.game.map.building.Door{
+    - Point location
+    - Dimesion size
+    - Direction[] passingDirection
+    - boolean locked
+    --
+    + Door(Point, Dimension, Direction[], boolean)
+    + boolean canPass(Direction, Player)
+    .. Getter ..
+    + Point getLocation()
+    + Dimension getSize()
+    + Direction[] getPassingDirection()
+    + boolean isLocked()
+}
+@enduml

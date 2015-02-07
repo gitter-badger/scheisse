@@ -1,4 +1,8 @@
 @startuml
+abstract class javax.swing.table.AbstractTableModel
+interface org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangeListener
+interface org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener
+
 class org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel{
     + {static} int ID
     + {static} int SYMBOL
@@ -33,4 +37,8 @@ class org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel{
     + void inventoryChangeAction()
     + void categoriesChanged(CategoriesChangedEvent)
 }
+
+javax.swing.table.AbstractTableModel <|-- org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel
+org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangeListener <|.. org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel
+org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener <|.. org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel
 @enduml

@@ -1,4 +1,8 @@
 @startuml
+class javax.swing.JPanel
+interface org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionListener
+interface javax.swing.event.ChangeListener
+
 class org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar{
     - Player player
     - Inventory inventory
@@ -13,4 +17,8 @@ class org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar{
     + void transactionPerformed(InventoryTransactionEvent)
     + void stateChanged(ChangeEvent)
 }
+
+javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar
+org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionListener <|.. org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar
+javax.swing.event.ChangeListener <|.. org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar
 @enduml

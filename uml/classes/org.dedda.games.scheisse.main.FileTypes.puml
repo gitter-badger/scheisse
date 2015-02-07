@@ -1,5 +1,5 @@
 @startuml
-class org.dedda.games.scheisse.main.FileTypes{
+abstract class org.dedda.games.scheisse.main.FileTypes{
     + {static} String PACKAGE
     + {static} String SCRIPT
     + {static} String ITEM

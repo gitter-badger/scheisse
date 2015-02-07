@@ -52,6 +52,10 @@ interface javax.swing.table.TableCellRenderer
 !include org.dedda.games.scheisse.main.FileTypes.puml
 !include org.dedda.games.scheisse.main.Options.puml
 !include org.dedda.games.scheisse.main.Main.puml
+!include org.dedda.games.scheisse.state.game.fight.Attack.puml
+!include org.dedda.games.scheisse.state.game.fight.AttackElement.puml
+!include org.dedda.games.scheisse.state.game.map.building.Building.puml
+!include org.dedda.games.scheisse.state.game.map.building.Door.puml
 !include org.dedda.games.scheisse.state.game.map.soil.Soil.puml
 !include org.dedda.games.scheisse.state.game.map.soil.Soil.Type.puml
 !include org.dedda.games.scheisse.state.game.object.behavior.NPCJumpIfEqual.puml
@@ -74,17 +78,6 @@ interface javax.swing.table.TableCellRenderer
 !include org.dedda.games.scheisse.tool.Distances.puml
 !include org.dedda.games.scheisse.tool.Parse.puml
 
-java.lang.Exception <|-- org.dedda.games.scheisse.exception.gl.GLInitalizationException
-java.lang.Exception <|-- org.dedda.games.scheisse.exception.gui.ResourcePackException
-javax.swing.JScrollPane <|-- org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable
-javax.swing.table.AbstractTableModel <|-- org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel
-org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangeListener <|.. org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel
-org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener <|.. org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel
-javax.swing.table.TableCellRenderer <|.. org.dedda.games.scheisse.gui.cpu.inventory.table.ItemIconCellRenderer
-javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar
-org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionListener <|.. org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar
-javax.swing.event.ChangeListener <|.. org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar
-javax.swing.JComboBox <|-- org.dedda.games.scheisse.gui.cpu.inventory.ActionComboBox
 javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.ActionPanel
 javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.InventoryPanel
 javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.InventoryTablePanel
@@ -107,7 +100,5 @@ org.dedda.games.scheisse.state.game.object.behavior.NPCScriptAction <|-- org.ded
 org.dedda.games.scheisse.state.game.object.behavior.NPCWalk <|-- org.dedda.games.scheisse.state.game.object.behavior.NPCWalkToDestination
 org.dedda.games.scheisse.state.game.object.Person <|-- org.dedda.games.scheisse.state.game.object.npc.NPC
 org.dedda.games.scheisse.state.game.object.GameObject <|-- org.dedda.games.scheisse.state.game.object.PlayerObject
-java.lang.Runnable <|.. org.dedda.games.scheisse.state.menu.Menu
-org.dedda.games.scheisse.state.State <|.. org.dedda.games.scheisse.state.menu.Menu
 org.dedda.games.scheisse.state.menu.Menu <|-- org.dedda.games.scheisse.state.menu.MainMenu
 @enduml

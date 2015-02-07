@@ -1,4 +1,6 @@
 @startuml
+class javax.swing.JScrollPane
+
 class org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable{
     - Inventory inventory
     - JTable table
@@ -11,4 +13,6 @@ class org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable{
     + JTable getTable()
     + InventoryTableModel getModel()
 }
+
+javax.swing.JScrollPane <|-- org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable
 @enduml
