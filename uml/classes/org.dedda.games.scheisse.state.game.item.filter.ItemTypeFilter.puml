@@ -1,0 +1,11 @@
+@startuml
+abstract class org.dedda.games.scheisse.state.game.item.filter.ItemFilter
+
+class org.dedda.games.scheisse.state.game.item.filter.ItemTypeFilter{
+    + ItemType[] itemTypes
+    + ItemTypeFilter(ItemType[])
+    + boolean accept(Item)
+}
+
+org.dedda.games.scheisse.state.game.item.filter.ItemFilter <|.. org.dedda.games.scheisse.state.game.item.filter.ItemTypeFilter
+@enduml

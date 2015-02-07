@@ -1,0 +1,16 @@
+@startuml
+abstract class org.dedda.games.scheisse.state.game.item.filter.ItemFilter
+
+class org.dedda.games.scheisse.state.game.item.filter.ItemArmorFilter{
+    + {static} int MODE_BELOW
+    + {static} int MODE_EXACT
+    + {static} int MODE_ABOVE
+    + long armor
+    + int mode
+    + ItemTypeFilter itemTypeFilter
+    + ItemArmorFilter(long, int)
+    + boolean accept(Item)
+}
+
+org.dedda.games.scheisse.state.game.item.filter.ItemFilter <|.. org.dedda.games.scheisse.state.game.item.filter.ItemArmorFilter
+@enduml

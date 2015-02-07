@@ -1,0 +1,20 @@
+@startuml
+abstract class org.dedda.games.scheisse.state.game.item.filter.ItemFilter
+
+class org.dedda.games.scheisse.state.game.item.filter.ItemComplexFilter{
+    + {static} int MODE_NONE
+    + {static} int MODE_ONE
+    + {static} int MODE_ONE_OR_MORE
+    + {static} int MODE_ALL
+    + ItemFilter[] itemFilters
+    + int mode
+    + ItemNameFilter(ItemFilter[], int)
+    + boolean accept(Item)
+    - boolean acceptModeNone(Item)
+    - boolean acceptModeOne(Item)
+    - boolean acceptModeOneOrMore(Item)
+    - boolean acceptModeAll(Item)
+}
+
+org.dedda.games.scheisse.state.game.item.filter.ItemFilter <|.. org.dedda.games.scheisse.state.game.item.filter.ItemComplexFilter
+@enduml

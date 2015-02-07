@@ -1,0 +1,15 @@
+@startuml
+class org.dedda.games.scheisse.gui.io.action.MouseActionInfo{
+    - int button
+    - int scrollAmount
+    - locationX
+    - locationY
+    --
+    + MouseActionInfo(int, int, int, int)
+    .. Getter ..
+    + int getButton()
+    + int getScrollAmount()
+    + int getLocationX()
+    + int getLocationY()
+}
+@enduml

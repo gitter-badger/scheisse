@@ -1,0 +1,6 @@
+@startuml
+class org.dedda.games.scheisse.state.game.level.Level{
+    + {static} long[] MIX_XP_FOR_LEVELS
+    + {static} int getLevel(long)
+}
+@enduml

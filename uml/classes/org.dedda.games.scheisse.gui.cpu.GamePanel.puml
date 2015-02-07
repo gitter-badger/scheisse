@@ -1,0 +1,11 @@
+@startuml
+class javax.swing.JPanel
+
+class org.dedda.games.scheisse.gui.cpu.GamePanel{
+    - TabbedGamePane tabbedGamePane
+    - Game game
+    + GamePanel(TabbedGamePane)
+}
+
+javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.GamePanel
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+interface java.lang.Runnable
+class javax.swing.JFrame
+
+class org.dedda.games.scheisse.gui.cpu.Gui{
+    - Graphics2D g2d
+    - MenuBar menuBar
+    - Game game
+    - Thread thread
+    - boolean running
+    - Container content
+    + Gui(Dimension)
+    + void shutDown(int)
+    + void run()
+    + void start(Game)
+    + void stop()
+    + MenuBar getGuiMenuBar()
+    + Game getGame()
+    + Thread getThread()
+    + boolean isRunning()
+}
+
+java.lang.Runnable <|.. org.dedda.games.scheisse.gui.cpu.Gui
+javax.swing.JFrame <|-- org.dedda.games.scheisse.gui.cpu.Gui
+@enduml

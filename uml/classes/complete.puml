@@ -17,7 +17,7 @@ interface javax.swing.table.TableCellRenderer
 !include org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel.puml
 !include org.dedda.games.scheisse.gui.cpu.inventory.table.ItemIconCellRenderer.puml
 !include org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangedEvent.puml
-!include org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangedListener.puml
+!include org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangeListener.puml
 !include org.dedda.games.scheisse.gui.cpu.inventory.HeaderBar.puml
 !include org.dedda.games.scheisse.gui.cpu.inventory.ActionComboBox.puml
 !include org.dedda.games.scheisse.gui.cpu.inventory.ActionPanel.puml
@@ -30,6 +30,17 @@ interface javax.swing.table.TableCellRenderer
 !include org.dedda.games.scheisse.gui.cpu.shop.ShopSortingPanel.puml
 !include org.dedda.games.scheisse.gui.cpu.shop.ShopSortingWindow.puml
 !include org.dedda.games.scheisse.gui.cpu.shop.ShopTablePanel.puml
+!include org.dedda.games.scheisse.gui.cpu.ContentContainer.puml
+!include org.dedda.games.scheisse.gui.cpu.GamePanel.puml
+!include org.dedda.games.scheisse.gui.cpu.Gui.puml
+!include org.dedda.games.scheisse.gui.cpu.MenuBar.puml
+!include org.dedda.games.scheisse.gui.cpu.TabbedGamePane.puml
+!include org.dedda.games.scheisse.gui.io.action.KeyAction.puml
+!include org.dedda.games.scheisse.gui.io.action.KeyActionInfo.puml
+!include org.dedda.games.scheisse.gui.io.action.MouseAction.puml
+!include org.dedda.games.scheisse.gui.io.action.MouseActionInfo.puml
+!include org.dedda.games.scheisse.gui.io.Keyboard.puml
+!include org.dedda.games.scheisse.gui.io.Mouse.puml
 !include org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener.puml
 !include org.dedda.games.scheisse.io.net.HttpDownloader.puml
 !include org.dedda.games.scheisse.io.resource.item.ItemLoader.puml
@@ -54,10 +65,25 @@ interface javax.swing.table.TableCellRenderer
 !include org.dedda.games.scheisse.main.Main.puml
 !include org.dedda.games.scheisse.state.game.fight.Attack.puml
 !include org.dedda.games.scheisse.state.game.fight.AttackElement.puml
+!include org.dedda.games.scheisse.state.game.inventory.CompareFilter.puml
+!include org.dedda.games.scheisse.state.game.inventory.Inventory.puml
+!include org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener.puml
+!include org.dedda.games.scheisse.state.game.inventory.Slot.puml
+!include org.dedda.games.scheisse.state.game.item.filter.ItemArmorFilter.puml
+!include org.dedda.games.scheisse.state.game.item.filter.ItemComplexFilter.puml
+!include org.dedda.games.scheisse.state.game.item.filter.ItemFilter.puml
+!include org.dedda.games.scheisse.state.game.item.filter.ItemLevelFilter.puml
+!include org.dedda.games.scheisse.state.game.item.filter.ItemNameFilter.puml
+!include org.dedda.games.scheisse.state.game.item.filter.ItemTypeFilter.puml
+!include org.dedda.games.scheisse.state.game.item.filter.ItemValueFilter.puml
+!include org.dedda.games.scheisse.state.game.level.Level.puml
 !include org.dedda.games.scheisse.state.game.map.building.Building.puml
 !include org.dedda.games.scheisse.state.game.map.building.Door.puml
 !include org.dedda.games.scheisse.state.game.map.soil.Soil.puml
 !include org.dedda.games.scheisse.state.game.map.soil.Soil.Type.puml
+!include org.dedda.games.scheisse.state.game.map.Chunk.puml
+!include org.dedda.games.scheisse.state.game.map.Map.puml
+!include org.dedda.games.scheisse.state.game.map.MapObject.puml
 !include org.dedda.games.scheisse.state.game.object.behavior.NPCJumpIfEqual.puml
 !include org.dedda.games.scheisse.state.game.object.behavior.NPCJumpIfTrue.puml
 !include org.dedda.games.scheisse.state.game.object.behavior.NPCRotate.puml
@@ -80,7 +106,6 @@ interface javax.swing.table.TableCellRenderer
 
 javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.ActionPanel
 javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.InventoryPanel
-javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.InventoryTablePanel
 javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopPanel
 org.dedda.games.scheisse.state.game.item.filter.ItemComplexFilter <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopSortingFilter
 javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopSortingPanel

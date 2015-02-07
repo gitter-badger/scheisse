@@ -1,0 +1,17 @@
+@startuml
+abstract class org.dedda.games.scheisse.state.game.item.filter.ItemFilter
+
+class org.dedda.games.scheisse.state.game.item.filter.ItemNameFilter{
+    + {static} int MODE_CONTAINS
+    + {static} int MODE_COMPLETE
+    + {static} boolean CASE_INSENSITIVE
+    + {static} boolean CASE_SENSITIVE
+    + String name
+    + int mode
+    + boolean caseSensitive
+    + ItemNameFilter(String, int, boolean)
+    + boolean accept(Item)
+}
+
+org.dedda.games.scheisse.state.game.item.filter.ItemFilter <|.. org.dedda.games.scheisse.state.game.item.filter.ItemNameFilter
+@enduml

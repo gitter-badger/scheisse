@@ -1,0 +1,11 @@
+@startuml
+class org.dedda.games.scheisse.state.game.map.MapObject{
+    # Point location
+    # Dimension size
+    + MapObject(Point, Dimension)
+    + Point getLocation()
+    + void setLocation(Point)
+    + Dimension getSize()
+    + void setSize(Dimension)
+}
+@enduml

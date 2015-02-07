@@ -1,0 +1,13 @@
+@startuml
+class java.awt.Container
+
+class org.dedda.games.scheisse.gui.cpu.ContentContainer{
+    - Gui gui
+    - Game game
+    - TabbedGamePane tabbedGamePane
+    + ContentContainer(Gui)
+    + Gui getGui()
+}
+
+java.awt.Container <|-- org.dedda.games.scheisse.gui.cpu.ContentContainer
+@enduml

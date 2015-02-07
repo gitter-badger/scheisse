@@ -1,0 +1,15 @@
+@startuml
+abstract class org.dedda.games.scheisse.state.game.item.filter.ItemFilter
+
+class org.dedda.games.scheisse.state.game.item.filter.ItemLevelFilter{
+    + {static} int MODE_BELOW
+    + {static} int MODE_EXACT
+    + {static} int MODE_ABOVE
+    + long level
+    + int mode
+    + ItemLevelFilter(long, int)
+    + boolean accept(Item)
+}
+
+org.dedda.games.scheisse.state.game.item.filter.ItemFilter <|.. org.dedda.games.scheisse.state.game.item.filter.ItemLevelFilter
+@enduml

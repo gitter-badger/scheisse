@@ -1,4 +1,6 @@
 @startuml
+class javax.swing.JPanel
+
 class org.dedda.games.scheisse.gui.cpu.inventory.InventoryTablePanel{
     - TabbedGamePane tabbedGamePane
     - InventoryTable inventoryTable
@@ -19,4 +21,6 @@ class org.dedda.games.scheisse.gui.cpu.inventory.InventoryTablePanel{
     + InventoryActionPanel getActionPanel()
     + TabbedGamePane getTabbedGamePane()
 }
+
+javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.InventoryTablePanel
 @enduml

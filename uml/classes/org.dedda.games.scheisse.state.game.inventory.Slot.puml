@@ -1,0 +1,18 @@
+@startuml
+class org.dedda.games.scheisse.state.game.inventory.Slot{
+    - Inventory inventory
+    - long numberOfItems
+    - Item dummy
+    --
+    + Slot(Inventory)
+    + Slot(long, Inventory)
+    + boolean canAdd()
+    + void add()
+    + void remove()
+    .. Getter & Setter ..
+    + void setDummy(Item)
+    + Item getDummy()
+    + void setNumberOfItems(long)
+    + long getNumberOfItems()
+}
+@enduml
