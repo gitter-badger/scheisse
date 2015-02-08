@@ -1,4 +1,6 @@
 @startuml
+class org.dedda.games.scheisse.state.game.object.behavior.NPCScript
+
 class org.dedda.games.scheisse.io.resource.world.npc.NPCScriptLoader{
     - NPCScript npcScript
     - HashMap<String, Integer> jumpPoints
@@ -11,4 +13,6 @@ class org.dedda.games.scheisse.io.resource.world.npc.NPCScriptLoader{
     - NPCWalkToDestination getNPCWalkToDestination(String[])
     - NPCJumpIfEqual getNPCJumpIfEqual(String[])
 }
+
+org.dedda.games.scheisse.state.game.object.behavior.NPCScript -- org.dedda.games.scheisse.io.resource.world.npc.NPCScriptLoader : < loads from file
 @enduml

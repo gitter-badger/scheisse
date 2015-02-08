@@ -1,6 +1,10 @@
 @startuml
+class javax.swing.JPanel
+
 class org.dedda.games.scheisse.gui.cpu.shop.ShopSortingPanel{
     - ShopPanel shopPanel
     + ShopSortingPanel(ShopPanel)
 }
+
+javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopSortingPanel
 @enduml

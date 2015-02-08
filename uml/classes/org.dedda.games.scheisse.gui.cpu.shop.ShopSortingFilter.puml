@@ -1,7 +1,11 @@
 @startuml
+class org.dedda.games.scheisse.state.game.item.filter.ItemComplexFilter
+
 class org.dedda.games.scheisse.gui.cpu.shop.ShopSortingFilter{
     + ShopConnector shop
     + ShopSortingFilter(ShopConnector, ItemFilter[], int)
     + boolean accept(Item)
 }
+
+org.dedda.games.scheisse.state.game.item.filter.ItemComplexFilter <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopSortingFilter
 @enduml

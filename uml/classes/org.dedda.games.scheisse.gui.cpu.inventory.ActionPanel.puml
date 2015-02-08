@@ -1,4 +1,6 @@
 @startuml
+class javax.swing.JPanel
+
 class org.dedda.games.scheisse.gui.cpu.inventory.ActionPanel{
     - InventoryTablePanel inventoryTablePanel
     - JButton addButton
@@ -29,4 +31,6 @@ class org.dedda.games.scheisse.gui.cpu.inventory.ActionPanel{
     + InventoryActionComboBox getActionCombobox()
     + InventoryTablePanel getInventoryTablePanel()
 }
+
+javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.ActionPanel
 @enduml

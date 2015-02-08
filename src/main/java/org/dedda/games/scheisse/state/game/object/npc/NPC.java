@@ -16,7 +16,6 @@ public class NPC extends Person {
     protected boolean evil;
     protected double direction = 0;
     protected String name = "unnamed";
-    protected boolean
 
     public NPC(final Point2D.Double location) {
         setLocation(location);

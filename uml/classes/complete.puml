@@ -104,13 +104,6 @@ interface javax.swing.table.TableCellRenderer
 !include org.dedda.games.scheisse.tool.Distances.puml
 !include org.dedda.games.scheisse.tool.Parse.puml
 
-javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.ActionPanel
-javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.inventory.InventoryPanel
-javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopPanel
-org.dedda.games.scheisse.state.game.item.filter.ItemComplexFilter <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopSortingFilter
-javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopSortingPanel
-javax.swing.JFrame <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopSortingWindow
-javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopTablePanel
 org.dedda.games.scheisse.io.FileInput <|-- org.dedda.games.scheisse.io.resource.item.ItemLoader
 org.dedda.games.scheisse.io.FileInput <|-- org.dedda.games.scheisse.io.resource.world.npc.NPCScriptLoader
 org.dedda.games.scheisse.io.FileInput <|-- org.dedda.games.scheisse.io.MapLoader

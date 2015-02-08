@@ -1,6 +1,10 @@
 @startuml
+abstract class org.dedda.games.scheisse.state.game.item.Item
+
 class org.dedda.games.scheisse.io.resource.item.ItemLoader{
     + Item loadItem(File)
     + ArrayList<Item> loadAll(File)
 }
+
+class org.dedda.games.scheisse.state.game.item.Item -- org.dedda.games.scheisse.io.resource.item.ItemLoader : < loads from file
 @enduml

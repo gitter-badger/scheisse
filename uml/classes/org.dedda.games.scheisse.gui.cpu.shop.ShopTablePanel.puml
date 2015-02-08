@@ -1,5 +1,9 @@
 @startuml
+class javax.swing.JPanel
+
 class org.dedda.games.scheisse.gui.cpu.shop.ShopTablePanel{
     + ShopTablePanel()
 }
+
+javax.swing.JPanel <|-- org.dedda.games.scheisse.gui.cpu.shop.ShopTablePanel
 @enduml
