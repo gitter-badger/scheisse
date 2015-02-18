@@ -1,5 +1,4 @@
-target/
-scheisse.iml
-./classes/
+**/target/
+**/*.iml
 .idea/
 doc/javadoc/
