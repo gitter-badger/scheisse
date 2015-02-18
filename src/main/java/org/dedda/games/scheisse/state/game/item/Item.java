@@ -1,13 +1,9 @@
 package org.dedda.games.scheisse.state.game.item;
 
 import org.dedda.games.scheisse.debug.SystemPrinter;
-import org.dedda.games.scheisse.io.net.service.ItemServiceImpl;
-import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.game.level.Level;
-import org.dedda.games.scheisse.webService.client.ItemService;
 
 import java.awt.*;
-import java.io.File;
 import java.util.HashMap;
 
 /**

@@ -5,7 +5,6 @@ import org.dedda.games.scheisse.gui.cpu.Gui;
 import org.dedda.games.scheisse.io.FileInput;
 import org.dedda.games.scheisse.io.NetworkConfigWords;
 import org.dedda.games.scheisse.io.net.HttpDownloader;
-import org.dedda.games.scheisse.io.net.service.ItemServiceImpl;
 import org.dedda.games.scheisse.io.resource.Resource;
 import org.dedda.games.scheisse.io.resource.SaveGameLoader;
 import org.dedda.games.scheisse.io.resource.item.ItemLoader;
@@ -68,8 +67,7 @@ public class Main {
      */
     public static void main(final String args[]) {
 
-        //new ItemLoader().loadAll(new File(Resource.ITEM_FOLDER));
-        new ItemServiceImpl().registerAll();
+        new ItemLoader().loadAll(new File(Resource.ITEM_FOLDER));
         Game game = new Game();
         Player player = new Player(true);/*new SaveGameLoader(
                 new File("src/test/test_files/classes/org/dedda/games/scheisse/io/resource/SaveGameLoader")

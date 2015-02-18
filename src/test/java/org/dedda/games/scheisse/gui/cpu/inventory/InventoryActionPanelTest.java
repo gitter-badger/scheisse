@@ -4,6 +4,8 @@ import org.dedda.games.scheisse.gui.cpu.ContentContainer;
 import org.dedda.games.scheisse.gui.cpu.Gui;
 import org.dedda.games.scheisse.gui.cpu.TabbedGamePane;
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
+import org.dedda.games.scheisse.io.resource.Resource;
+import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.game.Game;
 import org.dedda.games.scheisse.state.game.Player;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
@@ -14,6 +16,7 @@ import org.junit.Test;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
@@ -28,6 +31,7 @@ public class InventoryActionPanelTest {
 
     @Before
     public void setUp() throws Exception {
+        new ItemLoader().loadAll(new File(Resource.ITEM_FOLDER));
         inventory = new Inventory();
         inventory.getSlots().clear();
         Slot slot = new Slot(1L, inventory);
