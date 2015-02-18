@@ -1,0 +1,14 @@
+@startuml
+abstract class javax.servlet.http.HttpServlet
+
+abstract class org.dedda.games.scheisse_server.servlet.BasicServlet{
+    # void processRequest(HttpServletRequest, HttpServletResponse)
+    + printHead(HttpServletRequest, PrintWriter)
+    + printBody(HttpServletRequest, PrintWriter)
+    # void doGet(HttpServletRequest, HttpServletResponse)
+    # void doPost(HttpServletRequest, HttpServletResponse)
+    + String getServletInfo
+}
+
+javax.servlet.http.HttpServlet <|-- org.dedda.games.scheisse_server.servlet.BasicServlet
+@enduml

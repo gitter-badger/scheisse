@@ -1,0 +1,8 @@
+@startuml
+!include org/dedda/games/scheisse_server/servlet/Index.puml
+!include org/dedda/games/scheisse_server/servlet/BasicServlet.puml
+!include org/dedda/games/scheisse_server/util/Config.puml
+!include org/dedda/games/scheisse_server/util/Login.puml
+!include org/dedda/games/scheisse_server/util/Pages.puml
+!include org/dedda/games/scheisse_server/util/Util.puml
+@enduml

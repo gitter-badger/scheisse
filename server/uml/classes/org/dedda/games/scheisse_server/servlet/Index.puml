@@ -1,0 +1,11 @@
+@startuml
+abstract class org.dedda.games.scheisse_server.servlet.BasicServlet
+
+class org.dedda.games.scheisse_server.servlet.Index{
+    + {static} String title
+    + printHead(HttpServletRequest, PrintWriter)
+    + printBody(HttpServletRequest, PrintWriter)
+}
+
+org.dedda.games.scheisse_server.servlet.BasicServlet <|-- org.dedda.games.scheisse_server.servlet.Index
+@enduml
