@@ -1,9 +1,11 @@
 package org.dedda.games.scheisse.state.game.item;
 
 import org.dedda.games.scheisse.debug.SystemPrinter;
+import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.game.level.Level;
 
 import java.awt.*;
+import java.io.File;
 import java.util.HashMap;
 
 /**
@@ -24,12 +26,12 @@ public abstract class Item implements Stackable {
     static {
         itemMap = new HashMap<Long, Item>();
         itemMap.put(0L, new NullItem());
-        /*new ItemLoader().loadAll(
+        new ItemLoader().loadAll(
                 new File(
                         "src/test/test_files/classes/" +
                         "org/dedda/games/scheisse/io/resource/item/ItemLoader"
                 )
-        );*/
+        );
     }
 
     /**
@@ -57,10 +59,6 @@ public abstract class Item implements Stackable {
                     "registered item '" + name + "' with id: " + id
             );
         }
-    }
-
-    public static void getItemsFromServer() {
-        ItemServiceImpl service = new ItemServiceImpl();
     }
 
     /**
