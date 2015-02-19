@@ -7,6 +7,7 @@
     <groupId>org.dedda.games.scheisse</groupId>
     <artifactId>all</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <dependencies>
         <dependency>
@@ -38,41 +39,6 @@
             <groupId>org.jogamp.joal</groupId>
             <artifactId>joal-main</artifactId>
             <version>2.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.dedda.games</groupId>
-            <artifactId>scheisse_service_client</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/scheisse_service_client.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>com.badlogicgames.gdx</groupId>
-            <artifactId>gdx</artifactId>
-            <version>1.5</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/gdx.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>com.badlogicgames.gdx</groupId>
-            <artifactId>gdx-natives</artifactId>
-            <version>1.5</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/gdx-natives.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>com.badlogicgames.gdx</groupId>
-            <artifactId>gdx-backend-lwjgl</artifactId>
-            <version>1.5</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/gdx-backend-lwjgl.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>com.badlogicgames.gdx</groupId>
-            <artifactId>gdx-backend-lwjgl-natives</artifactId>
-            <version>1.5</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/gdx-backend-lwjgl-natives.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
