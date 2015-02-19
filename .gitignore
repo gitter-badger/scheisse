@@ -1,5 +1,8 @@
 **/target/
-**/*.iml
+scheisse.iml
+game/game.iml
+server/scheisse_server.iml
+service-client/service-client.iml
 **/.idea/
 **/nb-configuration.xml
 doc/javadoc/
