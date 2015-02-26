@@ -4,6 +4,7 @@ import org.dedda.games.scheisse.state.game.item.*;
 import org.dedda.games.scheisse.state.game.item.Item;
 import org.dedda.games.scheisse.state.game.item.ItemType;
 import org.dedda.games.scheisse.testInstances.TestItem;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
@@ -11,6 +12,11 @@ import java.io.File;
 import static junit.framework.Assert.*;
 
 public class ItemLoaderTest {
+
+    @Before
+    public void setUp() throws Exception {
+        new TestItem();
+    }
 
     @Test
     public void testLoadItem() throws Exception {
