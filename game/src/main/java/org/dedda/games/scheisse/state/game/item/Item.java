@@ -135,4 +135,8 @@ public abstract class Item implements Stackable {
     public ItemCategory getCategory() {
         return category;
     }
+
+    public static Item itemForId(final long id) {
+        return itemMap.get(id);
+    }
 }
