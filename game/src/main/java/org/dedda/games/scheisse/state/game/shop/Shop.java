@@ -1,9 +1,7 @@
 package org.dedda.games.scheisse.state.game.shop;
 
 import org.dedda.games.scheisse.state.game.shop.filter.ShopFilter;
-import org.dedda.games.scheisse.state.game.shop.filter.TypeFilter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

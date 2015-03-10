@@ -76,7 +76,7 @@ public class Main {
         Inventory inventory = new Inventory(0);
         for (int i = 4; i < 10; i++) {
             Slot slot = new Slot(inventory);
-            slot.setDummy(Item.forId(-i));
+            slot.setDummy(Item.forId(i));
             slot.setNumberOfItems(i*2);
             inventory.addSlot(slot);
         }
@@ -98,112 +98,6 @@ public class Main {
         */
         Gui gui = new Gui(new Dimension(800, 600));
         gui.start(game);
-
-        /*
-        Main.args = args;
-        parseArgs();
-        readConfig();
-        if(Options.isCheckInternetConnection()){
-            online = checkInternetConnection();
-        }
-        if(online){
-            initOnline();
-        }
-        Game game = new Game();
-        game.setPlayer(new Player(true));
-        game.getPlayer().setExperience(170);
-        Map map = new Map(new Dimension(1, 1));
-        map.setSoil(new Point(0, 0), Soil.Type.DIRT);
-        game.setMap(map);
-        GLGameWindow glGameWindow = new GLGameWindow(game);
-        /*
-        int exitCode = startUp();
-        if(exitCode != EXIT_OK){
-            exit(exitCode);
-        }
-        exitCode = loadResources();
-        if(exitCode != EXIT_OK){
-            exit(exitCode);
-        }
-        exitCode = run();*/
-        /*
-        Player player = new Player(false);
-        Map map = new Map(new Dimension(2, 2));
-        Soil.Type soilType[][] = new Soil.Type[2][2];
-        soilType[0][0] = Soil.Type.DIRT;    soilType[0][1] = Soil.Type.ROCK;
-        soilType[1][0] = Soil.Type.GRASS;    soilType[1][1] = Soil.Type.WATER;
-        map.setSoil(soilType);
-        player.setExperience(123L);
-        Game game = new Game();
-        game.setMap(map);
-        game.setPlayer(player);
-        GLGui glGui = new GLGui(game);
-        glGui.start();
-        */
-        //Soil.init();
-
-        /*
-        Player player = new Player(true);
-        player.setExperience(12);
-        Map map = new MapLoader("src/test/test_files/classes/org/dedda/games/scheisse/io/MapLoader").load();
-        Game game = new Game();
-        game.setPlayer(player);
-        game.setMap(map);
-        Gui gui = new Gui(game);
-        gui.start();
-        game.start();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        game.stop(false);
-        gui.stop();
-        exit(EXIT_OK);
-        */
-    }
-
-    /**
-     * Checks if server can be reached
-     *
-     * @return boolean
-     */
-    public static boolean checkInternetConnection() {
-        URL url = null;
-        try {
-            url = new URL(piUrl);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            return false;
-        }
-        Socket socket = null;
-        InputStream in = null;
-        try {
-            socket = new Socket(url.getHost(), 80);
-            socket.setSoTimeout(5);
-            in = socket.getInputStream();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-        if (in != null) {
-            try {
-                in.close();
-                socket.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * Initialization for online stuff
-     */
-    private static void initOnline() {
-        newestInstalled = checkVersion();
-
     }
 
     /**
@@ -227,105 +121,11 @@ public class Main {
     }
 
     /**
-     * Checks for a newer version
-     *
-     * @return True if newest version is installed
-     */
-    private static boolean checkVersion() {
-        String newestVersion = getNewestVersion();
-        boolean newestInstalled = compareVersions(VERSION, newestVersion);
-        SystemPrinter.debugln(newestInstalled ?
-                "newest version is installed!" :
-                "newer version " + newestVersion + " available");
-        return newestInstalled;
-    }
-
-    /**
-     * Initial checks / downloads
-     *
-     * @return Exit code
-     * ({@value org.dedda.games.scheisse.exception.ExceptionCode#EXIT_OK} if
-     * no errors occurred)
-     */
-    private static int startUp() {
-        if (online) {
-            SystemPrinter.debugln("trying to get new version...");
-            readConfig();
-            String newestVersion = getNewestVersion();
-            if (newestVersion.equals("-1")) {
-                SystemPrinter.debugln(
-                        "couldn't reach file with newest version"
-                );
-                online = false;
-                newestInstalled = true;
-            } else {
-                if (!compareVersions(VERSION, newestVersion)) {
-                    SystemPrinter.debugln("newer version found!");
-                    newestInstalled = false;
-                } else {
-                    SystemPrinter.debugln("newest version installed");
-                    newestInstalled = true;
-                }
-            }
-        }
-        SystemPrinter.debugln("checking installation files...");
-        installed = checkInstallation();
-        if (!installed) {
-            SystemPrinter.debugln("installation incomplete, going to exit...");
-            return EXIT_INSTALLATION_FAULT;
-        }
-        SystemPrinter.debugln("installation ok!");
-        return 0;
-    }
-
-    /**
-     * Loads the resources like items and images.
-     */
-    private static void loadResources() {
-        SystemPrinter.debugln("loading resources...");
-        SystemPrinter.debug("loading items... ");
-        SystemPrinter.debugln(
-                new ItemLoader().loadAll(
-                        new File(INSTALLATION_FOLDER + "data/item/")
-                ).size() + " OK!"
-        );
-        SystemPrinter.debugln("initializing soil resources");
-        Soil.init();
-    }
-
-    /**
-     * Starts the gui and everything
-     *
-     * @return Exit code
-     * ({@value org.dedda.games.scheisse.exception.ExceptionCode#EXIT_OK} if no
-     * errors occurred)
-     */
-    private static int run() {
-        //MenuFrame menuFrame = new MenuFrame();
-        //return menuFrame.execute();
-        return EXIT_OK;
-    }
-
-    /**
      * cleanup and exiting
      * @param exitCode
      */
     private static void exit(final int exitCode) {
         System.exit(exitCode);
-    }
-
-    /**
-     *
-     * @return boolean - installation complete
-     */
-    public static boolean checkInstallation() {
-        for (String fileName : INSTALLATION_FILES) {
-            if (!new File(INSTALLATION_FOLDER + fileName).exists()) {
-                SystemPrinter.debugln("file " + fileName + " not installed!");
-                return false;
-            }
-        }
-        return true;
     }
 
     private static void readConfig() {
@@ -340,63 +140,6 @@ public class Main {
                 continue;
             }
         }
-    }
-
-    /**
-     *
-     * @return String - newest version directly from server in string
-     * representation
-     */
-    public static String getNewestVersion() {
-        String version = "-1";
-        URL versionUrl = null;
-        try {
-            versionUrl = new URL(piUrl + URLEXT_VERSION);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        HttpDownloader downloader = new HttpDownloader(versionUrl);
-        SystemPrinter.debugln("trying to get file \"" + versionUrl + "\"...");
-        try {
-            downloader.download(
-                    new File(INSTALLATION_FOLDER + INSTALLATION_FILES[0])
-            );
-        } catch (IOException e) {
-            SystemPrinter.debugln(
-                    "could not download file \"" + versionUrl + "\"!"
-            );
-            return version;
-        }
-        FileInput fileInput = new FileInput();
-        version = fileInput.read(
-                new File(INSTALLATION_FOLDER + INSTALLATION_FILES[0])
-        );
-        return version;
-    }
-
-    /**
-     *
-     * @param older String
-     * @param newer String
-     * @return boolean - false ==> older version is obsolete, true
-     * ==> version is up to date
-     */
-    public static boolean compareVersions(
-            final String older,
-            final String newer)
-    {
-        if (older.charAt(0) < newer.charAt(0)) {
-            return false;
-        } else if (older.charAt(1) < newer.charAt(1)) {
-            return false;
-        } else if (older.charAt(3) < newer.charAt(3)) {
-            return false;
-        } else if (older.charAt(4) < newer.charAt(4)) {
-            return false;
-        } else if (older.charAt(5) < newer.charAt(5)) {
-            return false;
-        }
-        return true;
     }
 
     /**
@@ -437,9 +180,5 @@ public class Main {
 
     public static boolean isOnline() {
         return online;
-    }
-
-    public static String getPiUrl() {
-        return piUrl;
     }
 }
