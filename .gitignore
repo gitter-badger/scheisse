@@ -7,3 +7,4 @@ server/scheisse_server.iml
 service-client/service-client.iml
 **/.idea/
 **/nb-configuration.xml
+**/*.iml
