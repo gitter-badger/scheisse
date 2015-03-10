@@ -2,7 +2,7 @@
 class org.dedda.games.scheisse.state.game.inventory.Slot{
     - Inventory inventory
     - long numberOfItems
-    - Item dummy
+    - org.dedda.games.scheisse.entity.Item dummy
     --
     + Slot(Inventory)
     + Slot(long, Inventory)
@@ -10,8 +10,8 @@ class org.dedda.games.scheisse.state.game.inventory.Slot{
     + void add()
     + void remove()
     .. Getter & Setter ..
-    + void setDummy(Item)
-    + Item getDummy()
+    + void setDummy(org.dedda.games.scheisse.entity.Item)
+    + org.dedda.games.scheisse.entity.Item getDummy()
     + void setNumberOfItems(long)
     + long getNumberOfItems()
 }

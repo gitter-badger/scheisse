@@ -10,7 +10,7 @@ class org.dedda.games.scheisse.state.game.item.filter.ItemNameFilter{
     + int mode
     + boolean caseSensitive
     + ItemNameFilter(String, int, boolean)
-    + boolean accept(Item)
+    + boolean accept(org.dedda.games.scheisse.entity.Item)
 }
 
 org.dedda.games.scheisse.state.game.item.filter.ItemFilter <|.. org.dedda.games.scheisse.state.game.item.filter.ItemNameFilter

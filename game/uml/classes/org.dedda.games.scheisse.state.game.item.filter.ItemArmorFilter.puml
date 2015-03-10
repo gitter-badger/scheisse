@@ -9,7 +9,7 @@ class org.dedda.games.scheisse.state.game.item.filter.ItemArmorFilter{
     + int mode
     + ItemTypeFilter itemTypeFilter
     + ItemArmorFilter(long, int)
-    + boolean accept(Item)
+    + boolean accept(org.dedda.games.scheisse.entity.Item)
 }
 
 org.dedda.games.scheisse.state.game.item.filter.ItemFilter <|.. org.dedda.games.scheisse.state.game.item.filter.ItemArmorFilter

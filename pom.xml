@@ -9,6 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <name>Scheisse Bundle</name>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -87,6 +89,7 @@
         <module>service-client</module>
         <module>jmx</module>
         <module>entities</module>
+        <module>perfmon</module>
     </modules>
 
     <build>

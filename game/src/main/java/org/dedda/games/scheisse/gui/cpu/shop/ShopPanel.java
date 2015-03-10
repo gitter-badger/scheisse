@@ -3,7 +3,6 @@ package org.dedda.games.scheisse.gui.cpu.shop;
 import org.dedda.games.scheisse.gui.cpu.TabbedGamePane;
 import org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionEvent;
 import org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionListener;
-import org.dedda.games.scheisse.gui.cpu.shop.table.ShopTablePanel;
 import org.dedda.games.scheisse.state.game.Player;
 
 import javax.swing.*;
@@ -19,13 +18,11 @@ public class ShopPanel extends JPanel implements InventoryTransactionListener{
     private Player player;
 
     private JProgressBar progressBar;
-    private ShopTablePanel tablePanel;
 
     public ShopPanel(final TabbedGamePane tabbedGamePane) {
         this.tabbedGamePane = tabbedGamePane;
         this.player = tabbedGamePane.getGui().getGame().getPlayer();
         headerBar = new JLabel("Money: " + player.getMoney());
-        tablePanel = new ShopTablePanel(tabbedGamePane);
         setBackground(Color.LIGHT_GRAY);
         progressBar = new JProgressBar();
         intiLayout();
@@ -41,7 +38,6 @@ public class ShopPanel extends JPanel implements InventoryTransactionListener{
         headerBar.setMaximumSize(preferredHeaderSize);
         headerBar.setPreferredSize(preferredHeaderSize);
         add(headerBar);
-        add(tablePanel);
         setBackground(Color.LIGHT_GRAY);
     }
 
@@ -58,7 +54,6 @@ public class ShopPanel extends JPanel implements InventoryTransactionListener{
         progressBar.setMaximumSize(preferredHeaderSize);
         progressBar.setPreferredSize(preferredHeaderSize);
         add(progressBar);
-        add(tablePanel);
         setBackground(Color.LIGHT_GRAY);
     }
 

@@ -1,6 +1,6 @@
 @startuml
 abstract class org.dedda.games.scheisse.state.game.item.filter.ItemFilter{
-    + {abstract} boolean accept(Item)
-    + ArrayList<Item> filter(ArrayList<Item>)
+    + {abstract} boolean accept(org.dedda.games.scheisse.entity.Item)
+    + ArrayList<org.dedda.games.scheisse.entity.Item> filter(ArrayList<org.dedda.games.scheisse.entity.Item>)
 }
 @enduml

@@ -28,8 +28,8 @@ public class ShopConnector {
 
     public List<Offer> getOffers(final ItemType itemType) {
         /*ArrayList<Long> allIDs = new ArrayList<Long>();
-        for (long currentId : Item.getItemMap().keySet()) {
-            if (Item.forId(currentId).getType() == itemType) {
+        for (long currentId : org.dedda.games.scheisse.entity.Item.getItemMap().keySet()) {
+            if (org.dedda.games.scheisse.entity.Item.forId(currentId).getType() == itemType) {
                 allIDs.add(currentId);
             }
         }

@@ -1,9 +1,14 @@
 **/target/
+*.iml
+**/*.iml
 scheisse.iml
 entities/entities.iml
+entities/Scheisse Entities.iml
 game/game.iml
 jmx/jmx.iml
 server/server.iml
+server/scheisse_server.iml
 service-client/client.iml
+service-client/service-client.iml
 **/.idea/
 **/nb-configuration.xml
