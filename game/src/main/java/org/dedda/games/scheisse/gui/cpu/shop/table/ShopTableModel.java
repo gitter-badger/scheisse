@@ -62,7 +62,7 @@ public class ShopTableModel extends AbstractTableModel implements InventoryChang
         this.shopTable = shopTable;
         this.inventory = shopTable.getInventory();
         inventory.addInventoryChangeListener(this);
-        this.shownCategories = new ArrayList<Integer>();
+        this.shownCategories = new ArrayList<>();
     }
 
     public int getRowCount() {

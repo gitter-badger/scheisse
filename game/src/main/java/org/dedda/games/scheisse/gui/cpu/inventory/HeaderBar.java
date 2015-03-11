@@ -28,8 +28,8 @@ public class HeaderBar
     public HeaderBar(final Player player) {
         this.player = player;
         this.inventory = player.getInventory();
-        this.changeListeners = new ArrayList<CategoriesChangeListener>();
-        this.checkBoxes = new ArrayList<JCheckBox>();
+        this.changeListeners = new ArrayList<>();
+        this.checkBoxes = new ArrayList<>();
         for (int i = 0; i < InventoryTableModel.CATEGORIES.length; i++) {
             JCheckBox checkBox = new JCheckBox(InventoryTableModel.HEADERS[i]);
             checkBox.addChangeListener(this);

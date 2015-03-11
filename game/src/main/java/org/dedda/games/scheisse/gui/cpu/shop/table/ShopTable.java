@@ -31,8 +31,8 @@ public class ShopTable extends JScrollPane {
         this.inventory = panel.getInventory();
         this.player = panel.getPlayer();
         this.model = new ShopTableModel(this);
-        offers = new ArrayList<Offer>();
-        shopFilters = new ArrayList<ShopFilter>();
+        offers = new ArrayList<>();
+        shopFilters = new ArrayList<>();
         refresh();
     }
 

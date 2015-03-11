@@ -41,7 +41,7 @@ public class Unzip {
      * @return {@link ArrayList} of all unzipped {@link File}s
      */
     public ArrayList<File> unzip() {
-        ArrayList<File> files = new ArrayList<File>();
+        ArrayList<File> files = new ArrayList<>();
         byte buffer[] = new byte[1024];
         ZipInputStream zipInputStream;
         try {

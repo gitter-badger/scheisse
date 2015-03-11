@@ -67,7 +67,7 @@ public class FileInput {
      */
     public String[] getLines(final File file) {
         String lines[];
-        ArrayList<String> lineList = new ArrayList<String>();
+        ArrayList<String> lineList = new ArrayList<>();
         FileInputStream fis = null;
         try {
             fis = new FileInputStream(file);
@@ -94,7 +94,7 @@ public class FileInput {
 
     public HashMap<String, String> getMap(final File file) {
         String lines[] = getLines(file);
-        HashMap<String, String> map = new HashMap<String, String>();
+        HashMap<String, String> map = new HashMap<>();
         for (String line : lines) {
             String key = line.substring(0, line.indexOf(':'));
             String value = line.substring(line.indexOf(':')+1);
@@ -111,7 +111,7 @@ public class FileInput {
             return getMap(file);
         }
         String lines[] = getLines(file);
-        HashMap<String, String> map = new HashMap<String, String>();
+        HashMap<String, String> map = new HashMap<>();
         for (String line : lines) {
             if (!line.startsWith("#")) {
                 String key = line.substring(0, line.indexOf(':'));

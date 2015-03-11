@@ -12,7 +12,7 @@ public class InventoryActionComboBox extends JComboBox {
     public static final String SELL = "sell";
     public static final String DESTROY = "destroy";
 
-    private ArrayList<String> actions = new ArrayList<String>();
+    private ArrayList<String> actions = new ArrayList<>();
 
     public InventoryActionComboBox() {
         actions.add(SELL);

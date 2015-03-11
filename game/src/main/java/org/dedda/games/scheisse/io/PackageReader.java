@@ -17,7 +17,7 @@ public class PackageReader extends FileInput {
     public BinaryResource[] readPackage(final File file) {
         BinaryResource[] resources;
         ArrayList<BinaryResource> resourceList =
-                new ArrayList<BinaryResource>();
+                new ArrayList<>();
         BufferedInputStream inputStream;
         try {
             inputStream = new BufferedInputStream(new FileInputStream(file));

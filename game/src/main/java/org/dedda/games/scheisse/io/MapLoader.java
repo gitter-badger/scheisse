@@ -40,10 +40,9 @@ public class MapLoader extends FileInput {
         Map map = null;
 
         String fileData = read(new File(folder));
-        //mapData = mapData.replace("\n" + (char)10, "" + (char)13);
-        ArrayList<String> mapProperties = new ArrayList<String>();
-        ArrayList<String> propertyValues = new ArrayList<String>();
-        ArrayList<String> mapLines = new ArrayList<String>();
+        ArrayList<String> mapProperties = new ArrayList<>();
+        ArrayList<String> propertyValues = new ArrayList<>();
+        ArrayList<String> mapLines = new ArrayList<>();
         String line = "";
         for (int i = 0; i < fileData.length(); i++) {
             char currentChar = fileData.charAt(i);
