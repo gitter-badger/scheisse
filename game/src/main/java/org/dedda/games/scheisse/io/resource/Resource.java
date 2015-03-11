@@ -27,15 +27,6 @@ public abstract class Resource {
     private static URL ITEM_URL;
     private static URL IMAGE_URL;
 
-    static {
-        try {
-            ITEM_URL = new URL(Main.getPiUrl() + ITEM_ZIP);
-            IMAGE_URL = new URL(Main.getPiUrl() + IMAGE_ZIP);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static HashMap<URL, String> getDownloadList() {
         HashMap<URL, String> map = new HashMap<URL, String>();
         map.put(ITEM_URL, ITEM_FOLDER);
