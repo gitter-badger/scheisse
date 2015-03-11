@@ -76,7 +76,7 @@ public class Main {
         Inventory inventory = new Inventory(0);
         for (int i = 4; i < 10; i++) {
             Slot slot = new Slot(inventory);
-            slot.setDummy(Item.forId(-i));
+            slot.setDummy(Item.forId(i));
             slot.setNumberOfItems(i*2);
             inventory.addSlot(slot);
         }
