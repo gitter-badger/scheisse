@@ -5,17 +5,16 @@
  */
 package org.dedda.games.scheisse_server.service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.dedda.games.scheisse_server.provider.LoginProvider;
+import org.dedda.games.scheisse_server.provider.UserProvider;
+import org.dedda.games.scheisse_server.util.Session;
+
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
-import org.dedda.games.scheisse_server.provider.LoginProvider;
-import org.dedda.games.scheisse_server.provider.UserProvider;
-import org.dedda.games.scheisse_server.util.Session;
+import java.util.HashMap;
+import java.util.Map;
 
 @Named
 @Singleton

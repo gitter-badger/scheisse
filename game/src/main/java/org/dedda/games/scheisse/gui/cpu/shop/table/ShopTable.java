@@ -1,6 +1,5 @@
 package org.dedda.games.scheisse.gui.cpu.shop.table;
 
-import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable;
 import org.dedda.games.scheisse.state.game.Player;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.shop.Offer;
@@ -8,7 +7,6 @@ import org.dedda.games.scheisse.state.game.shop.Shop;
 import org.dedda.games.scheisse.state.game.shop.filter.ShopFilter;
 
 import javax.swing.*;
-import javax.swing.text.PlainDocument;
 import java.util.ArrayList;
 import java.util.List;
 

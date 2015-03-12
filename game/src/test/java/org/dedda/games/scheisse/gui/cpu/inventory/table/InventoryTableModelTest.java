@@ -1,20 +1,16 @@
 package org.dedda.games.scheisse.gui.cpu.inventory.table;
 
-import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.inventory.Slot;
-import org.dedda.games.scheisse.state.game.item.Armor;
 import org.dedda.games.scheisse.state.game.item.Item;
 import org.dedda.games.scheisse.state.game.item.Weapon;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.swing.*;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class InventoryTableModelTest {
 

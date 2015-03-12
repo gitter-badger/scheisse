@@ -1,12 +1,6 @@
 package org.dedda.games.scheisse_server.transport;
 
 import org.dedda.games.scheisse.entity.Inventory;
-import org.dedda.games.scheisse_server.entity.Slot;
-import org.dedda.games.scheisse_server.entity.User;
-
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.List;
 
 /**
  * Created by dedda on 2/9/15.

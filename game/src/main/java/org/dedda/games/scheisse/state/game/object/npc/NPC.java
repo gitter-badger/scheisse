@@ -1,7 +1,6 @@
 package org.dedda.games.scheisse.state.game.object.npc;
 
 import org.dedda.games.scheisse.state.game.fight.Attack;
-import org.dedda.games.scheisse.state.game.object.GameObject;
 import org.dedda.games.scheisse.state.game.object.Person;
 
 import java.awt.*;

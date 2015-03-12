@@ -7,10 +7,10 @@ import org.dedda.games.scheisse.state.game.level.Level;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.awt.*;
 import java.util.ArrayList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class ItemLevelFilterTest {
 

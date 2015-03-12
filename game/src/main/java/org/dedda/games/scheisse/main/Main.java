@@ -2,11 +2,7 @@ package org.dedda.games.scheisse.main;
 
 import org.dedda.games.scheisse.debug.SystemPrinter;
 import org.dedda.games.scheisse.gui.cpu.Gui;
-import org.dedda.games.scheisse.io.FileInput;
-import org.dedda.games.scheisse.io.NetworkConfigWords;
-import org.dedda.games.scheisse.io.net.HttpDownloader;
 import org.dedda.games.scheisse.io.resource.Resource;
-import org.dedda.games.scheisse.io.resource.SaveGameLoader;
 import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.State;
 import org.dedda.games.scheisse.state.game.Game;
@@ -14,16 +10,9 @@ import org.dedda.games.scheisse.state.game.Player;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.inventory.Slot;
 import org.dedda.games.scheisse.state.game.item.Item;
-import org.dedda.games.scheisse.state.game.map.soil.Soil;
 
 import java.awt.*;
-import java.io.*;
-import java.net.MalformedURLException;
-import java.net.Socket;
-import java.net.URL;
-
-import static org.dedda.games.scheisse.exception.ExceptionCode.EXIT_INSTALLATION_FAULT;
-import static org.dedda.games.scheisse.exception.ExceptionCode.EXIT_OK;
+import java.io.File;
 
 /**
  * {@link org.dedda.games.scheisse.main.Main} class containing the

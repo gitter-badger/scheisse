@@ -5,17 +5,18 @@
  */
 package org.dedda.games.scheisse_server.pageProvider;
 
-import java.io.Serializable;
-import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
-import javax.inject.Inject;
 import org.dedda.games.scheisse.entity.User;
 import org.dedda.games.scheisse_server.provider.UserProvider;
 import org.dedda.games.scheisse_server.util.Util;
 
-import static org.dedda.games.scheisse_server.util.Pages.*;
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+import javax.inject.Inject;
+import java.io.Serializable;
+
+import static org.dedda.games.scheisse_server.util.Pages.INDEX;
+import static org.dedda.games.scheisse_server.util.Pages.REGISTER;
 
 @ManagedBean
 @RequestScoped

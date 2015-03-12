@@ -4,7 +4,6 @@ import org.dedda.games.scheisse.gui.cpu.TabbedGamePane;
 import org.dedda.games.scheisse.state.game.Player;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.shop.Shop;
-import org.dedda.games.scheisse.state.game.shop.ShopConnector;
 
 import javax.swing.*;
 

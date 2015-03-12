@@ -2,7 +2,6 @@ package org.dedda.games.scheisse.gui.cpu.shop.table;
 
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener;
-import org.dedda.games.scheisse.state.game.inventory.Slot;
 import org.dedda.games.scheisse.state.game.item.Armor;
 import org.dedda.games.scheisse.state.game.item.Item;
 import org.dedda.games.scheisse.state.game.item.Weapon;

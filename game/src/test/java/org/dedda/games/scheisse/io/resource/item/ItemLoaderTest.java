@@ -1,15 +1,14 @@
 package org.dedda.games.scheisse.io.resource.item;
 
 import org.dedda.games.scheisse.state.game.item.*;
-import org.dedda.games.scheisse.state.game.item.Item;
-import org.dedda.games.scheisse.state.game.item.ItemType;
 import org.dedda.games.scheisse.testInstances.TestItem;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
 
-import static junit.framework.Assert.*;
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
 
 public class ItemLoaderTest {
 

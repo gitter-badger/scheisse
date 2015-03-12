@@ -5,7 +5,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import static junit.framework.Assert.*;
+import static junit.framework.Assert.assertEquals;
 
 public class SlotTest {
 

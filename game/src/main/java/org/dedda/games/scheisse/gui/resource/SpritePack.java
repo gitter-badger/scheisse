@@ -1,8 +1,5 @@
 package org.dedda.games.scheisse.gui.resource;
 
-import com.badlogic.gdx.assets.loaders.TextureLoader;
-import com.badlogic.gdx.graphics.Texture;
-
 import java.awt.*;
 import java.io.File;
 

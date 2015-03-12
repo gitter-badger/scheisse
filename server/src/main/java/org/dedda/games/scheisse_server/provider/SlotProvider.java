@@ -5,14 +5,15 @@
  */
 package org.dedda.games.scheisse_server.provider;
 
-import java.util.List;
+import org.dedda.games.scheisse.entity.Inventory;
+import org.dedda.games.scheisse.entity.Slot;
+
 import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import org.dedda.games.scheisse.entity.Inventory;
-import org.dedda.games.scheisse.entity.Slot;
+import java.util.List;
 
 @Named
 @Stateless

@@ -2,10 +2,8 @@ package org.dedda.games.scheisse.gui.cpu.inventory;
 
 import org.dedda.games.scheisse.gui.cpu.TabbedGamePane;
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable;
-import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
 import org.dedda.games.scheisse.state.game.Game;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
-import org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;

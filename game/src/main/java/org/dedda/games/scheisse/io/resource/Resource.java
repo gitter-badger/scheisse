@@ -1,9 +1,6 @@
 
 package org.dedda.games.scheisse.io.resource;
 
-import org.dedda.games.scheisse.main.Main;
-
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 

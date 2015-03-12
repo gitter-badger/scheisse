@@ -5,7 +5,6 @@ import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.game.Player;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.inventory.Slot;
-import org.dedda.games.scheisse.state.game.item.NullItem;
 import org.junit.Test;
 
 import java.awt.*;

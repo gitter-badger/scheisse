@@ -5,13 +5,14 @@
  */
 package org.dedda.games.scheisse_server.provider;
 
-import java.util.List;
+import org.dedda.games.scheisse.entity.Item;
+
 import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import org.dedda.games.scheisse.entity.Item;
+import java.util.List;
 
 @Named
 @Stateless

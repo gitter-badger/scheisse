@@ -4,11 +4,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.HashMap;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 public class FileInputTest {
 

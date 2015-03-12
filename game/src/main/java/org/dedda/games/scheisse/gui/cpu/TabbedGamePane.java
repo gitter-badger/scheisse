@@ -4,7 +4,7 @@ import org.dedda.games.scheisse.gui.cpu.inventory.InventoryPanel;
 import org.dedda.games.scheisse.gui.cpu.shop.ShopPanel;
 import org.dedda.games.scheisse.state.game.Game;
 
-import javax.swing.JTabbedPane;
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 

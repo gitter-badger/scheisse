@@ -5,15 +5,12 @@
  */
 package org.dedda.games.scheisse_server.pageProvider;
 
-import java.util.List;
-import javax.ejb.Stateful;
+import org.dedda.games.scheisse_server.provider.ItemProvider;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
-import org.dedda.games.scheisse_server.entity.Slot;
-import org.dedda.games.scheisse_server.provider.ItemProvider;
 
 @ManagedBean
 @RequestScoped

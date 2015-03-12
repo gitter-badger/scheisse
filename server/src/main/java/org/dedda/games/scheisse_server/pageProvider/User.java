@@ -1,12 +1,13 @@
 package org.dedda.games.scheisse_server.pageProvider;
 
-import java.util.List;
+import org.dedda.games.scheisse.entity.Slot;
+import org.dedda.games.scheisse_server.provider.UserProvider;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
-import org.dedda.games.scheisse.entity.Slot;
-import org.dedda.games.scheisse_server.provider.UserProvider;
+import java.util.List;
 
 @ManagedBean
 @RequestScoped

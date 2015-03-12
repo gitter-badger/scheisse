@@ -5,19 +5,20 @@
  */
 package org.dedda.games.scheisse_server.service;
 
+import org.dedda.games.scheisse.entity.User;
+import org.dedda.games.scheisse_server.provider.UserProvider;
+import org.dedda.games.scheisse_server.transport.LoginContainer;
+
+import javax.ejb.Stateless;
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebService;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.jws.WebService;
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import javax.ejb.Stateless;
-import javax.inject.Inject;
-import javax.inject.Named;
-import org.dedda.games.scheisse.entity.User;
-import org.dedda.games.scheisse_server.provider.UserProvider;
-import org.dedda.games.scheisse_server.transport.LoginContainer;
 
 @WebService(serviceName = "LoginService")
 @Stateless

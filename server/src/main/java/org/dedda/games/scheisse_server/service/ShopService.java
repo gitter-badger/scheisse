@@ -1,13 +1,13 @@
 package org.dedda.games.scheisse_server.service;
 
-import org.dedda.games.scheisse_server.transport.OfferContainer;
 import org.dedda.games.scheisse_server.transport.ItemFilterContainer;
+import org.dedda.games.scheisse_server.transport.OfferContainer;
 
 import javax.ejb.Stateless;
 import javax.inject.Named;
-import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import javax.jws.WebService;
 
 @WebService(serviceName = "ShopService")
 @Stateless

@@ -4,12 +4,9 @@ import org.dedda.games.scheisse.io.FileInput;
 import org.dedda.games.scheisse.state.game.Player;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.inventory.Slot;
-import org.dedda.games.scheisse.state.game.item.Item;
-import org.dedda.games.scheisse.state.game.item.NullItem;
 import org.dedda.games.scheisse.tool.Parse;
 
 import java.awt.*;
-import java.awt.geom.Point2D;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
