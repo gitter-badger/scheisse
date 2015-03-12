@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
  *
  * @author dedda
  */
-@Entity
+@javax.persistence.Entity
 @Table(name = "item")
 @NamedQueries({
         @NamedQuery(
@@ -19,7 +19,7 @@ import javax.validation.constraints.NotNull;
                 query = "SELECT i FROM org.dedda.games.scheisse.entity.Item i WHERE i.type = :type"
         )
 })
-public class Item implements TestableEntity {
+public class Item extends Entity implements TestableEntity {
 
     @Id
     @NotNull

@@ -12,4 +12,12 @@
     <artifactId>service</artifactId>
     <name>Scheisse Service</name>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.dedda.games.scheisse</groupId>
+            <artifactId>entities</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 </project>

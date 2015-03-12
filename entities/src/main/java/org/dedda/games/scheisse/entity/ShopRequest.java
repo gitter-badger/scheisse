@@ -2,8 +2,9 @@ package org.dedda.games.scheisse.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
-@Entity
+@javax.persistence.Entity
 @Table(name = "shopRequest")
 @NamedQueries({
     @NamedQuery(
@@ -19,7 +20,7 @@ import javax.validation.constraints.NotNull;
             query = "SELECT sr FROM ShopRequest sr WHERE sr.item = :item"
     )
 })
-public class ShopRequest {
+public class ShopRequest extends Entity {
     
     @Id
     @NotNull

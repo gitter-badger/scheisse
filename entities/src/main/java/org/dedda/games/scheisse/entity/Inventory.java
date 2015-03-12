@@ -13,9 +13,9 @@ import java.util.List;
  *
  * @author dedda
  */
-@Entity
+@javax.persistence.Entity
 @Table(name = "inventory")
-public class Inventory implements TestableEntity {
+public class Inventory extends Entity implements TestableEntity {
     
     @Id
     @NotNull

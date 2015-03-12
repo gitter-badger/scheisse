@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
  *
  * @author dedda
  */
-@Entity
+@javax.persistence.Entity
 @Table(name = "user")
 @NamedQueries({
         @NamedQuery(
@@ -32,7 +32,7 @@ import javax.validation.constraints.NotNull;
                 query = "SELECT u FROM User u WHERE u.email = :email"
         )
 })
-public class User implements TestableEntity {
+public class User extends Entity implements TestableEntity {
     
     @Id
     @NotNull
@@ -86,7 +86,7 @@ public class User implements TestableEntity {
      * GETTER & SETTER
      *==========================*/
     
-    public Long getId() {
+    public long getId() {
         return id;
     }
 

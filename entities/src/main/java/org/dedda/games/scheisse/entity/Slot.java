@@ -8,7 +8,7 @@ package org.dedda.games.scheisse.entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Entity
+@javax.persistence.Entity
 @Table(name = "slot")
 @NamedQueries({
     @NamedQuery(
@@ -20,7 +20,7 @@ import javax.validation.constraints.NotNull;
             query = "SELECT s FROM Slot s WHERE s.inventory.id = :id"
     )
 })
-public class Slot implements TestableEntity {
+public class Slot extends Entity implements TestableEntity {
     
     @Id
     @NotNull
