@@ -13,7 +13,7 @@ import javax.jws.WebParam;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.inject.Named;
-import org.dedda.games.scheisse_server.entity.Item;
+import org.dedda.games.scheisse.entity.Item;
 import org.dedda.games.scheisse_server.provider.ItemProvider;
 import org.dedda.games.scheisse_server.transport.ItemContainer;
 

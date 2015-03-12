@@ -15,7 +15,7 @@ import javax.jws.WebParam;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.inject.Named;
-import org.dedda.games.scheisse_server.entity.User;
+import org.dedda.games.scheisse.entity.User;
 import org.dedda.games.scheisse_server.provider.UserProvider;
 import org.dedda.games.scheisse_server.transport.LoginContainer;
 

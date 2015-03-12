@@ -9,7 +9,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
-import org.dedda.games.scheisse_server.entity.User;
+import org.dedda.games.scheisse.entity.User;
 import org.dedda.games.scheisse_server.provider.UserProvider;
 
 @ManagedBean

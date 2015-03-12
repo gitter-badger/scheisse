@@ -11,8 +11,8 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import org.dedda.games.scheisse_server.entity.Inventory;
-import org.dedda.games.scheisse_server.entity.Slot;
+import org.dedda.games.scheisse.entity.Inventory;
+import org.dedda.games.scheisse.entity.Slot;
 
 @Named
 @Stateless

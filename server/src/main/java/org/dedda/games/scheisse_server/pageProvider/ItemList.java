@@ -12,7 +12,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import org.dedda.games.scheisse_server.provider.ItemProvider;
-import org.dedda.games.scheisse_server.entity.Item;
+import org.dedda.games.scheisse.entity.Item;
 
 @ManagedBean
 @SessionScoped

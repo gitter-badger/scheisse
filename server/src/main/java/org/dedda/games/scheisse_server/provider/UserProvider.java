@@ -5,22 +5,14 @@
  */
 package org.dedda.games.scheisse_server.provider;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+import org.dedda.games.scheisse.entity.User;
+
 import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
 import javax.persistence.TypedQuery;
-import org.dedda.games.scheisse_server.entity.User;
-import org.dedda.games.scheisse_server.util.Config;
-import org.dedda.games.scheisse_server.util.Util;
+import java.util.List;
 
 /**
  *

@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse_server.transport;
 
-import org.dedda.games.scheisse_server.entity.User;
+import org.dedda.games.scheisse.entity.User;
 
 public class UserContainer {
 

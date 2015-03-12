@@ -5,7 +5,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
-import org.dedda.games.scheisse_server.entity.Slot;
+import org.dedda.games.scheisse.entity.Slot;
 import org.dedda.games.scheisse_server.provider.UserProvider;
 
 @ManagedBean
@@ -18,7 +18,7 @@ public class User {
     @ManagedProperty(value = "#{param.id}")
     private long id;
     
-    private org.dedda.games.scheisse_server.entity.User selected;
+    private org.dedda.games.scheisse.entity.User selected;
     
     public String show() {
         selected = userProvider.getUser(id);
@@ -41,11 +41,11 @@ public class User {
         this.id = id;
     }
 
-    public org.dedda.games.scheisse_server.entity.User getSelected() {
+    public org.dedda.games.scheisse.entity.User getSelected() {
         return selected;
     }
 
-    public void setSelected(org.dedda.games.scheisse_server.entity.User selected) {
+    public void setSelected(org.dedda.games.scheisse.entity.User selected) {
         this.selected = selected;
     }
     

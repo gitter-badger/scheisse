@@ -8,9 +8,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-import org.dedda.games.scheisse_server.entity.Item;
-import org.dedda.games.scheisse_server.entity.ShopRequest;
-import org.dedda.games.scheisse_server.entity.User;
+import org.dedda.games.scheisse.entity.Item;
+import org.dedda.games.scheisse.entity.ShopRequest;
+import org.dedda.games.scheisse.entity.User;
 
 @Named
 @Stateless

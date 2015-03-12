@@ -16,7 +16,16 @@
     </properties>
     
     <dependencies>
-
+        <dependency>
+            <groupId>org.dedda.games.scheisse</groupId>
+            <artifactId>entities</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dedda.games.scheisse</groupId>
+            <artifactId>jmx</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

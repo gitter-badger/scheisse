@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse_server.transport;
 
-import org.dedda.games.scheisse_server.entity.Inventory;
+import org.dedda.games.scheisse.entity.Inventory;
 import org.dedda.games.scheisse_server.entity.Slot;
 import org.dedda.games.scheisse_server.entity.User;
 
