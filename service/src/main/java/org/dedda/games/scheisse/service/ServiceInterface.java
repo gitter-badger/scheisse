@@ -8,6 +8,8 @@ import org.dedda.games.scheisse.service.transport.EntityType;
  */
 public interface ServiceInterface {
 
-    public EntityContainer getEntity(final EntityType type, final long id);
+    public EntityContainer get(final EntityType type, final long id);
+
+    public void post(final EntityContainer container);
 
 }
