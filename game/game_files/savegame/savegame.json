@@ -1,0 +1,22 @@
+{
+  "player" : {
+    "name" : "Dedda",
+    "map" : [0, 0],
+    "location" : [0, 0],
+    "exp" : 1000,
+    "money" : 0,
+    "inventory" : {
+      "size" : 3,
+      "items" : [
+        {
+          "id" : 1,
+          "amount" : 1
+        },
+        {
+          "id" : 2,
+          "amount" : 2
+        }
+      ]
+    }
+  }
+}
