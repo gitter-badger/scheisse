@@ -91,7 +91,7 @@
         <module>entities</module>
         <module>perfmon</module>
         <module>service</module>
-        <module>Scheisse Service Host</module>
+        <module>service-host</module>
     </modules>
 
     <build>
