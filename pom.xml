@@ -90,6 +90,8 @@
         <module>jmx</module>
         <module>entities</module>
         <module>perfmon</module>
+        <module>service</module>
+        <module>Scheisse Service Host</module>
     </modules>
 
     <build>

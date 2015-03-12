@@ -9,9 +9,18 @@
         <artifactId>bundle</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>client</artifactId>
+    <artifactId>service-client</artifactId>
     <packaging>jar</packaging>
     <name>Scheisse Service Client</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.dedda.games.scheisse</groupId>
+            <artifactId>service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <resources>
             <resource>
