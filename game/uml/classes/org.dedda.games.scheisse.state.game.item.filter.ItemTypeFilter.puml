@@ -4,7 +4,7 @@ abstract class org.dedda.games.scheisse.state.game.item.filter.ItemFilter
 class org.dedda.games.scheisse.state.game.item.filter.ItemTypeFilter{
     + ItemType[] itemTypes
     + ItemTypeFilter(ItemType[])
-    + boolean accept(org.dedda.games.scheisse.entity.Item)
+    + boolean accept(org.dedda.games.scheisse.entity.item.Item)
 }
 
 org.dedda.games.scheisse.state.game.item.filter.ItemFilter <|.. org.dedda.games.scheisse.state.game.item.filter.ItemTypeFilter

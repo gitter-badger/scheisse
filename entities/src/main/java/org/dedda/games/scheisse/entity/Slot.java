@@ -5,6 +5,8 @@
  */
 package org.dedda.games.scheisse.entity;
 
+import org.dedda.games.scheisse.entity.item.Item;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 

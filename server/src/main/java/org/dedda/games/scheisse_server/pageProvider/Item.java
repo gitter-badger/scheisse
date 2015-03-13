@@ -22,7 +22,7 @@ public class Item {
     @ManagedProperty(value = "#{param.id}")
     private long id;
     
-    private org.dedda.games.scheisse.entity.Item selected;
+    private org.dedda.games.scheisse.entity.item.Item selected;
 
     public ItemProvider getProvider() {
         return provider;
@@ -42,11 +42,11 @@ public class Item {
         return "item";
     }
     
-    public org.dedda.games.scheisse.entity.Item getSelected() {
+    public org.dedda.games.scheisse.entity.item.Item getSelected() {
         return selected;
     }
 
-    public void setSelected(org.dedda.games.scheisse.entity.Item selected) {
+    public void setSelected(org.dedda.games.scheisse.entity.item.Item selected) {
         this.selected = selected;
     }
 

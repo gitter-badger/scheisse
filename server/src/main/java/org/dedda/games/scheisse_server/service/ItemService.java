@@ -5,7 +5,7 @@
  */
 package org.dedda.games.scheisse_server.service;
 
-import org.dedda.games.scheisse.entity.Item;
+import org.dedda.games.scheisse.entity.item.Item;
 import org.dedda.games.scheisse_server.provider.ItemProvider;
 import org.dedda.games.scheisse_server.transport.ItemContainer;
 

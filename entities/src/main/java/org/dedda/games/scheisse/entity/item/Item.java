@@ -1,7 +1,10 @@
-package org.dedda.games.scheisse.entity;
+package org.dedda.games.scheisse.entity.item;
+
+import org.dedda.games.scheisse.entity.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.awt.*;
 
 /**
  *
@@ -12,14 +15,14 @@ import javax.validation.constraints.NotNull;
 @NamedQueries({
         @NamedQuery(
                 name = "item.getAll",
-                query = "SELECT i FROM org.dedda.games.scheisse.entity.Item i"
+                query = "SELECT i FROM org.dedda.games.scheisse.entity.item.Item i"
         ),
         @NamedQuery(
                 name = "item.getForType",
-                query = "SELECT i FROM org.dedda.games.scheisse.entity.Item i WHERE i.type = :type"
+                query = "SELECT i FROM org.dedda.games.scheisse.entity.item.Item i WHERE i.type = :type"
         )
 })
-public class Item extends Entity implements TestableEntity {
+public class Item extends org.dedda.games.scheisse.entity.Entity implements TestableEntity {
 
     @Id
     @NotNull
@@ -66,6 +69,10 @@ public class Item extends Entity implements TestableEntity {
             name = "armor"
     )
     private long armor;
+
+    private Image sprite;
+
+    private ItemCategory category;
 
     public long getId() {
         return id;
@@ -122,4 +129,19 @@ public class Item extends Entity implements TestableEntity {
         return -1;
     }
 
+    public ItemCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(ItemCategory category) {
+        this.category = category;
+    }
+
+    public Image getSprite() {
+        return sprite;
+    }
+
+    public void setSprite(Image sprite) {
+        this.sprite = sprite;
+    }
 }
