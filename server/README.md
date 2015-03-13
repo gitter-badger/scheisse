@@ -1,8 +1,8 @@
-###Scheisse Server
+### Scheisse Server
 
 Server backend for the game.
 
-#Features:
+# Features:
 
 * Item loading over web service: Items are loaded via web service instead of local files.
 
