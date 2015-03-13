@@ -14,33 +14,15 @@ import java.util.HashMap;
  */
 public class Installer {
 
-    private boolean gui;
-
     public Installer() {
 
     }
 
     public boolean install() {
-        if (gui) {
-
-        }
-        HashMap<URL, String> downloadMap = Resource.getDownloadList();
-        for (URL url : downloadMap.keySet()) {
-            SystemPrinter.debugln(
-                    "installing from URL: " + url.toString() + " ... "
-            );
-            if (!installSingle(url, downloadMap.get(url))) {
-                return false;
-            }
-            SystemPrinter.debugln("OK!");
-        }
         return true;
     }
 
     public boolean installSingle(final URL source, final String destination) {
-        if (gui) {
-
-        }
         HttpDownloader downloader = new HttpDownloader(source);
         try {
             downloader.download(Resource.TEMP_FOLDER + "downloadFile.zip");
