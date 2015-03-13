@@ -9,11 +9,11 @@ class org.dedda.games.scheisse.state.game.item.filter.ItemComplexFilter{
     + ItemFilter[] itemFilters
     + int mode
     + ItemNameFilter(ItemFilter[], int)
-    + boolean accept(org.dedda.games.scheisse.entity.Item)
-    - boolean acceptModeNone(org.dedda.games.scheisse.entity.Item)
-    - boolean acceptModeOne(org.dedda.games.scheisse.entity.Item)
-    - boolean acceptModeOneOrMore(org.dedda.games.scheisse.entity.Item)
-    - boolean acceptModeAll(org.dedda.games.scheisse.entity.Item)
+    + boolean accept(org.dedda.games.scheisse.entity.item.Item)
+    - boolean acceptModeNone(org.dedda.games.scheisse.entity.item.Item)
+    - boolean acceptModeOne(org.dedda.games.scheisse.entity.item.Item)
+    - boolean acceptModeOneOrMore(org.dedda.games.scheisse.entity.item.Item)
+    - boolean acceptModeAll(org.dedda.games.scheisse.entity.item.Item)
 }
 
 org.dedda.games.scheisse.state.game.item.filter.ItemFilter <|.. org.dedda.games.scheisse.state.game.item.filter.ItemComplexFilter

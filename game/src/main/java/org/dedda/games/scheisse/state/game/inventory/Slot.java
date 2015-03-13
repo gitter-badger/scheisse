@@ -36,7 +36,7 @@ public class Slot {
 
     /**
      *
-     * @param item org.dedda.games.scheisse.entity.Item
+     * @param item org.dedda.games.scheisse.entity.item.Item
      */
     public void add (final Item item) {
         if (item.getClass().equals(dummy.getClass())) {
@@ -59,7 +59,7 @@ public class Slot {
 
     /**
      *
-     * @param dummy org.dedda.games.scheisse.entity.Item
+     * @param dummy org.dedda.games.scheisse.entity.item.Item
      */
     public void setDummy(final Item dummy) {
         this.dummy = dummy;
@@ -68,7 +68,7 @@ public class Slot {
 
     /**
      *
-     * @return org.dedda.games.scheisse.entity.Item
+     * @return org.dedda.games.scheisse.entity.item.Item
      */
     public Item getDummy() {
         return dummy;

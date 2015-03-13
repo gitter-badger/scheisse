@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>org.dedda.games.scheisse</groupId>
-            <artifactId>client</artifactId>
+            <artifactId>service-client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

@@ -1,7 +1,6 @@
 package org.dedda.games.scheisse.service.transport;
 
-import org.dedda.games.scheisse.entity.Entity;
-import org.dedda.games.scheisse.entity.Item;
+import org.dedda.games.scheisse.entity.item.Item;
 
 import java.util.ArrayList;
 import java.util.List;

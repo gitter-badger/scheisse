@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse_server.transport;
 
-import org.dedda.games.scheisse.entity.Item;
+import org.dedda.games.scheisse.entity.item.Item;
 
 public class ItemContainer {
 

@@ -1,8 +1,7 @@
 package org.dedda.games.scheisse.service.transport;
 
 import org.dedda.games.scheisse.entity.*;
-
-import java.io.Serializable;
+import org.dedda.games.scheisse.entity.item.Item;
 
 /**
  * Created by dedda on 3/12/15.
