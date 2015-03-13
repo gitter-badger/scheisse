@@ -92,6 +92,8 @@
         <module>perfmon</module>
         <module>service</module>
         <module>service-host</module>
+        <module>entity-filter</module>
+        <module>server-persistence</module>
     </modules>
 
     <build>
