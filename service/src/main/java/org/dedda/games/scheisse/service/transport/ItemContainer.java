@@ -26,4 +26,19 @@ public class ItemContainer extends EntityContainer{
         return containers;
     }
 
+    @Override
+    public boolean equals(final Object o) {
+        if (null == o) {
+            return false;
+        }
+        if (o.getClass() != ItemContainer.class) {
+            return false;
+        }
+        ItemContainer other = (ItemContainer)o;
+        if (!getEntity().equals(other.getEntity())) {
+            return false;
+        }
+        return true;
+    }
+
 }

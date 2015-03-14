@@ -20,6 +20,10 @@ import java.awt.*;
         @NamedQuery(
                 name = "item.getForType",
                 query = "SELECT i FROM org.dedda.games.scheisse.entity.item.Item i WHERE i.type = :type"
+        ),
+        @NamedQuery(
+                name = "item.searchByName",
+                query = "SELECT i FROM Item where i.name LIKE :name"
         )
 })
 public class Item extends org.dedda.games.scheisse.entity.Entity implements TestableEntity {
@@ -143,5 +147,40 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
 
     public void setSprite(Image sprite) {
         this.sprite = sprite;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Item item = (Item) o;
+
+        if (armor != item.armor) {
+            return false;
+        }
+        if (attack != item.attack) {
+            return false;
+        }
+        if (id != item.id) {
+            return false;
+        }
+        if (price != item.price) {
+            return false;
+        }
+        if (category != item.category) {
+            return false;
+        }
+        if (!name.equals(item.name)) {
+            return false;
+        }
+        if (!type.equals(item.type)) {
+            return false;
+        }
+        return true;
     }
 }
