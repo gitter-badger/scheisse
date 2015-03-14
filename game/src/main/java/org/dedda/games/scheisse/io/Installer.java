@@ -7,7 +7,6 @@ import org.dedda.games.scheisse.io.resource.Resource;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
 
 /**
  * Created by dedda on 4/19/14.

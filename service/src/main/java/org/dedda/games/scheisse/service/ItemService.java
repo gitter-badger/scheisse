@@ -2,7 +2,6 @@ package org.dedda.games.scheisse.service;
 
 import org.dedda.games.scheisse.service.transport.ItemContainer;
 
-import java.util.Collection;
 import java.util.List;
 
 /**

@@ -2,8 +2,6 @@ package org.dedda.games.scheisse.main;
 
 import org.dedda.games.scheisse.debug.SystemPrinter;
 import org.dedda.games.scheisse.gui.cpu.Gui;
-import org.dedda.games.scheisse.io.FileInput;
-import org.dedda.games.scheisse.io.NetworkConfigWords;
 import org.dedda.games.scheisse.io.resource.Resource;
 import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.State;

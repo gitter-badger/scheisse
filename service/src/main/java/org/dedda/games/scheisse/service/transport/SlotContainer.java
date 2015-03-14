@@ -1,6 +1,5 @@
 package org.dedda.games.scheisse.service.transport;
 
-import org.dedda.games.scheisse.entity.Entity;
 import org.dedda.games.scheisse.entity.Slot;
 
 /**

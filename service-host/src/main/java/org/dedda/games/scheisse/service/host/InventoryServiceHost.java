@@ -1,6 +1,5 @@
 package org.dedda.games.scheisse.service.host;
 
-import org.dedda.games.scheisse.entity.Inventory;
 import org.dedda.games.scheisse.server_persistence.InventoryProvider;
 import org.dedda.games.scheisse.service.InventoryService;
 import org.dedda.games.scheisse.service.transport.InventoryContainer;

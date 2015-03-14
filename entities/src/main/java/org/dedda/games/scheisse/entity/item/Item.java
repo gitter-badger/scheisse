@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.entity.item;
 
-import org.dedda.games.scheisse.entity.*;
+import org.dedda.games.scheisse.entity.TestableEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

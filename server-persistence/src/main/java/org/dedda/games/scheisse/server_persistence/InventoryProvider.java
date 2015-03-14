@@ -6,7 +6,6 @@
 package org.dedda.games.scheisse.server_persistence;
 
 import org.dedda.games.scheisse.entity.Inventory;
-import org.dedda.games.scheisse.entity.User;
 
 import javax.ejb.Stateless;
 import javax.inject.Named;
