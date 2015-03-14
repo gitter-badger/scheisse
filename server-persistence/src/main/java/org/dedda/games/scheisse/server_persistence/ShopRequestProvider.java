@@ -1,8 +1,8 @@
 package org.dedda.games.scheisse.server_persistence;
 
-import org.dedda.games.scheisse.entity.item.Item;
 import org.dedda.games.scheisse.entity.ShopRequest;
 import org.dedda.games.scheisse.entity.User;
+import org.dedda.games.scheisse.entity.item.Item;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -27,6 +27,13 @@ public class ShopRequestProvider {
     
     public List<ShopRequest> getForUser(final User user) {
         TypedQuery<ShopRequest>  query = em.createNamedQuery("shopRequest.getForUser", ShopRequest.class);
+        query.setParameter("user", user);
+        return query.getResultList();
+    }
+
+    public List<ShopRequest> getForUser(final long userId) {
+        TypedQuery<ShopRequest>  query = em.createNamedQuery("shopRequest.getForUser", ShopRequest.class);
+        User user = userProvider.getUser(userId);
         query.setParameter("user", user);
         return query.getResultList();
     }
