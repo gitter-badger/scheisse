@@ -12,6 +12,7 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import java.util.ArrayList;
 import java.util.List;
 
 @Named
@@ -22,22 +23,18 @@ public class ItemProvider {
     private EntityManager em;
     
     public Item getItem(final long id) {
-        Item item = null;
-        item = em.find(Item.class, id);
-        return item;
+        return em.find(Item.class, id);
     }
     
     public List<Item> getAllItems() {
         TypedQuery<Item> query = em.createNamedQuery("item.getAll", Item.class);
-        List<Item> items = query.getResultList();
-        return items;
+        return query.getResultList();
     }
-    
-    public List<Item> getItems(final String type) {
-        TypedQuery<Item> query = em.createNamedQuery("item.getForType", Item.class);
-        query.setParameter("type", type);
-        List<Item> items = query.getResultList();
-        return items;
+
+    public List<Item> search(final String name) {
+        TypedQuery<Item> query = em.createNamedQuery("item.searchByName", Item.class);
+        query.setParameter("name", name);
+        return query.getResultList();
     }
 
 }

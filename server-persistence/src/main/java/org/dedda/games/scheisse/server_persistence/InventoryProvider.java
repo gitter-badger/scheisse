@@ -5,6 +5,9 @@
  */
 package org.dedda.games.scheisse.server_persistence;
 
+import org.dedda.games.scheisse.entity.Inventory;
+import org.dedda.games.scheisse.entity.User;
+
 import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
@@ -16,5 +19,18 @@ public class InventoryProvider {
     
     @PersistenceContext(unitName = "org.dedda.games.scheisse_server-PU")
     private EntityManager em;
-    
+
+    public Inventory get(final long id) {
+        Inventory inventory = null;
+        inventory = em.find(Inventory.class, id);
+        return inventory;
+    }
+
+    public EntityManager getEm() {
+        return em;
+    }
+
+    public void setEm(EntityManager em) {
+        this.em = em;
+    }
 }
