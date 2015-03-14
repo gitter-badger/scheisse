@@ -7,11 +7,10 @@ import org.dedda.games.scheisse.service.transport.SlotContainer;
 import javax.inject.Inject;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import javax.jws.WebService;
 import java.util.UUID;
 
-/**
- * Created by dedda on 3/13/15.
- */
+@WebService(name = "SlotService")
 public class SlotServiceHost implements SlotService {
 
     @Inject

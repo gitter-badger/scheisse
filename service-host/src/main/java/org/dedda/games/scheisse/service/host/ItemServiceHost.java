@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
-import java.util.Collection;
+import java.util.List;
 
 @WebService(name = "ItemService")
 public class ItemServiceHost implements ItemService {
@@ -18,7 +18,7 @@ public class ItemServiceHost implements ItemService {
 
     @Override
     @WebMethod(operationName = "getAllItems")
-    public Collection<ItemContainer> getAll() {
+    public List<ItemContainer> getAll() {
         return ItemContainer.convert(provider.getAllItems());
     }
 
@@ -26,7 +26,12 @@ public class ItemServiceHost implements ItemService {
     @WebMethod(operationName = "getById")
     public ItemContainer get(@WebParam(name = "id")final long id) {
         return ItemContainer.convert(provider.getItem(id));
+    }
 
+    @Override
+    @WebMethod(operationName = "searchItem")
+    public List<ItemContainer> search(@WebParam(name = "name")final String name) {
+        return ItemContainer.convert(provider.search(name));
     }
 
     @WebMethod(exclude = true)
