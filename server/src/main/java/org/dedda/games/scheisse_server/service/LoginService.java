@@ -6,7 +6,7 @@
 package org.dedda.games.scheisse_server.service;
 
 import org.dedda.games.scheisse.entity.User;
-import org.dedda.games.scheisse_server.provider.UserProvider;
+import org.dedda.games.scheisse.server_persistence.UserProvider;
 import org.dedda.games.scheisse_server.transport.LoginContainer;
 
 import javax.ejb.Stateless;
@@ -31,7 +31,7 @@ public class LoginService {
     @Inject
     private LoginCache loginCache;
 
-    @WebMethod(operationName = "loginContainer")
+    @WebMethod(operationName = "login")
     public String login(
             @WebParam(name = "loginContainer")final LoginContainer loginContainer){
         String username = loginContainer.name;

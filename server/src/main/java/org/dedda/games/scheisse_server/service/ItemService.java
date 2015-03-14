@@ -6,7 +6,7 @@
 package org.dedda.games.scheisse_server.service;
 
 import org.dedda.games.scheisse.entity.item.Item;
-import org.dedda.games.scheisse_server.provider.ItemProvider;
+import org.dedda.games.scheisse.server_persistence.ItemProvider;
 import org.dedda.games.scheisse_server.transport.ItemContainer;
 
 import javax.ejb.Stateless;
@@ -37,16 +37,6 @@ public class ItemService {
     @WebMethod(operationName = "getAllItems")
     public ItemContainer[] getAllItems() {
         List<Item> items = itemProvider.getAllItems();
-        ItemContainer[] containers = new ItemContainer[items.size()];
-        for (int i = 0; i < items.size(); i++) {
-            containers[i] = new ItemContainer(items.get(i));
-        }
-        return containers;
-    }
-    
-    @WebMethod(operationName = "getItems")
-    public ItemContainer[] getItems(@WebParam(name = "type") final String type) {
-        List<Item> items = itemProvider.getItems(type);
         ItemContainer[] containers = new ItemContainer[items.size()];
         for (int i = 0; i < items.size(); i++) {
             containers[i] = new ItemContainer(items.get(i));

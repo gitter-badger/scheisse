@@ -6,7 +6,7 @@
 package org.dedda.games.scheisse_server.pageProvider;
 
 import org.dedda.games.scheisse.entity.item.Item;
-import org.dedda.games.scheisse_server.provider.ItemProvider;
+import org.dedda.games.scheisse.server_persistence.ItemProvider;
 
 import javax.ejb.Stateful;
 import javax.faces.bean.ManagedBean;

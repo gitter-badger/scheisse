@@ -5,7 +5,7 @@
  */
 package org.dedda.games.scheisse_server.pageProvider;
 
-import org.dedda.games.scheisse_server.provider.ItemProvider;
+import org.dedda.games.scheisse.server_persistence.ItemProvider;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;

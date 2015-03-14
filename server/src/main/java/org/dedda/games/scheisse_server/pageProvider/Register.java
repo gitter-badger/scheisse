@@ -6,7 +6,7 @@
 package org.dedda.games.scheisse_server.pageProvider;
 
 import org.dedda.games.scheisse.entity.User;
-import org.dedda.games.scheisse_server.provider.UserProvider;
+import org.dedda.games.scheisse.server_persistence.UserProvider;
 import org.dedda.games.scheisse_server.util.Util;
 
 import javax.annotation.PostConstruct;

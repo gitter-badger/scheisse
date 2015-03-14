@@ -5,7 +5,7 @@
  */
 package org.dedda.games.scheisse_server.service;
 
-import org.dedda.games.scheisse_server.provider.UserProvider;
+import org.dedda.games.scheisse.server_persistence.UserProvider;
 import org.dedda.games.scheisse_server.transport.InventoryContainer;
 import org.dedda.games.scheisse_server.transport.UserContainer;
 

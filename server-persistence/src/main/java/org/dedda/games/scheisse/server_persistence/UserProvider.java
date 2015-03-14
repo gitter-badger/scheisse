@@ -78,9 +78,9 @@ public class UserProvider {
     }
     
     /**
-     * Saves a new {@link org.dedda.games.scheisse.entity.User} to the database
+     * Saves a new {@link User} to the database
      * @param user
-     * @return id of the new {@link org.dedda.games.scheisse.entity.User}, -1 if not successful
+     * @return id of the new {@link User}, -1 if not successful
      */
     public User saveNewUser(final User user) {
         User existing = getUser(user.getName());
