@@ -6,6 +6,7 @@ import org.dedda.games.scheisse.service.transport.ItemContainer;
 
 import javax.inject.Inject;
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
 import java.util.Collection;
 
@@ -16,12 +17,14 @@ public class ItemServiceHost implements ItemService {
     private ItemProvider provider;
 
     @Override
+    @WebMethod(operationName = "getAllItems")
     public Collection<ItemContainer> getAll() {
         return ItemContainer.convert(provider.getAllItems());
     }
 
     @Override
-    public ItemContainer get(long id) {
+    @WebMethod(operationName = "getById")
+    public ItemContainer get(@WebParam(name = "id")final long id) {
         return ItemContainer.convert(provider.getItem(id));
 
     }
