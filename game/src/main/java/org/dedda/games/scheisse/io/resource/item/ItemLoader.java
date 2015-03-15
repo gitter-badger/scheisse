@@ -3,7 +3,11 @@ package org.dedda.games.scheisse.io.resource.item;
 import org.dedda.games.scheisse.io.FileInput;
 import org.dedda.games.scheisse.main.FileTypes;
 import org.dedda.games.scheisse.main.Main;
-import org.dedda.games.scheisse.state.game.item.*;
+import org.dedda.games.scheisse.state.game.item.Armor;
+import org.dedda.games.scheisse.state.game.item.Item;
+import org.dedda.games.scheisse.state.game.item.ItemType;
+import org.dedda.games.scheisse.state.game.item.Shield;
+import org.dedda.games.scheisse.state.game.item.Weapon;
 import org.dedda.games.scheisse.tool.Parse;
 
 import java.awt.*;

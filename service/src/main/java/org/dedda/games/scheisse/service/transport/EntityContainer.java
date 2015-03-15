@@ -1,6 +1,10 @@
 package org.dedda.games.scheisse.service.transport;
 
-import org.dedda.games.scheisse.entity.*;
+import org.dedda.games.scheisse.entity.Entity;
+import org.dedda.games.scheisse.entity.Inventory;
+import org.dedda.games.scheisse.entity.ShopRequest;
+import org.dedda.games.scheisse.entity.Slot;
+import org.dedda.games.scheisse.entity.User;
 import org.dedda.games.scheisse.entity.item.Item;
 
 /**

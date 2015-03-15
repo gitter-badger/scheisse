@@ -1,6 +1,10 @@
 package org.dedda.games.scheisse.state.game.item.filter;
 
-import org.dedda.games.scheisse.state.game.item.*;
+import org.dedda.games.scheisse.state.game.item.Armor;
+import org.dedda.games.scheisse.state.game.item.Item;
+import org.dedda.games.scheisse.state.game.item.ItemType;
+import org.dedda.games.scheisse.state.game.item.NullItem;
+import org.dedda.games.scheisse.state.game.item.Weapon;
 import org.junit.Test;
 
 import java.util.ArrayList;

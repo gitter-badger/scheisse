@@ -7,7 +7,15 @@ import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
 
-import static org.dedda.games.scheisse.io.GameDataWords.*;
+import static org.dedda.games.scheisse.io.GameDataWords.MAP_DIRT;
+import static org.dedda.games.scheisse.io.GameDataWords.MAP_GRASS;
+import static org.dedda.games.scheisse.io.GameDataWords.MAP_HEIGHT;
+import static org.dedda.games.scheisse.io.GameDataWords.MAP_LINE;
+import static org.dedda.games.scheisse.io.GameDataWords.MAP_ROCK;
+import static org.dedda.games.scheisse.io.GameDataWords.MAP_WATER;
+import static org.dedda.games.scheisse.io.GameDataWords.MAP_WIDTH;
+import static org.dedda.games.scheisse.io.GameDataWords.MAP_X;
+import static org.dedda.games.scheisse.io.GameDataWords.MAP_Y;
 
 /**
  * Created by dedda on 4/19/14.

@@ -1,7 +1,11 @@
 package org.dedda.games.scheisse.io.resource.npc;
 
 import org.dedda.games.scheisse.io.resource.world.npc.NPCScriptLoader;
-import org.dedda.games.scheisse.state.game.object.behavior.*;
+import org.dedda.games.scheisse.state.game.object.behavior.NPCJumpIfTrue;
+import org.dedda.games.scheisse.state.game.object.behavior.NPCScript;
+import org.dedda.games.scheisse.state.game.object.behavior.NPCScriptAction;
+import org.dedda.games.scheisse.state.game.object.behavior.NPCWalk;
+import org.dedda.games.scheisse.state.game.object.behavior.NPCWalkToDestination;
 import org.dedda.games.scheisse.state.game.object.npc.NPC;
 import org.junit.Before;
 import org.junit.Test;

@@ -3,7 +3,11 @@ package org.dedda.games.scheisse.io;
 import org.dedda.games.scheisse.debug.SystemPrinter;
 import org.dedda.games.scheisse.io.resource.BinaryResource;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**

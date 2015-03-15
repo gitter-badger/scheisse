@@ -9,7 +9,11 @@ import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
 import java.awt.*;
 
-import static org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel.*;
+import static org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel.HEADER_SYMBOL;
+import static org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel.ID;
+import static org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel.NAME;
+import static org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel.NUMBER;
+import static org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel.SYMBOL;
 
 /**
  * Created by dedda on 11/29/14.
