@@ -50,7 +50,7 @@ public class MapObject {
     @Override
     public boolean equals(final Object object) {
         if (object instanceof MapObject) {
-            MapObject mapObject = (MapObject)object;
+            MapObject mapObject = (MapObject) object;
             return mapObject.location.equals(this.location)
                     && mapObject.size.equals(this.size);
         }

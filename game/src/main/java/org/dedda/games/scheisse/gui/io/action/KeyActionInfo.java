@@ -18,7 +18,7 @@ public class KeyActionInfo {
     @Override
     public boolean equals(final Object object) {
         if (object instanceof KeyActionInfo) {
-            KeyActionInfo kai = (KeyActionInfo)object;
+            KeyActionInfo kai = (KeyActionInfo) object;
             return kai.keyCode == this.keyCode;
         }
         return false;

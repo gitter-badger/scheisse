@@ -35,7 +35,7 @@ public abstract class GameObject implements Drawable {
     @Override
     public boolean equals(final Object object) {
         if (object instanceof GameObject) {
-            GameObject gameObject = (GameObject)object;
+            GameObject gameObject = (GameObject) object;
             return (gameObject.location.equals(this.location));
         }
         return false;

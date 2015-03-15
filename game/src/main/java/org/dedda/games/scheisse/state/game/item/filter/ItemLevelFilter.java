@@ -25,8 +25,8 @@ public class ItemLevelFilter extends ItemFilter {
             case MODE_BELOW:    return item.getMinLevel() <= level;
             case MODE_EXACT:    return item.getMinLevel() == level;
             case MODE_ABOVE:    return item.getMinLevel() >= level;
+            default: return false;
         }
-        return false;
     }
 
 }

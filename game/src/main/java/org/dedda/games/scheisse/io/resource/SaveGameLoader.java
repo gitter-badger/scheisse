@@ -61,8 +61,9 @@ public class SaveGameLoader extends FileInput {
         Inventory inventory = null;
         int slotNumber = 0;
         for (char currentChar : line.toCharArray()) {
-            if (currentChar == ';')
+            if (currentChar == ';') {
                 slotNumber++;
+            }
         }
         inventory = new Inventory();
         ArrayList<Slot> slots = new ArrayList<Slot>();
@@ -87,7 +88,7 @@ public class SaveGameLoader extends FileInput {
     @Override
     public boolean equals(final Object object) {
         if (object instanceof SaveGameLoader) {
-            SaveGameLoader sgl = (SaveGameLoader)object;
+            SaveGameLoader sgl = (SaveGameLoader) object;
             return sgl.file.equals(this.file);
         }
         return false;

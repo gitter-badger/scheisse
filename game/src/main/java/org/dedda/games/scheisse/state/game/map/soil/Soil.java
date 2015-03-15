@@ -45,7 +45,9 @@ public class  Soil {
             Texture texture = null;
             try {
                 texture = TextureIO.newTexture(new File(fileName), true);
-            } catch (IOException e) {e.printStackTrace();}
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             SystemPrinter.debugln("loaded texture: " + fileName);
             textureMap.put(type, texture);
         }

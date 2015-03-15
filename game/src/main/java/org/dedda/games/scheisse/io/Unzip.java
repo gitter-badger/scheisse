@@ -85,7 +85,7 @@ public class Unzip {
     @Override
     public boolean equals(final Object object) {
         if (object instanceof Unzip) {
-            Unzip unzip = (Unzip)object;
+            Unzip unzip = (Unzip) object;
             return unzip.source.equals(this.source)
                     && unzip.destination.equals(this.destination);
         }

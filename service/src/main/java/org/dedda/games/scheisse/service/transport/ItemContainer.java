@@ -34,7 +34,7 @@ public class ItemContainer extends EntityContainer{
         if (o.getClass() != ItemContainer.class) {
             return false;
         }
-        ItemContainer other = (ItemContainer)o;
+        ItemContainer other = (ItemContainer) o;
         if (!getEntity().equals(other.getEntity())) {
             return false;
         }

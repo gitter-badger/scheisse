@@ -66,7 +66,7 @@ public class NPCWalk extends NPCScriptAction {
         if (!object.getClass().equals(this.getClass())) {
             return false;
         }
-        NPCWalk npcWalk = (NPCWalk)object;
+        NPCWalk npcWalk = (NPCWalk) object;
         if (npcWalk.direction != direction) {
             return false;
         }

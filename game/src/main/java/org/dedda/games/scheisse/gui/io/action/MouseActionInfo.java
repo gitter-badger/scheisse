@@ -40,7 +40,7 @@ public class MouseActionInfo {
     @Override
     public boolean equals(final Object object) {
         if (object instanceof MouseActionInfo) {
-            MouseActionInfo mai = (MouseActionInfo)object;
+            MouseActionInfo mai = (MouseActionInfo) object;
             return mai.locationY == this.locationY
                     && mai.locationX == this.locationX
                     && mai.button == this.button

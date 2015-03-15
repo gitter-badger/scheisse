@@ -24,7 +24,7 @@ public class BinaryResource {
     @Override
     public boolean equals(final Object obj) {
         if (obj.getClass().equals(getClass())) {
-            BinaryResource resource = (BinaryResource)obj;
+            BinaryResource resource = (BinaryResource) obj;
             if (resource.type == this.type) {
                 if (resource.getDataBytes().length == this.dataBytes.length) {
                     for (int i = 0; i < dataBytes.length; i++) {

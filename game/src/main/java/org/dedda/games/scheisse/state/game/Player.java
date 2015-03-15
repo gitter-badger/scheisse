@@ -72,12 +72,10 @@ public class Player extends Person {
     @Override
     public boolean equals(final Object object) {
         if (object instanceof Player) {
-            Player player = (Player)object;
+            Player player = (Player) object;
             return player.experience == this.experience
                     && player.inventory.equals(this.inventory)
-                    && player.name.equals(this.name)
-                    //&& player.playerObject.equals(this.playerObject)
-                    ;
+                    && player.name.equals(this.name);
         }
         return false;
     }

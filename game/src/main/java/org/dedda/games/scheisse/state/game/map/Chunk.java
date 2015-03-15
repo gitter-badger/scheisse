@@ -111,7 +111,7 @@ public class Chunk {
         if(!(object instanceof Chunk)){
             return false;
         }
-        Chunk chunk = (Chunk)object;
+        Chunk chunk = (Chunk) object;
         if (!chunk.maxLocation.equals(this.maxLocation)) {
             return false;
         }

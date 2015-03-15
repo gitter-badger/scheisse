@@ -69,7 +69,7 @@ public class HeaderBar
 
     public void stateChanged(final ChangeEvent changeEvent) {
         if (changeEvent.getSource() instanceof JCheckBox) {
-            JCheckBox source = (JCheckBox)changeEvent.getSource();
+            JCheckBox source = (JCheckBox) changeEvent.getSource();
 
         }
     }

@@ -34,19 +34,19 @@ public abstract class EntityContainer {
 
         public EntityContainer build() {
             if (entity instanceof User) {
-                return new UserContainer((User)entity);
+                return new UserContainer((User) entity);
             }
             if (entity instanceof Item) {
-                return new ItemContainer((Item)entity);
+                return new ItemContainer((Item) entity);
             }
             if (entity instanceof Slot) {
-                return new SlotContainer((Slot)entity);
+                return new SlotContainer((Slot) entity);
             }
             if (entity instanceof Inventory) {
-                return new InventoryContainer((Inventory)entity);
+                return new InventoryContainer((Inventory) entity);
             }
             if (entity instanceof ShopRequest) {
-                return new ShopRequestContainer((ShopRequest)entity);
+                return new ShopRequestContainer((ShopRequest) entity);
             }
             throw new IllegalArgumentException("entity not supported");
         }

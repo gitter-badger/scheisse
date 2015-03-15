@@ -88,12 +88,12 @@ public class InventoryActionPanel extends JPanel {
         InventoryTable inventoryTable =
                 inventoryTablePanel.getInventoryTable();
         InventoryTable actionTable = inventoryTablePanel.getActionTable();
-        double amountDouble = (Double)numberSpinner.getModel().getValue();
-        int amount = (int)amountDouble;
+        double amountDouble = (Double) numberSpinner.getModel().getValue();
+        int amount = (int) amountDouble;
         int rows[] = inventoryTable.getTable().getSelectedRows();
         long ids[] = new long[rows.length];
         InventoryTableModel model = inventoryTable.getModel();
-        for (int i = 0; i < ids.length; i ++) {
+        for (int i = 0; i < ids.length; i++) {
             ids[i] = model.getSlotInRow(rows[i]).getDummy().getId();
         }
         Inventory inventory = inventoryTable.getInventory();
@@ -110,12 +110,12 @@ public class InventoryActionPanel extends JPanel {
         InventoryTable inventoryTable =
                 inventoryTablePanel.getInventoryTable();
         InventoryTable actionTable = inventoryTablePanel.getActionTable();
-        double amountDouble = (Double)numberSpinner.getModel().getValue();
-        int amount = (int)amountDouble;
+        double amountDouble = (Double) numberSpinner.getModel().getValue();
+        int amount = (int) amountDouble;
         int rows[] = actionTable.getTable().getSelectedRows();
         long ids[] = new long[rows.length];
         InventoryTableModel model = actionTable.getModel();
-        for (int i = 0; i < ids.length; i ++) {
+        for (int i = 0; i < ids.length; i++) {
             ids[i] = model.getSlotInRow(rows[i]).getDummy().getId();
         }
         Inventory inventory = inventoryTable.getInventory();

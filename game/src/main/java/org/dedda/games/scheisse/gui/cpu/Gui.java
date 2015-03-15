@@ -43,7 +43,7 @@ public class Gui extends JFrame implements Runnable {
         setSize(size);
         setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        g2d = (Graphics2D)getContentPane().getGraphics();
+        g2d = (Graphics2D) getContentPane().getGraphics();
     }
 
     /**

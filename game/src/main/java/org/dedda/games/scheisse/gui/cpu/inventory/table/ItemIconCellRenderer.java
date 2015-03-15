@@ -18,7 +18,7 @@ public class ItemIconCellRenderer implements TableCellRenderer {
             final boolean b1,
             final int i,
             final int i1) {
-        long id = (Long)o;
+        long id = (Long) o;
         Item item = Item.forId(id);
         Image scaledSprite =
                 item.getSprite().getScaledInstance(15, 15, Image.SCALE_SMOOTH);

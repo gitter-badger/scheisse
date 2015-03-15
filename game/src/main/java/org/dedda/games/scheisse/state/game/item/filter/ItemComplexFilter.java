@@ -70,7 +70,7 @@ public class ItemComplexFilter extends ItemFilter {
             case MODE_ONE:          return acceptModeOne(item);
             case MODE_ONE_OR_MORE:  return acceptModeOneOrMore(item);
             case MODE_ALL:          return acceptModeAll(item);
+            default: return false;
         }
-        return false;
     }
 }

@@ -84,11 +84,11 @@ public class InventoryTableModel
             case NUMBER: return number;
             case VALUE: return item.getValue();
             case ATTACK:
-                return item instanceof Weapon ? ((Weapon)item).getAttack() : 0;
+                return item instanceof Weapon ? ((Weapon) item).getAttack() : 0;
             case ARMOR:
-                return item instanceof Armor ? ((Armor)item).getArmor() : 0;
+                return item instanceof Armor ? ((Armor) item).getArmor() : 0;
+            default: return null;
         }
-        return null;
     }
 
     public Slot getSlotInRow(final int row) {
@@ -111,8 +111,8 @@ public class InventoryTableModel
             case VALUE: return Long.class;
             case ATTACK: return Long.class;
             case ARMOR: return Long.class;
+            default: return String.class;
         }
-        return String.class;
     }
 
     @Override

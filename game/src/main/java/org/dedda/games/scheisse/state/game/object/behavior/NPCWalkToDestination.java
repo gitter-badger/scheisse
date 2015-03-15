@@ -77,7 +77,7 @@ public class NPCWalkToDestination extends NPCWalk {
             return false;
         }
         NPCWalkToDestination npcWalkToDestination =
-                (NPCWalkToDestination)object;
+                (NPCWalkToDestination) object;
         if (npcWalkToDestination.destination.x != destination.x ||
                 npcWalkToDestination.destination.y != destination.y) {
             return false;

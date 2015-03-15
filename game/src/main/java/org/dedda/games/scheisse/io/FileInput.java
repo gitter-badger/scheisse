@@ -23,7 +23,7 @@ public class FileInput {
             fileReader = new FileReader(file);
             int buffer;
             while ((buffer = fileReader.read()) != -1) {
-                data += (char)buffer;
+                data += (char) buffer;
             }
             fileReader.close();
         } catch (IOException e) {

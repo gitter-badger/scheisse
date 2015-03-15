@@ -162,7 +162,7 @@ public class Inventory {
     @Override
     public boolean equals(final Object object) {
         if (object instanceof Inventory) {
-            Inventory inventory = (Inventory)object;
+            Inventory inventory = (Inventory) object;
             return inventory.slots.equals(this.slots);
         }
         return false;

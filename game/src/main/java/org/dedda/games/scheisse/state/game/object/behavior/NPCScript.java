@@ -85,7 +85,7 @@ public class NPCScript {
         if (!object.getClass().equals(this.getClass())) {
            return false;
         }
-        NPCScript npcSkript = (NPCScript)object;
+        NPCScript npcSkript = (NPCScript) object;
         if (npcSkript.getNpc() != npc) {
             return false;
         }

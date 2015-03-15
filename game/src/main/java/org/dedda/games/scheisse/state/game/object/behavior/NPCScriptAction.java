@@ -26,21 +26,21 @@ public abstract class NPCScriptAction {
         expression = script.replaceKeysInExpression(expression);
         Object value = scriptEngine.eval(expression);
         if (value instanceof Integer) {
-            return (Integer)value;
+            return (Integer) value;
         }
-        return (Double)value;
+        return (Double) value;
     }
 
     public boolean evalBool(String expression) throws ScriptException {
         expression = script.replaceKeysInExpression(expression);
         Object value = scriptEngine.eval(expression);
-        return (Boolean)value;
+        return (Boolean) value;
     }
 
     public String evalString(String expression) throws ScriptException {
         expression = script.replaceKeysInExpression(expression);
         Object value = scriptEngine.eval(expression);
-        return (String)value;
+        return (String) value;
     }
 
 }

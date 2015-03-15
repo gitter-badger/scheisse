@@ -74,9 +74,9 @@ public class Options {
 
     public static void set(final String key, final Object value) {
         if (key.equals("res")) {
-            resolution = (Dimension)value;
+            resolution = (Dimension) value;
         } else if (key.equals("check net")) {
-            checkInternetConnection = (Boolean)value;
+            checkInternetConnection = (Boolean) value;
         }
     }
 

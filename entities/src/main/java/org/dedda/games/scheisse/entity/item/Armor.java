@@ -38,7 +38,7 @@ public class Armor extends Item implements Wearable {
     @Override
     public final boolean equals(final Object object) {
         if(object.getClass().equals(this.getClass())){
-            Armor armor = (Armor)object;
+            Armor armor = (Armor) object;
             return armor.getName().equals(this.getName())
                     && armor.getPrice() == this.getPrice()
                     && armor.armor == this.armor;

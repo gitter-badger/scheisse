@@ -52,7 +52,7 @@ public class MapLoader extends FileInput {
                             line.substring(0, line.indexOf((int) ':'))
                     );
                     propertyValues.add(
-                            line.substring(line.indexOf((int)':')+1)
+                            line.substring(line.indexOf((int) ':')+1)
                     );
                 }
                 line = "";
@@ -132,7 +132,7 @@ public class MapLoader extends FileInput {
     @Override
     public boolean equals(final Object object) {
         if (object instanceof MapLoader) {
-            MapLoader mapLoader = (MapLoader)object;
+            MapLoader mapLoader = (MapLoader) object;
             return mapLoader.folder.equals(this.folder);
         }
         return false;

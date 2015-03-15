@@ -83,12 +83,12 @@ public class ShopTableModel extends AbstractTableModel implements InventoryChang
             case SYMBOL: return item.getId();
             case NAME: return item.getName();
             case VALUE: return item.getValue();
-            case ATTACK: return item instanceof Weapon ? ((Weapon)item).getAttack() : 0;
-            case ARMOR: return item instanceof Armor ? ((Armor)item).getArmor() : 0;
+            case ATTACK: return item instanceof Weapon ? ((Weapon) item).getAttack() : 0;
+            case ARMOR: return item instanceof Armor ? ((Armor) item).getArmor() : 0;
             case STOCK: return stock;
             case IN_INVENTORY: return in_inventory;
+            default: return null;
         }
-        return null;
     }
 
     @Override
@@ -108,8 +108,8 @@ public class ShopTableModel extends AbstractTableModel implements InventoryChang
             case ARMOR: return Long.class;
             case STOCK: return Long.class;
             case IN_INVENTORY: return Long.class;
+            default: return String.class;
         }
-        return String.class;
     }
 
     @Override

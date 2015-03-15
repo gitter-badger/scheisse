@@ -25,7 +25,7 @@ public class ItemValueFilter extends ItemFilter {
             case MODE_BELOW:    return value >= item.getValue();
             case MODE_EXACT:    return value == item.getValue();
             case MODE_ABOVE:    return value <= item.getValue();
+            default: return false;
         }
-        return false;
     }
 }

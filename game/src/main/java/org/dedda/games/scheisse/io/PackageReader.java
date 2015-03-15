@@ -37,20 +37,20 @@ public class PackageReader extends FileInput {
             while ((buffer = inputStream.read()) != -1){
                 if (byteCount < TYPE_LENGTH) {
                     type +=
-                    (int)Math.pow(256, TYPE_LENGTH - (byteCount + 1)) * buffer;
+                    (int) Math.pow(256, TYPE_LENGTH - (byteCount + 1)) * buffer;
                 } else if (byteCount < TYPE_LENGTH + SIZE_LENGTH) {
                     size +=
-                    (int)Math.pow(256, SIZE_LENGTH - (byteCount + 1) + TYPE_LENGTH) * buffer;
+                    (int) Math.pow(256, SIZE_LENGTH - (byteCount + 1) + TYPE_LENGTH) * buffer;
                 } else if (byteCount == TYPE_LENGTH + SIZE_LENGTH) {
                     data = new byte[size];
-                    data[dataCount] = (byte)buffer;
+                    data[dataCount] = (byte) buffer;
                     dataCount++;
                 } else {
                     if (byteCount < TYPE_LENGTH + SIZE_LENGTH + size - 1) {
-                        data[dataCount] = (byte)buffer;
+                        data[dataCount] = (byte) buffer;
                         dataCount++;
                     } else {
-                        data[dataCount] = (byte)buffer;
+                        data[dataCount] = (byte) buffer;
                         BinaryResource resource =
                                 new BinaryResource(data, type);
                         dataCount = 0;

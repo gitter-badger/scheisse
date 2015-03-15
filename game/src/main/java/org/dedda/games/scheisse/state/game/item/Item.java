@@ -80,7 +80,7 @@ public abstract class Item implements Stackable {
     @Override
     public boolean equals(final Object object) {
         if (object instanceof Item) {
-            Item item = (Item)object;
+            Item item = (Item) object;
             return item.name.equals(this.name)
                     && item.value == this.value;
         }

@@ -40,14 +40,14 @@ public class Map {
         this.size = size;
 
         //init chunks:
-        float chunksXf = (float)size.width/CHUNK_SIZE;
-        float chunksYf = (float)size.height/CHUNK_SIZE;
-        int chunksXi = (int)chunksXf;
-        int chunksYi = (int)chunksYf;
-        if ((float)chunksXi < chunksXf) {
+        float chunksXf = (float) size.width/CHUNK_SIZE;
+        float chunksYf = (float) size.height/CHUNK_SIZE;
+        int chunksXi = (int) chunksXf;
+        int chunksYi = (int) chunksYf;
+        if ((float) chunksXi < chunksXf) {
             chunksXi++;
         }
-        if ((float)chunksYi < chunksYf) {
+        if ((float) chunksYi < chunksYf) {
             chunksYi++;
         }
         chunkGridSize = new Dimension(chunksXi, chunksYi);
@@ -96,10 +96,10 @@ public class Map {
         int chunkMinX = objectMin.x / CHUNK_SIZE;
         int chunkMinY = objectMin.y / CHUNK_SIZE;
         int chunkMaxX = objectMax.x / CHUNK_SIZE +
-                (((float)objectMax.x / CHUNK_SIZE >
+                (((float) objectMax.x / CHUNK_SIZE >
                         objectMax.x / CHUNK_SIZE) ? (0) : (1));
         int chunkMaxY = objectMax.y / CHUNK_SIZE +
-                (((float)objectMax.y / CHUNK_SIZE >
+                (((float) objectMax.y / CHUNK_SIZE >
                         objectMax.y / CHUNK_SIZE) ? (0) : (1));
         for (int x = chunkMinX; x <= chunkMaxX; x++) {
             for (int y = chunkMinY; y <= chunkMaxY; y++) {
@@ -159,7 +159,7 @@ public class Map {
      */
     public Soil.Type[][] getSoil() {
         Soil.Type soil[][] = new Soil.Type[size.width][size.height];
-        for (int x = 0; x < size.width; x ++) {
+        for (int x = 0; x < size.width; x++) {
             for (int y = 0; y < size.height; y++) {
                 soil[x][y] = chunk[x/CHUNK_SIZE][y/CHUNK_SIZE]
                         .getSoil()[x-x/CHUNK_SIZE][y-y/CHUNK_SIZE];
@@ -227,7 +227,7 @@ public class Map {
         if (!(object instanceof Map)) {
             return false;
         }
-        Map map = (Map)object;
+        Map map = (Map) object;
         if (map.chunkGridSize.width != this.chunkGridSize.width
                 || map.chunkGridSize.height != this.chunkGridSize.height) {
             return false;

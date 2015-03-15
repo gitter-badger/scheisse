@@ -64,7 +64,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
         if (!object.getClass().equals(this.getClass())) {
             return false;
         }
-        NPCJumpIfEqual npcJumpIfEqual = (NPCJumpIfEqual)object;
+        NPCJumpIfEqual npcJumpIfEqual = (NPCJumpIfEqual) object;
         if (!npcJumpIfEqual.getActual().equals(actual) ||
                 !npcJumpIfEqual.getExpected().equals(expected)) {
             return false;

@@ -33,12 +33,12 @@ public class ItemArmorFilter extends ItemFilter {
         if (!itemTypeFilter.accept(item)) {
             return false;
         }
-        Armor armor = (Armor)item;
+        Armor armor = (Armor) item;
         switch (mode) {
             case MODE_BELOW:    return this.armor >= armor.getArmor();
             case MODE_EXACT:    return this.armor == armor.getArmor();
             case MODE_ABOVE:    return this.armor <= armor.getArmor();
+            default: return false;
         }
-        return false;
     }
 }

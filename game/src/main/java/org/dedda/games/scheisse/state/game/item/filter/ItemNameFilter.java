@@ -37,7 +37,7 @@ public class ItemNameFilter extends ItemFilter {
         switch (mode) {
             case MODE_CONTAINS: return actual.contains(expected);
             case MODE_COMPLETE: return actual.equals(expected);
+            default: return false;
         }
-        return false;
     }
 }

@@ -35,7 +35,7 @@ public class Main {
      * everything is installed properly.
      */
     public static final String INSTALLATION_FOLDER = "game_files/";
-    public static final String INSTALLATION_FILES[] = { "version.dgm",
+    public static final String INSTALLATION_FILES[] = {"version.dgm",
                                                         "conf.dgm"};
     /**
      * URL where to find the pi main server for downloading files and
@@ -58,10 +58,7 @@ public class Main {
 
         new ItemLoader().loadAll(new File(Resource.ITEM_FOLDER));
         Game game = new Game();
-        Player player = new Player(true);/*new SaveGameLoader(
-                new File("src/test/test_files/classes/org/dedda/games/scheisse/io/resource/SaveGameLoader")
-        ).load();*/
-        //Inventory inventory = player.getInventory();
+        Player player = new Player(true);
         Inventory inventory = new Inventory(0);
         for (int i = 4; i < 10; i++) {
             Slot slot = new Slot(inventory);

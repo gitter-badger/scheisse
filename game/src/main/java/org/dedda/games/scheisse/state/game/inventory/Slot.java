@@ -94,7 +94,7 @@ public class Slot {
     @Override
     public boolean equals(final Object object) {
         if (object instanceof Slot) {
-            Slot slot = (Slot)object;
+            Slot slot = (Slot) object;
             return slot.dummy.equals(this.dummy)
                     && slot.numberOfItems == this.numberOfItems;
         }

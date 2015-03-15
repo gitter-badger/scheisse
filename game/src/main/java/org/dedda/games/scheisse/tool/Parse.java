@@ -165,7 +165,7 @@ public abstract class Parse {
      * @return Casted {@link java.lang.Byte}
      */
     public static byte toByte(final short value) {
-        return (byte)((short) (value & SHORT_TO_BYTE_MASK));
+        return (byte) ((short) (value & SHORT_TO_BYTE_MASK));
     }
 
     /**
@@ -178,7 +178,7 @@ public abstract class Parse {
      * @return Casted {@link java.lang.Byte}
      */
     public static byte toByte(final int value) {
-        return (byte)((int) (value & INT_TO_BYTE_MASK));
+        return (byte) ((int) (value & INT_TO_BYTE_MASK));
     }
 
     /**
