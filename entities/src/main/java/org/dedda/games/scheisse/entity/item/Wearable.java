@@ -5,5 +5,4 @@ package org.dedda.games.scheisse.entity.item;
  */
 public interface Wearable {
 
-
 }

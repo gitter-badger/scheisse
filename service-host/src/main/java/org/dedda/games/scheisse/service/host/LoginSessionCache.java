@@ -42,7 +42,7 @@ public class LoginSessionCache {
         return provider;
     }
 
-    public void setProvider(LoginProvider provider) {
+    public void setProvider(final LoginProvider provider) {
         this.provider = provider;
     }
 }

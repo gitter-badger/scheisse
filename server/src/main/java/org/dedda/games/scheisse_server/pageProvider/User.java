@@ -30,7 +30,7 @@ public class User {
         return userProvider;
     }
 
-    public void setUserProvider(UserProvider userProvider) {
+    public void setUserProvider(final UserProvider userProvider) {
         this.userProvider = userProvider;
     }
 
@@ -38,7 +38,7 @@ public class User {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(final long id) {
         this.id = id;
     }
 
@@ -46,7 +46,7 @@ public class User {
         return selected;
     }
 
-    public void setSelected(org.dedda.games.scheisse.entity.User selected) {
+    public void setSelected(final org.dedda.games.scheisse.entity.User selected) {
         this.selected = selected;
     }
     

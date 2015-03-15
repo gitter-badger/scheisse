@@ -7,7 +7,7 @@ import org.dedda.games.scheisse.entity.ShopRequest;
  */
 public class ShopRequestContainer extends EntityContainer {
 
-    public ShopRequestContainer(ShopRequest request) {
+    public ShopRequestContainer(final ShopRequest request) {
         super(EntityType.SHOP_REQUEST, request);
     }
 }

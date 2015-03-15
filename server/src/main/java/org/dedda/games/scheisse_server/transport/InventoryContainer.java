@@ -12,7 +12,7 @@ public class InventoryContainer {
     public final long userId;
     public final SlotContainer[] slots;
 
-    public InventoryContainer(long id, long size, long userId, SlotContainer[] slots) {
+    public InventoryContainer(final long id, final long size, final long userId, final SlotContainer[] slots) {
         this.id = id;
         this.size = size;
         this.userId = userId;

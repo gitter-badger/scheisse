@@ -27,7 +27,7 @@ public abstract class BasicServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -44,9 +44,9 @@ public abstract class BasicServlet extends HttpServlet {
         }
     }
 
-    protected abstract void printHead(HttpServletRequest request, PrintWriter out);
+    protected abstract void printHead(final HttpServletRequest request, final PrintWriter out);
     
-    protected abstract void printBody(HttpServletRequest request, PrintWriter out);
+    protected abstract void printBody(final HttpServletRequest request, final PrintWriter out);
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -58,7 +58,7 @@ public abstract class BasicServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -72,7 +72,7 @@ public abstract class BasicServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }

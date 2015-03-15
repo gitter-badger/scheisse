@@ -34,7 +34,7 @@ public class SlotServiceHost implements SlotService {
     }
 
     @WebMethod(exclude = true)
-    public void setProvider(SlotProvider provider) {
+    public void setProvider(final SlotProvider provider) {
         this.provider = provider;
     }
 }

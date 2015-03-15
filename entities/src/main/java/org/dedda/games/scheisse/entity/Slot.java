@@ -56,7 +56,7 @@ public class Slot extends Entity implements TestableEntity {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(final long id) {
         this.id = id;
     }
 
@@ -64,7 +64,7 @@ public class Slot extends Entity implements TestableEntity {
         return amount;
     }
 
-    public void setAmount(long amount) {
+    public void setAmount(final long amount) {
         this.amount = amount;
     }
 
@@ -72,7 +72,7 @@ public class Slot extends Entity implements TestableEntity {
         return inventory;
     }
 
-    public void setInventory(Inventory inventory) {
+    public void setInventory(final Inventory inventory) {
         this.inventory = inventory;
     }
 
@@ -80,7 +80,7 @@ public class Slot extends Entity implements TestableEntity {
         return item;
     }
 
-    public void setItem(Item item) {
+    public void setItem(final Item item) {
         this.item = item;
     }
 

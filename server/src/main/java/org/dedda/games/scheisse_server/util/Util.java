@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public abstract class Util {
  
-    public static String MD5(String md5) {
+    public static String MD5(final String md5) {
         try {
             java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
             byte[] array = md.digest(md5.getBytes());

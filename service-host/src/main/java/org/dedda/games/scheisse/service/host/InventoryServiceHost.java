@@ -41,7 +41,7 @@ public class InventoryServiceHost implements InventoryService {
     }
 
     @WebMethod(exclude = true)
-    public void setProvider(InventoryProvider provider) {
+    public void setProvider(final InventoryProvider provider) {
         this.provider = provider;
     }
 }

@@ -9,7 +9,7 @@ public class UserContainer {
     public final String email;
     public final long experience;
 
-    public UserContainer(long id, String name, String passwordHash, String email, long experience) {
+    public UserContainer(final long id, final String name, final String passwordHash, final String email, final long experience) {
         this.id = id;
         this.name = name;
         this.email = email;

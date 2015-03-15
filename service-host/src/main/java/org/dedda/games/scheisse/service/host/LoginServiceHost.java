@@ -32,7 +32,7 @@ public class LoginServiceHost implements LoginService {
     }
 
     @WebMethod(exclude = true)
-    public void setCache(LoginSessionCache cache) {
+    public void setCache(final LoginSessionCache cache) {
         this.cache = cache;
     }
 }

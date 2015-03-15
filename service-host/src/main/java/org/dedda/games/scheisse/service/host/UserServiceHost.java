@@ -47,7 +47,7 @@ public class UserServiceHost implements UserService {
     }
 
     @WebMethod(exclude = true)
-    public void setProvider(UserProvider provider) {
+    public void setProvider(final UserProvider provider) {
         this.provider = provider;
     }
 }

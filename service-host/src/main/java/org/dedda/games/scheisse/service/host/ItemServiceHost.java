@@ -40,7 +40,7 @@ public class ItemServiceHost implements ItemService {
     }
 
     @WebMethod(exclude = true)
-    public void setProvider(ItemProvider provider) {
+    public void setProvider(final ItemProvider provider) {
         this.provider = provider;
     }
 }

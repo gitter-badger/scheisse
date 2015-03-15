@@ -11,7 +11,7 @@ public abstract class EntityContainer {
     private final EntityType type;
     private final Entity entity;
 
-    public EntityContainer(EntityType type, Entity entity) {
+    public EntityContainer(final EntityType type, final Entity entity) {
         this.type = type;
         this.entity = entity;
     }
@@ -28,7 +28,7 @@ public abstract class EntityContainer {
 
         private Entity entity;
 
-        public void setEntity(Entity entity) {
+        public void setEntity(final Entity entity) {
             this.entity = entity;
         }
 

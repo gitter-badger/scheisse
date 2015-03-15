@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class ItemContainer extends EntityContainer{
 
-    public ItemContainer(Item item) {
+    public ItemContainer(final Item item) {
         super(EntityType.ITEM, item);
     }
 

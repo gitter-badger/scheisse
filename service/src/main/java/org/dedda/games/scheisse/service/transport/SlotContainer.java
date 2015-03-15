@@ -7,7 +7,7 @@ import org.dedda.games.scheisse.entity.Slot;
  */
 public class SlotContainer extends EntityContainer {
 
-    public SlotContainer(Slot slot) {
+    public SlotContainer(final Slot slot) {
         super(EntityType.SLOT, slot);
     }
 

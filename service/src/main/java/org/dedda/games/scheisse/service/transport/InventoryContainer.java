@@ -7,7 +7,7 @@ import org.dedda.games.scheisse.entity.Inventory;
  */
 public class InventoryContainer extends EntityContainer {
 
-    public InventoryContainer(Inventory inventory) {
+    public InventoryContainer(final Inventory inventory) {
         super(EntityType.INVENTORY, inventory);
     }
 }

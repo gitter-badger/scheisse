@@ -30,7 +30,7 @@ public class ItemList {
         return provider;        
     }
 
-    public void setProvider(ItemProvider provider) {
+    public void setProvider(final ItemProvider provider) {
         this.provider = provider;
     }
     

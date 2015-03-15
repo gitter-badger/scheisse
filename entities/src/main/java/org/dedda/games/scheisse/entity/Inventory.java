@@ -54,7 +54,7 @@ public class Inventory extends Entity implements TestableEntity {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(final long id) {
         this.id = id;
     }
 
@@ -62,7 +62,7 @@ public class Inventory extends Entity implements TestableEntity {
         return size;
     }
 
-    public void setSize(long size) {
+    public void setSize(final long size) {
         this.size = size;
     }
 
@@ -70,7 +70,7 @@ public class Inventory extends Entity implements TestableEntity {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(final User user) {
         this.user = user;
     }
 
@@ -78,7 +78,7 @@ public class Inventory extends Entity implements TestableEntity {
         return slots;
     }
 
-    public void setSlots(List<Slot> slots) {
+    public void setSlots(final List<Slot> slots) {
         this.slots = slots;
     }
 

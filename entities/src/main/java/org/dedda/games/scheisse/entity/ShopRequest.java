@@ -82,7 +82,7 @@ public class ShopRequest extends Entity {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(final long id) {
         this.id = id;
     }
 
@@ -90,7 +90,7 @@ public class ShopRequest extends Entity {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(final User user) {
         this.user = user;
     }
 
@@ -98,7 +98,7 @@ public class ShopRequest extends Entity {
         return item;
     }
 
-    public void setItem(Item item) {
+    public void setItem(final Item item) {
         this.item = item;
     }
 
@@ -106,7 +106,7 @@ public class ShopRequest extends Entity {
         return amount;
     }
 
-    public void setAmount(long amount) {
+    public void setAmount(final long amount) {
         this.amount = amount;
     }
 
@@ -114,7 +114,7 @@ public class ShopRequest extends Entity {
         return singlePrice;
     }
 
-    public void setSinglePrice(long singlePrice) {
+    public void setSinglePrice(final long singlePrice) {
         this.singlePrice = singlePrice;
     }
 
@@ -122,7 +122,7 @@ public class ShopRequest extends Entity {
         return buy;
     }
 
-    public void setBuy(boolean buy) {
+    public void setBuy(final boolean buy) {
         this.buy = buy;
     }
 
@@ -130,7 +130,7 @@ public class ShopRequest extends Entity {
         return timestamp;
     }
 
-    public void setTimestamp(long timestamp) {
+    public void setTimestamp(final long timestamp) {
         this.timestamp = timestamp;
     }
     

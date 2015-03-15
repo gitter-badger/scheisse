@@ -29,7 +29,7 @@ public class InventoryProvider {
         return em;
     }
 
-    public void setEm(EntityManager em) {
+    public void setEm(final EntityManager em) {
         this.em = em;
     }
 }

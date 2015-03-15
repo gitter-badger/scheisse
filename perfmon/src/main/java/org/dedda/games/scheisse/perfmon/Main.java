@@ -13,7 +13,7 @@ public class Main {
     private static int interval = 2;
     public static final String version = "0.01a";
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Main.args = args;
         parseArgs();
     }
