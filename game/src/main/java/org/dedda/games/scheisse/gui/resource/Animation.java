@@ -7,14 +7,48 @@ import com.badlogic.gdx.graphics.Texture;
  */
 public class Animation extends Sprite {
 
+    /**
+     * textures to loop through.
+     */
     private Texture[] textures;
+
+    /**
+     * counter for current frame.
+     */
     private int currentFrame = 0;
+
+    /**
+     * time to wait for next frame.
+     */
     private float updateTime;
+
+    /**
+     * time to wait between frames.
+     */
     private final float defaultUpdateTime;
+
+    /**
+     * counter for time between updates.
+     */
     private float updateTimeCounter = 0;
+
+    /**
+     * times updated.
+     */
     private long updated = 0;
+
+    /**
+     * completed cycles.
+     */
     private long cycles = 0;
 
+    /**
+     * default constructor for animations.
+     *
+     * @param textures
+     * @param updateTime
+     * @param pack
+     */
     public Animation(
             final Texture[] textures,
             final float updateTime,
@@ -26,6 +60,11 @@ public class Animation extends Sprite {
         this.updateTime = updateTime;
     }
 
+    /**
+     * update routine between rendering cycles.
+     *
+     * @param dt time delta to last update
+     */
     public final void update(final float dt) {
         updateTimeCounter += dt;
         if (updateTimeCounter > updateTime) {
@@ -40,10 +79,16 @@ public class Animation extends Sprite {
         }
     }
 
+    /**
+     * @return times updated
+     */
     public final long getUpdated() {
         return updated;
     }
 
+    /**
+     * @return completed cycles
+     */
     public final long getCycles() {
         return cycles;
     }

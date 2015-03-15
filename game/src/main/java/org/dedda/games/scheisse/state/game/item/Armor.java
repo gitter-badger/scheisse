@@ -11,13 +11,18 @@ import static org.dedda.games.scheisse.state.game.item.ItemCategory.ARMOR;
  */
 public class Armor extends Item implements Wearable {
 
+    /**
+     * highest amount of damage that can be absorbed by this item.
+     */
     private final long armor;
 
     /**
-     *
-     * @param name String - item name
-     * @param value long - item value
-     * @param armor long
+     * @param id item id
+     * @param name item name
+     * @param value item value
+     * @param armor highest amount of damage that can be absorbed by this item.
+     * @param type item type
+     * @param sprite
      */
     protected Armor(
             final long id,
@@ -39,9 +44,12 @@ public class Armor extends Item implements Wearable {
         return armor;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public final boolean equals(final Object object) {
-        if(object.getClass().equals(this.getClass())){
+        if (object.getClass().equals(this.getClass())) {
             Armor armor = (Armor) object;
             return armor.name.equals(this.name)
                     && armor.value == this.value
@@ -50,14 +58,30 @@ public class Armor extends Item implements Wearable {
         return false;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public final int maxStackNumber() {
         return 1;
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public void render(final Person person) {
 
     }
 
+    /**
+     * @param id item id
+     * @param name item name
+     * @param value item value
+     * @param armor highest amount of damage that can be absorbed by this item.
+     * @param type item type
+     * @param sprite
+     * @return registered armor
+     */
     public static Armor register(
             final long id,
             final String name,

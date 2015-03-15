@@ -5,6 +5,23 @@ package org.dedda.games.scheisse.state.game.fight;
  */
 public enum AttackElement {
 
-    FIRE, ICE, SHOCK
+    /**
+     * fire element.
+     *
+     * burns enemies
+     */
+    FIRE,
+    /**
+     * ice element.
+     *
+     * freezes enemies and slows them down
+     */
+    ICE,
+    /**
+     *  shock element.
+     *
+     *  electric shocks
+     */
+    SHOCK
 
 }

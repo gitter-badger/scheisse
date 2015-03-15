@@ -8,15 +8,17 @@ import java.awt.*;
 public class Armor extends Item implements Wearable, Stackable {
 
     /**
-     * highest amount of damage that can be absorbed by this item
+     * highest amount of damage that can be absorbed by this item.
      */
     private final long armor;
 
     /**
      *
-     * @param name String - item name
-     * @param value long - item value
-     * @param armor long
+     * @param id item id
+     * @param name item name
+     * @param value item value
+     * @param armor highest amount of damage that can be absorbed by this item.
+     * @param sprite
      */
     protected Armor(
             final long id,
@@ -43,7 +45,7 @@ public class Armor extends Item implements Wearable, Stackable {
      */
     @Override
     public final boolean equals(final Object object) {
-        if(object.getClass().equals(this.getClass())){
+        if (object.getClass().equals(this.getClass())) {
             Armor armor = (Armor) object;
             return armor.getName().equals(this.getName())
                     && armor.getPrice() == this.getPrice()

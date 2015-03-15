@@ -27,7 +27,9 @@ public abstract class BasicServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(final HttpServletRequest request, final HttpServletResponse response)
+    protected final void processRequest(
+            final HttpServletRequest request,
+            final HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -44,10 +46,24 @@ public abstract class BasicServlet extends HttpServlet {
         }
     }
 
-    protected abstract void printHead(final HttpServletRequest request, final PrintWriter out);
-    
-    protected abstract void printBody(final HttpServletRequest request, final PrintWriter out);
-    
+    /**
+     * creates html head.
+     * @param request
+     * @param out
+     */
+    protected abstract void printHead(
+            final HttpServletRequest request,
+            final PrintWriter out);
+
+    /**
+     * creates html body.
+     * @param request
+     * @param out
+     */
+    protected abstract void printBody(
+            final HttpServletRequest request,
+            final PrintWriter out);
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
