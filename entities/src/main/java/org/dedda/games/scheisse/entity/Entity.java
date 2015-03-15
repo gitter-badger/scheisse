@@ -5,6 +5,9 @@ package org.dedda.games.scheisse.entity;
  */
 public abstract class Entity {
 
+    /**
+     * @return id of the entity
+     */
     public abstract long getId();
 
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.dedda.games.scheisse.entity;
 
 import org.dedda.games.scheisse.entity.item.Item;
@@ -10,6 +5,10 @@ import org.dedda.games.scheisse.entity.item.Item;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+/**
+ *
+ * @author dedda
+ */
 @javax.persistence.Entity
 @Table(name = "slot")
 @NamedQueries({
@@ -23,7 +22,10 @@ import javax.validation.constraints.NotNull;
     )
 })
 public class Slot extends Entity implements TestableEntity {
-    
+
+    /**
+     * slot id
+     */
     @Id
     @NotNull
     @Basic(optional = false)
@@ -34,7 +36,10 @@ public class Slot extends Entity implements TestableEntity {
             unique = true
     )
     private long id;
-    
+
+    /**
+     * item amount
+     */
     @NotNull
     @Basic(optional = false)
     @Column(
@@ -43,27 +48,45 @@ public class Slot extends Entity implements TestableEntity {
             unique = false
     )
     private long amount;
-    
+
+    /**
+     * {@link org.dedda.games.scheisse.entity.Inventory} this slot belongs to
+     */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "inventory")
     private Inventory inventory;
-    
+
+    /**
+     * contained item
+     */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "item")
     private Item item;
 
+    /**
+     * @return slot id
+     */
     public long getId() {
         return id;
     }
 
+    /**
+     * @param id slot id
+     */
     public void setId(final long id) {
         this.id = id;
     }
 
+    /**
+     * @return item amount
+     */
     public long getAmount() {
         return amount;
     }
 
+    /**
+     * @param amount item amount
+     */
     public void setAmount(final long amount) {
         this.amount = amount;
     }

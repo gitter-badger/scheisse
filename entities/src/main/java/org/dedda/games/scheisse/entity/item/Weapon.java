@@ -5,9 +5,7 @@ import java.awt.*;
 /**
  * Created by dedda on 4/18/14.
  */
-public class Weapon extends Item implements Wearable, Holdeable {
-
-    protected final long attack;
+public class Weapon extends Item implements Wearable, Holdeable, Stackable {
 
     /**
      *
@@ -28,28 +26,27 @@ public class Weapon extends Item implements Wearable, Holdeable {
         setPrice(value);
         setCategory(ItemCategory.WEAPPON);
         setSprite(sprite);
-        this.attack = attack;
+        setAttack(attack);
     }
 
     /**
-     *
-     * @return long
+     * {@inheritDoc}
      */
-    public long getAttack() {
-        return attack;
-    }
-
     @Override
     public boolean equals(final Object object) {
         if (object instanceof Weapon) {
             Weapon weapon = (Weapon) object;
             return weapon.getName().equals(this.getName())
                     && weapon.getPrice() == this.getPrice()
-                    && weapon.attack == this.attack;
+                    && weapon.getAttack() == this.getAttack();
         }
         return false;
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public int maxStackNumber() {
         return 1;
     }

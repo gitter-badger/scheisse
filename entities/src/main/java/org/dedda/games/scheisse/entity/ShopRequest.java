@@ -5,6 +5,9 @@ import org.dedda.games.scheisse.entity.item.Item;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+/**
+ * @author dedda
+ */
 @javax.persistence.Entity
 @Table(name = "shopRequest")
 @NamedQueries({
@@ -22,7 +25,10 @@ import javax.validation.constraints.NotNull;
     )
 })
 public class ShopRequest extends Entity {
-    
+
+    /**
+     * request id
+     */
     @Id
     @NotNull
     @Basic(optional = false)
@@ -33,15 +39,24 @@ public class ShopRequest extends Entity {
             unique = true
     )
     private long id;
-    
+
+    /**
+     * {@link org.dedda.games.scheisse.entity.User} who created this request
+     */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userId")
     private User user;
-    
+
+    /**
+     * requested {@link org.dedda.games.scheisse.entity.item.Item}
+     */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "itemId")
     private Item item;
-    
+
+    /**
+     * requested / available amount of items
+     */
     @NotNull
     @Basic(optional = false)
     @Column(
@@ -50,7 +65,10 @@ public class ShopRequest extends Entity {
             unique = false
     )
     private long amount;
-    
+
+    /**
+     * price per single {@link org.dedda.games.scheisse.entity.item.Item}
+     */
     @NotNull
     @Basic(optional = false)
     @Column(
@@ -59,7 +77,10 @@ public class ShopRequest extends Entity {
             unique = false
     )
     private long singlePrice;
-    
+
+    /**
+     * buying / selling mode
+     */
     @NotNull
     @Basic(optional = false)
     @Column(
@@ -69,6 +90,9 @@ public class ShopRequest extends Entity {
     )
     private boolean buy;
 
+    /**
+     * created time stamp
+     */
     @NotNull
     @Basic(optional = false)
     @Column(
