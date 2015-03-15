@@ -12,7 +12,7 @@ public class LoginContainer implements Serializable {
     public final String name;
     public final String password;
 
-    public LoginContainer(String name, String password) {
+    public LoginContainer(final String name, final String password) {
         this.name = name;
         this.password = password;
     }

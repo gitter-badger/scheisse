@@ -11,9 +11,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="service-client" />
-    <orderEntry type="module" module-name="Scheisse Service" />
-    <orderEntry type="module" module-name="Scheisse Entity Filters" />
-    <orderEntry type="module" module-name="Scheisse Entities" />
+    <orderEntry type="module" module-name="service" />
+    <orderEntry type="module" module-name="entity-filter" />
+    <orderEntry type="module" module-name="entities" />
     <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx:1.5.0" level="project" />
     <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-platform:1.5.0" level="project" />
     <orderEntry type="library" name="Maven: com.badlogicgames.gdx:gdx-backend-lwjgl:1.5.0" level="project" />

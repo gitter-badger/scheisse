@@ -28,7 +28,7 @@ public class Item {
         return provider;
     }
 
-    public void setProvider(ItemProvider provider) {
+    public void setProvider(final ItemProvider provider) {
         this.provider = provider;
     }
 
@@ -46,7 +46,7 @@ public class Item {
         return selected;
     }
 
-    public void setSelected(org.dedda.games.scheisse.entity.item.Item selected) {
+    public void setSelected(final org.dedda.games.scheisse.entity.item.Item selected) {
         this.selected = selected;
     }
 
@@ -54,7 +54,7 @@ public class Item {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(final long id) {
         this.id = id;
     }
 

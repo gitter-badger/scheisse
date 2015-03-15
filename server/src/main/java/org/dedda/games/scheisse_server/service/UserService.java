@@ -61,7 +61,7 @@ public class UserService {
     }
 
     @WebMethod(exclude = true)
-    public void setUserProvider(UserProvider userProvider) {
+    public void setUserProvider(final UserProvider userProvider) {
         this.userProvider = userProvider;
     }
     

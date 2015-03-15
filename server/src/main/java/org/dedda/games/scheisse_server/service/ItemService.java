@@ -50,7 +50,7 @@ public class ItemService {
     }
 
     @WebMethod(exclude = true)
-    public void setItemProvider(ItemProvider itemProvider) {
+    public void setItemProvider(final ItemProvider itemProvider) {
         this.itemProvider = itemProvider;
     }
     

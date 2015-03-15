@@ -8,7 +8,7 @@ public class SlotContainer {
     public final long amount;
     public final ItemContainer item;
 
-    public SlotContainer(long id, long amount, ItemContainer item) {
+    public SlotContainer(final long id, final long amount, final ItemContainer item) {
         this.id = id;
         this.amount = amount;
         this.item = item;

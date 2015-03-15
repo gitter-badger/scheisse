@@ -83,7 +83,7 @@ public class Register implements Serializable{
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -91,7 +91,7 @@ public class Register implements Serializable{
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(final String password) {
         this.password = password;
     }
 
@@ -99,7 +99,7 @@ public class Register implements Serializable{
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
         this.email = email;
     }
     

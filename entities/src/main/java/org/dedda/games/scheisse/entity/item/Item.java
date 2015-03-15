@@ -101,27 +101,27 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
         return armor;
     }
 
-    public void setId(long id) {
+    public void setId(final long id) {
         this.id = id;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(final long price) {
         this.price = price;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
-    public void setType(String type) {
+    public void setType(final String type) {
         this.type = type;
     }
 
-    public void setAttack(long attack) {
+    public void setAttack(final long attack) {
         this.attack = attack;
     }
 
-    public void setArmor(long armor) {
+    public void setArmor(final long armor) {
         this.armor = armor;
     }
 
@@ -137,7 +137,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
         return category;
     }
 
-    public void setCategory(ItemCategory category) {
+    public void setCategory(final ItemCategory category) {
         this.category = category;
     }
 
@@ -145,12 +145,12 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
         return sprite;
     }
 
-    public void setSprite(Image sprite) {
+    public void setSprite(final Image sprite) {
         this.sprite = sprite;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         if (this == o) {
             return true;
         }

@@ -106,23 +106,23 @@ public class User extends Entity implements TestableEntity {
         return experience;
     }
 
-    public void setId(Long id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
-    public void setPasswordHash(String passwordHash) {
+    public void setPasswordHash(final String passwordHash) {
         this.passwordHash = passwordHash;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
         this.email = email;
     }
 
-    public void setExperience(long experience) {
+    public void setExperience(final long experience) {
         this.experience = experience;
     }
 
@@ -130,12 +130,12 @@ public class User extends Entity implements TestableEntity {
         return inventory;
     }
 
-    public void setInventory(Inventory inventory) {
+    public void setInventory(final Inventory inventory) {
         this.inventory = inventory;
     }
 
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(final Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof User)) {
             return false;

@@ -11,7 +11,7 @@ public class Message {
     public final Number value;
     public final List<Tag> tags;
 
-    public Message(String metric, Number value, List<Tag> tags) {
+    public Message(final String metric, final Number value, final List<Tag> tags) {
         this.metric = metric;
         this.value = value;
         this.tags = tags;

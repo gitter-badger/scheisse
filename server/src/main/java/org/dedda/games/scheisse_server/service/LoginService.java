@@ -71,7 +71,7 @@ public class LoginService {
     }
 
     @WebMethod(exclude = true)
-    public void setUserProvider(UserProvider userProvider) {
+    public void setUserProvider(final UserProvider userProvider) {
         this.userProvider = userProvider;
     }
 
@@ -81,7 +81,7 @@ public class LoginService {
     }
 
     @WebMethod(exclude = true)
-    public void setLoginCache(LoginCache LoginCache) {
+    public void setLoginCache(final LoginCache LoginCache) {
         this.loginCache = LoginCache;
     }
     

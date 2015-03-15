@@ -27,7 +27,7 @@ public class WebServerConfig implements WebServiceConfigMXBean {
     }
 
     @Override
-    public void setWebServiceEnabled(boolean enabled) {
+    public void setWebServiceEnabled(final boolean enabled) {
         webServiceEnabled = enabled;
     }
 
@@ -37,7 +37,7 @@ public class WebServerConfig implements WebServiceConfigMXBean {
     }
 
     @Override
-    public void setLoginEnabled(boolean enabled) {
+    public void setLoginEnabled(final boolean enabled) {
         loginEnabled = enabled;
     }
 
