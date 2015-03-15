@@ -6,9 +6,9 @@ package org.dedda.games.scheisse.entity.item;
 public interface Stackable {
 
     /**
-     *
+     * maximum number of items to stack in one {@link org.dedda.games.scheisse.entity.Slot}
      * @return int
      */
-    public abstract int maxStackNumber();
+    public int maxStackNumber();
 
 }

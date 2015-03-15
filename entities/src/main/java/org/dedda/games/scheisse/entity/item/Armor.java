@@ -5,8 +5,11 @@ import java.awt.*;
 /**
  * Created by dedda on 4/18/14.
  */
-public class Armor extends Item implements Wearable {
+public class Armor extends Item implements Wearable, Stackable {
 
+    /**
+     * highest amount of damage that can be absorbed by this item
+     */
     private final long armor;
 
     /**
@@ -35,6 +38,9 @@ public class Armor extends Item implements Wearable {
         return armor;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public final boolean equals(final Object object) {
         if(object.getClass().equals(this.getClass())){
@@ -46,6 +52,10 @@ public class Armor extends Item implements Wearable {
         return false;
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public final int maxStackNumber() {
         return 1;
     }

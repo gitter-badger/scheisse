@@ -12,10 +12,10 @@ import java.awt.geom.Point2D;
 public abstract class Distances {
 
     /**
-     * Calculates the angle between two {@link Point2D.Double}s.
+     * Calculates the angle between two {@link java.awt.geom.Point2D.Double}s.
      *
-     * @param start Start {@link Point2D.Double}
-     * @param destination Destination {@link Point2D.Double}
+     * @param start Start {@link java.awt.geom.Point2D.Double}
+     * @param destination Destination {@link java.awt.geom.Point2D.Double}
      * @return Angle between start and destination
      */
     public static double getDirectionTo(
@@ -27,10 +27,10 @@ public abstract class Distances {
     }
 
     /**
-     * Calculates the distance between two {@link Point2D.Double}s.
+     * Calculates the distance between two {@link java.awt.geom.Point2D.Double}s.
      *
-     * @param start Start {@link Point2D.Double}
-     * @param destination Destination {@link Point2D.Double}
+     * @param start Start {@link java.awt.geom.Point2D.Double}
+     * @param destination Destination {@link java.awt.geom.Point2D.Double}
      * @return Distance between start and destination
      */
     public static double getDistanceTo(

@@ -30,7 +30,8 @@ public class Player extends Person {
 
     /**
      *
-     * @return
+     * @return {@link org.dedda.games.scheisse.state.game.object.PlayerObject}
+     * this {@link org.dedda.games.scheisse.state.game.Player} belongs to
      */
     public PlayerObject getPlayerObject() {
         return playerObject;

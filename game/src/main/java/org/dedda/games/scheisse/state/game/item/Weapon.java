@@ -64,7 +64,7 @@ public class Weapon extends Item implements Wearable, Holdeable {
      * @param value
      * @param attack
      * @param sprite
-     * @return
+     * @return registered {@link org.dedda.games.scheisse.state.game.item.Weapon}
      */
     public static Weapon register(
             final long id,
