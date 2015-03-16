@@ -37,7 +37,7 @@ import javax.validation.constraints.NotNull;
 public class ShopRequest extends Entity {
 
     /**
-     * request id
+     * request id.
      */
     @Id
     @NotNull
@@ -51,21 +51,21 @@ public class ShopRequest extends Entity {
     private long id;
 
     /**
-     * {@link org.dedda.games.scheisse.entity.User} who created this request
+     * {@link org.dedda.games.scheisse.entity.User} who created this request.
      */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userId")
     private User user;
 
     /**
-     * requested {@link org.dedda.games.scheisse.entity.item.Item}
+     * requested {@link org.dedda.games.scheisse.entity.item.Item}.
      */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "itemId")
     private Item item;
 
     /**
-     * requested / available amount of items
+     * requested / available amount of items.
      */
     @NotNull
     @Basic(optional = false)
@@ -77,7 +77,7 @@ public class ShopRequest extends Entity {
     private long amount;
 
     /**
-     * price per single {@link org.dedda.games.scheisse.entity.item.Item}
+     * price per single {@link org.dedda.games.scheisse.entity.item.Item}.
      */
     @NotNull
     @Basic(optional = false)
@@ -89,7 +89,7 @@ public class ShopRequest extends Entity {
     private long singlePrice;
 
     /**
-     * buying / selling mode
+     * buying / selling mode.
      */
     @NotNull
     @Basic(optional = false)
@@ -101,7 +101,7 @@ public class ShopRequest extends Entity {
     private boolean buy;
 
     /**
-     * created time stamp
+     * created time stamp.
      */
     @NotNull
     @Basic(optional = false)
@@ -111,61 +111,61 @@ public class ShopRequest extends Entity {
             unique = false
     )
     private long timestamp;
-    
-    public long getId() {
+
+    public final long getId() {
         return id;
     }
 
-    public void setId(final long id) {
+    public final void setId(final long id) {
         this.id = id;
     }
 
-    public User getUser() {
+    public final User getUser() {
         return user;
     }
 
-    public void setUser(final User user) {
+    public final void setUser(final User user) {
         this.user = user;
     }
 
-    public Item getItem() {
+    public final Item getItem() {
         return item;
     }
 
-    public void setItem(final Item item) {
+    public final void setItem(final Item item) {
         this.item = item;
     }
 
-    public long getAmount() {
+    public final long getAmount() {
         return amount;
     }
 
-    public void setAmount(final long amount) {
+    public final void setAmount(final long amount) {
         this.amount = amount;
     }
 
-    public long getSinglePrice() {
+    public final long getSinglePrice() {
         return singlePrice;
     }
 
-    public void setSinglePrice(final long singlePrice) {
+    public final void setSinglePrice(final long singlePrice) {
         this.singlePrice = singlePrice;
     }
 
-    public boolean isBuy() {
+    public final boolean isBuy() {
         return buy;
     }
 
-    public void setBuy(final boolean buy) {
+    public final void setBuy(final boolean buy) {
         this.buy = buy;
     }
 
-    public long getTimestamp() {
+    public final long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(final long timestamp) {
+    public final void setTimestamp(final long timestamp) {
         this.timestamp = timestamp;
     }
-    
+
 }

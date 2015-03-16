@@ -42,7 +42,7 @@ import javax.validation.constraints.NotNull;
         )
 })
 public class User extends Entity implements TestableEntity {
-    
+
     @Id
     @NotNull
     @Basic(optional = false)
@@ -53,7 +53,7 @@ public class User extends Entity implements TestableEntity {
             unique = true
     )
     private Long id;
-    
+
     @NotNull
     @Basic(optional = false)
     @Column(
@@ -62,7 +62,7 @@ public class User extends Entity implements TestableEntity {
             unique = true
     )
     private String name;
-    
+
     @NotNull
     @Basic(optional = false)
     @Column(
@@ -70,7 +70,7 @@ public class User extends Entity implements TestableEntity {
             nullable = false
     )
     private String passwordHash;
-    
+
     @NotNull
     @Basic(optional = false)
     @Column(
@@ -79,7 +79,7 @@ public class User extends Entity implements TestableEntity {
             unique = true
     )
     private String email;
-    
+
     @NotNull
     @Basic(optional = false)
     @Column(
@@ -90,61 +90,61 @@ public class User extends Entity implements TestableEntity {
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
     private Inventory inventory;
-    
+
     /*==========================*
      * GETTER & SETTER
      *==========================*/
-    
-    public long getId() {
+
+    public final long getId() {
         return id;
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public String getPasswordHash() {
+    public final String getPasswordHash() {
         return passwordHash;
     }
 
-    public String getEmail() {
+    public final String getEmail() {
         return email;
     }
 
-    public long getExperience() {
+    public final long getExperience() {
         return experience;
     }
 
-    public void setId(final Long id) {
+    public final void setId(final Long id) {
         this.id = id;
     }
 
-    public void setName(final String name) {
+    public final void setName(final String name) {
         this.name = name;
     }
 
-    public void setPasswordHash(final String passwordHash) {
+    public final void setPasswordHash(final String passwordHash) {
         this.passwordHash = passwordHash;
     }
 
-    public void setEmail(final String email) {
+    public final void setEmail(final String email) {
         this.email = email;
     }
 
-    public void setExperience(final long experience) {
+    public final void setExperience(final long experience) {
         this.experience = experience;
     }
 
-    public Inventory getInventory() {
+    public final Inventory getInventory() {
         return inventory;
     }
 
-    public void setInventory(final Inventory inventory) {
+    public final void setInventory(final Inventory inventory) {
         this.inventory = inventory;
     }
 
     @Override
-    public boolean equals(final Object object) {
+    public final boolean equals(final Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof User)) {
             return false;
@@ -157,18 +157,18 @@ public class User extends Entity implements TestableEntity {
     }
 
     @Override
-    public String toString() {
+    public final String toString() {
         return "org.dedda.games.scheisse_server.entity.User[ id=" + id + " ]";
     }
 
     @Override
-    public long getMinTestId() {
+    public final long getMinTestId() {
         return -1;
     }
 
     @Override
-    public long getMaxTestId() {
+    public final long getMaxTestId() {
         return -1;
     }
-    
+
 }

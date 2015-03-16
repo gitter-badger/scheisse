@@ -35,7 +35,7 @@ import javax.validation.constraints.NotNull;
 public class Slot extends Entity implements TestableEntity {
 
     /**
-     * slot id
+     * slot id.
      */
     @Id
     @NotNull
@@ -49,7 +49,7 @@ public class Slot extends Entity implements TestableEntity {
     private long id;
 
     /**
-     * item amount
+     * item amount.
      */
     @NotNull
     @Basic(optional = false)
@@ -61,14 +61,14 @@ public class Slot extends Entity implements TestableEntity {
     private long amount;
 
     /**
-     * {@link org.dedda.games.scheisse.entity.Inventory} this slot belongs to
+     * {@link org.dedda.games.scheisse.entity.Inventory} this slot belongs to.
      */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "inventory")
     private Inventory inventory;
 
     /**
-     * contained item
+     * contained item.
      */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "item")
@@ -78,7 +78,7 @@ public class Slot extends Entity implements TestableEntity {
      * METHODS
      ====================*/
 
-    public boolean canAdd(final Item item, final long amount) {
+    public final boolean canAdd(final Item item, final long amount) {
         if (null == item) {
             throw new IllegalArgumentException("item is null");
         }
@@ -88,7 +88,7 @@ public class Slot extends Entity implements TestableEntity {
         return maxAddAmount(item) >= amount;
     }
 
-    public long maxAddAmount(final Item item) {
+    public final long maxAddAmount(final Item item) {
         if (null == item) {
             throw new IllegalArgumentException("item is null");
         }
@@ -106,7 +106,7 @@ public class Slot extends Entity implements TestableEntity {
      * @param amount amount of items to remove
      * @return amount of items actually removed
      */
-    public long remove(final Item item, final long amount) {
+    public final long remove(final Item item, final long amount) {
         if (null == item) {
             throw new IllegalArgumentException("item is null");
         }
@@ -132,44 +132,44 @@ public class Slot extends Entity implements TestableEntity {
     /**
      * @return slot id
      */
-    public long getId() {
+    public final long getId() {
         return id;
     }
 
     /**
      * @param id slot id
      */
-    public void setId(final long id) {
+    public final void setId(final long id) {
         this.id = id;
     }
 
     /**
      * @return item amount
      */
-    public long getAmount() {
+    public final long getAmount() {
         return amount;
     }
 
     /**
      * @param amount item amount
      */
-    public void setAmount(final long amount) {
+    public final void setAmount(final long amount) {
         this.amount = amount;
     }
 
-    public Inventory getInventory() {
+    public final Inventory getInventory() {
         return inventory;
     }
 
-    public void setInventory(final Inventory inventory) {
+    public final void setInventory(final Inventory inventory) {
         this.inventory = inventory;
     }
 
-    public Item getItem() {
+    public final Item getItem() {
         return item;
     }
 
-    public void setItem(final Item item) {
+    public final void setItem(final Item item) {
         this.item = item;
     }
 
@@ -182,5 +182,5 @@ public class Slot extends Entity implements TestableEntity {
     public long getMaxTestId() {
         return -1;
     }
-    
+
 }

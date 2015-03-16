@@ -29,7 +29,7 @@ import java.util.List;
 public class Inventory extends Entity implements TestableEntity {
 
     /**
-     * id of the inventory
+     * id of the inventory.
      */
     @Id
     @NotNull
@@ -43,7 +43,7 @@ public class Inventory extends Entity implements TestableEntity {
     private long id;
 
     /**
-     * number of available {@link org.dedda.games.scheisse.entity.Slot}s
+     * number of available {@link org.dedda.games.scheisse.entity.Slot}s.
      */
     @NotNull
     @Basic(optional = false)
@@ -54,14 +54,14 @@ public class Inventory extends Entity implements TestableEntity {
     private long size;
 
     /**
-     * owner of the inventory
+     * owner of the inventory.
      */
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user")
     private User user;
 
     /**
-     * {@link org.dedda.games.scheisse.entity.Slot}s containing items
+     * {@link org.dedda.games.scheisse.entity.Slot}s containing items.
      */
     @OneToMany(
             mappedBy = "inventory",
@@ -81,7 +81,7 @@ public class Inventory extends Entity implements TestableEntity {
      * {@link org.dedda.games.scheisse.entity.item.Item}s to add
      * @return self explaining
      */
-    public boolean canAdd(final Item item, final long amount) {
+    public final boolean canAdd(final Item item, final long amount) {
         long free = 0;
         for (Slot slot : slots) {
             free += slot.maxAddAmount(item);
@@ -103,7 +103,7 @@ public class Inventory extends Entity implements TestableEntity {
      * @param item
      * @param amount
      */
-    public void add(final Item item, final long amount) {
+    public final void add(final Item item, final long amount) {
         if (!canAdd(item, amount)) {
             return;
         }
@@ -125,7 +125,7 @@ public class Inventory extends Entity implements TestableEntity {
      * @param item item to search for
      * @return amount of items of this type
      */
-    public long contains(final Item item) {
+    public final long contains(final Item item) {
         if (null == item) {
             throw new IllegalArgumentException("item is null");
         }
@@ -134,7 +134,7 @@ public class Inventory extends Entity implements TestableEntity {
             if (null != slot.getItem()) {
                 continue;
             }
-            if(item.getId() == slot.getItem().getId()) {
+            if (item.getId() == slot.getItem().getId()) {
                 amount += slot.getAmount();
             }
         }
@@ -146,7 +146,7 @@ public class Inventory extends Entity implements TestableEntity {
      * @param amount amount of items to remove
      * @return amount of items actually removed
      */
-    public long remove(final Item item, final long amount) {
+    public final long remove(final Item item, final long amount) {
         long removed = 0;
         for (Slot slot : slots) {
             removed += slot.remove(item, amount - removed);
@@ -161,56 +161,56 @@ public class Inventory extends Entity implements TestableEntity {
     /**
      * @return id of the inventory
      */
-    public long getId() {
+    public final long getId() {
         return id;
     }
 
     /**
      * @param id id of the inventory
      */
-    public void setId(final long id) {
+    public final void setId(final long id) {
         this.id = id;
     }
 
     /**
      * @return number of available {@link org.dedda.games.scheisse.entity.Slot}s
      */
-    public long getSize() {
+    public final long getSize() {
         return size;
     }
 
     /**
      * @param size number of available {@link org.dedda.games.scheisse.entity.Slot}s
      */
-    public void setSize(final long size) {
+    public final void setSize(final long size) {
         this.size = size;
     }
 
     /**
      * @return owner of the inventory
      */
-    public User getUser() {
+    public final User getUser() {
         return user;
     }
 
     /**
      * @param user owner of the inventory
      */
-    public void setUser(final User user) {
+    public final void setUser(final User user) {
         this.user = user;
     }
 
     /**
      * @return {@link org.dedda.games.scheisse.entity.Slot}s containing items
      */
-    public List<Slot> getSlots() {
+    public final List<Slot> getSlots() {
         return slots;
     }
 
     /**
      * @param slots {@link org.dedda.games.scheisse.entity.Slot}s containing items
      */
-    public void setSlots(final List<Slot> slots) {
+    public final void setSlots(final List<Slot> slots) {
         this.slots = slots;
     }
 
@@ -229,5 +229,5 @@ public class Inventory extends Entity implements TestableEntity {
     public long getMaxTestId() {
         return -1;
     }
-    
+
 }
