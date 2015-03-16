@@ -6,7 +6,6 @@
 package org.dedda.games.scheisse.entity;
 
 import org.dedda.games.scheisse.entity.item.Item;
-import org.dedda.games.scheisse.entity.item.Stackable;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;

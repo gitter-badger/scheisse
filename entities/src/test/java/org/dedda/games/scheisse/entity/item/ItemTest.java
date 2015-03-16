@@ -3,9 +3,8 @@ package org.dedda.games.scheisse.entity.item;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Objects;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class ItemTest {
 
