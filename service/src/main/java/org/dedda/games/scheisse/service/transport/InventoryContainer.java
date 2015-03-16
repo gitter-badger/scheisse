@@ -10,4 +10,8 @@ public class InventoryContainer extends EntityContainer {
     public InventoryContainer(final Inventory inventory) {
         super(EntityType.INVENTORY, inventory);
     }
+
+    public static InventoryContainer convert(final Inventory inventory) {
+        return new InventoryContainer(inventory);
+    }
 }

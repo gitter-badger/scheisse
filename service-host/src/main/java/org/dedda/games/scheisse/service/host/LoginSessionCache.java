@@ -38,6 +38,13 @@ public class LoginSessionCache {
         }
     }
 
+    public User getForUUID(final UUID session) {
+        if (!sessionMap.containsKey(session)) {
+            return null;
+        }
+        return sessionMap.get(session);
+    }
+
     public LoginProvider getProvider() {
         return provider;
     }

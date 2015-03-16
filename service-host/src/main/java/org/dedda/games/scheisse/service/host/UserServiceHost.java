@@ -1,5 +1,6 @@
 package org.dedda.games.scheisse.service.host;
 
+import org.dedda.games.scheisse.entity.User;
 import org.dedda.games.scheisse.server_persistence.UserProvider;
 import org.dedda.games.scheisse.service.UserService;
 import org.dedda.games.scheisse.service.transport.UserContainer;
@@ -17,28 +18,27 @@ public class UserServiceHost implements UserService {
     @Inject
     private UserProvider provider;
 
-    @Override
-    @WebMethod(operationName = "login")
-    public UUID login(@WebParam(name = "username")final String username, @WebParam(name = "password")final String password) {
-        return null;
-    }
-
-    @Override
-    @WebMethod(operationName = "logout")
-    public void logout(@WebParam(name = "session")final UUID session) {
-
-    }
+    @Inject
+    private LoginSessionCache loginSessionCache;
 
     @Override
     @WebMethod(operationName = "getById")
     public UserContainer get(@WebParam(name = "userId")final long id, @WebParam(name = "session")final UUID session) {
-        return null;
+        User user = provider.getUser(id);
+        User sessionUser = loginSessionCache.getForUUID(session);
+        if (null == sessionUser || id != sessionUser.getId()) {
+            String name = user.getName();
+            user = new User();
+            user.setId(id);
+            user.setName(name);
+        }
+        return UserContainer.convert(user);
     }
 
     @Override
     @WebMethod(operationName = "searchByName")
     public List<UserContainer> search(@WebParam(name = "name")final String name, @WebParam(name = "session")final UUID session) {
-        return null;
+        throw new UnsupportedOperationException("searching not implemented yet!");
     }
 
     @WebMethod(exclude = true)
@@ -49,5 +49,15 @@ public class UserServiceHost implements UserService {
     @WebMethod(exclude = true)
     public void setProvider(final UserProvider provider) {
         this.provider = provider;
+    }
+
+    @WebMethod(exclude = true)
+    public LoginSessionCache getLoginSessionCache() {
+        return loginSessionCache;
+    }
+
+    @WebMethod(exclude = true)
+    public void setLoginSessionCache(LoginSessionCache loginSessionCache) {
+        this.loginSessionCache = loginSessionCache;
     }
 }

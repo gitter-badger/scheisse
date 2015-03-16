@@ -5,6 +5,9 @@
  */
 package org.dedda.games.scheisse.entity;
 
+import org.dedda.games.scheisse.entity.item.Item;
+import org.dedda.games.scheisse.entity.item.Stackable;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
@@ -66,7 +69,92 @@ public class Inventory extends Entity implements TestableEntity {
             fetch = FetchType.EAGER
     )
     private List<Slot> slots;
-    
+
+    /*========================
+     * METHODS
+     ========================*/
+    /**
+     * checks if enough free space is available for specific
+     * {@link org.dedda.games.scheisse.entity.item.Item}s.
+     *
+     * @param item {@link org.dedda.games.scheisse.entity.item.Item} to add
+     * @param amount amount of
+     * {@link org.dedda.games.scheisse.entity.item.Item}s to add
+     * @return self explaining
+     */
+    public boolean canAdd(final Item item, final long amount) {
+        long free = 0;
+        for (Slot slot : slots) {
+            free += slot.maxAddAmount(item);
+            if (free >= amount) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * adds {@link org.dedda.games.scheisse.entity.item.Item}s to the
+     * {@link org.dedda.games.scheisse.entity.Inventory}.
+     *
+     * checks if {@link org.dedda.games.scheisse.entity.item.Item}s fit in the
+     * {@link org.dedda.games.scheisse.entity.Inventory} and adds them to the
+     * right {@link org.dedda.games.scheisse.entity.Slot}s.
+     *
+     * @param item
+     * @param amount
+     */
+    public void add(final Item item, final long amount) {
+        if (!canAdd(item, amount)) {
+            return;
+        }
+        long remaining = amount;
+        for (Slot slot : slots) {
+            long maxAddAmount = slot.maxAddAmount(item);
+            if (maxAddAmount > remaining) {
+                maxAddAmount = remaining;
+            }
+            slot.setAmount(slot.getAmount() + maxAddAmount);
+            remaining -= maxAddAmount;
+            if (remaining == 0) {
+                break;
+            }
+        }
+    }
+
+    /**
+     * @param item item to search for
+     * @return amount of items of this type
+     */
+    public long contains(final Item item) {
+        if (null == item) {
+            throw new IllegalArgumentException("item is null");
+        }
+        long amount = 0;
+        for (Slot slot : slots) {
+            if (null != slot.getItem()) {
+                continue;
+            }
+            if(item.getId() == slot.getItem().getId()) {
+                amount += slot.getAmount();
+            }
+        }
+        return amount;
+    }
+
+    /**
+     * @param item item to search and remove
+     * @param amount amount of items to remove
+     * @return amount of items actually removed
+     */
+    public long remove(final Item item, final long amount) {
+        long removed = 0;
+        for (Slot slot : slots) {
+            removed += slot.remove(item, amount - removed);
+        }
+        return removed;
+    }
+
     /*==================*
      * GETTER & SETTER
      *==================*/

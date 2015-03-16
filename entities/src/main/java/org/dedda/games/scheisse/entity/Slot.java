@@ -1,6 +1,7 @@
 package org.dedda.games.scheisse.entity;
 
 import org.dedda.games.scheisse.entity.item.Item;
+import org.dedda.games.scheisse.entity.item.Stackable;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -72,6 +73,61 @@ public class Slot extends Entity implements TestableEntity {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "item")
     private Item item;
+
+    /*====================
+     * METHODS
+     ====================*/
+
+    public boolean canAdd(final Item item, final long amount) {
+        if (null == item) {
+            throw new IllegalArgumentException("item is null");
+        }
+        if (amount < 1) {
+            throw new IllegalArgumentException("amount < 1");
+        }
+        return maxAddAmount(item) >= amount;
+    }
+
+    public long maxAddAmount(final Item item) {
+        if (null == item) {
+            throw new IllegalArgumentException("item is null");
+        }
+        if (getItem().getId() == item.getId()) {
+            if (item instanceof Stackable) {
+                return ((Stackable) item).maxStackNumber() - getAmount();
+            }
+            return getAmount() == 0 ? 1 : 0;
+        }
+        return 0;
+    }
+
+    /**
+     * @param item item to remove
+     * @param amount amount of items to remove
+     * @return amount of items actually removed
+     */
+    public long remove(final Item item, final long amount) {
+        if (null == item) {
+            throw new IllegalArgumentException("item is null");
+        }
+        if (null == getItem()) {
+            return 0;
+        }
+        long removed = 0;
+        if (getItem().getId() == item.getId()) {
+            setAmount(getAmount() - amount);
+            removed = amount > getAmount() ? getAmount() : amount;
+            if (getAmount() <= 0) {
+                setAmount(0);
+                setItem(null);
+            }
+        }
+        return removed;
+    }
+
+    /*=================
+     * GETTER & SETTER
+     =================*/
 
     /**
      * @return slot id
