@@ -1,8 +1,8 @@
 package org.dedda.games.scheisse.service.host;
 
+import org.dedda.games.scheisse.entity.item.Item;
 import org.dedda.games.scheisse.server_persistence.ItemProvider;
 import org.dedda.games.scheisse.service.ItemService;
-import org.dedda.games.scheisse.service.transport.ItemContainer;
 
 import javax.inject.Inject;
 import javax.jws.WebMethod;
@@ -18,20 +18,20 @@ public class ItemServiceHost implements ItemService {
 
     @Override
     @WebMethod(operationName = "getAllItems")
-    public List<ItemContainer> getAll() {
-        return ItemContainer.convert(provider.getAllItems());
+    public List<Item> getAll() {
+        return provider.getAllItems();
     }
 
     @Override
     @WebMethod(operationName = "getById")
-    public ItemContainer get(@WebParam(name = "id")final long id) {
-        return ItemContainer.convert(provider.getItem(id));
+    public Item get(@WebParam(name = "id")final long id) {
+        return provider.getItem(id);
     }
 
     @Override
     @WebMethod(operationName = "searchItem")
-    public List<ItemContainer> search(@WebParam(name = "name")final String name) {
-        return ItemContainer.convert(provider.search(name));
+    public List<Item> search(@WebParam(name = "name")final String name) {
+        return provider.search(name);
     }
 
     @WebMethod(exclude = true)

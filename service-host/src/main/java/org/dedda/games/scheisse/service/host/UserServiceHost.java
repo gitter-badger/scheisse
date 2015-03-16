@@ -3,7 +3,6 @@ package org.dedda.games.scheisse.service.host;
 import org.dedda.games.scheisse.entity.User;
 import org.dedda.games.scheisse.server_persistence.UserProvider;
 import org.dedda.games.scheisse.service.UserService;
-import org.dedda.games.scheisse.service.transport.UserContainer;
 
 import javax.inject.Inject;
 import javax.jws.WebMethod;
@@ -23,7 +22,7 @@ public class UserServiceHost implements UserService {
 
     @Override
     @WebMethod(operationName = "getById")
-    public UserContainer get(@WebParam(name = "userId")final long id, @WebParam(name = "session")final UUID session) {
+    public User get(@WebParam(name = "userId")final long id, @WebParam(name = "session")final UUID session) {
         User user = provider.getUser(id);
         User sessionUser = loginSessionCache.getForUUID(session);
         if (null == sessionUser || id != sessionUser.getId()) {
@@ -32,12 +31,12 @@ public class UserServiceHost implements UserService {
             user.setId(id);
             user.setName(name);
         }
-        return UserContainer.convert(user);
+        return user;
     }
 
     @Override
     @WebMethod(operationName = "searchByName")
-    public List<UserContainer> search(@WebParam(name = "name")final String name, @WebParam(name = "session")final UUID session) {
+    public List<User> search(@WebParam(name = "name")final String name, @WebParam(name = "session")final UUID session) {
         throw new UnsupportedOperationException("searching not implemented yet!");
     }
 

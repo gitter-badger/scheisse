@@ -6,7 +6,6 @@ import org.dedda.games.scheisse.entity.item.Item;
 import org.dedda.games.scheisse.server_persistence.InventoryProvider;
 import org.dedda.games.scheisse.server_persistence.ItemProvider;
 import org.dedda.games.scheisse.service.InventoryService;
-import org.dedda.games.scheisse.service.transport.InventoryContainer;
 
 import javax.inject.Inject;
 import javax.jws.WebMethod;
@@ -31,12 +30,12 @@ public class InventoryServiceHost implements InventoryService {
      */
     @Override
     @WebMethod(operationName = "getInventory")
-    public InventoryContainer get(@WebParam(name = "session")final UUID session) {
+    public Inventory get(@WebParam(name = "session")final UUID session) {
         User user = loginSessionCache.getForUUID(session);
         if (null == user) {
             return null;
         }
-        return InventoryContainer.convert(user.getInventory());
+        return user.getInventory();
     }
 
     /**
@@ -44,19 +43,19 @@ public class InventoryServiceHost implements InventoryService {
      */
     @Override
     @WebMethod(operationName = "addItem")
-    public void addItem(@WebParam(name = "itemId")final long id, @WebParam(name = "amount")final long amount, @WebParam(name = "session")final UUID session) {
+    public Inventory addItem(@WebParam(name = "itemId")final long id, @WebParam(name = "amount")final long amount, @WebParam(name = "session")final UUID session) {
         User user = loginSessionCache.getForUUID(session);
         if (null == user) {
-            return;
+            return null;
         }
         Item item = itemProvider.getItem(id);
-        if (null == item) {
-            return;
-        }
         Inventory inventory = user.getInventory();
-        if (inventory.canAdd(item, amount)) {
-            inventory.add(item, amount);
+        if (null != item) {
+            if (inventory.canAdd(item, amount)) {
+                inventory.add(item, amount);
+            }
         }
+        return inventory;
     }
 
     /**
@@ -64,17 +63,18 @@ public class InventoryServiceHost implements InventoryService {
      */
     @Override
     @WebMethod(operationName = "removeItem")
-    public long removeItem(@WebParam(name = "itemId")final long id, @WebParam(name = "amount")final long amount, @WebParam(name = "session")final UUID session) {
+    public Inventory removeItem(@WebParam(name = "itemId")final long id, @WebParam(name = "amount")final long amount, @WebParam(name = "session")final UUID session) {
         User user = loginSessionCache.getForUUID(session);
         if (null == user) {
-            return 0;
+            return null;
         }
         Item item = itemProvider.getItem(id);
-        if (null == item) {
-            return 0;
-        }
         Inventory inventory = user.getInventory();
-        return inventory.remove(item, amount);
+        if (null == item) {
+            return inventory;
+        }
+        inventory.remove(item, amount);
+        return inventory;
     }
 
     @WebMethod(exclude = true)

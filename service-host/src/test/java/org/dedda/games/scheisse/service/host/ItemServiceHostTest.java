@@ -3,7 +3,6 @@ package org.dedda.games.scheisse.service.host;
 import org.dedda.games.scheisse.entity.item.Item;
 import org.dedda.games.scheisse.entity.item.ItemCategory;
 import org.dedda.games.scheisse.server_persistence.ItemProvider;
-import org.dedda.games.scheisse.service.transport.ItemContainer;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -64,32 +63,32 @@ public class ItemServiceHostTest {
 
     @Test
     public void testGetAll() throws Exception {
-        List<ItemContainer> actual = instance.getAll();
-        List<ItemContainer> expected = ItemContainer.convert(items);
-        for (ItemContainer container : expected) {
-            assertTrue(actual.contains(container));
+        List<Item> actual = instance.getAll();
+        List<Item> expected = items;
+        for (Item item : expected) {
+            assertTrue(actual.contains(item));
         }
-        for (ItemContainer container : actual) {
-            assertTrue(expected.contains(container));
+        for (Item item : actual) {
+            assertTrue(expected.contains(item));
         }
     }
 
     @Test
     public void testGet() throws Exception {
-        assertEquals(items.get(0), instance.get(0).getEntity());
-        assertEquals(items.get(1), instance.get(1).getEntity());
-        assertEquals(items.get(2), instance.get(2).getEntity());
+        assertEquals(items.get(0), instance.get(0));
+        assertEquals(items.get(1), instance.get(1));
+        assertEquals(items.get(2), instance.get(2));
     }
 
     @Test
     public void testSearch() throws Exception {
-        List<ItemContainer> actual = instance.search("tem");
-        List<ItemContainer> expected = ItemContainer.convert(search);
-        for (ItemContainer container : expected) {
-            actual.contains(container);
+        List<Item> actual = instance.search("tem");
+        List<Item> expected = search;
+        for (Item item : expected) {
+            actual.contains(item);
         }
-        for (ItemContainer container : actual) {
-            assertTrue(expected.contains(container));
+        for (Item item : actual) {
+            assertTrue(expected.contains(item));
         }
     }
 }

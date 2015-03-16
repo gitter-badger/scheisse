@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.service;
 
-import org.dedda.games.scheisse.service.transport.ItemContainer;
+import org.dedda.games.scheisse.entity.item.Item;
 
 import java.util.List;
 
@@ -9,10 +9,10 @@ import java.util.List;
  */
 public interface ItemService {
 
-    public List<ItemContainer> getAll();
+    public List<Item> getAll();
 
-    public ItemContainer get(final long id);
+    public Item get(final long id);
 
-    public List<ItemContainer> search(final String name);
+    public List<Item> search(final String name);
 
 }

@@ -1,8 +1,8 @@
 package org.dedda.games.scheisse.service.host;
 
+import org.dedda.games.scheisse.entity.Slot;
 import org.dedda.games.scheisse.server_persistence.SlotProvider;
 import org.dedda.games.scheisse.service.SlotService;
-import org.dedda.games.scheisse.service.transport.SlotContainer;
 
 import javax.inject.Inject;
 import javax.jws.WebMethod;
@@ -18,7 +18,7 @@ public class SlotServiceHost implements SlotService {
 
     @Override
     @WebMethod(operationName = "getByNumberAndSession")
-    public SlotContainer get(@WebParam(name = "slotNumber")final int number, @WebParam(name = "session")UUID session) {
+    public Slot get(@WebParam(name = "slotNumber")final int number, @WebParam(name = "session")UUID session) {
         return null;
     }
 
