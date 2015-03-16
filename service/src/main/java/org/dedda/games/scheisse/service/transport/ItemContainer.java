@@ -26,6 +26,19 @@ public class ItemContainer extends EntityContainer{
         return containers;
     }
 
+    public static Item convertBack(final ItemContainer container) {
+        Item item = (Item) container.getEntity();
+        return item;
+    }
+
+    public static List<Item> convertBack(final List<ItemContainer> containers) {
+        List<Item> items = new ArrayList<>(containers.size());
+        for (ItemContainer container : containers) {
+            items.add(convertBack(container));
+        }
+        return items;
+    }
+
     @Override
     public boolean equals(final Object o) {
         if (null == o) {
