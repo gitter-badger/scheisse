@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.gui;
 
-import java.awt.*;
+import java.awt.Graphics2D;
 
 /**
  * Created by dedda on 4/18/14.

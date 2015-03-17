@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.state;
 
-import java.awt.*;
+import java.awt.Graphics2D;
 
 /**
  * Interface for implementing different

@@ -3,7 +3,8 @@ package org.dedda.games.scheisse.io;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.awt.*;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
 import java.util.HashMap;
 

@@ -4,7 +4,7 @@ import org.dedda.games.scheisse.io.FileInput;
 import org.dedda.games.scheisse.tool.Parse;
 import org.junit.Test;
 
-import java.awt.*;
+import java.awt.Dimension;
 import java.io.File;
 import java.util.HashMap;
 

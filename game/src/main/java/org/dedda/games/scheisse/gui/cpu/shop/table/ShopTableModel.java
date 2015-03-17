@@ -14,7 +14,9 @@ import java.util.List;
 /**
  * Created by dedda on 12/1/14.
  */
-public class ShopTableModel extends AbstractTableModel implements InventoryChangeListener {
+public class ShopTableModel
+        extends AbstractTableModel
+        implements InventoryChangeListener {
 
     public static final int ID = 0;
     public static final int SYMBOL = 1;
@@ -57,22 +59,22 @@ public class ShopTableModel extends AbstractTableModel implements InventoryChang
     private ShopTable shopTable;
     private List<Integer> shownCategories;
 
-    public ShopTableModel(ShopTable shopTable) {
+    public ShopTableModel(final ShopTable shopTable) {
         this.shopTable = shopTable;
         this.inventory = shopTable.getInventory();
         inventory.addInventoryChangeListener(this);
         this.shownCategories = new ArrayList<>();
     }
 
-    public int getRowCount() {
+    public final int getRowCount() {
         return shopTable.getOffers().size();
     }
 
-    public int getColumnCount() {
+    public final int getColumnCount() {
         return shownCategories.size();
     }
 
-    public Object getValueAt(int row, int col) {
+    public final Object getValueAt(final int row, final int col) {
         long id = shopTable.getOffers().get(row).itemId;
         Item item = Item.itemForId(id);
         long stock = shopTable.getOffers().get(row).amountAvailable;
@@ -92,12 +94,12 @@ public class ShopTableModel extends AbstractTableModel implements InventoryChang
     }
 
     @Override
-    public boolean isCellEditable(final int row, final int col) {
+    public final boolean isCellEditable(final int row, final int col) {
         return false;
     }
 
     @Override
-    public Class getColumnClass(final int columnIndex) {
+    public final Class getColumnClass(final int columnIndex) {
         int category = shownCategories.get(columnIndex);
         switch (category) {
             case ID: return Long.class;
@@ -113,20 +115,20 @@ public class ShopTableModel extends AbstractTableModel implements InventoryChang
     }
 
     @Override
-    public String getColumnName(int columnIndex) {
+    public final String getColumnName(final int columnIndex) {
         int category = shownCategories.get(columnIndex);
         return HEADERS[category];
     }
 
-    public List<Integer> getShownCategories() {
+    public final List<Integer> getShownCategories() {
         return this.shownCategories;
     }
 
-    public void setShownCategories(List<Integer> shownCategories) {
+    public final void setShownCategories(final List<Integer> shownCategories) {
         this.shownCategories = shownCategories;
     }
 
-    public void enableCategory(final int category) {
+    public final void enableCategory(final int category) {
         if (!shownCategories.contains(category)) {
             shownCategories.add(category);
             Collections.sort(shownCategories);
@@ -135,7 +137,7 @@ public class ShopTableModel extends AbstractTableModel implements InventoryChang
         }
     }
 
-    public void disableCategory(final int category) {
+    public final void disableCategory(final int category) {
         if (shownCategories.contains(new Integer(category))) {
             shownCategories.remove(new Integer(category));
             Collections.sort(shownCategories);
@@ -144,7 +146,7 @@ public class ShopTableModel extends AbstractTableModel implements InventoryChang
         }
     }
 
-    public void inventoryChangeAction() {
+    public final void inventoryChangeAction() {
         fireTableDataChanged();
     }
 }

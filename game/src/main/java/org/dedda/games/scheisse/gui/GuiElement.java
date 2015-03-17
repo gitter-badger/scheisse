@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.gui;
 
-import java.awt.*;
+import java.awt.Point;
 
 /**
  * Created by dedda on 7/17/14.
