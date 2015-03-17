@@ -68,17 +68,17 @@ public class InventoryActionPanel extends JPanel {
     private void initListeners() {
         listeners = new ArrayList<>();
         addButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent actionEvent) {
+            public void actionPerformed(final ActionEvent actionEvent) {
                 add();
             }
         });
         removeButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent actionEvent) {
+            public void actionPerformed(final ActionEvent actionEvent) {
                 remove();
             }
         });
         okButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent actionEvent) {
+            public void actionPerformed(final ActionEvent actionEvent) {
                 ok();
             }
         });

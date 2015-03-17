@@ -79,7 +79,7 @@ public class Game implements State, Runnable {
         map.update();
     }
 
-    public void movePlayer(Point2D.Double location) {
+    public void movePlayer(final Point2D.Double location) {
         throw new UnsupportedOperationException(
                 "moving player not implemented yet"
         );

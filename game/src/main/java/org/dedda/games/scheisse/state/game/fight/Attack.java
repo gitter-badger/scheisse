@@ -21,7 +21,7 @@ public class Attack {
      * @param baseDamage basic damage dealt by attack
      * @param elementalDamage elemental damage dealt for specific elements
      */
-    public Attack(long baseDamage, Map<AttackElement, Long> elementalDamage) {
+    public Attack(final long baseDamage, final Map<AttackElement, Long> elementalDamage) {
         this.baseDamage = baseDamage;
         this.elementalDamage = elementalDamage;
     }

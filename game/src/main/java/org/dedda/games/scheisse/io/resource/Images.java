@@ -33,7 +33,7 @@ public abstract class Images {
             tk.getImage(IMAGE_FOLDER + "game_maximize.png")
     };
 
-    public static Image get(int key) {
+    public static Image get(final int key) {
         return IMAGES[key];
     }
 

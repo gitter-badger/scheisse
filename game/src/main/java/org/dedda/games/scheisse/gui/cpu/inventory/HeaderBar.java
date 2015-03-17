@@ -57,7 +57,7 @@ public class HeaderBar
         categoriesChanged(new CategoriesChangedEvent(-1, category));
     }
 
-    private void categoriesChanged(CategoriesChangedEvent event) {
+    private void categoriesChanged(final CategoriesChangedEvent event) {
         for (CategoriesChangeListener listener : changeListeners) {
             listener.categoriesChanged(event);
         }

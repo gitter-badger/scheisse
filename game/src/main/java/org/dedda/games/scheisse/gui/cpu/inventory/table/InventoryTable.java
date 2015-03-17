@@ -29,7 +29,7 @@ public class InventoryTable extends JScrollPane {
         model = new InventoryTableModel(inventory);
         table = new JTable() {
             @Override
-            public void tableChanged(TableModelEvent event) {
+            public void tableChanged(final TableModelEvent event) {
                 super.tableChanged(event);
                 if (model.getShownCategories().contains(SYMBOL)) {
                     TableColumnModel columnModel = getColumnModel();

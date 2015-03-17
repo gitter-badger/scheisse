@@ -93,7 +93,7 @@ public class InventoryServiceHost implements InventoryService {
     }
 
     @WebMethod(exclude = true)
-    public void setLoginSessionCache(LoginSessionCache loginSessionCache) {
+    public void setLoginSessionCache(final LoginSessionCache loginSessionCache) {
         this.loginSessionCache = loginSessionCache;
     }
 }
