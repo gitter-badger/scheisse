@@ -14,11 +14,11 @@ import java.io.PrintWriter;
  */
 public class Index extends BasicServlet{
 
-    private static final String title = "Home";
+    private static final String TITLE = "Home";
     
     @Override
     protected void printHead(final HttpServletRequest request, final PrintWriter out) {
-        out.println("<title>" + title + "</title>");
+        out.println("<TITLE>" + TITLE + "</TITLE>");
         out.println("<link rel=\"stylesheet\" type=\"test/css\" href=\"resources/css/base.css\"/>");
     }
 

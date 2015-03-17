@@ -21,7 +21,7 @@ public abstract class Images {
     public static final int GAME_MINIMIZE = 6;
     public static final int GAME_MAXIMIZE = 7;
 
-    private static final Image[] images = new Image[]{
+    private static final Image[] IMAGES = new Image[]{
             tk.getImage(IMAGE_FOLDER + "main_menu_start.png"),
             tk.getImage(IMAGE_FOLDER + "main_menu_options.png"),
             tk.getImage(IMAGE_FOLDER + "main_menu_exit.png"),
@@ -34,7 +34,7 @@ public abstract class Images {
     };
 
     public static Image get(int key) {
-        return images[key];
+        return IMAGES[key];
     }
 
 }

@@ -11,7 +11,7 @@ public class Main {
     private static int width = 100;
     private static int height = 50;
     private static int interval = 2;
-    public static final String version = "0.01a";
+    public static final String VERSION = "0.01a";
 
     public static void main(final String[] args) {
         Main.args = args;
@@ -23,7 +23,7 @@ public class Main {
             String argument = args[i];
             if (argument.equals("--gui") || argument.equals("-g")) {
                 gui = true;
-            } else if (argument.equals("--version") || argument.equals("-v")) {
+            } else if (argument.equals("--VERSION") || argument.equals("-v")) {
                 printVersion = true;
             } else if (argument.equals("--width") || argument.equals("-w")) {
                 i++;
@@ -37,7 +37,7 @@ public class Main {
             }
         }
         if (printVersion) {
-            System.out.println("Scheisse Performance Monitor version " + version);
+            System.out.println("Scheisse Performance Monitor VERSION " + VERSION);
         }
         System.out.println(gui ? "" : "no" + " gui");
         System.out.println("width: " + width);
