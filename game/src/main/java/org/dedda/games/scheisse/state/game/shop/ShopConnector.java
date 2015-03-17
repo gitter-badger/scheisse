@@ -66,7 +66,7 @@ public class ShopConnector {
     }
 
     /**
-     * Telling the server, you bought something and returns the price to pay
+     * Telling the server, you bought something and returns the price to pay.
      * @param itemId id of the item you bought
      * @param number number of items you bought
      * @return price to pay

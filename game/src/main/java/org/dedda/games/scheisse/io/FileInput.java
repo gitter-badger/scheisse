@@ -49,7 +49,7 @@ public class FileInput {
     }
 
     public int[] readArray(final File file) {
-        int data[] = new int[(int) file.length()];
+        int[] data = new int[(int) file.length()];
         FileReader fileReader = null;
         try {
             fileReader = new FileReader(file);

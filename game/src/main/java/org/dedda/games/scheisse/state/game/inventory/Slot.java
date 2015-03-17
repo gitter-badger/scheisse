@@ -19,7 +19,7 @@ public class Slot {
 
     /**
      *
-     * @param itemId Id of the item
+     * @param itemId Id of the item.
      */
     public Slot(final long itemId, final Inventory inventory) {
         this.dummy = Item.forId(itemId);
@@ -30,7 +30,7 @@ public class Slot {
      *
      * @return is there any space left in here?
      */
-    public boolean canAdd() {
+    public final boolean canAdd() {
         return numberOfItems < dummy.maxStackNumber();
     }
 
@@ -38,7 +38,7 @@ public class Slot {
      *
      * @param item org.dedda.games.scheisse.entity.item.Item
      */
-    public void add (final Item item) {
+    public final void add (final Item item) {
         if (item.getClass().equals(dummy.getClass())) {
             if (canAdd()) {
                 numberOfItems++;
@@ -48,9 +48,9 @@ public class Slot {
     }
 
     /**
-     * removes one from the item counter
+     * removes one from the item counter.
      */
-    public void remove() {
+    public final void remove() {
         if (numberOfItems > 0) {
             numberOfItems--;
         }
@@ -61,7 +61,7 @@ public class Slot {
      *
      * @param dummy org.dedda.games.scheisse.entity.item.Item
      */
-    public void setDummy(final Item dummy) {
+    public final void setDummy(final Item dummy) {
         this.dummy = dummy;
         inventory.triggerChangeEvent();
     }
@@ -70,7 +70,7 @@ public class Slot {
      *
      * @return org.dedda.games.scheisse.entity.item.Item
      */
-    public Item getDummy() {
+    public final Item getDummy() {
         return dummy;
     }
 
@@ -78,7 +78,7 @@ public class Slot {
      *
      * @return int
      */
-    public long getNumberOfItems() {
+    public final long getNumberOfItems() {
         return numberOfItems;
     }
 
@@ -86,13 +86,13 @@ public class Slot {
      *
      * @param numberOfItems int
      */
-    public void setNumberOfItems(final long numberOfItems) {
+    public final void setNumberOfItems(final long numberOfItems) {
         this.numberOfItems = numberOfItems;
         inventory.triggerChangeEvent();
     }
 
     @Override
-    public boolean equals(final Object object) {
+    public final boolean equals(final Object object) {
         if (object instanceof Slot) {
             Slot slot = (Slot) object;
             return slot.dummy.equals(this.dummy)

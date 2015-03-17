@@ -26,7 +26,7 @@ import java.io.File;
 public class Main {
 
     /**
-     * Version number of the program
+     * Version number of the program.
      */
     public static final String VERSION = "00_01a";
     public static final String URLEXT_VERSION = "version.dgm";
@@ -74,7 +74,7 @@ public class Main {
     }
 
     /**
-     * Parsing the program arguments
+     * Parsing the program arguments.
      */
     private static void parseArgs() {
         for (int i = 0; i < args.length; i++) {
@@ -94,7 +94,7 @@ public class Main {
     }
 
     /**
-     * cleanup and exiting
+     * cleanup and exiting.
      * @param exitCode
      */
     private static void exit(final int exitCode) {
@@ -110,7 +110,7 @@ public class Main {
     }
 
     /**
-     * switch state of the program
+     * switch state of the program.
      * @param currentState State - state to switch to
      */
     public static void setCurrentState(final State currentState) {
@@ -126,7 +126,7 @@ public class Main {
     }
 
     /**
-     * enable / disable debug information
+     * enable / disable debug information.
      * @param debug boolean - debug on / off
      */
     public static void setDebug(final boolean debug) {

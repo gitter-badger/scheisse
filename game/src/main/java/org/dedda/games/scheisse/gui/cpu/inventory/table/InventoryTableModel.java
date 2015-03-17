@@ -64,15 +64,15 @@ public class InventoryTableModel
         this.shownCategories = new ArrayList<Integer>();
     }
 
-    public int getRowCount() {
+    public final int getRowCount() {
         return inventory.getSize();
     }
 
-    public int getColumnCount() {
+    public final int getColumnCount() {
         return shownCategories.size();
     }
 
-    public Object getValueAt(final int row, final int col) {
+    public final Object getValueAt(final int row, final int col) {
         Slot slot = inventory.getSlots().get(row);
         Item item = slot.getDummy();
         long number = inventory.getSlots().get(row).getNumberOfItems();
@@ -91,17 +91,17 @@ public class InventoryTableModel
         }
     }
 
-    public Slot getSlotInRow(final int row) {
+    public final Slot getSlotInRow(final int row) {
         return inventory.getSlots().get(row);
     }
 
     @Override
-    public boolean isCellEditable(final int row, final int col) {
+    public final boolean isCellEditable(final int row, final int col) {
         return false;
     }
 
     @Override
-    public Class getColumnClass(final int columnIndex) {
+    public final Class getColumnClass(final int columnIndex) {
         int category = getShownCategories().get(columnIndex);
         switch (category) {
             case ID: return Long.class;
@@ -116,20 +116,20 @@ public class InventoryTableModel
     }
 
     @Override
-    public String getColumnName(final int columnIndex) {
+    public final String getColumnName(final int columnIndex) {
         int category = getShownCategories().get(columnIndex);
         return HEADERS[category];
     }
 
-    public List<Integer> getShownCategories() {
+    public final List<Integer> getShownCategories() {
         return this.shownCategories;
     }
 
-    public void setShownCategories(final List<Integer> shownCategories) {
+    public final void setShownCategories(final List<Integer> shownCategories) {
         this.shownCategories = shownCategories;
     }
 
-    public void enableCategory(final int category) {
+    public final void enableCategory(final int category) {
         if (!shownCategories.contains(category)) {
             shownCategories.add(category);
             Collections.sort(shownCategories);
@@ -138,7 +138,7 @@ public class InventoryTableModel
         }
     }
 
-    public void disableCategory(final int category) {
+    public final void disableCategory(final int category) {
         if (shownCategories.contains(new Integer(category))) {
             shownCategories.remove(new Integer(category));
             Collections.sort(shownCategories);
@@ -147,11 +147,11 @@ public class InventoryTableModel
         }
     }
 
-    public void inventoryChangeAction() {
+    public final void inventoryChangeAction() {
         fireTableDataChanged();
     }
 
-    public void categoriesChanged(final CategoriesChangedEvent event) {
+    public final void categoriesChanged(final CategoriesChangedEvent event) {
         if (event.ADDED != -1) {
             enableCategory(event.ADDED);
         }

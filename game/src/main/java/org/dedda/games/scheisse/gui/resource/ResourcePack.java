@@ -47,8 +47,7 @@ public class ResourcePack {
     }
 
     public static void registerPack(final ResourcePack pack)
-            throws ResourcePackException
-    {
+            throws ResourcePackException {
         String name = pack.name;
         if (installedPacks.containsKey(name)) {
             throw new ResourcePackException(ALREADY_REGISTERED);

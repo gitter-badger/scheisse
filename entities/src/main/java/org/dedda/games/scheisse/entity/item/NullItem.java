@@ -7,7 +7,7 @@ package org.dedda.games.scheisse.entity.item;
 public class NullItem extends Item implements Stackable {
 
     /**
-     * Default constructor for {@link org.dedda.games.scheisse.entity.item.NullItem}
+     * Default constructor for {@link org.dedda.games.scheisse.entity.item.NullItem}.
      */
     public NullItem() {
         //super(0, "NULL", 0, ItemCategory.OTHER, null);

@@ -174,12 +174,12 @@ public class Slot extends Entity implements TestableEntity {
     }
 
     @Override
-    public long getMinTestId() {
+    public final long getMinTestId() {
         return -20;
     }
 
     @Override
-    public long getMaxTestId() {
+    public final long getMaxTestId() {
         return -1;
     }
 

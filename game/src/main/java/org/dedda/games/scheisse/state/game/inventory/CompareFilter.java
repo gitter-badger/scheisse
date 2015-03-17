@@ -25,8 +25,7 @@ public class CompareFilter extends ItemFilter {
     public CompareFilter(
             final int category,
             final Item target,
-            final int mode)
-    {
+            final int mode) {
         this.category = category;
         this.target = target;
         this.mode = mode;

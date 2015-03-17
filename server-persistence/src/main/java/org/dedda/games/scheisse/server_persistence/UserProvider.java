@@ -78,7 +78,7 @@ public class UserProvider {
     }
     
     /**
-     * Saves a new {@link User} to the database
+     * Saves a new {@link User} to the database.
      * @param user
      * @return id of the new {@link User}, -1 if not successful
      */

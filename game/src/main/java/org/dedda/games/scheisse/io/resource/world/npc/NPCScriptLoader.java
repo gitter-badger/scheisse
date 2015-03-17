@@ -97,7 +97,7 @@ public class NPCScriptLoader extends FileInput {
     }
 
     /**
-     * Registers a new jump point to the {@link HashMap} of jump points
+     * Registers a new jump point to the {@link HashMap} of jump points.
      *
      * @param line Line with the name of the jump point
      * @param index Location of this jump point

@@ -36,7 +36,7 @@ import java.awt.Image;
 public class Item extends org.dedda.games.scheisse.entity.Entity implements TestableEntity {
 
     /**
-     * item id
+     * item id.
      */
     @Id
     @NotNull
@@ -50,7 +50,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
     private long id;
 
     /**
-     * default item price / value
+     * default item price / value.
      */
     @NotNull
     @Basic(optional = false)
@@ -61,7 +61,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
     private long price;
 
     /**
-     * item name
+     * item name.
      */
     @NotNull
     @Basic(optional = false)
@@ -73,7 +73,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
     private String name;
 
     /**
-     * item type
+     * item type.
      */
     @NotNull
     @Basic(optional = false)
@@ -84,7 +84,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
     private String type;
 
     /**
-     * highest amount of damage to be dealt with this item
+     * highest amount of damage to be dealt with this item.
      */
     @Column(
             name = "attack"
@@ -92,7 +92,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
     private long attack;
 
     /**
-     * highest amount of damage that can be absorbed by this item
+     * highest amount of damage that can be absorbed by this item.
      */
     @Column(
             name = "armor"
@@ -100,12 +100,12 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
     private long armor;
 
     /**
-     * sprite to be rendered in inventory
+     * sprite to be rendered in inventory.
      */
     private Image sprite;
 
     /**
-     * item category
+     * item category.
      * @see ItemCategory
      */
     private ItemCategory category;
