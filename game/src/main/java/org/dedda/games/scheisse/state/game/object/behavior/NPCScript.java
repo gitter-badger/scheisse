@@ -8,7 +8,7 @@ import org.dedda.games.scheisse.state.game.object.npc.NPC;
 public class NPCScript {
 
     private final NPC npc;
-    private NPCScriptAction action[];
+    private NPCScriptAction[] action;
     private int currentAction = 0;
 
     public NPCScript(final NPC npc) {

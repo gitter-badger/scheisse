@@ -12,7 +12,7 @@ public class Door {
 
     private Point location;
     private Dimension size;
-    private Direction passingDirection[];
+    private Direction[] passingDirection;
     private boolean locked;
 
     public Door(

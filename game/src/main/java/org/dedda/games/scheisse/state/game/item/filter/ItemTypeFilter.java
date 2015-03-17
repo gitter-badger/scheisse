@@ -8,9 +8,9 @@ import org.dedda.games.scheisse.state.game.item.ItemType;
  */
 public class ItemTypeFilter extends ItemFilter {
 
-    public final ItemType itemTypes[];
+    public final ItemType[] itemTypes;
 
-    public ItemTypeFilter(final ItemType itemTypes[]) {
+    public ItemTypeFilter(final ItemType[] itemTypes) {
         this.itemTypes = itemTypes;
     }
 

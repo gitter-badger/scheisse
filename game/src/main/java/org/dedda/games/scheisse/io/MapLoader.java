@@ -101,7 +101,7 @@ public class MapLoader extends FileInput {
             final ArrayList<String> soilData,
             final Dimension size
     ) {
-        Soil.Type soil[][] = new Soil.Type[size.width][size.height];
+        Soil.Type[][] soil = new Soil.Type[size.width][size.height];
         String number = "";
         for (int y = 0; y < soilData.size(); y++) {
             String line = soilData.get(y);

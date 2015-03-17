@@ -16,9 +16,9 @@ public class Map {
 
     private Dimension size;
     private Dimension chunkGridSize;
-    private Chunk chunk[][];
+    private Chunk[][] chunk;
     private ArrayList<MapObject> objects;
-    private Quest quest[];
+    private Quest[] quest;
 
     /**
      *
@@ -145,7 +145,7 @@ public class Map {
      *
      * @param soil int[][]
      */
-    public void setSoil(final Soil.Type soil[][]) {
+    public void setSoil(final Soil.Type[][] soil) {
         for (int x = 0; x < size.width; x++) {
             for (int y = 0; y < size.height; y++) {
                 setSoil(new Point(x, y), soil[x][y]);
@@ -158,7 +158,7 @@ public class Map {
      * @return int[][]
      */
     public Soil.Type[][] getSoil() {
-        Soil.Type soil[][] = new Soil.Type[size.width][size.height];
+        Soil.Type[][] soil = new Soil.Type[size.width][size.height];
         for (int x = 0; x < size.width; x++) {
             for (int y = 0; y < size.height; y++) {
                 soil[x][y] = chunk[x/CHUNK_SIZE][y/CHUNK_SIZE]

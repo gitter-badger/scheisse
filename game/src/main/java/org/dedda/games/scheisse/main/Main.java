@@ -35,7 +35,7 @@ public class Main {
      * everything is installed properly.
      */
     public static final String INSTALLATION_FOLDER = "game_files/";
-    public static final String INSTALLATION_FILES[] = {"version.dgm",
+    public static final String[] INSTALLATION_FILES = {"version.dgm",
                                                         "conf.dgm"};
     /**
      * URL where to find the pi main server for downloading files and
@@ -47,14 +47,14 @@ public class Main {
     private static State currentState;
     private static boolean installed;
     private static boolean newestInstalled;
-    private static String args[];
+    private static String[] args;
 
     /**
      * Entry point of the program.
      *
      * @param args String[] - system args
      */
-    public static void main(final String args[]) {
+    public static void main(final String[] args) {
 
         new ItemLoader().loadAll(new File(Resource.ITEM_FOLDER));
         Game game = new Game();

@@ -42,7 +42,7 @@ public class Unzip {
      */
     public ArrayList<File> unzip() {
         ArrayList<File> files = new ArrayList<>();
-        byte buffer[] = new byte[1024];
+        byte[] buffer = new byte[1024];
         ZipInputStream zipInputStream;
         try {
             zipInputStream = new ZipInputStream(new FileInputStream(source));

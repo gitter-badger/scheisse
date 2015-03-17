@@ -38,7 +38,7 @@ public class FileOutput {
         }
     }
 
-    public void writeArray(final int data[]) {
+    public void writeArray(final int[] data) {
         for (int i = 0; i < data.length; i++) {
             try {
                 writer.write(data[i]);
@@ -53,7 +53,7 @@ public class FileOutput {
         }
     }
 
-    public void writerCharArray(final char data[]) {
+    public void writerCharArray(final char[] data) {
         try {
             writer.write(data);
             writer.flush();
@@ -62,7 +62,7 @@ public class FileOutput {
         }
     }
 
-    public void writeLines(final String lines[]) {
+    public void writeLines(final String[] lines) {
         for (int i = 0; i < lines.length; i++) {
             try {
                 writer.write(lines[i] + '\n');

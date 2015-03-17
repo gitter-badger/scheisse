@@ -42,7 +42,7 @@ public class NPCScriptLoader extends FileInput {
      */
     public NPCScript loadNPCScript(final File file, final NPC npc) {
         npcScript = new NPCScript(npc);
-        String lines[] = getLines(file);
+        String[] lines = getLines(file);
         ArrayList<NPCScriptAction> npcScriptAction =
                 new ArrayList<NPCScriptAction>();
         jumpPoints = new HashMap<String, Integer>();
@@ -53,7 +53,7 @@ public class NPCScriptLoader extends FileInput {
             }
             npcScriptAction.add(parseAction(lines[i]));
         }
-        NPCScriptAction npcScriptActionArray[]
+        NPCScriptAction[] npcScriptActionArray
                 = new NPCScriptAction[npcScriptAction.size()];
         for (int i = 0; i < npcScriptActionArray.length; i++) {
             npcScriptActionArray[i] = npcScriptAction.get(i);
@@ -69,7 +69,7 @@ public class NPCScriptLoader extends FileInput {
      * @return Parsed {@link NPCScriptAction}
      */
     public NPCScriptAction parseAction(final String line) {
-        String words[] = line.split(" ");
+        String[] words = line.split(" ");
         if (words[0].equals("walk")) {
             return getNPCWalk(words);
         } else if (words[0].equals("walkTo")) {
@@ -113,7 +113,7 @@ public class NPCScriptLoader extends FileInput {
      * @param words Array of words from the code line
      * @return Parsed {@link NPCWalk} action
      */
-    private NPCWalk getNPCWalk(final String words[]) {
+    private NPCWalk getNPCWalk(final String[] words) {
         NPCWalk npcWalk = new NPCWalk(npcScript);
         npcWalk.setAmount(Parse.toDouble(words[1]));
         npcWalk.setDirection(Parse.toDouble(words[2]));
@@ -128,7 +128,7 @@ public class NPCScriptLoader extends FileInput {
      * @return Parsed {@link NPCWalkToDestination} action
      */
     private NPCWalkToDestination getNPCWaltToDestination(
-            final String words[]
+            final String[] words
     ) {
         NPCWalkToDestination npcWalkToDestination
                 = new NPCWalkToDestination(npcScript);
@@ -143,7 +143,7 @@ public class NPCScriptLoader extends FileInput {
      * @param words Array of words from the code line
      * @return Parsed {@link NPCJumpIfEqual} action
      */
-    private NPCJumpIfEqual getNpcJumpIfEqual(final String words[]) {
+    private NPCJumpIfEqual getNpcJumpIfEqual(final String[] words) {
         NPCJumpIfEqual npcJumpIfEqual = new NPCJumpIfEqual(npcScript);
         npcJumpIfEqual.setExpected(words[1]);
         npcJumpIfEqual.setActual(words[2]);

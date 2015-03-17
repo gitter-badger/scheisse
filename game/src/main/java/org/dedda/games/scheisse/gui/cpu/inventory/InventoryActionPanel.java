@@ -90,8 +90,8 @@ public class InventoryActionPanel extends JPanel {
         InventoryTable actionTable = inventoryTablePanel.getActionTable();
         double amountDouble = (Double) numberSpinner.getModel().getValue();
         int amount = (int) amountDouble;
-        int rows[] = inventoryTable.getTable().getSelectedRows();
-        long ids[] = new long[rows.length];
+        int[] rows = inventoryTable.getTable().getSelectedRows();
+        long[] ids = new long[rows.length];
         InventoryTableModel model = inventoryTable.getModel();
         for (int i = 0; i < ids.length; i++) {
             ids[i] = model.getSlotInRow(rows[i]).getDummy().getId();
@@ -112,8 +112,8 @@ public class InventoryActionPanel extends JPanel {
         InventoryTable actionTable = inventoryTablePanel.getActionTable();
         double amountDouble = (Double) numberSpinner.getModel().getValue();
         int amount = (int) amountDouble;
-        int rows[] = actionTable.getTable().getSelectedRows();
-        long ids[] = new long[rows.length];
+        int[] rows = actionTable.getTable().getSelectedRows();
+        long[] ids = new long[rows.length];
         InventoryTableModel model = actionTable.getModel();
         for (int i = 0; i < ids.length; i++) {
             ids[i] = model.getSlotInRow(rows[i]).getDummy().getId();
@@ -152,7 +152,7 @@ public class InventoryActionPanel extends JPanel {
     ) {
         InventoryTable inventoryTable =
                 inventoryTablePanel.getInventoryTable();
-        int selectedRows[] = inventoryTable.getTable().getSelectedRows();
+        int[] selectedRows = inventoryTable.getTable().getSelectedRows();
         long minAmount = 1;
         for (int row : selectedRows) {
             InventoryTableModel model = inventoryTable.getModel();
@@ -170,7 +170,7 @@ public class InventoryActionPanel extends JPanel {
             final ListSelectionEvent listSelectionEvent
     ) {
         InventoryTable actionTable = inventoryTablePanel.getActionTable();
-        int selectedRows[] = actionTable.getTable().getSelectedRows();
+        int[] selectedRows = actionTable.getTable().getSelectedRows();
         long minAmount = 1;
         for (int row : selectedRows) {
             InventoryTableModel model;

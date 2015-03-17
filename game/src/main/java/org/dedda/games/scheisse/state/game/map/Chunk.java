@@ -15,7 +15,7 @@ public class Chunk {
     private Point minLocation;
     private Point maxLocation;
     private ArrayList<MapObject> objects;
-    private Soil.Type soil[][];
+    private Soil.Type[][] soil;
 
     /**
      *

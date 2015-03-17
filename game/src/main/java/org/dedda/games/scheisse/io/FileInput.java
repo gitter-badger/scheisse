@@ -72,7 +72,7 @@ public class FileInput {
      * @return String[]
      */
     public String[] getLines(final File file) {
-        String lines[];
+        String[] lines;
         ArrayList<String> lineList = new ArrayList<>();
         FileInputStream fis = null;
         try {
@@ -99,7 +99,7 @@ public class FileInput {
     }
 
     public HashMap<String, String> getMap(final File file) {
-        String lines[] = getLines(file);
+        String[] lines = getLines(file);
         HashMap<String, String> map = new HashMap<>();
         for (String line : lines) {
             String key = line.substring(0, line.indexOf(':'));
@@ -116,7 +116,7 @@ public class FileInput {
         if (!escape) {
             return getMap(file);
         }
-        String lines[] = getLines(file);
+        String[] lines = getLines(file);
         HashMap<String, String> map = new HashMap<>();
         for (String line : lines) {
             if (!line.startsWith("#")) {
