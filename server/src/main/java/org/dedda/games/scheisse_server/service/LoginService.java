@@ -32,7 +32,7 @@ public class LoginService {
     private LoginCache loginCache;
 
     @WebMethod(operationName = "login")
-    public String login(
+    public final String login(
             @WebParam(name = "loginContainer")final LoginContainer loginContainer){
         String username = loginContainer.name;
         String password = loginContainer.password;
@@ -53,7 +53,7 @@ public class LoginService {
     }
     
     @WebMethod(operationName = "register")
-    public String register(
+    public final String register(
             @WebParam(name = "email") final String email, 
             @WebParam(name = "username") final String username, 
             @WebParam(name = "password") final String password) {
@@ -61,27 +61,27 @@ public class LoginService {
     }
     
     @WebMethod(operationName = "logout")
-    public void logout(@WebParam(name = "session") final String sessionId) {
+    public final void logout(@WebParam(name = "session") final String sessionId) {
         
     }
 
     @WebMethod(exclude = true)
-    public UserProvider getUserProvider() {
+    public final UserProvider getUserProvider() {
         return userProvider;
     }
 
     @WebMethod(exclude = true)
-    public void setUserProvider(final UserProvider userProvider) {
+    public final void setUserProvider(final UserProvider userProvider) {
         this.userProvider = userProvider;
     }
 
     @WebMethod(exclude = true)
-    public LoginCache getLoginCache() {
+    public final LoginCache getLoginCache() {
         return loginCache;
     }
 
     @WebMethod(exclude = true)
-    public void setLoginCache(final LoginCache LoginCache) {
+    public final void setLoginCache(final LoginCache LoginCache) {
         this.loginCache = LoginCache;
     }
     

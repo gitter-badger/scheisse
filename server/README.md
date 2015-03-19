@@ -1,4 +1,4 @@
-### Scheisse Server
+# Scheisse Server
 
 Server backend for the game.
 
@@ -10,7 +10,7 @@ Server backend for the game.
 
 * Web interface: All user specific data like inventory or shopping can be done in a web browser.
 
-# Item Loading:
+### Item Loading:
 
 Loading Items from the Web Service is easy and pretty much intuitive. You only need the id of the Item you want to load
 or you can just load all Items at once. Here's an example:

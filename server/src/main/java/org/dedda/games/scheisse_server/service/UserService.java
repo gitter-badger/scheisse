@@ -29,39 +29,39 @@ public class UserService {
     private UserProvider userProvider;
     
     @WebMethod(operationName = "getUser")
-    public UserContainer getUser(@WebParam(name = "id") final long id) {
+    public final UserContainer getUser(@WebParam(name = "id") final long id) {
         UserContainer user = new UserContainer(userProvider.getUser(id));
         return user;
     }
     
     @WebMethod(operationName = "getUserWithPassword")
-    public UserContainer getUserWithLogin(@WebParam(name = "id") final long id, @WebParam(name = "password") final String password) {
+    public final UserContainer getUserWithLogin(@WebParam(name = "id") final long id, @WebParam(name = "password") final String password) {
         return null;
     }
     
     @WebMethod(operationName = "changePassword")
-    public boolean changePassword(@WebParam(name = "id") final long id, @WebParam(name = "oldPassword") final String oldPassword, @WebParam(name = "newPassword") final String password) {
+    public final boolean changePassword(@WebParam(name = "id") final long id, @WebParam(name = "oldPassword") final String oldPassword, @WebParam(name = "newPassword") final String password) {
         
         return false;
     }
     
     @WebMethod(operationName = "getContacts")
-    public UserContainer[] getContacts(@WebParam(name = "id") final long id) {
+    public final UserContainer[] getContacts(@WebParam(name = "id") final long id) {
         return null;
     }
 
     @WebMethod(operationName = "getInventoryFor")
-    public InventoryContainer getInventoryFor(final long userId) {
+    public final InventoryContainer getInventoryFor(final long userId) {
         return null;
     }
     
     @WebMethod(exclude = true)
-    public UserProvider getUserProvider() {
+    public final UserProvider getUserProvider() {
         return userProvider;
     }
 
     @WebMethod(exclude = true)
-    public void setUserProvider(final UserProvider userProvider) {
+    public final void setUserProvider(final UserProvider userProvider) {
         this.userProvider = userProvider;
     }
     

@@ -33,14 +33,6 @@ public class Armor extends Item implements Wearable, Stackable {
     }
 
     /**
-     *
-     * @return long
-     */
-    public final long getArmor() {
-        return armor;
-    }
-
-    /**
      * {@inheritDoc}
      */
     @Override

@@ -22,15 +22,15 @@ public class ItemList {
     @Inject
     private ItemProvider provider;
 
-    public List<Item> getItems() {
+    public final List<Item> getItems() {
         return provider.getAllItems();
     }
 
-    public ItemProvider getProvider() {
+    public final ItemProvider getProvider() {
         return provider;        
     }
 
-    public void setProvider(final ItemProvider provider) {
+    public final void setProvider(final ItemProvider provider) {
         this.provider = provider;
     }
     

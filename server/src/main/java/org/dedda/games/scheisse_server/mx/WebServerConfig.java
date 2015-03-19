@@ -16,28 +16,28 @@ public class WebServerConfig implements WebServiceConfigMXBean {
     private boolean loginEnabled;
 
     @PostConstruct
-    public void init() {
+    public final void init() {
         webServiceEnabled = true;
         loginEnabled = true;
     }
 
     @Override
-    public boolean isWebServiceEnabled() {
+    public final boolean isWebServiceEnabled() {
         return webServiceEnabled;
     }
 
     @Override
-    public void setWebServiceEnabled(final boolean enabled) {
+    public final void setWebServiceEnabled(final boolean enabled) {
         webServiceEnabled = enabled;
     }
 
     @Override
-    public boolean isLoginEnabled() {
+    public final boolean isLoginEnabled() {
         return loginEnabled;
     }
 
     @Override
-    public void setLoginEnabled(final boolean enabled) {
+    public final void setLoginEnabled(final boolean enabled) {
         loginEnabled = enabled;
     }
 

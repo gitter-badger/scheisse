@@ -20,7 +20,7 @@ public class ContextLifetimeListener implements ServletContextListener {
     private ObjectName webServerConfigName = null;
 
     @Override
-    public void contextInitialized(final ServletContextEvent servletContextEvent) {
+    public final void contextInitialized(final ServletContextEvent servletContextEvent) {
         MBeanServer mBeanServer = ManagementFactory.getPlatformMBeanServer();
         try {
             webServerConfigName = new ObjectName(
@@ -31,7 +31,7 @@ public class ContextLifetimeListener implements ServletContextListener {
     }
 
     @Override
-    public void contextDestroyed(final ServletContextEvent servletContextEvent) {
+    public final void contextDestroyed(final ServletContextEvent servletContextEvent) {
         MBeanServer mBeanServer = ManagementFactory.getPlatformMBeanServer();
         try {
             webServerConfigName = new ObjectName(

@@ -28,7 +28,7 @@ public class LoginCache {
     private Map<Long, Session> sessionMap;
     
     @PostConstruct
-    public void init() {
+    public final void init() {
         sessionMap = new HashMap<>();
     }
     

@@ -218,7 +218,7 @@ public class Inventory extends Entity implements TestableEntity {
      * {@inheritDoc}
      */
     @Override
-    public long getMinTestId() {
+    public final long getMinTestId() {
         return -1;
     }
 
@@ -226,7 +226,7 @@ public class Inventory extends Entity implements TestableEntity {
      * {@inheritDoc}
      */
     @Override
-    public long getMaxTestId() {
+    public final long getMaxTestId() {
         return -1;
     }
 

@@ -47,7 +47,7 @@ public class Weapon extends Item implements Wearable, Holdeable, Stackable {
      * {@inheritDoc}
      */
     @Override
-    public int maxStackNumber() {
+    public final int maxStackNumber() {
         return 1;
     }
 
@@ -60,7 +60,7 @@ public class Weapon extends Item implements Wearable, Holdeable, Stackable {
      * @param sprite
      * @return registered {@link org.dedda.games.scheisse.entity.item.Weapon}
      */
-    public static Weapon register(
+    public final static Weapon register(
             final long id,
             final String name,
             final long value,

@@ -22,7 +22,7 @@ public class NullItem extends Item implements Stackable {
      * {@inheritDoc}
      */
     @Override
-    public int maxStackNumber() {
+    public final int maxStackNumber() {
         return 1;
     }
 }

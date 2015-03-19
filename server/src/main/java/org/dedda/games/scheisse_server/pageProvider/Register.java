@@ -32,11 +32,11 @@ public class Register implements Serializable{
     private UserProvider userProvider;
     
     @PostConstruct
-    public void init() {
+    public final void init() {
         reset();
     }
     
-    public String register() {
+    public final String register() {
         if (!checkName() || !checkEmail() || !checkPassword()) {
             reset();
             return REGISTER;
@@ -49,7 +49,7 @@ public class Register implements Serializable{
         return INDEX;
     }
 
-    private boolean checkName() {
+    private final boolean checkName() {
         System.out.println("name: " + name);
         if (name == null || "".equals(name)) {
             return false;
@@ -57,7 +57,7 @@ public class Register implements Serializable{
         return true;
     }
     
-    private boolean checkPassword() {
+    private final boolean checkPassword() {
         System.out.println("password: " + password);
         if (password == null || "".equals(password)) {
             return false;
@@ -65,7 +65,7 @@ public class Register implements Serializable{
         return false;
     }
     
-    private boolean checkEmail() {
+    private final boolean checkEmail() {
         System.out.println("email: " + email);
         if (email == null || "".equals(email)) {
             return false;
@@ -73,33 +73,33 @@ public class Register implements Serializable{
         return false;
     }
     
-    private void reset() {
+    private final void reset() {
         name = "";
         email = "";
         password = "";
     }
     
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public void setName(final String name) {
+    public final void setName(final String name) {
         this.name = name;
     }
 
-    public String getPassword() {
+    public final String getPassword() {
         return password;
     }
 
-    public void setPassword(final String password) {
+    public final void setPassword(final String password) {
         this.password = password;
     }
 
-    public String getEmail() {
+    public final String getEmail() {
         return email;
     }
 
-    public void setEmail(final String email) {
+    public final void setEmail(final String email) {
         this.email = email;
     }
     

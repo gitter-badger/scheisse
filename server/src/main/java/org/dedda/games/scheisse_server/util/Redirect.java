@@ -16,7 +16,7 @@ import javax.inject.Named;
 @Stateless
 public class Redirect {
     
-    public String getUserList(){
+    public final String getUserList(){
         return "userList";
     }
     

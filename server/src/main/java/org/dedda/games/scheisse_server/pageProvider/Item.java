@@ -24,37 +24,37 @@ public class Item {
     
     private org.dedda.games.scheisse.entity.item.Item selected;
 
-    public ItemProvider getProvider() {
+    public final ItemProvider getProvider() {
         return provider;
     }
 
-    public void setProvider(final ItemProvider provider) {
+    public final void setProvider(final ItemProvider provider) {
         this.provider = provider;
     }
 
-    public String show() {
+    public final String show() {
         selected = provider.getItem(id);
         return "item";
     }
     
-    public String show(final long id){
+    public final String show(final long id){
         selected = provider.getItem(id);
         return "item";
     }
     
-    public org.dedda.games.scheisse.entity.item.Item getSelected() {
+    public final org.dedda.games.scheisse.entity.item.Item getSelected() {
         return selected;
     }
 
-    public void setSelected(final org.dedda.games.scheisse.entity.item.Item selected) {
+    public final void setSelected(final org.dedda.games.scheisse.entity.item.Item selected) {
         this.selected = selected;
     }
 
-    public long getId() {
+    public final long getId() {
         return id;
     }
 
-    public void setId(final long id) {
+    public final void setId(final long id) {
         this.id = id;
     }
 

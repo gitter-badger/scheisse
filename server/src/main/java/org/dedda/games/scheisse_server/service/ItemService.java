@@ -30,12 +30,12 @@ public class ItemService {
     private ItemProvider itemProvider;
     
     @WebMethod(operationName = "getItem")
-    public ItemContainer getItem(@WebParam(name = "id") final long id) {
+    public final ItemContainer getItem(@WebParam(name = "id") final long id) {
         return new ItemContainer(itemProvider.getItem(id));
     }
     
     @WebMethod(operationName = "getAllItems")
-    public ItemContainer[] getAllItems() {
+    public final ItemContainer[] getAllItems() {
         List<Item> items = itemProvider.getAllItems();
         ItemContainer[] containers = new ItemContainer[items.size()];
         for (int i = 0; i < items.size(); i++) {
@@ -45,12 +45,12 @@ public class ItemService {
     }
 
     @WebMethod(exclude = true)
-    public ItemProvider getItemProvider() {
+    public final ItemProvider getItemProvider() {
         return itemProvider;
     }
 
     @WebMethod(exclude = true)
-    public void setItemProvider(final ItemProvider itemProvider) {
+    public final void setItemProvider(final ItemProvider itemProvider) {
         this.itemProvider = itemProvider;
     }
     

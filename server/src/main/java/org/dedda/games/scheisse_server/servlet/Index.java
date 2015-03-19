@@ -17,13 +17,13 @@ public class Index extends BasicServlet{
     private static final String TITLE = "Home";
     
     @Override
-    protected void printHead(final HttpServletRequest request, final PrintWriter out) {
+    protected final void printHead(final HttpServletRequest request, final PrintWriter out) {
         out.println("<TITLE>" + TITLE + "</TITLE>");
         out.println("<link rel=\"stylesheet\" type=\"test/css\" href=\"resources/css/base.css\"/>");
     }
 
     @Override
-    protected void printBody(final HttpServletRequest request, final PrintWriter out) {
+    protected final void printBody(final HttpServletRequest request, final PrintWriter out) {
         out.println("<h1>Test</h1>");
     }
     

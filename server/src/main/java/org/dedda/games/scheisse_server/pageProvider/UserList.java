@@ -20,11 +20,11 @@ public class UserList {
     @Inject
     private UserProvider userProvider;
     
-    public List<String> getAllUserNames() {
+    public final List<String> getAllUserNames() {
         return userProvider.getAllUserNames();
     }
     
-    public List<User> getAllUsers() {
+    public final List<User> getAllUsers() {
         return userProvider.getAllUsers();
     }
     
