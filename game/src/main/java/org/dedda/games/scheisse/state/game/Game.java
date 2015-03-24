@@ -3,7 +3,7 @@ package org.dedda.games.scheisse.state.game;
 import org.dedda.games.scheisse.state.State;
 import org.dedda.games.scheisse.state.game.map.Map;
 
-import java.awt.*;
+import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
 import java.io.File;
 

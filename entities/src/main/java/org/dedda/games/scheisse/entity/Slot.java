@@ -77,22 +77,33 @@ public class Slot extends Entity implements TestableEntity {
      * METHODS
      ====================*/
 
-    public final boolean canAdd(final Item item, final long amount) {
-        if (null == item) {
+    /**
+     *
+     * @param addItem {@link Item} to add
+     * @param amount preferred amount to add
+     * @return whether the item can be added
+     */
+    public final boolean canAdd(final Item addItem, final long amount) {
+        if (null == addItem) {
             throw new IllegalArgumentException("item is null");
         }
         if (amount < 1) {
             throw new IllegalArgumentException("amount < 1");
         }
-        return maxAddAmount(item) >= amount;
+        return maxAddAmount(addItem) >= amount;
     }
 
-    public final long maxAddAmount(final Item item) {
-        if (null == item) {
+    /**
+     *
+     * @param addItem {@link Item} to add
+     * @return amount of items that can be added to this {@link Slot}
+     */
+    public final long maxAddAmount(final Item addItem) {
+        if (null == addItem) {
             throw new IllegalArgumentException("item is null");
         }
-        if (getItem().getId() == item.getId()) {
-                return item.getMaxStackAmount() - getAmount();
+        if (getItem().getId() == addItem.getId()) {
+                return addItem.getMaxStackAmount() - getAmount();
         }
         return 0;
     }
@@ -153,28 +164,50 @@ public class Slot extends Entity implements TestableEntity {
         this.amount = amount;
     }
 
+    /**
+     *
+     * @return {@link Inventory}
+     */
     public final Inventory getInventory() {
         return inventory;
     }
 
+    /**
+     *
+     * @param inventory {@link Inventory}
+     */
     public final void setInventory(final Inventory inventory) {
         this.inventory = inventory;
     }
 
+    /**
+     *
+     * @return {@link Item}
+     */
     public final Item getItem() {
         return item;
     }
 
+    /**
+     *
+     * @param item {@link Item}
+     */
     public final void setItem(final Item item) {
         this.item = item;
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public final long getMinTestId() {
         return -20;
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public final long getMaxTestId() {
         return -1;
     }

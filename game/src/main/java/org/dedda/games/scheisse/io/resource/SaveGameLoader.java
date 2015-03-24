@@ -6,7 +6,7 @@ import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.inventory.Slot;
 import org.dedda.games.scheisse.tool.Parse;
 
-import java.awt.*;
+import java.awt.Point;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;

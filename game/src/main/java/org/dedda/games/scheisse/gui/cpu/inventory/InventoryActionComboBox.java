@@ -1,7 +1,7 @@
 package org.dedda.games.scheisse.gui.cpu.inventory;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JComboBox;
+import java.awt.Dimension;
 import java.util.ArrayList;
 
 /**

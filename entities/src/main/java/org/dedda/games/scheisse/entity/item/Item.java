@@ -11,7 +11,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import java.awt.*;
+import java.awt.Image;
 
 /**
  *
@@ -99,6 +99,9 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
     )
     private long armor;
 
+    /**
+     * max possible stack amount
+     */
     @Column(
             name = "max_stack"
     )
@@ -243,10 +246,18 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
         this.sprite = sprite;
     }
 
+    /**
+     *
+     * @return max stack amount
+     */
     public long getMaxStackAmount() {
         return maxStackAmount;
     }
 
+    /**
+     *
+     * @param maxStackAmount max stack amount
+     */
     public void setMaxStackAmount(long maxStackAmount) {
         this.maxStackAmount = maxStackAmount;
     }

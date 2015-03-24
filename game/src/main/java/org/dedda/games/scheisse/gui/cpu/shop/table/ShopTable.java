@@ -6,7 +6,8 @@ import org.dedda.games.scheisse.state.game.shop.Offer;
 import org.dedda.games.scheisse.state.game.shop.Shop;
 import org.dedda.games.scheisse.state.game.shop.filter.ShopFilter;
 
-import javax.swing.*;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import java.util.ArrayList;
 import java.util.List;
 

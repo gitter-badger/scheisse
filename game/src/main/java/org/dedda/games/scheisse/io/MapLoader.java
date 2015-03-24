@@ -3,7 +3,8 @@ package org.dedda.games.scheisse.io;
 import org.dedda.games.scheisse.state.game.map.Map;
 import org.dedda.games.scheisse.state.game.map.soil.Soil;
 
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Point;
 import java.io.File;
 import java.util.ArrayList;
 

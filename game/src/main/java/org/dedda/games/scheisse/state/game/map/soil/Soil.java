@@ -5,7 +5,8 @@ import com.jogamp.opengl.util.texture.TextureIO;
 import org.dedda.games.scheisse.debug.SystemPrinter;
 import org.dedda.games.scheisse.main.Main;
 
-import java.awt.*;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;

@@ -1,6 +1,7 @@
 package org.dedda.games.scheisse.io.resource;
 
-import java.awt.*;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 import static org.dedda.games.scheisse.io.resource.Resource.IMAGE_FOLDER;
 

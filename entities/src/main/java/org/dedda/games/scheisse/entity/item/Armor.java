@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.entity.item;
 
-import java.awt.*;
+import java.awt.Image;
 
 /**
  * Created by dedda on 4/18/14.

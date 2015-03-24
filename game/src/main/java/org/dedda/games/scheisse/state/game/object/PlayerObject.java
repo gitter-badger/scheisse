@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.state.game.object;
 
-import java.awt.*;
+import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
 
 /**

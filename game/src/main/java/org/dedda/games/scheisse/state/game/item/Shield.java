@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.state.game.item;
 
-import java.awt.*;
+import java.awt.Image;
 
 import static org.dedda.games.scheisse.state.game.item.ItemType.SHIELD;
 

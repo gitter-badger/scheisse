@@ -2,7 +2,7 @@ package org.dedda.games.scheisse.state.game.item;
 
 import org.dedda.games.scheisse.state.game.object.Person;
 
-import java.awt.*;
+import java.awt.Image;
 
 import static org.dedda.games.scheisse.state.game.item.ItemCategory.ARMOR;
 

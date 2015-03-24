@@ -4,7 +4,8 @@ import org.dedda.games.scheisse.debug.SystemPrinter;
 import org.dedda.games.scheisse.state.game.map.soil.Soil;
 import org.dedda.games.scheisse.state.game.quest.Quest;
 
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Point;
 import java.util.ArrayList;
 
 import static org.dedda.games.scheisse.state.game.map.Chunk.CHUNK_SIZE;
