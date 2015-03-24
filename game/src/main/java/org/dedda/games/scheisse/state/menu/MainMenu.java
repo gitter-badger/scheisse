@@ -2,8 +2,7 @@ package org.dedda.games.scheisse.state.menu;
 
 import org.dedda.games.scheisse.main.Options;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
+import java.awt.*;
 
 /**
  * Created by dedda on 5/1/14.

@@ -10,8 +10,7 @@ import org.dedda.games.scheisse.state.game.item.Shield;
 import org.dedda.games.scheisse.state.game.item.Weapon;
 import org.dedda.games.scheisse.tool.Parse;
 
-import java.awt.Image;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.io.File;
 import java.io.FileFilter;
 import java.util.ArrayList;

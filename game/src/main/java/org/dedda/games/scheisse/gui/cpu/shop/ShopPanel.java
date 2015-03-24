@@ -5,12 +5,8 @@ import org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionEvent;
 import org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionListener;
 import org.dedda.games.scheisse.state.game.Player;
 
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import java.awt.Color;
-import java.awt.Dimension;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by dedda on 10/5/14.

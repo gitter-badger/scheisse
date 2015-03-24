@@ -1,7 +1,7 @@
 package org.dedda.games.scheisse.gui.cpu.shop;
 
-import javax.swing.JPanel;
-import java.awt.Color;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by dedda on 12.01.15.

@@ -3,8 +3,8 @@ package org.dedda.games.scheisse.gui.io;
 import org.dedda.games.scheisse.gui.io.action.MouseAction;
 import org.dedda.games.scheisse.gui.io.action.MouseActionInfo;
 
-import javax.swing.JFrame;
-import java.awt.Frame;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;

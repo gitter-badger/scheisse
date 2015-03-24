@@ -2,8 +2,7 @@ package org.dedda.games.scheisse.gui.cpu;
 
 import org.dedda.games.scheisse.state.game.Game;
 
-import java.awt.BorderLayout;
-import java.awt.Container;
+import java.awt.*;
 
 /**
  * Created by dedda on 10/5/14.

@@ -11,7 +11,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import java.awt.Image;
+import java.awt.*;
 
 /**
  *
@@ -98,6 +98,11 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
             name = "armor"
     )
     private long armor;
+
+    @Column(
+            name = "max_stack"
+    )
+    private long maxStackAmount;
 
     /**
      * sprite to be rendered in inventory.
@@ -238,6 +243,14 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
         this.sprite = sprite;
     }
 
+    public long getMaxStackAmount() {
+        return maxStackAmount;
+    }
+
+    public void setMaxStackAmount(long maxStackAmount) {
+        this.maxStackAmount = maxStackAmount;
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -275,4 +288,5 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
         }
         return true;
     }
+
 }

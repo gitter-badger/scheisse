@@ -1,11 +1,11 @@
 package org.dedda.games.scheisse.entity.item;
 
-import java.awt.Image;
+import java.awt.*;
 
 /**
  * Created by dedda on 4/18/14.
  */
-public class Weapon extends Item implements Wearable, Holdeable, Stackable {
+public class Weapon extends Item implements Wearable, Holdeable {
 
     /**
      *
@@ -46,7 +46,6 @@ public class Weapon extends Item implements Wearable, Holdeable, Stackable {
     /**
      * {@inheritDoc}
      */
-    @Override
     public int maxStackNumber() {
         return 1;
     }

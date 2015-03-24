@@ -1,7 +1,6 @@
 package org.dedda.games.scheisse.state.game.map;
 
-import java.awt.Dimension;
-import java.awt.Point;
+import java.awt.*;
 
 /**
  * Created by dedda on 4/18/14.

@@ -1,11 +1,11 @@
 package org.dedda.games.scheisse.entity.item;
 
-import java.awt.Image;
+import java.awt.*;
 
 /**
  * Created by dedda on 4/18/14.
  */
-public class Armor extends Item implements Wearable, Stackable {
+public class Armor extends Item implements Wearable {
 
     /**
      * highest amount of damage that can be absorbed by this item.
@@ -57,7 +57,6 @@ public class Armor extends Item implements Wearable, Stackable {
     /**
      * {@inheritDoc}
      */
-    @Override
     public final int maxStackNumber() {
         return 1;
     }

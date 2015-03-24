@@ -2,8 +2,7 @@ package org.dedda.games.scheisse.state.game.map.building;
 
 import org.dedda.games.scheisse.state.game.map.MapObject;
 
-import java.awt.Dimension;
-import java.awt.Point;
+import java.awt.*;
 
 /**
  * Created by dedda on 9/15/14.

@@ -5,11 +5,10 @@ import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable;
 import org.dedda.games.scheisse.state.game.Game;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 
-import javax.swing.BoxLayout;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import java.awt.Color;
+import java.awt.*;
 
 /**
  * Created by dedda on 11/29/14.

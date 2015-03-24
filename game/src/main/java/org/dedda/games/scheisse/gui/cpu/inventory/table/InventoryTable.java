@@ -2,13 +2,12 @@ package org.dedda.games.scheisse.gui.cpu.inventory.table;
 
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
+import javax.swing.*;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
-import java.awt.BorderLayout;
+import java.awt.*;
 
 import static org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel.HEADER_SYMBOL;
 import static org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel.ID;

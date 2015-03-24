@@ -1,7 +1,6 @@
 package org.dedda.games.scheisse.io;
 
-import java.awt.Image;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;

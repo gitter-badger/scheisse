@@ -11,7 +11,7 @@ import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.inventory.Slot;
 import org.dedda.games.scheisse.state.game.item.Item;
 
-import java.awt.Dimension;
+import java.awt.*;
 import java.io.File;
 
 /**

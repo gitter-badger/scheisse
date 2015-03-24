@@ -1,7 +1,6 @@
 package org.dedda.games.scheisse.entity;
 
 import org.dedda.games.scheisse.entity.item.Item;
-import org.dedda.games.scheisse.entity.item.Stackable;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -93,10 +92,7 @@ public class Slot extends Entity implements TestableEntity {
             throw new IllegalArgumentException("item is null");
         }
         if (getItem().getId() == item.getId()) {
-            if (item instanceof Stackable) {
-                return ((Stackable) item).maxStackNumber() - getAmount();
-            }
-            return getAmount() == 0 ? 1 : 0;
+                return item.getMaxStackAmount() - getAmount();
         }
         return 0;
     }
@@ -115,8 +111,8 @@ public class Slot extends Entity implements TestableEntity {
         }
         long removed = 0;
         if (getItem().getId() == item.getId()) {
-            setAmount(getAmount() - amount);
             removed = amount > getAmount() ? getAmount() : amount;
+            setAmount(getAmount() - amount);
             if (getAmount() <= 0) {
                 setAmount(0);
                 setItem(null);

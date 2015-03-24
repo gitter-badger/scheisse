@@ -2,11 +2,8 @@ package org.dedda.games.scheisse.gui.cpu;
 
 import org.dedda.games.scheisse.state.game.Game;
 
-import javax.swing.JFrame;
-import java.awt.BorderLayout;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Graphics2D;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by dedda on 10/5/14.

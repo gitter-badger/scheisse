@@ -5,7 +5,7 @@ import org.dedda.games.scheisse.state.game.Player;
 import org.dedda.games.scheisse.state.game.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.shop.Shop;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  * Created by dedda on 11/30/14.

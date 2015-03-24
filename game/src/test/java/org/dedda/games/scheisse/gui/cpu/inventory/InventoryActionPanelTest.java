@@ -14,8 +14,7 @@ import org.dedda.games.scheisse.state.game.item.Item;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.swing.ListSelectionModel;
-import javax.swing.SpinnerNumberModel;
+import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.io.File;
 

@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.gui.resource;
 
-import java.awt.Dimension;
+import java.awt.*;
 import java.io.File;
 
 /**

@@ -4,7 +4,7 @@ import org.dedda.games.scheisse.state.game.map.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.awt.Dimension;
+import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
 

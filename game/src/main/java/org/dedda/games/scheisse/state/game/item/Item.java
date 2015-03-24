@@ -4,7 +4,7 @@ import org.dedda.games.scheisse.debug.SystemPrinter;
 import org.dedda.games.scheisse.io.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.game.level.Level;
 
-import java.awt.Image;
+import java.awt.*;
 import java.io.File;
 import java.util.HashMap;
 

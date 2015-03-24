@@ -2,8 +2,7 @@ package org.dedda.games.scheisse.tool;
 
 import org.junit.Test;
 
-import java.awt.Dimension;
-import java.awt.Point;
+import java.awt.*;
 import java.awt.geom.Point2D;
 
 import static org.junit.Assert.assertEquals;

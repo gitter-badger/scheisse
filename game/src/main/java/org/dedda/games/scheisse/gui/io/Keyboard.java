@@ -3,8 +3,8 @@ package org.dedda.games.scheisse.gui.io;
 import org.dedda.games.scheisse.gui.io.action.KeyAction;
 import org.dedda.games.scheisse.gui.io.action.KeyActionInfo;
 
-import javax.swing.JFrame;
-import java.awt.Frame;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;

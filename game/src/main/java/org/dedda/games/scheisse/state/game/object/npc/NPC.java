@@ -3,7 +3,7 @@ package org.dedda.games.scheisse.state.game.object.npc;
 import org.dedda.games.scheisse.state.game.fight.Attack;
 import org.dedda.games.scheisse.state.game.object.Person;
 
-import java.awt.Graphics2D;
+import java.awt.*;
 import java.awt.geom.Point2D;
 
 /**

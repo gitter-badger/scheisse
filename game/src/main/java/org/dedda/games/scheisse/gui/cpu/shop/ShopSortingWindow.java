@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.gui.cpu.shop;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 
 /**
  * Created by dedda on 12.01.15.
