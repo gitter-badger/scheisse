@@ -4,7 +4,7 @@ package org.dedda.games.scheisse.entity.item;
 /**
  * Created by dedda on 5/22/14.
  */
-public class NullItem extends Item implements Stackable {
+public class NullItem extends Item {
 
     /**
      * Default constructor for {@link org.dedda.games.scheisse.entity.item.NullItem}.
@@ -16,13 +16,7 @@ public class NullItem extends Item implements Stackable {
         setPrice(0);
         setCategory(ItemCategory.OTHER);
         setSprite(null);
+        setMaxStackAmount(1);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public final int maxStackNumber() {
-        return 1;
-    }
 }

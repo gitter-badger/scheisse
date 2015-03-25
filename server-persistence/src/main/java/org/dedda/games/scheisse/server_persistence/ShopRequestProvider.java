@@ -25,26 +25,26 @@ public class ShopRequestProvider {
     @Inject
     private UserProvider userProvider;
     
-    public List<ShopRequest> getForUser(final User user) {
+    public final List<ShopRequest> getForUser(final User user) {
         TypedQuery<ShopRequest>  query = em.createNamedQuery("shopRequest.getForUser", ShopRequest.class);
         query.setParameter("user", user);
         return query.getResultList();
     }
 
-    public List<ShopRequest> getForUser(final long userId) {
+    public final List<ShopRequest> getForUser(final long userId) {
         TypedQuery<ShopRequest>  query = em.createNamedQuery("shopRequest.getForUser", ShopRequest.class);
         User user = userProvider.getUser(userId);
         query.setParameter("user", user);
         return query.getResultList();
     }
 
-    public List<ShopRequest> getForPrice(final long price) {
+    public final List<ShopRequest> getForPrice(final long price) {
         TypedQuery<ShopRequest>  query = em.createNamedQuery("shopRequest.getForPrice", ShopRequest.class);
         query.setParameter("price", price);
         return query.getResultList();
     }
 
-    public List<ShopRequest> getForItem(final Item item) {
+    public final List<ShopRequest> getForItem(final Item item) {
         TypedQuery<ShopRequest> query = em.createNamedQuery("shopRequest.getForItem", ShopRequest.class);
         query.setParameter("item", item);
         return query.getResultList();

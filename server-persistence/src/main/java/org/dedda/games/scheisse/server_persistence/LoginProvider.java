@@ -18,13 +18,13 @@ public class LoginProvider {
     @Inject
     public UserProvider userProvider;
 
-    public boolean checkLogin(final String username, final String password) {
+    public final boolean checkLogin(final String username, final String password) {
         User user = userProvider.getUser(username);
         String passwordHash = hashPassword(password);
         return user.getPasswordHash().equals(passwordHash);
     }
 
-    private String hashPassword(final String password) {
+    private final String hashPassword(final String password) {
         try {
             java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
             byte[] array = md.digest(password.getBytes());

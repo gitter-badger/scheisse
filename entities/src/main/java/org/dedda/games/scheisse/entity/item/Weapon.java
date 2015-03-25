@@ -5,7 +5,7 @@ import java.awt.Image;
 /**
  * Created by dedda on 4/18/14.
  */
-public class Weapon extends Item implements Wearable, Holdeable, Stackable {
+public class Weapon extends Item implements Wearable, Holdeable {
 
     /**
      *
@@ -27,6 +27,7 @@ public class Weapon extends Item implements Wearable, Holdeable, Stackable {
         setCategory(ItemCategory.WEAPPON);
         setSprite(sprite);
         setAttack(attack);
+        setMaxStackAmount(1);
     }
 
     /**
@@ -41,14 +42,6 @@ public class Weapon extends Item implements Wearable, Holdeable, Stackable {
                     && weapon.getAttack() == this.getAttack();
         }
         return false;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public final int maxStackNumber() {
-        return 1;
     }
 
     /**

@@ -15,9 +15,6 @@ import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import java.io.Serializable;
 
-import static org.dedda.games.scheisse_server.util.Pages.INDEX;
-import static org.dedda.games.scheisse_server.util.Pages.REGISTER;
-
 @ManagedBean
 @RequestScoped
 public class Register implements Serializable{
@@ -39,14 +36,14 @@ public class Register implements Serializable{
     public final String register() {
         if (!checkName() || !checkEmail() || !checkPassword()) {
             reset();
-            return REGISTER;
+            return "register";
         }
         User user = new User();
         user.setName(name);
         user.setEmail(email);
         user.setPasswordHash(Util.MD5(password));
         userProvider.saveNewUser(user);
-        return INDEX;
+        return "index";
     }
 
     private final boolean checkName() {

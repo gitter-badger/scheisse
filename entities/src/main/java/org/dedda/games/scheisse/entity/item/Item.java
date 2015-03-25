@@ -100,6 +100,14 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
     private long armor;
 
     /**
+     * max possible stack amount
+     */
+    @Column(
+            name = "max_stack"
+    )
+    private long maxStackAmount;
+
+    /**
      * sprite to be rendered in inventory.
      */
     private Image sprite;
@@ -239,6 +247,22 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
     }
 
     /**
+     *
+     * @return max stack amount
+     */
+    public long getMaxStackAmount() {
+        return maxStackAmount;
+    }
+
+    /**
+     *
+     * @param maxStackAmount max stack amount
+     */
+    public void setMaxStackAmount(long maxStackAmount) {
+        this.maxStackAmount = maxStackAmount;
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override
@@ -275,4 +299,5 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
         }
         return true;
     }
+
 }

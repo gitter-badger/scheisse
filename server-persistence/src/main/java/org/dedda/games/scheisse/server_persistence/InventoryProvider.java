@@ -19,17 +19,17 @@ public class InventoryProvider {
     @PersistenceContext(unitName = "org.dedda.games.scheisse_server-PU")
     private EntityManager em;
 
-    public Inventory get(final long id) {
+    public final Inventory get(final long id) {
         Inventory inventory = null;
         inventory = em.find(Inventory.class, id);
         return inventory;
     }
 
-    public EntityManager getEm() {
+    public final EntityManager getEm() {
         return em;
     }
 
-    public void setEm(final EntityManager em) {
+    public final void setEm(final EntityManager em) {
         this.em = em;
     }
 }
