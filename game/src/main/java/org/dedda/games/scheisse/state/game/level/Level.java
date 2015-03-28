@@ -10,7 +10,14 @@ package org.dedda.games.scheisse.state.game.level;
  *
  * @author dedda
  */
-public class Level {
+public abstract class Level {
+
+    /**
+     * Private constructor.
+     */
+    private Level() {
+
+    }
 
     /**
      * Minimum experience that is needed to be specific levels.

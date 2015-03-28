@@ -9,18 +9,41 @@ import javax.script.ScriptException;
  */
 public class NPCJumpIfTrue extends NPCScriptAction {
 
+    /**
+     * expression that is expected to evaluate to true.
+     */
     private String expression;
+    /**
+     * point to jump to in script.
+     */
     private int jumpPoint;
 
+    /**
+     *
+     * @param skript
+     */
     public NPCJumpIfTrue(final NPCScript skript) {
         super(skript);
     }
 
+    /**
+     * this method always returns true. after jump the cursor in the script
+     * is at a different position so this action can't be run twice.
+     *
+     * @see NPCScriptAction#hasNextStep()
+     *
+     * @return always true
+     */
     @Override
     public boolean hasNextStep() {
         return true;
     }
 
+    /**
+     * evaluates expected expression and jumps or continues.
+     *
+     * @see NPCScriptAction#nextStep()
+     */
     @Override
     public void nextStep() {
         boolean evaluation = false;

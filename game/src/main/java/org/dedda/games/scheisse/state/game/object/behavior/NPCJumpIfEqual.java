@@ -7,19 +7,45 @@ import javax.script.ScriptException;
  */
 public class NPCJumpIfEqual extends NPCScriptAction {
 
+    /**
+     * expected value for jump.
+     */
     private String expected;
+    /**
+     * actual value to compare.
+     */
     private String actual;
+    /**
+     * point to jump to in the script.
+     */
     private int jumpPoint;
 
-    public NPCJumpIfEqual(final NPCScript skript) {
-        super(skript);
+    /**
+     *
+     * @param script
+     */
+    public NPCJumpIfEqual(final NPCScript script) {
+        super(script);
     }
 
+    /**
+     * this method always returns true. after jump the cursor in the script
+     * is at a different position so this action can't be run twice.
+     *
+     * @see NPCScriptAction#hasNextStep()
+     *
+     * @return always true
+     */
     @Override
-    public boolean hasNextStep() {
+    public final boolean hasNextStep() {
         return true;
     }
 
+    /**
+     * evaluates expected and actual values and jumps or continues.
+     *
+     * @see NPCScriptAction#nextStep()
+     */
     @Override
     public void nextStep() {
         double expected = 0;
@@ -35,30 +61,62 @@ public class NPCJumpIfEqual extends NPCScriptAction {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getExpected() {
         return expected;
     }
 
+    /**
+     *
+     * @param expected
+     */
     public void setExpected(final String expected) {
         this.expected = expected;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getActual() {
         return actual;
     }
 
+    /**
+     *
+     * @param actual
+     */
     public void setActual(final String actual) {
         this.actual = actual;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getJumpPoint() {
         return jumpPoint;
     }
 
+    /**
+     *
+     * @param jumpPoint
+     */
     public void setJumpPoint(final int jumpPoint) {
         this.jumpPoint = jumpPoint;
     }
 
+    /**
+     *
+     * objects are equal when expressions for expected and actual values
+     * are equal and both objects have the same jump point.
+     *
+     * @param object
+     * @return
+     */
     @Override
     public boolean equals(final Object object) {
         if (!object.getClass().equals(this.getClass())) {

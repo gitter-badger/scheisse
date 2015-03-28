@@ -1,13 +1,11 @@
 package org.dedda.games.scheisse.state.game.object;
 
-import org.dedda.games.scheisse.gui.Drawable;
-
 import java.awt.geom.Point2D;
 
 /**
  * Created by dedda on 4/18/14.
  */
-public abstract class GameObject implements Drawable {
+public abstract class GameObject {
 
     //location on the map:
     protected Point2D.Double location;
