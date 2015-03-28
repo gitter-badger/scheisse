@@ -6,6 +6,7 @@ import org.dedda.games.scheisse.server_persistence.ItemProvider;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
 
