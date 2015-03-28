@@ -20,17 +20,17 @@ public class NPCScript {
         this.action = action;
     }
 
-    public boolean hasNextAction() {
+    public final boolean hasNextAction() {
         return currentAction < action.length - 1;
     }
 
-    public void nextAction() {
+    public final void nextAction() {
         if (hasNextAction()) {
             currentAction++;
         }
     }
 
-    public void nextStep() {
+    public final void nextStep() {
         if (action[currentAction].hasNextStep()) {
             action[currentAction].nextStep();
         } else {
@@ -38,27 +38,27 @@ public class NPCScript {
         }
     }
 
-    public void jump(final int index) {
+    public final void jump(final int index) {
         currentAction = index;
     }
 
-    public NPC getNpc() {
+    public final NPC getNpc() {
         return npc;
     }
 
-    public NPCScriptAction[] getAction() {
+    public final NPCScriptAction[] getAction() {
         return action;
     }
 
-    public void setAction(final NPCScriptAction[] action) {
+    public final void setAction(final NPCScriptAction[] action) {
         this.action = action;
     }
 
-    public int getCurrentIndex() {
+    public final int getCurrentIndex() {
         return currentAction;
     }
 
-    public String replaceKeysInExpression(String expression) {
+    public final String replaceKeysInExpression(String expression) {
         expression = expression.replace(
                 "npc.location.x",
                 npc.getLocation().getX() + ""
@@ -81,7 +81,7 @@ public class NPCScript {
     }
 
     @Override
-    public boolean equals(final Object object) {
+    public final boolean equals(final Object object) {
         if (!object.getClass().equals(this.getClass())) {
            return false;
         }

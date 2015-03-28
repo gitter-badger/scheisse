@@ -22,7 +22,7 @@ public abstract class NPCScriptAction {
     public abstract boolean hasNextStep();
     public abstract void nextStep();
 
-    public double evalDouble(String expression) throws ScriptException {
+    public final double evalDouble(String expression) throws ScriptException {
         expression = script.replaceKeysInExpression(expression);
         Object value = scriptEngine.eval(expression);
         if (value instanceof Integer) {
@@ -31,13 +31,13 @@ public abstract class NPCScriptAction {
         return (Double) value;
     }
 
-    public boolean evalBool(String expression) throws ScriptException {
+    public final boolean evalBool(String expression) throws ScriptException {
         expression = script.replaceKeysInExpression(expression);
         Object value = scriptEngine.eval(expression);
         return (Boolean) value;
     }
 
-    public String evalString(String expression) throws ScriptException {
+    public final String evalString(String expression) throws ScriptException {
         expression = script.replaceKeysInExpression(expression);
         Object value = scriptEngine.eval(expression);
         return (String) value;

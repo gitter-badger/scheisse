@@ -35,7 +35,7 @@ public class NPCJumpIfTrue extends NPCScriptAction {
      * @return always true
      */
     @Override
-    public boolean hasNextStep() {
+    public final boolean hasNextStep() {
         return true;
     }
 
@@ -45,7 +45,7 @@ public class NPCJumpIfTrue extends NPCScriptAction {
      * @see NPCScriptAction#nextStep()
      */
     @Override
-    public void nextStep() {
+    public final void nextStep() {
         boolean evaluation = false;
         try {
             evaluation = evalBool(this.expression);
@@ -57,40 +57,40 @@ public class NPCJumpIfTrue extends NPCScriptAction {
         }
     }
 
-    public String getExpression() {
+    public final String getExpression() {
         return expression;
     }
 
-    public void setExpression(final String expression) {
+    public final void setExpression(final String expression) {
         this.expression = expression;
     }
 
-    public int getJumpPoint() {
+    public final int getJumpPoint() {
         return jumpPoint;
     }
 
-    public void setJumpPoint(final int jumpPoint) {
+    public final void setJumpPoint(final int jumpPoint) {
         this.jumpPoint = jumpPoint;
     }
 
-    public ScriptEngineManager getScriptEngineManager() {
+    public final ScriptEngineManager getScriptEngineManager() {
         return scriptEngineManager;
     }
 
-    public void setScriptEngineManager(final ScriptEngineManager scriptEngineManager) {
+    public final void setScriptEngineManager(final ScriptEngineManager scriptEngineManager) {
         this.scriptEngineManager = scriptEngineManager;
     }
 
-    public ScriptEngine getScriptEngine() {
+    public final ScriptEngine getScriptEngine() {
         return scriptEngine;
     }
 
-    public void setScriptEngine(final ScriptEngine scriptEngine) {
+    public final void setScriptEngine(final ScriptEngine scriptEngine) {
         this.scriptEngine = scriptEngine;
     }
 
     @Override
-    public boolean equals(final Object object) {
+    public final boolean equals(final Object object) {
         if (!object.getClass().equals(this.getClass())) {
             return false;
         }

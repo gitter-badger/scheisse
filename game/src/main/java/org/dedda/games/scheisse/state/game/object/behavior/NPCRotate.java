@@ -12,24 +12,24 @@ public class NPCRotate extends NPCScriptAction {
     }
 
     @Override
-    public boolean hasNextStep() {
+    public final boolean hasNextStep() {
         return true;
     }
 
     @Override
-    public void nextStep() {
+    public final void nextStep() {
         script.getNpc().rotate(amount);
     }
 
-    public double getAmount() {
+    public final double getAmount() {
         return amount;
     }
 
-    public void setAmount(final String expression) {
+    public final void setAmount(final String expression) {
 
     }
 
-    public void setAmount(final double amount) {
+    public final void setAmount(final double amount) {
         this.amount = amount;
     }
 }

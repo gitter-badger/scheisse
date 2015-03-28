@@ -40,24 +40,24 @@ public class NPCWalk extends NPCScriptAction {
         }
     }
 
-    public double getAmount() {
+    public final double getAmount() {
         return amount;
     }
 
-    public double getDirection() {
+    public final double getDirection() {
         return direction;
     }
 
-    public double getRestAmount() {
+    public final double getRestAmount() {
         return restAmount;
     }
 
-    public void setAmount(final double amount) {
+    public final void setAmount(final double amount) {
         this.amount = amount;
         this.restAmount = amount;
     }
 
-    public void setDirection(final double direction) {
+    public final void setDirection(final double direction) {
         this.direction = direction;
     }
 

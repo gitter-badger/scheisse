@@ -16,7 +16,7 @@ public class NPCWalkToDestination extends NPCWalk {
     }
 
     @Override
-    public boolean hasNextStep() {
+    public final boolean hasNextStep() {
         return !(script.getNpc().getLocation().getX() ==
                 destination.getX() &&
                 script.getNpc().getLocation().getY() ==
@@ -24,7 +24,7 @@ public class NPCWalkToDestination extends NPCWalk {
     }
 
     @Override
-    public void nextStep() {
+    public final void nextStep() {
         if (hasNextStep()) {
             double npcX = script.getNpc().getLocation().getX();
             double npcY = script.getNpc().getLocation().getY();
@@ -54,7 +54,7 @@ public class NPCWalkToDestination extends NPCWalk {
         }
     }
 
-    private void calcRestAmount() {
+    private final void calcRestAmount() {
         restAmount = Distances.getDistanceTo(
                 script.getNpc().getLocation(), destination
         );
@@ -64,7 +64,7 @@ public class NPCWalkToDestination extends NPCWalk {
         return destination;
     }
 
-    public void setDestination(final Point2D.Double destination) {
+    public final void setDestination(final Point2D.Double destination) {
         this.destination = destination;
         direction = Distances.getDirectionTo(
                 script.getNpc().getLocation(), destination
@@ -72,7 +72,7 @@ public class NPCWalkToDestination extends NPCWalk {
     }
 
     @Override
-    public boolean equals(final Object object) {
+    public final boolean equals(final Object object) {
         if (!object.getClass().equals(this.getClass())) {
             return false;
         }

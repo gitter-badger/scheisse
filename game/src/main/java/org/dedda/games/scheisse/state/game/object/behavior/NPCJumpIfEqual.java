@@ -47,7 +47,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
      * @see NPCScriptAction#nextStep()
      */
     @Override
-    public void nextStep() {
+    public final void nextStep() {
         double expected = 0;
         double actual = 0;
         try {
@@ -65,7 +65,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
      *
      * @return
      */
-    public String getExpected() {
+    public final String getExpected() {
         return expected;
     }
 
@@ -73,7 +73,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
      *
      * @param expected
      */
-    public void setExpected(final String expected) {
+    public final void setExpected(final String expected) {
         this.expected = expected;
     }
 
@@ -81,7 +81,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
      *
      * @return
      */
-    public String getActual() {
+    public final String getActual() {
         return actual;
     }
 
@@ -89,7 +89,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
      *
      * @param actual
      */
-    public void setActual(final String actual) {
+    public final void setActual(final String actual) {
         this.actual = actual;
     }
 
@@ -97,7 +97,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
      *
      * @return
      */
-    public int getJumpPoint() {
+    public final int getJumpPoint() {
         return jumpPoint;
     }
 
@@ -105,7 +105,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
      *
      * @param jumpPoint
      */
-    public void setJumpPoint(final int jumpPoint) {
+    public final void setJumpPoint(final int jumpPoint) {
         this.jumpPoint = jumpPoint;
     }
 
@@ -118,7 +118,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
      * @return
      */
     @Override
-    public boolean equals(final Object object) {
+    public final boolean equals(final Object object) {
         if (!object.getClass().equals(this.getClass())) {
             return false;
         }
