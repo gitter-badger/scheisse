@@ -57,38 +57,73 @@ public class NPCJumpIfTrue extends NPCScriptAction {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public final String getExpression() {
         return expression;
     }
 
+    /**
+     *
+     * @param expression
+     */
     public final void setExpression(final String expression) {
         this.expression = expression;
     }
 
+    /**
+     *
+     * @return
+     */
     public final int getJumpPoint() {
         return jumpPoint;
     }
 
+    /**
+     *
+     * @param jumpPoint
+     */
     public final void setJumpPoint(final int jumpPoint) {
         this.jumpPoint = jumpPoint;
     }
 
+    /**
+     *
+     * @return
+     */
     public final ScriptEngineManager getScriptEngineManager() {
         return scriptEngineManager;
     }
 
+    /**
+     *
+     * @param scriptEngineManager
+     */
     public final void setScriptEngineManager(final ScriptEngineManager scriptEngineManager) {
         this.scriptEngineManager = scriptEngineManager;
     }
 
+    /**
+     *
+     * @return
+     */
     public final ScriptEngine getScriptEngine() {
         return scriptEngine;
     }
 
+    /**
+     *
+     * @param scriptEngine
+     */
     public final void setScriptEngine(final ScriptEngine scriptEngine) {
         this.scriptEngine = scriptEngine;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public final boolean equals(final Object object) {
         if (!object.getClass().equals(this.getClass())) {

@@ -5,30 +5,48 @@ package org.dedda.games.scheisse.state.game.object.behavior;
  */
 public class NPCRotate extends NPCScriptAction {
 
+    /**
+     * angle for rotation.
+     */
     private double amount;
 
+    /**
+     *
+     * @param script
+     */
     public NPCRotate(final NPCScript script) {
         super(script);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public final boolean hasNextStep() {
         return true;
     }
 
+    /**
+     * rotates npc.
+     */
     @Override
     public final void nextStep() {
         script.getNpc().rotate(amount);
     }
 
+    /**
+     *
+     * @return
+     */
     public final double getAmount() {
         return amount;
     }
 
-    public final void setAmount(final String expression) {
-
-    }
-
+    /**
+     *
+     * @param amount
+     */
     public final void setAmount(final double amount) {
         this.amount = amount;
     }

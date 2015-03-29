@@ -9,12 +9,23 @@ import java.awt.geom.Point2D;
  */
 public class NPCWalkToDestination extends NPCWalk {
 
+    /**
+     * point for the npc to walk to.
+     */
     protected Point2D.Double destination;
 
+    /**
+     *
+     * @param skript
+     */
     public NPCWalkToDestination(final NPCScript skript) {
         super(skript);
     }
 
+    /**
+     * returns true until npc reached destination.
+     * @return
+     */
     @Override
     public final boolean hasNextStep() {
         return !(script.getNpc().getLocation().getX() ==
@@ -23,6 +34,9 @@ public class NPCWalkToDestination extends NPCWalk {
                 destination.getY());
     }
 
+    /**
+     * moves npc with max speed to destination.
+     */
     @Override
     public final void nextStep() {
         if (hasNextStep()) {
@@ -54,16 +68,29 @@ public class NPCWalkToDestination extends NPCWalk {
         }
     }
 
+    /**
+     * calculates the distance between npc and destination.
+     *
+     * @see Distances#getDistanceTo(Point2D.Double, Point2D.Double)
+     */
     private final void calcRestAmount() {
         restAmount = Distances.getDistanceTo(
                 script.getNpc().getLocation(), destination
         );
     }
 
-    public Point2D.Double getDestination() {
+    /**
+     *
+     * @return destination
+     */
+    public final Point2D.Double getDestination() {
         return destination;
     }
 
+    /**
+     *
+     * @param destination
+     */
     public final void setDestination(final Point2D.Double destination) {
         this.destination = destination;
         direction = Distances.getDirectionTo(
@@ -71,6 +98,9 @@ public class NPCWalkToDestination extends NPCWalk {
         );
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public final boolean equals(final Object object) {
         if (!object.getClass().equals(this.getClass())) {

@@ -9,19 +9,47 @@ import javax.script.ScriptException;
  */
 public abstract class NPCScriptAction {
 
+    /**
+     * {@link NPCScript} this action belongs to.
+     */
     protected final NPCScript script;
+    /**
+     * {@link ScriptEngineManager} engine manager
+     * for building java script {@link ScriptEngine}.
+     */
     protected ScriptEngineManager scriptEngineManager;
+    /**
+     * java script {@link ScriptEngine} for evaluating expressions.
+     */
     protected ScriptEngine scriptEngine;
 
+    /**
+     *
+     * @param script
+     */
     public NPCScriptAction(final NPCScript script) {
         this.script = script;
         scriptEngineManager = new ScriptEngineManager();
         scriptEngine = scriptEngineManager.getEngineByName("JavaScript");
     }
 
+    /**
+     * determines whether the action is completed or not.
+     * @return
+     */
     public abstract boolean hasNextStep();
+
+    /**
+     * runs next step for this action.
+     */
     public abstract void nextStep();
 
+    /**
+     *
+     * @param expression java script expression including optional key words.
+     * @return
+     * @throws ScriptException
+     */
     public final double evalDouble(String expression) throws ScriptException {
         expression = script.replaceKeysInExpression(expression);
         Object value = scriptEngine.eval(expression);
@@ -31,12 +59,24 @@ public abstract class NPCScriptAction {
         return (Double) value;
     }
 
+    /**
+     *
+     * @param expression java script expression including optional key words.
+     * @return
+     * @throws ScriptException
+     */
     public final boolean evalBool(String expression) throws ScriptException {
         expression = script.replaceKeysInExpression(expression);
         Object value = scriptEngine.eval(expression);
         return (Boolean) value;
     }
 
+    /**
+     *
+     * @param expression java script expression including optional key words.
+     * @return
+     * @throws ScriptException
+     */
     public final String evalString(String expression) throws ScriptException {
         expression = script.replaceKeysInExpression(expression);
         Object value = scriptEngine.eval(expression);

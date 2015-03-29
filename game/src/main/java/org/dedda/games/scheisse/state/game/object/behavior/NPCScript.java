@@ -7,29 +7,57 @@ import org.dedda.games.scheisse.state.game.object.npc.NPC;
  */
 public class NPCScript {
 
+    /**
+     * {@link NPC} to control.
+     */
     private final NPC npc;
+    /**
+     * parsed actions from script file.
+     */
     private NPCScriptAction[] action;
+    /**
+     * cursor for current action.
+     */
     private int currentAction = 0;
 
+    /**
+     *
+     * @param npc
+     */
     public NPCScript(final NPC npc) {
         this.npc = npc;
     }
 
+    /**
+     *
+     * @param npc
+     * @param action
+     */
     public NPCScript(final NPC npc, final NPCScriptAction[] action) {
         this.npc = npc;
         this.action = action;
     }
 
+    /**
+     *
+     * @return
+     */
     public final boolean hasNextAction() {
         return currentAction < action.length - 1;
     }
 
+    /**
+     * jumps to next action.
+     */
     public final void nextAction() {
         if (hasNextAction()) {
             currentAction++;
         }
     }
 
+    /**
+     * runs one step of the current action.
+     */
     public final void nextStep() {
         if (action[currentAction].hasNextStep()) {
             action[currentAction].nextStep();
@@ -38,26 +66,51 @@ public class NPCScript {
         }
     }
 
+    /**
+     * jumps to specific action.
+     * @param index
+     */
     public final void jump(final int index) {
         currentAction = index;
     }
 
+    /**
+     *
+     * @return
+     */
     public final NPC getNpc() {
         return npc;
     }
 
+    /**
+     *
+     * @return
+     */
     public final NPCScriptAction[] getAction() {
         return action;
     }
 
+    /**
+     *
+     * @param action
+     */
     public final void setAction(final NPCScriptAction[] action) {
         this.action = action;
     }
 
+    /**
+     *
+     * @return
+     */
     public final int getCurrentIndex() {
         return currentAction;
     }
 
+    /**
+     * replaces key words in {@link String}s.
+     * @param expression
+     * @return
+     */
     public final String replaceKeysInExpression(String expression) {
         expression = expression.replace(
                 "npc.location.x",
@@ -80,6 +133,9 @@ public class NPCScript {
         return expression;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public final boolean equals(final Object object) {
         if (!object.getClass().equals(this.getClass())) {
