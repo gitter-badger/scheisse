@@ -42,7 +42,7 @@ public class Weapon extends Item implements Wearable, Holdeable {
      * {@inheritDoc}
      */
     @Override
-    public boolean equals(final Object object) {
+    public final boolean equals(final Object object) {
         if (!super.equals(object)) {
             return false;
         }
@@ -70,7 +70,7 @@ public class Weapon extends Item implements Wearable, Holdeable {
      * @see #attack
      * @see #sprite
      */
-    public final static Weapon register(
+    public static Weapon register(
             final long id,
             final String name,
             final long value,

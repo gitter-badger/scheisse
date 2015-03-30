@@ -104,7 +104,8 @@ public class User extends Entity implements TestableEntity {
     private long experience;
 
     /**
-     * {@link Inventory} containing {@link org.dedda.games.scheisse.entity.item.Item}s.
+     * {@link Inventory} containing
+     * {@link org.dedda.games.scheisse.entity.item.Item}s.
      */
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
     private Inventory inventory;
@@ -238,12 +239,15 @@ public class User extends Entity implements TestableEntity {
      */
     @Override
     public final boolean equals(final Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
+        // TODO: Warning - won't work in the case the id fields are not set
         if (!(object instanceof User)) {
             return false;
         }
         User other = (User) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if (
+                (this.id == null && other.id != null)
+                        || (this.id != null && !this.id.equals(other.id))
+                ) {
             return false;
         }
         return true;

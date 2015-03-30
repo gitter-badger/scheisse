@@ -7,7 +7,8 @@ package org.dedda.games.scheisse.entity.item;
 public class NullItem extends Item {
 
     /**
-     * Default constructor for {@link org.dedda.games.scheisse.entity.item.NullItem}.
+     * Default constructor for
+     * {@link org.dedda.games.scheisse.entity.item.NullItem}.
      *
      * @see Item
      */

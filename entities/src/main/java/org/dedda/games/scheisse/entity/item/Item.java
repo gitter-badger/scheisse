@@ -22,18 +22,23 @@ import java.awt.Image;
 @NamedQueries({
         @NamedQuery(
                 name = "item.getAll",
-                query = "SELECT i FROM org.dedda.games.scheisse.entity.item.Item i"
+                query = "SELECT i " +
+                        "FROM org.dedda.games.scheisse.entity.item.Item i"
         ),
         @NamedQuery(
                 name = "item.getForType",
-                query = "SELECT i FROM org.dedda.games.scheisse.entity.item.Item i WHERE i.type = :type"
+                query = "SELECT i " +
+                        "FROM org.dedda.games.scheisse.entity.item.Item i " +
+                        "WHERE i.type = :type"
         ),
         @NamedQuery(
                 name = "item.searchByName",
                 query = "SELECT i FROM Item where i.name LIKE :name"
         )
 })
-public class Item extends org.dedda.games.scheisse.entity.Entity implements TestableEntity {
+public class Item
+        extends org.dedda.games.scheisse.entity.Entity
+        implements TestableEntity {
 
     /**
      * item id.
@@ -114,6 +119,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
 
     /**
      * item category.
+     * 
      * @see ItemCategory
      */
     private ItemCategory category;
@@ -261,7 +267,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
      *
      * @param maxStackAmount max stack amount
      */
-    public final void setMaxStackAmount(long maxStackAmount) {
+    public final void setMaxStackAmount(final long maxStackAmount) {
         this.maxStackAmount = maxStackAmount;
     }
 

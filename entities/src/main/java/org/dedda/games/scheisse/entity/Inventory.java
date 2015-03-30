@@ -176,14 +176,16 @@ public class Inventory extends Entity implements TestableEntity {
     }
 
     /**
-     * @return number of available {@link org.dedda.games.scheisse.entity.Slot}s
+     * @return number of available
+     * {@link org.dedda.games.scheisse.entity.Slot}s
      */
     public final long getSize() {
         return size;
     }
 
     /**
-     * @param size number of available {@link org.dedda.games.scheisse.entity.Slot}s
+     * @param size number of available
+     * {@link org.dedda.games.scheisse.entity.Slot}s
      */
     public final void setSize(final long size) {
         this.size = size;
@@ -218,7 +220,8 @@ public class Inventory extends Entity implements TestableEntity {
     }
 
     /**
-     * @param slots {@link org.dedda.games.scheisse.entity.Slot}s containing items
+     * @param slots {@link org.dedda.games.scheisse.entity.Slot}s
+     *              containing items
      *
      * @see List
      * @see Slot
