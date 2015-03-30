@@ -5,6 +5,8 @@
  */
 package org.dedda.games.scheisse.entity;
 
+import org.dedda.games.scheisse.entity.item.Item;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
@@ -43,6 +45,9 @@ import javax.validation.constraints.NotNull;
 })
 public class User extends Entity implements TestableEntity {
 
+    /**
+     * id in db.
+     */
     @Id
     @NotNull
     @Basic(optional = false)
@@ -54,6 +59,9 @@ public class User extends Entity implements TestableEntity {
     )
     private Long id;
 
+    /**
+     * username in game and forum.
+     */
     @NotNull
     @Basic(optional = false)
     @Column(
@@ -63,6 +71,9 @@ public class User extends Entity implements TestableEntity {
     )
     private String name;
 
+    /**
+     * md5-hashed password.
+     */
     @NotNull
     @Basic(optional = false)
     @Column(
@@ -71,6 +82,9 @@ public class User extends Entity implements TestableEntity {
     )
     private String passwordHash;
 
+    /**
+     * e-mail for contact and login etc.
+     */
     @NotNull
     @Basic(optional = false)
     @Column(
@@ -80,6 +94,9 @@ public class User extends Entity implements TestableEntity {
     )
     private String email;
 
+    /**
+     * experience of the user.
+     */
     @NotNull
     @Basic(optional = false)
     @Column(
@@ -88,6 +105,9 @@ public class User extends Entity implements TestableEntity {
     )
     private long experience;
 
+    /**
+     * {@link Inventory} containing {@link Item}s.
+     */
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
     private Inventory inventory;
 
@@ -95,54 +115,106 @@ public class User extends Entity implements TestableEntity {
      * GETTER & SETTER
      *==========================*/
 
+    /**
+     *
+     * @return
+     */
+    @Override
     public final long getId() {
         return id;
     }
 
+    /**
+     *
+     * @return
+     */
     public final String getName() {
         return name;
     }
 
+    /**
+     *
+     * @return
+     */
     public final String getPasswordHash() {
         return passwordHash;
     }
 
+    /**
+     *
+     * @return
+     */
     public final String getEmail() {
         return email;
     }
 
+    /**
+     *
+     * @return
+     */
     public final long getExperience() {
         return experience;
     }
 
+    /**
+     *
+     * @param id
+     */
     public final void setId(final Long id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @param name
+     */
     public final void setName(final String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @param passwordHash
+     */
     public final void setPasswordHash(final String passwordHash) {
         this.passwordHash = passwordHash;
     }
 
+    /**
+     *
+     * @param email
+     */
     public final void setEmail(final String email) {
         this.email = email;
     }
 
+    /**
+     *
+     * @param experience
+     */
     public final void setExperience(final long experience) {
         this.experience = experience;
     }
 
+    /**
+     *
+     * @return
+     */
     public final Inventory getInventory() {
         return inventory;
     }
 
+    /**
+     *
+     * @param inventory
+     */
     public final void setInventory(final Inventory inventory) {
         this.inventory = inventory;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public final boolean equals(final Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
@@ -156,16 +228,25 @@ public class User extends Entity implements TestableEntity {
         return true;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public final String toString() {
         return "org.dedda.games.scheisse_server.entity.User[ id=" + id + " ]";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public final long getMinTestId() {
         return -1;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public final long getMaxTestId() {
         return -1;

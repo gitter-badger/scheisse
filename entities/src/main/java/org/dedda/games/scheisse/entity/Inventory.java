@@ -161,6 +161,7 @@ public class Inventory extends Entity implements TestableEntity {
     /**
      * @return id of the inventory
      */
+    @Override
     public final long getId() {
         return id;
     }

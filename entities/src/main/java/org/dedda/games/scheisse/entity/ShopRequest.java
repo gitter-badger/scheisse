@@ -112,58 +112,119 @@ public class ShopRequest extends Entity {
     )
     private long timestamp;
 
+    /*=================================
+     * GETTERS & SETTERS:
+     =================================*/
+
+    /**
+     *
+     * @return
+     */
+    @Override
     public final long getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public final void setId(final long id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public final User getUser() {
         return user;
     }
 
+    /**
+     *
+     * @param user
+     */
     public final void setUser(final User user) {
         this.user = user;
     }
 
+    /**
+     *
+     * @return
+     */
     public final Item getItem() {
         return item;
     }
 
+    /**
+     *
+     * @param item
+     */
     public final void setItem(final Item item) {
         this.item = item;
     }
 
+    /**
+     *
+     * @return
+     */
     public final long getAmount() {
         return amount;
     }
 
+    /**
+     *
+     * @param amount
+     */
     public final void setAmount(final long amount) {
         this.amount = amount;
     }
 
+    /**
+     *
+     * @return
+     */
     public final long getSinglePrice() {
         return singlePrice;
     }
 
+    /**
+     *
+     * @param singlePrice
+     */
     public final void setSinglePrice(final long singlePrice) {
         this.singlePrice = singlePrice;
     }
 
+    /**
+     *
+     * @return
+     */
     public final boolean isBuy() {
         return buy;
     }
 
+    /**
+     *
+     * @param buy
+     */
     public final void setBuy(final boolean buy) {
         this.buy = buy;
     }
 
+    /**
+     *
+     * @return
+     */
     public final long getTimestamp() {
         return timestamp;
     }
 
+    /**
+     *
+     * @param timestamp
+     */
     public final void setTimestamp(final long timestamp) {
         this.timestamp = timestamp;
     }

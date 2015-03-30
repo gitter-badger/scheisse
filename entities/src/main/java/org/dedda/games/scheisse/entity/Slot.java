@@ -139,6 +139,7 @@ public class Slot extends Entity implements TestableEntity {
     /**
      * @return slot id
      */
+    @Override
     public final long getId() {
         return id;
     }
@@ -196,18 +197,18 @@ public class Slot extends Entity implements TestableEntity {
         this.item = item;
     }
 
-    @Override
     /**
      * {@inheritDoc}
      */
+    @Override
     public final long getMinTestId() {
         return -20;
     }
 
-    @Override
     /**
      * {@inheritDoc}
      */
+    @Override
     public final long getMaxTestId() {
         return -1;
     }

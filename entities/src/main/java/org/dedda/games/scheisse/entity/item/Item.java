@@ -121,6 +121,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
     /**
      * @return item id
      */
+    @Override
     public final long getId() {
         return id;
     }
@@ -205,6 +206,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
     /**
      * {@inheritDoc}
      */
+    @Override
     public final long getMinTestId() {
         return -9;
     }
@@ -212,6 +214,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
     /**
      * {@inheritDoc}
      */
+    @Override
     public final long getMaxTestId() {
         return -1;
     }

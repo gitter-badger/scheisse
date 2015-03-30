@@ -4,20 +4,48 @@ package org.dedda.games.scheisse.perfmon;
  * Created by dedda on 3/7/15.
  */
 public class Main {
-
+    /**
+     * Program args.
+     */
     private static String[] args;
+    /**
+     * Start with gui.
+     */
     private static boolean gui = false;
+    /**
+     * Print version to console on start up.
+     */
     private static boolean printVersion = false;
+    /**
+     * Width of gui or console, depending on mode.
+     */
     private static int width = 100;
+    /**
+     * Height of gui or console, depending on mode.
+     */
     private static int height = 50;
+    /**
+     * Refresh interval.
+     */
     private static int interval = 2;
+    /**
+     * Version of this client.
+     */
     public static final String VERSION = "0.01a";
 
+
+    /**
+     * Main method.
+     * @param args
+     */
     public static void main(final String[] args) {
         Main.args = args;
         parseArgs();
     }
 
+    /**
+     * Parsing program args and setting variables.
+     */
     private static void parseArgs() {
         for (int i = 0; i < args.length; i++) {
             String argument = args[i];

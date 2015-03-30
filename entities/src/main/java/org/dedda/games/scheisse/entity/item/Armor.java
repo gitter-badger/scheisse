@@ -4,6 +4,7 @@ import java.awt.Image;
 
 /**
  * Created by dedda on 4/18/14.
+ * @author dedda
  */
 public class Armor extends Item implements Wearable {
 
@@ -28,8 +29,8 @@ public class Armor extends Item implements Wearable {
             final Image sprite
     ) {
         //super(id, name, value, ARMOR, type, sprite);
-
-        this.armor = armor;
+       this.armor = armor;
+        setMaxStackAmount(1);
     }
 
     /**
@@ -44,13 +45,6 @@ public class Armor extends Item implements Wearable {
                     && armor.armor == this.armor;
         }
         return false;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public final int maxStackNumber() {
-        return 1;
     }
 
 }
