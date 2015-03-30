@@ -253,7 +253,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
      *
      * @return max stack amount
      */
-    public long getMaxStackAmount() {
+    public final long getMaxStackAmount() {
         return maxStackAmount;
     }
 
@@ -261,7 +261,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
      *
      * @param maxStackAmount max stack amount
      */
-    public void setMaxStackAmount(long maxStackAmount) {
+    public final void setMaxStackAmount(long maxStackAmount) {
         this.maxStackAmount = maxStackAmount;
     }
 

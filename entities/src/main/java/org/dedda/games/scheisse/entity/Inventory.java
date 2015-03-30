@@ -159,7 +159,7 @@ public class Inventory extends Entity implements TestableEntity {
      *==================*/
 
     /**
-     * @return id of the inventory
+     * {@inheritDoc}
      */
     @Override
     public final long getId() {
@@ -189,6 +189,8 @@ public class Inventory extends Entity implements TestableEntity {
 
     /**
      * @return owner of the inventory
+     *
+     * @see User
      */
     public final User getUser() {
         return user;
@@ -196,6 +198,8 @@ public class Inventory extends Entity implements TestableEntity {
 
     /**
      * @param user owner of the inventory
+     *
+     * @see User
      */
     public final void setUser(final User user) {
         this.user = user;
@@ -203,6 +207,9 @@ public class Inventory extends Entity implements TestableEntity {
 
     /**
      * @return {@link org.dedda.games.scheisse.entity.Slot}s containing items
+     *
+     * @see List
+     * @see Slot
      */
     public final List<Slot> getSlots() {
         return slots;
@@ -210,6 +217,9 @@ public class Inventory extends Entity implements TestableEntity {
 
     /**
      * @param slots {@link org.dedda.games.scheisse.entity.Slot}s containing items
+     *
+     * @see List
+     * @see Slot
      */
     public final void setSlots(final List<Slot> slots) {
         this.slots = slots;

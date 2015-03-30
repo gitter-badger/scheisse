@@ -4,14 +4,22 @@ import java.awt.Image;
 
 /**
  * Created by dedda on 4/18/14.
+ * @author dedda
  */
 public class Weapon extends Item implements Wearable, Holdeable {
 
     /**
+     * @param id item id
+     * @param name item name
+     * @param value item value
+     * @param attack max attack damage
+     * @param sprite sprite for rendering
      *
-     * @param name String - item name
-     * @param value long - item value
-     * @param attack long
+     * @see #id
+     * @see #name
+     * @see #price
+     * @see #attack
+     * @see #sprite
      */
     protected Weapon(
             final long id,
@@ -35,6 +43,9 @@ public class Weapon extends Item implements Wearable, Holdeable {
      */
     @Override
     public boolean equals(final Object object) {
+        if (!super.equals(object)) {
+            return false;
+        }
         if (object instanceof Weapon) {
             Weapon weapon = (Weapon) object;
             return weapon.getName().equals(this.getName())
@@ -46,12 +57,18 @@ public class Weapon extends Item implements Wearable, Holdeable {
 
     /**
      * Creates a new {@link Weapon} item and takes care of possible errors.
-     * @param id
-     * @param name
-     * @param value
-     * @param attack
-     * @param sprite
+     * @param id item id
+     * @param name item name
+     * @param value item value
+     * @param attack max attack damage
+     * @param sprite sprite for rendering
      * @return registered {@link org.dedda.games.scheisse.entity.item.Weapon}
+     *
+     * @see #id
+     * @see #name
+     * @see #price
+     * @see #attack
+     * @see #sprite
      */
     public final static Weapon register(
             final long id,

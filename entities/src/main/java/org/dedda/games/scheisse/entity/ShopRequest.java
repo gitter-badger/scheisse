@@ -89,7 +89,7 @@ public class ShopRequest extends Entity {
     private long singlePrice;
 
     /**
-     * buying / selling mode.
+     * indicates if creator wants to buy items.
      */
     @NotNull
     @Basic(optional = false)
@@ -117,8 +117,7 @@ public class ShopRequest extends Entity {
      =================================*/
 
     /**
-     *
-     * @return
+     * {@inheritDoc}
      */
     @Override
     public final long getId() {
@@ -127,7 +126,7 @@ public class ShopRequest extends Entity {
 
     /**
      *
-     * @param id
+     * @param id request id
      */
     public final void setId(final long id) {
         this.id = id;
@@ -135,7 +134,9 @@ public class ShopRequest extends Entity {
 
     /**
      *
-     * @return
+     * @return creators {@link User}
+     *
+     * @see User
      */
     public final User getUser() {
         return user;
@@ -143,7 +144,9 @@ public class ShopRequest extends Entity {
 
     /**
      *
-     * @param user
+     * @param user creators {@link User}
+     *
+     * @see User
      */
     public final void setUser(final User user) {
         this.user = user;
@@ -151,7 +154,9 @@ public class ShopRequest extends Entity {
 
     /**
      *
-     * @return
+     * @return {@link Item} in this slot
+     *
+     * @see Item
      */
     public final Item getItem() {
         return item;
@@ -159,7 +164,9 @@ public class ShopRequest extends Entity {
 
     /**
      *
-     * @param item
+     * @param item {@link Item} in this slot
+     *
+     * @see Item
      */
     public final void setItem(final Item item) {
         this.item = item;
@@ -167,7 +174,7 @@ public class ShopRequest extends Entity {
 
     /**
      *
-     * @return
+     * @return amount of items
      */
     public final long getAmount() {
         return amount;
@@ -175,7 +182,7 @@ public class ShopRequest extends Entity {
 
     /**
      *
-     * @param amount
+     * @param amount amount of items
      */
     public final void setAmount(final long amount) {
         this.amount = amount;
@@ -183,7 +190,7 @@ public class ShopRequest extends Entity {
 
     /**
      *
-     * @return
+     * @return price for one item
      */
     public final long getSinglePrice() {
         return singlePrice;
@@ -191,7 +198,7 @@ public class ShopRequest extends Entity {
 
     /**
      *
-     * @param singlePrice
+     * @param singlePrice price for one item
      */
     public final void setSinglePrice(final long singlePrice) {
         this.singlePrice = singlePrice;
@@ -199,7 +206,9 @@ public class ShopRequest extends Entity {
 
     /**
      *
-     * @return
+     * @return whether creator wants to buy or sell
+     *
+     * @see #buy
      */
     public final boolean isBuy() {
         return buy;
@@ -207,7 +216,9 @@ public class ShopRequest extends Entity {
 
     /**
      *
-     * @param buy
+     * @param buy whether creator wants to buy or sell
+     *
+     * @see #buy
      */
     public final void setBuy(final boolean buy) {
         this.buy = buy;
@@ -215,7 +226,9 @@ public class ShopRequest extends Entity {
 
     /**
      *
-     * @return
+     * @return timestamp of creation
+     *
+     * @see #timestamp
      */
     public final long getTimestamp() {
         return timestamp;
@@ -223,7 +236,9 @@ public class ShopRequest extends Entity {
 
     /**
      *
-     * @param timestamp
+     * @param timestamp timestamp of creation
+     *
+     * @see #timestamp
      */
     public final void setTimestamp(final long timestamp) {
         this.timestamp = timestamp;

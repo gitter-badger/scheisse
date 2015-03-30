@@ -13,11 +13,15 @@ public interface TestableEntity {
 
     /**
      * @return lowest id for testing
+     *
+     * @see TestableEntity
      */
     long getMinTestId();
 
     /**
      * @return highest id for testing
+     *
+     * @see TestableEntity
      */
     long getMaxTestId();
 

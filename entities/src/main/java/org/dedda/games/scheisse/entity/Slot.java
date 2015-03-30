@@ -137,7 +137,7 @@ public class Slot extends Entity implements TestableEntity {
      =================*/
 
     /**
-     * @return slot id
+     * {@inheritDoc}
      */
     @Override
     public final long getId() {

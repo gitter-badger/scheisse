@@ -5,8 +5,6 @@
  */
 package org.dedda.games.scheisse.entity;
 
-import org.dedda.games.scheisse.entity.item.Item;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
@@ -106,7 +104,7 @@ public class User extends Entity implements TestableEntity {
     private long experience;
 
     /**
-     * {@link Inventory} containing {@link Item}s.
+     * {@link Inventory} containing {@link org.dedda.games.scheisse.entity.item.Item}s.
      */
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
     private Inventory inventory;
@@ -116,8 +114,7 @@ public class User extends Entity implements TestableEntity {
      *==========================*/
 
     /**
-     *
-     * @return
+     * {@inheritDoc}
      */
     @Override
     public final long getId() {
@@ -126,7 +123,9 @@ public class User extends Entity implements TestableEntity {
 
     /**
      *
-     * @return
+     * @return username.
+     *
+     * @see #name
      */
     public final String getName() {
         return name;
@@ -134,7 +133,9 @@ public class User extends Entity implements TestableEntity {
 
     /**
      *
-     * @return
+     * @return md5-hashed password.
+     *
+     * @see #passwordHash
      */
     public final String getPasswordHash() {
         return passwordHash;
@@ -142,7 +143,9 @@ public class User extends Entity implements TestableEntity {
 
     /**
      *
-     * @return
+     * @return e-mail
+     *
+     * @see #email
      */
     public final String getEmail() {
         return email;
@@ -150,7 +153,9 @@ public class User extends Entity implements TestableEntity {
 
     /**
      *
-     * @return
+     * @return user experience
+     *
+     * @see #experience
      */
     public final long getExperience() {
         return experience;
@@ -158,7 +163,9 @@ public class User extends Entity implements TestableEntity {
 
     /**
      *
-     * @param id
+     * @param id user id
+     *
+     * @see #id
      */
     public final void setId(final Long id) {
         this.id = id;
@@ -166,7 +173,9 @@ public class User extends Entity implements TestableEntity {
 
     /**
      *
-     * @param name
+     * @param name username
+     *
+     * @see #name
      */
     public final void setName(final String name) {
         this.name = name;
@@ -174,7 +183,9 @@ public class User extends Entity implements TestableEntity {
 
     /**
      *
-     * @param passwordHash
+     * @param passwordHash md5-hashed password
+     *
+     * @see #passwordHash
      */
     public final void setPasswordHash(final String passwordHash) {
         this.passwordHash = passwordHash;
@@ -182,7 +193,9 @@ public class User extends Entity implements TestableEntity {
 
     /**
      *
-     * @param email
+     * @param email e-mail
+     *
+     * @see #email
      */
     public final void setEmail(final String email) {
         this.email = email;
@@ -198,7 +211,10 @@ public class User extends Entity implements TestableEntity {
 
     /**
      *
-     * @return
+     * @return {@link Inventory} of this user
+     *
+     * @see #inventory
+     * @see Inventory
      */
     public final Inventory getInventory() {
         return inventory;
@@ -206,7 +222,10 @@ public class User extends Entity implements TestableEntity {
 
     /**
      *
-     * @param inventory
+     * @param inventory {@link Inventory} of this user
+     *
+     * @see #inventory
+     * @see Inventory
      */
     public final void setInventory(final Inventory inventory) {
         this.inventory = inventory;

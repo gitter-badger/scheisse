@@ -8,6 +8,8 @@ public class NullItem extends Item {
 
     /**
      * Default constructor for {@link org.dedda.games.scheisse.entity.item.NullItem}.
+     *
+     * @see Item
      */
     public NullItem() {
         //super(0, "NULL", 0, ItemCategory.OTHER, null);

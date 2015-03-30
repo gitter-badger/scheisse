@@ -4,13 +4,22 @@ import java.awt.Image;
 
 /**
  * Created by dedda on 4/18/14.
+ * @author dedda
  */
 public class Shield extends Armor implements Wearable, Holdeable {
 
     /**
-     * @param name String - item name
-     * @param value long - item value
-     * @param armor long
+     * @param id item id
+     * @param name item name
+     * @param value item value
+     * @param armor max armor
+     * @param sprite sprite for rendering
+     *
+     * @see #id
+     * @see #name
+     * @see #price
+     * @see #armor
+     * @see #sprite
      */
     protected Shield(
             final long id,
@@ -23,12 +32,18 @@ public class Shield extends Armor implements Wearable, Holdeable {
     }
 
     /**
-     * @param id
-     * @param name
-     * @param value
-     * @param armor
-     * @param sprite
+     * @param id item id
+     * @param name item name
+     * @param value item value
+     * @param armor max armor
+     * @param sprite sprite for rendering
      * @return registered {@link org.dedda.games.scheisse.entity.item.Shield}
+     *
+     * @see #id
+     * @see #name
+     * @see #price
+     * @see #armor
+     * @see #sprite
      */
     public static Shield register(
             final long id,

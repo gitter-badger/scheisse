@@ -19,7 +19,7 @@ public class Armor extends Item implements Wearable {
      * @param name item name
      * @param value item value
      * @param armor highest amount of damage that can be absorbed by this item.
-     * @param sprite
+     * @param sprite sprite for rendering
      */
     protected Armor(
             final long id,
