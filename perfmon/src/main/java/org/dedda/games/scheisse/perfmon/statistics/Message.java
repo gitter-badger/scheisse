@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by dedda on 3/8/15.
+ * @author dedda
  */
 public class Message {
 
@@ -25,9 +26,13 @@ public class Message {
 
     /**
      *
-     * @param metric
-     * @param value
-     * @param tags
+     * @param metric metric for this message
+     * @param value value for this message
+     * @param tags tags for searching / grouping messages
+     *
+     * @see #metric
+     * @see #value
+     * @see #tags
      */
     public Message(final String metric, final Number value, final List<Tag> tags) {
         this.metric = metric;

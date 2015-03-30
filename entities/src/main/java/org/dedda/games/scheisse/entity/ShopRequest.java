@@ -27,9 +27,9 @@ import javax.validation.constraints.NotNull;
     ),
     @NamedQuery(
             name = "shopRequest.getForPrice",
-            query = "SELECT sr " +
-                    "FROM ShopRequest sr " +
-                    "WHERE sr.singlePrice = :price"
+            query = "SELECT sr "
+                    + "FROM ShopRequest sr "
+                    + "WHERE sr.singlePrice = :price"
     ),
     @NamedQuery(
             name = "shopRequest.getFotItem",

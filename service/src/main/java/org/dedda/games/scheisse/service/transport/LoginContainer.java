@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.dedda.games.scheisse_server.transport;
+package org.dedda.games.scheisse.service.transport;
 
 import java.io.Serializable;
 

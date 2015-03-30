@@ -1,11 +1,11 @@
 @startuml
 interface java.io.Serializable
 
-class org.dedda.games.scheisse_server.transport.LoginContainer{
+class org.dedda.games.scheisse.service.transport.LoginContainer{
     + String name
     + String password
     + Login(String, String)
 }
 
-java.io.Serializable <|.. org.dedda.games.scheisse_server.transport.LoginContainer
+java.io.Serializable <|.. org.dedda.games.scheisse.service.transport.LoginContainer
 @enduml
