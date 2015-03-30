@@ -6,6 +6,21 @@ package org.dedda.games.scheisse.entity.item;
  */
 public enum ItemCategory {
 
-    TOOL, ARMOR, WEAPPON, OTHER;
+    /**
+     * Tool {@link Item}s.
+     */
+    TOOL,
+    /**
+     * {@link Armor} {@link Item}s.
+     */
+    ARMOR,
+    /**
+     * All types of {@link Weapon}s.
+     */
+    WEAPPON,
+    /**
+     * Different stuff without specific category.
+     */
+    OTHER;
 
 }

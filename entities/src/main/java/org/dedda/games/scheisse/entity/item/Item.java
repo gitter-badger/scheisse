@@ -100,7 +100,7 @@ public class Item extends org.dedda.games.scheisse.entity.Entity implements Test
     private long armor;
 
     /**
-     * max possible stack amount
+     * max possible stack amount.
      */
     @Column(
             name = "max_stack"

@@ -100,8 +100,10 @@ public class Inventory extends Entity implements TestableEntity {
      * {@link org.dedda.games.scheisse.entity.Inventory} and adds them to the
      * right {@link org.dedda.games.scheisse.entity.Slot}s.
      *
-     * @param item
-     * @param amount
+     * @param item {@link Item} to add
+     * @param amount amount of items to add
+     *
+     * @see Item
      */
     public final void add(final Item item, final long amount) {
         if (!canAdd(item, amount)) {

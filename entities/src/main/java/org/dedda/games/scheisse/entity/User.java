@@ -203,7 +203,9 @@ public class User extends Entity implements TestableEntity {
 
     /**
      *
-     * @param experience
+     * @param experience user experience
+     *
+     * @see #experience
      */
     public final void setExperience(final long experience) {
         this.experience = experience;
