@@ -21,10 +21,10 @@ public class ItemArmorFilter extends ItemFilter {
         this.armor = armor;
         this.mode = mode;
         itemTypeFilter = new ItemTypeFilter(
-                new ItemType[]{
-                        ItemType.CLOTHING,
-                        ItemType.SHIELD
-                }
+            new ItemType[]{
+                ItemType.CLOTHING,
+                ItemType.SHIELD
+            }
         );
     }
 
@@ -35,10 +35,14 @@ public class ItemArmorFilter extends ItemFilter {
         }
         Armor armor = (Armor) item;
         switch (mode) {
-            case MODE_BELOW:    return this.armor >= armor.getArmor();
-            case MODE_EXACT:    return this.armor == armor.getArmor();
-            case MODE_ABOVE:    return this.armor <= armor.getArmor();
-            default: return false;
+            case MODE_BELOW:
+                return this.armor >= armor.getArmor();
+            case MODE_EXACT:
+                return this.armor == armor.getArmor();
+            case MODE_ABOVE:
+                return this.armor <= armor.getArmor();
+            default:
+                return false;
         }
     }
 }

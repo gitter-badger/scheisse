@@ -18,7 +18,6 @@ public class Slot {
     }
 
     /**
-     *
      * @param itemId Id of the item.
      */
     public Slot(final long itemId, final Inventory inventory) {
@@ -27,7 +26,6 @@ public class Slot {
     }
 
     /**
-     *
      * @return is there any space left in here?
      */
     public final boolean canAdd() {
@@ -35,10 +33,9 @@ public class Slot {
     }
 
     /**
-     *
      * @param item org.dedda.games.scheisse.entity.item.Item
      */
-    public final void add (final Item item) {
+    public final void add(final Item item) {
         if (item.getClass().equals(dummy.getClass())) {
             if (canAdd()) {
                 numberOfItems++;
@@ -58,7 +55,6 @@ public class Slot {
     }
 
     /**
-     *
      * @param dummy org.dedda.games.scheisse.entity.item.Item
      */
     public final void setDummy(final Item dummy) {
@@ -67,7 +63,6 @@ public class Slot {
     }
 
     /**
-     *
      * @return org.dedda.games.scheisse.entity.item.Item
      */
     public final Item getDummy() {
@@ -75,7 +70,6 @@ public class Slot {
     }
 
     /**
-     *
      * @return int
      */
     public final long getNumberOfItems() {
@@ -83,7 +77,6 @@ public class Slot {
     }
 
     /**
-     *
      * @param numberOfItems int
      */
     public final void setNumberOfItems(final long numberOfItems) {
@@ -96,7 +89,7 @@ public class Slot {
         if (object instanceof Slot) {
             Slot slot = (Slot) object;
             return slot.dummy.equals(this.dummy)
-                    && slot.numberOfItems == this.numberOfItems;
+                && slot.numberOfItems == this.numberOfItems;
         }
         return false;
     }

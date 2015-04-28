@@ -15,7 +15,7 @@ import java.util.HashMap;
 public class Options {
 
     public static final File OPTIONS_FILE =
-            new File(System.getProperty("user.home") + "/.scheisse.conf");
+        new File(System.getProperty("user.home") + "/.scheisse.conf");
 
     public static int KEY_MENU_UP = KeyEvent.VK_UP;
     public static int KEY_MENU_DOWN = KeyEvent.VK_DOWN;
@@ -57,7 +57,7 @@ public class Options {
         map.put("check net", checkInternetConnection ? "1" : "0");
         map.put("res", resolution.width + "," + resolution.height);
         File file =
-                new File(System.getProperty("user.home") + "/.scheisse.conf");
+            new File(System.getProperty("user.home") + "/.scheisse.conf");
         FileOutput output = new FileOutput(file);
         output.writeHashMap(map);
         output.close();
@@ -85,7 +85,7 @@ public class Options {
     }
 
     public static void setCheckInternetConnection(
-            final boolean checkInternetConnection
+        final boolean checkInternetConnection
     ) {
         Options.checkInternetConnection = checkInternetConnection;
     }

@@ -15,8 +15,8 @@ import java.util.List;
  * Created by dedda on 12/1/14.
  */
 public class ShopTableModel
-        extends AbstractTableModel
-        implements InventoryChangeListener {
+    extends AbstractTableModel
+    implements InventoryChangeListener {
 
     public static final int ID = 0;
     public static final int SYMBOL = 1;
@@ -35,24 +35,24 @@ public class ShopTableModel
     public static final String HEADER_STOCK = "Stock";
     public static final String HEADER_IN_INVENTORY = "Owned";
     public static final int[] CATEGORIES = new int[]{
-            ID,
-            SYMBOL,
-            NAME,
-            VALUE,
-            ATTACK,
-            ARMOR,
-            STOCK,
-            IN_INVENTORY
+        ID,
+        SYMBOL,
+        NAME,
+        VALUE,
+        ATTACK,
+        ARMOR,
+        STOCK,
+        IN_INVENTORY
     };
     public static final String[] HEADERS = new String[]{
-            HEADER_ID,
-            HEADER_SYMBOL,
-            HEADER_NAME,
-            HEADER_VALUE,
-            HEADER_ATTACK,
-            HEADER_ARMOR,
-            HEADER_STOCK,
-            HEADER_IN_INVENTORY
+        HEADER_ID,
+        HEADER_SYMBOL,
+        HEADER_NAME,
+        HEADER_VALUE,
+        HEADER_ATTACK,
+        HEADER_ARMOR,
+        HEADER_STOCK,
+        HEADER_IN_INVENTORY
     };
 
     private Inventory inventory;
@@ -81,15 +81,24 @@ public class ShopTableModel
         long in_inventory = inventory.getSlotWithItemId(id).getNumberOfItems();
         int category = shownCategories.get(col);
         switch (category) {
-            case ID: return id;
-            case SYMBOL: return item.getId();
-            case NAME: return item.getName();
-            case VALUE: return item.getValue();
-            case ATTACK: return item instanceof Weapon ? ((Weapon) item).getAttack() : 0;
-            case ARMOR: return item instanceof Armor ? ((Armor) item).getArmor() : 0;
-            case STOCK: return stock;
-            case IN_INVENTORY: return in_inventory;
-            default: return null;
+            case ID:
+                return id;
+            case SYMBOL:
+                return item.getId();
+            case NAME:
+                return item.getName();
+            case VALUE:
+                return item.getValue();
+            case ATTACK:
+                return item instanceof Weapon ? ((Weapon) item).getAttack() : 0;
+            case ARMOR:
+                return item instanceof Armor ? ((Armor) item).getArmor() : 0;
+            case STOCK:
+                return stock;
+            case IN_INVENTORY:
+                return in_inventory;
+            default:
+                return null;
         }
     }
 
@@ -102,15 +111,24 @@ public class ShopTableModel
     public final Class getColumnClass(final int columnIndex) {
         int category = shownCategories.get(columnIndex);
         switch (category) {
-            case ID: return Long.class;
-            case SYMBOL: return Long.class;
-            case NAME: return String.class;
-            case VALUE: return Long.class;
-            case ATTACK: return Long.class;
-            case ARMOR: return Long.class;
-            case STOCK: return Long.class;
-            case IN_INVENTORY: return Long.class;
-            default: return String.class;
+            case ID:
+                return Long.class;
+            case SYMBOL:
+                return Long.class;
+            case NAME:
+                return String.class;
+            case VALUE:
+                return Long.class;
+            case ATTACK:
+                return Long.class;
+            case ARMOR:
+                return Long.class;
+            case STOCK:
+                return Long.class;
+            case IN_INVENTORY:
+                return Long.class;
+            default:
+                return String.class;
         }
     }
 

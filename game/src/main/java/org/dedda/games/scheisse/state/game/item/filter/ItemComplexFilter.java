@@ -66,11 +66,16 @@ public class ItemComplexFilter extends ItemFilter {
             return true;
         }
         switch (mode) {
-            case MODE_NONE:         return acceptModeNone(item);
-            case MODE_ONE:          return acceptModeOne(item);
-            case MODE_ONE_OR_MORE:  return acceptModeOneOrMore(item);
-            case MODE_ALL:          return acceptModeAll(item);
-            default: return false;
+            case MODE_NONE:
+                return acceptModeNone(item);
+            case MODE_ONE:
+                return acceptModeOne(item);
+            case MODE_ONE_OR_MORE:
+                return acceptModeOneOrMore(item);
+            case MODE_ALL:
+                return acceptModeAll(item);
+            default:
+                return false;
         }
     }
 }

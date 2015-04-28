@@ -11,10 +11,10 @@ public class MouseActionInfo {
     private final int locationY;
 
     public MouseActionInfo(
-            final int button,
-            final int scrollAmount,
-            final int locationX,
-            final int locationY) {
+        final int button,
+        final int scrollAmount,
+        final int locationX,
+        final int locationY) {
         this.button = button;
         this.scrollAmount = scrollAmount;
         this.locationX = locationX;
@@ -42,9 +42,9 @@ public class MouseActionInfo {
         if (object instanceof MouseActionInfo) {
             MouseActionInfo mai = (MouseActionInfo) object;
             return mai.locationY == this.locationY
-                    && mai.locationX == this.locationX
-                    && mai.button == this.button
-                    && mai.scrollAmount == this.scrollAmount;
+                && mai.locationX == this.locationX
+                && mai.button == this.button
+                && mai.scrollAmount == this.scrollAmount;
         }
         return false;
     }

@@ -1,26 +1,29 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <ui:composition template="/baseTemplate.xhtml">
-        <ui:define name="title">Home - Scheisse</ui:define>
-        <ui:define name="additionalHeaderInfo"/>
-        <ui:define name="mainContents">
-            <h1>
-                TEST-Toaster ON!
-            </h1>
-            Hier ist die Home-Seite!!!
-            <ul>
-                <li>
-                    <h:commandLink action="userList">Users</h:commandLink>
-                </li><li>
-                    <h:commandLink action="register">Register</h:commandLink>
-                </li><li>
-                    <h:commandLink action="itemList">Liste von Items</h:commandLink>
-                </li>
-            </ul>
-        </ui:define>
-    </ui:composition>
+<ui:composition template="/baseTemplate.xhtml">
+  <ui:define name="title">Home - Scheisse</ui:define>
+  <ui:define name="additionalHeaderInfo"/>
+  <ui:define name="mainContents">
+    <h1>
+      TEST-Toaster ON!
+    </h1>
+    Hier ist die Home-Seite!!!
+    <ul>
+      <li>
+        <h:commandLink action="userList">Users</h:commandLink>
+      </li>
+      <li>
+        <h:commandLink action="register">Register</h:commandLink>
+      </li>
+      <li>
+        <h:commandLink action="itemList">Liste von Items</h:commandLink>
+      </li>
+    </ul>
+  </ui:define>
+</ui:composition>
 </html>
 

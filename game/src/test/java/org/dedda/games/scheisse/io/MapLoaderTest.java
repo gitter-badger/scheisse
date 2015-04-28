@@ -24,8 +24,8 @@ public class MapLoaderTest {
     @Before
     public void setUp() throws Exception {
         mapLoader = new MapLoader(
-                new File("src/test/test_files/classes/" +
-                         "org/dedda/games/scheisse/io/MapLoader")
+            new File("src/test/test_files/classes/" +
+                "org/dedda/games/scheisse/io/MapLoader")
         );
         map = new Map(new Dimension(5, 4));
         soil = new Type[5][4]/*{

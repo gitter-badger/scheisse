@@ -16,6 +16,7 @@ public abstract class Person {
     protected Point2D.Double location;
 
     public abstract void attack(Person person);
+
     public abstract void getAttacked(Attack attack);
 
     public Point2D.Double getLocation() {

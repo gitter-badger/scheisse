@@ -2,12 +2,12 @@ package org.dedda.games.scheisse.exception;
 
 /**
  * Class for central collection of all possible exit codes of the program.
- *
+ * <p/>
  * In this class, all possible exit codes ever used by the program except
  * exiting due to {@link java.lang.RuntimeException}s are collected. This
  * should prevent unknown or undefined status codes while coding and running
  * the program.
- *
+ * <p/>
  * Created by dedda on 4/24/14.
  *
  * @author dedda

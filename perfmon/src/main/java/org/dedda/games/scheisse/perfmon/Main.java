@@ -2,6 +2,7 @@ package org.dedda.games.scheisse.perfmon;
 
 /**
  * Created by dedda on 3/7/15.
+ *
  * @author dedda
  */
 public class Main {
@@ -37,6 +38,7 @@ public class Main {
 
     /**
      * Main method.
+     *
      * @param args
      */
     public static void main(final String[] args) {

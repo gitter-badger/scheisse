@@ -5,7 +5,7 @@ import org.dedda.games.scheisse.state.game.shop.Offer;
 /**
  * Created by dedda on 11/30/14.
  */
-public class PriceFilter extends ShopFilter{
+public class PriceFilter extends ShopFilter {
 
     public final int min;
     public final int max;

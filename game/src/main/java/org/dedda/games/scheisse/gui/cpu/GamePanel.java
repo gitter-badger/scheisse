@@ -20,7 +20,6 @@ public class GamePanel extends JPanel {
     private Game game;
 
     /**
-     *
      * @param tabbedGamePane {@link TabbedGamePane} this panel is contained by.
      */
     public GamePanel(final TabbedGamePane tabbedGamePane) {

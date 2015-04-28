@@ -22,10 +22,14 @@ public class ItemLevelFilter extends ItemFilter {
     @Override
     public boolean accept(final Item item) {
         switch (mode) {
-            case MODE_BELOW:    return item.getMinLevel() <= level;
-            case MODE_EXACT:    return item.getMinLevel() == level;
-            case MODE_ABOVE:    return item.getMinLevel() >= level;
-            default: return false;
+            case MODE_BELOW:
+                return item.getMinLevel() <= level;
+            case MODE_EXACT:
+                return item.getMinLevel() == level;
+            case MODE_ABOVE:
+                return item.getMinLevel() >= level;
+            default:
+                return false;
         }
     }
 

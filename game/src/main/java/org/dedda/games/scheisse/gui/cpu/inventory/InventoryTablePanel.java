@@ -28,13 +28,13 @@ public class InventoryTablePanel extends JPanel {
         Inventory inventory = game.getPlayer().getInventory();
         inventoryTable = new InventoryTable(inventory);
         inventoryTable.addListSelectionListener(
-                getInventorySelectionListener()
+            getInventorySelectionListener()
         );
         actionInventory = new Inventory();
         actionInventory.getSlots().clear();
         actionTable = new InventoryTable(actionInventory);
         actionTable.addListSelectionListener(
-                getActionInventorySelectionListener()
+            getActionInventorySelectionListener()
         );
         actionPanel = new InventoryActionPanel(this);
         initLayout();
@@ -52,13 +52,13 @@ public class InventoryTablePanel extends JPanel {
     }
 
     public void addTransactionListener(
-            final InventoryTransactionListener listener
+        final InventoryTransactionListener listener
     ) {
         actionPanel.addInventoryTransactionListener(listener);
     }
 
     public void removeTransactionListener(
-            final InventoryTransactionListener listener
+        final InventoryTransactionListener listener
     ) {
         actionPanel.removeInventoryTransactionListener(listener);
     }

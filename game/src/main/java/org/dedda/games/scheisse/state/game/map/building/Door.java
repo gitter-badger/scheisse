@@ -17,10 +17,10 @@ public class Door {
     private boolean locked;
 
     public Door(
-            final Point location,
-            final Dimension size,
-            final Direction[] passingDirection,
-            final boolean locked
+        final Point location,
+        final Dimension size,
+        final Direction[] passingDirection,
+        final boolean locked
     ) {
         this.location = location;
         this.size = size;

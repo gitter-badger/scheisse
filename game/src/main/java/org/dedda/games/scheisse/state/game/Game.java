@@ -25,7 +25,7 @@ public class Game implements State, Runnable {
 
     public Game(final File saveGame) {
         throw new UnsupportedOperationException(
-                "opening games from savegame not supported yet!"
+            "opening games from savegame not supported yet!"
         );
     }
 
@@ -81,7 +81,7 @@ public class Game implements State, Runnable {
 
     public void movePlayer(final Point2D.Double location) {
         throw new UnsupportedOperationException(
-                "moving player not implemented yet"
+            "moving player not implemented yet"
         );
     }
 

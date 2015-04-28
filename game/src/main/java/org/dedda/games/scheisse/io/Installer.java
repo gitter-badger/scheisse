@@ -31,8 +31,8 @@ public class Installer {
             return false;
         }
         Unzip unzip = new Unzip(
-                new File(Resource.TEMP_FOLDER + "downloadFile.zip"),
-                new File(destination)
+            new File(Resource.TEMP_FOLDER + "downloadFile.zip"),
+            new File(destination)
         );
         unzip.unzip();
         new File(Resource.TEMP_FOLDER + "downloadFile.zip").delete();

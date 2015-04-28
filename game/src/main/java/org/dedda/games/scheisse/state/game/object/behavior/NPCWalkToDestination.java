@@ -15,7 +15,6 @@ public class NPCWalkToDestination extends NPCWalk {
     protected Point2D.Double destination;
 
     /**
-     *
      * @param skript
      */
     public NPCWalkToDestination(final NPCScript skript) {
@@ -24,13 +23,14 @@ public class NPCWalkToDestination extends NPCWalk {
 
     /**
      * returns true until npc reached destination.
+     *
      * @return
      */
     @Override
     public final boolean hasNextStep() {
         return !(script.getNpc().getLocation().getX() ==
-                destination.getX() &&
-                script.getNpc().getLocation().getY() ==
+            destination.getX() &&
+            script.getNpc().getLocation().getY() ==
                 destination.getY());
     }
 
@@ -75,12 +75,11 @@ public class NPCWalkToDestination extends NPCWalk {
      */
     private final void calcRestAmount() {
         restAmount = Distances.getDistanceTo(
-                script.getNpc().getLocation(), destination
+            script.getNpc().getLocation(), destination
         );
     }
 
     /**
-     *
      * @return destination
      */
     public final Point2D.Double getDestination() {
@@ -88,13 +87,12 @@ public class NPCWalkToDestination extends NPCWalk {
     }
 
     /**
-     *
      * @param destination
      */
     public final void setDestination(final Point2D.Double destination) {
         this.destination = destination;
         direction = Distances.getDirectionTo(
-                script.getNpc().getLocation(), destination
+            script.getNpc().getLocation(), destination
         );
     }
 
@@ -107,9 +105,9 @@ public class NPCWalkToDestination extends NPCWalk {
             return false;
         }
         NPCWalkToDestination npcWalkToDestination =
-                (NPCWalkToDestination) object;
+            (NPCWalkToDestination) object;
         if (npcWalkToDestination.destination.x != destination.x ||
-                npcWalkToDestination.destination.y != destination.y) {
+            npcWalkToDestination.destination.y != destination.y) {
             return false;
         }
         return true;

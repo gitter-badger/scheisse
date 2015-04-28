@@ -16,19 +16,18 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
- *
  * @author dedda
  */
 @javax.persistence.Entity
 @Table(name = "slot")
 @NamedQueries({
     @NamedQuery(
-            name = "slot.allForInventory",
-            query = "SELECT s FROM Slot s WHERE s.inventory = :inventory"
+        name = "slot.allForInventory",
+        query = "SELECT s FROM Slot s WHERE s.inventory = :inventory"
     ),
     @NamedQuery(
-            name = "slot.allForInventoryId",
-            query = "SELECT s FROM Slot s WHERE s.inventory.id = :id"
+        name = "slot.allForInventoryId",
+        query = "SELECT s FROM Slot s WHERE s.inventory.id = :id"
     )
 })
 public class Slot extends Entity implements TestableEntity {
@@ -41,9 +40,9 @@ public class Slot extends Entity implements TestableEntity {
     @Basic(optional = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(
-            name = "id",
-            nullable = false,
-            unique = true
+        name = "id",
+        nullable = false,
+        unique = true
     )
     private long id;
 
@@ -53,9 +52,9 @@ public class Slot extends Entity implements TestableEntity {
     @NotNull
     @Basic(optional = false)
     @Column(
-            name = "amount",
-            nullable = false,
-            unique = false
+        name = "amount",
+        nullable = false,
+        unique = false
     )
     private long amount;
 
@@ -78,9 +77,8 @@ public class Slot extends Entity implements TestableEntity {
      ====================*/
 
     /**
-     *
      * @param addItem {@link Item} to add
-     * @param amount preferred amount to add
+     * @param amount  preferred amount to add
      * @return whether the item can be added
      */
     public final boolean canAdd(final Item addItem, final long amount) {
@@ -94,7 +92,6 @@ public class Slot extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @param addItem {@link Item} to add
      * @return amount of items that can be added to this {@link Slot}
      */
@@ -103,13 +100,13 @@ public class Slot extends Entity implements TestableEntity {
             throw new IllegalArgumentException("item is null");
         }
         if (getItem().getId() == addItem.getId()) {
-                return addItem.getMaxStackAmount() - getAmount();
+            return addItem.getMaxStackAmount() - getAmount();
         }
         return 0;
     }
 
     /**
-     * @param item item to remove
+     * @param item   item to remove
      * @param amount amount of items to remove
      * @return amount of items actually removed
      */
@@ -166,7 +163,6 @@ public class Slot extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @return {@link Inventory}
      */
     public final Inventory getInventory() {
@@ -174,7 +170,6 @@ public class Slot extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @param inventory {@link Inventory}
      */
     public final void setInventory(final Inventory inventory) {
@@ -182,7 +177,6 @@ public class Slot extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @return {@link Item}
      */
     public final Item getItem() {
@@ -190,7 +184,6 @@ public class Slot extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @param item {@link Item}
      */
     public final void setItem(final Item item) {

@@ -25,35 +25,35 @@ public class ItemLoaderTest {
     public void testLoadItem() throws Exception {
         Weapon testWeapon = Weapon.register(1, "Wooden Sword", 123L, 456L, null);
         Armor testArmor = Armor.register(
-                2,
-                "Wooden Armor",
-                654L,
-                321L,
-                ItemType.CLOTHING,
-                null
+            2,
+            "Wooden Armor",
+            654L,
+            321L,
+            ItemType.CLOTHING,
+            null
         );
         Shield testShield = Shield.register(3, "Wooden Shield", 246L, 135L, null);
         ItemLoader itemLoader = new ItemLoader();
         Weapon weapon = (Weapon) itemLoader.loadItem(
-                new File(
-                        "src/test/test_files/classes/" +
-                        "org/dedda/games/scheisse/io/resource/item/" +
-                        "ItemLoader/wood_sword.di"
-                )
+            new File(
+                "src/test/test_files/classes/" +
+                    "org/dedda/games/scheisse/io/resource/item/" +
+                    "ItemLoader/wood_sword.di"
+            )
         );
         Armor armor = (Armor) itemLoader.loadItem(
-                new File(
-                        "src/test/test_files/classes/" +
-                        "org/dedda/games/scheisse/io/resource/item/" +
-                        "ItemLoader/wood_armor.di"
-                )
+            new File(
+                "src/test/test_files/classes/" +
+                    "org/dedda/games/scheisse/io/resource/item/" +
+                    "ItemLoader/wood_armor.di"
+            )
         );
         Shield shield = (Shield) itemLoader.loadItem(
-                new File(
-                        "src/test/test_files/classes/" +
-                        "org/dedda/games/scheisse/io/resource/item/" +
-                        "ItemLoader/wood_shield.di"
-                )
+            new File(
+                "src/test/test_files/classes/" +
+                    "org/dedda/games/scheisse/io/resource/item/" +
+                    "ItemLoader/wood_shield.di"
+            )
         );
         assertTrue(testWeapon.equals(weapon));
         assertTrue(testArmor.equals(armor));
@@ -64,12 +64,12 @@ public class ItemLoaderTest {
     public void testLoadAll() throws Exception {
         Weapon testWeapon = Weapon.register(1, "Wooden Sword", 123L, 456L, null);
         Armor testArmor = Armor.register(
-                2,
-                "Wooden Armor",
-                654L,
-                321L,
-                ItemType.CLOTHING,
-                null
+            2,
+            "Wooden Armor",
+            654L,
+            321L,
+            ItemType.CLOTHING,
+            null
         );
         Shield testShield = Shield.register(3, "Wooden Shield", 246L, 135L, null);
         new TestItem();

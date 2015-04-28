@@ -8,7 +8,6 @@ import org.dedda.games.scheisse.state.game.object.Person;
 public interface Wearable {
 
     /**
-     *
      * @param person Person - person to draw on
      */
     public void render(final Person person);

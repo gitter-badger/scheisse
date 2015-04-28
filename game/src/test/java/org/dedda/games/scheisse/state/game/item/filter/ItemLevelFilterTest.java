@@ -22,12 +22,12 @@ public class ItemLevelFilterTest {
         items = new ArrayList<Item>();
         for (int i = 0; i < 5; i++) {
             items.add(
-                    new Item(i, "", i, ItemCategory.OTHER, ItemType.NULL, null
-                    ) {
-                public int maxStackNumber() {
-                    return 0;
-                }
-            });
+                new Item(i, "", i, ItemCategory.OTHER, ItemType.NULL, null
+                ) {
+                    public int maxStackNumber() {
+                        return 0;
+                    }
+                });
             items.get(i).setMinXp(Level.MIN_XP_FOR_LEVELS[i]);
         }
     }

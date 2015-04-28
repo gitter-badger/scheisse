@@ -19,7 +19,6 @@ public class SaveGameLoader extends FileInput {
     private File file;
 
     /**
-     *
      * @param file File - save game file
      */
     public SaveGameLoader(final File file) {
@@ -27,7 +26,6 @@ public class SaveGameLoader extends FileInput {
     }
 
     /**
-     *
      * @param fileName String - path to save game file
      */
     public SaveGameLoader(final String fileName) {
@@ -35,7 +33,6 @@ public class SaveGameLoader extends FileInput {
     }
 
     /**
-     *
      * @return GuiPlayer - player instance from save game
      */
     public Player load() {
@@ -67,7 +64,7 @@ public class SaveGameLoader extends FileInput {
         }
         inventory = new Inventory();
         ArrayList<Slot> slots = new ArrayList<Slot>();
-        for (int i = 0; i < slotNumber; i++){
+        for (int i = 0; i < slotNumber; i++) {
             String slotString = line.substring(0, line.indexOf(';'));
             Slot slot = null;
             if (slotString.equals("0")) {
@@ -78,7 +75,7 @@ public class SaveGameLoader extends FileInput {
                 slot = new Slot(currentSlot.x, inventory);
                 slot.setNumberOfItems(currentSlot.y);
             }
-            line = line.substring(line.indexOf(';')+1);
+            line = line.substring(line.indexOf(';') + 1);
             slots.add(slot);
         }
         inventory.setSlots(slots);

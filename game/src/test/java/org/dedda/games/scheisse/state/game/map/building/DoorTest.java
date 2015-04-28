@@ -9,10 +9,10 @@ public class DoorTest extends TestCase {
 
     public void testCanPass() throws Exception {
         door = new Door(
-                null,
-                null,
-                new Direction[]{Direction.LEFT, Direction.RIGHT},
-                false
+            null,
+            null,
+            new Direction[]{Direction.LEFT, Direction.RIGHT},
+            false
         );
         assertTrue(door.canPass(Direction.LEFT, null));
         assertTrue(door.canPass(Direction.RIGHT, null));

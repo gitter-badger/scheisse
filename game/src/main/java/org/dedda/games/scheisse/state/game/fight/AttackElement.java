@@ -7,20 +7,20 @@ public enum AttackElement {
 
     /**
      * fire element.
-     *
+     * <p/>
      * burns enemies
      */
     FIRE,
     /**
      * ice element.
-     *
+     * <p/>
      * freezes enemies and slows them down
      */
     ICE,
     /**
-     *  shock element.
-     *
-     *  electric shocks
+     * shock element.
+     * <p/>
+     * electric shocks
      */
     SHOCK
 

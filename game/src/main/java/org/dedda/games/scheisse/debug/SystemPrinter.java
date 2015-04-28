@@ -9,6 +9,7 @@ public abstract class SystemPrinter {
 
     /**
      * writes message to system output.
+     *
      * @param message Message to write to the system output
      */
     public static void write(final String message) {
@@ -17,6 +18,7 @@ public abstract class SystemPrinter {
 
     /**
      * writes message to system output and appends a new line.
+     *
      * @param message Message to write to the system output
      */
     public static void writeln(final String message) {
@@ -25,6 +27,7 @@ public abstract class SystemPrinter {
 
     /**
      * writes message to system output when debug mode is enabled.
+     *
      * @param message Message to write to the system output
      */
     public static void debug(final String message) {
@@ -36,6 +39,7 @@ public abstract class SystemPrinter {
     /**
      * writes message to system output and appends new
      * line when debug mode is enabled.
+     *
      * @param message Message to write to the system output
      */
     public static void debugln(final String message) {

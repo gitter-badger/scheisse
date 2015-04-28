@@ -50,9 +50,9 @@ public class Animation extends Sprite {
      * @param pack
      */
     public Animation(
-            final Texture[] textures,
-            final float updateTime,
-            final ResourcePack pack
+        final Texture[] textures,
+        final float updateTime,
+        final ResourcePack pack
     ) {
         super(textures[0], pack);
         this.textures = textures;

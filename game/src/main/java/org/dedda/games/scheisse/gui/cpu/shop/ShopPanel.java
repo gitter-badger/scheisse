@@ -15,7 +15,7 @@ import java.awt.Dimension;
 /**
  * Created by dedda on 10/5/14.
  */
-public class ShopPanel extends JPanel implements InventoryTransactionListener{
+public class ShopPanel extends JPanel implements InventoryTransactionListener {
 
     private TabbedGamePane tabbedGamePane;
     private JLabel headerBar;

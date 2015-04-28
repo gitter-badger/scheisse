@@ -11,7 +11,6 @@ public class NPCRotate extends NPCScriptAction {
     private double amount;
 
     /**
-     *
      * @param script
      */
     public NPCRotate(final NPCScript script) {
@@ -19,7 +18,6 @@ public class NPCRotate extends NPCScriptAction {
     }
 
     /**
-     *
      * @return
      */
     @Override
@@ -36,7 +34,6 @@ public class NPCRotate extends NPCScriptAction {
     }
 
     /**
-     *
      * @return
      */
     public final double getAmount() {
@@ -44,7 +41,6 @@ public class NPCRotate extends NPCScriptAction {
     }
 
     /**
-     *
      * @param amount
      */
     public final void setAmount(final double amount) {

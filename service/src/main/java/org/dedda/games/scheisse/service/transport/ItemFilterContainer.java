@@ -30,14 +30,14 @@ public class ItemFilterContainer {
     public final long[] level;
 
     public ItemFilterContainer(
-            final long[] userIds,
-            final long[] itemIds,
-            final String[] itemTypes,
-            final String[] itemNames,
-            final long[] attack,
-            final long[] armor,
-            final long[] value,
-            final long[] level
+        final long[] userIds,
+        final long[] itemIds,
+        final String[] itemTypes,
+        final String[] itemNames,
+        final long[] attack,
+        final long[] armor,
+        final long[] value,
+        final long[] level
     ) {
         this.userIds = userIds;
         this.itemIds = itemIds;

@@ -1,7 +1,7 @@
 /**
  * Package containing different {@link org.dedda.games.scheisse.state.State}s
  * of the program and corresponding logic and classes.
- *
+ * <p/>
  * This package contains logic like the
  * {@link org.dedda.games.scheisse.state.game.Game} state which handles all
  * logic for rendering the game and controlling

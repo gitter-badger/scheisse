@@ -6,7 +6,6 @@ import org.dedda.games.scheisse.service.ItemService;
 import java.util.List;
 
 /**
- *
  * @author dedda
  */
 public class ItemServiceClient implements ItemService {

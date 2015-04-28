@@ -33,12 +33,12 @@ public class InventoryActionPanel extends JPanel {
     private ArrayList<InventoryTransactionListener> listeners;
 
     public InventoryActionPanel(
-            final InventoryTablePanel inventoryTablePanel
+        final InventoryTablePanel inventoryTablePanel
     ) {
         this.inventoryTablePanel = inventoryTablePanel;
         numberSpinner = new JSpinner();
         SpinnerNumberModel spinnerNumberModel =
-                new SpinnerNumberModel(1, 1, 100, 1);
+            new SpinnerNumberModel(1, 1, 100, 1);
         numberSpinner.setModel(spinnerNumberModel);
         numberSpinner.setMaximumSize(numberSpinner.getPreferredSize());
         numberSpinner.setAlignmentX(CENTER_ALIGNMENT);
@@ -91,7 +91,7 @@ public class InventoryActionPanel extends JPanel {
 
     private void add() {
         InventoryTable inventoryTable =
-                inventoryTablePanel.getInventoryTable();
+            inventoryTablePanel.getInventoryTable();
         InventoryTable actionTable = inventoryTablePanel.getActionTable();
         double amountDouble = (Double) numberSpinner.getModel().getValue();
         int amount = (int) amountDouble;
@@ -113,7 +113,7 @@ public class InventoryActionPanel extends JPanel {
 
     private void remove() {
         InventoryTable inventoryTable =
-                inventoryTablePanel.getInventoryTable();
+            inventoryTablePanel.getInventoryTable();
         InventoryTable actionTable = inventoryTablePanel.getActionTable();
         double amountDouble = (Double) numberSpinner.getModel().getValue();
         int amount = (int) amountDouble;
@@ -153,10 +153,10 @@ public class InventoryActionPanel extends JPanel {
     }
 
     public void inventorySelectionChanged(
-            final ListSelectionEvent listSelectionEvent
+        final ListSelectionEvent listSelectionEvent
     ) {
         InventoryTable inventoryTable =
-                inventoryTablePanel.getInventoryTable();
+            inventoryTablePanel.getInventoryTable();
         int[] selectedRows = inventoryTable.getTable().getSelectedRows();
         long minAmount = 1;
         for (int row : selectedRows) {
@@ -167,12 +167,12 @@ public class InventoryActionPanel extends JPanel {
             }
         }
         SpinnerNumberModel spinnerNumberModel =
-                new SpinnerNumberModel(1, 1, minAmount, 1);
+            new SpinnerNumberModel(1, 1, minAmount, 1);
         numberSpinner.setModel(spinnerNumberModel);
     }
 
     public void actionInventorySelectionChanged(
-            final ListSelectionEvent listSelectionEvent
+        final ListSelectionEvent listSelectionEvent
     ) {
         InventoryTable actionTable = inventoryTablePanel.getActionTable();
         int[] selectedRows = actionTable.getTable().getSelectedRows();
@@ -186,7 +186,7 @@ public class InventoryActionPanel extends JPanel {
             }
         }
         SpinnerNumberModel spinnerNumberModel =
-                new SpinnerNumberModel(1, 1, minAmount, 1);
+            new SpinnerNumberModel(1, 1, minAmount, 1);
         numberSpinner.setModel(spinnerNumberModel);
     }
 
@@ -210,7 +210,7 @@ public class InventoryActionPanel extends JPanel {
         InventoryTable actionTable = inventoryTablePanel.getActionTable();
         Inventory actionInventory = actionTable.getInventory();
         InventoryTable inventoryTable =
-                inventoryTablePanel.getInventoryTable();
+            inventoryTablePanel.getInventoryTable();
         Inventory inventory = inventoryTable.getInventory();
         while (actionInventory.getSize() > 0) {
             Slot slot = actionInventory.getSlots().get(0);
@@ -222,7 +222,7 @@ public class InventoryActionPanel extends JPanel {
     }
 
     public void removeInventoryTransactionListener(
-            final InventoryTransactionListener listener
+        final InventoryTransactionListener listener
     ) {
         if (listeners.contains(listener)) {
             listeners.remove(listener);
@@ -230,7 +230,7 @@ public class InventoryActionPanel extends JPanel {
     }
 
     public void addInventoryTransactionListener(
-            final InventoryTransactionListener listener
+        final InventoryTransactionListener listener
     ) {
         listeners.add(listener);
     }

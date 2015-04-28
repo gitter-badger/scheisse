@@ -4,13 +4,14 @@ import java.util.List;
 
 /**
  * Created by dedda on 3/8/15.
+ *
  * @author dedda
  */
 public class Message {
 
     /**
      * metric for this message.
-     *
+     * <p/>
      * The metric specifies 'where' the value is stored in
      * the database and where to find it. Kind of like an ID.
      */
@@ -25,11 +26,9 @@ public class Message {
     public final List<Tag> tags;
 
     /**
-     *
      * @param metric metric for this message
-     * @param value value for this message
-     * @param tags tags for searching / grouping messages
-     *
+     * @param value  value for this message
+     * @param tags   tags for searching / grouping messages
      * @see #metric
      * @see #value
      * @see #tags

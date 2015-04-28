@@ -18,13 +18,13 @@ public class SlotServiceHost implements SlotService {
 
     @Override
     @WebMethod(operationName = "getByNumberAndSession")
-    public Slot get(@WebParam(name = "slotNumber")final int number, @WebParam(name = "session")UUID session) {
+    public Slot get(@WebParam(name = "slotNumber") final int number, @WebParam(name = "session") UUID session) {
         return null;
     }
 
     @Override
     @WebMethod(operationName = "emptySlot")
-    public void empty(@WebParam(name = "slotNumber")final int number, @WebParam(name = "session")final UUID session) {
+    public void empty(@WebParam(name = "slotNumber") final int number, @WebParam(name = "session") final UUID session) {
 
     }
 

@@ -21,8 +21,8 @@ public abstract class SpritePack {
     protected Animation[] animations;
 
     public SpritePack(
-            final ResourcePack pack,
-            final int packType) {
+        final ResourcePack pack,
+        final int packType) {
         this.pack = pack;
         this.packType = packType;
         this.sprites = loadSprites(pack);
@@ -45,8 +45,8 @@ public abstract class SpritePack {
     }
 
     protected Sprite[] loadSprites(
-            final File[] files,
-            final Dimension[] sizes
+        final File[] files,
+        final Dimension[] sizes
     ) {
         Sprite[][] sprites = new Sprite[files.length][];
         int length = 0;

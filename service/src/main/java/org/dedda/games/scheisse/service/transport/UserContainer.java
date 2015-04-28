@@ -35,12 +35,10 @@ public class UserContainer {
     public final long experience;
 
     /**
-     *
-     * @param id user id
-     * @param name username
-     * @param email account e-mail
+     * @param id         user id
+     * @param name       username
+     * @param email      account e-mail
      * @param experience experience of {@link User}
-     *
      * @see User#id
      * @see User#name
      * @see User#email
@@ -54,9 +52,7 @@ public class UserContainer {
     }
 
     /**
-     *
      * @param user {@link User} to convert
-     *
      * @see User
      */
     public UserContainer(final User user) {
@@ -67,9 +63,7 @@ public class UserContainer {
     }
 
     /**
-     *
      * @return user id
-     *
      * @see User#id
      */
     public long getId() {
@@ -77,9 +71,7 @@ public class UserContainer {
     }
 
     /**
-     *
      * @return username
-     *
      * @see User#name
      */
     public String getName() {
@@ -87,9 +79,7 @@ public class UserContainer {
     }
 
     /**
-     *
      * @return account e-mail
-     *
      * @see User#email
      */
     public String getEmail() {
@@ -97,9 +87,7 @@ public class UserContainer {
     }
 
     /**
-     *
      * @return user experience
-     *
      * @see User#experience
      */
     public long getExperience() {

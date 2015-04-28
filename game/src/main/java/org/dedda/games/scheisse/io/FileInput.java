@@ -19,7 +19,6 @@ import java.util.HashMap;
 public class FileInput {
 
     /**
-     *
      * @param file File
      * @return String - data from file in string representation
      */
@@ -40,7 +39,6 @@ public class FileInput {
     }
 
     /**
-     *
      * @param file File
      * @return Image
      */
@@ -68,7 +66,6 @@ public class FileInput {
     }
 
     /**
-     *
      * @param file File
      * @return String[]
      */
@@ -82,12 +79,12 @@ public class FileInput {
             e.printStackTrace();
         }
         BufferedReader br = new BufferedReader(
-                new InputStreamReader(fis, Charset.forName("UTF-8"))
+            new InputStreamReader(fis, Charset.forName("UTF-8"))
         );
         String line;
         try {
             while ((line = br.readLine()) != null) {
-               lineList.add(line);
+                lineList.add(line);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -104,15 +101,15 @@ public class FileInput {
         HashMap<String, String> map = new HashMap<>();
         for (String line : lines) {
             String key = line.substring(0, line.indexOf(':'));
-            String value = line.substring(line.indexOf(':')+1);
+            String value = line.substring(line.indexOf(':') + 1);
             map.put(key, value);
         }
         return map;
     }
 
     public HashMap<String, String> getMap(
-            final File file,
-            final boolean escape
+        final File file,
+        final boolean escape
     ) {
         if (!escape) {
             return getMap(file);
@@ -122,7 +119,7 @@ public class FileInput {
         for (String line : lines) {
             if (!line.startsWith("#")) {
                 String key = line.substring(0, line.indexOf(':'));
-                String value = line.substring(line.indexOf(':')+1);
+                String value = line.substring(line.indexOf(':') + 1);
                 map.put(key, value);
             }
         }

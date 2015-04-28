@@ -19,7 +19,7 @@ public class ItemTypeFilterTest {
     @Test
     public void testAccept() throws Exception {
         itemTypeFilter = new ItemTypeFilter(
-                new ItemType[]{ItemType.WEAPON, ItemType.CLOTHING}
+            new ItemType[]{ItemType.WEAPON, ItemType.CLOTHING}
         );
         assertTrue(itemTypeFilter.accept(Weapon.register(0, "", 0, 0, null)));
         assertTrue(itemTypeFilter.accept(
@@ -31,7 +31,7 @@ public class ItemTypeFilterTest {
     @Test
     public void testFilter() throws Exception {
         itemTypeFilter = new ItemTypeFilter(
-                new ItemType[]{ItemType.WEAPON, ItemType.NULL}
+            new ItemType[]{ItemType.WEAPON, ItemType.NULL}
         );
         ArrayList<Item> items = new ArrayList<Item>();
         Weapon weapon1 = Weapon.register(1, "1", 0, 0, null);

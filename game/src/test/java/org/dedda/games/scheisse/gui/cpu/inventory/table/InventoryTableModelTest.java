@@ -55,10 +55,10 @@ public class InventoryTableModelTest {
             assertEquals(item.getId(), model.getValueAt(i, 0));
             assertEquals(item.getId(), model.getValueAt(i, 1));
             assertEquals(item.getName(), model.getValueAt(i, 2));
-            assertEquals((long)slots.get(i).getNumberOfItems(), model.getValueAt(i, 3));
+            assertEquals((long) slots.get(i).getNumberOfItems(), model.getValueAt(i, 3));
             assertEquals(item.getValue(), model.getValueAt(i, 4));
             if (item instanceof Weapon) {
-                assertEquals(((Weapon)item).getAttack(), model.getValueAt(i, 5));
+                assertEquals(((Weapon) item).getAttack(), model.getValueAt(i, 5));
             }
         }
     }

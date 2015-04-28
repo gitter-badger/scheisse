@@ -3,7 +3,6 @@ package org.dedda.games.scheisse_server.util;
 import java.security.MessageDigest;
 
 /**
- *
  * @author dedda
  */
 public abstract class Util {
@@ -13,7 +12,6 @@ public abstract class Util {
      *
      * @param md5 {@link String} to hash
      * @return MD5 hashed {@link String}
-     *
      * @see MessageDigest
      */
     public static String MD5(final String md5) {

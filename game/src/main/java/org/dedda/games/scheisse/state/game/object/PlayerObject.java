@@ -17,7 +17,7 @@ public class PlayerObject extends GameObject {
     @Override
     public boolean equals(final Object object) {
         throw new UnsupportedOperationException(
-                "equals method in player guiElement class not implemented yet."
+            "equals method in player guiElement class not implemented yet."
         );
     }
 

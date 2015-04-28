@@ -20,14 +20,14 @@ public class FileInputTest {
     @Before
     public void setUp() {
         folder = "src/test/test_files/classes/" +
-                "org/dedda/games/scheisse/io/FileInput/";
+            "org/dedda/games/scheisse/io/FileInput/";
         files = new File[]{
-                new File(folder + "read"),
-                new File(folder + "readImage.png"),
-                new File(folder + "readArray"),
-                new File(folder + "getLines"),
-                new File(folder + "getMap"),
-                new File(folder + "getMapEscaped")
+            new File(folder + "read"),
+            new File(folder + "readImage.png"),
+            new File(folder + "readArray"),
+            new File(folder + "getLines"),
+            new File(folder + "getMap"),
+            new File(folder + "getMapEscaped")
         };
         fileInput = new FileInput();
     }
@@ -43,7 +43,7 @@ public class FileInputTest {
     @Test
     public void testReadImage() throws Exception {
         Image expected =
-                Toolkit.
+            Toolkit.
                 getDefaultToolkit().
                 getImage(files[1].getAbsolutePath());
         Image actual = fileInput.readImage(files[1]);
@@ -53,7 +53,7 @@ public class FileInputTest {
     @Test
     public void testReadArray() throws Exception {
         File file = files[2];
-        int expected[] = new int[]{(int)'A', (int)'b', (int)'C'};
+        int expected[] = new int[]{(int) 'A', (int) 'b', (int) 'C'};
         int actual[] = fileInput.readArray(file);
         assertArrayEquals(expected, actual);
     }
@@ -62,9 +62,9 @@ public class FileInputTest {
     public void testGetLines() throws Exception {
         File file = files[3];
         String expected[] = new String[]{
-                "line0",
-                "line1",
-                "line2"
+            "line0",
+            "line1",
+            "line2"
         };
         String actual[] = fileInput.getLines(file);
         assertArrayEquals(expected, actual);

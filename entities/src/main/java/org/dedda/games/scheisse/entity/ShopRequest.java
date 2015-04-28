@@ -22,18 +22,18 @@ import javax.validation.constraints.NotNull;
 @Table(name = "shopRequest")
 @NamedQueries({
     @NamedQuery(
-            name = "shopRequest.getForUser",
-            query = "SELECT sr FROM ShopRequest sr WHERE sr.user = :user"
+        name = "shopRequest.getForUser",
+        query = "SELECT sr FROM ShopRequest sr WHERE sr.user = :user"
     ),
     @NamedQuery(
-            name = "shopRequest.getForPrice",
-            query = "SELECT sr "
-                    + "FROM ShopRequest sr "
-                    + "WHERE sr.singlePrice = :price"
+        name = "shopRequest.getForPrice",
+        query = "SELECT sr "
+            + "FROM ShopRequest sr "
+            + "WHERE sr.singlePrice = :price"
     ),
     @NamedQuery(
-            name = "shopRequest.getFotItem",
-            query = "SELECT sr FROM ShopRequest sr WHERE sr.item = :item"
+        name = "shopRequest.getFotItem",
+        query = "SELECT sr FROM ShopRequest sr WHERE sr.item = :item"
     )
 })
 public class ShopRequest extends Entity {
@@ -46,9 +46,9 @@ public class ShopRequest extends Entity {
     @Basic(optional = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(
-            name = "id",
-            nullable = false,
-            unique = true
+        name = "id",
+        nullable = false,
+        unique = true
     )
     private long id;
 
@@ -72,9 +72,9 @@ public class ShopRequest extends Entity {
     @NotNull
     @Basic(optional = false)
     @Column(
-            name = "amount",
-            nullable = false,
-            unique = false
+        name = "amount",
+        nullable = false,
+        unique = false
     )
     private long amount;
 
@@ -84,9 +84,9 @@ public class ShopRequest extends Entity {
     @NotNull
     @Basic(optional = false)
     @Column(
-            name = "singlePrice",
-            nullable = false,
-            unique = false
+        name = "singlePrice",
+        nullable = false,
+        unique = false
     )
     private long singlePrice;
 
@@ -96,9 +96,9 @@ public class ShopRequest extends Entity {
     @NotNull
     @Basic(optional = false)
     @Column(
-            name = "buy",
-            nullable = false,
-            unique = false
+        name = "buy",
+        nullable = false,
+        unique = false
     )
     private boolean buy;
 
@@ -108,9 +108,9 @@ public class ShopRequest extends Entity {
     @NotNull
     @Basic(optional = false)
     @Column(
-            name = "timestamp",
-            nullable = false,
-            unique = false
+        name = "timestamp",
+        nullable = false,
+        unique = false
     )
     private long timestamp;
 
@@ -127,7 +127,6 @@ public class ShopRequest extends Entity {
     }
 
     /**
-     *
      * @param id request id
      */
     public final void setId(final long id) {
@@ -135,9 +134,7 @@ public class ShopRequest extends Entity {
     }
 
     /**
-     *
      * @return creators {@link User}
-     *
      * @see User
      */
     public final User getUser() {
@@ -145,9 +142,7 @@ public class ShopRequest extends Entity {
     }
 
     /**
-     *
      * @param user creators {@link User}
-     *
      * @see User
      */
     public final void setUser(final User user) {
@@ -155,9 +150,7 @@ public class ShopRequest extends Entity {
     }
 
     /**
-     *
      * @return {@link Item} in this slot
-     *
      * @see Item
      */
     public final Item getItem() {
@@ -165,9 +158,7 @@ public class ShopRequest extends Entity {
     }
 
     /**
-     *
      * @param item {@link Item} in this slot
-     *
      * @see Item
      */
     public final void setItem(final Item item) {
@@ -175,7 +166,6 @@ public class ShopRequest extends Entity {
     }
 
     /**
-     *
      * @return amount of items
      */
     public final long getAmount() {
@@ -183,7 +173,6 @@ public class ShopRequest extends Entity {
     }
 
     /**
-     *
      * @param amount amount of items
      */
     public final void setAmount(final long amount) {
@@ -191,7 +180,6 @@ public class ShopRequest extends Entity {
     }
 
     /**
-     *
      * @return price for one item
      */
     public final long getSinglePrice() {
@@ -199,7 +187,6 @@ public class ShopRequest extends Entity {
     }
 
     /**
-     *
      * @param singlePrice price for one item
      */
     public final void setSinglePrice(final long singlePrice) {
@@ -207,9 +194,7 @@ public class ShopRequest extends Entity {
     }
 
     /**
-     *
      * @return whether creator wants to buy or sell
-     *
      * @see #buy
      */
     public final boolean isBuy() {
@@ -217,9 +202,7 @@ public class ShopRequest extends Entity {
     }
 
     /**
-     *
      * @param buy whether creator wants to buy or sell
-     *
      * @see #buy
      */
     public final void setBuy(final boolean buy) {
@@ -227,9 +210,7 @@ public class ShopRequest extends Entity {
     }
 
     /**
-     *
      * @return timestamp of creation
-     *
      * @see #timestamp
      */
     public final long getTimestamp() {
@@ -237,9 +218,7 @@ public class ShopRequest extends Entity {
     }
 
     /**
-     *
      * @param timestamp timestamp of creation
-     *
      * @see #timestamp
      */
     public final void setTimestamp(final long timestamp) {

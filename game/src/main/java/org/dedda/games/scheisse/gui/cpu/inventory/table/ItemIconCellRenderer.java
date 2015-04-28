@@ -15,16 +15,16 @@ import java.awt.Image;
 public class ItemIconCellRenderer implements TableCellRenderer {
 
     public Component getTableCellRendererComponent(
-            final JTable jTable,
-            final Object o,
-            final boolean b,
-            final boolean b1,
-            final int i,
-            final int i1) {
+        final JTable jTable,
+        final Object o,
+        final boolean b,
+        final boolean b1,
+        final int i,
+        final int i1) {
         long id = (Long) o;
         Item item = Item.forId(id);
         Image scaledSprite =
-                item.getSprite().getScaledInstance(15, 15, Image.SCALE_SMOOTH);
+            item.getSprite().getScaledInstance(15, 15, Image.SCALE_SMOOTH);
         JLabel iconLabel = new JLabel(new ImageIcon(scaledSprite));
         return iconLabel;
     }

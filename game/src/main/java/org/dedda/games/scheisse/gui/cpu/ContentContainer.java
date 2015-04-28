@@ -24,7 +24,6 @@ public class ContentContainer extends Container {
     private TabbedGamePane tabbedGamePane;
 
     /**
-     *
      * @param gui {@link Gui} this container belongs to
      */
     public ContentContainer(final Gui gui) {
@@ -36,7 +35,6 @@ public class ContentContainer extends Container {
     }
 
     /**
-     *
      * @return {@link Gui} this container belongs to
      */
     public Gui getGui() {

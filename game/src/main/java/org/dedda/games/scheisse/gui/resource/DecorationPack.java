@@ -22,14 +22,14 @@ public class DecorationPack extends SpritePack {
         String folder = pack.baseDirectory.getAbsolutePath();
         folder += folder.endsWith("/") ? "" : "/";
         Sprite[] sprites = loadSprites(
-                new File[]{
-                        new File(folder + "windowIcon.png"),
-                        new File(folder + "trayIcon.png")
-                },
-                new Dimension[]{
-                        new Dimension(32, 32),
-                        new Dimension(32, 32)
-                }
+            new File[]{
+                new File(folder + "windowIcon.png"),
+                new File(folder + "trayIcon.png")
+            },
+            new Dimension[]{
+                new Dimension(32, 32),
+                new Dimension(32, 32)
+            }
         );
         throw new UnsupportedOperationException();
         //return sprites;

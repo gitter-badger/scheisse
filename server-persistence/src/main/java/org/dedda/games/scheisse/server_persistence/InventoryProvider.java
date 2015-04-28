@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
 @Named
 @Stateless
 public class InventoryProvider {
-    
+
     @PersistenceContext(unitName = "org.dedda.games.scheisse_server-PU")
     private EntityManager em;
 

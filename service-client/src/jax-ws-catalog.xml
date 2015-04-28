@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8080/ItemService/ItemService?wsdl" uri="wsdl/localhost_8080/ItemService/ItemService.wsdl"/>
-    <system systemId="http://localhost:8080/ItemService/ItemService?xsd=1" uri="wsdl/localhost_8080/ItemService/ItemService.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/ShopService/ShopService?wsdl" uri="wsdl/localhost_8080/ShopService/ShopService.wsdl"/>
-    <system systemId="http://localhost:8080/ShopService/ShopService?xsd=1" uri="wsdl/localhost_8080/ShopService/ShopService.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/UserService/UserService?wsdl" uri="wsdl/localhost_8080/UserService/UserService.wsdl"/>
-    <system systemId="http://localhost:8080/UserService/UserService?xsd=1" uri="wsdl/localhost_8080/UserService/UserService.xsd_1.xsd"/>
+  <system systemId="http://localhost:8080/ItemService/ItemService?wsdl"
+          uri="wsdl/localhost_8080/ItemService/ItemService.wsdl"/>
+  <system systemId="http://localhost:8080/ItemService/ItemService?xsd=1"
+          uri="wsdl/localhost_8080/ItemService/ItemService.xsd_1.xsd"/>
+  <system systemId="http://localhost:8080/ShopService/ShopService?wsdl"
+          uri="wsdl/localhost_8080/ShopService/ShopService.wsdl"/>
+  <system systemId="http://localhost:8080/ShopService/ShopService?xsd=1"
+          uri="wsdl/localhost_8080/ShopService/ShopService.xsd_1.xsd"/>
+  <system systemId="http://localhost:8080/UserService/UserService?wsdl"
+          uri="wsdl/localhost_8080/UserService/UserService.wsdl"/>
+  <system systemId="http://localhost:8080/UserService/UserService?xsd=1"
+          uri="wsdl/localhost_8080/UserService/UserService.xsd_1.xsd"/>
 </catalog>

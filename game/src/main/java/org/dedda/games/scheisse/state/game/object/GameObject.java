@@ -15,7 +15,6 @@ public abstract class GameObject {
     }
 
     /**
-     *
      * @return Point2D.Double - location on the map
      */
     public Point2D.Double getLocation() {
@@ -23,7 +22,6 @@ public abstract class GameObject {
     }
 
     /**
-     *
      * @param location Point2D.Double - location on the map
      */
     public void setLocation(final Point2D.Double location) {

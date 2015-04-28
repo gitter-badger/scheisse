@@ -27,10 +27,10 @@ public class InventoryPanel extends JPanel {
         intiLayout();
         tablePanel.addTransactionListener(headerBar);
         InventoryTableModel inventoryModel =
-                tablePanel.getInventoryTable().getModel();
+            tablePanel.getInventoryTable().getModel();
         headerBar.addCategoriesChangeListener(inventoryModel);
         InventoryTableModel actionModel =
-                tablePanel.getActionTable().getModel();
+            tablePanel.getActionTable().getModel();
         headerBar.addCategoriesChangeListener(actionModel);
     }
 

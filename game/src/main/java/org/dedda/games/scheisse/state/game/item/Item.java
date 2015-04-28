@@ -27,25 +27,24 @@ public abstract class Item implements Stackable {
         itemMap = new HashMap<Long, Item>();
         itemMap.put(0L, new NullItem());
         new ItemLoader().loadAll(
-                new File(
-                        "src/test/test_files/classes/" +
-                        "org/dedda/games/scheisse/io/resource/item/ItemLoader"
-                )
+            new File(
+                "src/test/test_files/classes/" +
+                    "org/dedda/games/scheisse/io/resource/item/ItemLoader"
+            )
         );
     }
 
     /**
-     *
-     * @param name String - item name
+     * @param name  String - item name
      * @param value long - item value
      */
     protected Item(
-            final long id,
-            final String name,
-            final long value,
-            final ItemCategory category,
-            final ItemType type,
-            final Image sprite
+        final long id,
+        final String name,
+        final long value,
+        final ItemCategory category,
+        final ItemType type,
+        final Image sprite
     ) {
         this.id = id;
         this.name = name;
@@ -56,13 +55,12 @@ public abstract class Item implements Stackable {
         if (!itemMap.containsKey(id)) {
             itemMap.put(id, this);
             SystemPrinter.debugln(
-                    "registered item '" + name + "' with id: " + id
+                "registered item '" + name + "' with id: " + id
             );
         }
     }
 
     /**
-     *
      * @return long
      */
     public long getValue() {
@@ -70,7 +68,6 @@ public abstract class Item implements Stackable {
     }
 
     /**
-     *
      * @return String
      */
     public String getName() {
@@ -82,7 +79,7 @@ public abstract class Item implements Stackable {
         if (object instanceof Item) {
             Item item = (Item) object;
             return item.name.equals(this.name)
-                    && item.value == this.value;
+                && item.value == this.value;
         }
         return false;
     }
@@ -91,7 +88,7 @@ public abstract class Item implements Stackable {
         SystemPrinter.debugln("All items:");
         for (long key : itemMap.keySet()) {
             SystemPrinter.debugln(
-                    "ID: " + key + " NAME: " + itemMap.get(key).getName()
+                "ID: " + key + " NAME: " + itemMap.get(key).getName()
             );
         }
     }

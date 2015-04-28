@@ -24,13 +24,13 @@ public class ItemServiceHost implements ItemService {
 
     @Override
     @WebMethod(operationName = "getById")
-    public Item get(@WebParam(name = "id")final long id) {
+    public Item get(@WebParam(name = "id") final long id) {
         return provider.getItem(id);
     }
 
     @Override
     @WebMethod(operationName = "searchItem")
-    public List<Item> search(@WebParam(name = "name")final String name) {
+    public List<Item> search(@WebParam(name = "name") final String name) {
         return provider.search(name);
     }
 

@@ -26,8 +26,7 @@ public class Unzip {
     private File destination;
 
     /**
-     *
-     * @param source File
+     * @param source      File
      * @param destination File
      */
     public Unzip(final File source, final File destination) {
@@ -53,13 +52,13 @@ public class Unzip {
             while (entry != null) {
                 String fileName = entry.getName();
                 File file =
-                        new File(
-                                destination.getAbsolutePath() + (
-                                destination.getAbsolutePath().endsWith("/") ?
-                                        "" : "/"
-                                ) +
-                                fileName
-                        );
+                    new File(
+                        destination.getAbsolutePath() + (
+                            destination.getAbsolutePath().endsWith("/") ?
+                                "" : "/"
+                        ) +
+                            fileName
+                    );
                 files.add(file);
                 System.out.println("Unzipping file: " + file.getAbsoluteFile());
                 new File(file.getParent()).mkdirs();
@@ -87,7 +86,7 @@ public class Unzip {
         if (object instanceof Unzip) {
             Unzip unzip = (Unzip) object;
             return unzip.source.equals(this.source)
-                    && unzip.destination.equals(this.destination);
+                && unzip.destination.equals(this.destination);
         }
         return false;
     }

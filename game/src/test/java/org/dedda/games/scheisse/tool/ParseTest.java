@@ -46,8 +46,8 @@ public class ParseTest {
     public void testToPoint2DFloat() throws Exception {
         String string = "123.45,678.9";
         assertEquals(
-                new Point2D.Float(123.45f, 678.9f),
-                Parse.toPoint2DFloat(string)
+            new Point2D.Float(123.45f, 678.9f),
+            Parse.toPoint2DFloat(string)
         );
     }
 
@@ -55,8 +55,8 @@ public class ParseTest {
     public void testToPoint2DDouble() throws Exception {
         String string = "123.45,678.9";
         assertEquals(
-                new Point2D.Double(123.45, 678.9),
-                Parse.toPoint2DDouble(string)
+            new Point2D.Double(123.45, 678.9),
+            Parse.toPoint2DDouble(string)
         );
     }
 
@@ -97,7 +97,7 @@ public class ParseTest {
         short values[] = {0x00FE, 0x00A7, 0x0010};
         byte expected[] = {(byte) 0xFE, (byte) 0xA7, 0x10};
         byte actual[] = Parse.toByteArray(values);
-        for(int i = 0; i < values.length; i++){
+        for (int i = 0; i < values.length; i++) {
             assertTrue(expected[i] == actual[i]);
         }
     }
@@ -107,7 +107,7 @@ public class ParseTest {
         int values[] = {0x000000FE, 0x000000A7, 0x00000010};
         byte expected[] = {(byte) 0xFE, (byte) 0xA7, 0x10};
         byte actual[] = Parse.toByteArray(values);
-        for(int i = 0; i < values.length; i++){
+        for (int i = 0; i < values.length; i++) {
             assertTrue(expected[i] == actual[i]);
         }
     }

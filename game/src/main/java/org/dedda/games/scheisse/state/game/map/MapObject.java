@@ -17,7 +17,6 @@ public class MapObject {
     }
 
     /**
-     *
      * @return Point - location on the map
      */
     public Point getLocation() {
@@ -25,7 +24,6 @@ public class MapObject {
     }
 
     /**
-     *
      * @param location Point - location on the map
      */
     public void setLocation(final Point location) {
@@ -33,7 +31,6 @@ public class MapObject {
     }
 
     /**
-     *
      * @return Dimension
      */
     public Dimension getSize() {
@@ -41,7 +38,6 @@ public class MapObject {
     }
 
     /**
-     *
      * @param size Dimension
      */
     public void setSize(final Dimension size) {
@@ -53,7 +49,7 @@ public class MapObject {
         if (object instanceof MapObject) {
             MapObject mapObject = (MapObject) object;
             return mapObject.location.equals(this.location)
-                    && mapObject.size.equals(this.size);
+                && mapObject.size.equals(this.size);
         }
         return false;
     }

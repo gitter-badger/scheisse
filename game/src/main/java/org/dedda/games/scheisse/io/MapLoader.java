@@ -26,7 +26,6 @@ public class MapLoader extends FileInput {
     private String folder;
 
     /**
-     *
      * @param folder String - parent folder for map files
      */
     public MapLoader(final String folder) {
@@ -34,7 +33,6 @@ public class MapLoader extends FileInput {
     }
 
     /**
-     *
      * @param folder File - parent folder for map files
      */
     public MapLoader(final File folder) {
@@ -42,7 +40,6 @@ public class MapLoader extends FileInput {
     }
 
     /**
-     *
      * @return Map - map from given folder
      */
     public Map load() {
@@ -58,10 +55,10 @@ public class MapLoader extends FileInput {
             if (currentChar == '\n') {
                 if (line != "") {
                     mapProperties.add(
-                            line.substring(0, line.indexOf((int) ':'))
+                        line.substring(0, line.indexOf((int) ':'))
                     );
                     propertyValues.add(
-                            line.substring(line.indexOf((int) ':')+1)
+                        line.substring(line.indexOf((int) ':') + 1)
                     );
                 }
                 line = "";
@@ -93,14 +90,13 @@ public class MapLoader extends FileInput {
     }
 
     /**
-     *
      * @param soilData ArrayList<String> - lines from map file
-     * @param size Dimension - size of the map
+     * @param size     Dimension - size of the map
      * @return int[][] - soil data
      */
     public Soil.Type[][] parseMapSoil(
-            final ArrayList<String> soilData,
-            final Dimension size
+        final ArrayList<String> soilData,
+        final Dimension size
     ) {
         Soil.Type[][] soil = new Soil.Type[size.width][size.height];
         String number = "";

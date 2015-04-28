@@ -21,7 +21,6 @@ public class NPCScript {
     private int currentAction = 0;
 
     /**
-     *
      * @param npc
      */
     public NPCScript(final NPC npc) {
@@ -29,7 +28,6 @@ public class NPCScript {
     }
 
     /**
-     *
      * @param npc
      * @param action
      */
@@ -39,7 +37,6 @@ public class NPCScript {
     }
 
     /**
-     *
      * @return
      */
     public final boolean hasNextAction() {
@@ -68,6 +65,7 @@ public class NPCScript {
 
     /**
      * jumps to specific action.
+     *
      * @param index
      */
     public final void jump(final int index) {
@@ -75,7 +73,6 @@ public class NPCScript {
     }
 
     /**
-     *
      * @return
      */
     public final NPC getNpc() {
@@ -83,7 +80,6 @@ public class NPCScript {
     }
 
     /**
-     *
      * @return
      */
     public final NPCScriptAction[] getAction() {
@@ -91,7 +87,6 @@ public class NPCScript {
     }
 
     /**
-     *
      * @param action
      */
     public final void setAction(final NPCScriptAction[] action) {
@@ -99,7 +94,6 @@ public class NPCScript {
     }
 
     /**
-     *
      * @return
      */
     public final int getCurrentIndex() {
@@ -108,25 +102,26 @@ public class NPCScript {
 
     /**
      * replaces key words in {@link String}s.
+     *
      * @param expression
      * @return
      */
     public final String replaceKeysInExpression(String expression) {
         expression = expression.replace(
-                "npc.location.x",
-                npc.getLocation().getX() + ""
+            "npc.location.x",
+            npc.getLocation().getX() + ""
         );
         expression = expression.replace(
-                "npc.location.y",
-                npc.getLocation().getY() + ""
+            "npc.location.y",
+            npc.getLocation().getY() + ""
         );
         expression = expression.replace(
-                "npc.maxSpeed",
-                npc.getMaxSpeed() + ""
+            "npc.maxSpeed",
+            npc.getMaxSpeed() + ""
         );
         expression = expression.replace(
-                "npc.direction",
-                npc.getDirection() + ""
+            "npc.direction",
+            npc.getDirection() + ""
         );
         expression = expression.replace("npc.evil", npc.isEvil() + "");
         expression = expression.replace("npc.name", npc.getName());
@@ -139,7 +134,7 @@ public class NPCScript {
     @Override
     public final boolean equals(final Object object) {
         if (!object.getClass().equals(this.getClass())) {
-           return false;
+            return false;
         }
         NPCScript npcSkript = (NPCScript) object;
         if (npcSkript.getNpc() != npc) {

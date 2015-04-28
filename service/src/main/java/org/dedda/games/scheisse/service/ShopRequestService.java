@@ -6,5 +6,4 @@ package org.dedda.games.scheisse.service;
 public interface ShopRequestService {
 
 
-
 }

@@ -18,7 +18,7 @@ import java.util.List;
 @SessionScoped
 @Stateful
 public class ItemList {
-    
+
     @Inject
     private ItemProvider provider;
 
@@ -27,11 +27,11 @@ public class ItemList {
     }
 
     public final ItemProvider getProvider() {
-        return provider;        
+        return provider;
     }
 
     public final void setProvider(final ItemProvider provider) {
         this.provider = provider;
     }
-    
+
 }

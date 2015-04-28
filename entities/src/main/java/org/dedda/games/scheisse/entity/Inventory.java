@@ -21,7 +21,6 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
- *
  * @author dedda
  */
 @javax.persistence.Entity
@@ -36,9 +35,9 @@ public class Inventory extends Entity implements TestableEntity {
     @Basic(optional = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(
-            name = "id",
-            nullable = false,
-            unique = true
+        name = "id",
+        nullable = false,
+        unique = true
     )
     private long id;
 
@@ -48,8 +47,8 @@ public class Inventory extends Entity implements TestableEntity {
     @NotNull
     @Basic(optional = false)
     @Column(
-            name = "size",
-            nullable = false
+        name = "size",
+        nullable = false
     )
     private long size;
 
@@ -64,21 +63,22 @@ public class Inventory extends Entity implements TestableEntity {
      * {@link org.dedda.games.scheisse.entity.Slot}s containing items.
      */
     @OneToMany(
-            mappedBy = "inventory",
-            fetch = FetchType.EAGER
+        mappedBy = "inventory",
+        fetch = FetchType.EAGER
     )
     private List<Slot> slots;
 
     /*========================
      * METHODS
      ========================*/
+
     /**
      * checks if enough free space is available for specific
      * {@link org.dedda.games.scheisse.entity.item.Item}s.
      *
-     * @param item {@link org.dedda.games.scheisse.entity.item.Item} to add
+     * @param item   {@link org.dedda.games.scheisse.entity.item.Item} to add
      * @param amount amount of
-     * {@link org.dedda.games.scheisse.entity.item.Item}s to add
+     *               {@link org.dedda.games.scheisse.entity.item.Item}s to add
      * @return self explaining
      */
     public final boolean canAdd(final Item item, final long amount) {
@@ -95,14 +95,13 @@ public class Inventory extends Entity implements TestableEntity {
     /**
      * adds {@link org.dedda.games.scheisse.entity.item.Item}s to the
      * {@link org.dedda.games.scheisse.entity.Inventory}.
-     *
+     * <p/>
      * checks if {@link org.dedda.games.scheisse.entity.item.Item}s fit in the
      * {@link org.dedda.games.scheisse.entity.Inventory} and adds them to the
      * right {@link org.dedda.games.scheisse.entity.Slot}s.
      *
-     * @param item {@link Item} to add
+     * @param item   {@link Item} to add
      * @param amount amount of items to add
-     *
      * @see Item
      */
     public final void add(final Item item, final long amount) {
@@ -144,7 +143,7 @@ public class Inventory extends Entity implements TestableEntity {
     }
 
     /**
-     * @param item item to search and remove
+     * @param item   item to search and remove
      * @param amount amount of items to remove
      * @return amount of items actually removed
      */
@@ -185,7 +184,7 @@ public class Inventory extends Entity implements TestableEntity {
 
     /**
      * @param size number of available
-     * {@link org.dedda.games.scheisse.entity.Slot}s
+     *             {@link org.dedda.games.scheisse.entity.Slot}s
      */
     public final void setSize(final long size) {
         this.size = size;
@@ -193,7 +192,6 @@ public class Inventory extends Entity implements TestableEntity {
 
     /**
      * @return owner of the inventory
-     *
      * @see User
      */
     public final User getUser() {
@@ -202,7 +200,6 @@ public class Inventory extends Entity implements TestableEntity {
 
     /**
      * @param user owner of the inventory
-     *
      * @see User
      */
     public final void setUser(final User user) {
@@ -211,7 +208,6 @@ public class Inventory extends Entity implements TestableEntity {
 
     /**
      * @return {@link org.dedda.games.scheisse.entity.Slot}s containing items
-     *
      * @see List
      * @see Slot
      */
@@ -222,7 +218,6 @@ public class Inventory extends Entity implements TestableEntity {
     /**
      * @param slots {@link org.dedda.games.scheisse.entity.Slot}s
      *              containing items
-     *
      * @see List
      * @see Slot
      */

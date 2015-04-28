@@ -21,7 +21,6 @@ public class NPCJumpIfEqual extends NPCScriptAction {
     private int jumpPoint;
 
     /**
-     *
      * @param script
      */
     public NPCJumpIfEqual(final NPCScript script) {
@@ -32,9 +31,8 @@ public class NPCJumpIfEqual extends NPCScriptAction {
      * this method always returns true. after jump the cursor in the script
      * is at a different position so this action can't be run twice.
      *
-     * @see NPCScriptAction#hasNextStep()
-     *
      * @return always true
+     * @see NPCScriptAction#hasNextStep()
      */
     @Override
     public final boolean hasNextStep() {
@@ -62,7 +60,6 @@ public class NPCJumpIfEqual extends NPCScriptAction {
     }
 
     /**
-     *
      * @return
      */
     public final String getExpected() {
@@ -70,7 +67,6 @@ public class NPCJumpIfEqual extends NPCScriptAction {
     }
 
     /**
-     *
      * @param expected
      */
     public final void setExpected(final String expected) {
@@ -78,7 +74,6 @@ public class NPCJumpIfEqual extends NPCScriptAction {
     }
 
     /**
-     *
      * @return
      */
     public final String getActual() {
@@ -86,7 +81,6 @@ public class NPCJumpIfEqual extends NPCScriptAction {
     }
 
     /**
-     *
      * @param actual
      */
     public final void setActual(final String actual) {
@@ -94,7 +88,6 @@ public class NPCJumpIfEqual extends NPCScriptAction {
     }
 
     /**
-     *
      * @return
      */
     public final int getJumpPoint() {
@@ -102,7 +95,6 @@ public class NPCJumpIfEqual extends NPCScriptAction {
     }
 
     /**
-     *
      * @param jumpPoint
      */
     public final void setJumpPoint(final int jumpPoint) {
@@ -110,7 +102,6 @@ public class NPCJumpIfEqual extends NPCScriptAction {
     }
 
     /**
-     *
      * objects are equal when expressions for expected and actual values
      * are equal and both objects have the same jump point.
      *
@@ -124,7 +115,7 @@ public class NPCJumpIfEqual extends NPCScriptAction {
         }
         NPCJumpIfEqual npcJumpIfEqual = (NPCJumpIfEqual) object;
         if (!npcJumpIfEqual.getActual().equals(actual) ||
-                !npcJumpIfEqual.getExpected().equals(expected)) {
+            !npcJumpIfEqual.getExpected().equals(expected)) {
             return false;
         }
         if (npcJumpIfEqual.getJumpPoint() != jumpPoint) {

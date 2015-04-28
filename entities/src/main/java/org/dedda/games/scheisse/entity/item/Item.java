@@ -14,31 +14,30 @@ import javax.validation.constraints.NotNull;
 import java.awt.Image;
 
 /**
- *
  * @author dedda
  */
 @javax.persistence.Entity
 @Table(name = "item")
 @NamedQueries({
-        @NamedQuery(
-                name = "item.getAll",
-                query = "SELECT i " +
-                        "FROM org.dedda.games.scheisse.entity.item.Item i"
-        ),
-        @NamedQuery(
-                name = "item.getForType",
-                query = "SELECT i " +
-                        "FROM org.dedda.games.scheisse.entity.item.Item i " +
-                        "WHERE i.type = :type"
-        ),
-        @NamedQuery(
-                name = "item.searchByName",
-                query = "SELECT i FROM Item where i.name LIKE :name"
-        )
+    @NamedQuery(
+        name = "item.getAll",
+        query = "SELECT i " +
+            "FROM org.dedda.games.scheisse.entity.item.Item i"
+    ),
+    @NamedQuery(
+        name = "item.getForType",
+        query = "SELECT i " +
+            "FROM org.dedda.games.scheisse.entity.item.Item i " +
+            "WHERE i.type = :type"
+    ),
+    @NamedQuery(
+        name = "item.searchByName",
+        query = "SELECT i FROM Item where i.name LIKE :name"
+    )
 })
 public class Item
-        extends org.dedda.games.scheisse.entity.Entity
-        implements TestableEntity {
+    extends org.dedda.games.scheisse.entity.Entity
+    implements TestableEntity {
 
     /**
      * item id.
@@ -48,9 +47,9 @@ public class Item
     @Basic(optional = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(
-            name = "id",
-            nullable = false,
-            unique = true
+        name = "id",
+        nullable = false,
+        unique = true
     )
     private long id;
 
@@ -60,8 +59,8 @@ public class Item
     @NotNull
     @Basic(optional = false)
     @Column(
-            name = "price",
-            nullable = false
+        name = "price",
+        nullable = false
     )
     private long price;
 
@@ -71,9 +70,9 @@ public class Item
     @NotNull
     @Basic(optional = false)
     @Column(
-            name = "name",
-            nullable = false,
-            unique = true
+        name = "name",
+        nullable = false,
+        unique = true
     )
     private String name;
 
@@ -83,8 +82,8 @@ public class Item
     @NotNull
     @Basic(optional = false)
     @Column(
-            name = "type",
-            nullable = false
+        name = "type",
+        nullable = false
     )
     private String type;
 
@@ -92,7 +91,7 @@ public class Item
      * highest amount of damage to be dealt with this item.
      */
     @Column(
-            name = "attack"
+        name = "attack"
     )
     private long attack;
 
@@ -100,7 +99,7 @@ public class Item
      * highest amount of damage that can be absorbed by this item.
      */
     @Column(
-            name = "armor"
+        name = "armor"
     )
     private long armor;
 
@@ -108,7 +107,7 @@ public class Item
      * max possible stack amount.
      */
     @Column(
-            name = "max_stack"
+        name = "max_stack"
     )
     private long maxStackAmount;
 
@@ -119,7 +118,7 @@ public class Item
 
     /**
      * item category.
-     * 
+     *
      * @see ItemCategory
      */
     private ItemCategory category;
@@ -256,7 +255,6 @@ public class Item
     }
 
     /**
-     *
      * @return max stack amount
      */
     public final long getMaxStackAmount() {
@@ -264,7 +262,6 @@ public class Item
     }
 
     /**
-     *
      * @param maxStackAmount max stack amount
      */
     public final void setMaxStackAmount(final long maxStackAmount) {

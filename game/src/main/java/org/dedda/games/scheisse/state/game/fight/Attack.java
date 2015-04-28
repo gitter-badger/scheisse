@@ -18,7 +18,7 @@ public class Attack {
     public final Map<AttackElement, Long> elementalDamage;
 
     /**
-     * @param baseDamage basic damage dealt by attack
+     * @param baseDamage      basic damage dealt by attack
      * @param elementalDamage elemental damage dealt for specific elements
      */
     public Attack(final long baseDamage, final Map<AttackElement, Long> elementalDamage) {

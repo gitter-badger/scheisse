@@ -6,7 +6,7 @@ package org.dedda.games.scheisse.gui.cpu.inventory;
 public interface InventoryTransactionListener {
 
     public abstract void transactionPerformed(
-            final InventoryTransactionEvent event
+        final InventoryTransactionEvent event
     );
 
 }

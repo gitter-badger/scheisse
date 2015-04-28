@@ -12,7 +12,7 @@ public class Inventory {
 
     private ArrayList<Slot> slots = new ArrayList<Slot>();
     private ArrayList<InventoryChangeListener> inventoryChangeListeners =
-            new ArrayList<InventoryChangeListener>();
+        new ArrayList<InventoryChangeListener>();
 
     public Inventory() {
         for (int i = 0; i < 20; i++) {
@@ -21,7 +21,6 @@ public class Inventory {
     }
 
     /**
-     *
      * @param size int
      */
     public Inventory(final int size) {
@@ -31,10 +30,10 @@ public class Inventory {
     }
 
     public void triggerChangeEvent() {
-        for(
-                InventoryChangeListener inventoryChangeListener :
-                inventoryChangeListeners
-                ){
+        for (
+            InventoryChangeListener inventoryChangeListener :
+            inventoryChangeListeners
+            ) {
             inventoryChangeListener.inventoryChangeAction();
         }
     }
@@ -64,12 +63,11 @@ public class Inventory {
         removeItems(Item.forId(id), amount);
     }
 
-    public void addItems (final long id, final long amount) {
+    public void addItems(final long id, final long amount) {
         addItems(Item.forId(id), amount);
     }
 
     /**
-     *
      * @return int
      */
     public int getSize() {
@@ -77,7 +75,6 @@ public class Inventory {
     }
 
     /**
-     *
      * @param size int
      */
     public void setSize(final int size) {
@@ -87,7 +84,7 @@ public class Inventory {
             }
         } else if (size < slots.size()) {
             for (int i = slots.size(); i >= size; i--) {
-                slots.remove(i-1);
+                slots.remove(i - 1);
             }
         }
         triggerChangeEvent();
@@ -117,7 +114,7 @@ public class Inventory {
         SystemPrinter.debugln("size: " + slots.size());
         for (Slot slot : slots) {
             SystemPrinter.debugln(
-                    slot.getDummy().getName() + ": " + slot.getNumberOfItems()
+                slot.getDummy().getName() + ": " + slot.getNumberOfItems()
             );
         }
     }
@@ -142,13 +139,13 @@ public class Inventory {
     }
 
     public void addInventoryChangeListener(
-            final InventoryChangeListener listener
+        final InventoryChangeListener listener
     ) {
         inventoryChangeListeners.add(listener);
     }
 
     public void removeInventoryChangeListener(
-            final InventoryChangeListener listener
+        final InventoryChangeListener listener
     ) {
         if (inventoryChangeListeners.contains(listener)) {
             inventoryChangeListeners.remove(listener);

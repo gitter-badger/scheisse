@@ -14,7 +14,7 @@ import java.util.HashMap;
 /**
  * Created by dedda on 4/20/14.
  */
-public class  Soil {
+public class Soil {
 
     public enum Type {
         GRASS, DIRT, ROCK, WATER;
@@ -28,8 +28,8 @@ public class  Soil {
         for (Type soilType : Type.values()) {
             Image image = null;
             String fileName = Main.INSTALLATION_FOLDER +
-                    "data/image/map_" +
-                    String.valueOf(soilType).toLowerCase() + ".png";
+                "data/image/map_" +
+                String.valueOf(soilType).toLowerCase() + ".png";
             SystemPrinter.debugln("loaded image: " + fileName);
             image = Toolkit.getDefaultToolkit().getImage(fileName);
             imageMap.put(soilType, image);
@@ -41,8 +41,8 @@ public class  Soil {
         HashMap<Type, Texture> textureMap = new HashMap<Type, Texture>();
         for (Type type : Type.values()) {
             String fileName = Main.INSTALLATION_FOLDER +
-                    "data/image/map_" +
-                    String.valueOf(type).toLowerCase() + ".png";
+                "data/image/map_" +
+                String.valueOf(type).toLowerCase() + ".png";
             Texture texture = null;
             try {
                 texture = TextureIO.newTexture(new File(fileName), true);

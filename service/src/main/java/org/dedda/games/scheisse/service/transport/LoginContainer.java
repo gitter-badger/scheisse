@@ -8,7 +8,7 @@ package org.dedda.games.scheisse.service.transport;
 import java.io.Serializable;
 
 public class LoginContainer implements Serializable {
-    
+
     public final String name;
     public final String password;
 
@@ -16,5 +16,5 @@ public class LoginContainer implements Serializable {
         this.name = name;
         this.password = password;
     }
-    
+
 }

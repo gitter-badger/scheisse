@@ -30,7 +30,7 @@ public class InventoryServiceHost implements InventoryService {
      */
     @Override
     @WebMethod(operationName = "getInventory")
-    public Inventory get(@WebParam(name = "session")final UUID session) {
+    public Inventory get(@WebParam(name = "session") final UUID session) {
         User user = loginSessionCache.getForUUID(session);
         if (null == user) {
             return null;
@@ -43,7 +43,7 @@ public class InventoryServiceHost implements InventoryService {
      */
     @Override
     @WebMethod(operationName = "addItem")
-    public Inventory addItem(@WebParam(name = "itemId")final long id, @WebParam(name = "amount")final long amount, @WebParam(name = "session")final UUID session) {
+    public Inventory addItem(@WebParam(name = "itemId") final long id, @WebParam(name = "amount") final long amount, @WebParam(name = "session") final UUID session) {
         User user = loginSessionCache.getForUUID(session);
         if (null == user) {
             return null;
@@ -63,7 +63,7 @@ public class InventoryServiceHost implements InventoryService {
      */
     @Override
     @WebMethod(operationName = "removeItem")
-    public Inventory removeItem(@WebParam(name = "itemId")final long id, @WebParam(name = "amount")final long amount, @WebParam(name = "session")final UUID session) {
+    public Inventory removeItem(@WebParam(name = "itemId") final long id, @WebParam(name = "amount") final long amount, @WebParam(name = "session") final UUID session) {
         User user = loginSessionCache.getForUUID(session);
         if (null == user) {
             return null;

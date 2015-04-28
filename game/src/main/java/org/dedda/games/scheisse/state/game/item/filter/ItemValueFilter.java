@@ -22,10 +22,14 @@ public class ItemValueFilter extends ItemFilter {
     @Override
     public boolean accept(final Item item) {
         switch (mode) {
-            case MODE_BELOW:    return value >= item.getValue();
-            case MODE_EXACT:    return value == item.getValue();
-            case MODE_ABOVE:    return value <= item.getValue();
-            default: return false;
+            case MODE_BELOW:
+                return value >= item.getValue();
+            case MODE_EXACT:
+                return value == item.getValue();
+            case MODE_ABOVE:
+                return value <= item.getValue();
+            default:
+                return false;
         }
     }
 }

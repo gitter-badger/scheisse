@@ -15,13 +15,13 @@ import javax.inject.Inject;
 @ManagedBean
 @RequestScoped
 public class Item {
-    
+
     @Inject
     private ItemProvider provider;
-    
+
     @ManagedProperty(value = "#{param.id}")
     private long id;
-    
+
     private org.dedda.games.scheisse.entity.item.Item selected;
 
     public final ItemProvider getProvider() {
@@ -36,12 +36,12 @@ public class Item {
         selected = provider.getItem(id);
         return "item";
     }
-    
-    public final String show(final long id){
+
+    public final String show(final long id) {
         selected = provider.getItem(id);
         return "item";
     }
-    
+
     public final org.dedda.games.scheisse.entity.item.Item getSelected() {
         return selected;
     }

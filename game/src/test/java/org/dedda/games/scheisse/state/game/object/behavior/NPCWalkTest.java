@@ -21,7 +21,7 @@ public class NPCWalkTest {
         npc.setMaxSpeed(3d);
         npcScript = new NPCScript(npc);
         npcWalk = new NPCWalk(npcScript);
-        npcWalk.setDirection(Math.PI/2);
+        npcWalk.setDirection(Math.PI / 2);
         npcWalk.setAmount(50d);
     }
 
@@ -29,9 +29,9 @@ public class NPCWalkTest {
     public void testNextStep() throws Exception {
         npcWalk.nextStep();
         assertTrue(npc.getLocation().getX() <
-                0.1d && npc.getLocation().getX() > -0.1d);
+            0.1d && npc.getLocation().getX() > -0.1d);
         assertTrue(npc.getLocation().getY() <
-                3.1d && npc.getLocation().getY() > 2.9d);
+            3.1d && npc.getLocation().getY() > 2.9d);
         assertTrue(npc.getDirection() == npcWalk.getDirection());
     }
 

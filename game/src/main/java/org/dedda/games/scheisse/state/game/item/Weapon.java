@@ -14,24 +14,22 @@ public class Weapon extends Item implements Wearable, Holdeable {
     protected final long attack;
 
     /**
-     *
-     * @param name String - item name
-     * @param value long - item value
+     * @param name   String - item name
+     * @param value  long - item value
      * @param attack long
      */
     protected Weapon(
-            final long id,
-            final String name,
-            final long value,
-            final long attack,
-            final Image sprite
+        final long id,
+        final String name,
+        final long value,
+        final long attack,
+        final Image sprite
     ) {
         super(id, name, value, ItemCategory.WEAPPON, WEAPON, sprite);
         this.attack = attack;
     }
 
     /**
-     *
      * @return long
      */
     public long getAttack() {
@@ -43,8 +41,8 @@ public class Weapon extends Item implements Wearable, Holdeable {
         if (object instanceof Weapon) {
             Weapon weapon = (Weapon) object;
             return weapon.getName().equals(this.getName())
-                    && weapon.value == this.value
-                    && weapon.attack == this.attack;
+                && weapon.value == this.value
+                && weapon.attack == this.attack;
         }
         return false;
     }
@@ -59,6 +57,7 @@ public class Weapon extends Item implements Wearable, Holdeable {
 
     /**
      * Creates a new {@link Weapon} item and takes care of possible errors.
+     *
      * @param id
      * @param name
      * @param value
@@ -67,11 +66,11 @@ public class Weapon extends Item implements Wearable, Holdeable {
      * @return registered {@link org.dedda.games.scheisse.state.game.item.Weapon}
      */
     public static Weapon register(
-            final long id,
-            final String name,
-            final long value,
-            final long attack,
-            final Image sprite
+        final long id,
+        final String name,
+        final long value,
+        final long attack,
+        final Image sprite
     ) {
         return new Weapon(id, name, value, attack, sprite);
     }

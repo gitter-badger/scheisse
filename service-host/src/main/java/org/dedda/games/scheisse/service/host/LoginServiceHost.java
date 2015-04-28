@@ -16,13 +16,13 @@ public class LoginServiceHost implements LoginService {
 
     @Override
     @WebMethod(operationName = "login")
-    public UUID login(@WebParam(name = "username")final String username, @WebParam(name = "username")final String password) {
+    public UUID login(@WebParam(name = "username") final String username, @WebParam(name = "username") final String password) {
         return cache.login(username, password);
     }
 
     @Override
     @WebMethod(operationName = "logout")
-    public void logout(@WebParam(name = "session")final UUID session) {
+    public void logout(@WebParam(name = "session") final UUID session) {
         cache.logout(session);
     }
 

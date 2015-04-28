@@ -21,13 +21,13 @@ public class PackageReader extends FileInput {
     public BinaryResource[] readPackage(final File file) {
         BinaryResource[] resources;
         ArrayList<BinaryResource> resourceList =
-                new ArrayList<>();
+            new ArrayList<>();
         BufferedInputStream inputStream;
         try {
             inputStream = new BufferedInputStream(new FileInputStream(file));
         } catch (FileNotFoundException e) {
             SystemPrinter.debugln(
-                    "File " + file.getAbsolutePath() + " can not be found!"
+                "File " + file.getAbsolutePath() + " can not be found!"
             );
             return null;
         }
@@ -38,13 +38,13 @@ public class PackageReader extends FileInput {
         byte[] data = null;
         int dataCount = 0;
         try {
-            while ((buffer = inputStream.read()) != -1){
+            while ((buffer = inputStream.read()) != -1) {
                 if (byteCount < TYPE_LENGTH) {
                     type +=
-                    (int) Math.pow(256, TYPE_LENGTH - (byteCount + 1)) * buffer;
+                        (int) Math.pow(256, TYPE_LENGTH - (byteCount + 1)) * buffer;
                 } else if (byteCount < TYPE_LENGTH + SIZE_LENGTH) {
                     size +=
-                    (int) Math.pow(256, SIZE_LENGTH - (byteCount + 1) + TYPE_LENGTH) * buffer;
+                        (int) Math.pow(256, SIZE_LENGTH - (byteCount + 1) + TYPE_LENGTH) * buffer;
                 } else if (byteCount == TYPE_LENGTH + SIZE_LENGTH) {
                     data = new byte[size];
                     data[dataCount] = (byte) buffer;
@@ -56,7 +56,7 @@ public class PackageReader extends FileInput {
                     } else {
                         data[dataCount] = (byte) buffer;
                         BinaryResource resource =
-                                new BinaryResource(data, type);
+                            new BinaryResource(data, type);
                         dataCount = 0;
                         byteCount = 0;
                         size = 0;
@@ -69,11 +69,12 @@ public class PackageReader extends FileInput {
             }
         } catch (IOException e) {
             SystemPrinter.debugln(
-                    "Error reading from file " + file.getAbsolutePath()
+                "Error reading from file " + file.getAbsolutePath()
             );
             try {
                 inputStream.close();
-            } catch (IOException e1) {}
+            } catch (IOException e1) {
+            }
             return null;
         }
         resources = new BinaryResource[resourceList.size()];
@@ -83,7 +84,8 @@ public class PackageReader extends FileInput {
         }
         try {
             inputStream.close();
-        } catch (IOException e) {}
+        } catch (IOException e) {
+        }
         return resources;
     }
 }

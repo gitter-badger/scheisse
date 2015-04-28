@@ -17,22 +17,22 @@ import java.io.Serializable;
 
 @ManagedBean
 @RequestScoped
-public class Register implements Serializable{
-    
+public class Register implements Serializable {
+
     private String name;
-    
+
     private String password;
-    
+
     private String email;
-    
+
     @Inject
     private UserProvider userProvider;
-    
+
     @PostConstruct
     public final void init() {
         reset();
     }
-    
+
     public final String register() {
         if (!checkName() || !checkEmail() || !checkPassword()) {
             reset();
@@ -53,7 +53,7 @@ public class Register implements Serializable{
         }
         return true;
     }
-    
+
     private final boolean checkPassword() {
         System.out.println("password: " + password);
         if (password == null || "".equals(password)) {
@@ -61,7 +61,7 @@ public class Register implements Serializable{
         }
         return false;
     }
-    
+
     private final boolean checkEmail() {
         System.out.println("email: " + email);
         if (email == null || "".equals(email)) {
@@ -69,13 +69,13 @@ public class Register implements Serializable{
         }
         return false;
     }
-    
+
     private final void reset() {
         name = "";
         email = "";
         password = "";
     }
-    
+
     public final String getName() {
         return name;
     }
@@ -99,5 +99,5 @@ public class Register implements Serializable{
     public final void setEmail(final String email) {
         this.email = email;
     }
-    
+
 }

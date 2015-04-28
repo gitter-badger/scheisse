@@ -27,7 +27,7 @@ public class ResourcePack {
     private static final int ITEM_OFFSET = NPC_OFFSET + NPCPack.LENGTH;
 
     private static HashMap<String, ResourcePack> installedPacks =
-            new HashMap<String, ResourcePack>();
+        new HashMap<String, ResourcePack>();
 
     public final String name;
     public final File baseDirectory;
@@ -37,17 +37,17 @@ public class ResourcePack {
         this.name = name;
         baseDirectory = new File(Resource.IMAGE_FOLDER + name + "/");
         spritePacks = new SpritePack[]{
-                new DecorationPack(this),
-                new MenuPack(this),
-                new SoilPack(this),
-                new PlayerPack(this),
-                new NPCPack(this),
-                new ItemPack(this)
+            new DecorationPack(this),
+            new MenuPack(this),
+            new SoilPack(this),
+            new PlayerPack(this),
+            new NPCPack(this),
+            new ItemPack(this)
         };
     }
 
     public static void registerPack(final ResourcePack pack)
-            throws ResourcePackException {
+        throws ResourcePackException {
         String name = pack.name;
         if (installedPacks.containsKey(name)) {
             throw new ResourcePackException(ALREADY_REGISTERED);

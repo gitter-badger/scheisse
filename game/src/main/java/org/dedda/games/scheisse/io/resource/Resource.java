@@ -10,9 +10,9 @@ import java.util.HashMap;
 public abstract class Resource {
 
     public static final String INSTALLATION_FOLDER =
-            System.getProperty("user.home") + "/.scheisse/";
+        System.getProperty("user.home") + "/.scheisse/";
     public static final String SAVEGAME_FOLDER =
-            INSTALLATION_FOLDER + "savegame/";
+        INSTALLATION_FOLDER + "savegame/";
     public static final String DATA_FOLDER = INSTALLATION_FOLDER + "data/";
     //public static final String ITEM_FOLDER = DATA_FOLDER + "item/";
     public static final String ITEM_FOLDER = "src/test/test_files/classes/org/dedda/games/scheisse/io/resource/item/ItemLoader";

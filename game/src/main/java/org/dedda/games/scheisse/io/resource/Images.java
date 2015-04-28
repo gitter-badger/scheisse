@@ -23,15 +23,15 @@ public abstract class Images {
     public static final int GAME_MAXIMIZE = 7;
 
     private static final Image[] IMAGES = new Image[]{
-            tk.getImage(IMAGE_FOLDER + "main_menu_start.png"),
-            tk.getImage(IMAGE_FOLDER + "main_menu_options.png"),
-            tk.getImage(IMAGE_FOLDER + "main_menu_exit.png"),
-            tk.getImage(IMAGE_FOLDER + "main_menu_close.png"),
-            tk.getImage(IMAGE_FOLDER + "main_menu_minimize.png"),
+        tk.getImage(IMAGE_FOLDER + "main_menu_start.png"),
+        tk.getImage(IMAGE_FOLDER + "main_menu_options.png"),
+        tk.getImage(IMAGE_FOLDER + "main_menu_exit.png"),
+        tk.getImage(IMAGE_FOLDER + "main_menu_close.png"),
+        tk.getImage(IMAGE_FOLDER + "main_menu_minimize.png"),
 
-            tk.getImage(IMAGE_FOLDER + "game_close.png"),
-            tk.getImage(IMAGE_FOLDER + "game_minimize.png"),
-            tk.getImage(IMAGE_FOLDER + "game_maximize.png")
+        tk.getImage(IMAGE_FOLDER + "game_close.png"),
+        tk.getImage(IMAGE_FOLDER + "game_minimize.png"),
+        tk.getImage(IMAGE_FOLDER + "game_maximize.png")
     };
 
     public static Image get(final int key) {

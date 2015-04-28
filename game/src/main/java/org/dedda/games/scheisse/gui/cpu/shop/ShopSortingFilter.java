@@ -15,9 +15,9 @@ public class ShopSortingFilter extends ItemComplexFilter {
     public final ShopConnector shop;
 
     public ShopSortingFilter(
-            final ShopConnector shop,
-            final ItemFilter[] itemFilters,
-            final int mode
+        final ShopConnector shop,
+        final ItemFilter[] itemFilters,
+        final int mode
     ) {
         super(itemFilters, mode);
         this.shop = shop;

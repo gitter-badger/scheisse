@@ -4,190 +4,209 @@
         xmlns:tns="http://service.scheisse_server.games.dedda.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://service.scheisse_server.games.dedda.org/"
         name="ShopService">
-<types>
-<xsd:schema>
-<xsd:import namespace="http://service.scheisse_server.games.dedda.org/" schemaLocation="http://localhost:8080/ShopService/ShopService?xsd=1"/>
-</xsd:schema>
-</types>
-<message name="buy">
-<part name="parameters" element="tns:buy"/>
-</message>
-<message name="buyResponse">
-<part name="parameters" element="tns:buyResponse"/>
-</message>
-<message name="getRegularPrice">
-<part name="parameters" element="tns:getRegularPrice"/>
-</message>
-<message name="getRegularPriceResponse">
-<part name="parameters" element="tns:getRegularPriceResponse"/>
-</message>
-<message name="getAvailableQuantity">
-<part name="parameters" element="tns:getAvailableQuantity"/>
-</message>
-<message name="getAvailableQuantityResponse">
-<part name="parameters" element="tns:getAvailableQuantityResponse"/>
-</message>
-<message name="getAvailableQuantityForPrice">
-<part name="parameters" element="tns:getAvailableQuantityForPrice"/>
-</message>
-<message name="getAvailableQuantityForPriceResponse">
-<part name="parameters" element="tns:getAvailableQuantityForPriceResponse"/>
-</message>
-<message name="getAvailableOffers">
-<part name="parameters" element="tns:getAvailableOffers"/>
-</message>
-<message name="getAvailableOffersResponse">
-<part name="parameters" element="tns:getAvailableOffersResponse"/>
-</message>
-<message name="getOffersWithFilter">
-<part name="parameters" element="tns:getOffersWithFilter"/>
-</message>
-<message name="getOffersWithFilterResponse">
-<part name="parameters" element="tns:getOffersWithFilterResponse"/>
-</message>
-<message name="requestOffer">
-<part name="parameters" element="tns:requestOffer"/>
-</message>
-<message name="requestOfferResponse">
-<part name="parameters" element="tns:requestOfferResponse"/>
-</message>
-<message name="getAvailableItems">
-<part name="parameters" element="tns:getAvailableItems"/>
-</message>
-<message name="getAvailableItemsResponse">
-<part name="parameters" element="tns:getAvailableItemsResponse"/>
-</message>
-<message name="sell">
-<part name="parameters" element="tns:sell"/>
-</message>
-<message name="sellResponse">
-<part name="parameters" element="tns:sellResponse"/>
-</message>
-<portType name="ShopService">
-<operation name="buy">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/buyRequest" message="tns:buy"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/buyResponse" message="tns:buyResponse"/>
-</operation>
-<operation name="getRegularPrice">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getRegularPriceRequest" message="tns:getRegularPrice"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getRegularPriceResponse" message="tns:getRegularPriceResponse"/>
-</operation>
-<operation name="getAvailableQuantity">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableQuantityRequest" message="tns:getAvailableQuantity"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableQuantityResponse" message="tns:getAvailableQuantityResponse"/>
-</operation>
-<operation name="getAvailableQuantityForPrice">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableQuantityForPriceRequest" message="tns:getAvailableQuantityForPrice"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableQuantityForPriceResponse" message="tns:getAvailableQuantityForPriceResponse"/>
-</operation>
-<operation name="getAvailableOffers">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableOffersRequest" message="tns:getAvailableOffers"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableOffersResponse" message="tns:getAvailableOffersResponse"/>
-</operation>
-<operation name="getOffersWithFilter">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getOffersWithFilterRequest" message="tns:getOffersWithFilter"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getOffersWithFilterResponse" message="tns:getOffersWithFilterResponse"/>
-</operation>
-<operation name="requestOffer">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/requestOfferRequest" message="tns:requestOffer"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/requestOfferResponse" message="tns:requestOfferResponse"/>
-</operation>
-<operation name="getAvailableItems">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableItemsRequest" message="tns:getAvailableItems"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableItemsResponse" message="tns:getAvailableItemsResponse"/>
-</operation>
-<operation name="sell">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/sellRequest" message="tns:sell"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/sellResponse" message="tns:sellResponse"/>
-</operation>
-</portType>
-<binding name="ShopServicePortBinding" type="tns:ShopService">
-<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="buy">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getRegularPrice">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getAvailableQuantity">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getAvailableQuantityForPrice">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getAvailableOffers">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getOffersWithFilter">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="requestOffer">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getAvailableItems">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="sell">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-</binding>
-<service name="ShopService">
-<port name="ShopServicePort" binding="tns:ShopServicePortBinding">
-<soap:address location="http://localhost:8080/ShopService/ShopService"/>
-</port>
-</service>
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://service.scheisse_server.games.dedda.org/"
+                        schemaLocation="http://localhost:8080/ShopService/ShopService?xsd=1"/>
+        </xsd:schema>
+    </types>
+    <message name="buy">
+        <part name="parameters" element="tns:buy"/>
+    </message>
+    <message name="buyResponse">
+        <part name="parameters" element="tns:buyResponse"/>
+    </message>
+    <message name="getRegularPrice">
+        <part name="parameters" element="tns:getRegularPrice"/>
+    </message>
+    <message name="getRegularPriceResponse">
+        <part name="parameters" element="tns:getRegularPriceResponse"/>
+    </message>
+    <message name="getAvailableQuantity">
+        <part name="parameters" element="tns:getAvailableQuantity"/>
+    </message>
+    <message name="getAvailableQuantityResponse">
+        <part name="parameters" element="tns:getAvailableQuantityResponse"/>
+    </message>
+    <message name="getAvailableQuantityForPrice">
+        <part name="parameters" element="tns:getAvailableQuantityForPrice"/>
+    </message>
+    <message name="getAvailableQuantityForPriceResponse">
+        <part name="parameters" element="tns:getAvailableQuantityForPriceResponse"/>
+    </message>
+    <message name="getAvailableOffers">
+        <part name="parameters" element="tns:getAvailableOffers"/>
+    </message>
+    <message name="getAvailableOffersResponse">
+        <part name="parameters" element="tns:getAvailableOffersResponse"/>
+    </message>
+    <message name="getOffersWithFilter">
+        <part name="parameters" element="tns:getOffersWithFilter"/>
+    </message>
+    <message name="getOffersWithFilterResponse">
+        <part name="parameters" element="tns:getOffersWithFilterResponse"/>
+    </message>
+    <message name="requestOffer">
+        <part name="parameters" element="tns:requestOffer"/>
+    </message>
+    <message name="requestOfferResponse">
+        <part name="parameters" element="tns:requestOfferResponse"/>
+    </message>
+    <message name="getAvailableItems">
+        <part name="parameters" element="tns:getAvailableItems"/>
+    </message>
+    <message name="getAvailableItemsResponse">
+        <part name="parameters" element="tns:getAvailableItemsResponse"/>
+    </message>
+    <message name="sell">
+        <part name="parameters" element="tns:sell"/>
+    </message>
+    <message name="sellResponse">
+        <part name="parameters" element="tns:sellResponse"/>
+    </message>
+    <portType name="ShopService">
+        <operation name="buy">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/buyRequest"
+                   message="tns:buy"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/buyResponse"
+                    message="tns:buyResponse"/>
+        </operation>
+        <operation name="getRegularPrice">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getRegularPriceRequest"
+                   message="tns:getRegularPrice"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getRegularPriceResponse"
+                    message="tns:getRegularPriceResponse"/>
+        </operation>
+        <operation name="getAvailableQuantity">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableQuantityRequest"
+                   message="tns:getAvailableQuantity"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableQuantityResponse"
+                    message="tns:getAvailableQuantityResponse"/>
+        </operation>
+        <operation name="getAvailableQuantityForPrice">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableQuantityForPriceRequest"
+                   message="tns:getAvailableQuantityForPrice"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableQuantityForPriceResponse"
+                    message="tns:getAvailableQuantityForPriceResponse"/>
+        </operation>
+        <operation name="getAvailableOffers">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableOffersRequest"
+                   message="tns:getAvailableOffers"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableOffersResponse"
+                    message="tns:getAvailableOffersResponse"/>
+        </operation>
+        <operation name="getOffersWithFilter">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getOffersWithFilterRequest"
+                   message="tns:getOffersWithFilter"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getOffersWithFilterResponse"
+                    message="tns:getOffersWithFilterResponse"/>
+        </operation>
+        <operation name="requestOffer">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/requestOfferRequest"
+                   message="tns:requestOffer"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/requestOfferResponse"
+                    message="tns:requestOfferResponse"/>
+        </operation>
+        <operation name="getAvailableItems">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableItemsRequest"
+                   message="tns:getAvailableItems"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/getAvailableItemsResponse"
+                    message="tns:getAvailableItemsResponse"/>
+        </operation>
+        <operation name="sell">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/sellRequest"
+                   message="tns:sell"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/ShopService/sellResponse"
+                    message="tns:sellResponse"/>
+        </operation>
+    </portType>
+    <binding name="ShopServicePortBinding" type="tns:ShopService">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="buy">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getRegularPrice">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getAvailableQuantity">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getAvailableQuantityForPrice">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getAvailableOffers">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getOffersWithFilter">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="requestOffer">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getAvailableItems">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="sell">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="ShopService">
+        <port name="ShopServicePort" binding="tns:ShopServicePortBinding">
+            <soap:address location="http://localhost:8080/ShopService/ShopService"/>
+        </port>
+    </service>
 </definitions>

@@ -17,9 +17,9 @@ public class ItemNameFilter extends ItemFilter {
     public final boolean caseSensitive;
 
     public ItemNameFilter(
-            final String name,
-            final int mode,
-            final boolean caseSensitive
+        final String name,
+        final int mode,
+        final boolean caseSensitive
     ) {
         this.name = name;
         this.mode = mode;
@@ -35,9 +35,12 @@ public class ItemNameFilter extends ItemFilter {
             actual = actual.toLowerCase();
         }
         switch (mode) {
-            case MODE_CONTAINS: return actual.contains(expected);
-            case MODE_COMPLETE: return actual.equals(expected);
-            default: return false;
+            case MODE_CONTAINS:
+                return actual.contains(expected);
+            case MODE_COMPLETE:
+                return actual.equals(expected);
+            default:
+                return false;
         }
     }
 }

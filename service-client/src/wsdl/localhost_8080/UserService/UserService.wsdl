@@ -4,114 +4,125 @@
         xmlns:tns="http://service.scheisse_server.games.dedda.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://service.scheisse_server.games.dedda.org/"
         name="UserService">
-<types>
-<xsd:schema>
-<xsd:import namespace="http://service.scheisse_server.games.dedda.org/" schemaLocation="http://localhost:8080/UserService/UserService?xsd=1"/>
-</xsd:schema>
-</types>
-<message name="getUser">
-<part name="parameters" element="tns:getUser"/>
-</message>
-<message name="getUserResponse">
-<part name="parameters" element="tns:getUserResponse"/>
-</message>
-<message name="getUserWithPassword">
-<part name="parameters" element="tns:getUserWithPassword"/>
-</message>
-<message name="getUserWithPasswordResponse">
-<part name="parameters" element="tns:getUserWithPasswordResponse"/>
-</message>
-<message name="getContacts">
-<part name="parameters" element="tns:getContacts"/>
-</message>
-<message name="getContactsResponse">
-<part name="parameters" element="tns:getContactsResponse"/>
-</message>
-<message name="getInventoryFor">
-<part name="parameters" element="tns:getInventoryFor"/>
-</message>
-<message name="getInventoryForResponse">
-<part name="parameters" element="tns:getInventoryForResponse"/>
-</message>
-<message name="changePassword">
-<part name="parameters" element="tns:changePassword"/>
-</message>
-<message name="changePasswordResponse">
-<part name="parameters" element="tns:changePasswordResponse"/>
-</message>
-<portType name="UserService">
-<operation name="getUser">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getUserRequest" message="tns:getUser"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getUserResponse" message="tns:getUserResponse"/>
-</operation>
-<operation name="getUserWithPassword">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getUserWithPasswordRequest" message="tns:getUserWithPassword"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getUserWithPasswordResponse" message="tns:getUserWithPasswordResponse"/>
-</operation>
-<operation name="getContacts">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getContactsRequest" message="tns:getContacts"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getContactsResponse" message="tns:getContactsResponse"/>
-</operation>
-<operation name="getInventoryFor">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getInventoryForRequest" message="tns:getInventoryFor"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getInventoryForResponse" message="tns:getInventoryForResponse"/>
-</operation>
-<operation name="changePassword">
-<input wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/changePasswordRequest" message="tns:changePassword"/>
-<output wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/changePasswordResponse" message="tns:changePasswordResponse"/>
-</operation>
-</portType>
-<binding name="UserServicePortBinding" type="tns:UserService">
-<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getUser">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getUserWithPassword">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getContacts">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getInventoryFor">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="changePassword">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-</binding>
-<service name="UserService">
-<port name="UserServicePort" binding="tns:UserServicePortBinding">
-<soap:address location="http://localhost:8080/UserService/UserService"/>
-</port>
-</service>
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://service.scheisse_server.games.dedda.org/"
+                        schemaLocation="http://localhost:8080/UserService/UserService?xsd=1"/>
+        </xsd:schema>
+    </types>
+    <message name="getUser">
+        <part name="parameters" element="tns:getUser"/>
+    </message>
+    <message name="getUserResponse">
+        <part name="parameters" element="tns:getUserResponse"/>
+    </message>
+    <message name="getUserWithPassword">
+        <part name="parameters" element="tns:getUserWithPassword"/>
+    </message>
+    <message name="getUserWithPasswordResponse">
+        <part name="parameters" element="tns:getUserWithPasswordResponse"/>
+    </message>
+    <message name="getContacts">
+        <part name="parameters" element="tns:getContacts"/>
+    </message>
+    <message name="getContactsResponse">
+        <part name="parameters" element="tns:getContactsResponse"/>
+    </message>
+    <message name="getInventoryFor">
+        <part name="parameters" element="tns:getInventoryFor"/>
+    </message>
+    <message name="getInventoryForResponse">
+        <part name="parameters" element="tns:getInventoryForResponse"/>
+    </message>
+    <message name="changePassword">
+        <part name="parameters" element="tns:changePassword"/>
+    </message>
+    <message name="changePasswordResponse">
+        <part name="parameters" element="tns:changePasswordResponse"/>
+    </message>
+    <portType name="UserService">
+        <operation name="getUser">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getUserRequest"
+                   message="tns:getUser"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getUserResponse"
+                    message="tns:getUserResponse"/>
+        </operation>
+        <operation name="getUserWithPassword">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getUserWithPasswordRequest"
+                   message="tns:getUserWithPassword"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getUserWithPasswordResponse"
+                    message="tns:getUserWithPasswordResponse"/>
+        </operation>
+        <operation name="getContacts">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getContactsRequest"
+                   message="tns:getContacts"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getContactsResponse"
+                    message="tns:getContactsResponse"/>
+        </operation>
+        <operation name="getInventoryFor">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getInventoryForRequest"
+                   message="tns:getInventoryFor"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/getInventoryForResponse"
+                    message="tns:getInventoryForResponse"/>
+        </operation>
+        <operation name="changePassword">
+            <input wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/changePasswordRequest"
+                   message="tns:changePassword"/>
+            <output wsam:Action="http://service.scheisse_server.games.dedda.org/UserService/changePasswordResponse"
+                    message="tns:changePasswordResponse"/>
+        </operation>
+    </portType>
+    <binding name="UserServicePortBinding" type="tns:UserService">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="getUser">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getUserWithPassword">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getContacts">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getInventoryFor">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="changePassword">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="UserService">
+        <port name="UserServicePort" binding="tns:UserServicePortBinding">
+            <soap:address location="http://localhost:8080/UserService/UserService"/>
+        </port>
+    </service>
 </definitions>

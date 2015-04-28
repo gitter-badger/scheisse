@@ -22,7 +22,7 @@ public class UserServiceHost implements UserService {
 
     @Override
     @WebMethod(operationName = "getById")
-    public User get(@WebParam(name = "userId")final long id, @WebParam(name = "session")final UUID session) {
+    public User get(@WebParam(name = "userId") final long id, @WebParam(name = "session") final UUID session) {
         User user = provider.getUser(id);
         User sessionUser = loginSessionCache.getForUUID(session);
         if (null == sessionUser || id != sessionUser.getId()) {
@@ -36,7 +36,7 @@ public class UserServiceHost implements UserService {
 
     @Override
     @WebMethod(operationName = "searchByName")
-    public List<User> search(@WebParam(name = "name")final String name, @WebParam(name = "session")final UUID session) {
+    public List<User> search(@WebParam(name = "name") final String name, @WebParam(name = "session") final UUID session) {
         throw new UnsupportedOperationException("searching not implemented yet!");
     }
 

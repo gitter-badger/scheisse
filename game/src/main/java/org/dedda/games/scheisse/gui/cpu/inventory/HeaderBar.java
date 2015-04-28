@@ -15,9 +15,9 @@ import java.util.List;
  * Created by dedda on 02.12.14.
  */
 public class HeaderBar
-        extends JPanel
-        implements  InventoryTransactionListener,
-                    ChangeListener {
+    extends JPanel
+    implements InventoryTransactionListener,
+    ChangeListener {
 
     private Player player;
     private Inventory inventory;
@@ -37,13 +37,13 @@ public class HeaderBar
     }
 
     public void addCategoriesChangeListener(
-            final CategoriesChangeListener listener
+        final CategoriesChangeListener listener
     ) {
         this.changeListeners.add(listener);
     }
 
     public void removeCategoriesChangeListener(
-            final CategoriesChangeListener listener
+        final CategoriesChangeListener listener
     ) {
         if (this.changeListeners.contains(listener)) {
             this.changeListeners.remove(listener);

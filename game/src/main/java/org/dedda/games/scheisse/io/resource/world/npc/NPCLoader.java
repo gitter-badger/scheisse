@@ -8,7 +8,7 @@ import java.io.FileFilter;
 
 /**
  * Class for loading {@link NPC}s from files.
- *
+ * <p/>
  * Created by dedda on 10/4/14.
  *
  * @author dedda

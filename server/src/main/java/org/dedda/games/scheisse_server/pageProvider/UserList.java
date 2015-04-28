@@ -16,16 +16,16 @@ import java.util.List;
 @ManagedBean
 @RequestScoped
 public class UserList {
-    
+
     @Inject
     private UserProvider userProvider;
-    
+
     public final List<String> getAllUserNames() {
         return userProvider.getAllUserNames();
     }
-    
+
     public final List<User> getAllUsers() {
         return userProvider.getAllUsers();
     }
-    
+
 }

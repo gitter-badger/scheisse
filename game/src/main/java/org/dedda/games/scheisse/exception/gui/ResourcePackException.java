@@ -45,9 +45,9 @@ public class ResourcePackException extends Exception {
     }
 
     public ResourcePackException(
-            final String message,
-            final Throwable cause,
-            final int code
+        final String message,
+        final Throwable cause,
+        final int code
     ) {
         super(message, cause);
         this.code = code;

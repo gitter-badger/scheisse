@@ -39,7 +39,6 @@ public class Gui extends JFrame implements Runnable {
     private Container content;
 
     /**
-     *
      * @param size initial size of the window
      */
     public Gui(final Dimension size) {
@@ -51,6 +50,7 @@ public class Gui extends JFrame implements Runnable {
 
     /**
      * Closes the window and exits hard with the given code.
+     *
      * @param exitCode exit code to return
      */
     public void shutDown(final int exitCode) {
@@ -78,7 +78,6 @@ public class Gui extends JFrame implements Runnable {
     }
 
     /**
-     *
      * @param game {@link Game} to start the gui with
      */
     public void start(final Game game) {
@@ -96,7 +95,7 @@ public class Gui extends JFrame implements Runnable {
     public void stop() {
         running = false;
     }
-    
+
     public MenuBar getGuiMenuBar() {
         return menuBar;
     }

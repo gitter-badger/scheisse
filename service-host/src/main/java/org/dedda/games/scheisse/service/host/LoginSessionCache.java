@@ -28,7 +28,8 @@ public class LoginSessionCache {
             return null;
         }
         UUID session;
-        while (sessionMap.containsKey(session = UUID.randomUUID())){}
+        while (sessionMap.containsKey(session = UUID.randomUUID())) {
+        }
         return session;
     }
 

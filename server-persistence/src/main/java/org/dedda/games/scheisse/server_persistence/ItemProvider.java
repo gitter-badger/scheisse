@@ -17,14 +17,14 @@ import java.util.List;
 @Named
 @Stateless
 public class ItemProvider {
-    
+
     @PersistenceContext(unitName = "org.dedda.games.scheisse_server-PU")
     private EntityManager em;
-    
+
     public Item getItem(final long id) {
         return em.find(Item.class, id);
     }
-    
+
     public List<Item> getAllItems() {
         TypedQuery<Item> query = em.createNamedQuery("item.getAll", Item.class);
         return query.getResultList();

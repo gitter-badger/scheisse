@@ -18,7 +18,6 @@ public class Chunk {
     private Soil.Type[][] soil;
 
     /**
-     *
      * @param minLocation Point - x and y from left upper corner
      * @param maxLocation Point - x and y from right bottom corner
      */
@@ -29,7 +28,6 @@ public class Chunk {
     }
 
     /**
-     *
      * @return ArrayList<MapObject> - objects in this chunk
      */
     public ArrayList<MapObject> getObjects() {
@@ -37,7 +35,6 @@ public class Chunk {
     }
 
     /**
-     *
      * @param objects ArrayList<MapObject> - objects in this chunk
      */
     public void setObjects(final ArrayList<MapObject> objects) {
@@ -45,7 +42,6 @@ public class Chunk {
     }
 
     /**
-     *
      * @param object MapObject
      */
     public void addObject(final MapObject object) {
@@ -53,7 +49,6 @@ public class Chunk {
     }
 
     /**
-     *
      * @return int[][] - soil in this chunk
      */
     public Soil.Type[][] getSoil() {
@@ -61,7 +56,6 @@ public class Chunk {
     }
 
     /**
-     *
      * @param soil int[][] - soil in this chunk
      */
     public void setSoil(final Soil.Type[][] soil) {
@@ -69,29 +63,26 @@ public class Chunk {
     }
 
     /**
-     *
      * @param location Point - location on map
-     * @param soil int
+     * @param soil     int
      */
     public void setSoilAbsolute(final Point location, final Soil.Type soil) {
         this.soil[
-                location.x - minLocation.x
-                ][
-                location.y - minLocation.y
-                ] = soil;
+            location.x - minLocation.x
+            ][
+            location.y - minLocation.y
+            ] = soil;
     }
 
     /**
-     *
      * @param location Point - location on chunk
-     * @param soil int
+     * @param soil     int
      */
     public void setSoilRelative(final Point location, final Soil.Type soil) {
         this.soil[location.x][location.y] = soil;
     }
 
     /**
-     *
      * @return Point
      */
     public Point getMinLocation() {
@@ -99,7 +90,6 @@ public class Chunk {
     }
 
     /**
-     *
      * @return Point
      */
     public Point getMaxLocation() {
@@ -108,7 +98,7 @@ public class Chunk {
 
     @Override
     public boolean equals(final Object object) {
-        if(!(object instanceof Chunk)){
+        if (!(object instanceof Chunk)) {
             return false;
         }
         Chunk chunk = (Chunk) object;

@@ -8,7 +8,7 @@ import java.awt.geom.Point2D;
  * Class for parsing {@link java.lang.String}s to numbers or number
  * based objects such as {@link java.awt.Dimension}s and casting numbers
  * to a different type.
- *
+ * <p/>
  * Created by dedda on 5/22/14.
  *
  * @author dedda
@@ -30,10 +30,9 @@ public abstract class Parse {
     /**
      * Parsing a {@link java.lang.String} to an {@link java.lang.Integer}.
      *
-     * @see Integer#parseInt(java.lang.String)
-     *
      * @param string {@link java.lang.String} to be parsed
      * @return Parsed {@link java.lang.Integer}
+     * @see Integer#parseInt(java.lang.String)
      */
     public static int toInteger(final String string) {
         return Integer.parseInt(string);
@@ -42,10 +41,9 @@ public abstract class Parse {
     /**
      * Parsing a {@link java.lang.String} to a {@link java.lang.Long}.
      *
-     * @see Long#parseLong(java.lang.String)
-     *
      * @param string {@link java.lang.String} to be parsed
      * @return Parsed {@link java.lang.Long}
+     * @see Long#parseLong(java.lang.String)
      */
     public static long toLong(final String string) {
         return Long.parseLong(string);
@@ -54,10 +52,9 @@ public abstract class Parse {
     /**
      * Parsing a {@link java.lang.String} to a {@link java.lang.Float}.
      *
-     * @see Float#parseFloat(java.lang.String)
-     *
      * @param string {@link java.lang.String} to be parsed
      * @return Parsed {@link java.lang.Float}
+     * @see Float#parseFloat(java.lang.String)
      */
     public static float toFloat(final String string) {
         return Float.parseFloat(string);
@@ -66,10 +63,9 @@ public abstract class Parse {
     /**
      * Parsing a {@link java.lang.String} to a {@link java.lang.Double}.
      *
-     * @see Double#parseDouble(java.lang.String)
-     *
      * @param string {@link java.lang.String} to be parsed
      * @return Parsed {@link java.lang.Double}
+     * @see Double#parseDouble(java.lang.String)
      */
     public static double toDouble(final String string) {
         return Double.parseDouble(string);
@@ -77,7 +73,7 @@ public abstract class Parse {
 
     /**
      * Parsing a {@link java.lang.String} to a {@link java.awt.Point}.
-     *
+     * <p/>
      * Syntax for {@link java.awt.Point}s in {@link java.lang.String}
      * representation looks like this: "locationX,locationY"
      *
@@ -93,7 +89,7 @@ public abstract class Parse {
     /**
      * Parsing a {@link java.lang.String} to a
      * {@link java.awt.geom.Point2D.Float}.
-     *
+     * <p/>
      * Syntax for {@link java.awt.geom.Point2D.Float}s in
      * {@link java.lang.String} representation looks
      * like this: "locationX.xX,locationY.yY"
@@ -110,7 +106,7 @@ public abstract class Parse {
     /**
      * Parsing a {@link java.lang.String} to a
      * {@link java.awt.geom.Point2D.Double}.
-     *
+     * <p/>
      * Syntax for {@link java.awt.geom.Point2D.Double}s
      * in {@link java.lang.String} representation looks
      * like this: "locationX.xX,locationY.yY"
@@ -126,7 +122,7 @@ public abstract class Parse {
 
     /**
      * Parsing a {@link java.lang.String} to a {@link java.lang.Boolean} value.
-     *
+     * <p/>
      * Every {@link java.lang.String} that is not "1" or "true"
      * evaluates to "false". Evaluation is case insensitive.
      *
@@ -143,7 +139,7 @@ public abstract class Parse {
     /**
      * Parsing a {@link java.lang.String} to a
      * {@link java.awt.Dimension} value.
-     *
+     * <p/>
      * Syntax for {@link java.awt.Dimension}s in {@link java.lang.String}
      * representation looks like this: "width,height"
      *
@@ -157,7 +153,7 @@ public abstract class Parse {
 
     /**
      * Casting a {@link java.lang.Short} to a {@link java.lang.Byte}.
-     *
+     * <p/>
      * The left (most significant) 8 bit get cut off and the
      * right (least significant) 8 bit are pushed in the
      * {@link java.lang.Byte}.
@@ -171,7 +167,7 @@ public abstract class Parse {
 
     /**
      * Casting a {@link java.lang.Integer} to a {@link java.lang.Byte}.
-     *
+     * <p/>
      * The left (most significant) 24 bit get cut off and the
      * right (least significant) 8 bit are pushed in the {@link java.lang.Byte}.
      *
@@ -186,10 +182,9 @@ public abstract class Parse {
      * Casting a {@link java.lang.Short} array to a
      * {@link java.lang.Byte} array.
      *
-     * @see #toByte(short)
-     *
      * @param values Array of {@link java.lang.Short} values to cast
      * @return Array of casted {@link java.lang.Byte} values
+     * @see #toByte(short)
      */
     public static byte[] toByteArray(final short[] values) {
         byte[] ret = new byte[values.length];
@@ -203,10 +198,9 @@ public abstract class Parse {
      * Casting a {@link java.lang.Integer} array to a
      * {@link java.lang.Byte} array.
      *
-     * @see #toByte(int)
-     *
      * @param values Array of {@link java.lang.Integer} values to cast
      * @return Array of casted {@link java.lang.Byte} values
+     * @see #toByte(int)
      */
     public static byte[] toByteArray(final int[] values) {
         byte[] ret = new byte[values.length];

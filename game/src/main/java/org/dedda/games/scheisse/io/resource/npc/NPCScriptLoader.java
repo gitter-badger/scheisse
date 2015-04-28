@@ -17,7 +17,7 @@ import java.util.HashMap;
 /**
  * Class for loading {@link NPCScript}s from files for giving
  * {@link NPC}s a specific rule on how to behave.
- *
+ * <p/>
  * Created by dedda on 10/4/14.
  *
  * @author dedda
@@ -36,14 +36,14 @@ public class NPCScriptLoader extends FileInput {
 
     /**
      * @param file {@link File} to load from
-     * @param npc {@link NPC} to connect the script with
+     * @param npc  {@link NPC} to connect the script with
      * @return Loaded {@link NPCScript}
      */
     public NPCScript loadNPCScript(final File file, final NPC npc) {
         npcScript = new NPCScript(npc);
         String[] lines = getLines(file);
         ArrayList<NPCScriptAction> npcScriptAction =
-                new ArrayList<NPCScriptAction>();
+            new ArrayList<NPCScriptAction>();
         jumpPoints = new HashMap<String, Integer>();
         for (int i = 0; i < lines.length; i++) {
             if (!lines[i].contains(" ") && lines[i].endsWith(":")) {
@@ -53,7 +53,7 @@ public class NPCScriptLoader extends FileInput {
             npcScriptAction.add(parseAction(lines[i]));
         }
         NPCScriptAction[] npcScriptActionArray
-                = new NPCScriptAction[npcScriptAction.size()];
+            = new NPCScriptAction[npcScriptAction.size()];
         for (int i = 0; i < npcScriptActionArray.length; i++) {
             npcScriptActionArray[i] = npcScriptAction.get(i);
         }
@@ -98,11 +98,11 @@ public class NPCScriptLoader extends FileInput {
     /**
      * Registers a new jump point to the {@link HashMap} of jump points
      *
-     * @param line Line with the name of the jump point
+     * @param line  Line with the name of the jump point
      * @param index Location of this jump point
      */
     private void parseJumpPoint(final String line, final int index) {
-        jumpPoints.put(line.substring(0, line.length()-1), index);
+        jumpPoints.put(line.substring(0, line.length() - 1), index);
     }
 
     /**
@@ -128,7 +128,7 @@ public class NPCScriptLoader extends FileInput {
      */
     private NPCWalkToDestination getNPCWaltToDestination(final String[] words) {
         NPCWalkToDestination npcWalkToDestination
-                = new NPCWalkToDestination(npcScript);
+            = new NPCWalkToDestination(npcScript);
         npcWalkToDestination.setDestination(Parse.toPoint2DDouble(words[1]));
         return npcWalkToDestination;
     }

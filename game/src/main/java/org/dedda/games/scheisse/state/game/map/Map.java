@@ -22,7 +22,6 @@ public class Map {
     private Quest[] quest;
 
     /**
-     *
      * @param size Dimension
      */
     public Map(final Dimension size) {
@@ -30,19 +29,18 @@ public class Map {
     }
 
     /**
-     *
-     * @param size Dimension
+     * @param size    Dimension
      * @param objects ArrayList<MapObject> - inital objects on the map
      */
     private final void init(
-            final Dimension size,
-            final ArrayList<MapObject> objects
+        final Dimension size,
+        final ArrayList<MapObject> objects
     ) {
         this.size = size;
 
         // init chunks:
-        float chunksXf = (float) size.width/CHUNK_SIZE;
-        float chunksYf = (float) size.height/CHUNK_SIZE;
+        float chunksXf = (float) size.width / CHUNK_SIZE;
+        float chunksYf = (float) size.height / CHUNK_SIZE;
         int chunksXi = (int) chunksXf;
         int chunksYi = (int) chunksYf;
         if ((float) chunksXi < chunksXf) {
@@ -56,15 +54,15 @@ public class Map {
         for (int x = 0; x < chunksXi; x++) {
             int minX = x * CHUNK_SIZE;
             int maxX = ((x + 1) * CHUNK_SIZE < size.width) ?
-                    ((x + 1) * CHUNK_SIZE) :
-                    size.width;
+                ((x + 1) * CHUNK_SIZE) :
+                size.width;
             for (int y = 0; y < chunksYi; y++) {
                 int minY = y * CHUNK_SIZE;
                 int maxY = ((y + 1) * CHUNK_SIZE < size.height) ?
-                        ((y + 1) * CHUNK_SIZE) :
-                        size.height;
+                    ((y + 1) * CHUNK_SIZE) :
+                    size.height;
                 this.chunk[x][y] = new Chunk(
-                        new Point(minX, minY), new Point(maxX, maxY)
+                    new Point(minX, minY), new Point(maxX, maxY)
                 );
             }
         }
@@ -76,7 +74,6 @@ public class Map {
     }
 
     /**
-     *
      * @param object MapObject
      */
     public final void addObject(final MapObject object) {
@@ -86,22 +83,23 @@ public class Map {
 
     /**
      * adds the guiElement to all corresponding chunks.
+     *
      * @param object MapObject
      */
     private final void addObjectToChunks(final MapObject object) {
         Point objectMin = object.getLocation();
         Point objectMax = new Point(
-                objectMin.x + object.getSize().width,
-                objectMin.y + object.getSize().height
+            objectMin.x + object.getSize().width,
+            objectMin.y + object.getSize().height
         );
         int chunkMinX = objectMin.x / CHUNK_SIZE;
         int chunkMinY = objectMin.y / CHUNK_SIZE;
         int chunkMaxX = objectMax.x / CHUNK_SIZE
-                + (((float) objectMax.x / CHUNK_SIZE
-                > objectMax.x / CHUNK_SIZE) ? (0) : (1));
+            + (((float) objectMax.x / CHUNK_SIZE
+            > objectMax.x / CHUNK_SIZE) ? (0) : (1));
         int chunkMaxY = objectMax.y / CHUNK_SIZE
-                + (((float) objectMax.y / CHUNK_SIZE
-                > objectMax.y / CHUNK_SIZE) ? (0) : (1));
+            + (((float) objectMax.y / CHUNK_SIZE
+            > objectMax.y / CHUNK_SIZE) ? (0) : (1));
         for (int x = chunkMinX; x <= chunkMaxX; x++) {
             for (int y = chunkMinY; y <= chunkMaxY; y++) {
                 chunk[x][y].addObject(object);
@@ -110,7 +108,6 @@ public class Map {
     }
 
     /**
-     *
      * @param objects ArrayList<MapObject> - objects on the map
      */
     public final void setObjects(final ArrayList<MapObject> objects) {
@@ -121,7 +118,6 @@ public class Map {
     }
 
     /**
-     *
      * @param objects MapObject[] - objects on the map
      */
     public final void setObjects(final MapObject[] objects) {
@@ -132,9 +128,8 @@ public class Map {
     }
 
     /**
-     *
      * @param location Point
-     * @param soil int
+     * @param soil     int
      */
     public final void setSoil(final Point location, final Soil.Type soil) {
         int chunkX = location.x / CHUNK_SIZE;
@@ -143,7 +138,6 @@ public class Map {
     }
 
     /**
-     *
      * @param soil int[][]
      */
     public final void setSoil(final Soil.Type[][] soil) {
@@ -155,7 +149,6 @@ public class Map {
     }
 
     /**
-     *
      * @return int[][]
      */
     public final Soil.Type[][] getSoil() {
@@ -163,14 +156,13 @@ public class Map {
         for (int x = 0; x < size.width; x++) {
             for (int y = 0; y < size.height; y++) {
                 soil[x][y] = chunk[x / CHUNK_SIZE][y / CHUNK_SIZE]
-                        .getSoil()[x - x / CHUNK_SIZE][y - y / CHUNK_SIZE];
+                    .getSoil()[x - x / CHUNK_SIZE][y - y / CHUNK_SIZE];
             }
         }
         return soil;
     }
 
     /**
-     *
      * @return Dimension
      */
     public final Dimension getSize() {
@@ -178,7 +170,6 @@ public class Map {
     }
 
     /**
-     *
      * @return Dimension
      */
     public final Dimension getChunkGridSize() {
@@ -186,7 +177,6 @@ public class Map {
     }
 
     /**
-     *
      * @return Chunk[][]
      */
     public final Chunk[][] getChunk() {
@@ -194,7 +184,6 @@ public class Map {
     }
 
     /**
-     *
      * @return ArrayList<MapObject> - objects ob the map
      */
     public final ArrayList<MapObject> getObjects() {
@@ -216,7 +205,7 @@ public class Map {
         for (int i = 0; i < size.height; i++) {
             for (int k = 0; k < size.width; k++) {
                 SystemPrinter.debug(
-                        String.valueOf(getSoil()[k][i]).charAt(0) + ""
+                    String.valueOf(getSoil()[k][i]).charAt(0) + ""
                 );
             }
             SystemPrinter.debugln("");
@@ -230,7 +219,7 @@ public class Map {
         }
         Map map = (Map) object;
         if (map.chunkGridSize.width != this.chunkGridSize.width
-                || map.chunkGridSize.height != this.chunkGridSize.height) {
+            || map.chunkGridSize.height != this.chunkGridSize.height) {
             return false;
         }
         for (int x = 0; x < chunkGridSize.width; x++) {

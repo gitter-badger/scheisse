@@ -6,7 +6,6 @@ package org.dedda.games.scheisse.state.game.item;
 public interface Stackable {
 
     /**
-     *
      * @return int
      */
     public abstract int maxStackNumber();

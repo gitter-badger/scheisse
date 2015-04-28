@@ -24,7 +24,6 @@ public abstract class NPCScriptAction {
     protected ScriptEngine scriptEngine;
 
     /**
-     *
      * @param script
      */
     public NPCScriptAction(final NPCScript script) {
@@ -35,6 +34,7 @@ public abstract class NPCScriptAction {
 
     /**
      * determines whether the action is completed or not.
+     *
      * @return
      */
     public abstract boolean hasNextStep();
@@ -45,7 +45,6 @@ public abstract class NPCScriptAction {
     public abstract void nextStep();
 
     /**
-     *
      * @param expression java script expression including optional key words.
      * @return
      * @throws ScriptException
@@ -60,7 +59,6 @@ public abstract class NPCScriptAction {
     }
 
     /**
-     *
      * @param expression java script expression including optional key words.
      * @return
      * @throws ScriptException
@@ -72,7 +70,6 @@ public abstract class NPCScriptAction {
     }
 
     /**
-     *
      * @param expression java script expression including optional key words.
      * @return
      * @throws ScriptException

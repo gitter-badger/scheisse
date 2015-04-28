@@ -21,9 +21,9 @@ public class NPC extends Person {
     }
 
     public NPC(
-            final Point2D.Double location,
-            final double maxSpeed,
-            final boolean evil
+        final Point2D.Double location,
+        final double maxSpeed,
+        final boolean evil
     ) {
         setLocation(location);
         this.maxSpeed = maxSpeed;

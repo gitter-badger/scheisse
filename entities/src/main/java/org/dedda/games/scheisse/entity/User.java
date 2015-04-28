@@ -18,28 +18,27 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
- *
  * @author dedda
  */
 @javax.persistence.Entity
 @Table(name = "user")
 @NamedQueries({
-        @NamedQuery(
-                name = "user.getAll",
-                query = "SELECT u FROM User u"
-        ),
-        @NamedQuery(
-                name = "user.getByName",
-                query = "SELECT u FROM User u WHERE u.name = :name"
-        ),
-        @NamedQuery(
-                name = "user.getAllNames",
-                query = "SELECT u.name FROM User u"
-        ),
-        @NamedQuery(
-                name = "user.getByMail",
-                query = "SELECT u FROM User u WHERE u.email = :email"
-        )
+    @NamedQuery(
+        name = "user.getAll",
+        query = "SELECT u FROM User u"
+    ),
+    @NamedQuery(
+        name = "user.getByName",
+        query = "SELECT u FROM User u WHERE u.name = :name"
+    ),
+    @NamedQuery(
+        name = "user.getAllNames",
+        query = "SELECT u.name FROM User u"
+    ),
+    @NamedQuery(
+        name = "user.getByMail",
+        query = "SELECT u FROM User u WHERE u.email = :email"
+    )
 })
 public class User extends Entity implements TestableEntity {
 
@@ -51,9 +50,9 @@ public class User extends Entity implements TestableEntity {
     @Basic(optional = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(
-            name = "id",
-            nullable = false,
-            unique = true
+        name = "id",
+        nullable = false,
+        unique = true
     )
     private Long id;
 
@@ -63,9 +62,9 @@ public class User extends Entity implements TestableEntity {
     @NotNull
     @Basic(optional = false)
     @Column(
-            name = "username",
-            nullable = false,
-            unique = true
+        name = "username",
+        nullable = false,
+        unique = true
     )
     private String name;
 
@@ -75,8 +74,8 @@ public class User extends Entity implements TestableEntity {
     @NotNull
     @Basic(optional = false)
     @Column(
-            name = "passwordHash",
-            nullable = false
+        name = "passwordHash",
+        nullable = false
     )
     private String passwordHash;
 
@@ -86,9 +85,9 @@ public class User extends Entity implements TestableEntity {
     @NotNull
     @Basic(optional = false)
     @Column(
-            name = "email",
-            nullable = false,
-            unique = true
+        name = "email",
+        nullable = false,
+        unique = true
     )
     private String email;
 
@@ -98,8 +97,8 @@ public class User extends Entity implements TestableEntity {
     @NotNull
     @Basic(optional = false)
     @Column(
-            name = "experience",
-            nullable = false
+        name = "experience",
+        nullable = false
     )
     private long experience;
 
@@ -123,9 +122,7 @@ public class User extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @return username.
-     *
      * @see #name
      */
     public final String getName() {
@@ -133,9 +130,7 @@ public class User extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @return md5-hashed password.
-     *
      * @see #passwordHash
      */
     public final String getPasswordHash() {
@@ -143,9 +138,7 @@ public class User extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @return e-mail
-     *
      * @see #email
      */
     public final String getEmail() {
@@ -153,9 +146,7 @@ public class User extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @return user experience
-     *
      * @see #experience
      */
     public final long getExperience() {
@@ -163,9 +154,7 @@ public class User extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @param id user id
-     *
      * @see #id
      */
     public final void setId(final Long id) {
@@ -173,9 +162,7 @@ public class User extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @param name username
-     *
      * @see #name
      */
     public final void setName(final String name) {
@@ -183,9 +170,7 @@ public class User extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @param passwordHash md5-hashed password
-     *
      * @see #passwordHash
      */
     public final void setPasswordHash(final String passwordHash) {
@@ -193,9 +178,7 @@ public class User extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @param email e-mail
-     *
      * @see #email
      */
     public final void setEmail(final String email) {
@@ -203,9 +186,7 @@ public class User extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @param experience user experience
-     *
      * @see #experience
      */
     public final void setExperience(final long experience) {
@@ -213,9 +194,7 @@ public class User extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @return {@link Inventory} of this user
-     *
      * @see #inventory
      * @see Inventory
      */
@@ -224,9 +203,7 @@ public class User extends Entity implements TestableEntity {
     }
 
     /**
-     *
      * @param inventory {@link Inventory} of this user
-     *
      * @see #inventory
      * @see Inventory
      */
@@ -245,9 +222,9 @@ public class User extends Entity implements TestableEntity {
         }
         User other = (User) object;
         if (
-                (this.id == null && other.id != null)
-                        || (this.id != null && !this.id.equals(other.id))
-                ) {
+            (this.id == null && other.id != null)
+                || (this.id != null && !this.id.equals(other.id))
+            ) {
             return false;
         }
         return true;

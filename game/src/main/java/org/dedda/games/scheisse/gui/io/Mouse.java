@@ -16,9 +16,9 @@ import java.util.ArrayList;
  * Created by dedda on 4/18/14.
  */
 public class Mouse
-        implements  MouseListener,
-                    MouseMotionListener,
-                    MouseWheelListener {
+    implements MouseListener,
+    MouseMotionListener,
+    MouseWheelListener {
 
     public static final int CLICKED = 1;
     public static final int PRESSED = 2;
@@ -76,7 +76,7 @@ public class Mouse
             int x = mouseEvent.getX();
             int y = mouseEvent.getY();
             mouseAction.perform(
-                    new MouseActionInfo(button, 0, x, y)
+                new MouseActionInfo(button, 0, x, y)
             );
         }
     }
@@ -84,7 +84,7 @@ public class Mouse
     public void mousePressed(final MouseEvent mouseEvent) {
         for (MouseAction mouseAction : pressAction) {
             mouseAction.perform(
-                    new MouseActionInfo(mouseEvent.getButton(), 0, 0, 0)
+                new MouseActionInfo(mouseEvent.getButton(), 0, 0, 0)
             );
         }
     }
@@ -92,7 +92,7 @@ public class Mouse
     public void mouseReleased(final MouseEvent mouseEvent) {
         for (MouseAction mouseAction : releaseAction) {
             mouseAction.perform(
-                    new MouseActionInfo(mouseEvent.getButton(), 0, 0, 0)
+                new MouseActionInfo(mouseEvent.getButton(), 0, 0, 0)
             );
         }
     }
@@ -102,7 +102,7 @@ public class Mouse
             int x = mouseEvent.getX();
             int y = mouseEvent.getY();
             mouseAction.perform(
-                    new MouseActionInfo(0, 0, x, y)
+                new MouseActionInfo(0, 0, x, y)
             );
         }
     }
@@ -112,7 +112,7 @@ public class Mouse
             int x = mouseEvent.getX();
             int y = mouseEvent.getY();
             mouseAction.perform(
-                    new MouseActionInfo(0, 0, x, y)
+                new MouseActionInfo(0, 0, x, y)
             );
         }
     }
@@ -122,7 +122,7 @@ public class Mouse
         int y = mouseEvent.getY();
         for (MouseAction mouseAction : dragAction) {
             mouseAction.perform(
-                    new MouseActionInfo(mouseEvent.getButton(), 0, x, y)
+                new MouseActionInfo(mouseEvent.getButton(), 0, x, y)
             );
         }
     }
@@ -132,7 +132,7 @@ public class Mouse
         int y = mouseEvent.getY();
         for (MouseAction mouseAction : moveAction) {
             mouseAction.perform(
-                    new MouseActionInfo(0, 0, x, y)
+                new MouseActionInfo(0, 0, x, y)
             );
         }
     }
@@ -143,7 +143,7 @@ public class Mouse
         int scrollAmount = mouseWheelEvent.getScrollAmount();
         for (MouseAction mouseAction : wheelAction) {
             mouseAction.perform(
-                    new MouseActionInfo(0, scrollAmount, x, y)
+                new MouseActionInfo(0, scrollAmount, x, y)
             );
         }
     }

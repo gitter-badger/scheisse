@@ -49,7 +49,7 @@ public class User {
     public final void setSelected(final org.dedda.games.scheisse.entity.User selected) {
         this.selected = selected;
     }
-    
+
     public final List<Slot> getSlots() {
         System.out.println(selected);
         System.out.println("inventory size: " + selected.getInventory().getSize());

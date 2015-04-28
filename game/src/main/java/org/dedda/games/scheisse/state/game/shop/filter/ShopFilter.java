@@ -12,10 +12,10 @@ public abstract class ShopFilter {
 
     public abstract boolean accept(Offer offer);
 
-    public List<Offer> accept(List<Offer> offers){
+    public List<Offer> accept(List<Offer> offers) {
         LinkedList<Offer> list = new LinkedList<Offer>();
-        for(Offer offer : offers){
-            if(accept(offer)){
+        for (Offer offer : offers) {
+            if (accept(offer)) {
                 list.add(offer);
             }
         }

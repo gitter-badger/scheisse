@@ -29,7 +29,6 @@ public class Player extends Person {
     }
 
     /**
-     *
      * @return {@link org.dedda.games.scheisse.state.game.object.PlayerObject}
      * this {@link org.dedda.games.scheisse.state.game.Player} belongs to
      */
@@ -38,7 +37,6 @@ public class Player extends Person {
     }
 
     /**
-     *
      * @param playerObject
      */
     public void setPlayerObject(final PlayerObject playerObject) {
@@ -75,8 +73,8 @@ public class Player extends Person {
         if (object instanceof Player) {
             Player player = (Player) object;
             return player.experience == this.experience
-                    && player.inventory.equals(this.inventory)
-                    && player.name.equals(this.name);
+                && player.inventory.equals(this.inventory)
+                && player.name.equals(this.name);
         }
         return false;
     }

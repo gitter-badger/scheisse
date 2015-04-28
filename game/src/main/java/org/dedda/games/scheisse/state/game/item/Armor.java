@@ -17,27 +17,26 @@ public class Armor extends Item implements Wearable {
     private final long armor;
 
     /**
-     * @param id item id
-     * @param name item name
-     * @param value item value
-     * @param armor highest amount of damage that can be absorbed by this item.
-     * @param type item type
+     * @param id     item id
+     * @param name   item name
+     * @param value  item value
+     * @param armor  highest amount of damage that can be absorbed by this item.
+     * @param type   item type
      * @param sprite
      */
     protected Armor(
-            final long id,
-            final String name,
-            final long value,
-            final long armor,
-            final ItemType type,
-            final Image sprite
+        final long id,
+        final String name,
+        final long value,
+        final long armor,
+        final ItemType type,
+        final Image sprite
     ) {
         super(id, name, value, ARMOR, type, sprite);
         this.armor = armor;
     }
 
     /**
-     *
      * @return long
      */
     public final long getArmor() {
@@ -52,8 +51,8 @@ public class Armor extends Item implements Wearable {
         if (object.getClass().equals(this.getClass())) {
             Armor armor = (Armor) object;
             return armor.name.equals(this.name)
-                    && armor.value == this.value
-                    && armor.armor == this.armor;
+                && armor.value == this.value
+                && armor.armor == this.armor;
         }
         return false;
     }
@@ -74,21 +73,21 @@ public class Armor extends Item implements Wearable {
     }
 
     /**
-     * @param id item id
-     * @param name item name
-     * @param value item value
-     * @param armor highest amount of damage that can be absorbed by this item.
-     * @param type item type
+     * @param id     item id
+     * @param name   item name
+     * @param value  item value
+     * @param armor  highest amount of damage that can be absorbed by this item.
+     * @param type   item type
      * @param sprite
      * @return registered armor
      */
     public static Armor register(
-            final long id,
-            final String name,
-            final long value,
-            final long armor,
-            final ItemType type,
-            final Image sprite
+        final long id,
+        final String name,
+        final long value,
+        final long armor,
+        final ItemType type,
+        final Image sprite
     ) {
         return new Armor(id, name, value, armor, type, sprite);
     }

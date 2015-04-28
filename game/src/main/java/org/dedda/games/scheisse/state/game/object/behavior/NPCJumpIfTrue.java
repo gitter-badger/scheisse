@@ -19,7 +19,6 @@ public class NPCJumpIfTrue extends NPCScriptAction {
     private int jumpPoint;
 
     /**
-     *
      * @param skript
      */
     public NPCJumpIfTrue(final NPCScript skript) {
@@ -30,9 +29,8 @@ public class NPCJumpIfTrue extends NPCScriptAction {
      * this method always returns true. after jump the cursor in the script
      * is at a different position so this action can't be run twice.
      *
-     * @see NPCScriptAction#hasNextStep()
-     *
      * @return always true
+     * @see NPCScriptAction#hasNextStep()
      */
     @Override
     public final boolean hasNextStep() {
@@ -58,7 +56,6 @@ public class NPCJumpIfTrue extends NPCScriptAction {
     }
 
     /**
-     *
      * @return
      */
     public final String getExpression() {
@@ -66,7 +63,6 @@ public class NPCJumpIfTrue extends NPCScriptAction {
     }
 
     /**
-     *
      * @param expression
      */
     public final void setExpression(final String expression) {
@@ -74,7 +70,6 @@ public class NPCJumpIfTrue extends NPCScriptAction {
     }
 
     /**
-     *
      * @return
      */
     public final int getJumpPoint() {
@@ -82,7 +77,6 @@ public class NPCJumpIfTrue extends NPCScriptAction {
     }
 
     /**
-     *
      * @param jumpPoint
      */
     public final void setJumpPoint(final int jumpPoint) {
@@ -90,7 +84,6 @@ public class NPCJumpIfTrue extends NPCScriptAction {
     }
 
     /**
-     *
      * @return
      */
     public final ScriptEngineManager getScriptEngineManager() {
@@ -98,7 +91,6 @@ public class NPCJumpIfTrue extends NPCScriptAction {
     }
 
     /**
-     *
      * @param scriptEngineManager
      */
     public final void setScriptEngineManager(final ScriptEngineManager scriptEngineManager) {
@@ -106,7 +98,6 @@ public class NPCJumpIfTrue extends NPCScriptAction {
     }
 
     /**
-     *
      * @return
      */
     public final ScriptEngine getScriptEngine() {
@@ -114,7 +105,6 @@ public class NPCJumpIfTrue extends NPCScriptAction {
     }
 
     /**
-     *
      * @param scriptEngine
      */
     public final void setScriptEngine(final ScriptEngine scriptEngine) {

@@ -9,15 +9,14 @@ import javax.ejb.Stateless;
 import javax.inject.Named;
 
 /**
- *
  * @author dedda
  */
 @Named
 @Stateless
 public class Redirect {
-    
-    public final String getUserList(){
+
+    public final String getUserList() {
         return "userList";
     }
-    
+
 }

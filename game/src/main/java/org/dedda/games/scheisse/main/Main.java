@@ -18,7 +18,7 @@ import java.io.File;
  * {@link org.dedda.games.scheisse.main.Main} class containing the
  * {@link #main(String[])} method for starting and controlling
  * the program.
- *
+ * <p/>
  * Created by dedda on 4/17/14.
  *
  * @author dedda
@@ -36,7 +36,7 @@ public class Main {
      */
     public static final String INSTALLATION_FOLDER = "game_files/";
     public static final String[] INSTALLATION_FILES = {"version.dgm",
-                                                        "conf.dgm"};
+        "conf.dgm"};
     /**
      * URL where to find the pi main server for downloading files and
      * comparing versions.
@@ -63,7 +63,7 @@ public class Main {
         for (int i = 4; i < 10; i++) {
             Slot slot = new Slot(inventory);
             slot.setDummy(Item.forId(i));
-            slot.setNumberOfItems(i*2);
+            slot.setNumberOfItems(i * 2);
             inventory.addSlot(slot);
         }
         inventory.print();
@@ -80,21 +80,22 @@ public class Main {
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("-d") || args[i].equals("--debug")) {
                 debug = true;
-            } else if (args[i].equals("--offline")){
+            } else if (args[i].equals("--offline")) {
                 Options.setCheckInternetConnection(false);
                 online = false;
             }
         }
         SystemPrinter.writeln("starting in " + (
-                debug ? "debug" : "normal"
+            debug ? "debug" : "normal"
         ) + " mode");
         SystemPrinter.debugln("online status: " + (
-                online ? "online" : "offline"
+            online ? "online" : "offline"
         ));
     }
 
     /**
      * cleanup and exiting.
+     *
      * @param exitCode
      */
     private static void exit(final int exitCode) {
@@ -102,7 +103,6 @@ public class Main {
     }
 
     /**
-     *
      * @return State - current state of the program
      */
     public static State getCurrentState() {
@@ -111,6 +111,7 @@ public class Main {
 
     /**
      * switch state of the program.
+     *
      * @param currentState State - state to switch to
      */
     public static void setCurrentState(final State currentState) {
@@ -118,7 +119,6 @@ public class Main {
     }
 
     /**
-     *
      * @return boolean
      */
     public static boolean isDebug() {
@@ -127,6 +127,7 @@ public class Main {
 
     /**
      * enable / disable debug information.
+     *
      * @param debug boolean - debug on / off
      */
     public static void setDebug(final boolean debug) {
