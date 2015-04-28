@@ -4,10 +4,9 @@
 %%% @doc
 %%%
 %%% @end
-%%% Created : 28. Apr 2015 15:10
+%%% Created : 28. Apr 2015 15:24
 %%%-------------------------------------------------------------------
--module(user).
 -author("dedda").
-
-%% API
--export([]).
+-record(user, {id, username, email, experience}).
+-record(message, {src_id, target_id, timestamp, contents}).
+-record(login, {user_id, password}).
