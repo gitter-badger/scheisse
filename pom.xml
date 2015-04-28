@@ -84,6 +84,7 @@
   </dependencies>
 
   <modules>
+    <module>chat-server</module>
     <module>game</module>
     <module>server</module>
     <module>service-client</module>

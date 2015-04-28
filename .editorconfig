@@ -9,6 +9,8 @@ trim_trailing_whitespaces = true
 
 [*.java]
 indent_size = 4
+spaces_around_operators = true
+spaces_around_brackets = outside
 
 [*.{xml,xhtml,css}]
 indent_size = 2
