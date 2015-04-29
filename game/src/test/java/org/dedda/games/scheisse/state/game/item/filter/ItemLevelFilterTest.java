@@ -3,7 +3,6 @@ package org.dedda.games.scheisse.state.game.item.filter;
 import org.dedda.games.scheisse.entity.item.Item;
 import org.dedda.games.scheisse.entity.item.ItemCategory;
 import org.dedda.games.scheisse.entityfilter.item.ItemLevelFilter;
-import org.dedda.games.scheisse.state.game.level.Level;
 import org.junit.Before;
 import org.junit.Test;
 

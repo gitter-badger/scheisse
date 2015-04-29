@@ -1,4 +1,3 @@
-
 package org.dedda.games.scheisse.state.game.shop;
 
 import org.dedda.games.scheisse.state.game.item.ItemType;

@@ -11,7 +11,7 @@
 -include("chat.hrl").
 
 %% API
--export([login/1,login/2,logout/1,is_logged_in/1]).
+-export([login/1, login/2, logout/1, is_logged_in/1]).
 
 login(Login) when is_record(Login, login) ->
   Userid = Login#login.user_id,

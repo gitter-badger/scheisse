@@ -1,4 +1,3 @@
-
 package org.dedda.games.scheisse.io.resource;
 
 import java.net.URL;
