@@ -44,32 +44,11 @@
       <artifactId>gdx-platform</artifactId>
       <version>1.5.0</version>
     </dependency>
-    <!--
-    <dependency>
-        <groupId>com.badlogicgames.gdx</groupId>
-        <artifactId>gdx-natives</artifactId>
-        <version>1.5</version>
-    </dependency>
-    -->
     <dependency>
       <groupId>com.badlogicgames.gdx</groupId>
       <artifactId>gdx-backend-lwjgl</artifactId>
       <version>1.5.0</version>
     </dependency>
-    <!--
-    <dependency>
-        <groupId>com.badlogicgames.gdx</groupId>
-        <artifactId>gdx-backend-lwjgl</artifactId>
-        <version>1.5</version>
-    </dependency>
-    -->
-    <!--
-    <dependency>
-        <groupId>com.badlogicgames.gdx</groupId>
-        <artifactId>gdx-backend-lwjgl-natives</artifactId>
-        <version>1.5</version>
-    </dependency>
-    -->
   </dependencies>
 
   <build>
