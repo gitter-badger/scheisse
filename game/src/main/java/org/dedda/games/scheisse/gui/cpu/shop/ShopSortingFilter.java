@@ -1,8 +1,8 @@
 package org.dedda.games.scheisse.gui.cpu.shop;
 
-import org.dedda.games.scheisse.state.game.item.Item;
-import org.dedda.games.scheisse.state.game.item.filter.ItemComplexFilter;
-import org.dedda.games.scheisse.state.game.item.filter.ItemFilter;
+import org.dedda.games.scheisse.entity.item.Item;
+import org.dedda.games.scheisse.entityfilter.item.ItemComplexFilter;
+import org.dedda.games.scheisse.entityfilter.item.ItemFilter;
 import org.dedda.games.scheisse.state.game.shop.ShopConnector;
 
 import static org.dedda.games.scheisse.state.game.shop.ShopConnector.NOT_AVAILABLE;

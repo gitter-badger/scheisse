@@ -131,6 +131,20 @@ public class Item
      */
     private ItemCategory category;
 
+    public Item() {
+    }
+
+    public Item(long id, String name, long price, ItemCategory category, String type, Image sprite) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.category = category;
+        this.type = type;
+        this.sprite = sprite;
+    }
+
+
     /**
      * @return item id
      */

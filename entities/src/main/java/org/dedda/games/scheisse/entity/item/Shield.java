@@ -28,7 +28,7 @@ public class Shield extends Armor implements Wearable, Holdeable {
         final long armor,
         final Image sprite
     ) {
-        super(id, name, value, armor, sprite);
+        super(id, name, value, armor, "shield", sprite);
     }
 
     /**

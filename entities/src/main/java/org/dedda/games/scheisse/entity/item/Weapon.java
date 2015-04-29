@@ -36,6 +36,7 @@ public class Weapon extends Item implements Wearable, Holdeable {
         setSprite(sprite);
         setAttack(attack);
         setMaxStackAmount(1);
+        setType("weapon");
     }
 
     /**

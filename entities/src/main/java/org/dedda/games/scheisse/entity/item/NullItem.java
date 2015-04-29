@@ -20,6 +20,7 @@ public class NullItem extends Item {
         setCategory(ItemCategory.OTHER);
         setSprite(null);
         setMaxStackAmount(1);
+        setType("null");
     }
 
 }

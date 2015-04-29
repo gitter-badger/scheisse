@@ -26,11 +26,24 @@ public class Armor extends Item implements Wearable {
         final String name,
         final long value,
         final long armor,
+        final String type,
         final Image sprite
     ) {
-        //super(id, name, value, ARMOR, type, sprite);
+        super(id, name, value, ItemCategory.ARMOR, type, sprite);
         this.armor = armor;
         setMaxStackAmount(1);
+        setType(type);
+    }
+
+    public static Armor register(
+        final long id,
+        final String name,
+        final long value,
+        final long armor,
+        final String type,
+        final Image sprite
+    ) {
+        return new Armor(id, name, value, armor, type, sprite);
     }
 
     /**

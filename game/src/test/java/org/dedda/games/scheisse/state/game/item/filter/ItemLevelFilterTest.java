@@ -1,8 +1,8 @@
 package org.dedda.games.scheisse.state.game.item.filter;
 
-import org.dedda.games.scheisse.state.game.item.Item;
-import org.dedda.games.scheisse.state.game.item.ItemCategory;
-import org.dedda.games.scheisse.state.game.item.ItemType;
+import org.dedda.games.scheisse.entity.item.Item;
+import org.dedda.games.scheisse.entity.item.ItemCategory;
+import org.dedda.games.scheisse.entityfilter.item.ItemLevelFilter;
 import org.dedda.games.scheisse.state.game.level.Level;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,13 +22,13 @@ public class ItemLevelFilterTest {
         items = new ArrayList<Item>();
         for (int i = 0; i < 5; i++) {
             items.add(
-                new Item(i, "", i, ItemCategory.OTHER, ItemType.NULL, null
+                new Item(i, "", i, ItemCategory.OTHER, "null", null
                 ) {
                     public int maxStackNumber() {
                         return 0;
                     }
                 });
-            items.get(i).setMinXp(Level.MIN_XP_FOR_LEVELS[i]);
+            items.get(i).setMinLevel(i);
         }
     }
 

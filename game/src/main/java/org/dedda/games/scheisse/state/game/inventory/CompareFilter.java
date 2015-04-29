@@ -1,7 +1,7 @@
 package org.dedda.games.scheisse.state.game.inventory;
 
-import org.dedda.games.scheisse.state.game.item.Item;
-import org.dedda.games.scheisse.state.game.item.filter.ItemFilter;
+import org.dedda.games.scheisse.entity.item.Item;
+import org.dedda.games.scheisse.entityfilter.item.ItemFilter;
 
 /**
  * Created by dedda on 10/11/14.

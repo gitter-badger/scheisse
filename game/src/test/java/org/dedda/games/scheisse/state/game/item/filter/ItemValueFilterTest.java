@@ -1,8 +1,8 @@
 package org.dedda.games.scheisse.state.game.item.filter;
 
-import org.dedda.games.scheisse.state.game.item.Item;
-import org.dedda.games.scheisse.state.game.item.ItemCategory;
-import org.dedda.games.scheisse.state.game.item.ItemType;
+import org.dedda.games.scheisse.entity.item.Item;
+import org.dedda.games.scheisse.entity.item.ItemCategory;
+import org.dedda.games.scheisse.entityfilter.item.ItemValueFilter;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,27 +18,27 @@ public class ItemValueFilterTest {
     @Before
     public void setUp() throws Exception {
         items = new ArrayList<Item>();
-        items.add(new Item(0, "", 0, ItemCategory.OTHER, ItemType.NULL, null) {
+        items.add(new Item(0, "", 0, ItemCategory.OTHER, "null", null) {
             public int maxStackNumber() {
                 return 0;
             }
         });
-        items.add(new Item(1, "", 1, ItemCategory.OTHER, ItemType.NULL, null) {
+        items.add(new Item(1, "", 1, ItemCategory.OTHER, "null", null) {
             public int maxStackNumber() {
                 return 0;
             }
         });
-        items.add(new Item(2, "", 2, ItemCategory.OTHER, ItemType.NULL, null) {
+        items.add(new Item(2, "", 2, ItemCategory.OTHER, "null", null) {
             public int maxStackNumber() {
                 return 0;
             }
         });
-        items.add(new Item(3, "", 3, ItemCategory.OTHER, ItemType.NULL, null) {
+        items.add(new Item(3, "", 3, ItemCategory.OTHER, "null", null) {
             public int maxStackNumber() {
                 return 0;
             }
         });
-        items.add(new Item(4, "", 4, ItemCategory.OTHER, ItemType.NULL, null) {
+        items.add(new Item(4, "", 4, ItemCategory.OTHER, "null", null) {
             public int maxStackNumber() {
                 return 0;
             }
@@ -51,7 +51,7 @@ public class ItemValueFilterTest {
         filter = new ItemValueFilter(testValue, ItemValueFilter.MODE_BELOW);
         ArrayList<Item> filtered = filter.filter(items);
         for (Item item : filtered) {
-            assertTrue(item.getValue() <= testValue);
+            assertTrue(item.getPrice() <= testValue);
         }
     }
 
@@ -61,7 +61,7 @@ public class ItemValueFilterTest {
         filter = new ItemValueFilter(testValue, ItemValueFilter.MODE_EXACT);
         ArrayList<Item> filtered = filter.filter(items);
         for (Item item : filtered) {
-            assertTrue(item.getValue() == testValue);
+            assertTrue(item.getPrice() == testValue);
         }
     }
 
@@ -71,7 +71,7 @@ public class ItemValueFilterTest {
         filter = new ItemValueFilter(testValue, ItemValueFilter.MODE_ABOVE);
         ArrayList<Item> filtered = filter.filter(items);
         for (Item item : filtered) {
-            assertTrue(item.getValue() >= testValue);
+            assertTrue(item.getPrice() >= testValue);
         }
     }
 }
