@@ -112,6 +112,14 @@ public class Item
     private long maxStackAmount;
 
     /**
+     * min level needed to use this item.
+     */
+    @Column(
+        name = "min_level"
+    )
+    private long minLevel;
+
+    /**
      * sprite to be rendered in inventory.
      */
     private Image sprite;
@@ -266,6 +274,14 @@ public class Item
      */
     public final void setMaxStackAmount(final long maxStackAmount) {
         this.maxStackAmount = maxStackAmount;
+    }
+
+    public long getMinLevel() {
+        return minLevel;
+    }
+
+    public void setMinLevel(long minLevel) {
+        this.minLevel = minLevel;
     }
 
     /**
