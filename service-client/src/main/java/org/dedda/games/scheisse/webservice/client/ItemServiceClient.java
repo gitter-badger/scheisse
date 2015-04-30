@@ -10,16 +10,25 @@ import java.util.List;
  */
 public class ItemServiceClient implements ItemService {
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Item> getAll() {
         return null;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Item get(final long id) {
         return null;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Item> search(final String name) {
         return null;
