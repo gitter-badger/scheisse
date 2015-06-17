@@ -37,8 +37,17 @@ public class NashornObject {
 
     public Object getProperty(String propertyName) {
         String execute = varName + "." + propertyName + ";";
+        return runJS(execute);
+    }
+
+    public void setProperty(String propertyName, String value) {
+        String execute = varName + "." + propertyName + " = \"" + value + "\";";
+        runJS(execute);
+    }
+
+    private Object runJS(String jsLine) {
         try {
-            return nashornClass.getEngine().eval(execute);
+            return nashornClass.getEngine().eval(jsLine);
         } catch (ScriptException e) {
             e.printStackTrace();
         }

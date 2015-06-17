@@ -25,4 +25,10 @@ public class NashornObjectTest {
     public void testGetProperty() throws Exception {
         assertEquals("Test", object.getProperty("x"));
     }
+
+    @Test
+    public void testSetProperty() throws Exception {
+        object.setProperty("x", "Changed");
+        assertEquals("Changed", object.getProperty("x"));
+    }
 }
