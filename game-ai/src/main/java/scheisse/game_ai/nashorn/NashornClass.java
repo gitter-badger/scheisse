@@ -36,4 +36,11 @@ public class NashornClass {
         return exists;
     }
 
+    public String getClassName() {
+        return className;
+    }
+
+    public ScriptEngine getEngine() {
+        return engine;
+    }
 }
