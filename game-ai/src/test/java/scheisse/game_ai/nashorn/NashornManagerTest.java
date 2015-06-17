@@ -1,4 +1,4 @@
-package org.dedda.games.scheisse_server.nashorn;
+package scheisse.game_ai.nashorn;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -1,12 +1,10 @@
-package org.dedda.games.scheisse_server.nashorn;
+package scheisse.game_ai.nashorn;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by dedda on 6/17/15.

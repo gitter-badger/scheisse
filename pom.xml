@@ -86,6 +86,7 @@
   <modules>
     <module>chat-server</module>
     <module>game</module>
+    <module>game-ai</module>
     <module>server</module>
     <module>jmx</module>
     <module>entities</module>
