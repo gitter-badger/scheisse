@@ -26,9 +26,10 @@ public class Shield extends Armor implements Wearable, Holdeable {
         final String name,
         final long value,
         final long armor,
+        final int types,
         final Image sprite
     ) {
-        super(id, name, value, armor, "shield", sprite);
+        super(id, name, value, armor, types | TYPE_SHIELD, sprite);
     }
 
     /**
@@ -49,8 +50,9 @@ public class Shield extends Armor implements Wearable, Holdeable {
         final String name,
         final long value,
         final long armor,
+        final int types,
         final Image sprite
     ) {
-        return new Shield(id, name, value, armor, sprite);
+        return new Shield(id, name, value, armor, types, sprite);
     }
 }

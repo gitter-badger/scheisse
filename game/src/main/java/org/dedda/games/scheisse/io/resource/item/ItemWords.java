@@ -10,7 +10,7 @@ public abstract class ItemWords {
     public static final String SHIELD = "shield";
 
     public static final String ID = "id";
-    public static final String TYPE = "type";
+    public static final String TYPE = "types";
     public static final String NAME = "name";
     public static final String VALUE = "value";
     public static final String ATTACK = "attack";

@@ -21,10 +21,12 @@ public class ItemArmorFilter extends ItemFilter {
         this.mode = mode;
         itemTypeFilter = new ItemTypeFilter(
             // TODO: find correct Strings and save in some class constants.
-            new String[]{
-                "clothing",
-                "shield"
-            }
+            new int[]{
+                Item.TYPES_CLOTHING,
+                Item.TYPE_SHIELD,
+                Item.TYPE_ARMOR
+            },
+            ItemTypeFilter.STRATEGY_SOME
         );
     }
 

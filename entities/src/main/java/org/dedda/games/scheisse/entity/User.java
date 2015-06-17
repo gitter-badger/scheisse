@@ -54,7 +54,7 @@ public class User extends Entity implements TestableEntity {
         nullable = false,
         unique = true
     )
-    private Long id;
+    private long id;
 
     /**
      * username in game and forum.
@@ -64,7 +64,8 @@ public class User extends Entity implements TestableEntity {
     @Column(
         name = "username",
         nullable = false,
-        unique = true
+        unique = true,
+        length = 45
     )
     private String name;
 
@@ -87,7 +88,8 @@ public class User extends Entity implements TestableEntity {
     @Column(
         name = "email",
         nullable = false,
-        unique = true
+        unique = true,
+        length = 100
     )
     private String email;
 
@@ -221,10 +223,7 @@ public class User extends Entity implements TestableEntity {
             return false;
         }
         User other = (User) object;
-        if (
-            (this.id == null && other.id != null)
-                || (this.id != null && !this.id.equals(other.id))
-            ) {
+        if (this.id == other.id) {
             return false;
         }
         return true;

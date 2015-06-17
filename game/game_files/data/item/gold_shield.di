@@ -1,4 +1,4 @@
-type:shield
+types:shield
 id:9
 name:Gold Shield
 value:10246

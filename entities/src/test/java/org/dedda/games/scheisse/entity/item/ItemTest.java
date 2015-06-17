@@ -3,6 +3,9 @@ package org.dedda.games.scheisse.entity.item;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.dedda.games.scheisse.entity.item.Item.TYPE_ARMOR;
+import static org.dedda.games.scheisse.entity.item.Item.TYPE_DUAL_WEAPON;
+import static org.dedda.games.scheisse.entity.item.Item.TYPE_OTHER;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -17,20 +20,18 @@ public class ItemTest {
         instance.setId(0);
         instance.setArmor(10);
         instance.setAttack(100);
-        instance.setCategory(ItemCategory.OTHER);
+        instance.setTypes(TYPE_OTHER);
         instance.setName("item");
         instance.setPrice(25);
         instance.setSprite(null);
-        instance.setType("test type");
         testInstance = new Item();
         testInstance.setArmor(instance.getArmor());
         testInstance.setAttack(instance.getAttack());
-        testInstance.setCategory(instance.getCategory());
+        testInstance.setTypes(instance.getTypes());
         testInstance.setId(instance.getId());
         testInstance.setName(instance.getName());
         testInstance.setPrice(instance.getPrice());
         testInstance.setSprite(instance.getSprite());
-        testInstance.setType(instance.getType());
     }
 
     @Test
@@ -46,7 +47,7 @@ public class ItemTest {
         testInstance.setAttack(0);
         assertNotEquals(instance, testInstance);
         setUp();
-        testInstance.setCategory(ItemCategory.ARMOR);
+        testInstance.setTypes(TYPE_ARMOR);
         assertNotEquals(instance, testInstance);
         setUp();
         testInstance.setName("false name");
@@ -55,7 +56,7 @@ public class ItemTest {
         testInstance.setPrice(0);
         assertNotEquals(instance, testInstance);
         setUp();
-        testInstance.setType("false type");
+        testInstance.setTypes(TYPE_DUAL_WEAPON);
         assertNotEquals(instance, testInstance);
     }
 }

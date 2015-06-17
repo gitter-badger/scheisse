@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `scheisse`.`item` (
   `attack` INT(11) NOT NULL DEFAULT '0',
   `armor` INT(11) NOT NULL DEFAULT '0',
   `maxStackAmount` INT(11) NOT NULL DEFAULT '1',
-  `minLevel` INT(11) NOT NULL,
+  `minLevel` INT(11) NOT NULL DEFAULT '1',
   `types` INT(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB

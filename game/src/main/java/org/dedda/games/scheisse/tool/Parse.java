@@ -7,7 +7,7 @@ import java.awt.geom.Point2D;
 /**
  * Class for parsing {@link java.lang.String}s to numbers or number
  * based objects such as {@link java.awt.Dimension}s and casting numbers
- * to a different type.
+ * to a different types.
  * <p/>
  * Created by dedda on 5/22/14.
  *

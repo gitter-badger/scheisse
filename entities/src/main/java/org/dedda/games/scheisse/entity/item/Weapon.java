@@ -26,17 +26,17 @@ public class Weapon extends Item implements Wearable, Holdeable {
         final String name,
         final long value,
         final long attack,
+        final int types,
         final Image sprite
     ) {
         //super(id, name, value, ItemCategory.WEAPPON, WEAPON, sprite);
         setId(id);
         setName(name);
         setPrice(value);
-        setCategory(ItemCategory.WEAPPON);
+        setTypes(types | TYPE_WEAPON);
         setSprite(sprite);
         setAttack(attack);
         setMaxStackAmount(1);
-        setType("weapon");
     }
 
     /**
@@ -76,9 +76,10 @@ public class Weapon extends Item implements Wearable, Holdeable {
         final String name,
         final long value,
         final long attack,
+        final int types,
         final Image sprite
     ) {
-        return new Weapon(id, name, value, attack, sprite);
+        return new Weapon(id, name, value, attack, types, sprite);
     }
 
 }

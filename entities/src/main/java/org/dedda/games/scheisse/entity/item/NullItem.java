@@ -17,10 +17,9 @@ public class NullItem extends Item {
         setId(0);
         setName("NULL");
         setPrice(0);
-        setCategory(ItemCategory.OTHER);
+        setTypes(TYPE_OTHER);
         setSprite(null);
         setMaxStackAmount(1);
-        setType("null");
     }
 
 }
