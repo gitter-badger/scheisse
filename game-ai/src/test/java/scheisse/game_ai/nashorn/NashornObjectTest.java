@@ -17,7 +17,7 @@ public class NashornObjectTest {
     @Before
     public void setUp() throws Exception {
         NashornManager manager = new NashornManager();
-        NashornClass nashornClass = new NashornClass(manager.prepareEngine(new String[]{"src/test/resources/nashorn/class.js"}), "TestClass");
+        NashornClass nashornClass = new NashornClass(manager.prepareEngine(new String[]{"src/test/javascript/class.js"}), "TestClass");
         object = new NashornObject(nashornClass, "testVar", new String[]{"Test"});
     }
 

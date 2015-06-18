@@ -17,7 +17,7 @@ public class NashornClassTest {
 
     @Before
     public void setUp() throws Exception {
-        this.nashornClass = new NashornClass(new NashornManager().prepareEngine(new String[]{"src/test/resources/nashorn/class.js"}), "TestClass");
+        this.nashornClass = new NashornClass(new NashornManager().prepareEngine(new String[]{"src/test/javascript/class.js"}), "TestClass");
     }
 
     @Test
@@ -29,7 +29,7 @@ public class NashornClassTest {
     public void testConstructorClassNotExisting() throws Exception {
         boolean thrown = false;
         try {
-            this.nashornClass = new NashornClass(new NashornManager().prepareEngine(new String[]{"src/test/resources/nashorn/class.js"}), "NotExistingClass");
+            this.nashornClass = new NashornClass(new NashornManager().prepareEngine(new String[]{"src/test/javascript/class.js"}), "NotExistingClass");
         } catch(NashornClassNotFoundException e) {
             assertEquals("NotExistingClass", e.className);
             thrown = true;

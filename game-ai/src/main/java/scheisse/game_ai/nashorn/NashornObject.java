@@ -10,7 +10,7 @@ import javax.script.ScriptException;
 public class NashornObject {
 
     private final NashornClass nashornClass;
-    private final String varName;
+    public final String varName;
 
     public NashornObject(final NashornClass nashornClass, final String varName, final String[] constructorParams) {
         this.nashornClass = nashornClass;

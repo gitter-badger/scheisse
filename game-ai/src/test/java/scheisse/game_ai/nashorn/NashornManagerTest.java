@@ -31,7 +31,7 @@ public class NashornManagerTest {
 
     @Test
     public void testPrepareEngine() throws Exception {
-        ScriptEngine engine = manager.prepareEngine(new String[]{"src/test/resources/nashorn/test.js"});
+        ScriptEngine engine = manager.prepareEngine(new String[]{"src/test/javascript/test.js"});
         int a = 1;
         int b = 2;
         int expected = a + b;
@@ -41,7 +41,7 @@ public class NashornManagerTest {
 
     @Test
     public void testPrepareEngineDirectory() throws Exception {
-        ScriptEngine engine = manager.prepareEngine(new String[]{"src/test/resources/nashorn/test_dir"});
+        ScriptEngine engine = manager.prepareEngine(new String[]{"src/test/javascript/test_dir"});
         int a = 1;
         int b = 2;
         int expected = a + b;
