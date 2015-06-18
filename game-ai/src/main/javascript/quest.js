@@ -1,48 +1,45 @@
 function QuestStore() {
     this.quests = new Object();
-    this.registerQuest = function(quest) {
-        if (this.quests[quest.id] === undefined) {
-            this.quests[quest.id] = quest;
-            return true;
-        }
-        return false;
-    };
-    this.getQuest = function(id) {
-        return quests[id];
+    this.hasQuest = function(id) {
+        return !(this.quests[id] === undefined);
     };
     this.isCompleted = function(id) {
-        if (this.quests[id] === undefined) {
+        if (!this.hasQuest(id)) {
             return false;
         }
         return this.quests[id].isCompleted();
     };
     this.allCompleted = function(ids) {
-        var allCompleted = true;
         for (id in ids) {
-            if (!this.isCompleted(id)) {
-                allCompleted = false;
-                return allCompleted;
+            if (!this.isCompleted(ids[id])) {
+                return false;
             }
         }
-        return allCompleted;
+        return true;
     };
     this.canPlayerAccept = function(level, id) {
-        var quest = this.quests[id];
-        if (quest === undefined) {
+        if (!this.hasQuest(id)) {
             return false;
         }
+        var quest = this.quests[id];
         if (level < quest.minLevel) {
             return false;
         }
-        return this.allCompleted(quest.dependsOn);
+        for (dependingId in quest.dependsOn) {
+            if (!this.isCompleted(quest.dependsOn[dependingId])) {
+                return false;
+            }
+        }
+        return true;
     };
 }
 
 var questStore = new QuestStore();
 
-function Quest(id, minLevel, dependsOn, description, originId) {
+function Quest(id, minLevel, dependsOn, name, description, originId) {
     this.id = id;
     this.minLevel = minLevel;
+    this.name = name;
     this.dependsOn = dependsOn;
     this.description = description;
     this.originId = originId;
