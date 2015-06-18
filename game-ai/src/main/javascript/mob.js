@@ -7,7 +7,7 @@ function Mob(occupation, aggresive) {
     this.y = 0;
     this.speed = 1;
     this.name = "unnamed mob";
-    this.setLocation = function(newX, newY) {this.x = newX; this.y = newY};
+    this.setLocation = function(newX, newY) {this.x = newX; this.y = newY;};
 
     this.occupation = occupation;
     this.aggresive = aggresive;
@@ -49,17 +49,18 @@ var stationary_trader = function(name) {
 var walking_trader = function(name) {
     var mob = new Mob(mob_neutral, false);
     mob.name = name;
-    mob.targetPosition = {x = 0; y = 0};
+    mob.targetPosition = {x: 0, y: 0};
     mob.move = function(newX, newY) {
-        mob.targetPosition = {x = newX; y = newY};
-    }
+        mob.targetPosition = {x:newX, y:newY};
+    };
     mob.doWalk = function(dt) {
         if (x != targetPosition.x || y != targetPosition.y) {
             console.log("walking");
         }
-    }
+    };
     mob.tick = function(dt) {
         mob.doWalk(dt);
         console.log("dt: " + dt);
-    }
+    };
+    return mob;
 }
