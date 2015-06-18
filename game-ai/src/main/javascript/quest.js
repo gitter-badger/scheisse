@@ -43,5 +43,11 @@ function Quest(id, minLevel, dependsOn, name, description, originId) {
     this.dependsOn = dependsOn;
     this.description = description;
     this.originId = originId;
-    this.isCompleted = function() {return false;}
+    this.isCompleted = function() {return (this.nextHint === false);};
+    this.nextHint = function() {return false;};
+    this.nextWaypoint = function() {return {x: 0, y: 0};};
+}
+
+var registerQuest = function(quest) {
+    questStore.quests[quest.id] = quest;
 }
