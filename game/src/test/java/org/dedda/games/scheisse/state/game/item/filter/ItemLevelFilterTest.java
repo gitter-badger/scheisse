@@ -1,7 +1,6 @@
 package org.dedda.games.scheisse.state.game.item.filter;
 
 import org.dedda.games.scheisse.entity.item.Item;
-import org.dedda.games.scheisse.entity.item.ItemCategory;
 import org.dedda.games.scheisse.entityfilter.item.ItemLevelFilter;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +20,7 @@ public class ItemLevelFilterTest {
         items = new ArrayList<Item>();
         for (int i = 0; i < 5; i++) {
             items.add(
-                new Item(i, "", i, ItemCategory.OTHER, "null", null
+                new Item(i, "", i, Item.TYPE_OTHER, null
                 ) {
                     public int maxStackNumber() {
                         return 0;

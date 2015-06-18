@@ -2,24 +2,69 @@ package org.dedda.games.scheisse.entityfilter.item;
 
 import org.dedda.games.scheisse.entity.item.Item;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by dedda on 10/7/14.
  */
 public class ItemTypeFilter extends ItemFilter {
 
-    public final String[] itemTypes;
+    public static final int STRATEGY_ALL = 1;
+    public static final int STRATEGY_SOME = 2;
+    public static final int STRATEGY_NONE = 3;
 
-    public ItemTypeFilter(final String[] itemTypes) {
+    public final int[] itemTypes;
+    public final int strategy;
+
+    public ItemTypeFilter(final int[] itemTypes, final int strategy) {
         this.itemTypes = itemTypes;
+        this.strategy = strategy;
     }
 
     @Override
     public boolean accept(final Item item) {
-        for (String current : itemTypes) {
-            if (item.getType().equals(current)) {
+        if (strategy == STRATEGY_ALL) {
+            return accept_all(item);
+        }
+        return false;
+    }
+
+    private boolean accept_all(final Item item) {
+        for (int currentType : itemTypes) {
+            if (!item.isType(currentType)) {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    private boolean accept_some(final Item item) {
+        for (int currentType : itemTypes) {
+            if (item.isType(currentType)) {
                 return true;
             }
         }
         return false;
     }
+
+    private boolean accept_none(final Item item) {
+        for (int currentType : itemTypes) {
+            if (item.isType(currentType)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public List<Item> filter(final List<Item> items) {
+        List<Item> accepted = new ArrayList<>();
+        for (Item item : items) {
+            if (accept(item)) {
+                accepted.add(item);
+            }
+        }
+        return accepted;
+    }
+
 }

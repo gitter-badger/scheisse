@@ -28,7 +28,7 @@ import java.awt.Image;
         name = "item.getForType",
         query = "SELECT i " +
             "FROM org.dedda.games.scheisse.entity.item.Item i " +
-            "WHERE i.type = :type"
+            "WHERE i.types = :types"
     ),
     @NamedQuery(
         name = "item.searchByName",
@@ -38,6 +38,23 @@ import java.awt.Image;
 public class Item
     extends org.dedda.games.scheisse.entity.Entity
     implements TestableEntity {
+
+    public static final int TYPE_OTHER = 1;
+    public static final int TYPE_TOOL = 2;
+    public static final int TYPE_SINGLE_WEAPON = 4;
+    public static final int TYPE_DUAL_WEAPON = 8;
+    public static final int TYPE_HELMET = 16;
+    public static final int TYPE_JACKET = 32;
+    public static final int TYPE_PANTS = 64;
+    public static final int TYPE_GLOVES = 128;
+    public static final int TYPE_BOOTS = 256;
+    public static final int TYPE_SHIELD = 512;
+
+    public static final int TYPE_ARMOR = 65536;
+    public static final int TYPE_WEAPON = 131072;
+
+    public static final int TYPES_CLOTHING =
+        TYPE_HELMET | TYPE_JACKET | TYPE_PANTS | TYPE_GLOVES | TYPE_BOOTS;
 
     /**
      * item id.
@@ -72,20 +89,10 @@ public class Item
     @Column(
         name = "name",
         nullable = false,
-        unique = true
+        unique = true,
+        length = 50
     )
     private String name;
-
-    /**
-     * item type.
-     */
-    @NotNull
-    @Basic(optional = false)
-    @Column(
-        name = "type",
-        nullable = false
-    )
-    private String type;
 
     /**
      * highest amount of damage to be dealt with this item.
@@ -120,27 +127,27 @@ public class Item
     private long minLevel;
 
     /**
+     *
+     */
+    @Column(
+        name = "types"
+    )
+    private int types;
+
+    /**
      * sprite to be rendered in inventory.
      */
     private Image sprite;
 
-    /**
-     * item category.
-     *
-     * @see ItemCategory
-     */
-    private ItemCategory category;
-
     public Item() {
     }
 
-    public Item(long id, String name, long price, ItemCategory category, String type, Image sprite) {
+    public Item(long id, String name, long price, int types, Image sprite) {
         super();
         this.id = id;
         this.name = name;
         this.price = price;
-        this.category = category;
-        this.type = type;
+        this.types = types;
         this.sprite = sprite;
     }
 
@@ -165,13 +172,6 @@ public class Item
      */
     public final String getName() {
         return name;
-    }
-
-    /**
-     * @return item type
-     */
-    public final String getType() {
-        return type;
     }
 
     /**
@@ -210,13 +210,6 @@ public class Item
     }
 
     /**
-     * @param type item type
-     */
-    public final void setType(final String type) {
-        this.type = type;
-    }
-
-    /**
      * @param attack highest amount of damage to be dealt with this item
      */
     public final void setAttack(final long attack) {
@@ -244,22 +237,6 @@ public class Item
     @Override
     public final long getMaxTestId() {
         return -1;
-    }
-
-    /**
-     * @return item category
-     * @see ItemCategory
-     */
-    public final ItemCategory getCategory() {
-        return category;
-    }
-
-    /**
-     * @param category item category
-     * @see ItemCategory
-     */
-    public final void setCategory(final ItemCategory category) {
-        this.category = category;
     }
 
     /**
@@ -298,6 +275,18 @@ public class Item
         this.minLevel = minLevel;
     }
 
+    public int getTypes() {
+        return types;
+    }
+
+    public void setTypes(int types) {
+        this.types = types;
+    }
+
+    public boolean isType(final int type) {
+        return (this.types & type) != 0;
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -324,13 +313,10 @@ public class Item
         if (price != item.price) {
             return false;
         }
-        if (category != item.category) {
-            return false;
-        }
         if (!name.equals(item.name)) {
             return false;
         }
-        if (!type.equals(item.type)) {
+        if (types != item.types) {
             return false;
         }
         return true;

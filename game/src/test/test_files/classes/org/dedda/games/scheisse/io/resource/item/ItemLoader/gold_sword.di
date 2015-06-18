@@ -1,4 +1,4 @@
-type:weapon
+types:weapon
 id:7
 name:Gold Sword
 value:10123

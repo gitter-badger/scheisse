@@ -1,6 +1,6 @@
 @startuml
 class org.dedda.games.scheisse.io.resource.BinaryResource{
-    - int type
+    - int types
     - byte[] dataBytes
     + BinaryResource(byte[], int)
     + int getType()

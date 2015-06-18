@@ -1,4 +1,4 @@
-type:armor
+types:armor
 id:5
 name:Iron Armor
 value:1654

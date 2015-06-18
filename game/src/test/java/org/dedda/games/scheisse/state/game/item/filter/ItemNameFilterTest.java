@@ -1,7 +1,6 @@
 package org.dedda.games.scheisse.state.game.item.filter;
 
 import org.dedda.games.scheisse.entity.item.Item;
-import org.dedda.games.scheisse.entity.item.ItemCategory;
 import org.dedda.games.scheisse.entityfilter.item.ItemNameFilter;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,27 +18,27 @@ public class ItemNameFilterTest {
     @Before
     public void setUp() {
         items = new ArrayList<Item>();
-        items.add(new Item(0, "ABC", 0, ItemCategory.OTHER, "null", null) {
+        items.add(new Item(0, "ABC", 0, Item.TYPE_OTHER, null) {
             public int maxStackNumber() {
                 return 0;
             }
         });
-        items.add(new Item(1, "abc", 1, ItemCategory.OTHER, "null", null) {
+        items.add(new Item(1, "abc", 1, Item.TYPE_OTHER, null) {
             public int maxStackNumber() {
                 return 0;
             }
         });
-        items.add(new Item(2, "ABCD", 2, ItemCategory.OTHER, "null", null) {
+        items.add(new Item(2, "ABCD", 2, Item.TYPE_OTHER, null) {
             public int maxStackNumber() {
                 return 0;
             }
         });
-        items.add(new Item(3, "bcd", 3, ItemCategory.OTHER, "null", null) {
+        items.add(new Item(3, "bcd", 3, Item.TYPE_OTHER, null) {
             public int maxStackNumber() {
                 return 0;
             }
         });
-        items.add(new Item(4, "abcd", 4, ItemCategory.OTHER, "null", null) {
+        items.add(new Item(4, "abcd", 4, Item.TYPE_OTHER, null) {
             public int maxStackNumber() {
                 return 0;
             }

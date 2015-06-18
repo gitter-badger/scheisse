@@ -26,13 +26,12 @@ public class Armor extends Item implements Wearable {
         final String name,
         final long value,
         final long armor,
-        final String type,
+        final int types,
         final Image sprite
     ) {
-        super(id, name, value, ItemCategory.ARMOR, type, sprite);
+        super(id, name, value, types | TYPE_ARMOR, sprite);
         this.armor = armor;
         setMaxStackAmount(1);
-        setType(type);
     }
 
     public static Armor register(
@@ -40,10 +39,10 @@ public class Armor extends Item implements Wearable {
         final String name,
         final long value,
         final long armor,
-        final String type,
+        final int types,
         final Image sprite
     ) {
-        return new Armor(id, name, value, armor, type, sprite);
+        return new Armor(id, name, value, armor, types, sprite);
     }
 
     /**

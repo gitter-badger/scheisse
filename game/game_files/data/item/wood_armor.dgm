@@ -1,4 +1,4 @@
-type:armor
+types:armor
 id:2
 name:Wooden Armor
 value:654

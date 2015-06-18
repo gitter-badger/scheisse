@@ -26,7 +26,7 @@ public class ShopConnector {
     public List<Offer> getOffers(final ItemType itemType) {
         /*ArrayList<Long> allIDs = new ArrayList<Long>();
         for (long currentId : org.dedda.games.scheisse.entity.item.Item.getItemMap().keySet()) {
-            if (org.dedda.games.scheisse.entity.item.Item.forId(currentId).getType() == itemType) {
+            if (org.dedda.games.scheisse.entity.item.Item.forId(currentId).getTypes() == itemType) {
                 allIDs.add(currentId);
             }
         }

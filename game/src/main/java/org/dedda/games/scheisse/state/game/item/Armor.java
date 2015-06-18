@@ -21,7 +21,7 @@ public class Armor extends Item implements Wearable {
      * @param name   item name
      * @param value  item value
      * @param armor  highest amount of damage that can be absorbed by this item.
-     * @param type   item type
+     * @param type   item types
      * @param sprite
      */
     protected Armor(
@@ -77,7 +77,7 @@ public class Armor extends Item implements Wearable {
      * @param name   item name
      * @param value  item value
      * @param armor  highest amount of damage that can be absorbed by this item.
-     * @param type   item type
+     * @param type   item types
      * @param sprite
      * @return registered armor
      */

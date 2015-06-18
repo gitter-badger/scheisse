@@ -1,4 +1,4 @@
-type:shield
+types:shield
 id:6
 name:Iron Shield
 value:1246
