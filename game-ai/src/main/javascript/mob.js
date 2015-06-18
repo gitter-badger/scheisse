@@ -2,13 +2,11 @@ var mob_good = 'good';
 var mob_bad = 'bad';
 var mob_neutral = 'neutral';
 
-function Mob(occupation, aggresive) {
-    this.x = 0;
-    this.y = 0;
+function Mob(id) {
+    this.id = id;
     this.speed = 1;
     this.name = "unnamed mob";
-    this.setLocation = function(newX, newY) {this.x = newX; this.y = newY;};
-
+    this.javaObject = javaHelper.getProperty("game.mob.byId", id);
     this.occupation = occupation;
     this.aggresive = aggresive;
     this.setOccupation = function(newOccupation) {this.occupation = newOccupation};
@@ -31,7 +29,7 @@ function Mob(occupation, aggresive) {
         return;
     };
     this.move = function(x, y) {};
-    this.teleport = function(x, y) {this.x = x; this.y = y;};
+    this.teleport = function(x, y) {this.javaObject. = x; this.y = y;};
 }
 
 var create_enemy = function(aggresive) {return new Mob(mob_bad, aggresive);};

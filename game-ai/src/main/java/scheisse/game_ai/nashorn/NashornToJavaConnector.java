@@ -14,4 +14,8 @@ public class NashornToJavaConnector {
         return null;
     }
 
+    public Object push(final String metric, final Object object) {
+        return null;
+    }
+
 }
