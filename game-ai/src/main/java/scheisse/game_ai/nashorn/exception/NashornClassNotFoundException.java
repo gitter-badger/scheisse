@@ -7,7 +7,7 @@ package scheisse.game_ai.nashorn.exception;
  */
 public class NashornClassNotFoundException extends RuntimeException {
 
-    final String className;
+    public final String className;
 
     public NashornClassNotFoundException(String className) {
         super("class: " + className);
