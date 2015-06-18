@@ -38,4 +38,16 @@ public class NashornManagerTest {
         int ans = ((Number) ((Invocable) engine).invokeFunction("addition", a, b)).intValue();
         assertEquals(expected, ans);
     }
+
+    @Test
+    public void testPrepareEngineDirectory() throws Exception {
+        ScriptEngine engine = manager.prepareEngine(new String[]{"src/test/resources/nashorn/test_dir"});
+        int a = 1;
+        int b = 2;
+        int expected = a + b;
+        int ans = ((Number) ((Invocable) engine).invokeFunction("addition", a, b)).intValue();
+        assertEquals(expected, ans);
+        int y = ((Number) (engine.eval("y;"))).intValue();
+        assertEquals(10, y);
+    }
 }
