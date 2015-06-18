@@ -6,6 +6,8 @@ import org.junit.Test;
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 
+import java.net.URLClassLoader;
+
 import static org.junit.Assert.*;
 
 /**
@@ -49,5 +51,11 @@ public class NashornManagerTest {
         assertEquals(expected, ans);
         int y = ((Number) (engine.eval("y;"))).intValue();
         assertEquals(10, y);
+    }
+
+    @Test
+    public void testGetBasicGameScriptEngine() throws Exception {
+        ScriptEngine engine = manager.getBasicGameScriptEngine();
+
     }
 }

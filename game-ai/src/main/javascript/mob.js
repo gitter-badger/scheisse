@@ -29,7 +29,9 @@ function Mob(id) {
         return;
     };
     this.move = function(x, y) {};
-    this.teleport = function(x, y) {this.javaObject. = x; this.y = y;};
+    this.teleport = function(x, y) {
+        this.x = x; this.y = y;
+    };
 }
 
 var create_enemy = function(aggresive) {return new Mob(mob_bad, aggresive);};

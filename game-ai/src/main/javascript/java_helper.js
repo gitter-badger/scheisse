@@ -1,5 +1,5 @@
 function JavaHelper() {
-    this.connector = new scheisse.game_ai.nashorn.NashornToJavaConnector();
+    this.connector = connector;
     this.getProperty = function(metric, property) {
         return connector.getProperty("" + metric, "" + property);
     };
