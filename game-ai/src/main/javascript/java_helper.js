@@ -10,7 +10,7 @@ function JavaHelper() {
         return (this.getProperty("utils.test", "ping") === true);
     };
     this.isJavaMob = function(mob) {
-        return (mob.class === "org.dedda.games.scheisse.state.game.object.npc.NPC");
+        return (mob.class === "scheisse.game_ai.behaviour.Mob");
     };
     this.getMob = function(id) {
         var mob = this.getProperty("game.mob.byId", id);
@@ -21,7 +21,7 @@ function JavaHelper() {
     };
     this.newMob = function(mob) {
         var value = this.push("game.mob.new", mob);
-        if (!(value.class === "org.dedda.games.scheisse.state.game.object.npc.NPC")) {
+        if (!isJavaMob(value)) {
             return false;
         }
         mob.javaObject = this.getMob(value);
