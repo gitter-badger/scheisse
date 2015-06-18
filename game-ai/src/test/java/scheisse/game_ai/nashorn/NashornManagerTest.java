@@ -56,6 +56,8 @@ public class NashornManagerTest {
     @Test
     public void testGetBasicGameScriptEngine() throws Exception {
         ScriptEngine engine = manager.getBasicGameScriptEngine();
-
+        String exec = "javaHelper.testConnection();";
+        boolean ping = (boolean)engine.eval(exec);
+        assertTrue(ping);
     }
 }
