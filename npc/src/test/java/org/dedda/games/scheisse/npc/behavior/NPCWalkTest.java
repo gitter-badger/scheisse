@@ -1,6 +1,8 @@
-package org.dedda.games.scheisse.state.game.object.behavior;
+package org.dedda.games.scheisse.npc.behavior;
 
-import org.dedda.games.scheisse.state.game.object.npc.NPC;
+import org.dedda.games.scheisse.npc.behavior.NPCScript;
+import org.dedda.games.scheisse.npc.behavior.NPCWalk;
+import org.dedda.games.scheisse.npc.npc.NPC;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.npc;
 
-import org.dedda.games.scheisse.state.game.fight.Attack;
+import org.dedda.games.scheisse.fight.Attack;
 
 import java.awt.Point;
 import java.awt.geom.Point2D;

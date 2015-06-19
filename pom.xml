@@ -95,6 +95,9 @@
     <module>entity-filter</module>
     <module>server-persistence</module>
     <module>server-log</module>
+    <module>npc</module>
+    <module>tools</module>
+    <module>fight</module>
   </modules>
 
   <build>
