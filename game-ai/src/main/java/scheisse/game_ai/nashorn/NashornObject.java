@@ -24,7 +24,7 @@ public class NashornObject {
             for (int i = 0; i < constructorParams.length; i++) {
                 execute += "\"" + constructorParams[i] + "\", ";
             }
-            execute = execute.substring(0, execute.length()-2);
+            execute = execute.substring(0, execute.length() - 2);
         }
         execute += ");";
         try {
@@ -35,17 +35,17 @@ public class NashornObject {
         }
     }
 
-    public Object getProperty(String propertyName) {
+    public final Object getProperty(final String propertyName) {
         String execute = varName + "." + propertyName + ";";
         return runJS(execute);
     }
 
-    public void setProperty(String propertyName, String value) {
+    public final void setProperty(final String propertyName, final String value) {
         String execute = varName + "." + propertyName + " = \"" + value + "\";";
         runJS(execute);
     }
 
-    private Object runJS(String jsLine) {
+    private Object runJS(final String jsLine) {
         try {
             return nashornClass.getEngine().eval(jsLine);
         } catch (ScriptException e) {

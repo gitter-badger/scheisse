@@ -6,12 +6,14 @@ import java.util.ArrayList;
 
 /**
  * Created by dedda on 10/7/14.
+ *
+ * @author dedda
  */
 public abstract class ItemFilter {
 
     public abstract boolean accept(final Item item);
 
-    public ArrayList<Item> filter(final ArrayList<Item> items) {
+    public final ArrayList<Item> filter(final ArrayList<Item> items) {
         ArrayList<Item> filtered = new ArrayList<Item>();
         for (Item item : items) {
             if (accept(item)) {

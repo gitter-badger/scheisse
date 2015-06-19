@@ -2,8 +2,6 @@ package scheisse.game_ai.nashorn;
 
 import scheisse.game_ai.nashorn.exception.NashornClassNotFoundException;
 
-import javax.print.attribute.standard.MediaSize;
-import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
@@ -25,7 +23,7 @@ public class NashornClass {
         }
     }
 
-    public boolean classExists() {
+    public final boolean classExists() {
         String execute = "typeof " + className + " === 'function'";
         boolean exists = false;
         try {
@@ -36,11 +34,11 @@ public class NashornClass {
         return exists;
     }
 
-    public String getClassName() {
+    public final String getClassName() {
         return className;
     }
 
-    public ScriptEngine getEngine() {
+    public final ScriptEngine getEngine() {
         return engine;
     }
 }

@@ -29,28 +29,28 @@ public class NashornManager {
         public MobStore getMobStore() {
             return new MobStore() {
                 @Override
-                public Mob getMob(String id) {
+                public Mob getMob(final String id) {
                     return null;
                 }
 
                 @Override
-                public String putMob(Object mobObject) {
+                public String putMob(final Object mobObject) {
                     return null;
                 }
             };
         }
 
         @Override
-        public void setMobStore(MobStore mobStore) {
+        public void setMobStore(final MobStore mobStore) {
 
         }
     };
 
-    public ScriptEngine getEngine() {
+    public final ScriptEngine getEngine() {
         return new ScriptEngineManager().getEngineByName("nashorn");
     }
 
-    public ScriptEngine prepareEngine(final String[] jsFilesToLoad) throws FileNotFoundException, ScriptException {
+    public final ScriptEngine prepareEngine(final String[] jsFilesToLoad) throws FileNotFoundException, ScriptException {
         final ScriptEngine engine = getEngine();
         engine.eval("load(\"nashorn:mozilla_compat.js\");");
         engine.put("_gameStore", gameStore);
@@ -63,9 +63,9 @@ public class NashornManager {
                     engine.eval(new FileReader(js));
                 }
             } else {
-                File files[] = file.listFiles(new FilenameFilter() {
+                File[] files = file.listFiles(new FilenameFilter() {
                     @Override
-                    public boolean accept(File dir, String name) {
+                    public boolean accept(final File dir, final String name) {
                         return name.endsWith(".js");
                     }
                 });
@@ -77,7 +77,7 @@ public class NashornManager {
         return engine;
     }
 
-    public ScriptEngine getBasicGameScriptEngine() throws FileNotFoundException, ScriptException {
+    public final ScriptEngine getBasicGameScriptEngine() throws FileNotFoundException, ScriptException {
         ScriptEngine engine = prepareEngine(new String[]{"src/main/javascript/requiredJsFiles.json"});
         return engine;
     }
@@ -97,7 +97,7 @@ public class NashornManager {
         return gameStore;
     }
 
-    public static void setGameStore(GameStore gameStore) {
+    public static void setGameStore(final GameStore gameStore) {
         NashornManager.gameStore = gameStore;
     }
 }

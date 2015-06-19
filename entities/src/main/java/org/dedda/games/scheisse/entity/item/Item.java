@@ -267,23 +267,23 @@ public class Item
         this.maxStackAmount = maxStackAmount;
     }
 
-    public long getMinLevel() {
+    public final long getMinLevel() {
         return minLevel;
     }
 
-    public void setMinLevel(long minLevel) {
+    public final void setMinLevel(long minLevel) {
         this.minLevel = minLevel;
     }
 
-    public int getTypes() {
+    public final int getTypes() {
         return types;
     }
 
-    public void setTypes(int types) {
+    public final void setTypes(int types) {
         this.types = types;
     }
 
-    public boolean isType(final int type) {
+    public final boolean isType(final int type) {
         return (this.types & type) != 0;
     }
 

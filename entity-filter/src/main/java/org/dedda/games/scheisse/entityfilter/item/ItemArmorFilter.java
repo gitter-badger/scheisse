@@ -31,7 +31,7 @@ public class ItemArmorFilter extends ItemFilter {
     }
 
     @Override
-    public boolean accept(final Item item) {
+    public final boolean accept(final Item item) {
         if (!itemTypeFilter.accept(item)) {
             return false;
         }

@@ -4,6 +4,8 @@ import org.dedda.games.scheisse.entity.item.Item;
 
 /**
  * Created by dedda on 08.01.15.
+ *
+ * @author dedda
  */
 public class ItemNameFilter extends ItemFilter {
 
@@ -27,7 +29,7 @@ public class ItemNameFilter extends ItemFilter {
     }
 
     @Override
-    public boolean accept(final Item item) {
+    public final boolean accept(final Item item) {
         String expected = name;
         String actual = item.getName();
         if (caseSensitive == CASE_INSENSITIVE) {

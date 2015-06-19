@@ -28,7 +28,7 @@ public abstract class MobAI {
         postTick(dt);
     }
 
-    public void doTick(final float dt) {
+    public final void doTick(final float dt) {
         String execute = NASHORN_OBJECT.varName + ".tick(" + dt + ");";
     }
 

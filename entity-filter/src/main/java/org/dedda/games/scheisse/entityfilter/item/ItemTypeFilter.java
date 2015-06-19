@@ -7,6 +7,8 @@ import java.util.List;
 
 /**
  * Created by dedda on 10/7/14.
+ *
+ * @author dedda
  */
 public class ItemTypeFilter extends ItemFilter {
 
@@ -23,7 +25,7 @@ public class ItemTypeFilter extends ItemFilter {
     }
 
     @Override
-    public boolean accept(final Item item) {
+    public final boolean accept(final Item item) {
         if (strategy == STRATEGY_ALL) {
             return accept_all(item);
         }
@@ -57,7 +59,7 @@ public class ItemTypeFilter extends ItemFilter {
         return true;
     }
 
-    public List<Item> filter(final List<Item> items) {
+    public final List<Item> filter(final List<Item> items) {
         List<Item> accepted = new ArrayList<>();
         for (Item item : items) {
             if (accept(item)) {

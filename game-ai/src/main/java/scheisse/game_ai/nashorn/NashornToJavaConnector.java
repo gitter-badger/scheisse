@@ -7,14 +7,14 @@ package scheisse.game_ai.nashorn;
  */
 public class NashornToJavaConnector {
 
-    public Object getProperty(final String metric, final String property) {
+    public final Object getProperty(final String metric, final String property) {
         if (metric.equals("utils.test") && property.equals("ping")) {
             return true;
         }
         return null;
     }
 
-    public Object push(final String metric, final Object object) {
+    public final Object push(final String metric, final Object object) {
         return null;
     }
 
