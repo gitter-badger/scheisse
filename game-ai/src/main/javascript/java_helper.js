@@ -4,7 +4,7 @@ function JavaHelper() {
         return connector.getProperty("" + metric, "" + property);
     };
     this.push = function(metric, value) {
-        return connector.push("" + metric, value)
+        return connector.push("" + metric, value);
     };
     this.testConnection = function() {
         return (this.getProperty("utils.test", "ping") === true);

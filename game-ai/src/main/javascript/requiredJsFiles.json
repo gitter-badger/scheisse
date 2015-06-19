@@ -5,6 +5,7 @@
     "attack_types.js",
     "mob.js",
     "attack.js",
-    "quest.js"
+    "quest.js",
+    "inventory.js"
   ]
 }
