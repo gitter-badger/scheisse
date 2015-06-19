@@ -1,6 +1,5 @@
 {
   "files": [
-    "java_helper.js",
     "util.js",
     "attack_types.js",
     "mob.js",

@@ -1,5 +1,9 @@
 package scheisse.game_ai.nashorn;
 
+import scheisse.game_ai.GameStore;
+import scheisse.game_ai.MobStore;
+import scheisse.game_ai.behaviour.Mob;
+
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
@@ -20,6 +24,28 @@ import java.io.FilenameFilter;
  */
 public class NashornManager {
 
+    private static GameStore gameStore = new GameStore() {
+        @Override
+        public MobStore getMobStore() {
+            return new MobStore() {
+                @Override
+                public Mob getMob(String id) {
+                    return null;
+                }
+
+                @Override
+                public String putMob(Object mobObject) {
+                    return null;
+                }
+            };
+        }
+
+        @Override
+        public void setMobStore(MobStore mobStore) {
+
+        }
+    };
+
     public ScriptEngine getEngine() {
         return new ScriptEngineManager().getEngineByName("nashorn");
     }
@@ -27,8 +53,7 @@ public class NashornManager {
     public ScriptEngine prepareEngine(final String[] jsFilesToLoad) throws FileNotFoundException, ScriptException {
         final ScriptEngine engine = getEngine();
         engine.eval("load(\"nashorn:mozilla_compat.js\");");
-        NashornToJavaConnector connector = new NashornToJavaConnector();
-        engine.put("connector", connector);
+        engine.put("_gameStore", gameStore);
         for (String js : jsFilesToLoad) {
             File file = new File(js);
             if (file.isFile()) {
@@ -53,7 +78,8 @@ public class NashornManager {
     }
 
     public ScriptEngine getBasicGameScriptEngine() throws FileNotFoundException, ScriptException {
-        return prepareEngine(new String[]{"src/main/javascript/requiredJsFiles.json"});
+        ScriptEngine engine = prepareEngine(new String[]{"src/main/javascript/requiredJsFiles.json"});
+        return engine;
     }
 
     private void loadFilesFromJSON(final ScriptEngine engine, final File jsonFile) throws FileNotFoundException, ScriptException {
@@ -67,4 +93,11 @@ public class NashornManager {
         }
     }
 
+    public static GameStore getGameStore() {
+        return gameStore;
+    }
+
+    public static void setGameStore(GameStore gameStore) {
+        NashornManager.gameStore = gameStore;
+    }
 }

@@ -2,6 +2,7 @@ package scheisse.game_ai.nashorn;
 
 import org.junit.Before;
 import org.junit.Test;
+import scheisse.game_ai.GameStore;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -56,8 +57,8 @@ public class NashornManagerTest {
     @Test
     public void testGetBasicGameScriptEngine() throws Exception {
         ScriptEngine engine = manager.getBasicGameScriptEngine();
-        String exec = "javaHelper.testConnection();";
-        boolean ping = (boolean)engine.eval(exec);
-        assertTrue(ping);
+        String exec = "_gameStore;";
+        Object value = engine.eval(exec);
+        assertTrue(value instanceof GameStore);
     }
 }
