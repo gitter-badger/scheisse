@@ -65,6 +65,8 @@ var walking_mob = function(occupation, aggresive, name) {
         mob.doWalk(dt);
         console.log("dt: " + dt);
     };
+    var mobId = _.createMob(mob);
+    mob.id = mobId;
     return mob;
 }
 

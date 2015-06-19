@@ -20,7 +20,10 @@ function Util() {
         if (mob === undefined) {
             return false;
         }
-        return this.javaHelper.push("game.mob.new", mob);
+        if (javaHelper.isJavaMob(mob.javaObject)) {
+            return mob.id;
+        }
+        return this.javaHelper.newMob(mob);
     };
 }
 
