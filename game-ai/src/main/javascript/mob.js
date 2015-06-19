@@ -4,9 +4,11 @@ var mob_neutral = 'neutral';
 
 function Mob(id) {
     this.id = id;
+    this.x = 0;
+    this.y = 0;
     this.speed = 1;
     this.name = "unnamed mob";
-    this.javaObject = javaHelper.getProperty("game.mob.byId", id);
+    this.javaObject = _.getMob( id);
     this.occupation = occupation;
     this.aggresive = aggresive;
     this.setOccupation = function(newOccupation) {this.occupation = newOccupation};
@@ -40,22 +42,23 @@ var create_neutral_mob = function(aggresive) {return new Mob(mob_neutral, aggres
 
 var attacks = function(mob1, mob2) {return mob1.attacks(mob2.occupation);};
 
-var stationary_trader = function(name) {
-    var mob = new Mob(mob_neutral, false);
-    mob.name = name;
-    return mob;
-}
-
-var walking_trader = function(name) {
-    var mob = new Mob(mob_neutral, false);
+var walking_mob = function(occupation, aggresive, name) {
+    var mob = new Mob(occupation, aggresive);
     mob.name = name;
     mob.targetPosition = {x: 0, y: 0};
     mob.move = function(newX, newY) {
         mob.targetPosition = {x:newX, y:newY};
     };
     mob.doWalk = function(dt) {
-        if (x != targetPosition.x || y != targetPosition.y) {
-            console.log("walking");
+        if (mob.x != targetPosition.x || mob.y != targetPosition.y) {
+            var dx = targetPosition.x - mob.x;
+            var dy = targetPosition.y - mob.y;
+            if ((Math.abs(dx) < 0.01) && (Math.abs(dy) < 0.01)) {
+                mob.teleport(targetPosition.x, targetPosition.y);
+            }
+            var direction = _.getDirection(targetPosition.x - mob.x, targetPosition.y = mob.y);
+            mob.x += Math.cos(direction) * speed * dt;
+            mob.y += Math.sin(direction) * speed * dt;
         }
     };
     mob.tick = function(dt) {
@@ -64,3 +67,4 @@ var walking_trader = function(name) {
     };
     return mob;
 }
+

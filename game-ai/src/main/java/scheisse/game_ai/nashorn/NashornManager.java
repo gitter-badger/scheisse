@@ -27,7 +27,6 @@ public class NashornManager {
     public ScriptEngine prepareEngine(final String[] jsFilesToLoad) throws FileNotFoundException, ScriptException {
         final ScriptEngine engine = getEngine();
         engine.eval("load(\"nashorn:mozilla_compat.js\");");
-        engine.eval("importClass(java.util.HashMap);");
         NashornToJavaConnector connector = new NashornToJavaConnector();
         engine.put("connector", connector);
         for (String js : jsFilesToLoad) {

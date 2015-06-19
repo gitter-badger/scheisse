@@ -1,9 +1,10 @@
 {
   "files": [
+    "java_helper.js",
+    "util.js",
     "attack_types.js",
     "mob.js",
     "attack.js",
-    "quest.js",
-    "java_helper.js"
+    "quest.js"
   ]
 }
