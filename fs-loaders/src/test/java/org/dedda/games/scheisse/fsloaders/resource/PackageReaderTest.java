@@ -1,6 +1,7 @@
-package org.dedda.games.scheisse.io;
+package org.dedda.games.scheisse.fsloaders.resource;
 
-import org.dedda.games.scheisse.io.resource.BinaryResource;
+import org.dedda.games.scheisse.fsloaders.resource.BinaryResource;
+import org.dedda.games.scheisse.fsloaders.resource.PackageReader;
 import org.junit.Test;
 
 import java.io.File;

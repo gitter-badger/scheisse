@@ -1,6 +1,7 @@
-package org.dedda.games.scheisse.io;
+package org.dedda.games.scheisse.fsloaders.resource;
 
-import org.dedda.games.scheisse.state.game.map.Map;
+import org.dedda.games.scheisse.fsloaders.resource.MapLoader;
+import org.dedda.games.scheisse.world.map.Map;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,11 +9,11 @@ import java.awt.Dimension;
 import java.io.File;
 import java.util.ArrayList;
 
-import static org.dedda.games.scheisse.state.game.map.soil.Soil.Type;
-import static org.dedda.games.scheisse.state.game.map.soil.Soil.Type.DIRT;
-import static org.dedda.games.scheisse.state.game.map.soil.Soil.Type.GRASS;
-import static org.dedda.games.scheisse.state.game.map.soil.Soil.Type.ROCK;
-import static org.dedda.games.scheisse.state.game.map.soil.Soil.Type.WATER;
+import static org.dedda.games.scheisse.world.map.soil.Soil.Type;
+import static org.dedda.games.scheisse.world.map.soil.Soil.Type.DIRT;
+import static org.dedda.games.scheisse.world.map.soil.Soil.Type.GRASS;
+import static org.dedda.games.scheisse.world.map.soil.Soil.Type.ROCK;
+import static org.dedda.games.scheisse.world.map.soil.Soil.Type.WATER;
 import static org.junit.Assert.assertEquals;
 
 public class MapLoaderTest {

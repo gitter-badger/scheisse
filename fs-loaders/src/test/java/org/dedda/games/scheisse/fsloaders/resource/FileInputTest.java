@@ -1,5 +1,6 @@
-package org.dedda.games.scheisse.io;
+package org.dedda.games.scheisse.fsloaders.resource;
 
+import org.dedda.games.scheisse.fsloaders.resource.FileInput;
 import org.junit.Before;
 import org.junit.Test;
 
