@@ -1,5 +1,6 @@
 package org.dedda.games.scheisse.world;
 
+import org.dedda.games.scheisse.tool.SystemPrinter;
 import org.dedda.games.scheisse.world.soil.Soil;
 
 import java.awt.Dimension;
@@ -188,17 +189,17 @@ public class Map {
     }
 
     public final void print() {
-//        SystemPrinter.debugln("Map:");
-//        SystemPrinter.debugln("size: " + size);
-//        SystemPrinter.debugln("chunk grid size: " + chunkGridSize);
-//        for (int i = 0; i < size.height; i++) {
-//            for (int k = 0; k < size.width; k++) {
-//                SystemPrinter.debug(
-//                    String.valueOf(getSoil()[k][i]).charAt(0) + ""
-//                );
-//            }
-//            SystemPrinter.debugln("");
-//        }
+        SystemPrinter.debugln("Map:");
+        SystemPrinter.debugln("size: " + size);
+        SystemPrinter.debugln("chunk grid size: " + chunkGridSize);
+        for (int i = 0; i < size.height; i++) {
+            for (int k = 0; k < size.width; k++) {
+                SystemPrinter.debug(
+                    String.valueOf(getSoil()[k][i]).charAt(0) + ""
+                );
+            }
+            SystemPrinter.debugln("");
+        }
     }
 
     @Override
