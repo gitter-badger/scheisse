@@ -1,4 +1,4 @@
-package org.dedda.games.scheisse.state.game.map.building;
+package org.dedda.games.scheisse.world.building;
 
 import org.dedda.games.scheisse.state.game.Direction;
 import org.dedda.games.scheisse.state.game.Player;

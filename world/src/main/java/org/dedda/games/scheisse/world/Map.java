@@ -1,14 +1,14 @@
-package org.dedda.games.scheisse.state.game.map;
+package org.dedda.games.scheisse.world;
 
 import org.dedda.games.scheisse.debug.SystemPrinter;
-import org.dedda.games.scheisse.state.game.map.soil.Soil;
+import org.dedda.games.scheisse.world.soil.Soil;
 import org.dedda.games.scheisse.state.game.quest.Quest;
 
 import java.awt.Dimension;
 import java.awt.Point;
 import java.util.ArrayList;
 
-import static org.dedda.games.scheisse.state.game.map.Chunk.CHUNK_SIZE;
+import static org.dedda.games.scheisse.world.Chunk.CHUNK_SIZE;
 
 /**
  * @author dedda

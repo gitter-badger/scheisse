@@ -1,6 +1,6 @@
-package org.dedda.games.scheisse.state.game.map;
+package org.dedda.games.scheisse.world;
 
-import org.dedda.games.scheisse.state.game.map.soil.Soil;
+import org.dedda.games.scheisse.world.soil.Soil;
 
 import java.awt.Point;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package org.dedda.games.scheisse.state.game.map;
+package org.dedda.games.scheisse.world;
 
 import java.awt.Dimension;
 import java.awt.Point;

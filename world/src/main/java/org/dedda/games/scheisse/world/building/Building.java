@@ -1,6 +1,6 @@
-package org.dedda.games.scheisse.state.game.map.building;
+package org.dedda.games.scheisse.world.building;
 
-import org.dedda.games.scheisse.state.game.map.MapObject;
+import org.dedda.games.scheisse.world.MapObject;
 
 import java.awt.Dimension;
 import java.awt.Point;

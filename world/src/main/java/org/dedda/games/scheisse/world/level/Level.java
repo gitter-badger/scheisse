@@ -1,6 +1,6 @@
-package org.dedda.games.scheisse.state.game.map.level;
+package org.dedda.games.scheisse.world.level;
 
-import org.dedda.games.scheisse.state.game.map.Map;
+import org.dedda.games.scheisse.world.Map;
 
 /**
  * Created by dedda on 5/15/14.

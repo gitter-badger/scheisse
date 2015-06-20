@@ -1,4 +1,4 @@
-package org.dedda.games.scheisse.exception.io.world;
+package org.dedda.games.scheisse.fsloaders.resource.exception;
 
 /**
  * {@link java.lang.Exception} which is thrown when trying to load a world from

@@ -1,4 +1,4 @@
-package org.dedda.games.scheisse.state.game.map.building;
+package org.dedda.games.scheisse.world.map.building;
 
 import junit.framework.TestCase;
 import org.dedda.games.scheisse.state.game.Direction;

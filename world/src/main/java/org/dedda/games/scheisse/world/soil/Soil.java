@@ -1,4 +1,4 @@
-package org.dedda.games.scheisse.state.game.map.soil;
+package org.dedda.games.scheisse.world.soil;
 
 import com.jogamp.opengl.util.texture.Texture;
 import com.jogamp.opengl.util.texture.TextureIO;
