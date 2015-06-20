@@ -99,6 +99,7 @@
     <module>tools</module>
     <module>fight</module>
     <module>player</module>
+    <module>world</module>
   </modules>
 
   <build>
