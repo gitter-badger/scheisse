@@ -1,4 +1,4 @@
-package org.dedda.games.scheisse.state.game.fight;
+package org.dedda.games.scheisse.fight;
 
 import java.util.Map;
 
