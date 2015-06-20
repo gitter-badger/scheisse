@@ -1,7 +1,0 @@
-@startuml
-class org.dedda.games.scheisse.io.resource.world.WorldLoader{
-    - File directory
-    + WorldLoader(File)
-    + ArrayList<NPC> loadNPCs()
-}
-@enduml

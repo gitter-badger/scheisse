@@ -1,5 +1,0 @@
-@startuml
-interface org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener{
-    + {abstract} void categoriesChanged(CategoriesChangedEvent)
-}
-@enduml

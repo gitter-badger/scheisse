@@ -1,8 +1,0 @@
-@startuml
-enum org.dedda.games.scheisse.state.game.map.soil.Soil.Type{
-    GRASS
-    DIRT
-    ROCK
-    WATER
-}
-@enduml

@@ -1,9 +1,0 @@
-@startuml
-class org.dedda.games.scheisse.state.game.map.MapObject
-
-class org.dedda.games.scheisse.state.game.map.building.Building{
-    + Building(Point, Dimension)
-}
-
-org.dedda.games.scheisse.state.game.map.MapObject <|-- class org.dedda.games.scheisse.state.game.map.building.Building
-@enduml

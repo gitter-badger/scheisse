@@ -1,8 +1,0 @@
-@startuml
-class org.dedda.games.scheisse.exception.ExceptionCode{
-    + {static} int EXIT_OK
-    + {static} int EXIT_INSTALLATION_FAULT
-    + {static} int EXIT_UNKNOWN
-    + {static} int EXIT_GL_INITIALIZATION_FAILED
-}
-@enduml

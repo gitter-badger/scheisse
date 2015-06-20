@@ -1,7 +1,0 @@
-@startuml
-class org.dedda.games.scheisse.state.game.fight.Attack{
-    + long baseDamage
-    + Map<AttackElement, Long> elementalDamage
-    + Attack(long, Map<AttackElement, Long>)
-}
-@enduml

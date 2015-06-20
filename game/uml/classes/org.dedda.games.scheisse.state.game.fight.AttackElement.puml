@@ -1,7 +1,0 @@
-@startuml
-enum org.dedda.games.scheisse.state.game.fight.AttackElement{
-    FIRE
-    ICE
-    SHOCK
-}
-@enduml

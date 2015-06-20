@@ -1,6 +1,0 @@
-@startuml
-class org.dedda.games.scheisse.io.resource.world.WorldDirectoryFilter{
-    + {static} boolean isWorldDirectory(File)
-    + boolean accept(File)
-}
-@enduml

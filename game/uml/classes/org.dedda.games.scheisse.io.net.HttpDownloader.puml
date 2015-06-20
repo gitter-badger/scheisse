@@ -1,9 +1,0 @@
-@startuml
-class org.dedda.games.scheisse.io.net.HttpDownloader{
-    - URL url
-    + HttpDownloader(URL)
-    + boolean download(String)
-    + boolean download(File)
-    + URL getUrl()
-}
-@enduml

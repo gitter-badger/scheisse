@@ -1,8 +1,0 @@
-@startuml
-class org.dedda.games.scheisse.state.game.shop.Offer{
-    + long itemId
-    + long amountAvailable
-    + priceSingle
-    + Offer(long, long, long)
-}
-@enduml

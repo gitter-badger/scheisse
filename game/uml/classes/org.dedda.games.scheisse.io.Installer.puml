@@ -1,7 +1,0 @@
-@startuml
-class org.dedda.games.scheisse.io.Installer{
-    - boolean gui
-    + boolean install()
-    + boolean installSingle(URL, String)
-}
-@enduml

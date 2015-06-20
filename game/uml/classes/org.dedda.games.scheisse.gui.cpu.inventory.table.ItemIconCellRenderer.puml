@@ -1,9 +1,0 @@
-@startuml
-interface javax.swing.table.TableCellRenderer
-
-class org.dedda.games.scheisse.gui.cpu.inventory.table.ItemIconCellRenderer{
-    + Component getTableCellRendererComponent(JTable, Object, boolean, boolean, int, int)
-}
-
-javax.swing.table.TableCellRenderer <|.. org.dedda.games.scheisse.gui.cpu.inventory.table.ItemIconCellRenderer
-@enduml

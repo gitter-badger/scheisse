@@ -1,9 +1,0 @@
-@startuml
-class org.dedda.games.scheisse.io.MapLoader{
-    - String folder
-    + MapLoader(String)
-    + MapLoader(File)
-    + Map load()
-    + Soil.Type[][] parseMapSoil(ArrayList<String>, Dimension)
-}
-@enduml

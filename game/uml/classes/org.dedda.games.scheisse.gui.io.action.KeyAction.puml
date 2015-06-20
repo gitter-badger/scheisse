@@ -1,5 +1,0 @@
-@startuml
-interface org.dedda.games.scheisse.gui.io.action.KeyAction{
-    + {abstract} void perform(KeyActionInfo)
-}
-@enduml

@@ -1,5 +1,0 @@
-@startuml
-interface org.dedda.games.scheisse.gui.io.action.MouseAction{
-    + {abstract} void perform(MouseActionInfo)
-}
-@enduml
