@@ -1,18 +1,14 @@
 package org.dedda.games.scheisse.world.soil;
 
 import com.jogamp.opengl.util.texture.Texture;
-import com.jogamp.opengl.util.texture.TextureIO;
-import org.dedda.games.scheisse.debug.SystemPrinter;
-import org.dedda.games.scheisse.main.Main;
 
 import java.awt.Image;
-import java.awt.Toolkit;
-import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 
 /**
  * Created by dedda on 4/20/14.
+ *
+ * @author dedda
  */
 public class Soil {
 
@@ -25,33 +21,33 @@ public class Soil {
 
     private synchronized static HashMap<Type, Image> initImageMap() {
         HashMap<Type, Image> imageMap = new HashMap<Type, Image>();
-        for (Type soilType : Type.values()) {
-            Image image = null;
-            String fileName = Main.INSTALLATION_FOLDER +
-                "data/image/map_" +
-                String.valueOf(soilType).toLowerCase() + ".png";
-            SystemPrinter.debugln("loaded image: " + fileName);
-            image = Toolkit.getDefaultToolkit().getImage(fileName);
-            imageMap.put(soilType, image);
-        }
+//        for (Type soilType : Type.values()) {
+//            Image image = null;
+//            String fileName = Main.INSTALLATION_FOLDER +
+//                "data/image/map_" +
+//                String.valueOf(soilType).toLowerCase() + ".png";
+//            SystemPrinter.debugln("loaded image: " + fileName);
+//            image = Toolkit.getDefaultToolkit().getImage(fileName);
+//            imageMap.put(soilType, image);
+//        }
         return imageMap;
     }
 
     private synchronized static HashMap<Type, Texture> initTextureMap() {
         HashMap<Type, Texture> textureMap = new HashMap<Type, Texture>();
-        for (Type type : Type.values()) {
-            String fileName = Main.INSTALLATION_FOLDER +
-                "data/image/map_" +
-                String.valueOf(type).toLowerCase() + ".png";
-            Texture texture = null;
-            try {
-                texture = TextureIO.newTexture(new File(fileName), true);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            SystemPrinter.debugln("loaded texture: " + fileName);
-            textureMap.put(type, texture);
-        }
+//        for (Type type : Type.values()) {
+//            String fileName = Main.INSTALLATION_FOLDER +
+//                "data/image/map_" +
+//                String.valueOf(type).toLowerCase() + ".png";
+//            Texture texture = null;
+//            try {
+//                texture = TextureIO.newTexture(new File(fileName), true);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            SystemPrinter.debugln("loaded texture: " + fileName);
+//            textureMap.put(type, texture);
+//        }
         return textureMap;
     }
 

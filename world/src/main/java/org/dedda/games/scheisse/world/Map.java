@@ -1,8 +1,6 @@
 package org.dedda.games.scheisse.world;
 
-import org.dedda.games.scheisse.debug.SystemPrinter;
 import org.dedda.games.scheisse.world.soil.Soil;
-import org.dedda.games.scheisse.state.game.quest.Quest;
 
 import java.awt.Dimension;
 import java.awt.Point;
@@ -19,7 +17,6 @@ public class Map {
     private Dimension chunkGridSize;
     private Chunk[][] chunk;
     private ArrayList<MapObject> objects;
-    private Quest[] quest;
 
     /**
      * @param size Dimension
@@ -190,26 +187,18 @@ public class Map {
         return objects;
     }
 
-    public final Quest[] getQuest() {
-        return quest;
-    }
-
-    public final void setQuest(final Quest[] quest) {
-        this.quest = quest;
-    }
-
     public final void print() {
-        SystemPrinter.debugln("Map:");
-        SystemPrinter.debugln("size: " + size);
-        SystemPrinter.debugln("chunk grid size: " + chunkGridSize);
-        for (int i = 0; i < size.height; i++) {
-            for (int k = 0; k < size.width; k++) {
-                SystemPrinter.debug(
-                    String.valueOf(getSoil()[k][i]).charAt(0) + ""
-                );
-            }
-            SystemPrinter.debugln("");
-        }
+//        SystemPrinter.debugln("Map:");
+//        SystemPrinter.debugln("size: " + size);
+//        SystemPrinter.debugln("chunk grid size: " + chunkGridSize);
+//        for (int i = 0; i < size.height; i++) {
+//            for (int k = 0; k < size.width; k++) {
+//                SystemPrinter.debug(
+//                    String.valueOf(getSoil()[k][i]).charAt(0) + ""
+//                );
+//            }
+//            SystemPrinter.debugln("");
+//        }
     }
 
     @Override
@@ -233,9 +222,6 @@ public class Map {
             return false;
         }
 
-        if (this.quest.length != map.quest.length) {
-            return false;
-        }
         return true;
     }
 

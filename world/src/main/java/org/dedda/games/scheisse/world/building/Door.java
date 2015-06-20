@@ -1,13 +1,15 @@
 package org.dedda.games.scheisse.world.building;
 
-import org.dedda.games.scheisse.state.game.Direction;
-import org.dedda.games.scheisse.state.game.Player;
+import org.dedda.games.scheisse.player.Player;
+import org.dedda.games.scheisse.tool.Direction;
 
 import java.awt.Dimension;
 import java.awt.Point;
 
 /**
  * Created by dedda on 9/15/14.
+ *
+ * @author dedda
  */
 public class Door {
 
