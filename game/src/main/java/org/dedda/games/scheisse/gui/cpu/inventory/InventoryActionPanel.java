@@ -3,9 +3,9 @@ package org.dedda.games.scheisse.gui.cpu.inventory;
 import org.dedda.games.scheisse.gui.cpu.Gui;
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTable;
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
-import org.dedda.games.scheisse.state.game.Player;
-import org.dedda.games.scheisse.state.game.inventory.Inventory;
-import org.dedda.games.scheisse.state.game.inventory.Slot;
+import org.dedda.games.scheisse.player.Player;
+import org.dedda.games.scheisse.player.inventory.Inventory;
+import org.dedda.games.scheisse.player.inventory.Slot;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -141,7 +141,7 @@ public class InventoryActionPanel extends JPanel {
         if (selected.equals(InventoryActionComboBox.SELL)) {
             Player player = gui.getGame().getPlayer();
             for (Slot slot : actionInventory.getSlots()) {
-                long sellValue = slot.getDummy().getValue();
+                long sellValue = slot.getDummy().getPrice();
                 long amount = slot.getNumberOfItems();
                 long money = player.getMoney() + amount * sellValue;
                 player.setMoney(money);

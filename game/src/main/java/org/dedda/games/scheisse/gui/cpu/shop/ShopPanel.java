@@ -3,7 +3,7 @@ package org.dedda.games.scheisse.gui.cpu.shop;
 import org.dedda.games.scheisse.gui.cpu.TabbedGamePane;
 import org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionEvent;
 import org.dedda.games.scheisse.gui.cpu.inventory.InventoryTransactionListener;
-import org.dedda.games.scheisse.state.game.Player;
+import org.dedda.games.scheisse.player.Player;
 
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
@@ -14,6 +14,8 @@ import java.awt.Dimension;
 
 /**
  * Created by dedda on 10/5/14.
+ *
+ * @author dedda
  */
 public class ShopPanel extends JPanel implements InventoryTransactionListener {
 

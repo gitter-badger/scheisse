@@ -1,13 +1,13 @@
 package org.dedda.games.scheisse.gui.cpu.inventory.table;
 
+import org.dedda.games.scheisse.entity.item.Armor;
+import org.dedda.games.scheisse.entity.item.Item;
+import org.dedda.games.scheisse.entity.item.Weapon;
 import org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangeListener;
 import org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangedEvent;
-import org.dedda.games.scheisse.state.game.inventory.Inventory;
-import org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener;
-import org.dedda.games.scheisse.state.game.inventory.Slot;
-import org.dedda.games.scheisse.state.game.item.Armor;
-import org.dedda.games.scheisse.state.game.item.Item;
-import org.dedda.games.scheisse.state.game.item.Weapon;
+import org.dedda.games.scheisse.player.inventory.Inventory;
+import org.dedda.games.scheisse.player.inventory.InventoryChangeListener;
+import org.dedda.games.scheisse.player.inventory.Slot;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
@@ -87,7 +87,7 @@ public class InventoryTableModel
             case NUMBER:
                 return number;
             case VALUE:
-                return item.getValue();
+                return item.getPrice();
             case ATTACK:
                 return item instanceof Weapon ? ((Weapon) item).getAttack() : 0;
             case ARMOR:

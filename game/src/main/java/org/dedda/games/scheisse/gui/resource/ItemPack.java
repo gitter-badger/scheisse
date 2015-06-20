@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.gui.resource;
 
-import org.dedda.games.scheisse.state.game.item.Item;
+import org.dedda.games.scheisse.entity.item.ItemStore;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -10,14 +10,14 @@ import java.util.Iterator;
  */
 public class ItemPack extends SpritePack {
 
-    public static final int LENGTH = Item.getItemMap().size();
+    public static final int LENGTH = ItemStore.getItemMap().size();
 
     private HashMap<Long, Integer> idMap;
 
     public ItemPack(final ResourcePack pack) {
         super(pack, ITEM);
         idMap = new HashMap<Long, Integer>();
-        Iterator<Long> itemIdIterator = Item.getItemMap().keySet().iterator();
+        Iterator<Long> itemIdIterator = ItemStore.getItemMap().keySet().iterator();
         int i = 0;
         while (itemIdIterator.hasNext()) {
             long id = itemIdIterator.next();

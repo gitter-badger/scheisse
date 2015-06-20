@@ -1,10 +1,11 @@
 package org.dedda.games.scheisse.gui.cpu.shop.table;
 
-import org.dedda.games.scheisse.state.game.inventory.Inventory;
-import org.dedda.games.scheisse.state.game.inventory.InventoryChangeListener;
-import org.dedda.games.scheisse.state.game.item.Armor;
-import org.dedda.games.scheisse.state.game.item.Item;
-import org.dedda.games.scheisse.state.game.item.Weapon;
+import org.dedda.games.scheisse.entity.item.ItemStore;
+import org.dedda.games.scheisse.player.inventory.Inventory;
+import org.dedda.games.scheisse.player.inventory.InventoryChangeListener;
+import org.dedda.games.scheisse.entity.item.Armor;
+import org.dedda.games.scheisse.entity.item.Item;
+import org.dedda.games.scheisse.entity.item.Weapon;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
@@ -76,7 +77,7 @@ public class ShopTableModel
 
     public final Object getValueAt(final int row, final int col) {
         long id = shopTable.getOffers().get(row).itemId;
-        Item item = Item.itemForId(id);
+        Item item = ItemStore.itemForId(id);
         long stock = shopTable.getOffers().get(row).amountAvailable;
         long in_inventory = inventory.getSlotWithItemId(id).getNumberOfItems();
         int category = shownCategories.get(col);
@@ -88,7 +89,7 @@ public class ShopTableModel
             case NAME:
                 return item.getName();
             case VALUE:
-                return item.getValue();
+                return item.getPrice();
             case ATTACK:
                 return item instanceof Weapon ? ((Weapon) item).getAttack() : 0;
             case ARMOR:

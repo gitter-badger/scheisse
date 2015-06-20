@@ -1,7 +1,7 @@
 package org.dedda.games.scheisse.gui.cpu.shop.table;
 
-import org.dedda.games.scheisse.state.game.Player;
-import org.dedda.games.scheisse.state.game.inventory.Inventory;
+import org.dedda.games.scheisse.player.Player;
+import org.dedda.games.scheisse.player.inventory.Inventory;
 import org.dedda.games.scheisse.state.game.shop.Offer;
 import org.dedda.games.scheisse.state.game.shop.Shop;
 import org.dedda.games.scheisse.state.game.shop.filter.ShopFilter;
@@ -13,6 +13,8 @@ import java.util.List;
 
 /**
  * Created by dedda on 11/30/14.
+ *
+ * @author dedda
  */
 public class ShopTable extends JScrollPane {
 

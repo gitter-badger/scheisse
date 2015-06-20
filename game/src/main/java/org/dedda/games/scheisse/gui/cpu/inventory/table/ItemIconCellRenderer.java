@@ -1,6 +1,7 @@
 package org.dedda.games.scheisse.gui.cpu.inventory.table;
 
-import org.dedda.games.scheisse.state.game.item.Item;
+import org.dedda.games.scheisse.entity.item.Item;
+import org.dedda.games.scheisse.entity.item.ItemStore;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -22,7 +23,7 @@ public class ItemIconCellRenderer implements TableCellRenderer {
         final int i,
         final int i1) {
         long id = (Long) o;
-        Item item = Item.forId(id);
+        Item item = ItemStore.forId(id);
         Image scaledSprite =
             item.getSprite().getScaledInstance(15, 15, Image.SCALE_SMOOTH);
         JLabel iconLabel = new JLabel(new ImageIcon(scaledSprite));

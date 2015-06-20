@@ -10,6 +10,8 @@ import javax.swing.event.ChangeListener;
 
 /**
  * Created by dedda on 10/5/14.
+ *
+ * @author dedda
  */
 public class TabbedGamePane extends JTabbedPane implements ChangeListener {
 

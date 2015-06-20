@@ -2,7 +2,7 @@ package org.dedda.games.scheisse.gui.cpu.inventory;
 
 import org.dedda.games.scheisse.gui.cpu.TabbedGamePane;
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
-import org.dedda.games.scheisse.state.game.Player;
+import org.dedda.games.scheisse.player.Player;
 
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
@@ -11,6 +11,8 @@ import java.awt.Dimension;
 
 /**
  * Created by dedda on 11/30/14.
+ *
+ * @author dedda
  */
 public class InventoryPanel extends JPanel {
 

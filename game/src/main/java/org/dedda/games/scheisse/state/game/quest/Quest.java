@@ -1,12 +1,14 @@
 package org.dedda.games.scheisse.state.game.quest;
 
-import org.dedda.games.scheisse.state.game.Player;
+import org.dedda.games.scheisse.player.Player;
 import org.dedda.games.scheisse.state.game.level.Level;
 
 import java.util.HashMap;
 
 /**
  * Created by dedda on 5/15/14.
+ *
+ * @author dedda
  */
 public class Quest {
 

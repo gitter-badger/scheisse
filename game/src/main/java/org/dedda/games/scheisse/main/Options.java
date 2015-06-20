@@ -1,7 +1,7 @@
 package org.dedda.games.scheisse.main;
 
-import org.dedda.games.scheisse.io.FileInput;
-import org.dedda.games.scheisse.io.FileOutput;
+import org.dedda.games.scheisse.fsloaders.resource.FileInput;
+import org.dedda.games.scheisse.fsloaders.resource.FileOutput;
 import org.dedda.games.scheisse.tool.Parse;
 
 import java.awt.Dimension;

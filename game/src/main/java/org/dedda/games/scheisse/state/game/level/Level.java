@@ -1,5 +1,7 @@
 package org.dedda.games.scheisse.state.game.level;
 
+import org.dedda.games.scheisse.npc.npc.NPC;
+
 /**
  * Class for the leveling system.
  * <p/>
@@ -33,7 +35,7 @@ public abstract class Level {
     /**
      * @param experience Amount of experience the
      *                   {@link org.dedda.games.scheisse.state.game.Player} or
-     *                   {@link org.dedda.games.scheisse.state.game.object.npc.NPC} has
+     *                   {@link NPC} has
      * @return The resulting level from the given amount of experience
      */
     public static int getLevel(final long experience) {

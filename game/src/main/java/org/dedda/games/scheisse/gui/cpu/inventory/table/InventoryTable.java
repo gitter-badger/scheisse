@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.gui.cpu.inventory.table;
 
-import org.dedda.games.scheisse.state.game.inventory.Inventory;
+import org.dedda.games.scheisse.player.inventory.Inventory;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;

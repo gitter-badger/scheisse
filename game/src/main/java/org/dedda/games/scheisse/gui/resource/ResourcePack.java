@@ -1,7 +1,7 @@
 package org.dedda.games.scheisse.gui.resource;
 
 import org.dedda.games.scheisse.exception.gui.ResourcePackException;
-import org.dedda.games.scheisse.io.resource.Resource;
+import org.dedda.games.scheisse.fsloaders.resource.Resource;
 
 import java.io.File;
 import java.util.HashMap;

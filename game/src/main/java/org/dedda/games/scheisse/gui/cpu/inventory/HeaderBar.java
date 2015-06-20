@@ -1,8 +1,8 @@
 package org.dedda.games.scheisse.gui.cpu.inventory;
 
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
-import org.dedda.games.scheisse.state.game.Player;
-import org.dedda.games.scheisse.state.game.inventory.Inventory;
+import org.dedda.games.scheisse.player.Player;
+import org.dedda.games.scheisse.player.inventory.Inventory;
 
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;

@@ -1,7 +1,8 @@
 package org.dedda.games.scheisse.state.game;
 
+import org.dedda.games.scheisse.player.Player;
 import org.dedda.games.scheisse.state.State;
-import org.dedda.games.scheisse.state.game.map.Map;
+import org.dedda.games.scheisse.world.Map;
 
 import java.awt.Graphics2D;
 import java.awt.geom.Point2D;

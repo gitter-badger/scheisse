@@ -6,23 +6,23 @@ package org.dedda.games.scheisse.state.game.shop;
 public class Offer {
 
     /**
-     * Id of the offered {@link org.dedda.games.scheisse.state.game.item.Item}.
+     * Id of the offered {@link org.dedda.games.scheisse.entity.item.item.Item}.
      * This id can be used to get the item from the
-     * {@link org.dedda.games.scheisse.state.game.item.Item} class.
+     * {@link org.dedda.games.scheisse.entity.item.item.Item} class.
      *
-     * @see org.dedda.games.scheisse.state.game.item.Item#forId(long)
+     * @see org.dedda.games.scheisse.entity.item.item.Item#forId(long)
      */
     public final long itemId;
 
     /**
-     * Number of {@link org.dedda.games.scheisse.state.game.item.Item}s
+     * Number of {@link org.dedda.games.scheisse.entity.item.item.Item}s
      * being available.
      */
     public final long amountAvailable;
 
     /**
      * Price for a single instance of the
-     * {@link org.dedda.games.scheisse.state.game.item.Item}.
+     * {@link org.dedda.games.scheisse.entity.item.item.Item}.
      */
     public final long priceSingle;
 

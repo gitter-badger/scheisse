@@ -1,15 +1,15 @@
 package org.dedda.games.scheisse.main;
 
-import org.dedda.games.scheisse.debug.SystemPrinter;
+import org.dedda.games.scheisse.entity.item.ItemStore;
+import org.dedda.games.scheisse.player.Player;
+import org.dedda.games.scheisse.tool.SystemPrinter;
 import org.dedda.games.scheisse.gui.cpu.Gui;
-import org.dedda.games.scheisse.io.resource.Resource;
-import org.dedda.games.scheisse.io.resource.item.ItemLoader;
+import org.dedda.games.scheisse.fsloaders.resource.Resource;
+import org.dedda.games.scheisse.fsloaders.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.State;
 import org.dedda.games.scheisse.state.game.Game;
-import org.dedda.games.scheisse.state.game.Player;
-import org.dedda.games.scheisse.state.game.inventory.Inventory;
-import org.dedda.games.scheisse.state.game.inventory.Slot;
-import org.dedda.games.scheisse.state.game.item.Item;
+import org.dedda.games.scheisse.player.inventory.Inventory;
+import org.dedda.games.scheisse.player.inventory.Slot;
 
 import java.awt.Dimension;
 import java.io.File;
@@ -34,7 +34,6 @@ public class Main {
      * Folder where all {@link #INSTALLATION_FILES} can be found if
      * everything is installed properly.
      */
-    public static final String INSTALLATION_FOLDER = "game_files/";
     public static final String[] INSTALLATION_FILES = {"version.dgm",
         "conf.dgm"};
     /**
@@ -62,7 +61,7 @@ public class Main {
         Inventory inventory = new Inventory(0);
         for (int i = 4; i < 10; i++) {
             Slot slot = new Slot(inventory);
-            slot.setDummy(Item.forId(i));
+            slot.setDummy(ItemStore.forId(i));
             slot.setNumberOfItems(i * 2);
             inventory.addSlot(slot);
         }

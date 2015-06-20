@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.state.game.shop;
 
-import org.dedda.games.scheisse.state.game.item.ItemType;
+import org.dedda.games.scheisse.entity.item.ItemType;
 
 import java.util.LinkedList;
 import java.util.List;
