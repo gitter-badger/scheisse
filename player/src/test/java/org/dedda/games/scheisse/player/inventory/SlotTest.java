@@ -1,6 +1,7 @@
-package org.dedda.games.scheisse.state.game.inventory;
+package org.dedda.games.scheisse.player.inventory;
 
-import org.dedda.games.scheisse.testInstances.TestItem;
+import junit.framework.Assert;
+import org.dedda.games.scheisse.player.testInstances.TestItem;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -22,7 +23,7 @@ public class SlotTest {
     public void testSetAndGetDummy() throws Exception {
         TestItem dummy = new TestItem();
         slot.setDummy(dummy);
-        assertEquals(dummy, slot.getDummy());
+        Assert.assertEquals(dummy, slot.getDummy());
     }
 
     @Test
