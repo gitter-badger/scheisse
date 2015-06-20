@@ -1,7 +1,6 @@
-package org.dedda.games.scheisse.state.game.item.filter;
+package org.dedda.games.scheisse.entityfilter.item;
 
 import org.dedda.games.scheisse.entity.item.Item;
-import org.dedda.games.scheisse.entityfilter.item.ItemLevelFilter;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,6 +9,9 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+/**
+ * @author dedda
+ */
 public class ItemLevelFilterTest {
 
     private ArrayList<Item> items;

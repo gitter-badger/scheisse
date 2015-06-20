@@ -1,10 +1,12 @@
-package org.dedda.games.scheisse.state.game.item.filter;
+package org.dedda.games.scheisse.entityfilter.item;
 
-import org.dedda.games.scheisse.entityfilter.item.ItemTypeFilter;
 import org.junit.Before;
 
 import static org.junit.Assert.fail;
 
+/**
+ * @author dedda 
+ */
 public class ItemTypeFilterTest {
 
     private ItemTypeFilter instance;
