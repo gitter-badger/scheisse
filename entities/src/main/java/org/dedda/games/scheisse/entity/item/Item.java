@@ -37,7 +37,7 @@ import java.awt.Image;
 })
 public class Item
     extends org.dedda.games.scheisse.entity.Entity
-    implements TestableEntity {
+    implements TestableEntity, Stackable {
 
     public static final int TYPE_OTHER = 1;
     public static final int TYPE_TOOL = 2;
@@ -322,4 +322,8 @@ public class Item
         return true;
     }
 
+    @Override
+    public int maxStackNumber() {
+        return 0;
+    }
 }
