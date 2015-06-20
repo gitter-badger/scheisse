@@ -1,4 +1,4 @@
 /**
- * Package containing loaders for any kind of game resources.
+ * Package containing network und file io logic.
  */
 package org.dedda.games.scheisse.fsloaders.resource;

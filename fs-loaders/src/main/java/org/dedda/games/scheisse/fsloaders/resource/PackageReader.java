@@ -1,7 +1,5 @@
 package org.dedda.games.scheisse.fsloaders.resource;
 
-import org.dedda.games.scheisse.debug.SystemPrinter;
-
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,9 +23,9 @@ public class PackageReader extends FileInput {
         try {
             inputStream = new BufferedInputStream(new FileInputStream(file));
         } catch (FileNotFoundException e) {
-            SystemPrinter.debugln(
-                "File " + file.getAbsolutePath() + " can not be found!"
-            );
+//            SystemPrinter.debugln(
+//                "File " + file.getAbsolutePath() + " can not be found!"
+//            );
             return null;
         }
         int buffer;
@@ -67,9 +65,9 @@ public class PackageReader extends FileInput {
                 byteCount++;
             }
         } catch (IOException e) {
-            SystemPrinter.debugln(
-                "Error reading from file " + file.getAbsolutePath()
-            );
+//            SystemPrinter.debugln(
+//                "Error reading from file " + file.getAbsolutePath()
+//            );
             try {
                 inputStream.close();
             } catch (IOException e1) {

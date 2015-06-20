@@ -8,8 +8,7 @@ import java.util.HashMap;
  */
 public abstract class Resource {
 
-    public static final String INSTALLATION_FOLDER =
-        System.getProperty("user.home") + "/.scheisse/";
+    public static final String INSTALLATION_FOLDER = "game_files/";
     public static final String SAVEGAME_FOLDER =
         INSTALLATION_FOLDER + "savegame/";
     public static final String DATA_FOLDER = INSTALLATION_FOLDER + "data/";

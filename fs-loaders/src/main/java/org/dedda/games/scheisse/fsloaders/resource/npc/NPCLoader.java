@@ -1,7 +1,6 @@
 package org.dedda.games.scheisse.fsloaders.resource.npc;
 
-import org.dedda.games.scheisse.io.FileInput;
-import org.dedda.games.scheisse.state.game.object.npc.NPC;
+import org.dedda.games.scheisse.fsloaders.resource.FileInput;
 
 /**
  * Class for loading {@link NPC}s from files.

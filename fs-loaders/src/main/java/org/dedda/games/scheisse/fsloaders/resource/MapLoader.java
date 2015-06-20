@@ -1,7 +1,7 @@
 package org.dedda.games.scheisse.fsloaders.resource;
 
-import org.dedda.games.scheisse.state.game.map.Map;
-import org.dedda.games.scheisse.state.game.map.soil.Soil;
+import org.dedda.games.scheisse.world.Map;
+import org.dedda.games.scheisse.world.soil.Soil;
 
 import java.awt.Dimension;
 import java.awt.Point;

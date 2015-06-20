@@ -1,9 +1,8 @@
 package org.dedda.games.scheisse.fsloaders.resource;
 
-import org.dedda.games.scheisse.io.FileInput;
-import org.dedda.games.scheisse.state.game.Player;
-import org.dedda.games.scheisse.state.game.inventory.Inventory;
-import org.dedda.games.scheisse.state.game.inventory.Slot;
+import org.dedda.games.scheisse.player.Player;
+import org.dedda.games.scheisse.player.inventory.Inventory;
+import org.dedda.games.scheisse.player.inventory.Slot;
 import org.dedda.games.scheisse.tool.Parse;
 
 import java.awt.Point;
