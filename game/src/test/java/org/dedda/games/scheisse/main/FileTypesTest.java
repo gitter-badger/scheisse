@@ -1,5 +1,6 @@
 package org.dedda.games.scheisse.main;
 
+import org.dedda.games.scheisse.fsloaders.resource.FileTypes;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

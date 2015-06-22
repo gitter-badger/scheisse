@@ -1,7 +1,7 @@
 package org.dedda.games.scheisse.world.map.building;
 
 import junit.framework.TestCase;
-import org.dedda.games.scheisse.state.game.Direction;
+import org.dedda.games.scheisse.tool.Direction;
 
 public class DoorTest extends TestCase {
 

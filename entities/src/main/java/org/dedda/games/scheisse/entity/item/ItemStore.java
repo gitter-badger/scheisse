@@ -1,5 +1,7 @@
 package org.dedda.games.scheisse.entity.item;
 
+import org.dedda.games.scheisse.tool.SystemPrinter;
+
 import java.util.HashMap;
 
 /**
@@ -14,21 +16,15 @@ public abstract class ItemStore {
     static {
         itemMap = new HashMap<Long, Item>();
         itemMap.put(0L, new NullItem());
-//        new ItemLoader().loadAll(
-//            new File(
-//                "src/test/test_files/classes/" +
-//                    "org/dedda/games/scheisse/io/resource/item/ItemLoader"
-//            )
-//        );
     }
 
     public static void printMap() {
-//        SystemPrinter.debugln("All items:");
-//        for (long key : itemMap.keySet()) {
-//            SystemPrinter.debugln(
-//                "ID: " + key + " NAME: " + itemMap.get(key).getName()
-//            );
-//        }
+        SystemPrinter.debugln("All items:");
+        for (long key : itemMap.keySet()) {
+            SystemPrinter.debugln(
+                "ID: " + key + " NAME: " + itemMap.get(key).getName()
+            );
+        }
     }
 
     public static Item forId(final long id) {

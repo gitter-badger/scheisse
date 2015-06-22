@@ -1,11 +1,12 @@
 package org.dedda.games.scheisse.fsloaders.resource.item;
 
-import org.dedda.games.scheisse.state.game.item.Armor;
-import org.dedda.games.scheisse.state.game.item.Item;
-import org.dedda.games.scheisse.state.game.item.ItemType;
-import org.dedda.games.scheisse.state.game.item.Shield;
-import org.dedda.games.scheisse.state.game.item.Weapon;
-import org.dedda.games.scheisse.testInstances.TestItem;
+import org.dedda.games.scheisse.entity.item.Armor;
+import org.dedda.games.scheisse.entity.item.Item;
+import org.dedda.games.scheisse.entity.item.ItemStore;
+import org.dedda.games.scheisse.entity.item.ItemType;
+import org.dedda.games.scheisse.entity.item.Shield;
+import org.dedda.games.scheisse.entity.item.Weapon;
+import org.dedda.games.scheisse.fsloaders.resource.testInstances.TestItem;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,23 +17,25 @@ import static junit.framework.Assert.assertTrue;
 
 public class ItemLoaderTest {
 
+    private ItemLoader instance;
+
     @Before
     public void setUp() throws Exception {
-        new TestItem();
+        instance = new ItemLoader();
     }
 
     @Test
     public void testLoadItem() throws Exception {
-        Weapon testWeapon = Weapon.register(1, "Wooden Sword", 123L, 456L, null);
+        Weapon testWeapon = Weapon.register(1, "Wooden Sword", 123L, 456L, Item.TYPES_CLOTHING, null);
         Armor testArmor = Armor.register(
             2,
             "Wooden Armor",
             654L,
             321L,
-            ItemType.CLOTHING,
+            Item.TYPES_CLOTHING,
             null
         );
-        Shield testShield = Shield.register(3, "Wooden Shield", 246L, 135L, null);
+        Shield testShield = Shield.register(3, "Wooden Shield", 246L, 135L, Item.TYPE_SHIELD, null);
         ItemLoader itemLoader = new ItemLoader();
         Weapon weapon = (Weapon) itemLoader.loadItem(
             new File(
@@ -62,20 +65,17 @@ public class ItemLoaderTest {
 
     @Test
     public void testLoadAll() throws Exception {
-        Weapon testWeapon = Weapon.register(1, "Wooden Sword", 123L, 456L, null);
-        Armor testArmor = Armor.register(
-            2,
-            "Wooden Armor",
-            654L,
-            321L,
-            ItemType.CLOTHING,
-            null
-        );
-        Shield testShield = Shield.register(3, "Wooden Shield", 246L, 135L, null);
-        new TestItem();
-        assertEquals(Item.getItemMap().size(), 11);
-        assertTrue(Item.getItemMap().containsValue(testWeapon));
-        assertTrue(Item.getItemMap().containsValue(testArmor));
-        assertTrue(Item.getItemMap().containsValue(testShield));
+//        Weapon testWeapon = Weapon.register(1, "Wooden Sword", 123L, 456L, Item.TYPE_WEAPON, null);
+//        Armor testArmor = Armor.register(
+//            2,
+//            "Wooden Armor",
+//            654L,
+//            321L,
+//            Item.TYPES_CLOTHING,
+//            null
+//        );
+//        Shield testShield = Shield.register(3, "Wooden Shield", 246L, 135L, Item.TYPE_SHIELD, null);
+        instance.loadAll(new File("src/test/test_files/classes/org/dedda/games/scheisse/io/resource/item/ItemLoader"));
+        assertEquals(10, ItemStore.getItemMap().size());
     }
 }

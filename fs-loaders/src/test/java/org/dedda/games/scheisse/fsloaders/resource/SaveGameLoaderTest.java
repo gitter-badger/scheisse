@@ -2,9 +2,9 @@ package org.dedda.games.scheisse.fsloaders.resource;
 
 import junit.framework.Assert;
 import org.dedda.games.scheisse.fsloaders.resource.item.ItemLoader;
-import org.dedda.games.scheisse.state.game.Player;
-import org.dedda.games.scheisse.state.game.inventory.Inventory;
-import org.dedda.games.scheisse.state.game.inventory.Slot;
+import org.dedda.games.scheisse.player.Player;
+import org.dedda.games.scheisse.player.inventory.Inventory;
+import org.dedda.games.scheisse.player.inventory.Slot;
 import org.junit.Test;
 
 import java.awt.Point;

@@ -4,13 +4,13 @@ import org.dedda.games.scheisse.gui.cpu.ContentContainer;
 import org.dedda.games.scheisse.gui.cpu.Gui;
 import org.dedda.games.scheisse.gui.cpu.TabbedGamePane;
 import org.dedda.games.scheisse.gui.cpu.inventory.table.InventoryTableModel;
-import org.dedda.games.scheisse.io.resource.Resource;
-import org.dedda.games.scheisse.io.resource.item.ItemLoader;
+import org.dedda.games.scheisse.fsloaders.resource.Resource;
+import org.dedda.games.scheisse.fsloaders.resource.item.ItemLoader;
 import org.dedda.games.scheisse.state.game.Game;
 import org.dedda.games.scheisse.state.game.Player;
-import org.dedda.games.scheisse.state.game.inventory.Inventory;
-import org.dedda.games.scheisse.state.game.inventory.Slot;
-import org.dedda.games.scheisse.state.game.item.Item;
+import org.dedda.games.scheisse.player.inventory.Inventory;
+import org.dedda.games.scheisse.player.inventory.Slot;
+import org.dedda.games.scheisse.entity.item.item.Item;
 import org.junit.Before;
 import org.junit.Test;
 

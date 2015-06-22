@@ -1,9 +1,9 @@
 package org.dedda.games.scheisse.gui.cpu.inventory.table;
 
-import org.dedda.games.scheisse.state.game.inventory.Inventory;
-import org.dedda.games.scheisse.state.game.inventory.Slot;
-import org.dedda.games.scheisse.state.game.item.Item;
-import org.dedda.games.scheisse.state.game.item.Weapon;
+import org.dedda.games.scheisse.entity.item.Item;
+import org.dedda.games.scheisse.entity.item.Weapon;
+import org.dedda.games.scheisse.player.inventory.Inventory;
+import org.dedda.games.scheisse.player.inventory.Slot;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -56,7 +56,7 @@ public class InventoryTableModelTest {
             assertEquals(item.getId(), model.getValueAt(i, 1));
             assertEquals(item.getName(), model.getValueAt(i, 2));
             assertEquals((long) slots.get(i).getNumberOfItems(), model.getValueAt(i, 3));
-            assertEquals(item.getValue(), model.getValueAt(i, 4));
+            assertEquals(item.getPrice(), model.getValueAt(i, 4));
             if (item instanceof Weapon) {
                 assertEquals(((Weapon) item).getAttack(), model.getValueAt(i, 5));
             }

@@ -5,7 +5,7 @@ import org.junit.Before;
 import static org.junit.Assert.fail;
 
 /**
- * @author dedda 
+ * @author dedda
  */
 public class ItemTypeFilterTest {
 

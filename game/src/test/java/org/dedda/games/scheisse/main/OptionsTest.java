@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.main;
 
-import org.dedda.games.scheisse.io.FileInput;
+import org.dedda.games.scheisse.fsloaders.resource.FileInput;
 import org.dedda.games.scheisse.tool.Parse;
 import org.junit.Test;
 
