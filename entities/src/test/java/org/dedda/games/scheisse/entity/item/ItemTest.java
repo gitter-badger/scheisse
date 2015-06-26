@@ -39,7 +39,7 @@ public class ItemTest {
         assertEquals(instance, testInstance);
         setUp();
         testInstance.setId(1);
-        assertNotEquals(instance, testInstance);
+        assertEquals(instance, testInstance);
         setUp();
         testInstance.setArmor(0);
         assertNotEquals(instance, testInstance);

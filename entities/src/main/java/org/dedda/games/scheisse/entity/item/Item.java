@@ -307,9 +307,6 @@ public class Item
         if (attack != item.attack) {
             return false;
         }
-        if (id != item.id) {
-            return false;
-        }
         if (price != item.price) {
             return false;
         }

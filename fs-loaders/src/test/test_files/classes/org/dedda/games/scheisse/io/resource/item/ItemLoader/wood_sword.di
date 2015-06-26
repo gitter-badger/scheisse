@@ -1,4 +1,4 @@
-types:weapon
+types:131072
 id:1
 name:Wooden Sword
 value:123

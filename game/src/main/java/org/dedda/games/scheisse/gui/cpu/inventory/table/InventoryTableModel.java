@@ -1,8 +1,6 @@
 package org.dedda.games.scheisse.gui.cpu.inventory.table;
 
-import org.dedda.games.scheisse.entity.item.Armor;
 import org.dedda.games.scheisse.entity.item.Item;
-import org.dedda.games.scheisse.entity.item.Weapon;
 import org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangeListener;
 import org.dedda.games.scheisse.gui.cpu.inventory.CategoriesChangedEvent;
 import org.dedda.games.scheisse.player.inventory.Inventory;
@@ -16,6 +14,8 @@ import java.util.List;
 
 /**
  * Created by dedda on 11/26/14.
+ *
+ * @author dedda
  */
 public class InventoryTableModel
     extends AbstractTableModel
@@ -89,9 +89,9 @@ public class InventoryTableModel
             case VALUE:
                 return item.getPrice();
             case ATTACK:
-                return item instanceof Weapon ? ((Weapon) item).getAttack() : 0;
+                return item.getAttack();
             case ARMOR:
-                return item instanceof Armor ? ((Armor) item).getArmor() : 0;
+                return item.getArmor();
             default:
                 return null;
         }

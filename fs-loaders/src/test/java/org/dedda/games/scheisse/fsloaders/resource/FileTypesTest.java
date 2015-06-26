@@ -1,4 +1,4 @@
-package org.dedda.games.scheisse.main;
+package org.dedda.games.scheisse.fsloaders.resource;
 
 import org.dedda.games.scheisse.fsloaders.resource.FileTypes;
 import org.junit.Test;

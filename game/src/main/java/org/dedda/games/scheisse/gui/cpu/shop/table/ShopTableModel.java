@@ -3,9 +3,7 @@ package org.dedda.games.scheisse.gui.cpu.shop.table;
 import org.dedda.games.scheisse.entity.item.ItemStore;
 import org.dedda.games.scheisse.player.inventory.Inventory;
 import org.dedda.games.scheisse.player.inventory.InventoryChangeListener;
-import org.dedda.games.scheisse.entity.item.Armor;
 import org.dedda.games.scheisse.entity.item.Item;
-import org.dedda.games.scheisse.entity.item.Weapon;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
@@ -14,6 +12,8 @@ import java.util.List;
 
 /**
  * Created by dedda on 12/1/14.
+ *
+ * @author dedda
  */
 public class ShopTableModel
     extends AbstractTableModel
@@ -91,9 +91,9 @@ public class ShopTableModel
             case VALUE:
                 return item.getPrice();
             case ATTACK:
-                return item instanceof Weapon ? ((Weapon) item).getAttack() : 0;
+                return item.getAttack();
             case ARMOR:
-                return item instanceof Armor ? ((Armor) item).getArmor() : 0;
+                return item.getArmor();
             case STOCK:
                 return stock;
             case IN_INVENTORY:

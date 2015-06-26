@@ -1,10 +1,11 @@
 package org.dedda.games.scheisse.entityfilter.item;
 
-import org.dedda.games.scheisse.entity.item.Armor;
 import org.dedda.games.scheisse.entity.item.Item;
 
 /**
  * Created by dedda on 08.01.15.
+ *
+ * @author dedda
  */
 public class ItemArmorFilter extends ItemFilter {
 
@@ -35,14 +36,13 @@ public class ItemArmorFilter extends ItemFilter {
         if (!itemTypeFilter.accept(item)) {
             return false;
         }
-        Armor armor = (Armor) item;
         switch (mode) {
             case MODE_BELOW:
-                return this.armor >= armor.getArmor();
+                return this.armor >= item.getArmor();
             case MODE_EXACT:
-                return this.armor == armor.getArmor();
+                return this.armor == item.getArmor();
             case MODE_ABOVE:
-                return this.armor <= armor.getArmor();
+                return this.armor <= item.getArmor();
             default:
                 return false;
         }

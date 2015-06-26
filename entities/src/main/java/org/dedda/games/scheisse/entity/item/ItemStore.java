@@ -15,7 +15,6 @@ public abstract class ItemStore {
 
     static {
         itemMap = new HashMap<Long, Item>();
-        itemMap.put(0L, new NullItem());
     }
 
     public static void printMap() {
@@ -25,6 +24,15 @@ public abstract class ItemStore {
                 "ID: " + key + " NAME: " + itemMap.get(key).getName()
             );
         }
+    }
+
+    public static boolean put(final Item item) {
+        final long id = item.getId();
+        if (itemMap.containsKey(id)) {
+            return false;
+        }
+        itemMap.put(id, item);
+        return true;
     }
 
     public static Item forId(final long id) {
@@ -41,5 +49,9 @@ public abstract class ItemStore {
 
     public static Item itemForId(final long id) {
         return itemMap.get(id);
+    }
+
+    public static void clear() {
+        itemMap.clear();
     }
 }

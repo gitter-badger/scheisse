@@ -26,6 +26,7 @@ public abstract class FileTypes {
 
     public static void init() {
         File file = new File("src/test/test_files/file_extensions.conf");
+        System.out.println(file.getAbsolutePath());
         extension_map = new FileInput().getMap(file, true);
         for (String key : extension_map.keySet()) {
             extension_map.put(key, "." + extension_map.get(key).trim());

@@ -1,4 +1,4 @@
-types:weapon
+types:131072
 id:4
 name:Iron Sword
 value:1123

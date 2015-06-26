@@ -1,12 +1,7 @@
 package org.dedda.games.scheisse.fsloaders.resource.item;
 
-import org.dedda.games.scheisse.entity.item.Armor;
 import org.dedda.games.scheisse.entity.item.Item;
 import org.dedda.games.scheisse.entity.item.ItemStore;
-import org.dedda.games.scheisse.entity.item.ItemType;
-import org.dedda.games.scheisse.entity.item.Shield;
-import org.dedda.games.scheisse.entity.item.Weapon;
-import org.dedda.games.scheisse.fsloaders.resource.testInstances.TestItem;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,6 +9,9 @@ import java.io.File;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
+import static org.dedda.games.scheisse.entity.item.Item.TYPE_ARMOR;
+import static org.dedda.games.scheisse.entity.item.Item.TYPE_SHIELD;
+import static org.dedda.games.scheisse.entity.item.Item.TYPE_WEAPON;
 
 public class ItemLoaderTest {
 
@@ -22,36 +20,57 @@ public class ItemLoaderTest {
     @Before
     public void setUp() throws Exception {
         instance = new ItemLoader();
+        ItemStore.clear();
     }
 
     @Test
     public void testLoadItem() throws Exception {
-        Weapon testWeapon = Weapon.register(1, "Wooden Sword", 123L, 456L, Item.TYPES_CLOTHING, null);
-        Armor testArmor = Armor.register(
-            2,
-            "Wooden Armor",
-            654L,
-            321L,
-            Item.TYPES_CLOTHING,
-            null
-        );
-        Shield testShield = Shield.register(3, "Wooden Shield", 246L, 135L, Item.TYPE_SHIELD, null);
+        Item testWeapon = new Item();
+        testWeapon.setId(4);
+        testWeapon.setName("Wooden Sword");
+        testWeapon.setPrice(123L);
+        testWeapon.setTypes(TYPE_WEAPON);
+        testWeapon.setArmor(0);
+        testWeapon.setAttack(456L);
+        testWeapon.setMaxStackAmount(1);
+        testWeapon.setSprite(null);
+        ItemStore.put(testWeapon);
+        Item testArmor = new Item();
+        testArmor.setId(5);
+        testArmor.setName("Wooden Armor");
+        testArmor.setPrice(654L);
+        testArmor.setTypes(TYPE_ARMOR);
+        testArmor.setArmor(321L);
+        testArmor.setAttack(0);
+        testArmor.setMaxStackAmount(1);
+        testArmor.setSprite(null);
+        ItemStore.put(testArmor);
+        Item testShield = new Item();
+        testShield.setId(6);
+        testShield.setName("Wooden Shield");
+        testShield.setPrice(246L);
+        testShield.setTypes(TYPE_SHIELD);
+        testShield.setArmor(135L);
+        testShield.setAttack(0);
+        testShield.setMaxStackAmount(1);
+        testShield.setSprite(null);
+        ItemStore.put(testShield);
         ItemLoader itemLoader = new ItemLoader();
-        Weapon weapon = (Weapon) itemLoader.loadItem(
+        Item weapon = itemLoader.loadItem(
             new File(
                 "src/test/test_files/classes/" +
                     "org/dedda/games/scheisse/io/resource/item/" +
                     "ItemLoader/wood_sword.di"
             )
         );
-        Armor armor = (Armor) itemLoader.loadItem(
+        Item armor = itemLoader.loadItem(
             new File(
                 "src/test/test_files/classes/" +
                     "org/dedda/games/scheisse/io/resource/item/" +
                     "ItemLoader/wood_armor.di"
             )
         );
-        Shield shield = (Shield) itemLoader.loadItem(
+        Item shield = itemLoader.loadItem(
             new File(
                 "src/test/test_files/classes/" +
                     "org/dedda/games/scheisse/io/resource/item/" +
@@ -65,17 +84,7 @@ public class ItemLoaderTest {
 
     @Test
     public void testLoadAll() throws Exception {
-//        Weapon testWeapon = Weapon.register(1, "Wooden Sword", 123L, 456L, Item.TYPE_WEAPON, null);
-//        Armor testArmor = Armor.register(
-//            2,
-//            "Wooden Armor",
-//            654L,
-//            321L,
-//            Item.TYPES_CLOTHING,
-//            null
-//        );
-//        Shield testShield = Shield.register(3, "Wooden Shield", 246L, 135L, Item.TYPE_SHIELD, null);
         instance.loadAll(new File("src/test/test_files/classes/org/dedda/games/scheisse/io/resource/item/ItemLoader"));
-        assertEquals(10, ItemStore.getItemMap().size());
+        assertEquals(9, ItemStore.getItemMap().size());
     }
 }

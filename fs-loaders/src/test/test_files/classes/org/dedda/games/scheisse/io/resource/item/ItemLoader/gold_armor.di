@@ -1,4 +1,4 @@
-types:armor
+types:65536
 id:8
 name:Gold Armor
 value:10654

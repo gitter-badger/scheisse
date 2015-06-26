@@ -1,4 +1,4 @@
-types:shield
+types:512
 id:3
 name:Wooden Shield
 value:246
