@@ -85,20 +85,21 @@
 
   <modules>
     <module>chat-server</module>
+    <module>entities</module>
+    <module>entity-filter</module>
+    <module>fight</module>
     <module>fs-loaders</module>
     <module>game</module>
     <module>game-ai</module>
-    <module>server</module>
     <module>jmx</module>
-    <module>entities</module>
-    <module>perfmon</module>
-    <module>entity-filter</module>
-    <module>server-persistence</module>
-    <module>server-log</module>
     <module>npc</module>
-    <module>tools</module>
-    <module>fight</module>
+    <module>perfmon</module>
     <module>player</module>
+    <module>server</module>
+    <module>server-log</module>
+    <module>server-persistence</module>
+    <module>server-web</module>
+    <module>tools</module>
     <module>world</module>
   </modules>
 

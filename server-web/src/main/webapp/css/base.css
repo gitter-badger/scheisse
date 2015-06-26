@@ -1,0 +1,14 @@
+/* 
+    Created on : Nov 5, 2014, 9:51:21 PM
+    Author     : dedda
+*/
+body{
+    background: #552f02;
+    color: #fdc481;
+}
+body h1{
+    color: #f3a346;
+}
+body h1:hover{
+    color: springgreen;
+}
