@@ -1,7 +1,7 @@
 package org.dedda.games.scheisse.fsloaders.resource;
 
 import org.dedda.games.scheisse.fsloaders.resource.net.HttpDownloader;
-import org.dedda.games.scheisse.tools.SystemPrinter;
+import org.dedda.games.scheisse.tool.SystemPrinter;
 
 import java.io.File;
 import java.io.IOException;
