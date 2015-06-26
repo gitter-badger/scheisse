@@ -9,6 +9,20 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>server-log</artifactId>
+  <packaging>ejb</packaging>
   <name>Scheisse Server-Log</name>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ejb-plugin</artifactId>
+        <version>2.5.1</version>
+        <configuration>
+          <ejbVersion>3.0</ejbVersion>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>

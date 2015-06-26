@@ -7,15 +7,18 @@ package org.dedda.games.scheisse.server_persistence;
 
 import org.dedda.games.scheisse.entity.User;
 
+import javax.ejb.EJB;
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named
 @Stateless
+@LocalBean
 public class LoginProvider {
 
-    @Inject
+    @EJB
     public UserProvider userProvider;
 
     public final boolean checkLogin(final String username, final String password) {

@@ -7,6 +7,7 @@ package org.dedda.games.scheisse.server_persistence;
 
 import org.dedda.games.scheisse.entity.User;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
@@ -19,6 +20,7 @@ import java.util.List;
  */
 @Named
 @Stateless
+@LocalBean
 public class UserProvider {
 
     @PersistenceContext(unitName = "org.dedda.games.scheisse_server-PU")
