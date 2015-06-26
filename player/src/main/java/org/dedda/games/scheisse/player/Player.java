@@ -1,6 +1,6 @@
 package org.dedda.games.scheisse.player;
 
-//import org.dedda.games.scheisse.debug.SystemPrinter;
+import org.dedda.games.scheisse.tool.SystemPrinter;
 import org.dedda.games.scheisse.fight.Attack;
 import org.dedda.games.scheisse.player.inventory.Inventory;
 import org.dedda.games.scheisse.npc.Person;
@@ -60,11 +60,11 @@ public class Player extends Person {
     }
 
     public void print() {
-//        SystemPrinter.debugln("GuiPlayer:");
-//        SystemPrinter.debugln("name: " + name);
-//        SystemPrinter.debugln("exp: " + experience);
-//        SystemPrinter.debugln("map: " + map);
-//        SystemPrinter.debugln("location: " + location);
+       SystemPrinter.debugln("GuiPlayer:");
+       SystemPrinter.debugln("name: " + name);
+       SystemPrinter.debugln("exp: " + experience);
+       SystemPrinter.debugln("map: " + map);
+       SystemPrinter.debugln("location: " + location);
         inventory.print();
     }
 

@@ -1,6 +1,7 @@
 package org.dedda.games.scheisse.fsloaders.resource;
 
 import org.dedda.games.scheisse.fsloaders.resource.net.HttpDownloader;
+import org.dedda.games.scheisse.tools.SystemPrinter;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,7 +26,7 @@ public class Installer {
             downloader.download(Resource.TEMP_FOLDER + "downloadFile.zip");
         } catch (IOException e) {
             e.printStackTrace();
-            //SystemPrinter.debugln("FAIL!");
+            SystemPrinter.debugln("FAIL!");
             return false;
         }
         Unzip unzip = new Unzip(
