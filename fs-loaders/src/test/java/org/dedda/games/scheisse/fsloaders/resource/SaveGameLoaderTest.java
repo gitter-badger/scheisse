@@ -1,10 +1,12 @@
 package org.dedda.games.scheisse.fsloaders.resource;
 
 import junit.framework.Assert;
+import org.dedda.games.scheisse.entity.item.ItemStore;
 import org.dedda.games.scheisse.fsloaders.resource.item.ItemLoader;
 import org.dedda.games.scheisse.player.Player;
 import org.dedda.games.scheisse.player.inventory.Inventory;
 import org.dedda.games.scheisse.player.inventory.Slot;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.awt.Point;
@@ -13,6 +15,11 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class SaveGameLoaderTest {
+
+    @Before
+    public void setUp() {
+        ItemStore.clear();
+    }
 
     @Test
     public void testLoad() throws Exception {
