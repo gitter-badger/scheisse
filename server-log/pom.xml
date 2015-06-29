@@ -12,6 +12,14 @@
   <packaging>ejb</packaging>
   <name>Scheisse Server-Log</name>
 
+  <dependencies>
+    <dependency>
+    	<groupId>javax.ejb</groupId>
+    	<artifactId>javax.ejb-api</artifactId>
+    	<version>3.2</version>
+    </dependency>
+  </dependencies>
+
   <build>
     <plugins>
       <plugin>
