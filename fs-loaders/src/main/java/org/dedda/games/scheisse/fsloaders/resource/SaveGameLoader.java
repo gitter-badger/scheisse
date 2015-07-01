@@ -12,6 +12,8 @@ import java.util.HashMap;
 
 /**
  * Created by dedda on 4/21/14.
+ *
+ * @author dedda
  */
 public class SaveGameLoader extends FileInput {
 

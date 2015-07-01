@@ -39,7 +39,7 @@
       <th>Item</th>
       <th>Amount</th>
       </thead>
-      <c:forEach items="#{user.slots}" var="slot">
+      <c:forEach items="#{user.inventory.slots}" var="slot">
         <tr>
           <td>
             <h:commandLink value="#{slot.item.name}" action="#{item.show}">

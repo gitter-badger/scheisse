@@ -8,6 +8,8 @@ import org.dedda.games.scheisse.npc.PlayerObject;
 
 /**
  * Created by dedda on 4/18/14.
+ *
+ * @author dedda
  */
 public class Player extends Person {
 
