@@ -9,6 +9,8 @@ import java.net.URL;
 
 /**
  * Created by dedda on 4/19/14.
+ *
+ * @author dedda
  */
 public class Installer {
 
@@ -16,25 +18,22 @@ public class Installer {
 
     }
 
-    public boolean install() {
-        return true;
-    }
-
     public boolean installSingle(final URL source, final String destination) {
         HttpDownloader downloader = new HttpDownloader(source);
+        final File ZIP_FILE = new File(Resource.TEMP_FOLDER + "downloadFile.zip");
         try {
-            downloader.download(Resource.TEMP_FOLDER + "downloadFile.zip");
+            downloader.download(ZIP_FILE.getAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
             SystemPrinter.debugln("FAIL!");
             return false;
         }
         Unzip unzip = new Unzip(
-            new File(Resource.TEMP_FOLDER + "downloadFile.zip"),
+            ZIP_FILE,
             new File(destination)
         );
         unzip.unzip();
-        new File(Resource.TEMP_FOLDER + "downloadFile.zip").delete();
+        ZIP_FILE.delete();
         return true;
     }
 }
