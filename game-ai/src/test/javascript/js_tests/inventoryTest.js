@@ -9,9 +9,9 @@ var fail = function() {
 
 var inventory = new Inventory();
 
-if (inventory.items.length > 0) {
+if (inventory.size() !== 0) {
     fail();
-    errorMessages.push("new inventory not empty");
+    errorMessages.push("wrong size");
 }
 
 if (inventory.containsItemWithId(1)) {
@@ -26,6 +26,11 @@ if (inventory.numberOfItemWithId(1) !== 10) {
     errorMessages.push("added items not there");
 }
 
+if (inventory.size() !== 1) {
+    fail();
+    errorMessages.push("wrong size");
+}
+
 inventory.remove(1, 4);
 
 if (inventory.numberOfItemWithId(1) !== 6) {
@@ -33,9 +38,19 @@ if (inventory.numberOfItemWithId(1) !== 6) {
     errorMessages.push("didn't remove correctly");
 }
 
+if (inventory.size() !== 1) {
+    fail();
+    errorMessages.push("wrong size");
+}
+
 inventory.remove(1, 10);
 
 if (inventory.numberOfItemWithId(1) !== 0) {
     fail();
     errorMessages.push("not empty after remove");
+}
+
+if (inventory.size() !== 0) {
+    fail();
+    errorMessages.push("wrong size");
 }

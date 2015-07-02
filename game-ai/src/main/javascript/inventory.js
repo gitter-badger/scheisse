@@ -23,8 +23,11 @@ function Inventory() {
             return;
         }
         this.items[id] = this.items[id] - number;
-        if (this.items[id] < 0) {
-            this.items[id] = 0;
+        if (this.items[id] <= 0) {
+            this.items.splice(id, 1);
         }
     };
+    this.size = function() {
+        return this.items.length;
+    }
 }
