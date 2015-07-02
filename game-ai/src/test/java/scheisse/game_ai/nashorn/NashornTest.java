@@ -42,7 +42,7 @@ public class NashornTest {
         return jdk.nashorn.api.scripting.NashornScriptEngine.class.equals(engine.getClass());
     }
 
-    protected ScriptEngine runTestFile(final String fileName, final String[] dependencies) throws Exception {
+    protected ScriptEngine runTestFile(final String fileName) throws Exception {
         ScriptEngine engine = getBasicGameEngine();
         engine.eval(new FileReader(new File(fileName)));
         return engine;
