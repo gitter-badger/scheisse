@@ -1,13 +1,9 @@
 package scheisse.game_ai.nashorn;
 
-import org.junit.Before;
 import org.junit.Test;
-import scheisse.game_ai.GameStore;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
-
-import java.net.URLClassLoader;
 
 import static org.junit.Assert.*;
 
@@ -45,13 +41,5 @@ public class NashornManagerTest extends NashornTest {
         assertEquals(expected, ans);
         int y = ((Number) (engine.eval("y;"))).intValue();
         assertEquals(10, y);
-    }
-
-    @Test
-    public void testGetBasicGameScriptEngine() throws Exception {
-        ScriptEngine engine = manager.getBasicGameScriptEngine();
-        String exec = "_gameStore;";
-        Object value = engine.eval(exec);
-        assertTrue(value instanceof GameStore);
     }
 }

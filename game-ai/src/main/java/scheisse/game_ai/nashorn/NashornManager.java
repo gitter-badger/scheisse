@@ -1,9 +1,5 @@
 package scheisse.game_ai.nashorn;
 
-import scheisse.game_ai.GameStore;
-import scheisse.game_ai.MobStore;
-import scheisse.game_ai.behaviour.Mob;
-
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
@@ -24,28 +20,6 @@ import java.io.FilenameFilter;
  */
 public class NashornManager {
 
-    private static GameStore gameStore = new GameStore() {
-        @Override
-        public MobStore getMobStore() {
-            return new MobStore() {
-                @Override
-                public Mob getMob(final String id) {
-                    return null;
-                }
-
-                @Override
-                public String putMob(final Object mobObject) {
-                    return null;
-                }
-            };
-        }
-
-        @Override
-        public void setMobStore(final MobStore mobStore) {
-
-        }
-    };
-
     public final ScriptEngine getEngine() {
         return new ScriptEngineManager().getEngineByName("nashorn");
     }
@@ -53,7 +27,6 @@ public class NashornManager {
     public final ScriptEngine prepareEngine(final String[] jsFilesToLoad) throws FileNotFoundException, ScriptException {
         final ScriptEngine engine = getEngine();
         engine.eval("load(\"nashorn:mozilla_compat.js\");");
-        engine.put("_gameStore", gameStore);
         for (String js : jsFilesToLoad) {
             File file = new File(js);
             if (file.isFile()) {
@@ -91,13 +64,5 @@ public class NashornManager {
             String file = folder + '/' + files.getString(i);
             engine.eval(new FileReader(file));
         }
-    }
-
-    public static GameStore getGameStore() {
-        return gameStore;
-    }
-
-    public static void setGameStore(final GameStore gameStore) {
-        NashornManager.gameStore = gameStore;
     }
 }
