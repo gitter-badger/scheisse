@@ -1,3 +1,5 @@
+print("world.js");
+
 function World() {
     this.maps = [];
     this.addMap = function(map) {
@@ -8,7 +10,7 @@ function World() {
         }
         this.maps[x][y] = map;
     };
-    this.removeMap(map) {
+    this.removeMap = function(map) {
         var x = map.x;
         var y = map.y;
         if (typeof this.maps[x][y] !== 'undefined') {

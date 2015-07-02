@@ -1,3 +1,5 @@
+print("quest");
+
 function QuestStore() {
     this.quests = new Object();
     this.hasQuest = function(id) {

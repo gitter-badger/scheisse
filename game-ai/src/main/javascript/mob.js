@@ -1,3 +1,5 @@
+print("mob.js");
+
 var mob_good = 'good';
 var mob_bad = 'bad';
 var mob_neutral = 'neutral';
@@ -8,9 +10,8 @@ function Mob(id) {
     this.y = 0;
     this.speed = 1;
     this.name = "unnamed mob";
-    this.javaObject = _.getMob(id);
-    this.occupation = occupation;
-    this.aggresive = aggresive;
+    this.occupation = "null";
+    this.aggresive = false;
     this.attackTriggered = [];
     this.triggerAttack = function(id) {
         this.attackTriggered.push(id);
@@ -18,7 +19,9 @@ function Mob(id) {
     this.untriggerAttack = function(id) {
         this.attackTriggered.removeObj(id);
     };
-    this.setOccupation = function(newOccupation) {this.occupation = newOccupation};
+    this.setOccupation = function(newOccupation) {
+        this.occupation = newOccupation
+    };
     this.attacks = function(mob) {
         if (attackTriggered.contains(mob.id)) {
             return true;
@@ -49,9 +52,24 @@ function Mob(id) {
     };
 }
 
-var create_enemy = function(aggresive) {return new Mob(mob_bad, aggresive);};
-var create_friend = function(aggresive) {return new Mob(mob_good, aggresive);};
-var create_neutral_mob = function(aggresive) {return new Mob(mob_neutral, aggresive);};
+var create_enemy = function(aggresive) {
+    var mob = new Mob(-1);
+    mob.aggresive = aggresive;
+    mob.occupation = mob_bad;
+    return mob;
+};
+var create_friend = function(aggresive) {
+    var mob = new Mob(-1);
+    mob.aggresive = aggresive;
+    mob.occupation = mob_good;
+    return mob;
+};
+var create_neutral_mob = function(aggresive) {
+    var mob = new Mob(-1);
+    mob.aggresive = aggresive;
+    mob.occupation = mob_neutral;
+    return mob;
+};
 
 var attacks = function(mob1, mob2) {return mob1.attacks(mob2);};
 
@@ -69,7 +87,7 @@ var walking_mob = function(occupation, aggresive, name) {
             if ((Math.abs(dx) < 0.01) && (Math.abs(dy) < 0.01)) {
                 mob.teleport(targetPosition.x, targetPosition.y);
             }
-            var direction = _.getDirection(targetPosition.x - mob.x, targetPosition.y = mob.y);
+            var direction = _calculateDirection(targetPosition.x - mob.x, targetPosition.y = mob.y);
             mob.x += Math.cos(direction) * speed * dt;
             mob.y += Math.sin(direction) * speed * dt;
         }
@@ -77,7 +95,6 @@ var walking_mob = function(occupation, aggresive, name) {
     mob.tickActions.push(function(dt) {
         mob.doWalk(dt);
     });
-    var mobId = _.createMob(mob);
     mob.id = mobId;
     return mob;
 }

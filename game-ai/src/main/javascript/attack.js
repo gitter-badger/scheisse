@@ -1,3 +1,5 @@
+print("attack.js");
+
 function Attack(element, baseDmg, elementalDmg) {
     this.element = element;
     this.baseDmg = baseDmg;

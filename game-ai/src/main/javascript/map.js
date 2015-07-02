@@ -1,3 +1,5 @@
+print("map.js");
+
 function Map(x, y) {
     this.x = x;
     this.y = y;

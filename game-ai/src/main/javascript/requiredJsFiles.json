@@ -5,6 +5,8 @@
     "mob.js",
     "attack.js",
     "quest.js",
-    "inventory.js"
+    "inventory.js",
+    "map.js",
+    "world.js"
   ]
 }

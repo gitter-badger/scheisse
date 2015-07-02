@@ -1,3 +1,5 @@
+print("attack_types.js");
+
 var attack_types = {
     "elements": ["fire", "ice", "shock", "water"],
     "efficiency": {

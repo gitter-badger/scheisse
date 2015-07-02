@@ -1,7 +1,8 @@
 package scheisse.game_ai.nashorn;
 
-import javax.script.Invocable;
 import javax.script.ScriptEngine;
+import java.io.File;
+import java.io.FileReader;
 
 /**
  * Created by sgoeppentin on 02.07.15.
@@ -39,6 +40,31 @@ public class NashornTest {
 
     protected boolean isNashornScriptEngine(final ScriptEngine engine) {
         return jdk.nashorn.api.scripting.NashornScriptEngine.class.equals(engine.getClass());
+    }
+
+    protected ScriptEngine runTestFile(final String fileName, final String[] dependencies) throws Exception {
+        ScriptEngine engine = getBasicGameEngine();
+        engine.eval(new FileReader(new File(fileName)));
+        return engine;
+    }
+
+    protected boolean engineWasSuccessful(final ScriptEngine engine) throws Exception {
+        String isSuccesDefined = "typeof success !== 'undefined';";
+        String areErrorMessagesDefined = "typeof errorMessages === 'array';";
+        if (!(boolean) engine.eval(isSuccesDefined)) {
+            System.out.println("Success is not defined in engine!");
+            return false;
+        }
+        if ((boolean) engine.eval("success;")) {
+            return true;
+        }
+        if ((boolean) engine.eval(areErrorMessagesDefined)) {
+            String[] errorMessages = (String[]) engine.eval("errorMessages;");
+            for (String message : errorMessages) {
+                System.out.println(message);
+            }
+        }
+        return false;
     }
 
 }
