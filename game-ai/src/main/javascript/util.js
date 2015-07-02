@@ -21,3 +21,20 @@ var _registerMob = function(mob) {
     }
     return _mobStore.putMob(mob);
 }
+
+Array.prototype.contains = function(obj) {
+    var i = this.length;
+    while (i--) {
+        if (this.[i] == obj) {
+            return true;
+        }
+    }
+    return false;
+}
+
+Array.prototype.removeObj = function(obj) {
+    var index = this.indexOf(obj);
+    if (index > -1) {
+        this.splice(index, 1);
+    }
+}

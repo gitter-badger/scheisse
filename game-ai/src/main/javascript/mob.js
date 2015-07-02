@@ -8,11 +8,21 @@ function Mob(id) {
     this.y = 0;
     this.speed = 1;
     this.name = "unnamed mob";
-    this.javaObject = _.getMob( id);
+    this.javaObject = _.getMob(id);
     this.occupation = occupation;
     this.aggresive = aggresive;
+    this.attackTriggered = [];
+    this.triggerAttack = function(id) {
+        this.attackTriggered.push(id);
+    };
+    this.untriggerAttack(id) {
+        this.attackTriggered.removeObj(id);
+    };
     this.setOccupation = function(newOccupation) {this.occupation = newOccupation};
-    this.attacks = function(othersOccupation) {
+    this.attacks = function(mob) {
+        if (attackTriggered.contains(mob.id)) {
+            return true;
+        }
         if (this.occupation == mob_neutral)
             return aggresive;
         if (this.occupation == mob_bad) {
@@ -27,8 +37,11 @@ function Mob(id) {
                 return this.aggresive;
         }
     };
+    this.tickActions = [];
     this.tick = function(dt) {
-        return;
+        for (action in tickActions) {
+            action(dt);
+        }
     };
     this.move = function(x, y) {};
     this.teleport = function(x, y) {
@@ -40,7 +53,7 @@ var create_enemy = function(aggresive) {return new Mob(mob_bad, aggresive);};
 var create_friend = function(aggresive) {return new Mob(mob_good, aggresive);};
 var create_neutral_mob = function(aggresive) {return new Mob(mob_neutral, aggresive);};
 
-var attacks = function(mob1, mob2) {return mob1.attacks(mob2.occupation);};
+var attacks = function(mob1, mob2) {return mob1.attacks(mob2);};
 
 var walking_mob = function(occupation, aggresive, name) {
     var mob = new Mob(occupation, aggresive);
@@ -61,10 +74,9 @@ var walking_mob = function(occupation, aggresive, name) {
             mob.y += Math.sin(direction) * speed * dt;
         }
     };
-    mob.tick = function(dt) {
+    mob.tickActions.push(function(dt) {
         mob.doWalk(dt);
-        console.log("dt: " + dt);
-    };
+    });
     var mobId = _.createMob(mob);
     mob.id = mobId;
     return mob;

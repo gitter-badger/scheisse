@@ -24,14 +24,20 @@ public class NPCLoader extends FileInput {
         this.scriptLoader = new NPCScriptLoader();
     }
 
-    public NPC load() {
+    public void load() {
         this.npc = new NPC(new Point2D.Double(0, 0));
         this.npcScript = this.scriptLoader.loadNPCScript(new File(getScriptFileName()), this.npc);
-        return this.npc;
     }
 
     private String getScriptFileName() {
         return "";
     }
 
+    public NPCScript getNpcScript() {
+        return npcScript;
+    }
+
+    public NPC getNpc() {
+        return npc;
+    }
 }
