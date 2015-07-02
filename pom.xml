@@ -31,7 +31,6 @@
   </dependencies>
 
   <modules>
-    <module>chat-server</module>
     <module>entities</module>
     <module>entity-filter</module>
     <module>fight</module>
