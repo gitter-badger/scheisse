@@ -1,0 +1,12 @@
+body {
+    background-color: #454545;
+}
+
+#title {
+    text-decoration: underline;
+    color: black;
+    text-align: center;
+}
+
+div.content-unit {
+}
