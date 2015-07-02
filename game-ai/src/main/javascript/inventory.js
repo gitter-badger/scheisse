@@ -1,3 +1,0 @@
-function Inventory() {
-    this.items = [];
-}

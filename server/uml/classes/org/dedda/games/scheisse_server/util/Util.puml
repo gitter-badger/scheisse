@@ -1,6 +1,0 @@
-@startuml
-abstract class org.dedda.games.scheisse_server.util.Util{
-    + {static} String MD5()
-    + {static} Connection getDatabaseConnection()
-}
-@enduml

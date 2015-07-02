@@ -1,6 +1,0 @@
-@startuml
-class org.dedda.games.scheisse_server.util.Pages{
-    + {static} String INDEX
-    + {static} String REGISTER
-}
-@enduml
