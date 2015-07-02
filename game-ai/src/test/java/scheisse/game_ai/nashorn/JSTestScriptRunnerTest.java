@@ -14,10 +14,17 @@ import static junit.framework.Assert.assertTrue;
 public class JSTestScriptRunnerTest extends NashornTest {
 
     private final String MOB_TEST = "src/test/javascript/js_tests/mobTest.js";
+    private final String INVENTORY_TEST = "src/test/javascript/js_tests/inventoryTest.js";
 
     @Test
     public void testMobTest() throws Exception {
         ScriptEngine engine = runTestFile(MOB_TEST);
+        assertTrue(engineWasSuccessful(engine));
+    }
+
+    @Test
+    public void testInventoryTest() throws Exception {
+        ScriptEngine engine = runTestFile(INVENTORY_TEST);
         assertTrue(engineWasSuccessful(engine));
     }
 
