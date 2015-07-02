@@ -25,7 +25,7 @@ var _registerMob = function(mob) {
 Array.prototype.contains = function(obj) {
     var i = this.length;
     while (i--) {
-        if (this.[i] == obj) {
+        if (this[i] == obj) {
             return true;
         }
     }

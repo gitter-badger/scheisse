@@ -15,7 +15,7 @@ function Mob(id) {
     this.triggerAttack = function(id) {
         this.attackTriggered.push(id);
     };
-    this.untriggerAttack(id) {
+    this.untriggerAttack = function(id) {
         this.attackTriggered.removeObj(id);
     };
     this.setOccupation = function(newOccupation) {this.occupation = newOccupation};
