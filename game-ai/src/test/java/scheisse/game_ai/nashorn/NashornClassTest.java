@@ -11,13 +11,13 @@ import static org.junit.Assert.*;
  *
  * @author dedda
  */
-public class NashornClassTest {
+public class NashornClassTest extends NashornTest {
 
     NashornClass nashornClass;
 
     @Before
     public void setUp() throws Exception {
-        this.nashornClass = new NashornClass(new NashornManager().prepareEngine(new String[]{"src/test/javascript/class.js"}), "TestClass");
+        this.nashornClass = getNashornClass(getEngine(new String[]{"src/test/javascript/class.js"}), "TestClass");
     }
 
     @Test
@@ -29,7 +29,7 @@ public class NashornClassTest {
     public void testConstructorClassNotExisting() throws Exception {
         boolean thrown = false;
         try {
-            this.nashornClass = new NashornClass(new NashornManager().prepareEngine(new String[]{"src/test/javascript/class.js"}), "NotExistingClass");
+            this.nashornClass = getNashornClass(getEngine(new String[]{"src/test/javascript/class.js"}), "NotExistingClass");
         } catch(NashornClassNotFoundException e) {
             assertEquals("NotExistingClass", e.className);
             thrown = true;

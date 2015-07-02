@@ -16,20 +16,13 @@ import static org.junit.Assert.*;
  *
  * @author dedda
  */
-public class NashornManagerTest {
-
-    NashornManager manager;
-
-    @Before
-    public void setUp() throws Exception {
-        manager = new NashornManager();
-    }
+public class NashornManagerTest extends NashornTest {
 
     @Test
     public void testGetEngine() throws Exception {
         System.out.println("test");
         ScriptEngine engine = manager.getEngine();
-        assertEquals(jdk.nashorn.api.scripting.NashornScriptEngine.class, engine.getClass());
+        assertTrue(isNashornScriptEngine(engine));
     }
 
     @Test

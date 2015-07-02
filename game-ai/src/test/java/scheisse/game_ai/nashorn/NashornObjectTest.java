@@ -3,6 +3,8 @@ package scheisse.game_ai.nashorn;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.script.ScriptEngine;
+
 import static org.junit.Assert.*;
 
 /**
@@ -10,15 +12,14 @@ import static org.junit.Assert.*;
  *
  * @author dedda
  */
-public class NashornObjectTest {
+public class NashornObjectTest extends NashornTest {
 
     private NashornObject object;
 
     @Before
     public void setUp() throws Exception {
-        NashornManager manager = new NashornManager();
-        NashornClass nashornClass = new NashornClass(manager.prepareEngine(new String[]{"src/test/javascript/class.js"}), "TestClass");
-        object = new NashornObject(nashornClass, "testVar", new String[]{"Test"});
+        ScriptEngine engine = manager.prepareEngine(new String[]{"src/test/javascript/class.js"});
+        object = getNashornObject(engine, "TestClass", "testVar", new String[]{"Test"});
     }
 
     @Test
