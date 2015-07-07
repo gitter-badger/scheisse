@@ -42,3 +42,11 @@ if (!ft.aggresive || ft.occupation !== mob_good) {
     fail();
     errorMessages.push("incorrect friend in line 41");
 }
+
+if (!success) {
+    print("inventoryTest.js has failures:");
+    var i = 0;
+    while (i++ < errorMessages.length - 1) {
+        print("Error: " + errorMessages[i]);
+    }
+}
