@@ -11,46 +11,59 @@ var inventory = new Inventory();
 
 if (inventory.size() !== 0) {
     fail();
-    errorMessages.push("wrong size");
+    errorMessages.push("14: wrong size");
 }
 
 if (inventory.containsItemWithId(1)) {
     fail();
-    errorMessages.push("new inventory not empty");
+    errorMessages.push("19: new inventory not empty");
 }
 
 inventory.add(1, 10);
 
 if (inventory.numberOfItemWithId(1) !== 10) {
     fail();
-    errorMessages.push("added items not there");
+    errorMessages.push("26: added items not there");
+}
+
+if (!inventory.containsItemWithId(1)) {
+    fail();
+    errorMessages.push("31: added items not there");
 }
 
 if (inventory.size() !== 1) {
     fail();
-    errorMessages.push("wrong size");
+    errorMessages.push("36: wrong size");
 }
 
 inventory.remove(1, 4);
 
 if (inventory.numberOfItemWithId(1) !== 6) {
     fail();
-    errorMessages.push("didn't remove correctly");
+    errorMessages.push("43: didn't remove correctly");
 }
 
 if (inventory.size() !== 1) {
     fail();
-    errorMessages.push("wrong size");
+    errorMessages.push("48: wrong size");
 }
 
 inventory.remove(1, 10);
 
 if (inventory.numberOfItemWithId(1) !== 0) {
     fail();
-    errorMessages.push("not empty after remove");
+    errorMessages.push("55: not empty after remove");
 }
 
 if (inventory.size() !== 0) {
     fail();
-    errorMessages.push("wrong size");
+    errorMessages.push("60: wrong size");
+}
+
+if (!success) {
+    print("inventoryTest.js has failures:");
+    var i = 0;
+    while (i++ < errorMessages.length - 1) {
+        print("Error: " + errorMessages[i]);
+    }
 }
