@@ -6,10 +6,10 @@ function Attack(element, baseDmg, elementalDmg) {
     this.elementalDmg = elementalDmg;
     this.damageAgainst = function(element) {
         var elem = this.elementalDmg;
-        if (attack_types[this.element] === undefined || attack_types[element] === undefined) {
+        if (attack_types['efficiency'][this.element] === undefined || attack_types['efficiency'][element] === undefined) {
             return this.baseDmg + elem;
         }
-        elem = elem * attack_types[this.element][element];
+        elem = elem * attack_types['efficiency'][this.element][element];
         return this.baseDmg + elem;
     };
 }
