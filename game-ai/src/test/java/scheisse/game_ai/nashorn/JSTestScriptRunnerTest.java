@@ -2,8 +2,6 @@ package scheisse.game_ai.nashorn;
 
 import org.junit.Test;
 
-import javax.script.ScriptEngine;
-
 import static junit.framework.Assert.assertTrue;
 
 /**

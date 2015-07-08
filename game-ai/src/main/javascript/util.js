@@ -1,5 +1,12 @@
 print("utils.js");
 
+var directions = [
+    "up",
+    "down",
+    "left",
+    "right"
+];
+
 //tools:
 var _getDistance = function(dx, dy) {
     return Math.sqrt(dx * dx + dy * dy);

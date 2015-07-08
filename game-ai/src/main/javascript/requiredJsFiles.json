@@ -6,6 +6,7 @@
     "attack.js",
     "quest.js",
     "inventory.js",
+    "map_objects.js",
     "map.js",
     "world.js"
   ]
