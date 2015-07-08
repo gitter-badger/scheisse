@@ -7,6 +7,67 @@ body {
     color: black;
     text-align: center;
 }
-
+#content {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: #353535;
+    border: 15px solid;
+    border-color: #303030;
+}
 div.content-unit {
+    background-color: #636363;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 0px 20px 20px 0px;
+    border-color: black;
+    border: 2px solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+a:hover {
+    color: #000000;
+}
+.subtitle {
+    width: 70%
+    text-decoration: underline;
+    color: black;
+}
+.subtitle a, .content-unit a {
+    color: #303030;
+}
+#title a {
+    color: #202020;
+}
+code {
+    font: normal normal .8em/1.7 "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+    padding: 0 5px 1px;
+}
+language {
+    font-weight: bold;
+}
+.description-bottom {
+    background-color: #808080;
+    border: 2px solid;
+    border-color: #303030;
+    border-bottom-right-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+}
+.description-top {
+    background-color: #808080;
+    border: 2px solid;
+    border-color: #303030;
+    border-top-right-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
 }

@@ -1,1 +1,18 @@
 # Created by .ignore support plugin (hsz.mobi)
+entities
+entity-filter
+fight
+fs-loaders
+game
+game-ai
+jmx
+npc
+perfmon
+player
+server
+server-log
+server-persistence
+server-web
+target
+tools
+world
