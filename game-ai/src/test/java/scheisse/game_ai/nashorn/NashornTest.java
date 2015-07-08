@@ -1,8 +1,15 @@
 package scheisse.game_ai.nashorn;
 
+import junit.framework.Assert;
+
 import javax.script.ScriptEngine;
 import java.io.File;
+import java.io.FileFilter;
 import java.io.FileReader;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
+import static junit.framework.Assert.fail;
 
 /**
  * Created by sgoeppentin on 02.07.15.
@@ -49,9 +56,9 @@ public class NashornTest {
     }
 
     protected boolean engineWasSuccessful(final ScriptEngine engine) throws Exception {
-        String isSuccesDefined = "typeof success !== 'undefined';";
+        String isSuccessDefined = "typeof success !== 'undefined';";
         String areErrorMessagesDefined = "typeof errorMessages === 'array';";
-        if (!(boolean) engine.eval(isSuccesDefined)) {
+        if (!(boolean) engine.eval(isSuccessDefined)) {
             System.out.println("Success is not defined in engine!");
             return false;
         }
@@ -65,6 +72,27 @@ public class NashornTest {
             }
         }
         return false;
+    }
+
+    protected boolean runTestFolder(final String folderName) throws Exception {
+        final File folder = new File(folderName);
+        boolean success = true;
+        if (!folder.exists() || !folder.isDirectory()) {
+            fail(" is not a folder...");
+        }
+        final File[] files = folder.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(final File file) {
+                return file.isFile() && file.getName().endsWith("Test.js");
+            }
+        });
+        for (int i = 0; i < files.length; i++) {
+            ScriptEngine engine = runTestFile(files[i].getAbsolutePath());
+            if (!engineWasSuccessful(engine)) {
+                success = false;
+            }
+        }
+        return success;
     }
 
 }
