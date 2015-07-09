@@ -50,8 +50,11 @@ public class NashornTest {
     }
 
     protected ScriptEngine runTestFile(final String fileName) throws Exception {
+        long time = System.currentTimeMillis();
+        System.out.println("-INFO- Starting javascript test " + fileName);
         ScriptEngine engine = getBasicGameEngine();
         engine.eval(new FileReader(new File(fileName)));
+        System.out.println("-INFO- tests run... " + (System.currentTimeMillis() - time) + "ms");
         return engine;
     }
 
@@ -59,7 +62,7 @@ public class NashornTest {
         String isSuccessDefined = "typeof success !== 'undefined';";
         String areErrorMessagesDefined = "typeof errorMessages === 'array';";
         if (!(boolean) engine.eval(isSuccessDefined)) {
-            System.out.println("Success is not defined in engine!");
+            System.out.println("-WARNING- Success is not defined in engine!");
             return false;
         }
         if ((boolean) engine.eval("success;")) {
@@ -68,7 +71,7 @@ public class NashornTest {
         if ((boolean) engine.eval(areErrorMessagesDefined)) {
             String[] errorMessages = (String[]) engine.eval("errorMessages;");
             for (String message : errorMessages) {
-                System.out.println(message);
+                System.out.println("-INFO- " + message);
             }
         }
         return false;
