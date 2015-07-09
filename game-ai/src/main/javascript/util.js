@@ -31,3 +31,11 @@ Array.prototype.removeObj = function(obj) {
         this.splice(index, 1);
     }
 }
+
+Object.prototype.size = function(obj) {
+    var size = 0, key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+};
