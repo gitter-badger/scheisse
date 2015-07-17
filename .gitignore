@@ -13,3 +13,7 @@ service-client/client.iml
 service-client/service-client.iml
 **/.idea/
 **/nb-configuration.xml
+**/log.html
+**/output.xml
+**/report.html
+**/selenium-screenshot-1.png

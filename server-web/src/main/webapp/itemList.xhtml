@@ -10,13 +10,13 @@
   <ui:define name="title">Items - Scheisse</ui:define>
   <ui:define name="additionalHeaderInfo"/>
   <ui:define name="mainContents">
-    <h1>
+    <h1 id="itemlist-title">
       Items
     </h1>
-    <table>
+    <table id="item-table">
       <thead>
-      <th>Name</th>
-      <th>Type</th>
+      <th id="item-name-header">Name</th>
+      <th id="item-type-header">Type</th>
       </thead>
       <c:forEach
         items="#{itemList.items}"

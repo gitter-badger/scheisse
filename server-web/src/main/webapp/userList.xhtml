@@ -10,10 +10,10 @@
   <ui:define name="title">Users - Scheisse</ui:define>
   <ui:define name="additionalHeaderInfo"></ui:define>
   <ui:define name="mainContents">
-    <h1>
+    <h1 id="userlist-title">
       Users
     </h1>
-    <ul>
+    <ul id="users-list">
       <c:forEach items="#{userList.allUsers}" var="current">
         <li>
           <h:commandLink value="#{current.name}" action="#{user.show}">

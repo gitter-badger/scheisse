@@ -8,19 +8,19 @@
   <ui:define name="title">Home - Scheisse</ui:define>
   <ui:define name="additionalHeaderInfo"/>
   <ui:define name="mainContents">
-    <h1>
+    <h1 id="index-title">
       TEST-Toaster ON!
     </h1>
     Hier ist die Home-Seite!!!
     <ul>
       <li>
-        <h:commandLink action="userList">Users</h:commandLink>
+        <h:commandLink action="userList"><div id="users-link">Users</div></h:commandLink>
       </li>
       <li>
-        <h:commandLink action="register">Register</h:commandLink>
+        <h:commandLink action="register"><div id="register-link">Register</div></h:commandLink>
       </li>
       <li>
-        <h:commandLink action="itemList">Liste von Items</h:commandLink>
+        <h:commandLink action="itemList"><div id="items-link">Liste von Items</div></h:commandLink>
       </li>
     </ul>
   </ui:define>
