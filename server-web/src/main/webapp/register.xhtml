@@ -8,12 +8,15 @@
   <ui:define name="title">Registrieren - Scheisse</ui:define>
   <ui:define name="additionalHeaderInfo"/>
   <ui:define name="mainContents">
-    <h:inputText value="#{register.name}"></h:inputText>
-    <br/>
-    <h:inputText value="#{register.email}"></h:inputText>
-    <br/>
-    <h:inputSecret value="#{register.password}"></h:inputSecret>
-    <br/>
+    <h1 id="register-title">Registrieren</h1>
+    <div id="input-fields">
+      <h:inputText value="#{register.name}"></h:inputText>
+      <br/>
+      <h:inputText value="#{register.email}"></h:inputText>
+      <br/>
+      <h:inputSecret value="#{register.password}"></h:inputSecret>
+      <br/>
+    </div>
     <h:commandLink action="#{register.register}" value="registrieren">
     </h:commandLink>
   </ui:define>
