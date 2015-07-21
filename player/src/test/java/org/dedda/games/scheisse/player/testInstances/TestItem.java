@@ -18,14 +18,11 @@ public class TestItem extends Item {
 
     public TestItem() {
         super(-1, NAME, VALUE, Item.TYPE_OTHER, null);
+        setMaxStackAmount(MAX_STACK);
     }
 
     static {
         ItemStore.getItemMap().put(-1L, new TestItem());
-    }
-
-    public int maxStackNumber() {
-        return MAX_STACK;
     }
 
 }

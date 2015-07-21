@@ -21,13 +21,7 @@ public class ItemLevelFilterTest {
     public void setUp() {
         items = new ArrayList<Item>();
         for (int i = 0; i < 5; i++) {
-            items.add(
-                new Item(i, "", i, Item.TYPE_OTHER, null
-                ) {
-                    public int maxStackNumber() {
-                        return 0;
-                    }
-                });
+            items.add(new Item(i, "", i, Item.TYPE_OTHER, null));
             items.get(i).setMinLevel(i);
         }
     }

@@ -19,31 +19,11 @@ public class ItemValueFilterTest {
     @Before
     public void setUp() throws Exception {
         items = new ArrayList<Item>();
-        items.add(new Item(0, "", 0, Item.TYPE_OTHER, null) {
-            public int maxStackNumber() {
-                return 0;
-            }
-        });
-        items.add(new Item(1, "", 1, Item.TYPE_OTHER, null) {
-            public int maxStackNumber() {
-                return 0;
-            }
-        });
-        items.add(new Item(2, "", 2, Item.TYPE_OTHER, null) {
-            public int maxStackNumber() {
-                return 0;
-            }
-        });
-        items.add(new Item(3, "", 3, Item.TYPE_OTHER, null) {
-            public int maxStackNumber() {
-                return 0;
-            }
-        });
-        items.add(new Item(4, "", 4, Item.TYPE_OTHER, null) {
-            public int maxStackNumber() {
-                return 0;
-            }
-        });
+        items.add(new Item(0, "", 0, Item.TYPE_OTHER, null));
+        items.add(new Item(1, "", 1, Item.TYPE_OTHER, null));
+        items.add(new Item(2, "", 2, Item.TYPE_OTHER, null));
+        items.add(new Item(3, "", 3, Item.TYPE_OTHER, null));
+        items.add(new Item(4, "", 4, Item.TYPE_OTHER, null));
     }
 
     @Test

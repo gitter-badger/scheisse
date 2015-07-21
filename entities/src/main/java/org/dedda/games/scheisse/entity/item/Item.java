@@ -320,7 +320,7 @@ public class Item
     }
 
     @Override
-    public int maxStackNumber() {
-        return 0;
+    public long maxStackNumber() {
+        return this.maxStackAmount;
     }
 }

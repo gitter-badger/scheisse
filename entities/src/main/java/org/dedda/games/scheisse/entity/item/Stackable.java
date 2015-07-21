@@ -8,6 +8,6 @@ public interface Stackable {
     /**
      * @return int
      */
-    public abstract int maxStackNumber();
+    long maxStackNumber();
 
 }

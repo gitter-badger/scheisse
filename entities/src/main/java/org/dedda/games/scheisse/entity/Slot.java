@@ -70,7 +70,7 @@ public class Slot extends Entity implements TestableEntity {
      */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "item")
-    private Item item;
+    private Item item = null;
 
     /*====================
      * METHODS
@@ -98,6 +98,9 @@ public class Slot extends Entity implements TestableEntity {
     public final long maxAddAmount(final Item addItem) {
         if (null == addItem) {
             throw new IllegalArgumentException("item is null");
+        }
+        if (null == getItem()) {
+            return addItem.getMaxStackAmount();
         }
         if (getItem().getId() == addItem.getId()) {
             return addItem.getMaxStackAmount() - getAmount();

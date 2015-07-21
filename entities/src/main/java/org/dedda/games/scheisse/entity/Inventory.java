@@ -114,6 +114,9 @@ public class Inventory extends Entity implements TestableEntity {
             if (maxAddAmount > remaining) {
                 maxAddAmount = remaining;
             }
+            if (slot.getItem() == null) {
+                slot.setItem(item);
+            }
             slot.setAmount(slot.getAmount() + maxAddAmount);
             remaining -= maxAddAmount;
             if (remaining == 0) {
@@ -130,15 +133,12 @@ public class Inventory extends Entity implements TestableEntity {
         if (null == item) {
             throw new IllegalArgumentException("item is null");
         }
-        long amount = 0;
-        for (Slot slot : slots) {
-            if (null != slot.getItem()) {
-                continue;
+        long amount = slots.stream().parallel().mapToLong(
+            slot -> {if (slot.getItem() != null && slot.getItem().getId() == item.getId()) {
+                return slot.getAmount();
             }
-            if (item.getId() == slot.getItem().getId()) {
-                amount += slot.getAmount();
-            }
-        }
+                return 0;
+        }).sum();
         return amount;
     }
 
