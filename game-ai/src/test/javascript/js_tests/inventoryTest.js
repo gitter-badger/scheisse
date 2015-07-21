@@ -1,4 +1,5 @@
-print("inventoryTest.js")
+var filename = 'inventoryTest.js';
+print(filename);
 
 var success = true;
 var errorMessages = [];
@@ -58,12 +59,4 @@ if (inventory.numberOfItemWithId(1) !== 0) {
 if (inventory.size() !== 0) {
     fail();
     errorMessages.push(new Error().lineNumber + ": wrong size");
-}
-
-if (!success) {
-    print("inventoryTest.js has failures:");
-    var i = 0;
-    while (i++ < errorMessages.length - 1) {
-        print("Error: " + errorMessages[i]);
-    }
 }

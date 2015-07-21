@@ -20,6 +20,9 @@ public class NashornTest {
 
     protected NashornManager manager;
 
+    private final File PRE_TEST_FILE = new File("src/test/javascript/pre_test.js");
+    private final File POST_TEST_FILE = new File("src/test/javascript/post_test.js");
+
     public NashornTest() {
         this.manager = new NashornManager();
     }
@@ -53,7 +56,9 @@ public class NashornTest {
         long time = System.currentTimeMillis();
         System.out.println("-INFO- Starting javascript test " + fileName);
         ScriptEngine engine = getBasicGameEngine();
+        engine.eval(new FileReader(PRE_TEST_FILE));
         engine.eval(new FileReader(new File(fileName)));
+        engine.eval(new FileReader(POST_TEST_FILE));
         System.out.println("-INFO- tests run... " + (System.currentTimeMillis() - time) + "ms");
         return engine;
     }

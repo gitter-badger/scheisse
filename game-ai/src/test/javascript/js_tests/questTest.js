@@ -1,4 +1,5 @@
-print("questTest.js");
+var filename = 'questTest.js';
+print(filename);
 
 var success = true;
 var errorMessages = [];
@@ -14,12 +15,4 @@ if (typeof questStore === 'undefined') {
 if (questStore.quests.size() !== 0) {
     fail();
     errorMessages.push(new Error().lineNumber + ": quest store not empty");
-}
-
-if (!success) {
-    print("inventoryTest.js has failures:");
-    var i = 0;
-    while (i++ < errorMessages.length - 1) {
-        print("Error: " + errorMessages[i]);
-    }
 }

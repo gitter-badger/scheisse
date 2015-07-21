@@ -1,4 +1,5 @@
-print("mobTest.js");
+var filename = 'mobTest.js';
+print(filename);
 
 var success = true;
 var errorMessages = [];
@@ -41,12 +42,4 @@ if (ff.aggresive || ff.occupation !== mob_good) {
 if (!ft.aggresive || ft.occupation !== mob_good) {
     fail();
     errorMessages.push("incorrect friend in line 41");
-}
-
-if (!success) {
-    print("inventoryTest.js has failures:");
-    var i = 0;
-    while (i++ < errorMessages.length - 1) {
-        print("Error: " + errorMessages[i]);
-    }
 }

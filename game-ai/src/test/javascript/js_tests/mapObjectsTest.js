@@ -1,4 +1,5 @@
-print("mapObjectsTest.js");
+var filename = 'mapObjectsTest.js';
+print(filename);
 
 var success = true;
 var errorMessages = [];
@@ -57,12 +58,4 @@ if (door.passingDirections.length !== 1) {
 if (door.canPass('not defined direction')) {
     fail();
     errorMessages.push(new Error().lineNumber + ": can pass door in non defined direction");
-}
-
-if (!success) {
-    print("mapObjectsTest.js has failures:");
-    var i = 0;
-    while (i++ < errorMessages.length - 1) {
-        print("Error: " + errorMessages[i]);
-    }
 }

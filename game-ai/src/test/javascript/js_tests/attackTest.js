@@ -1,11 +1,5 @@
-print("attackTest.js");
-
-var success = true;
-var errorMessages = [];
-
-var fail = function() {
-    success = false;
-}
+var filename = 'attackTest.js';
+print(filename);
 
 var fire = new Attack('fire', 100, 50);
 var ice = new Attack('ice', 100, 50);
@@ -80,10 +74,3 @@ if (water.damageAgainst(shock.element) !== 155) {
     errorMessages.push(new Error().lineNumber + ': incorrect damage.');
 }
 
-if (!success) {
-    print("inventoryTest.js has failures:");
-    var i = 0;
-    while (i++ < errorMessages.length - 1) {
-        print("Error: " + errorMessages[i]);
-    }
-}
