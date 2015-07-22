@@ -12,4 +12,7 @@ function Map(x, y) {
     this.removeObject = function(obj) {
         this.objects.removeObj(obj);
     };
+    this.isUnlocked = function() {
+        return true;
+    };
 }
