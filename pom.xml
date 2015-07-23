@@ -48,6 +48,7 @@
     <module>tools</module>
     <module>world</module>
     <module>game-events</module>
+    <module>game-object-store</module>
   </modules>
 
   <build>
