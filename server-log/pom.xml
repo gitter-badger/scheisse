@@ -10,7 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>server-log</artifactId>
   <packaging>ejb</packaging>
-  <name>Scheisse Server-Log</name>
+  <name>Scheisse Server Log</name>
 
   <dependencies>
     <dependency>

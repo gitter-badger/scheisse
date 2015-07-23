@@ -27,8 +27,13 @@ public class NashornManager {
     }
 
     public final ScriptEngine prepareEngine(final String[] jsFilesToLoad) throws FileNotFoundException, ScriptException {
-        final ScriptEngine engine = getEngine();
+        ScriptEngine engine = getEngine();
         engine.eval("load(\"nashorn:mozilla_compat.js\");");
+        engine = prepareEngine(engine, jsFilesToLoad);
+        return engine;
+    }
+
+    public final ScriptEngine prepareEngine(final ScriptEngine engine, final String[] jsFilesToLoad) throws FileNotFoundException, ScriptException {
         for (String js : jsFilesToLoad) {
             File file = new File(js);
             if (file.isFile()) {
@@ -53,8 +58,10 @@ public class NashornManager {
     }
 
     public final ScriptEngine getBasicGameScriptEngine(final Store store) throws FileNotFoundException, ScriptException {
-        ScriptEngine engine = prepareEngine(new String[]{"src/main/javascript/requiredJsFiles.json"});
+        ScriptEngine engine = getEngine();
+        engine.eval("load(\"nashorn:mozilla_compat.js\");");
         engine.put("store", store);
+        engine = prepareEngine(engine, new String[]{"src/main/javascript/requiredJsFiles.json"});
         return engine;
     }
 
