@@ -1,6 +1,9 @@
 package scheisse.game_ai.nashorn;
 
 import junit.framework.Assert;
+import org.dedda.games.scheisse.entity.Inventory;
+import org.dedda.games.scheisse.entity.User;
+import scheisse.game_ai.Store;
 
 import javax.script.ScriptEngine;
 import java.io.File;
@@ -36,7 +39,7 @@ public class NashornTest {
     }
 
     protected ScriptEngine getBasicGameEngine() throws Exception {
-        return this.manager.getBasicGameScriptEngine();
+        return this.manager.getBasicGameScriptEngine(prepareStore());
     }
 
     protected NashornClass getNashornClass(final ScriptEngine engine, final String className) {
@@ -101,6 +104,20 @@ public class NashornTest {
             }
         }
         return success;
+    }
+
+    private Store prepareStore() {
+        Store store = new Store();
+        User user = new User();
+        user.setId(1L);
+        user.setName("Test user");
+        user.setEmail("test@user.com");
+        user.setExperience(10L);
+        user.setPasswordHash("test hash");
+        Inventory inventory = new Inventory();
+        user.setInventory(inventory);
+        store.setUser(user);
+        return store;
     }
 
 }

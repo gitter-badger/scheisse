@@ -1,5 +1,7 @@
 package scheisse.game_ai.nashorn;
 
+import scheisse.game_ai.Store;
+
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
@@ -50,8 +52,9 @@ public class NashornManager {
         return engine;
     }
 
-    public final ScriptEngine getBasicGameScriptEngine() throws FileNotFoundException, ScriptException {
+    public final ScriptEngine getBasicGameScriptEngine(final Store store) throws FileNotFoundException, ScriptException {
         ScriptEngine engine = prepareEngine(new String[]{"src/main/javascript/requiredJsFiles.json"});
+        engine.put("store", store);
         return engine;
     }
 
