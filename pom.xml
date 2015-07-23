@@ -47,6 +47,7 @@
     <module>server-web</module>
     <module>tools</module>
     <module>world</module>
+    <module>game-events</module>
   </modules>
 
   <build>
