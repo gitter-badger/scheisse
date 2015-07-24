@@ -5,7 +5,7 @@ package org.dedda.games.scheisse.events;
  *
  * @author dedda
  */
-public interface GameCommonEventListener {
+public interface GameCommonEventListener extends BaseListener {
 
     void gameCommonEvent(GameCommonEvent event);
 

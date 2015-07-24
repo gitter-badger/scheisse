@@ -2,8 +2,9 @@ package scheisse.game_ai;
 
 import org.dedda.games.scheisse.entity.User;
 import org.dedda.games.scheisse.entity.item.Item;
+import org.dedda.games.scheisse.events.GameCommonEvent;
+import org.dedda.games.scheisse.events.GameCommonEventListener;
 import org.dedda.games.scheisse.world.Map;
-import sun.security.acl.WorldGroupImpl;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  *
  * @author dedda
  */
-public class Store {
+public class Store implements GameCommonEventListener {
 
     private User user;
     private List<Item> availableItems;
@@ -40,5 +41,10 @@ public class Store {
 
     public void setMap(Map map) {
         this.map = map;
+    }
+
+    @Override
+    public void gameCommonEvent(GameCommonEvent event) {
+
     }
 }
