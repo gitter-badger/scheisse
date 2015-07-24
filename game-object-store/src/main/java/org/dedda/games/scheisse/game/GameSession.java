@@ -104,4 +104,24 @@ public final class GameSession {
 
     }
 
+    public static List<GameCommonEventListener> getGameCommonEventListeners() {
+        return gameCommonEventListeners;
+    }
+
+    public static List<ItemStoreEventListener> getItemStoreEventListeners() {
+        return itemStoreEventListeners;
+    }
+
+    public static List<NpcStoreEventListener> getNpcStoreEventListeners() {
+        return npcStoreEventListeners;
+    }
+
+    public static List<BaseListener> getListeners() {
+        List<BaseListener> allListeners = new ArrayList<>();
+        allListeners.addAll(gameCommonEventListeners);
+        allListeners.addAll(itemStoreEventListeners);
+        allListeners.addAll(npcStoreEventListeners);
+        return allListeners;
+    }
+
 }
