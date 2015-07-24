@@ -1,49 +1,25 @@
 print("event.js");
 
 var eventHandler = new function() {
-    this.gameCommonEventListeners = [];
-    this.itemStoreEventListeners = [];
-    this.npcStoreEventListeners = [];
+    this.gameCommonEventListeners = new Array();
+    this.itemStoreEventListeners = new Array();
+    this.npcStoreEventListeners = new Array();
     this.gameCommonEvent = function(event) {
-        this.gameCommonEventListeners.foreach(
-            function(listener) {
-                listener.gameCommonEvent(event);
-            }
-        );
+        var i = this.gameCommonEventListeners.length;
+        while (i--) {
+            this.gameCommonEventListeners[i].gameCommonEvent(event);
+        }
     };
     this.itemStoreEvent = function(event) {
-        this.itemStoreEventListeners.foreach(
-            function(listener) {
-                listener.itemStoreEvent(event);
-            }
-        );
+        var i = this.itemStoreEventListeners.length;
+        while (i--) {
+            this.itemStoreEventListeners[i].itemStoreEvent(event);
+        }
     };
     this.npcStoreEvent = function(event) {
-        this.npcStoreEventListeners.foreach(
-            function(listener) {
-                listener.npcStoreEvent(event);
-            }
-        );
-    };
-    this.addGameCommonEventListener = function(listener) {
-        if ('gameCommonEvent' in listener) {
-            if (!this.gameCommonEventListeners.contains(listener)) {
-                this.gameCommonEventListeners.push(listener);
-            }
-        }
-    };
-    this.addItemStoreEventListener = function(listener) {
-        if ('itemStoreEvent' in listener) {
-            if (!this.itemStoreEventListeners.contains(listener)) {
-                this.itemStoreEventListeners.push(listener);
-            }
-        }
-    };
-    this.addNpcStoreEventListener = function(listener) {
-        if ('npcStoreEvent' in listener) {
-            if (!this.npcStoreEventListeners.contains(listener)) {
-                this.npcStoreEventListeners.push(listener);
-            }
+        var i = this.npcStoreEventListeners.length;
+        while (i--) {
+            this.npcStoreEventListeners[i].npcStoreEvent(event);
         }
     };
     this.removeGameCommonEventListener = function(listener) {

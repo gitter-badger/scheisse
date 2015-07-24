@@ -29,7 +29,6 @@ public class CommonListener implements GameCommonEventListener,
     public void gameCommonEvent(final GameCommonEvent event) {
         engine.put("tmpEvent", event);
         eval("eventHandler.gameCommonEvent(tmpEvent);");
-        //eval("print(tmpEvent);");
     }
 
     @Override
