@@ -1,5 +1,7 @@
 package org.dedda.games.scheisse.state.game;
 
+import org.dedda.games.scheisse.events.GameCommonEvent;
+import org.dedda.games.scheisse.game.GameSession;
 import org.dedda.games.scheisse.player.Player;
 import org.dedda.games.scheisse.state.State;
 import org.dedda.games.scheisse.world.Map;
@@ -7,6 +9,8 @@ import org.dedda.games.scheisse.world.Map;
 import java.awt.Graphics2D;
 import java.awt.geom.Point2D;
 import java.io.File;
+
+import static org.dedda.games.scheisse.events.GameCommonEvent.*;
 
 /**
  * Created by dedda on 4/17/14.
@@ -54,11 +58,13 @@ public class Game implements State, Runnable {
         running = true;
         if (!running) {
             new Thread(this).start();
+            GameSession.gameCommonEvent(new GameCommonEvent(CODE_NEW_GAME_STARTED, this));
         }
     }
 
     public void stop(final boolean save) {
         if (running) {
+            GameSession.gameCommonEvent(new GameCommonEvent(CODE_GAME_STOPPED, this));
             this.save = save;
             running = false;
         }

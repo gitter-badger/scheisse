@@ -12,6 +12,7 @@ public class GameCommonEvent {
     public static final int CODE_GAME_LOADED = 2;
     public static final int CODE_GAME_PAUSED = 3;
     public static final int CODE_GAME_RESUMED = 4;
+    public static final int CODE_GAME_STOPPED = 5;
 
     private final int code;
     private final Object otherData;
