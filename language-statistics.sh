@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 
-echo java files:
+echo -n "java files: "
 find . -name '*.java' | wc -l
-echo java lines:
+echo -n "java lines: "
 find . -name '*.java' | xargs cat | wc -l
 echo
-echo js files:
+echo -n "js files: "
 find . -name '*.js' | wc -l
-echo js lines:
+echo -n "js lines: "
 find . -name '*.js' | xargs cat | wc -l
 echo
-echo xhtml files:
+echo -n "xhtml files: "
 find . -name '*.xhtml' | wc -l
-echo xhtml lines:
+echo -n "xhtml lines: "
 find . -name '*.xhtml' | xargs cat | wc -l
 echo
-echo css files:
+echo -n "css files: "
 find . -name '*.css' | wc -l
-echo css lines:
+echo -n "css lines: "
 find . -name '*.css' | xargs cat | wc -l
 echo
-echo robot files:
+echo -n "robot files: "
 find . -name '*.robot' | wc -l
-echo robot lines:
+echo -n "robot lines: "
 find . -name '*.robot' | xargs cat | wc -l
