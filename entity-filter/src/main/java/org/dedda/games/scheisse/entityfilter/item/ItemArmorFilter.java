@@ -38,11 +38,11 @@ public class ItemArmorFilter extends ItemFilter {
         }
         switch (mode) {
             case MODE_BELOW:
-                return this.armor >= item.getArmor();
+                return this.armor > item.getArmor();
             case MODE_EXACT:
                 return this.armor == item.getArmor();
             case MODE_ABOVE:
-                return this.armor <= item.getArmor();
+                return this.armor < item.getArmor();
             default:
                 return false;
         }

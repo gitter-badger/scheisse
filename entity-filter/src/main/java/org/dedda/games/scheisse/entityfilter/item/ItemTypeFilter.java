@@ -28,6 +28,10 @@ public class ItemTypeFilter extends ItemFilter {
     public final boolean accept(final Item item) {
         if (strategy == STRATEGY_ALL) {
             return accept_all(item);
+        } else if (strategy == STRATEGY_SOME) {
+            return accept_some(item);
+        } else if (strategy == STRATEGY_NONE) {
+            return accept_none(item);
         }
         return false;
     }
