@@ -1,7 +1,5 @@
 package org.dedda.games.scheisse.fsloaders.resource;
 
-import org.dedda.games.scheisse.fsloaders.resource.FileInput;
-
 import java.io.File;
 import java.util.HashMap;
 

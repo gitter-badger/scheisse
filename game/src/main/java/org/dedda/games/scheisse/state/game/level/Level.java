@@ -1,7 +1,5 @@
 package org.dedda.games.scheisse.state.game.level;
 
-import org.dedda.games.scheisse.npc.npc.NPC;
-
 /**
  * Class for the leveling system.
  * <p/>

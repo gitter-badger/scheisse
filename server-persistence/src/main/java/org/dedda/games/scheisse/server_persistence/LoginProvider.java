@@ -10,7 +10,6 @@ import org.dedda.games.scheisse.entity.User;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named

@@ -5,9 +5,7 @@ import org.dedda.games.scheisse.entity.item.ItemStore;
 import org.dedda.games.scheisse.fsloaders.resource.FileInput;
 import org.dedda.games.scheisse.fsloaders.resource.FileTypes;
 import org.dedda.games.scheisse.fsloaders.resource.Resource;
-import org.dedda.games.scheisse.tool.Parse;
 
-import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
 import java.io.FileFilter;

@@ -3,9 +3,6 @@ package org.dedda.games.scheisse.game;
 import org.dedda.games.scheisse.entity.item.Item;
 import org.dedda.games.scheisse.events.item.ItemStoreEvent;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import static org.dedda.games.scheisse.events.item.ItemStoreEvent.CODE_ITEM_REGISTERED;
 import static org.dedda.games.scheisse.events.item.ItemStoreEvent.CODE_ITEM_UNREGISTERED;
 
