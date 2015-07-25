@@ -9,7 +9,11 @@ import java.awt.geom.Point2D;
  *
  * @author dedda
  */
-public abstract class Distances {
+public final class Distances {
+
+    private Distances() {
+
+    }
 
     /**
      * Calculates the angle between two {@link java.awt.geom.Point2D.Double}s.

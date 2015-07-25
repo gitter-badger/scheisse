@@ -2,8 +2,14 @@ package org.dedda.games.scheisse.tool;
 
 /**
  * Created by dedda on 6/28/14.
+ *
+ * @author dedda
  */
-public abstract class Binary {
+public final class Binary {
+
+    private Binary() {
+
+    }
 
     /**
      * Gets a bit on a specific position in a {@link Byte} from left to right.
