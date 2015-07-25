@@ -9,6 +9,8 @@ import static org.junit.Assert.*;
 
 /**
  * Created by dedda on 7/25/15.
+ *
+ * @author dedda
  */
 public class ItemFilterTest {
 

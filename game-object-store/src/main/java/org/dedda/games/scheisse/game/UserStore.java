@@ -10,45 +10,15 @@ import java.util.Map;
  *
  * @author dedda
  */
-public class UserStore {
+public class UserStore extends BasicStore<User> {
 
-    private Map<Long, User> userMap;
-    private long idCounter = 0;
+    @Override
+    protected void registerEvent(long key, User object) {
 
-    public UserStore() {
-        this.userMap = new HashMap<>();
     }
 
-    public User getUser(final long id) {
-        if (userMap.containsKey(id)) {
-            return userMap.get(id);
-        }
-        return null;
-    }
+    @Override
+    protected void unregisterEvent(long key, User object) {
 
-    public long getKey(final User user) {
-        for (Map.Entry<Long, User> e : userMap.entrySet()) {
-            if (e.getValue().equals(user)) {
-                return e.getKey();
-            }
-        }
-        return -1;
     }
-
-    public long register(final User user) {
-        long key = getKey(user);
-        if (key > -1) {
-            return key;
-        }
-        userMap.put(idCounter++, user);
-        return idCounter;
-    }
-
-    public void unregister(final User user) {
-        long key = getKey(user);
-        if (key > -1) {
-            userMap.remove(key);
-        }
-    }
-
 }

@@ -4,6 +4,8 @@ import java.util.Map;
 
 /**
  * Created by dedda on 27.01.15.
+ *
+ * @author dedda
  */
 public class Attack {
 

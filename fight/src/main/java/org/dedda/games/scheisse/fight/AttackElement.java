@@ -2,6 +2,8 @@ package org.dedda.games.scheisse.fight;
 
 /**
  * Created by dedda on 27.01.15.
+ *
+ * @author dedda
  */
 public enum AttackElement {
 
