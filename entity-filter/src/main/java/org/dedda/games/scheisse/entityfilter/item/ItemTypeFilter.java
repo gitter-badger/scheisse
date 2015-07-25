@@ -42,7 +42,7 @@ public class ItemTypeFilter extends ItemFilter {
                 return false;
             }
         }
-        return false;
+        return true;
     }
 
     private boolean accept_some(final Item item) {
