@@ -22,6 +22,8 @@ public final class GameSession {
     private static List<ItemStoreEventListener> itemStoreEventListeners;
     private static List<NpcStoreEventListener> npcStoreEventListeners;
 
+
+
     public static void init() {
         gameCommonEventListeners = new ArrayList<>();
         itemStoreEventListeners = new ArrayList<>();
