@@ -17,7 +17,7 @@ public class WorldDirectoryFilter implements FileFilter {
             return false;
         }
         File[] contents = directory.listFiles(new FileFilter() {
-            public boolean accept(File file) {
+            public boolean accept(final File file) {
                 return file.isDirectory();
             }
         });

@@ -54,7 +54,7 @@ public abstract class SystemPrinter {
         return debug;
     }
 
-    public static void setDebug(boolean debug) {
+    public static void setDebug(final boolean debug) {
         SystemPrinter.debug = debug;
     }
 }

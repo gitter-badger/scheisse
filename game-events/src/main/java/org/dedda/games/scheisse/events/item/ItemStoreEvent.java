@@ -14,7 +14,7 @@ public class ItemStoreEvent {
     private final int code;
     private final Object otherData;
 
-    public ItemStoreEvent(int code, Object otherData) {
+    public ItemStoreEvent(final int code, final Object otherData) {
         this.code = code;
         this.otherData = otherData;
     }

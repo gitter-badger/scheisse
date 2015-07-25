@@ -40,7 +40,7 @@ public class ItemProvider {
         return em;
     }
 
-    public final void setEm(EntityManager em) {
+    public final void setEm(final EntityManager em) {
         this.em = em;
     }
 }

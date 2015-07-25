@@ -23,7 +23,7 @@ public class Store implements GameCommonEventListener {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(final User user) {
         this.user = user;
     }
 
@@ -31,7 +31,7 @@ public class Store implements GameCommonEventListener {
         return availableItems;
     }
 
-    public void setAvailableItems(List<Item> availableItems) {
+    public void setAvailableItems(final List<Item> availableItems) {
         this.availableItems = availableItems;
     }
 
@@ -39,12 +39,12 @@ public class Store implements GameCommonEventListener {
         return map;
     }
 
-    public void setMap(Map map) {
+    public void setMap(final Map map) {
         this.map = map;
     }
 
     @Override
-    public void gameCommonEvent(GameCommonEvent event) {
+    public void gameCommonEvent(final GameCommonEvent event) {
 
     }
 }

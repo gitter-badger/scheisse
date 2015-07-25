@@ -8,7 +8,7 @@ import org.dedda.games.scheisse.state.game.shop.Offer;
 public class TypeFilter extends ShopFilter {
 
     @Override
-    public boolean accept(Offer offer) {
+    public boolean accept(final Offer offer) {
         return false;
     }
 }

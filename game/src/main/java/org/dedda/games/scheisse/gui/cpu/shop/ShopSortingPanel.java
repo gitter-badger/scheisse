@@ -9,7 +9,7 @@ public class ShopSortingPanel extends JPanel {
 
     private ShopPanel shopPanel;
 
-    public ShopSortingPanel(ShopPanel shopPanel) {
+    public ShopSortingPanel(final ShopPanel shopPanel) {
         this.shopPanel = shopPanel;
     }
 

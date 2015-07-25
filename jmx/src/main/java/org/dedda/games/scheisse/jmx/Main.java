@@ -11,7 +11,7 @@ public class Main {
     private static int height;
     private static int interval;
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Main.args = args;
         parseArgs();
     }

@@ -47,7 +47,7 @@ public class ShopPanel extends JPanel implements InventoryTransactionListener {
         setBackground(Color.LIGHT_GRAY);
     }
 
-    public void transactionPerformed(InventoryTransactionEvent event) {
+    public void transactionPerformed(final InventoryTransactionEvent event) {
 
     }
 

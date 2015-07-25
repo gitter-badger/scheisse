@@ -22,7 +22,7 @@ public class User {
         return selected;
     }
 
-    public void setSelected(org.dedda.games.scheisse.entity.User selected) {
+    public void setSelected(final org.dedda.games.scheisse.entity.User selected) {
         this.selected = selected;
     }
 
@@ -30,7 +30,7 @@ public class User {
         return inventory;
     }
 
-    public void setInventory(Inventory inventory) {
+    public void setInventory(final Inventory inventory) {
         this.inventory = inventory;
     }
 }

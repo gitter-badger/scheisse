@@ -69,12 +69,12 @@ public class NPC extends Person {
     }
 
     @Override
-    public void attack(Person person) {
+    public void attack(final Person person) {
 
     }
 
     @Override
-    public void getAttacked(Attack attack) {
+    public void getAttacked(final Attack attack) {
 
     }
 

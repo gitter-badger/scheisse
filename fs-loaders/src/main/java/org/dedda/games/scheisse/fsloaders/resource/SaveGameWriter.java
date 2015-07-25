@@ -15,7 +15,7 @@ public class SaveGameWriter {
 
     private final File file;
 
-    public SaveGameWriter(File file) {
+    public SaveGameWriter(final File file) {
         this.file = file;
     }
 

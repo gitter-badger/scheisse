@@ -14,12 +14,12 @@ import static org.dedda.games.scheisse.events.item.ItemStoreEvent.CODE_ITEM_UNRE
 public class ItemStore extends BasicStore<Item> {
 
     @Override
-    protected void registerEvent(long key, Item object) {
+    protected void registerEvent(final long key, final Item object) {
         GameSession.itemStoreEvent(new ItemStoreEvent(CODE_ITEM_REGISTERED, object));
     }
 
     @Override
-    protected void unregisterEvent(long key, Item object) {
+    protected void unregisterEvent(final long key, final Item object) {
         GameSession.itemStoreEvent(new ItemStoreEvent(CODE_ITEM_UNREGISTERED, object));
     }
 

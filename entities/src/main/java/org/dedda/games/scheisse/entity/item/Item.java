@@ -142,7 +142,7 @@ public class Item
     public Item() {
     }
 
-    public Item(long id, String name, long price, int types, Image sprite) {
+    public Item(final long id, final String name, final long price, final int types, final Image sprite) {
         super();
         this.id = id;
         this.name = name;
@@ -271,7 +271,7 @@ public class Item
         return minLevel;
     }
 
-    public final void setMinLevel(long minLevel) {
+    public final void setMinLevel(final long minLevel) {
         this.minLevel = minLevel;
     }
 
@@ -279,7 +279,7 @@ public class Item
         return types;
     }
 
-    public final void setTypes(int types) {
+    public final void setTypes(final int types) {
         this.types = types;
     }
 

@@ -10,11 +10,11 @@ import java.util.logging.Logger;
  */
 public class ExtendedLogger extends Logger {
 
-    protected ExtendedLogger(String name, String resourceBundleName) {
+    protected ExtendedLogger(final String name, final String resourceBundleName) {
         super(name, resourceBundleName);
     }
 
-    public void log(Level level, String msg, ExtLoggingStrategy extStrategy) {
+    public void log(final Level level, final String msg, final ExtLoggingStrategy extStrategy) {
         super.log(level, msg);
         switch (extStrategy) {
             case NONE: return;
@@ -24,7 +24,7 @@ public class ExtendedLogger extends Logger {
         }
     }
 
-    private void logElasticsSimple(Level level, String msg) {
+    private void logElasticsSimple(final Level level, final String msg) {
 
     }
 

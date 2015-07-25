@@ -10,7 +10,7 @@ public class ElasticsConnector {
     private String host;
     private int port;
 
-    public ElasticsConnector(int port, String host) {
+    public ElasticsConnector(final int port, final String host) {
         this.port = port;
         this.host = host;
     }

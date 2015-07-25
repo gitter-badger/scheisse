@@ -10,13 +10,13 @@ public class PriceFilter extends ShopFilter {
     public final int min;
     public final int max;
 
-    public PriceFilter(int min, int max) {
+    public PriceFilter(final int min, final int max) {
         this.min = min;
         this.max = max;
     }
 
     @Override
-    public boolean accept(Offer offer) {
+    public boolean accept(final Offer offer) {
         return min <= offer.priceSingle && offer.priceSingle <= max;
     }
 }

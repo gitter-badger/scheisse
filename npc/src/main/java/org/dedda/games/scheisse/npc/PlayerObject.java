@@ -21,7 +21,7 @@ public class PlayerObject extends GameObject {
         );
     }
 
-    public void render(Graphics2D g2d) {
+    public void render(final Graphics2D g2d) {
 
     }
 }

@@ -40,7 +40,7 @@ public class ShopTablePanel extends JPanel {
         return shop;
     }
 
-    public void setShop(Shop shop) {
+    public void setShop(final Shop shop) {
         this.shop = shop;
     }
 }

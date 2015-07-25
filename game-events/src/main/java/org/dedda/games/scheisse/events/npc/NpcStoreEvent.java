@@ -15,7 +15,7 @@ public class NpcStoreEvent {
     private final int code;
     private final Object otherData;
 
-    public NpcStoreEvent(int code, Object otherData) {
+    public NpcStoreEvent(final int code, final Object otherData) {
         this.code = code;
         this.otherData = otherData;
     }

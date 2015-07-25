@@ -29,7 +29,7 @@ public class MenuBar extends JMenuBar {
         JMenu fileMenu = new JMenu("File");
         JMenuItem fileExit = new JMenuItem("Exit");
         fileExit.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent actionEvent) {
+            public void actionPerformed(final ActionEvent actionEvent) {
                 exit(0);
             }
         });

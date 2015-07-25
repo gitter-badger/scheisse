@@ -53,7 +53,7 @@ public class ItemLoader extends FileInput {
     public ArrayList<Item> loadAll(final File folder) {
         ArrayList<Item> items = new ArrayList<Item>();
         File[] files = folder.listFiles(new FileFilter() {
-            public boolean accept(File file) {
+            public boolean accept(final File file) {
                 return file.getName().endsWith(FileTypes.getExtension(ITEM));
             }
         });
