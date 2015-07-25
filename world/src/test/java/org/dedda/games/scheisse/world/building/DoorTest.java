@@ -8,8 +8,6 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
-import java.awt.Dimension;
-import java.awt.Point;
 import java.util.Arrays;
 import java.util.Collection;
 
