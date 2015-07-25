@@ -4,6 +4,8 @@ import org.dedda.games.scheisse.entity.item.Item;
 
 /**
  * Created by dedda on 08.01.15.
+ *
+ * @author dedda
  */
 public class ItemComplexFilter extends ItemFilter {
 
