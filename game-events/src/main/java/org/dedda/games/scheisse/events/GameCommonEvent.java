@@ -5,28 +5,15 @@ package org.dedda.games.scheisse.events;
  *
  * @author dedda
  */
-public class GameCommonEvent {
+public class GameCommonEvent extends BaseEvent {
 
-    public static final int CODE_GENERAL = 0;
     public static final int CODE_NEW_GAME_STARTED = 1;
     public static final int CODE_GAME_LOADED = 2;
     public static final int CODE_GAME_PAUSED = 3;
     public static final int CODE_GAME_RESUMED = 4;
     public static final int CODE_GAME_STOPPED = 5;
 
-    private final int code;
-    private final Object otherData;
-
-    public GameCommonEvent(final int code, final Object otherData) {
-        this.code = code;
-        this.otherData = otherData;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public Object getOtherData() {
-        return otherData;
+    public GameCommonEvent(int code, Object otherData) {
+        super(code, otherData);
     }
 }

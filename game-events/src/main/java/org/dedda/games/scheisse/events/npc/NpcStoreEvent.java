@@ -1,30 +1,21 @@
 package org.dedda.games.scheisse.events.npc;
 
+import org.dedda.games.scheisse.events.BaseEvent;
+
 /**
  * Created by dedda on 7/24/15.
  *
  * @author dedda
  */
-public class NpcStoreEvent {
+public class NpcStoreEvent extends BaseEvent {
 
-    public static final int CODE_GENERAL = 0;
     public static final int CODE_NPC_CREATED = 1;
     public static final int CODE_NPC_REVIVED = 2;
     public static final int CODE_NPC_DIED = 3;
+    public static final int CODE_NPC_REGISTERED = 4;
+    public static final int CODE_NPC_UNREGISTERED = 5;
 
-    private final int code;
-    private final Object otherData;
-
-    public NpcStoreEvent(final int code, final Object otherData) {
-        this.code = code;
-        this.otherData = otherData;
-    }
-
-    public Object getOtherData() {
-        return otherData;
-    }
-
-    public int getCode() {
-        return code;
+    public NpcStoreEvent(int code, Object otherData) {
+        super(code, otherData);
     }
 }

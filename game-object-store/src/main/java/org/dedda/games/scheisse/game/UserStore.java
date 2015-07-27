@@ -9,6 +9,8 @@ import org.dedda.games.scheisse.entity.User;
  */
 public class UserStore extends BasicStore<User> {
 
+    private User loggedInUser;
+
     @Override
     protected void registerEvent(final long key, final User object) {
 
