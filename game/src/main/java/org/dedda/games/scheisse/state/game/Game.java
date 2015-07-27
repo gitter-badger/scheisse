@@ -58,13 +58,13 @@ public class Game implements State, Runnable {
         running = true;
         if (!running) {
             new Thread(this).start();
-            GameSession.gameCommonEvent(new GameCommonEvent(CODE_NEW_GAME_STARTED, this));
+            GameSession.getInstance().gameCommonEvent(new GameCommonEvent(CODE_NEW_GAME_STARTED, this));
         }
     }
 
     public void stop(final boolean save) {
         if (running) {
-            GameSession.gameCommonEvent(new GameCommonEvent(CODE_GAME_STOPPED, this));
+            GameSession.getInstance().gameCommonEvent(new GameCommonEvent(CODE_GAME_STOPPED, this));
             this.save = save;
             running = false;
         }

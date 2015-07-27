@@ -15,12 +15,12 @@ public class ItemStore extends BasicStore<Item> {
 
     @Override
     protected void registerEvent(final long key, final Item object) {
-        GameSession.itemStoreEvent(new ItemStoreEvent(CODE_ITEM_REGISTERED, object));
+        GameSession.getInstance().itemStoreEvent(new ItemStoreEvent(CODE_ITEM_REGISTERED, object));
     }
 
     @Override
     protected void unregisterEvent(final long key, final Item object) {
-        GameSession.itemStoreEvent(new ItemStoreEvent(CODE_ITEM_UNREGISTERED, object));
+        GameSession.getInstance().itemStoreEvent(new ItemStoreEvent(CODE_ITEM_UNREGISTERED, object));
     }
 
 }

@@ -20,16 +20,26 @@ import java.util.List;
  */
 public final class GameSession {
 
-    private static List<GameCommonEventListener> gameCommonEventListeners;
-    private static List<ItemStoreEventListener> itemStoreEventListeners;
-    private static List<NpcStoreEventListener> npcStoreEventListeners;
-    private static List<UserStoreEventListener> userStoreEventListeners;
+    private List<GameCommonEventListener> gameCommonEventListeners;
+    private List<ItemStoreEventListener> itemStoreEventListeners;
+    private List<NpcStoreEventListener> npcStoreEventListeners;
+    private List<UserStoreEventListener> userStoreEventListeners;
 
-    private static ItemStore itemStore;
-    private static NpcStore npcStore;
-    private static UserStore userStore;
+    private ItemStore itemStore;
+    private NpcStore npcStore;
+    private UserStore userStore;
 
-    public static void init() {
+    private static GameSession instance;
+
+    static {
+        instance = new GameSession();
+    }
+
+    private GameSession() {
+        init();
+    }
+
+    public void init() {
         gameCommonEventListeners = new ArrayList<>();
         itemStoreEventListeners = new ArrayList<>();
         npcStoreEventListeners = new ArrayList<>();
@@ -39,71 +49,71 @@ public final class GameSession {
         userStore = new UserStore();
     }
 
-    public static void gameCommonEvent(final GameCommonEvent event) {
+    public void gameCommonEvent(final GameCommonEvent event) {
         gameCommonEventListeners.forEach(l -> l.gameCommonEvent(event));
     }
 
-    public static void itemStoreEvent(final ItemStoreEvent event) {
+    public void itemStoreEvent(final ItemStoreEvent event) {
         itemStoreEventListeners.forEach(l -> l.itemStoreEvent(event));
     }
 
-    public static void npcStoreEvent(final NpcStoreEvent event) {
+    public void npcStoreEvent(final NpcStoreEvent event) {
         npcStoreEventListeners.forEach(l -> l.npcStoreEvent(event));
     }
 
-    public static void userStoreEvent(final UserStoreEvent event) {
+    public void userStoreEvent(final UserStoreEvent event) {
         userStoreEventListeners.forEach(l -> l.userStoreEvent(event));
     }
 
-    public static void addGameCommonEventListener(final GameCommonEventListener listener) {
+    public void addGameCommonEventListener(final GameCommonEventListener listener) {
         if (!gameCommonEventListeners.contains(listener)) {
             gameCommonEventListeners.add(listener);
         }
     }
 
-    public static void removeGameCommonEventListener(final GameCommonEventListener listener) {
+    public void removeGameCommonEventListener(final GameCommonEventListener listener) {
         if (gameCommonEventListeners.contains(listener)) {
             gameCommonEventListeners.remove(listener);
         }
     }
 
-    public static void addItemStoreEventListener(final ItemStoreEventListener listener) {
+    public void addItemStoreEventListener(final ItemStoreEventListener listener) {
         if (!itemStoreEventListeners.contains(listener)) {
             itemStoreEventListeners.add(listener);
         }
     }
 
-    public static void removeItemStoreEventListener(final ItemStoreEventListener listener) {
+    public void removeItemStoreEventListener(final ItemStoreEventListener listener) {
         if (itemStoreEventListeners.contains(listener)) {
             itemStoreEventListeners.remove(listener);
         }
     }
 
-    public static void addNpcStoreEventListener(NpcStoreEventListener listener) {
+    public void addNpcStoreEventListener(NpcStoreEventListener listener) {
         if (!npcStoreEventListeners.contains(listener)) {
             npcStoreEventListeners.add(listener);
         }
     }
 
-    public static void removeNpcStoreEventListener(NpcStoreEventListener listener) {
+    public void removeNpcStoreEventListener(NpcStoreEventListener listener) {
         if (npcStoreEventListeners.contains(listener)) {
             npcStoreEventListeners.remove(listener);
         }
     }
 
-    public static void addUserStoreEventListener(UserStoreEventListener listener) {
+    public void addUserStoreEventListener(UserStoreEventListener listener) {
         if (!userStoreEventListeners.contains(listener)) {
             userStoreEventListeners.add(listener);
         }
     }
 
-    public static void removeUserStoreEventListener(UserStoreEventListener listener) {
+    public void removeUserStoreEventListener(UserStoreEventListener listener) {
         if (userStoreEventListeners.contains(listener)) {
             userStoreEventListeners.remove(listener);
         }
     }
 
-    public static void addListener(final BaseListener listener) {
+    public void addListener(final BaseListener listener) {
         if (listener instanceof GameCommonEventListener) {
             addGameCommonEventListener((GameCommonEventListener) listener);
         }
@@ -118,7 +128,7 @@ public final class GameSession {
         }
     }
 
-    public static void removeListener(final BaseListener listener) {
+    public void removeListener(final BaseListener listener) {
         if (listener instanceof GameCommonEventListener) {
             removeGameCommonEventListener((GameCommonEventListener) listener);
         }
@@ -133,27 +143,23 @@ public final class GameSession {
         }
     }
 
-    private GameSession() {
-
-    }
-
-    public static List<GameCommonEventListener> getGameCommonEventListeners() {
+    public List<GameCommonEventListener> getGameCommonEventListeners() {
         return gameCommonEventListeners;
     }
 
-    public static List<ItemStoreEventListener> getItemStoreEventListeners() {
+    public List<ItemStoreEventListener> getItemStoreEventListeners() {
         return itemStoreEventListeners;
     }
 
-    public static List<NpcStoreEventListener> getNpcStoreEventListeners() {
+    public List<NpcStoreEventListener> getNpcStoreEventListeners() {
         return npcStoreEventListeners;
     }
 
-    public static List<UserStoreEventListener> getUserStoreEventListeners() {
+    public List<UserStoreEventListener> getUserStoreEventListeners() {
         return userStoreEventListeners;
     }
 
-    public static List<BaseListener> getListeners() {
+    public List<BaseListener> getListeners() {
         List<BaseListener> allListeners = new ArrayList<>();
         allListeners.addAll(gameCommonEventListeners);
         allListeners.addAll(itemStoreEventListeners);
@@ -162,4 +168,7 @@ public final class GameSession {
         return allListeners;
     }
 
+    public static GameSession getInstance() {
+        return instance;
+    }
 }

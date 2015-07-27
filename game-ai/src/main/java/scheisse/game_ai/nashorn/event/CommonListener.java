@@ -27,7 +27,7 @@ public class CommonListener implements GameCommonEventListener,
     }
 
     public void register() {
-        GameSession.addListener(this);
+        GameSession.getInstance().addListener(this);
     }
 
     @Override

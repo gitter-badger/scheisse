@@ -14,11 +14,11 @@ public class NpcStore extends BasicStore<NPC> {
 
     @Override
     protected void registerEvent(long key, NPC object) {
-        GameSession.npcStoreEvent(new NpcStoreEvent(CODE_NPC_UNREGISTERED, object));
+        GameSession.getInstance().npcStoreEvent(new NpcStoreEvent(CODE_NPC_UNREGISTERED, object));
     }
 
     @Override
     protected void unregisterEvent(long key, NPC object) {
-        GameSession.npcStoreEvent(new NpcStoreEvent(CODE_NPC_UNREGISTERED, object));
+        GameSession.getInstance().npcStoreEvent(new NpcStoreEvent(CODE_NPC_UNREGISTERED, object));
     }
 }
