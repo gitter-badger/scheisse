@@ -1,5 +1,6 @@
 package scheisse.game_ai.nashorn;
 
+import org.dedda.games.scheisse.game.GameSession;
 import scheisse.game_ai.Store;
 
 import javax.json.Json;
@@ -43,11 +44,8 @@ public class NashornManager {
                     engine.eval(new FileReader(js));
                 }
             } else {
-                File[] files = file.listFiles(new FilenameFilter() {
-                    @Override
-                    public boolean accept(final File dir, final String name) {
-                        return name.endsWith(".js");
-                    }
+                File[] files = file.listFiles((dir, name) -> {
+                    return name.endsWith(".js");
                 });
                 for (File jsFile : files) {
                     engine.eval(new FileReader(jsFile));
@@ -61,6 +59,7 @@ public class NashornManager {
         ScriptEngine engine = getEngine();
         engine.eval("load(\"nashorn:mozilla_compat.js\");");
         engine.put("store", store);
+        engine.put("gameSession", GameSession.getInstance());
         engine = prepareEngine(engine, new String[]{"src/main/javascript/requiredJsFiles.json"});
         return engine;
     }
