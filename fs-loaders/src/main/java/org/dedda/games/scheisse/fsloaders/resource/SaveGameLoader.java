@@ -15,7 +15,7 @@ import java.util.HashMap;
  *
  * @author dedda
  */
-public class SaveGameLoader extends FileInput {
+public class SaveGameLoader extends JsonLoader {
 
     private File file;
 
