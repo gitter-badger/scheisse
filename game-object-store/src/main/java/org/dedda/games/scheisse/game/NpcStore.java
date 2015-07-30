@@ -13,12 +13,12 @@ import static org.dedda.games.scheisse.events.npc.NpcStoreEvent.CODE_NPC_UNREGIS
 public class NpcStore extends BasicStore<NPC> {
 
     @Override
-    protected void registerEvent(long key, NPC object) {
+    protected void registerEvent(final long key, final NPC object) {
         GameSession.getInstance().npcStoreEvent(new NpcStoreEvent(CODE_NPC_UNREGISTERED, object));
     }
 
     @Override
-    protected void unregisterEvent(long key, NPC object) {
+    protected void unregisterEvent(final long key, final NPC object) {
         GameSession.getInstance().npcStoreEvent(new NpcStoreEvent(CODE_NPC_UNREGISTERED, object));
     }
 }

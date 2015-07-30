@@ -15,7 +15,7 @@ public class NpcStoreEvent extends BaseEvent {
     public static final int CODE_NPC_REGISTERED = 4;
     public static final int CODE_NPC_UNREGISTERED = 5;
 
-    public NpcStoreEvent(int code, Object otherData) {
+    public NpcStoreEvent(final int code, final Object otherData) {
         super(code, otherData);
     }
 }

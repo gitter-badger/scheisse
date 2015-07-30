@@ -12,7 +12,7 @@ public class ItemStoreEvent extends BaseEvent {
     public static final int CODE_ITEM_REGISTERED = 1;
     public static final int CODE_ITEM_UNREGISTERED = 2;
 
-    public ItemStoreEvent(int code, Object otherData) {
+    public ItemStoreEvent(final int code, final Object otherData) {
         super(code, otherData);
     }
 }

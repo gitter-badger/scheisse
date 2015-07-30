@@ -85,8 +85,4 @@ public class NPC extends Person {
     public void setName(final String name) {
         this.name = name;
     }
-
-    public void render(Graphics2D g2d) {
-
-    }
 }

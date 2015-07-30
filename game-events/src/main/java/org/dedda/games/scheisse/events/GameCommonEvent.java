@@ -13,7 +13,7 @@ public class GameCommonEvent extends BaseEvent {
     public static final int CODE_GAME_RESUMED = 4;
     public static final int CODE_GAME_STOPPED = 5;
 
-    public GameCommonEvent(int code, Object otherData) {
+    public GameCommonEvent(final int code, final Object otherData) {
         super(code, otherData);
     }
 }

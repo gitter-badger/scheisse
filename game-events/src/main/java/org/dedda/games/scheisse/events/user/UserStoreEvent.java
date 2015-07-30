@@ -15,7 +15,7 @@ public class UserStoreEvent extends BaseEvent {
     public static final int CODE_USER_UNREGISTERED = 4;
     public static final int CODE_USER_CREATED = 5;
 
-    public UserStoreEvent(int code, Object otherData) {
+    public UserStoreEvent(final int code, final Object otherData) {
         super(code, otherData);
     }
 }
