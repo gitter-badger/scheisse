@@ -79,4 +79,6 @@ public class Soil {
     public static Texture getTexture(final Type type) {
         return textureMap.get(type);
     }
+
+    private Soil() {}
 }

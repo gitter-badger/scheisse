@@ -132,4 +132,6 @@ public class Main {
     public static void setDebug(final boolean debug) {
         Main.debug = debug;
     }
+
+    private Main() {}
 }

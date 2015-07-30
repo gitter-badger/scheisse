@@ -97,4 +97,6 @@ public class Options {
     public static void setResolution(final Dimension resolution) {
         Options.resolution = resolution;
     }
+
+    private Options() {}
 }

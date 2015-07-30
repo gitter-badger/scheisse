@@ -76,4 +76,5 @@ public class Main {
         System.out.println("interval: " + interval + "s");
     }
 
+    private Main() {}
 }
