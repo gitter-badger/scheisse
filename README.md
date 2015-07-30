@@ -6,8 +6,10 @@ Scheisse is supposed to be an online RPG with ingame shop system.
 
 ### Parts:
 
-* Game client
+* [Game client](game/README.md)
 
 * [Game Server](server/README.md)
 
-* Performance monitor
+### Modules
+
+Take a look at the [modules](MODULES.md) page.
