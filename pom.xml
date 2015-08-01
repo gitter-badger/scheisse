@@ -49,6 +49,7 @@
     <module>world</module>
     <module>game-events</module>
     <module>game-object-store</module>
+    <module>savegame</module>
   </modules>
 
   <build>
