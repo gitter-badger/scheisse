@@ -81,8 +81,9 @@ public abstract class Parse {
      * @return Parsed {@link java.awt.Point}
      */
     public static Point toPoint(final String string) {
-        int x = toInteger(string.substring(0, string.indexOf(',')));
-        int y = toInteger(string.substring(string.indexOf(',') + 1));
+        final String[] split = string.split(",");
+        int x = toInteger(split[0]);
+        int y = toInteger(split[1]);
         return new Point(x, y);
     }
 
@@ -98,8 +99,9 @@ public abstract class Parse {
      * @return Parsed {@link java.awt.geom.Point2D.Float}
      */
     public static Point2D.Float toPoint2DFloat(final String string) {
-        float x = toFloat(string.substring(0, string.indexOf(',')));
-        float y = toFloat(string.substring(string.indexOf(',') + 1));
+        final String[] split = string.split(",");
+        float x = toFloat(split[0]);
+        float y = toFloat(split[1]);
         return new Point2D.Float(x, y);
     }
 
@@ -115,8 +117,9 @@ public abstract class Parse {
      * @return Parsed {@link java.awt.geom.Point2D.Double}
      */
     public static Point2D.Double toPoint2DDouble(final String string) {
-        double x = toDouble(string.substring(0, string.indexOf(',')));
-        double y = toDouble(string.substring(string.indexOf(',') + 1));
+        final String[] split = string.split(",");
+        double x = toDouble(split[0]);
+        double y = toDouble(split[1]);
         return new Point2D.Double(x, y);
     }
 
