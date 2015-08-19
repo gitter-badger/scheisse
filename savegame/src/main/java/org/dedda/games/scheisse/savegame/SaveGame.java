@@ -4,8 +4,9 @@ import org.dedda.games.scheisse.npc.npc.NPC;
 import org.dedda.games.scheisse.player.Player;
 import org.dedda.games.scheisse.quest.Quest;
 
-import java.awt.*;
+import java.awt.Point;
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,6 +24,14 @@ public class SaveGame {
 
     public SaveGame() {
         player = new Player(true);
+        quests = new ArrayList<>();
+        npcs = new ArrayList<>();
+    }
+
+    public SaveGame(Player player, List<Quest> quests, List<NPC> npcs) {
+        this.player = player;
+        this.quests = quests;
+        this.npcs = npcs;
     }
 
     public void placeNPC(final NPC npc, final Point map, final Point2D.Double location) {
@@ -33,6 +42,18 @@ public class SaveGame {
         } else {
             npcs.parallelStream().filter(n -> n.getId() == npc.getId()).forEach(n -> {n.setMap(map); n.setLocation(location);});
         }
+    }
+
+    protected void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    protected void setQuests(List<Quest> quests) {
+        this.quests = quests;
+    }
+
+    protected void setNpcs(List<NPC> npcs) {
+        this.npcs = npcs;
     }
 
     public Player getPlayer() {
