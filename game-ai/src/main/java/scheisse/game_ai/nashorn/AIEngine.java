@@ -15,6 +15,9 @@ public class AIEngine {
     private final ScriptEngine engine;
 
     public AIEngine(ScriptEngine engine) {
+        if (!engine.getClass().equals(jdk.nashorn.api.scripting.NashornScriptEngine.class)) {
+            throw new RuntimeException("Wrong engine type given!");
+        }
         this.engine = engine;
     }
 
