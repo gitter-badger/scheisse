@@ -3,4 +3,4 @@
  * {@link org.dedda.games.scheisse.world.map.level.Level}s and
  * level logic.
  */
-package org.dedda.games.scheisse.state.game.level;
+package org.dedda.games.scheisse.level;

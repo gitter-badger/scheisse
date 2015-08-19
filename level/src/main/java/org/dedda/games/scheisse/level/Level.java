@@ -1,4 +1,4 @@
-package org.dedda.games.scheisse.state.game.level;
+package org.dedda.games.scheisse.level;
 
 /**
  * Class for the leveling system.

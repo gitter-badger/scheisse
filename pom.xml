@@ -37,19 +37,21 @@
     <module>fs-loaders</module>
     <module>game</module>
     <module>game-ai</module>
+    <module>game-events</module>
+    <module>game-object-store</module>
     <module>jmx</module>
+    <module>level</module>
     <module>npc</module>
     <module>perfmon</module>
     <module>player</module>
+    <module>quest</module>
+    <module>savegame</module>
     <module>server</module>
     <module>server-log</module>
     <module>server-persistence</module>
     <module>server-web</module>
     <module>tools</module>
     <module>world</module>
-    <module>game-events</module>
-    <module>game-object-store</module>
-    <module>savegame</module>
   </modules>
 
   <build>

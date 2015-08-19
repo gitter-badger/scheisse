@@ -1,7 +1,7 @@
-package org.dedda.games.scheisse.state.game.quest;
+package org.dedda.games.scheisse.quest;
 
+import org.dedda.games.scheisse.level.Level;
 import org.dedda.games.scheisse.player.Player;
-import org.dedda.games.scheisse.state.game.level.Level;
 
 import java.util.HashMap;
 
