@@ -11,6 +11,7 @@ import java.awt.geom.Point2D;
  */
 public class NPC extends Person {
 
+    protected long id;
     protected double maxSpeed;
     protected boolean evil;
     protected double direction = 0;
@@ -21,10 +22,12 @@ public class NPC extends Person {
     }
 
     public NPC(
+        final long id,
         final Point2D.Double location,
         final double maxSpeed,
         final boolean evil
     ) {
+        setId(id);
         setLocation(location);
         this.maxSpeed = maxSpeed;
     }
@@ -84,5 +87,13 @@ public class NPC extends Person {
 
     public void setName(final String name) {
         this.name = name;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

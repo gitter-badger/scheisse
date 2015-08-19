@@ -1,6 +1,5 @@
 package org.dedda.games.scheisse.player.inventory;
 
-//import org.dedda.games.scheisse.debug.SystemPrinter;
 import org.dedda.games.scheisse.entity.item.Item;
 import org.dedda.games.scheisse.entity.item.ItemStore;
 

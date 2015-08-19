@@ -5,6 +5,8 @@ import org.dedda.games.scheisse.entityfilter.item.ItemFilter;
 
 /**
  * Created by dedda on 10/11/14.
+ *
+ * @author dedda
  */
 public class CompareFilter extends ItemFilter {
 
