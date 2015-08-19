@@ -47,7 +47,7 @@ public class JSTestScriptRunnerTest extends NashornTest {
 
     @Test
     public void testDirectory() throws Exception {
-        ScriptEngine engine = runTestFile(file.getAbsolutePath());
+        AIEngine engine = runTestFile(file.getAbsolutePath());
         assertTrue(engineWasSuccessful(engine));
     }
 

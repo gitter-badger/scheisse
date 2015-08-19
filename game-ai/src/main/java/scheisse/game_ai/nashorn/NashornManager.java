@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.Arrays;
 
 /**
  * Created by dedda on 6/17/15.
@@ -22,18 +23,19 @@ import java.io.FileReader;
  */
 public class NashornManager {
 
-    public final ScriptEngine getEngine() {
-        return new ScriptEngineManager().getEngineByName("nashorn");
+    public final AIEngine getEngine() {
+        ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+        return new AIEngine(engine);
     }
 
-    public final ScriptEngine prepareEngine(final String[] jsFilesToLoad) throws FileNotFoundException, ScriptException {
-        ScriptEngine engine = getEngine();
+    public final AIEngine prepareEngine(final String[] jsFilesToLoad) throws FileNotFoundException, ScriptException {
+        AIEngine engine = getEngine();
         engine.eval("load(\"nashorn:mozilla_compat.js\");");
         engine = prepareEngine(engine, jsFilesToLoad);
         return engine;
     }
 
-    public final ScriptEngine prepareEngine(final ScriptEngine engine, final String[] jsFilesToLoad) throws FileNotFoundException, ScriptException {
+    public final AIEngine prepareEngine(final AIEngine engine, final String[] jsFilesToLoad) throws FileNotFoundException, ScriptException {
         for (String js : jsFilesToLoad) {
             File file = new File(js);
             if (file.isFile()) {
@@ -54,8 +56,8 @@ public class NashornManager {
         return engine;
     }
 
-    public final ScriptEngine getBasicGameScriptEngine(final Store store) throws FileNotFoundException, ScriptException {
-        ScriptEngine engine = getEngine();
+    public final AIEngine getBasicGameScriptEngine(final Store store) throws FileNotFoundException, ScriptException {
+        AIEngine engine = getEngine();
         engine.eval("load(\"nashorn:mozilla_compat.js\");");
         engine.put("store", store);
         engine.put("gameSession", GameSession.getInstance());
@@ -63,7 +65,22 @@ public class NashornManager {
         return engine;
     }
 
-    private void loadFilesFromJSON(final ScriptEngine engine, final File jsonFile) throws FileNotFoundException, ScriptException {
+    public void installFolder(final AIEngine engine, final File folder) throws Exception {
+        if (!folder.exists() || !folder.isDirectory()) {
+            throw new Exception("expected folder!");
+        }
+        final File runningOrderFile = new File((folder.getAbsolutePath() + (folder.getAbsolutePath().endsWith("/") ? "" : "/")) + "runningOrder.json");
+        if (runningOrderFile.exists()) {
+            loadFilesFromJSON(engine, runningOrderFile);
+            return;
+        }
+        File[] files = folder.listFiles(f -> (f.getName().endsWith(".js")));
+        for (File f : files) {
+            engine.eval(new FileReader(f));
+        }
+    }
+
+    private void loadFilesFromJSON(final AIEngine engine, final File jsonFile) throws FileNotFoundException, ScriptException {
         String folder = jsonFile.getParent();
         JsonReader reader = Json.createReader(new FileInputStream(jsonFile));
         JsonObject root = reader.readObject();

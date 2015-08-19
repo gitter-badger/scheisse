@@ -17,27 +17,26 @@ public class NashornManagerTest extends NashornTest {
     @Test
     public void testGetEngine() throws Exception {
         System.out.println("test");
-        ScriptEngine engine = manager.getEngine();
-        assertTrue(isNashornScriptEngine(engine));
+        AIEngine engine = manager.getEngine();
     }
 
     @Test
     public void testPrepareEngine() throws Exception {
-        ScriptEngine engine = manager.prepareEngine(new String[]{"src/test/javascript/test.js"});
+        AIEngine engine = manager.prepareEngine(new String[]{"src/test/javascript/test.js"});
         int a = 1;
         int b = 2;
         int expected = a + b;
-        int ans = ((Number) ((Invocable) engine).invokeFunction("addition", a, b)).intValue();
+        int ans = ((Number) engine.invokeFunction("addition", a, b)).intValue();
         assertEquals(expected, ans);
     }
 
     @Test
     public void testPrepareEngineDirectory() throws Exception {
-        ScriptEngine engine = manager.prepareEngine(new String[]{"src/test/javascript/test_dir"});
+        AIEngine engine = manager.prepareEngine(new String[]{"src/test/javascript/test_dir"});
         int a = 1;
         int b = 2;
         int expected = a + b;
-        int ans = ((Number) ((Invocable) engine).invokeFunction("addition", a, b)).intValue();
+        int ans = ((Number) engine.invokeFunction("addition", a, b)).intValue();
         assertEquals(expected, ans);
         int y = ((Number) (engine.eval("y;"))).intValue();
         assertEquals(10, y);

@@ -7,6 +7,7 @@ import org.dedda.games.scheisse.events.item.ItemStoreEvent;
 import org.dedda.games.scheisse.events.npc.NpcStoreEvent;
 import org.junit.Before;
 import org.junit.Test;
+import scheisse.game_ai.nashorn.AIEngine;
 import scheisse.game_ai.nashorn.NashornManager;
 import scheisse.game_ai.nashorn.NashornTest;
 
@@ -36,7 +37,7 @@ public class CommonListenerTest extends NashornTest {
 
     @Before
     public void setUp() throws Exception {
-        ScriptEngine engine = runTestFile("src/test/javascript/js_tests/eventTest.js");
+        AIEngine engine = runTestFile("src/test/javascript/js_tests/eventTest.js");
         listener = new CommonListener(engine);
     }
 

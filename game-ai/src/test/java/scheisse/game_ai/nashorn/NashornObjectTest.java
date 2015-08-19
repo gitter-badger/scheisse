@@ -18,7 +18,7 @@ public class NashornObjectTest extends NashornTest {
 
     @Before
     public void setUp() throws Exception {
-        ScriptEngine engine = manager.prepareEngine(new String[]{"src/test/javascript/class.js"});
+        AIEngine engine = manager.prepareEngine(new String[]{"src/test/javascript/class.js"});
         object = getNashornObject(engine, "TestClass", "testVar", new String[]{"Test"});
     }
 

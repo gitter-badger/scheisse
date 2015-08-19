@@ -7,6 +7,7 @@ import org.dedda.games.scheisse.events.item.ItemStoreEventListener;
 import org.dedda.games.scheisse.events.npc.NpcStoreEvent;
 import org.dedda.games.scheisse.events.npc.NpcStoreEventListener;
 import org.dedda.games.scheisse.game.GameSession;
+import scheisse.game_ai.nashorn.AIEngine;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
@@ -20,9 +21,9 @@ public class CommonListener implements GameCommonEventListener,
     ItemStoreEventListener,
     NpcStoreEventListener{
 
-    private ScriptEngine engine;
+    private AIEngine engine;
 
-    public CommonListener(final ScriptEngine engine) {
+    public CommonListener(final AIEngine engine) {
         this.engine = engine;
     }
 
@@ -56,7 +57,7 @@ public class CommonListener implements GameCommonEventListener,
         }
     }
 
-    public ScriptEngine getEngine() {
+    public AIEngine getEngine() {
         return engine;
     }
 }

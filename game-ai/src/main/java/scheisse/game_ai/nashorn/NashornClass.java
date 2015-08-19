@@ -12,10 +12,10 @@ import javax.script.ScriptException;
  */
 public class NashornClass {
 
-    private final ScriptEngine engine;
+    private final AIEngine engine;
     private final String className;
 
-    public NashornClass(final ScriptEngine engine, final String className) {
+    public NashornClass(final AIEngine engine, final String className) {
         this.engine = engine;
         this.className = className;
         if (!classExists()) {
@@ -38,7 +38,7 @@ public class NashornClass {
         return className;
     }
 
-    public final ScriptEngine getEngine() {
+    public final AIEngine getEngine() {
         return engine;
     }
 }
