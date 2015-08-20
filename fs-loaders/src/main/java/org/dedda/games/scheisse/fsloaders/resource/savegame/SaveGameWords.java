@@ -12,6 +12,7 @@ public final class SaveGameWords {
     public static final String MAP = "map";
     public static final String LOCATION = "location";
     public static final String INVENTORY = "inventory";
+    public static final String MONEY = "money";
 
     private SaveGameWords() {}
 

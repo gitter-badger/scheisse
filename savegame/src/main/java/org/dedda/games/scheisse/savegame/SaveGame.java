@@ -51,27 +51,22 @@ public class SaveGame {
         return this;
     }
 
-    public SaveGame setExperience(final long exp) {
-        player.setExperience(exp);
-        return this;
-    }
-
-    protected SaveGame setPlayer(Player player) {
+    public SaveGame setPlayer(Player player) {
         this.player = player;
         return this;
     }
 
-    protected SaveGame setQuests(List<Quest> quests) {
+    public SaveGame setQuests(List<Quest> quests) {
         this.quests = quests;
         return this;
     }
 
-    protected SaveGame setNpcs(List<NPC> npcs) {
+    public SaveGame setNpcs(List<NPC> npcs) {
         this.npcs = npcs;
         return this;
     }
 
-    protected SaveGame setBuildings(List<Building> buildings) {
+    public SaveGame setBuildings(List<Building> buildings) {
         this.buildings = buildings;
         return this;
     }
