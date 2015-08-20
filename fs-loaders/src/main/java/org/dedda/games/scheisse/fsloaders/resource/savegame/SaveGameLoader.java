@@ -4,6 +4,7 @@ import org.dedda.games.scheisse.fsloaders.resource.JsonLoader;
 import org.dedda.games.scheisse.player.Player;
 import org.dedda.games.scheisse.player.inventory.Inventory;
 import org.dedda.games.scheisse.player.inventory.Slot;
+import org.dedda.games.scheisse.savegame.SaveGame;
 import org.dedda.games.scheisse.tool.Parse;
 
 import java.awt.Point;
@@ -20,18 +21,21 @@ public class SaveGameLoader extends JsonLoader {
 
     private File file;
 
+    private SaveGame saveGame;
+
     /**
      * @param file File - save game file
      */
     public SaveGameLoader(final File file) {
         this.file = file;
+        this.saveGame = new SaveGame();
     }
 
     /**
      * @param fileName String - path to save game file
      */
     public SaveGameLoader(final String fileName) {
-        this.file = new File(fileName);
+        this(new File(fileName));
     }
 
     /**

@@ -1,4 +1,4 @@
-package org.dedda.games.scheisse.fsloaders.resource;
+package org.dedda.games.scheisse.fsloaders.resource.savegame;
 
 import junit.framework.Assert;
 import org.dedda.games.scheisse.entity.item.ItemStore;
@@ -33,7 +33,7 @@ public class SaveGameLoaderTest {
         SaveGameLoader sgl = new SaveGameLoader(
             new File(
                 "src/test/test_files/classes/" +
-                    "org/dedda/games/scheisse/io/resource/SaveGameLoader"
+                    "org/dedda/games/scheisse/io/resource/savegame/SaveGameLoader"
             )
         );
         Player instance = new Player(false);
