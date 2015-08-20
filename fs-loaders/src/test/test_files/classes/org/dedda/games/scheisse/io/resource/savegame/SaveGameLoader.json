@@ -22,5 +22,16 @@
         "count" : 10
       }
     ]
+  },
+  "world" : {
+    "npcs" : [
+
+    ],
+    "buildings" : [
+
+    ],
+    "quests" : [
+
+    ]
   }
 }
