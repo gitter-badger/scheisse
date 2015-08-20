@@ -99,17 +99,47 @@ public class SaveGameLoader extends JsonLoader {
 
     private List<Quest> createQuests(final JsonArray questsJson) {
         List<Quest> quests = new ArrayList<>();
+        int questNumber = questsJson.size();
+        for (int i = 0; i < questNumber; i++) {
+            JsonObject questJson = questsJson.getJsonObject(i);
+            Quest quest = createQuest(questJson);
+            quests.add(quest);
+        }
         return quests;
+    }
+
+    private Quest createQuest(final JsonObject questJson) {
+        return null;
     }
 
     private List<NPC> createNPCInfo(final JsonArray npcsJson) {
         List<NPC> npcs = new ArrayList<>();
+        int npcNumber = npcsJson.size();
+        for (int i = 0; i < npcNumber; i++) {
+            JsonObject npcJson = npcsJson.getJsonObject(i);
+            NPC npc = createNPC(npcJson);
+            npcs.add(npc);
+        }
         return npcs;
+    }
+
+    private NPC createNPC(final JsonObject npcJson) {
+        return null;
     }
 
     private List<Building> createBuildings(final JsonArray buildingsJson) {
         List<Building> buildings = new ArrayList<>();
+        int buildingNumber = buildingsJson.size();
+        for (int i = 0; i < buildingNumber; i++) {
+            JsonObject buildingJson = buildingsJson.getJsonObject(i);
+            Building building = createBuilding(buildingJson);
+            buildings.add(building);
+        }
         return buildings;
+    }
+
+    private Building createBuilding(final JsonObject buildingJson) {
+        return null;
     }
 
     @Override
