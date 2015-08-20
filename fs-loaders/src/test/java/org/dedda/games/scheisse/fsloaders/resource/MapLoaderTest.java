@@ -1,7 +1,7 @@
 package org.dedda.games.scheisse.fsloaders.resource;
 
+import org.dedda.games.scheisse.fsloaders.resource.world.map.MapLoader;
 import org.dedda.games.scheisse.world.Map;
-import org.dedda.games.scheisse.world.soil.Soil;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,5 +1,7 @@
-package org.dedda.games.scheisse.fsloaders.resource;
+package org.dedda.games.scheisse.fsloaders.resource.world.map;
 
+import org.dedda.games.scheisse.fsloaders.resource.FileInput;
+import org.dedda.games.scheisse.fsloaders.resource.GameDataWords;
 import org.dedda.games.scheisse.world.Map;
 import org.dedda.games.scheisse.world.soil.Soil;
 
