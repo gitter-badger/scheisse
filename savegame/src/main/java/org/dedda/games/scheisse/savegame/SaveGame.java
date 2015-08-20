@@ -3,7 +3,9 @@ package org.dedda.games.scheisse.savegame;
 import org.dedda.games.scheisse.npc.npc.NPC;
 import org.dedda.games.scheisse.player.Player;
 import org.dedda.games.scheisse.quest.Quest;
+import org.dedda.games.scheisse.world.building.Building;
 
+import javax.naming.ldap.PagedResultsControl;
 import java.awt.Point;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
@@ -22,19 +24,23 @@ public class SaveGame {
 
     private List<NPC> npcs;
 
+    private List<Building> buildings;
+
     public SaveGame() {
         player = new Player(true);
         quests = new ArrayList<>();
         npcs = new ArrayList<>();
+        buildings = new ArrayList<>();
     }
 
-    public SaveGame(Player player, List<Quest> quests, List<NPC> npcs) {
+    public SaveGame(Player player, List<Quest> quests, List<NPC> npcs, List<Building> buildings) {
         this.player = player;
         this.quests = quests;
         this.npcs = npcs;
+        this.buildings = buildings;
     }
 
-    public void placeNPC(final NPC npc, final Point map, final Point2D.Double location) {
+    public SaveGame placeNPC(final NPC npc, final Point map, final Point2D.Double location) {
         if (npcs.parallelStream().filter(n -> n.getId() == npc.getId()).count() == 0) {
             npc.setMap(map);
             npc.setLocation(location);
@@ -42,18 +48,32 @@ public class SaveGame {
         } else {
             npcs.parallelStream().filter(n -> n.getId() == npc.getId()).forEach(n -> {n.setMap(map); n.setLocation(location);});
         }
+        return this;
     }
 
-    protected void setPlayer(Player player) {
+    public SaveGame setExperience(final long exp) {
+        player.setExperience(exp);
+        return this;
+    }
+
+    protected SaveGame setPlayer(Player player) {
         this.player = player;
+        return this;
     }
 
-    protected void setQuests(List<Quest> quests) {
+    protected SaveGame setQuests(List<Quest> quests) {
         this.quests = quests;
+        return this;
     }
 
-    protected void setNpcs(List<NPC> npcs) {
+    protected SaveGame setNpcs(List<NPC> npcs) {
         this.npcs = npcs;
+        return this;
+    }
+
+    protected SaveGame setBuildings(List<Building> buildings) {
+        this.buildings = buildings;
+        return this;
     }
 
     public Player getPlayer() {
@@ -66,5 +86,9 @@ public class SaveGame {
 
     public List<NPC> getNpcs() {
         return npcs;
+    }
+
+    public List<Building> getBuildings() {
+        return buildings;
     }
 }

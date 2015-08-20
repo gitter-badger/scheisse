@@ -38,9 +38,9 @@ public class SaveGameTest {
         List<NPC> npcList = new ArrayList<>();
         npcList.add(npc0);
         npcList.add(npc1);
-        this.instance.setNpcs(npcList);
-        this.instance.placeNPC(npc2, new Point(2, 2), new Point2D.Double(1, 1));
-        this.instance.placeNPC(npc3, new Point(3, 3), new Point2D.Double(4, 4));
+        this.instance   .setNpcs(npcList)
+                        .placeNPC(npc2, new Point(2, 2), new Point2D.Double(1, 1))
+                        .placeNPC(npc3, new Point(3, 3), new Point2D.Double(4, 4));
         npcList = this.instance.getNpcs();
         assertEquals(1, npcList.stream().filter(npc -> npc.getId() == 1).count());
         npc1 = npcList.stream().filter(npc -> npc.getId() == 1).findFirst().get();
