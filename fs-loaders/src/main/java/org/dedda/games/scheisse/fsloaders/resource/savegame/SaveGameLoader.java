@@ -1,5 +1,6 @@
-package org.dedda.games.scheisse.fsloaders.resource;
+package org.dedda.games.scheisse.fsloaders.resource.savegame;
 
+import org.dedda.games.scheisse.fsloaders.resource.JsonLoader;
 import org.dedda.games.scheisse.player.Player;
 import org.dedda.games.scheisse.player.inventory.Inventory;
 import org.dedda.games.scheisse.player.inventory.Slot;
