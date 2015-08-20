@@ -52,9 +52,10 @@ public class NashornTest {
         long time = System.currentTimeMillis();
         System.out.println("-INFO- Starting javascript test " + fileName);
         AIEngine engine = getBasicGameEngine();
-        engine.eval(new FileReader(PRE_TEST_FILE));
-        engine.eval(new FileReader(new File(fileName)));
-        engine.eval(new FileReader(POST_TEST_FILE));
+        engine.runFile(PRE_TEST_FILE).runFile(fileName).runFile(POST_TEST_FILE);
+//        engine.eval(new FileReader(PRE_TEST_FILE));
+//        engine.eval(new FileReader(new File(fileName)));
+//        engine.eval(new FileReader(POST_TEST_FILE));
         System.out.println("-INFO- tests run... " + (System.currentTimeMillis() - time) + "ms");
         return engine;
     }
@@ -66,11 +67,11 @@ public class NashornTest {
             System.out.println("-WARNING- Success is not defined in engine!");
             return false;
         }
-        if ((boolean) engine.eval("success;")) {
+        if ((boolean) engine.get("success")) {
             return true;
         }
         if ((boolean) engine.eval(areErrorMessagesDefined)) {
-            String[] errorMessages = (String[]) engine.eval("errorMessages;");
+            String[] errorMessages = (String[]) engine.get("errorMessages");
             for (String message : errorMessages) {
                 System.out.println("-INFO- " + message);
             }
