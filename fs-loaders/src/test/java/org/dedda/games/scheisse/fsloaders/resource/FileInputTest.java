@@ -20,8 +20,7 @@ public class FileInputTest {
 
     @Before
     public void setUp() {
-        folder = "src/test/test_files/classes/" +
-            "org/dedda/games/scheisse/io/FileInput/";
+        folder = TestFiles.FILE_INPUT_FOLDER;
         files = new File[]{
             new File(folder + "read"),
             new File(folder + "readImage.png"),
