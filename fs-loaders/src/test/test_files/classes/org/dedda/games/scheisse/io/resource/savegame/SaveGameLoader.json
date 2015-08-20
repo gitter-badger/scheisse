@@ -1,9 +1,10 @@
 {
-  "user" : {
+  "player" : {
     "name" : "Test user",
     "exp" : 789,
     "map" : "1,2",
-    "location" : "3.4,5.6"
+    "location" : "3.4,5.6",
+    "money" : 10
   },
   "inventory" : {
     "size" : 3,

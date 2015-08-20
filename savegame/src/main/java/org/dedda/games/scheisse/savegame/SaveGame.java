@@ -86,4 +86,17 @@ public class SaveGame {
     public List<Building> getBuildings() {
         return buildings;
     }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (!(o instanceof SaveGame)) {
+            return false;
+        }
+        SaveGame other = (SaveGame) o;
+        return (player.equals(other.player)
+            && quests.equals(other.quests)
+            && npcs.equals(other.npcs)
+            && buildings.equals(other.buildings));
+    }
+
 }
