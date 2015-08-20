@@ -53,9 +53,6 @@ public class NashornTest {
         System.out.println("-INFO- Starting javascript test " + fileName);
         AIEngine engine = getBasicGameEngine();
         engine.runFile(PRE_TEST_FILE).runFile(fileName).runFile(POST_TEST_FILE);
-//        engine.eval(new FileReader(PRE_TEST_FILE));
-//        engine.eval(new FileReader(new File(fileName)));
-//        engine.eval(new FileReader(POST_TEST_FILE));
         System.out.println("-INFO- tests run... " + (System.currentTimeMillis() - time) + "ms");
         return engine;
     }

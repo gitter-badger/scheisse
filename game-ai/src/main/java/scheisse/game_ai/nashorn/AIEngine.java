@@ -65,7 +65,9 @@ public class AIEngine {
         if (!folder.exists() || !folder.isDirectory()) {
             throw new Exception("expected folder!");
         }
-        final File runningOrderFile = new File((folder.getAbsolutePath() + (folder.getAbsolutePath().endsWith("/") ? "" : "/")) + "runningOrder.json");
+        String path = folder.getAbsolutePath();
+        path = path + (path.endsWith("/") ? "" : "/");
+        final File runningOrderFile = new File(path + "runningOrder.json");
         if (runningOrderFile.exists()) {
             loadFilesFromJSON(runningOrderFile);
             return this;
