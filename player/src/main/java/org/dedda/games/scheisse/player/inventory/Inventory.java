@@ -2,6 +2,7 @@ package org.dedda.games.scheisse.player.inventory;
 
 import org.dedda.games.scheisse.entity.item.Item;
 import org.dedda.games.scheisse.entity.item.ItemStore;
+import org.dedda.games.scheisse.tool.SystemPrinter;
 
 import java.util.ArrayList;
 
@@ -112,12 +113,12 @@ public class Inventory {
     }
 
     public void print() {
-//        SystemPrinter.debugln("Inventory:");
-//        SystemPrinter.debugln("size: " + slots.size());
+        SystemPrinter.debugln("Inventory:");
+        SystemPrinter.debugln("size: " + slots.size());
         for (Slot slot : slots) {
-//            SystemPrinter.debugln(
-//                slot.getDummy().getName() + ": " + slot.getNumberOfItems()
-//            );
+            SystemPrinter.debugln(
+                slot.getDummy().getName() + ": " + slot.getNumberOfItems()
+            );
         }
     }
 

@@ -15,7 +15,6 @@ public class MainMenu extends Menu {
     public static final int EXIT = 3;
 
     private Graphics2D g2d;
-    //private boolean running = false;
     private int selection = 0;
 
     public MainMenu(final Graphics2D g2d) {
@@ -33,9 +32,7 @@ public class MainMenu extends Menu {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            //selection = EXIT;
         }
-        //running = false;
         return selection;
     }
 

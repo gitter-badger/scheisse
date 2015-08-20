@@ -13,45 +13,23 @@ public class ShopConnector {
     public static final long NOT_AVAILABLE = -1;
 
     public List<Offer> getOffers() {
-        //List<Long> availableIDs = ShopService.getAvailableItems();
         LinkedList<Offer> offers = new LinkedList<Offer>();
-        /*for (long currentId : availableIDs) {
-            long availableAmount = ShopService.getAvailableQuantity(currentId);
-            long price = ShopService.getBuyingPrice(currentId);
-            offers.add(new Offer(currentId, availableAmount, price));
-        }*/
+
         return offers;
     }
 
     public List<Offer> getOffers(final ItemType itemType) {
-        /*ArrayList<Long> allIDs = new ArrayList<Long>();
-        for (long currentId : org.dedda.games.scheisse.entity.item.Item.getItemMap().keySet()) {
-            if (org.dedda.games.scheisse.entity.item.Item.forId(currentId).getTypes() == itemType) {
-                allIDs.add(currentId);
-            }
-        }
-        */
         LinkedList<Offer> offers = new LinkedList<Offer>();
-        /*
-        for (long currentId : allIDs) {
-            long price = getBuyingPrice(currentId);
-            if (price >= 0) {
-                long amountAvailable =
-                        ShopService.getAvailableQuantity(currentId);
-                Offer offer = new Offer(currentId, amountAvailable, price);
-            }
-        }*/
+
         return offers;
     }
 
     public long getSellingPrice(final long itemId) {
         return 0;
-        // return ShopService.getSellingPrice(itemId);
     }
 
     public long getBuyingPrice(final long itemId) {
         return 0;
-        // return ShopService.getBuyingPrice(itemId);
     }
 
     /**

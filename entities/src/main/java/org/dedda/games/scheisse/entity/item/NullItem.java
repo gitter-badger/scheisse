@@ -3,6 +3,8 @@ package org.dedda.games.scheisse.entity.item;
 
 /**
  * Created by dedda on 5/22/14.
+ *
+ * @author dedda
  */
 public class NullItem extends Item {
 
@@ -13,7 +15,6 @@ public class NullItem extends Item {
      * @see Item
      */
     public NullItem() {
-        //super(0, "NULL", 0, ItemCategory.OTHER, null);
         setId(0);
         setName("NULL");
         setPrice(0);

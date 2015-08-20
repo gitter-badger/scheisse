@@ -2,6 +2,8 @@ package org.dedda.games.scheisse.fsloaders.resource;
 
 /**
  * Created by dedda on 4/20/14.
+ *
+ * @author dedda
  */
 public abstract class GameDataWords {
 

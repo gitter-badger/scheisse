@@ -10,8 +10,6 @@ public class PlayerObject extends GameObject {
 
     public PlayerObject() {
         super(new Point2D.Double(0, 0));
-
-        //GuiPlayer guiPlayer = new GuiPlayer();
     }
 
     @Override
