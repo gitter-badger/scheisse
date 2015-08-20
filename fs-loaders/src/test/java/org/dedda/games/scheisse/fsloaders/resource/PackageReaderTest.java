@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.io.File;
 
+import static org.dedda.games.scheisse.fsloaders.resource.TestFiles.PACKAGE_READER_FILE;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -13,7 +14,7 @@ public class PackageReaderTest {
 
     @Test
     public void testReadPackage() throws Exception {
-        File packageFile = new File("src/test/test_files/testpackage.dpk");
+        File packageFile = new File(PACKAGE_READER_FILE);
         PackageReader packageReader = new PackageReader();
         BinaryResource[] resources = {
             new BinaryResource(

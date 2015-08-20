@@ -14,6 +14,9 @@ import java.awt.geom.Point2D;
 import java.io.File;
 import java.util.ArrayList;
 
+import static org.dedda.games.scheisse.fsloaders.resource.TestFiles.ITEM_LOADER_FOLDER;
+import static org.dedda.games.scheisse.fsloaders.resource.TestFiles.SAVEGAME_LOADER_FILE;
+
 public class SaveGameLoaderTest {
 
     @Before
@@ -24,16 +27,10 @@ public class SaveGameLoaderTest {
     @Test
     public void testLoad() throws Exception {
         new ItemLoader().loadAll(
-            new File(
-                "src/test/test_files/classes/" +
-                    "org/dedda/games/scheisse/io/resource/item/ItemLoader"
-            )
+            new File(ITEM_LOADER_FOLDER)
         );
         SaveGameLoader sgl = new SaveGameLoader(
-            new File(
-                "src/test/test_files/classes/" +
-                    "org/dedda/games/scheisse/io/resource/SaveGameLoader"
-            )
+            new File(SAVEGAME_LOADER_FILE)
         );
         Player instance = new Player(false);
         instance.setName("Test user");
@@ -41,7 +38,7 @@ public class SaveGameLoaderTest {
         instance.setLocation(new Point2D.Double(3.4, 5.6));
         instance.setExperience(789L);
         Inventory inventory = new Inventory();
-        ArrayList<Slot> slots = new ArrayList<Slot>();
+        ArrayList<Slot> slots = new ArrayList<>();
         Slot slot = new Slot(1, inventory);
         slot.setNumberOfItems(1);
         slots.add(slot);

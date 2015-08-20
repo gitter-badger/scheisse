@@ -2,6 +2,7 @@ package org.dedda.games.scheisse.fsloaders.resource.item;
 
 import org.dedda.games.scheisse.entity.item.Item;
 import org.dedda.games.scheisse.entity.item.ItemStore;
+import org.dedda.games.scheisse.fsloaders.resource.TestFiles;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,6 +13,7 @@ import static junit.framework.Assert.assertTrue;
 import static org.dedda.games.scheisse.entity.item.Item.TYPE_ARMOR;
 import static org.dedda.games.scheisse.entity.item.Item.TYPE_SHIELD;
 import static org.dedda.games.scheisse.entity.item.Item.TYPE_WEAPON;
+import static org.dedda.games.scheisse.fsloaders.resource.TestFiles.ITEM_LOADER_FOLDER;
 
 public class ItemLoaderTest {
 
@@ -58,23 +60,17 @@ public class ItemLoaderTest {
         ItemLoader itemLoader = new ItemLoader();
         Item weapon = itemLoader.loadItem(
             new File(
-                "src/test/test_files/classes/" +
-                    "org/dedda/games/scheisse/io/resource/item/" +
-                    "ItemLoader/wood_sword.di"
+                ITEM_LOADER_FOLDER + "wood_sword.di"
             )
         );
         Item armor = itemLoader.loadItem(
             new File(
-                "src/test/test_files/classes/" +
-                    "org/dedda/games/scheisse/io/resource/item/" +
-                    "ItemLoader/wood_armor.di"
+                ITEM_LOADER_FOLDER + "wood_armor.di"
             )
         );
         Item shield = itemLoader.loadItem(
             new File(
-                "src/test/test_files/classes/" +
-                    "org/dedda/games/scheisse/io/resource/item/" +
-                    "ItemLoader/wood_shield.di"
+                ITEM_LOADER_FOLDER + "wood_shield.di"
             )
         );
         assertTrue(testWeapon.equals(weapon));
@@ -84,7 +80,7 @@ public class ItemLoaderTest {
 
     @Test
     public void testLoadAll() throws Exception {
-        instance.loadAll(new File("src/test/test_files/classes/org/dedda/games/scheisse/io/resource/item/ItemLoader"));
+        instance.loadAll(new File(ITEM_LOADER_FOLDER));
         assertEquals(9, ItemStore.getItemMap().size());
     }
 }

@@ -1,5 +1,6 @@
 package org.dedda.games.scheisse.fsloaders.resource.npc;
 
+import org.dedda.games.scheisse.fsloaders.resource.TestFiles;
 import org.dedda.games.scheisse.npc.behavior.NPCJumpIfTrue;
 import org.dedda.games.scheisse.npc.behavior.NPCScript;
 import org.dedda.games.scheisse.npc.behavior.NPCScriptAction;
@@ -12,6 +13,7 @@ import org.junit.Test;
 import java.awt.geom.Point2D;
 import java.io.File;
 
+import static org.dedda.games.scheisse.fsloaders.resource.TestFiles.NPC_SCRIPT_LOADER_FILE;
 import static org.junit.Assert.assertTrue;
 
 public class NPCScriptLoaderTest {
@@ -22,9 +24,7 @@ public class NPCScriptLoaderTest {
 
     @Before
     public void setUp() throws Exception {
-        scriptFile = new File(
-            "src/test/test_files/classes/" +
-                "org/dedda/games/scheisse/io/resource/npc/NPCScriptLoader");
+        scriptFile = new File(NPC_SCRIPT_LOADER_FILE);
         npcScriptLoader = new NPCScriptLoader();
         npc = new NPC(new Point2D.Double(0d, 0d));
         npc.setMaxSpeed(3d);
