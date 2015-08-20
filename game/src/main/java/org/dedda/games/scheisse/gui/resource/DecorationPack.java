@@ -32,7 +32,6 @@ public class DecorationPack extends SpritePack {
             }
         );
         throw new UnsupportedOperationException();
-        //return sprites;
     }
 
     @Override
@@ -41,6 +40,5 @@ public class DecorationPack extends SpritePack {
         folder += folder.endsWith("/") ? "" : "/";
         Animation[] animations = new Animation[]{};
         throw new UnsupportedOperationException();
-        //return animations;
     }
 }
