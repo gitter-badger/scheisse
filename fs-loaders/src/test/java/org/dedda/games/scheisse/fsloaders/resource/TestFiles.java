@@ -14,6 +14,8 @@ public final class TestFiles {
     public static final String ITEM_LOADER_FOLDER = IO_FOLDER + "resource/item/ItemLoader/";
     public static final String NPC_SCRIPT_LOADER_FILE = IO_FOLDER + "resource/npc/NPCScriptLoader";
     public static final String SAVEGAME_LOADER_FILE = IO_FOLDER + "resource/SaveGameLoader";
+    public static final String WORLD_LOADER_FILE = IO_FOLDER + "resource/world/WorldLoader.json";
+    public static final String MAP_LOADER_FILE = IO_FOLDER + "resource/world/map/MapLoader.json";
 
     private TestFiles() {}
 

@@ -1,9 +1,11 @@
 {
   "id" : 1,
   "name" : "Test Map",
-  "location" : "0,0",
+  "location" : "1,2",
   "size" : "3,3",
   "soil" : [
-
+    "GRD",
+    "WGR",
+    "DWG"
   ]
 }
