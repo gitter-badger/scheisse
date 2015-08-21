@@ -1,36 +1,47 @@
 package org.dedda.games.scheisse.fsloaders.resource.world;
 
-import org.dedda.games.scheisse.fsloaders.resource.FileInput;
-import org.dedda.games.scheisse.fsloaders.resource.exception.NoWorldDirectoryException;
-import org.dedda.games.scheisse.npc.npc.NPC;
+import org.dedda.games.scheisse.fsloaders.resource.JsonLoader;
+import org.dedda.games.scheisse.fsloaders.resource.world.map.MapLoader;
+import org.dedda.games.scheisse.tool.Parse;
+import org.dedda.games.scheisse.world.Map;
+import org.dedda.games.scheisse.world.World;
 
+import javax.json.JsonArray;
+import javax.json.JsonObject;
+import java.awt.*;
 import java.io.File;
-import java.util.ArrayList;
+import java.io.FileNotFoundException;
 
 /**
  * Created by dedda on 11/2/14.
  *
  * @author dedda
  */
-public class WorldLoader extends FileInput {
+public class WorldLoader extends JsonLoader {
 
-    private File directory;
+    private MapLoader mapLoader;
 
-    public WorldLoader(final File directory) throws NoWorldDirectoryException {
-        if (!WorldDirectoryFilter.isWorldDirectory(directory)) {
-            throw new NoWorldDirectoryException();
-        }
-        this.directory = directory;
+    public WorldLoader() {
+        this.mapLoader = new MapLoader();
     }
 
-    public ArrayList<NPC> loadNPCs() {
-        ArrayList<NPC> npcs = new ArrayList<NPC>();
-        String npcDirectoryPath = directory.getAbsolutePath();
-        npcDirectoryPath += npcDirectoryPath.endsWith("/") ? "" : "/";
-        npcDirectoryPath += "npc/";
-        File npcDirectory = new File(npcDirectoryPath);
-
-        return npcs;
+    public World load(final File file) throws FileNotFoundException {
+        World world = null;
+        JsonObject root = readRoot(file);
+        String sizeS = root.getString("dimensions");
+        Dimension size = Parse.toDimension(sizeS);
+        world = new World(size);
+        JsonArray mapsJson = root.getJsonArray("map-files");
+        int mapCount = mapsJson.size();
+        String folder = file.getParent();
+        folder += folder.endsWith("/") ? "" : "/";
+        for (int i = 0; i < mapCount; i++) {
+            String fileName = mapsJson.getString(i);
+            File mapFile = new File(folder + fileName);
+            Map map = mapLoader.load(mapFile);
+            world.setMap(map.getLocation(), map);
+        }
+        return world;
     }
 
 }

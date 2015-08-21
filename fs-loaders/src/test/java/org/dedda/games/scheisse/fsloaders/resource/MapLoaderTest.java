@@ -24,10 +24,7 @@ public class MapLoaderTest {
 
     @Before
     public void setUp() throws Exception {
-        mapLoader = new MapLoader(
-            new File("src/test/test_files/classes/" +
-                "org/dedda/games/scheisse/io/MapLoader")
-        );
+        mapLoader = new MapLoader();
         map = new Map(new Dimension(5, 4));
         soil = new Type[5][4]/*{
                 {DIRT,  DIRT,   DIRT,   DIRT,   GRASS},
@@ -63,7 +60,10 @@ public class MapLoaderTest {
 
     @Test
     public void testLoad() throws Exception {
-        Map map = mapLoader.load();
+        Map map = mapLoader.load(
+            new File("src/test/test_files/classes/" +
+                "org/dedda/games/scheisse/io/MapLoader")
+        );
         assertEquals(this.map.getSoil(), map.getSoil());
     }
 

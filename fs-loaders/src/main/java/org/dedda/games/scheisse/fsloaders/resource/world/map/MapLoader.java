@@ -15,29 +15,13 @@ import java.util.ArrayList;
  */
 public class MapLoader extends FileInput {
 
-    private String folder;
-
-    /**
-     * @param folder String - parent folder for map files
-     */
-    public MapLoader(final String folder) {
-        this.folder = folder;
-    }
-
-    /**
-     * @param folder File - parent folder for map files
-     */
-    public MapLoader(final File folder) {
-        this.folder = folder.getAbsolutePath();
-    }
-
     /**
      * @return Map - map from given folder
      */
-    public Map load() {
+    public Map load(final File file) {
         Map map = null;
 
-        String fileData = read(new File(folder));
+        String fileData = read(file);
         ArrayList<String> mapProperties = new ArrayList<>();
         ArrayList<String> propertyValues = new ArrayList<>();
         ArrayList<String> mapLines = new ArrayList<>();
@@ -128,11 +112,7 @@ public class MapLoader extends FileInput {
 
     @Override
     public boolean equals(final Object object) {
-        if (object instanceof MapLoader) {
-            MapLoader mapLoader = (MapLoader) object;
-            return mapLoader.folder.equals(this.folder);
-        }
-        return false;
+        return object instanceof MapLoader;
     }
 
 }
