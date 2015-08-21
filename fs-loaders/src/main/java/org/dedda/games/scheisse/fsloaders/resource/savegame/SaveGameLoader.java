@@ -1,25 +1,16 @@
 package org.dedda.games.scheisse.fsloaders.resource.savegame;
 
-import org.dedda.games.scheisse.entity.User;
 import org.dedda.games.scheisse.fsloaders.resource.JsonLoader;
-import org.dedda.games.scheisse.npc.npc.NPC;
+import org.dedda.games.scheisse.fsloaders.resource.world.WorldLoader;
 import org.dedda.games.scheisse.player.Player;
 import org.dedda.games.scheisse.player.inventory.Inventory;
 import org.dedda.games.scheisse.player.inventory.Slot;
-import org.dedda.games.scheisse.quest.Quest;
 import org.dedda.games.scheisse.savegame.SaveGame;
 import org.dedda.games.scheisse.tool.Parse;
-import org.dedda.games.scheisse.world.building.Building;
 
 import javax.json.*;
-import java.awt.Point;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Queue;
 
 import static org.dedda.games.scheisse.fsloaders.resource.savegame.SaveGameWords.*;
 
@@ -32,14 +23,11 @@ public class SaveGameLoader extends JsonLoader {
 
     private File file;
 
-    private SaveGame saveGame;
-
     /**
      * @param file File - save game file
      */
     public SaveGameLoader(final File file) {
         this.file = file;
-        this.saveGame = new SaveGame();
     }
 
     /**
@@ -58,16 +46,8 @@ public class SaveGameLoader extends JsonLoader {
         Inventory inventory = createInventory(inventoryJson);
         player.setInventory(inventory);
         saveGame.setPlayer(player);
-        JsonObject worldJson = root.getJsonObject(WORLD);
-        JsonArray npcsJson = worldJson.getJsonArray(NPCS);
-        List<NPC> npcs = createNPCInfo(npcsJson);
-        saveGame.setNpcs(npcs);
-        JsonArray buildingsJson = worldJson.getJsonArray(BUILDINGS);
-        List<Building> buildings = createBuildings(buildingsJson);
-        saveGame.setBuildings(buildings);
-        JsonArray questsJson = worldJson.getJsonArray(QUESTS);
-        List<Quest> quests = createQuests(questsJson);
-        saveGame.setQuests(quests);
+        //TODO: load world
+        saveGame.setWorld(null);
         return saveGame;
     }
 
@@ -95,51 +75,6 @@ public class SaveGameLoader extends JsonLoader {
             inventory.setSlot(i, slot);
         }
         return inventory;
-    }
-
-    private List<Quest> createQuests(final JsonArray questsJson) {
-        List<Quest> quests = new ArrayList<>();
-        int questNumber = questsJson.size();
-        for (int i = 0; i < questNumber; i++) {
-            JsonObject questJson = questsJson.getJsonObject(i);
-            Quest quest = createQuest(questJson);
-            quests.add(quest);
-        }
-        return quests;
-    }
-
-    private Quest createQuest(final JsonObject questJson) {
-        return null;
-    }
-
-    private List<NPC> createNPCInfo(final JsonArray npcsJson) {
-        List<NPC> npcs = new ArrayList<>();
-        int npcNumber = npcsJson.size();
-        for (int i = 0; i < npcNumber; i++) {
-            JsonObject npcJson = npcsJson.getJsonObject(i);
-            NPC npc = createNPC(npcJson);
-            npcs.add(npc);
-        }
-        return npcs;
-    }
-
-    private NPC createNPC(final JsonObject npcJson) {
-        return null;
-    }
-
-    private List<Building> createBuildings(final JsonArray buildingsJson) {
-        List<Building> buildings = new ArrayList<>();
-        int buildingNumber = buildingsJson.size();
-        for (int i = 0; i < buildingNumber; i++) {
-            JsonObject buildingJson = buildingsJson.getJsonObject(i);
-            Building building = createBuilding(buildingJson);
-            buildings.add(building);
-        }
-        return buildings;
-    }
-
-    private Building createBuilding(final JsonObject buildingJson) {
-        return null;
     }
 
     @Override

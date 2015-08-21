@@ -23,15 +23,5 @@
       }
     ]
   },
-  "world" : {
-    "npcs" : [
-
-    ],
-    "buildings" : [
-
-    ],
-    "quests" : [
-
-    ]
-  }
+  "world" : ""
 }

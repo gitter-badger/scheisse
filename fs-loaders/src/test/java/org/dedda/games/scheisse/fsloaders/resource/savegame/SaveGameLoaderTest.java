@@ -46,9 +46,7 @@ public class SaveGameLoaderTest {
     private SaveGame createExpectedSaveGame() {
         SaveGame saveGame = new SaveGame();
         saveGame.setPlayer(createExpectedPlayer());
-        saveGame.setQuests(createExpectedQuests());
-        saveGame.setNpcs(createExpectedNpcs());
-        saveGame.setBuildings(createExpectedBuildings());
+        saveGame.setWorld(null);
         return saveGame;
     }
 
@@ -75,21 +73,6 @@ public class SaveGameLoaderTest {
         slot.setNumberOfItems(10);
         expectedInventory.setSlot(2, slot);
         return expectedInventory;
-    }
-
-    private List<Quest> createExpectedQuests() {
-        List<Quest> quests = new ArrayList<>();
-        return quests;
-    }
-
-    private List<NPC> createExpectedNpcs() {
-        List<NPC> npcs = new ArrayList<>();
-        return npcs;
-    }
-
-    private List<Building> createExpectedBuildings() {
-        List<Building> buildings = new ArrayList<>();
-        return buildings;
     }
 
 }
