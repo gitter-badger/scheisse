@@ -62,5 +62,4 @@ public class World {
         maps[x][y] = map;
         return this;
     }
->>>>>>> master
 }
