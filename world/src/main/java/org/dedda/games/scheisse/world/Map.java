@@ -18,6 +18,7 @@ public class Map {
     private Dimension chunkGridSize;
     private Chunk[][] chunk;
     private ArrayList<MapObject> objects;
+    private Point location;
 
     /**
      * @param size Dimension
@@ -200,6 +201,14 @@ public class Map {
             }
             SystemPrinter.debugln("");
         }
+    }
+
+    public Point getLocation() {
+        return location;
+    }
+
+    public void setLocation(Point location) {
+        this.location = location;
     }
 
     @Override
