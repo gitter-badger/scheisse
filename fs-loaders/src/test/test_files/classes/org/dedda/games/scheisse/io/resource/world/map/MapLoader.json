@@ -1,0 +1,9 @@
+{
+  "id" : 1,
+  "name" : "Test Map",
+  "location" : "0,0",
+  "size" : "3,3",
+  "soil" : [
+
+  ]
+}
