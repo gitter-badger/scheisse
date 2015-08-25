@@ -7,6 +7,7 @@ import org.dedda.games.scheisse.player.inventory.Inventory;
 import org.dedda.games.scheisse.player.inventory.Slot;
 import org.dedda.games.scheisse.savegame.SaveGame;
 import org.dedda.games.scheisse.tool.Parse;
+import org.dedda.games.scheisse.world.World;
 
 import javax.json.*;
 import java.io.File;
@@ -21,13 +22,18 @@ import static org.dedda.games.scheisse.fsloaders.resource.savegame.SaveGameWords
  */
 public class SaveGameLoader extends JsonLoader {
 
-    private File file;
+    private final File file;
+    private final String folderPath;
+    private final WorldLoader worldLoader;
 
     /**
      * @param file File - save game file
      */
     public SaveGameLoader(final File file) {
         this.file = file;
+        String parent = file.getParent();
+        this.folderPath = parent + (parent.endsWith("/") ? "" : "/");
+        this.worldLoader = new WorldLoader();
     }
 
     /**
@@ -46,8 +52,10 @@ public class SaveGameLoader extends JsonLoader {
         Inventory inventory = createInventory(inventoryJson);
         player.setInventory(inventory);
         saveGame.setPlayer(player);
-        //TODO: load world
-        saveGame.setWorld(null);
+        String worldFileName = root.getString("world");
+        File worldFile = new File(folderPath + worldFileName);
+        World world = worldLoader.load(worldFile);
+        saveGame.setWorld(world);
         return saveGame;
     }
 

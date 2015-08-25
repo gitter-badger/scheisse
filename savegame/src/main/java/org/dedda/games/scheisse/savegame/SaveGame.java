@@ -20,6 +20,7 @@ public class SaveGame {
 
     public SaveGame(Player player, World world) {
         this.player = player;
+        this.world = world;
     }
 
     public SaveGame setPlayer(Player player) {
